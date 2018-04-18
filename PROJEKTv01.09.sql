@@ -7,12 +7,12 @@ USE PROJEKTv9;
 
 --CREATING TABLES
 CREATE TABLE Miasta (id_miasta INT IDENTITY(1,1) PRIMARY KEY NOT NULL, nazwa VARCHAR(50) NOT NULL);
-CREATE TABLE Adresy (id_Adresu int IDENTITY(1,1) PRIMARY KEY NOT NULL, Ulica varchar(30), Nr_budynku varchar(10), Nr_lokalu varchar(10), Kod_pocztowy varchar(5), id_miasta int FOREIGN KEY REFERENCES miasta(id_miasta), Kraj varchar(15))
-CREATE TABLE Lokalizacja (id_Lokalizacji int IDENTITY(1,1) PRIMARY KEY NOT NULL, Sektor varchar(30), Alejka varchar(30), Regał varchar(30), Poziom varchar(30), Kosz varchar(30))
+CREATE TABLE ADRESY (ID_ADRESU int IDENTITY(1,1) PRIMARY KEY NOT NULL, ULICA varchar(30), NR_BUDYNKU varchar(10), NR_LOKALU varchar(10), KOD_POCZTOWY varchar(5), ID_MIASTA int FOREIGN KEY REFERENCES MIASTA(ID_MIASTA), KRAJ varchar(15))
+CREATE TABLE LOKALIZACJA (ID_LOKALIZACJI int IDENTITY(1,1) PRIMARY KEY NOT NULL, SEKTOR varchar(30), ALEJKA varchar(30), REAGAL varchar(30), POZIOM varchar(30), KOSZ varchar(30))
 CREATE TABLE Produkt (id_Produktu int IDENTITY(1,1) PRIMARY KEY NOT NULL, Nazwa_Produktu varchar(30) NOT NULL, Opis nvarchar(50) NOT NULL)
-CREATE TABLE Status_zam (id_Statusu_zam int IDENTITY(1,1) PRIMARY KEY NOT NULL, Nazwa varchar(30))
-CREATE TABLE Status_zlec (id_Statusu_zlec int IDENTITY(1,1) PRIMARY KEY NOT NULL, Etap varchar(30))
-CREATE TABLE Dostawcy (id_Dostawcy int IDENTITY(1,1) PRIMARY KEY NOT NULL, Marka varchar(30), Model varchar(30), Numer_rejestracyjny varchar(7), Stawka money, Nosnosc varchar(10), Gabaryty varchar(20))
+CREATE TABLE STATUS_ZAM (ID_STATUSUS_ZAM int IDENTITY(1,1) PRIMARY KEY NOT NULL, NAZWA varchar(30))
+CREATE TABLE STATUS_ZLEC (ID_STATUSU_ZLEC int IDENTITY(1,1) PRIMARY KEY NOT NULL, ETAP varchar(30))
+CREATE TABLE DOSTAWCY (ID_DOSTAWCY int IDENTITY(1,1) PRIMARY KEY NOT NULL, MARKA varchar(30), MODEL varchar(30), NUMER_REJESTRACYJNY varchar(7), STAWKA money, NOSNOSC varchar(10), GABARYTY varchar(20))
 CREATE TABLE Pracownicy (id_pracownik INT IDENTITY(1,1) PRIMARY KEY NOT NULL, nazwisko VARCHAR(30) NOT NULL, imie VARCHAR(30) NOT NULL, telefon VARCHAR(12) NULL, Id_Adresu int FOREIGN KEY REFERENCES Adresy(Id_Adresu),Pesel nvarchar(11) NOT NULL  )
 CREATE TABLE Dostawa (id_Dostawy int IDENTITY(1,1) PRIMARY KEY NOT NULL, id_Pracownika int FOREIGN KEY REFERENCES Pracownicy(id_Pracownik), Id_Adresu int FOREIGN KEY REFERENCES Adresy(Id_Adresu), Id_Pojazdu int FOREIGN KEY REFERENCES Dostawcy(Id_Dostawcy), Długość_Trasy int)
 CREATE TABLE Dost_Prod (id_Produktu int FOREIGN KEY REFERENCES Produkt(Id_Produktu), Id_Dostawy int FOREIGN KEY REFERENCES Dostawa(Id_Dostawy), Ilosc int)
