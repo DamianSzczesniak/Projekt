@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KWZP_PROJEKTModelStoreContainer" CdmEntityContainer="KWZP_PROJEKTEntities">
+    <EntitySetMapping Name="ADRESY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ADRESY">
+        <MappingFragment StoreEntitySet="ADRESY">
+          <ScalarProperty Name="ID_ADRESU" ColumnName="ID_ADRESU" />
+          <ScalarProperty Name="ULICA" ColumnName="ULICA" />
+          <ScalarProperty Name="NR_BUDYNKU" ColumnName="NR_BUDYNKU" />
+          <ScalarProperty Name="NR_LOKALU" ColumnName="NR_LOKALU" />
+          <ScalarProperty Name="KOD_POCZTOWY" ColumnName="KOD_POCZTOWY" />
+          <ScalarProperty Name="ID_MIASTA" ColumnName="ID_MIASTA" />
+          <ScalarProperty Name="KRAJ" ColumnName="KRAJ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADRESY_PRACOWNICY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ADRESY_PRACOWNICY">
+        <MappingFragment StoreEntitySet="ADRESY_PRACOWNICY">
+          <ScalarProperty Name="ID_ADRESU" ColumnName="ID_ADRESU" />
+          <ScalarProperty Name="ULICA" ColumnName="ULICA" />
+          <ScalarProperty Name="NR_BUDYNKU" ColumnName="NR_BUDYNKU" />
+          <ScalarProperty Name="NR_LOKALU" ColumnName="NR_LOKALU" />
+          <ScalarProperty Name="KOD_POCZTOWY" ColumnName="KOD_POCZTOWY" />
+          <ScalarProperty Name="ID_MIASTA" ColumnName="ID_MIASTA" />
+          <ScalarProperty Name="KRAJ" ColumnName="KRAJ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOKUMENTACJA">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.DOKUMENTACJA">
+        <MappingFragment StoreEntitySet="DOKUMENTACJA">
+          <ScalarProperty Name="ID_DOKUMENTACJI" ColumnName="ID_DOKUMENTACJI" />
+          <ScalarProperty Name="NR_RYSUNKU" ColumnName="NR_RYSUNKU" />
+          <ScalarProperty Name="DATA_WPROWADZENIA" ColumnName="DATA_WPROWADZENIA" />
+          <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+          <ScalarProperty Name="ID_PROJEKTU" ColumnName="ID_PROJEKTU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOSTAWA">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.DOSTAWA">
+        <MappingFragment StoreEntitySet="DOSTAWA">
+          <ScalarProperty Name="ID_DOSTAWY" ColumnName="ID_DOSTAWY" />
+          <ScalarProperty Name="ID_ADRESU" ColumnName="ID_ADRESU" />
+          <ScalarProperty Name="DŁUGOŚĆ_TRASY" ColumnName="DŁUGOŚĆ_TRASY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FAKTURY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.FAKTURY">
+        <MappingFragment StoreEntitySet="FAKTURY">
+          <ScalarProperty Name="ID_FAKTURY" ColumnName="ID_FAKTURY" />
+          <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+          <ScalarProperty Name="ID_PRACOWNIKA" ColumnName="ID_PRACOWNIKA" />
+          <ScalarProperty Name="DATA_WYSTAWIENIA" ColumnName="DATA_WYSTAWIENIA" />
+          <ScalarProperty Name="DATA_PLATNOSCI" ColumnName="DATA_PLATNOSCI" />
+          <ScalarProperty Name="KWOTA" ColumnName="KWOTA" />
+          <ScalarProperty Name="WALUTA" ColumnName="WALUTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FIRMY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.FIRMY">
+        <MappingFragment StoreEntitySet="FIRMY">
+          <ScalarProperty Name="ID_FIRMY" ColumnName="ID_FIRMY" />
+          <ScalarProperty Name="NAZWA_FIRMY" ColumnName="NAZWA_FIRMY" />
+          <ScalarProperty Name="ADRES_EMAIL" ColumnName="ADRES_EMAIL" />
+          <ScalarProperty Name="NR_TELEFONU" ColumnName="NR_TELEFONU" />
+          <ScalarProperty Name="NIP" ColumnName="NIP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOKALIZACJA">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.LOKALIZACJA">
+        <MappingFragment StoreEntitySet="LOKALIZACJA">
+          <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+          <ScalarProperty Name="SEKTOR" ColumnName="SEKTOR" />
+          <ScalarProperty Name="ALEJKA" ColumnName="ALEJKA" />
+          <ScalarProperty Name="REAGAL" ColumnName="REAGAL" />
+          <ScalarProperty Name="POZIOM" ColumnName="POZIOM" />
+          <ScalarProperty Name="KOSZ" ColumnName="KOSZ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MASZYNY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.MASZYNY">
+        <MappingFragment StoreEntitySet="MASZYNY">
+          <ScalarProperty Name="ID_MASZYNY" ColumnName="ID_MASZYNY" />
+          <ScalarProperty Name="ID_MODEL_MASZYNY" ColumnName="ID_MODEL_MASZYNY" />
+          <ScalarProperty Name="NR_EWIDENCYJNY" ColumnName="NR_EWIDENCYJNY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MATERIAL">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.MATERIAL">
+        <MappingFragment StoreEntitySet="MATERIAL">
+          <ScalarProperty Name="ID_MATERIALU" ColumnName="ID_MATERIALU" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+          <ScalarProperty Name="PELNA_NAZWA_MATERIALU" ColumnName="PELNA_NAZWA_MATERIALU" />
+          <ScalarProperty Name="OZNACZENIE_SUROWCA" ColumnName="OZNACZENIE_SUROWCA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MIASTA">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.MIASTA">
+        <MappingFragment StoreEntitySet="MIASTA">
+          <ScalarProperty Name="ID_MIASTA" ColumnName="ID_MIASTA" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MODELE_MASZYN">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.MODELE_MASZYN">
+        <MappingFragment StoreEntitySet="MODELE_MASZYN">
+          <ScalarProperty Name="ID_MODEL_MASZYNY" ColumnName="ID_MODEL_MASZYNY" />
+          <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+          <ScalarProperty Name="MARKA" ColumnName="MARKA" />
+          <ScalarProperty Name="TYP_MASZYNY" ColumnName="TYP_MASZYNY" />
+          <ScalarProperty Name="PRĘDKOŚĆ" ColumnName="PRĘDKOŚĆ" />
+          <ScalarProperty Name="POSUW" ColumnName="POSUW" />
+          <ScalarProperty Name="KOSZT_ZA_H" ColumnName="KOSZT_ZA_H" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NARZEDZIA">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.NARZEDZIA">
+        <MappingFragment StoreEntitySet="NARZEDZIA">
+          <ScalarProperty Name="ID_NARZEDZIA" ColumnName="ID_NARZEDZIA" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+          <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+          <ScalarProperty Name="NR_EWIDENCYJNY" ColumnName="NR_EWIDENCYJNY" />
+          <ScalarProperty Name="KOSZT_ZA_H" ColumnName="KOSZT_ZA_H" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OKRES">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.OKRES">
+        <MappingFragment StoreEntitySet="OKRES">
+          <ScalarProperty Name="ID_OKRES" ColumnName="ID_OKRES" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PARAMETRY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PARAMETRY">
+        <MappingFragment StoreEntitySet="PARAMETRY">
+          <ScalarProperty Name="ID_PARAMETR" ColumnName="ID_PARAMETR" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+          <ScalarProperty Name="JEDNOSTKA_MIARY" ColumnName="JEDNOSTKA_MIARY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PODATEK">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PODATEK">
+        <MappingFragment StoreEntitySet="PODATEK">
+          <ScalarProperty Name="ID_PODATEK" ColumnName="ID_PODATEK" />
+          <ScalarProperty Name="STAWKA" ColumnName="STAWKA" />
+          <ScalarProperty Name="DATA" ColumnName="DATA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POJAZDY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.POJAZDY">
+        <MappingFragment StoreEntitySet="POJAZDY">
+          <ScalarProperty Name="ID_POJAZDU" ColumnName="ID_POJAZDU" />
+          <ScalarProperty Name="ID_FIRMY" ColumnName="ID_FIRMY" />
+          <ScalarProperty Name="MARKA" ColumnName="MARKA" />
+          <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+          <ScalarProperty Name="NUMER_REJESTRACYJNY" ColumnName="NUMER_REJESTRACYJNY" />
+          <ScalarProperty Name="STAWKA" ColumnName="STAWKA" />
+          <ScalarProperty Name="NOSNOSC" ColumnName="NOSNOSC" />
+          <ScalarProperty Name="GABARYTY" ColumnName="GABARYTY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POLPRODUKTY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.POLPRODUKTY">
+        <MappingFragment StoreEntitySet="POLPRODUKTY">
+          <ScalarProperty Name="ID_POLPRODUKTU" ColumnName="ID_POLPRODUKTU" />
+          <ScalarProperty Name="ID_MATERIAL" ColumnName="ID_MATERIAL" />
+          <ScalarProperty Name="ID_DOKUMENTACJI" ColumnName="ID_DOKUMENTACJI" />
+          <ScalarProperty Name="LICZBA_SZTUK" ColumnName="LICZBA_SZTUK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRACOWNICY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRACOWNICY">
+        <MappingFragment StoreEntitySet="PRACOWNICY">
+          <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+          <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+          <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROCES">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PROCES">
+        <MappingFragment StoreEntitySet="PROCES">
+          <ScalarProperty Name="ID_PROCESU" ColumnName="ID_PROCESU" />
+          <ScalarProperty Name="ID_SLOWNIK_PROCES_TECHNOLOGICZNY" ColumnName="ID_SLOWNIK_PROCES_TECHNOLOGICZNY" />
+          <ScalarProperty Name="ID_MASZYNY" ColumnName="ID_MASZYNY" />
+          <ScalarProperty Name="CZAS_TRWANIA" ColumnName="CZAS_TRWANIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUKT">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRODUKT">
+        <MappingFragment StoreEntitySet="PRODUKT">
+          <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
+          <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
+          <ScalarProperty Name="OPIS" ColumnName="OPIS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROJEKT">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PROJEKT">
+        <MappingFragment StoreEntitySet="PROJEKT">
+          <ScalarProperty Name="ID_PROJEKTU" ColumnName="ID_PROJEKTU" />
+          <ScalarProperty Name="CZY_ISTNIEJE" ColumnName="CZY_ISTNIEJE" />
+          <ScalarProperty Name="KOSZT" ColumnName="KOSZT" />
+          <ScalarProperty Name="CZAS_REALIZACJI" ColumnName="CZAS_REALIZACJI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REALIZACJA_PRODUKCJA">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.REALIZACJA_PRODUKCJA">
+        <MappingFragment StoreEntitySet="REALIZACJA_PRODUKCJA">
+          <ScalarProperty Name="ID_REALIZACJA_PRODUKCJA" ColumnName="ID_REALIZACJA_PRODUKCJA" />
+          <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+          <ScalarProperty Name="DATA_DZIEN" ColumnName="DATA_DZIEN" />
+          <ScalarProperty Name="LICZBA_SZTUK" ColumnName="LICZBA_SZTUK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SLOWNIK_PROCES_TECHNOLOGICZNY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.SLOWNIK_PROCES_TECHNOLOGICZNY">
+        <MappingFragment StoreEntitySet="SLOWNIK_PROCES_TECHNOLOGICZNY">
+          <ScalarProperty Name="ID_SLOWNIK_PROCES_TECHNOLOGICZNY" ColumnName="ID_SLOWNIK_PROCES_TECHNOLOGICZNY" />
+          <ScalarProperty Name="NAZWA_PROCESU" ColumnName="NAZWA_PROCESU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STANOWISKO">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.STANOWISKO">
+        <MappingFragment StoreEntitySet="STANOWISKO">
+          <ScalarProperty Name="ID_STANOWISKO" ColumnName="ID_STANOWISKO" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STATUS_ZAMOWIENIA">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.STATUS_ZAMOWIENIA">
+        <MappingFragment StoreEntitySet="STATUS_ZAMOWIENIA">
+          <ScalarProperty Name="ID_STATUS_ZAMOWIENIA" ColumnName="ID_STATUS_ZAMOWIENIA" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+          <ScalarProperty Name="DATA_ZMIANY" ColumnName="DATA_ZMIANY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STATUS_ZLECENIA">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.STATUS_ZLECENIA">
+        <MappingFragment StoreEntitySet="STATUS_ZLECENIA">
+          <ScalarProperty Name="ID_STATUSU_ZLECENIA" ColumnName="ID_STATUSU_ZLECENIA" />
+          <ScalarProperty Name="ETAP" ColumnName="ETAP" />
+          <ScalarProperty Name="DATA_ZMIANY" ColumnName="DATA_ZMIANY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STAWKA">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.STAWKA">
+        <MappingFragment StoreEntitySet="STAWKA">
+          <ScalarProperty Name="ID_STAWKA" ColumnName="ID_STAWKA" />
+          <ScalarProperty Name="WARTOSC" ColumnName="WARTOSC" />
+          <ScalarProperty Name="ID_OKRES" ColumnName="ID_OKRES" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SZKOLENIA">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.SZKOLENIA">
+        <MappingFragment StoreEntitySet="SZKOLENIA">
+          <ScalarProperty Name="ID_SZKOLENIA" ColumnName="ID_SZKOLENIA" />
+          <ScalarProperty Name="NAZWA_SZKOLENIA" ColumnName="NAZWA_SZKOLENIA" />
+          <ScalarProperty Name="OPIS_SZKOLENIA" ColumnName="OPIS_SZKOLENIA" />
+          <ScalarProperty Name="DATA_START" ColumnName="DATA_START" />
+          <ScalarProperty Name="DATA_KONIEC" ColumnName="DATA_KONIEC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPY_ZMIANY_STANU">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.TYPY_ZMIANY_STANU">
+        <MappingFragment StoreEntitySet="TYPY_ZMIANY_STANU">
+          <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WALUTY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.WALUTY">
+        <MappingFragment StoreEntitySet="WALUTY">
+          <ScalarProperty Name="ID_WALUTY" ColumnName="ID_WALUTY" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+          <ScalarProperty Name="KURS_DO_PLN" ColumnName="KURS_DO_PLN" />
+          <ScalarProperty Name="DATA_KURS" ColumnName="DATA_KURS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WOLNE">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.WOLNE">
+        <MappingFragment StoreEntitySet="WOLNE">
+          <ScalarProperty Name="ID_WOLNE" ColumnName="ID_WOLNE" />
+          <ScalarProperty Name="SYMBOL" ColumnName="SYMBOL" />
+          <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZAMOWIENIA">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ZAMOWIENIA">
+        <MappingFragment StoreEntitySet="ZAMOWIENIA">
+          <ScalarProperty Name="ID_ZAMOWIENIA" ColumnName="ID_ZAMOWIENIA" />
+          <ScalarProperty Name="DATA_ZAMOWIENIA" ColumnName="DATA_ZAMOWIENIA" />
+          <ScalarProperty Name="DATA_REALIZACJI" ColumnName="DATA_REALIZACJI" />
+          <ScalarProperty Name="ID_FIRMY" ColumnName="ID_FIRMY" />
+          <ScalarProperty Name="ID_STATUSU_ZAM" ColumnName="ID_STATUSU_ZAM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZLECENIA">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ZLECENIA">
+        <MappingFragment StoreEntitySet="ZLECENIA">
+          <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+          <ScalarProperty Name="DATA_ZLECENIA" ColumnName="DATA_ZLECENIA" />
+          <ScalarProperty Name="DATA_REALIZACJI" ColumnName="DATA_REALIZACJI" />
+          <ScalarProperty Name="ID_FIRMY" ColumnName="ID_FIRMY" />
+          <ScalarProperty Name="ID_STATUS_ZLECENIA" ColumnName="ID_STATUS_ZLECENIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PARAMETRY_MASZYNY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PARAMETRY_MASZYNY">
+        <MappingFragment StoreEntitySet="PARAMETRY_MASZYNY">
+          <ScalarProperty Name="ID_PARAMETR" ColumnName="ID_PARAMETR" />
+          <ScalarProperty Name="ID_MODEL_MASZYNY" ColumnName="ID_MODEL_MASZYNY" />
+          <ScalarProperty Name="WARTOŚĆ" ColumnName="WARTOŚĆ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PARAMETRY_MATERIALU">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PARAMETRY_MATERIALU">
+        <MappingFragment StoreEntitySet="PARAMETRY_MATERIALU">
+          <ScalarProperty Name="ID_MATERIAL" ColumnName="ID_MATERIAL" />
+          <ScalarProperty Name="ID_PARAMETR" ColumnName="ID_PARAMETR" />
+          <ScalarProperty Name="WARTOŚĆ" ColumnName="WARTOŚĆ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRACOWNICY_ADRESY_PRACOWNICY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRACOWNICY_ADRESY_PRACOWNICY">
+        <MappingFragment StoreEntitySet="PRACOWNICY_ADRESY_PRACOWNICY">
+          <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+          <ScalarProperty Name="ID_ADRESU" ColumnName="ID_ADRESU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUKCJA_POLPRODUKTU">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRODUKCJA_POLPRODUKTU">
+        <MappingFragment StoreEntitySet="PRODUKCJA_POLPRODUKTU">
+          <ScalarProperty Name="ID_POLPRODUKTU" ColumnName="ID_POLPRODUKTU" />
+          <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
+          <ScalarProperty Name="CZAS_REALIZACJI_MONTAZU" ColumnName="CZAS_REALIZACJI_MONTAZU" />
+          <ScalarProperty Name="KOSZT_REALIZACJI_MONTAZU" ColumnName="KOSZT_REALIZACJI_MONTAZU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STANOWISKO_PRACOWNICY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.STANOWISKO_PRACOWNICY">
+        <MappingFragment StoreEntitySet="STANOWISKO_PRACOWNICY">
+          <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+          <ScalarProperty Name="ID_STANOWISKO" ColumnName="ID_STANOWISKO" />
+          <ScalarProperty Name="DATA_START" ColumnName="DATA_START" />
+          <ScalarProperty Name="DATA_KONIEC" ColumnName="DATA_KONIEC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STAWKA_PRACOWNICY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.STAWKA_PRACOWNICY">
+        <MappingFragment StoreEntitySet="STAWKA_PRACOWNICY">
+          <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+          <ScalarProperty Name="ID_STAWKA" ColumnName="ID_STAWKA" />
+          <ScalarProperty Name="DATA_START" ColumnName="DATA_START" />
+          <ScalarProperty Name="DATA_KONIEC" ColumnName="DATA_KONIEC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WOLNE_PRACOWNICY">
+      <EntityTypeMapping TypeName="KWZP_PROJEKTModel.WOLNE_PRACOWNICY">
+        <MappingFragment StoreEntitySet="WOLNE_PRACOWNICY">
+          <ScalarProperty Name="ID_WOLNE" ColumnName="ID_WOLNE" />
+          <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+          <ScalarProperty Name="DATA_START" ColumnName="DATA_START" />
+          <ScalarProperty Name="DATA_KONIEC" ColumnName="DATA_KONIEC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="SZKOLENIE_PRACOWNICY" TypeName="KWZP_PROJEKTModel.SZKOLENIE_PRACOWNICY" StoreEntitySet="SZKOLENIE_PRACOWNICY">
+      <EndProperty Name="PRACOWNICY">
+        <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+      </EndProperty>
+      <EndProperty Name="SZKOLENIA">
+        <ScalarProperty Name="ID_SZKOLENIA" ColumnName="ID_SZKOLENIA" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ZESPOL_LUDZI" TypeName="KWZP_PROJEKTModel.ZESPOL_LUDZI" StoreEntitySet="ZESPOL_LUDZI">
+      <EndProperty Name="PRACOWNICY">
+        <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+      </EndProperty>
+      <EndProperty Name="REALIZACJA_PRODUKCJA">
+        <ScalarProperty Name="ID_REALIZACJA_PRODUKCJA" ColumnName="ID_REALIZACJA_PRODUKCJA" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ZESPOL_MASZYN" TypeName="KWZP_PROJEKTModel.ZESPOL_MASZYN" StoreEntitySet="ZESPOL_MASZYN">
+      <EndProperty Name="MASZYNY">
+        <ScalarProperty Name="ID_MASZYNY" ColumnName="ID_MASZYNY" />
+      </EndProperty>
+      <EndProperty Name="REALIZACJA_PRODUKCJA">
+        <ScalarProperty Name="ID_REALIZACJA_PRODUKCJA" ColumnName="ID_REALIZACJA_PRODUKCJA" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ZESPOL_MATERIAL" TypeName="KWZP_PROJEKTModel.ZESPOL_MATERIAL" StoreEntitySet="ZESPOL_MATERIAL">
+      <EndProperty Name="MATERIAL">
+        <ScalarProperty Name="ID_MATERIALU" ColumnName="ID_MATERIALU" />
+      </EndProperty>
+      <EndProperty Name="REALIZACJA_PRODUKCJA">
+        <ScalarProperty Name="ID_REALIZACJA_PRODUKCJA" ColumnName="ID_REALIZACJA_PRODUKCJA" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ZESPOL_NARZEDZI" TypeName="KWZP_PROJEKTModel.ZESPOL_NARZEDZI" StoreEntitySet="ZESPOL_NARZEDZI">
+      <EndProperty Name="NARZEDZIA">
+        <ScalarProperty Name="ID_NARZEDZIA" ColumnName="ID_NARZEDZIA" />
+      </EndProperty>
+      <EndProperty Name="REALIZACJA_PRODUKCJA">
+        <ScalarProperty Name="ID_REALIZACJA_PRODUKCJA" ColumnName="ID_REALIZACJA_PRODUKCJA" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

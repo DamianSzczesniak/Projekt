@@ -1,0 +1,15 @@
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\bin\Debug\PROJEKTapp.exe.config
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\bin\Debug\PROJEKTapp.exe
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\bin\Debug\PROJEKTapp.pdb
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\bin\Debug\EntityFramework.dll
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\bin\Debug\EntityFramework.SqlServer.dll
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\bin\Debug\EntityFramework.xml
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\bin\Debug\EntityFramework.SqlServer.xml
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.csprojResolveAssemblyReference.cache
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.Form1.resources
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.Properties.Resources.resources
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.csproj.GenerateResource.cache
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.csproj.CoreCompileInputs.cache
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.csproj.CopyComplete
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.exe
+D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.pdb
