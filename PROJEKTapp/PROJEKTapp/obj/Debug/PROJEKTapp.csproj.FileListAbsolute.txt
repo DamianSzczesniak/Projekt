@@ -13,3 +13,19 @@ D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.csproj.CoreCompileInp
 D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.csproj.CopyComplete
 D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.exe
 D:\PROJEKT KWZP\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.pdb
+D:\Projekt\PROJEKTapp\PROJEKTapp\bin\Debug\PROJEKTapp.exe.config
+D:\Projekt\PROJEKTapp\PROJEKTapp\bin\Debug\PROJEKTapp.exe
+D:\Projekt\PROJEKTapp\PROJEKTapp\bin\Debug\PROJEKTapp.pdb
+D:\Projekt\PROJEKTapp\PROJEKTapp\bin\Debug\EntityFramework.dll
+D:\Projekt\PROJEKTapp\PROJEKTapp\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projekt\PROJEKTapp\PROJEKTapp\bin\Debug\EntityFramework.xml
+D:\Projekt\PROJEKTapp\PROJEKTapp\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projekt\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.csprojResolveAssemblyReference.cache
+D:\Projekt\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.Form1.resources
+D:\Projekt\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.FormKadry.resources
+D:\Projekt\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.Properties.Resources.resources
+D:\Projekt\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.csproj.GenerateResource.cache
+D:\Projekt\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.csproj.CoreCompileInputs.cache
+D:\Projekt\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.csproj.CopyComplete
+D:\Projekt\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.exe
+D:\Projekt\PROJEKTapp\PROJEKTapp\obj\Debug\PROJEKTapp.pdb
