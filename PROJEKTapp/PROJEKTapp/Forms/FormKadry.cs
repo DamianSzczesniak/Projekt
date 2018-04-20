@@ -17,20 +17,21 @@ namespace PROJEKTapp
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormPracownicy Pracownicy = new FormPracownicy();
-            Pracownicy.Show();
-        }
+        
 
         private void FormKadry_Load(object sender, EventArgs e)
         {
 
         }
+        
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnPracownicy_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FormPracownicy Pracownicy = new FormPracownicy();
+            Pracownicy.Show();
         }
+
+        private void btnExit_Click(object sender, EventArgs e) =>
+            this.Close();
     }
 }
