@@ -19,7 +19,8 @@ namespace PROJEKTapp
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            FormPracownicy Pracownicy = new FormPracownicy();
+            Pracownicy.Show();
         }
 
         private void FormKadry_Load(object sender, EventArgs e)

@@ -72,6 +72,12 @@
     <Compile Include="FIRMY.cs">
       <DependentUpon>KWZPEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormPracownicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPracownicy.Designer.cs">
+      <DependentUpon>FormPracownicy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormProdukcja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormKadry.resx">
       <DependentUpon>FormKadry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPracownicy.resx">
+      <DependentUpon>FormPracownicy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
