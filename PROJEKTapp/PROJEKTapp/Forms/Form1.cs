@@ -39,5 +39,12 @@ namespace PROJEKTapp
             FormProdukcja Produkcja = new FormProdukcja();
             Produkcja.Show();
         }
+
+        private void buttonNoweZlecenie_Click(object sender, EventArgs e)
+        {
+            FormNoweZlecenie NoweZlecenie = new FormNoweZlecenie();
+            NoweZlecenie.Show();
+
+        }
     }
 }

@@ -72,6 +72,12 @@
     <Compile Include="FIRMY.cs">
       <DependentUpon>KWZPEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormNoweZlecenie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNoweZlecenie.Designer.cs">
+      <DependentUpon>FormNoweZlecenie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormPracownicy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,12 @@
     <Compile Include="ZLECENIA.cs">
       <DependentUpon>KWZPEntities.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormNoweZlecenie.resx">
+      <DependentUpon>FormNoweZlecenie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLogistyka.resx">
+      <DependentUpon>FormLogistyka.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

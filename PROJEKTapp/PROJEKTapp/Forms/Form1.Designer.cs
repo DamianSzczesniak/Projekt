@@ -30,19 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnLogistyka = new System.Windows.Forms.Button();
-            this.btnKadry = new System.Windows.Forms.Button();
             this.btnProdukcja = new System.Windows.Forms.Button();
+            this.btnKadry = new System.Windows.Forms.Button();
+            this.buttonNoweZlecenie = new System.Windows.Forms.Button();
+            this.btnLogistyka = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -65,6 +66,26 @@
             this.panel1.Size = new System.Drawing.Size(872, 152);
             this.panel1.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(502, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(233, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Management System Version 1.0";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(205, 134);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
@@ -80,29 +101,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(242, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(414, 74);
+            this.label1.Size = new System.Drawing.Size(384, 73);
             this.label1.TabIndex = 1;
             this.label1.Text = "STAL TECH";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 134);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.panel2.Controls.Add(this.btnProdukcja);
             this.panel2.Controls.Add(this.btnKadry);
+            this.panel2.Controls.Add(this.buttonNoweZlecenie);
             this.panel2.Controls.Add(this.btnLogistyka);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 152);
@@ -110,54 +122,71 @@
             this.panel2.Size = new System.Drawing.Size(227, 298);
             this.panel2.TabIndex = 1;
             // 
-            // btnLogistyka
+            // btnProdukcja
             // 
-            this.btnLogistyka.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnLogistyka.FlatAppearance.BorderSize = 0;
-            this.btnLogistyka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogistyka.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogistyka.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLogistyka.Image = ((System.Drawing.Image)(resources.GetObject("btnLogistyka.Image")));
-            this.btnLogistyka.Location = new System.Drawing.Point(0, 20);
-            this.btnLogistyka.Name = "btnLogistyka";
-            this.btnLogistyka.Size = new System.Drawing.Size(222, 85);
-            this.btnLogistyka.TabIndex = 2;
-            this.btnLogistyka.Text = "  LOGISTYKA";
-            this.btnLogistyka.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLogistyka.UseVisualStyleBackColor = false;
-            this.btnLogistyka.Click += new System.EventHandler(this.btnLogistyka_Click);
+            this.btnProdukcja.FlatAppearance.BorderSize = 0;
+            this.btnProdukcja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProdukcja.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProdukcja.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnProdukcja.Image = ((System.Drawing.Image)(resources.GetObject("btnProdukcja.Image")));
+            this.btnProdukcja.Location = new System.Drawing.Point(0, 222);
+            this.btnProdukcja.Name = "btnProdukcja";
+            this.btnProdukcja.Size = new System.Drawing.Size(224, 76);
+            this.btnProdukcja.TabIndex = 4;
+            this.btnProdukcja.Text = "  PRODUKCJA";
+            this.btnProdukcja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProdukcja.UseVisualStyleBackColor = true;
+            this.btnProdukcja.Click += new System.EventHandler(this.btnProdukcja_Click);
             // 
             // btnKadry
             // 
             this.btnKadry.FlatAppearance.BorderSize = 0;
             this.btnKadry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKadry.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKadry.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKadry.ForeColor = System.Drawing.SystemColors.Control;
             this.btnKadry.Image = ((System.Drawing.Image)(resources.GetObject("btnKadry.Image")));
-            this.btnKadry.Location = new System.Drawing.Point(0, 111);
+            this.btnKadry.Location = new System.Drawing.Point(0, 151);
             this.btnKadry.Name = "btnKadry";
-            this.btnKadry.Size = new System.Drawing.Size(222, 85);
+            this.btnKadry.Size = new System.Drawing.Size(227, 65);
             this.btnKadry.TabIndex = 3;
             this.btnKadry.Text = "  KADRY";
             this.btnKadry.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKadry.UseVisualStyleBackColor = true;
             this.btnKadry.Click += new System.EventHandler(this.btnKadry_Click);
             // 
-            // btnProdukcja
+            // buttonNoweZlecenie
             // 
-            this.btnProdukcja.FlatAppearance.BorderSize = 0;
-            this.btnProdukcja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdukcja.Font = new System.Drawing.Font("Cooper Black", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProdukcja.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnProdukcja.Image = ((System.Drawing.Image)(resources.GetObject("btnProdukcja.Image")));
-            this.btnProdukcja.Location = new System.Drawing.Point(0, 202);
-            this.btnProdukcja.Name = "btnProdukcja";
-            this.btnProdukcja.Size = new System.Drawing.Size(222, 85);
-            this.btnProdukcja.TabIndex = 4;
-            this.btnProdukcja.Text = "  PRODUKCJA";
-            this.btnProdukcja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnProdukcja.UseVisualStyleBackColor = true;
-            this.btnProdukcja.Click += new System.EventHandler(this.btnProdukcja_Click);
+            this.buttonNoweZlecenie.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.buttonNoweZlecenie.FlatAppearance.BorderSize = 0;
+            this.buttonNoweZlecenie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNoweZlecenie.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNoweZlecenie.ForeColor = System.Drawing.SystemColors.Control;
+            this.buttonNoweZlecenie.Image = ((System.Drawing.Image)(resources.GetObject("buttonNoweZlecenie.Image")));
+            this.buttonNoweZlecenie.Location = new System.Drawing.Point(3, 0);
+            this.buttonNoweZlecenie.Name = "buttonNoweZlecenie";
+            this.buttonNoweZlecenie.Size = new System.Drawing.Size(225, 69);
+            this.buttonNoweZlecenie.TabIndex = 2;
+            this.buttonNoweZlecenie.Text = "NOWE ZLECENIE";
+            this.buttonNoweZlecenie.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonNoweZlecenie.UseVisualStyleBackColor = false;
+            this.buttonNoweZlecenie.Click += new System.EventHandler(this.buttonNoweZlecenie_Click);
+            // 
+            // btnLogistyka
+            // 
+            this.btnLogistyka.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLogistyka.FlatAppearance.BorderSize = 0;
+            this.btnLogistyka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogistyka.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogistyka.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLogistyka.Image = ((System.Drawing.Image)(resources.GetObject("btnLogistyka.Image")));
+            this.btnLogistyka.Location = new System.Drawing.Point(2, 76);
+            this.btnLogistyka.Name = "btnLogistyka";
+            this.btnLogistyka.Size = new System.Drawing.Size(225, 69);
+            this.btnLogistyka.TabIndex = 2;
+            this.btnLogistyka.Text = "  LOGISTYKA";
+            this.btnLogistyka.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogistyka.UseVisualStyleBackColor = false;
+            this.btnLogistyka.Click += new System.EventHandler(this.btnLogistyka_Click);
             // 
             // pictureBox2
             // 
@@ -199,16 +228,6 @@
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(502, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(231, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Management System Version 1.0";
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -219,7 +238,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Cooper Black", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -253,6 +272,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonNoweZlecenie;
     }
 }
 

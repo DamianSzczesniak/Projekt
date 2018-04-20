@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PROJEKTapp
 {
-    public partial class FormLogistyka : Form
+    public partial class FormNoweZlecenie : Form
     {
-        public FormLogistyka()
+        public FormNoweZlecenie()
         {
             InitializeComponent();
-        }
-
-        private void FormLogistyka_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace PROJEKTapp
 {
-    partial class FormLogistyka
+    partial class FormNoweZlecenie
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // FormLogistyka
+            // FormNoweZlecenie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FormLogistyka";
-            this.Text = "FormLogistyka";
-            this.Load += new System.EventHandler(this.FormLogistyka_Load);
+            this.Name = "FormNoweZlecenie";
+            this.Text = "Nowe Zlecenie";
             this.ResumeLayout(false);
 
         }
