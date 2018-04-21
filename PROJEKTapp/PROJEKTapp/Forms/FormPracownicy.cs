@@ -33,19 +33,19 @@ namespace PROJEKTapp
                     cmd.CommandType = CommandType.StoredProcedure;
                 }
 
-                cmd.Parameters.Add("@Imie", SqlDbType.VarChar, 30.Value = txtboxImie.Text);
-                cmd.Parameters.Add("@Nazwisko", SqlDbType.VarChar, 30.Value = txtboxNazwisko.Text);
-                cmd.Parameters.Add("@Tel", SqlDbType.VarChar, 12.Value = txtboxTel.Text);
-                cmd.Parameters.Add("@PESEL", SqlDbType.VarChar, 11.Value = txtboxPesel.Text);
-                cmd.Parameters.Add("@Stanowisko", SqlDbType.Char, 30.Value = txtboxStanowisko.Text);
-                cmd.Parameters.Add("@Ulica", SqlDbType.VarChar, 30.Value = txtboxUlica.Text);
-                cmd.Parameters.Add("@Nrbudynku", SqlDbType.VarChar, 10.Value = textboxNrbudynku.Text);
-                cmd.Parameters.Add("@Nrlokalu", SqlDbType.VarChar, 10.Value = txtboxNrlokalu.Text);
-                cmd.Parameters.Add("@Kodpocztowy", SqlDbType.VarChar, 5.Value = txtboxKodpocztowy.Text);
-                cmd.Parameters.Add("@Kraj", SqlDbType.VarChar, 15.Value = txtboxKraj.Text);
-                cmd.Parameters.Add("@Miasto", SqlDbType.VarChar, 50.Value = txtboxMiasto.Text);
-                cmd.Parameters.Add("@DataRozpoczeciaPracy", SqlDbType.Date.Value = txtDataRozpoczeciaPracy.Text);
-
+                cmd.Parameters.Add("@Imie", SqlDbType.VarChar).Value = txtboxImie.Text;
+                cmd.Parameters.Add("@Nazwisko", SqlDbType.VarChar).Value = txtboxNazwisko.Text;
+                cmd.Parameters.Add("@Tel", SqlDbType.VarChar).Value = txtboxTel.Text;
+                cmd.Parameters.Add("@PESEL", SqlDbType.VarChar).Value = txtboxPesel.Text;
+                cmd.Parameters.Add("@Stanowisko", SqlDbType.Char).Value = txtboxStanowisko.Text;
+                cmd.Parameters.Add("@Ulica", SqlDbType.VarChar).Value = txtboxUlica.Text;
+                cmd.Parameters.Add("@Nrbudynku", SqlDbType.VarChar).Value = textboxNrbudynku.Text;
+                cmd.Parameters.Add("@Nrlokalu", SqlDbType.VarChar).Value = txtboxNrlokalu.Text;
+                cmd.Parameters.Add("@Kodpocztowy", SqlDbType.VarChar).Value = txtboxKodpocztowy.Text;
+                cmd.Parameters.Add("@Kraj", SqlDbType.VarChar).Value = txtboxKraj.Text;
+                cmd.Parameters.Add("@Miasto", SqlDbType.VarChar).Value = txtboxMiasto.Text;
+                cmd.Parameters.Add("@DataRozpoczeciaPracy", SqlDbType.Date).Value = txtDataRozpoczeciaPracy.Text;
+                
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
