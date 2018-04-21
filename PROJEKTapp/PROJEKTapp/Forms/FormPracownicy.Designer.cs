@@ -59,6 +59,8 @@
             this.lblWyszukaj = new System.Windows.Forms.Label();
             this.txtboxWyszukaj = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDataRozpoczeciaPracy = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -263,16 +265,17 @@
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(122, 435);
+            this.btnDodaj.Location = new System.Drawing.Point(115, 470);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(75, 36);
             this.btnDodaj.TabIndex = 2;
             this.btnDodaj.Text = "Dodaj Pracownika";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnZaktualizuj
             // 
-            this.btnZaktualizuj.Location = new System.Drawing.Point(203, 435);
+            this.btnZaktualizuj.Location = new System.Drawing.Point(196, 470);
             this.btnZaktualizuj.Name = "btnZaktualizuj";
             this.btnZaktualizuj.Size = new System.Drawing.Size(75, 36);
             this.btnZaktualizuj.TabIndex = 2;
@@ -281,7 +284,7 @@
             // 
             // btnUsun
             // 
-            this.btnUsun.Location = new System.Drawing.Point(282, 435);
+            this.btnUsun.Location = new System.Drawing.Point(275, 470);
             this.btnUsun.Name = "btnUsun";
             this.btnUsun.Size = new System.Drawing.Size(75, 36);
             this.btnUsun.TabIndex = 2;
@@ -290,7 +293,7 @@
             // 
             // btnWyczysc
             // 
-            this.btnWyczysc.Location = new System.Drawing.Point(363, 435);
+            this.btnWyczysc.Location = new System.Drawing.Point(356, 470);
             this.btnWyczysc.Name = "btnWyczysc";
             this.btnWyczysc.Size = new System.Drawing.Size(75, 36);
             this.btnWyczysc.TabIndex = 2;
@@ -331,10 +334,29 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(75, 419);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(179, 20);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Data rozpoczecia pracy:";
+            // 
+            // txtDataRozpoczeciaPracy
+            // 
+            this.txtDataRozpoczeciaPracy.Location = new System.Drawing.Point(260, 419);
+            this.txtDataRozpoczeciaPracy.Name = "txtDataRozpoczeciaPracy";
+            this.txtDataRozpoczeciaPracy.Size = new System.Drawing.Size(200, 20);
+            this.txtDataRozpoczeciaPracy.TabIndex = 8;
+            // 
             // FormPracownicy
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(800, 483);
+            this.ClientSize = new System.Drawing.Size(800, 535);
+            this.Controls.Add(this.txtDataRozpoczeciaPracy);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtboxWyszukaj);
             this.Controls.Add(this.lblWyszukaj);
@@ -407,5 +429,7 @@
         private System.Windows.Forms.Label lblWyszukaj;
         private System.Windows.Forms.TextBox txtboxWyszukaj;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker txtDataRozpoczeciaPracy;
     }
 }
