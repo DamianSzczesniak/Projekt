@@ -66,6 +66,12 @@
     <Compile Include="DOSTAWA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Ewidencja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ewidencja.Designer.cs">
+      <DependentUpon>Ewidencja.cs</DependentUpon>
+    </Compile>
     <Compile Include="FAKTURY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -150,6 +156,12 @@
     <Compile Include="OKRES.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Oszacowanie_terminu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Oszacowanie_terminu.Designer.cs">
+      <DependentUpon>Oszacowanie_terminu.cs</DependentUpon>
+    </Compile>
     <Compile Include="PARAMETRY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -230,12 +242,21 @@
     <Compile Include="WOLNE_PRACOWNICY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Wycena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wycena.Designer.cs">
+      <DependentUpon>Wycena.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZAMOWIENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ewidencja.resx">
+      <DependentUpon>Ewidencja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +275,9 @@
     <EmbeddedResource Include="Forms\FormWykazPracownikow.resx">
       <DependentUpon>FormWykazPracownikow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Oszacowanie_terminu.resx">
+      <DependentUpon>Oszacowanie_terminu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produkcja_glowny.resx">
       <DependentUpon>Produkcja_glowny.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +290,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Wycena.resx">
+      <DependentUpon>Wycena.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="KWZP_PROJEKT_MODEL.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>KWZP_PROJEKT_MODEL.Designer.cs</LastGenOutput>
