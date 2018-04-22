@@ -66,10 +66,10 @@
     <Compile Include="DOSTAWA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="Ewidencja.cs">
+    <Compile Include="Forms_Produkcja\Ewidencja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ewidencja.Designer.cs">
+    <Compile Include="Forms_Produkcja\Ewidencja.Designer.cs">
       <DependentUpon>Ewidencja.cs</DependentUpon>
     </Compile>
     <Compile Include="FAKTURY.cs">
@@ -107,12 +107,6 @@
     </Compile>
     <Compile Include="Forms\FormPracownicy.designer.cs">
       <DependentUpon>FormPracownicy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormProdukcja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormProdukcja.designer.cs">
-      <DependentUpon>FormProdukcja.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormWykazPracownikow.cs">
       <SubType>Form</SubType>
@@ -156,10 +150,10 @@
     <Compile Include="OKRES.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="Oszacowanie_terminu.cs">
+    <Compile Include="Forms_Produkcja\Oszacowanie_terminu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Oszacowanie_terminu.Designer.cs">
+    <Compile Include="Forms_Produkcja\Oszacowanie_terminu.Designer.cs">
       <DependentUpon>Oszacowanie_terminu.cs</DependentUpon>
     </Compile>
     <Compile Include="PARAMETRY.cs">
@@ -186,10 +180,10 @@
     <Compile Include="PROCES.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="Produkcja_glowny.cs">
+    <Compile Include="Forms_Produkcja\Produkcja_glowny.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produkcja_glowny.Designer.cs">
+    <Compile Include="Forms_Produkcja\Produkcja_glowny.Designer.cs">
       <DependentUpon>Produkcja_glowny.cs</DependentUpon>
     </Compile>
     <Compile Include="PRODUKCJA_POLPRODUKTU.cs">
@@ -242,10 +236,10 @@
     <Compile Include="WOLNE_PRACOWNICY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="Wycena.cs">
+    <Compile Include="Forms_Produkcja\Wycena.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Wycena.Designer.cs">
+    <Compile Include="Forms_Produkcja\Wycena.Designer.cs">
       <DependentUpon>Wycena.cs</DependentUpon>
     </Compile>
     <Compile Include="ZAMOWIENIA.cs">
@@ -254,7 +248,7 @@
     <Compile Include="ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Ewidencja.resx">
+    <EmbeddedResource Include="Forms_Produkcja\Ewidencja.resx">
       <DependentUpon>Ewidencja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
@@ -275,10 +269,10 @@
     <EmbeddedResource Include="Forms\FormWykazPracownikow.resx">
       <DependentUpon>FormWykazPracownikow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Oszacowanie_terminu.resx">
+    <EmbeddedResource Include="Forms_Produkcja\Oszacowanie_terminu.resx">
       <DependentUpon>Oszacowanie_terminu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produkcja_glowny.resx">
+    <EmbeddedResource Include="Forms_Produkcja\Produkcja_glowny.resx">
       <DependentUpon>Produkcja_glowny.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -290,7 +284,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Wycena.resx">
+    <EmbeddedResource Include="Forms_Produkcja\Wycena.resx">
       <DependentUpon>Wycena.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="KWZP_PROJEKT_MODEL.edmx">

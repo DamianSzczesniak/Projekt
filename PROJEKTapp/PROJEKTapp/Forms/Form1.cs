@@ -36,8 +36,8 @@ namespace PROJEKTapp
 
         private void btnProdukcja_Click(object sender, EventArgs e)
         {
-            FormProdukcja Produkcja = new FormProdukcja();
-            Produkcja.Show();
+            Produkcja_glowny Produkcja_glowny = new Produkcja_glowny();
+            Produkcja_glowny.Show();
         }
 
         private void buttonNoweZlecenie_Click(object sender, EventArgs e)
