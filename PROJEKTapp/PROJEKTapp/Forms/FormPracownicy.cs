@@ -13,9 +13,18 @@ namespace PROJEKTapp
 {
     public partial class FormPracownicy : Form
     {
-        public FormPracownicy()
+        KWZP_PROJEKTEntities db;
+        public FormPracownicy(KWZP_PROJEKTEntities db)
         {
+            this.db = db;
             InitializeComponent();
+            cbStanowisko.DataSource = db.STANOWISKO.ToList();
+            cbStanowisko.DisplayMember = "Nazwa";
+            cbStanowisko.ValueMember = "Id_Stanowisko";
+
+            cbMiasto.DataSource = db.MIASTA.ToList();
+            cbMiasto.DisplayMember = "Nazwa";
+            cbMiasto.ValueMember = "Id_Miasta";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -25,35 +34,39 @@ namespace PROJEKTapp
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            try
+            PRACOWNICY pracownicyNew = new PRACOWNICY
             {
-                SqlConnection con = new SqlConnection("KWZP_PROJEKTEntities");
-                SqlCommand cmd = new SqlCommand("AddPracownik", con);
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                }
+                IMIE = txtboxImie.Text,
+                NAZWISKO = txtboxNazwisko.Text,
+                PESEL = txtboxPesel.Text,
+                TELEFON = txtboxTel.Text
+            };
+            ADRESY_PRACOWNICY adresypracownicy = new ADRESY_PRACOWNICY
+            {
+                ULICA = txtboxUlica.Text,
+                NR_BUDYNKU = txtNrbudynku.Text,
+                NR_LOKALU = txtboxNrlokalu.Text,
+                KOD_POCZTOWY = txtboxKodpocztowy.Text,
+                ID_MIASTA = (int)cbMiasto.SelectedValue,
+                KRAJ = txtboxKraj.Text,
+            };
+            db.PRACOWNICY.Add(pracownicyNew);
+            db.ADRESY_PRACOWNICY.Add(adresypracownicy);
+            pracownicyNew.ADRESY_PRACOWNICY.Add(adresypracownicy);
 
-                cmd.Parameters.Add("@Imie", SqlDbType.VarChar).Value = txtboxImie.Text;
-                cmd.Parameters.Add("@Nazwisko", SqlDbType.VarChar).Value = txtboxNazwisko.Text;
-                cmd.Parameters.Add("@Tel", SqlDbType.VarChar).Value = txtboxTel.Text;
-                cmd.Parameters.Add("@PESEL", SqlDbType.VarChar).Value = txtboxPesel.Text;
-                cmd.Parameters.Add("@Stanowisko", SqlDbType.Char).Value = txtboxStanowisko.Text;
-                cmd.Parameters.Add("@Ulica", SqlDbType.VarChar).Value = txtboxUlica.Text;
-                cmd.Parameters.Add("@Nrbudynku", SqlDbType.VarChar).Value = textboxNrbudynku.Text;
-                cmd.Parameters.Add("@Nrlokalu", SqlDbType.VarChar).Value = txtboxNrlokalu.Text;
-                cmd.Parameters.Add("@Kodpocztowy", SqlDbType.VarChar).Value = txtboxKodpocztowy.Text;
-                cmd.Parameters.Add("@Kraj", SqlDbType.VarChar).Value = txtboxKraj.Text;
-                cmd.Parameters.Add("@Miasto", SqlDbType.VarChar).Value = txtboxMiasto.Text;
-                cmd.Parameters.Add("@DataRozpoczeciaPracy", SqlDbType.Date).Value = txtDataRozpoczeciaPracy.Text;
-                
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
-            catch (Exception ex)
+            STANOWISKO_PRACOWNICY stanowiskopracownicy = new STANOWISKO_PRACOWNICY
             {
-                MessageBox.Show("Error:" + ex.Message);
-            }
+                ID_PRACOWNIK = pracownicyNew.ID_PRACOWNIK,
+                ID_STANOWISKO = (int)cbStanowisko.SelectedValue,
+                DATA_START = txtDataRozpoczeciaPracy.Value
+            };
+            db.STANOWISKO_PRACOWNICY.Add(stanowiskopracownicy);
+            db.SaveChanges();
+        }
+
+        private void FormPracownicy_Load(object sender, EventArgs e)
+        {
+            this.ListaPracownikow.DataSource = db.PRACOWNICY.ToList(); //TO DO wybrać dane do wyświetlenia
         }
     }
 }

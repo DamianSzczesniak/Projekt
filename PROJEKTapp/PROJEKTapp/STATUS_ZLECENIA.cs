@@ -14,17 +14,7 @@ namespace PROJEKTapp
     
     public partial class STATUS_ZLECENIA
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public STATUS_ZLECENIA()
-        {
-            this.ZLECENIA = new HashSet<ZLECENIA>();
-        }
-    
         public int ID_STATUSU_ZLECENIA { get; set; }
         public string ETAP { get; set; }
-        public Nullable<System.DateTime> DATA_ZMIANY { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ZLECENIA> ZLECENIA { get; set; }
     }
 }

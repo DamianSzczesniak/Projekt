@@ -38,11 +38,10 @@
             this.lblPesel = new System.Windows.Forms.Label();
             this.txtboxPesel = new System.Windows.Forms.TextBox();
             this.lblStanowisko = new System.Windows.Forms.Label();
-            this.txtboxStanowisko = new System.Windows.Forms.TextBox();
             this.lblUlica = new System.Windows.Forms.Label();
             this.txtboxUlica = new System.Windows.Forms.TextBox();
             this.lblNrbudynku = new System.Windows.Forms.Label();
-            this.textboxNrbudynku = new System.Windows.Forms.TextBox();
+            this.txtNrbudynku = new System.Windows.Forms.TextBox();
             this.lblNrlokalu = new System.Windows.Forms.Label();
             this.txtboxNrlokalu = new System.Windows.Forms.TextBox();
             this.lblKodpocztowy = new System.Windows.Forms.Label();
@@ -50,18 +49,19 @@
             this.lblKraj = new System.Windows.Forms.Label();
             this.txtboxKraj = new System.Windows.Forms.TextBox();
             this.lblMiasto = new System.Windows.Forms.Label();
-            this.txtboxMiasto = new System.Windows.Forms.TextBox();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnZaktualizuj = new System.Windows.Forms.Button();
             this.btnUsun = new System.Windows.Forms.Button();
             this.btnWyczysc = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ListaPracownikow = new System.Windows.Forms.DataGridView();
             this.lblWyszukaj = new System.Windows.Forms.Label();
             this.txtboxWyszukaj = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDataRozpoczeciaPracy = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cbMiasto = new System.Windows.Forms.ComboBox();
+            this.cbStanowisko = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             // 
             this.lblImie.AutoSize = true;
             this.lblImie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblImie.Location = new System.Drawing.Point(70, 68);
+            this.lblImie.Location = new System.Drawing.Point(75, 59);
             this.lblImie.Name = "lblImie";
             this.lblImie.Size = new System.Drawing.Size(43, 20);
             this.lblImie.TabIndex = 0;
@@ -78,7 +78,7 @@
             // txtboxImie
             // 
             this.txtboxImie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxImie.Location = new System.Drawing.Point(187, 59);
+            this.txtboxImie.Location = new System.Drawing.Point(186, 59);
             this.txtboxImie.Name = "txtboxImie";
             this.txtboxImie.Size = new System.Drawing.Size(170, 26);
             this.txtboxImie.TabIndex = 1;
@@ -87,7 +87,7 @@
             // 
             this.lblNazwisko.AutoSize = true;
             this.lblNazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNazwisko.Location = new System.Drawing.Point(70, 97);
+            this.lblNazwisko.Location = new System.Drawing.Point(75, 90);
             this.lblNazwisko.Name = "lblNazwisko";
             this.lblNazwisko.Size = new System.Drawing.Size(80, 20);
             this.lblNazwisko.TabIndex = 0;
@@ -96,7 +96,7 @@
             // txtboxNazwisko
             // 
             this.txtboxNazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxNazwisko.Location = new System.Drawing.Point(187, 91);
+            this.txtboxNazwisko.Location = new System.Drawing.Point(186, 90);
             this.txtboxNazwisko.Name = "txtboxNazwisko";
             this.txtboxNazwisko.Size = new System.Drawing.Size(170, 26);
             this.txtboxNazwisko.TabIndex = 1;
@@ -105,7 +105,7 @@
             // 
             this.lblTel.AutoSize = true;
             this.lblTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTel.Location = new System.Drawing.Point(70, 126);
+            this.lblTel.Location = new System.Drawing.Point(75, 121);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(34, 20);
             this.lblTel.TabIndex = 0;
@@ -114,7 +114,7 @@
             // txtboxTel
             // 
             this.txtboxTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxTel.Location = new System.Drawing.Point(187, 120);
+            this.txtboxTel.Location = new System.Drawing.Point(186, 121);
             this.txtboxTel.Name = "txtboxTel";
             this.txtboxTel.Size = new System.Drawing.Size(170, 26);
             this.txtboxTel.TabIndex = 1;
@@ -123,7 +123,7 @@
             // 
             this.lblPesel.AutoSize = true;
             this.lblPesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPesel.Location = new System.Drawing.Point(70, 158);
+            this.lblPesel.Location = new System.Drawing.Point(75, 152);
             this.lblPesel.Name = "lblPesel";
             this.lblPesel.Size = new System.Drawing.Size(65, 20);
             this.lblPesel.TabIndex = 0;
@@ -132,7 +132,7 @@
             // txtboxPesel
             // 
             this.txtboxPesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxPesel.Location = new System.Drawing.Point(187, 152);
+            this.txtboxPesel.Location = new System.Drawing.Point(186, 152);
             this.txtboxPesel.Name = "txtboxPesel";
             this.txtboxPesel.Size = new System.Drawing.Size(170, 26);
             this.txtboxPesel.TabIndex = 1;
@@ -141,25 +141,17 @@
             // 
             this.lblStanowisko.AutoSize = true;
             this.lblStanowisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblStanowisko.Location = new System.Drawing.Point(70, 190);
+            this.lblStanowisko.Location = new System.Drawing.Point(75, 183);
             this.lblStanowisko.Name = "lblStanowisko";
             this.lblStanowisko.Size = new System.Drawing.Size(95, 20);
             this.lblStanowisko.TabIndex = 0;
             this.lblStanowisko.Text = "Stanowisko:";
             // 
-            // txtboxStanowisko
-            // 
-            this.txtboxStanowisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxStanowisko.Location = new System.Drawing.Point(187, 184);
-            this.txtboxStanowisko.Name = "txtboxStanowisko";
-            this.txtboxStanowisko.Size = new System.Drawing.Size(170, 26);
-            this.txtboxStanowisko.TabIndex = 1;
-            // 
             // lblUlica
             // 
             this.lblUlica.AutoSize = true;
             this.lblUlica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblUlica.Location = new System.Drawing.Point(70, 222);
+            this.lblUlica.Location = new System.Drawing.Point(75, 216);
             this.lblUlica.Name = "lblUlica";
             this.lblUlica.Size = new System.Drawing.Size(48, 20);
             this.lblUlica.TabIndex = 0;
@@ -168,7 +160,7 @@
             // txtboxUlica
             // 
             this.txtboxUlica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxUlica.Location = new System.Drawing.Point(187, 216);
+            this.txtboxUlica.Location = new System.Drawing.Point(186, 216);
             this.txtboxUlica.Name = "txtboxUlica";
             this.txtboxUlica.Size = new System.Drawing.Size(170, 26);
             this.txtboxUlica.TabIndex = 1;
@@ -177,25 +169,25 @@
             // 
             this.lblNrbudynku.AutoSize = true;
             this.lblNrbudynku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNrbudynku.Location = new System.Drawing.Point(70, 254);
+            this.lblNrbudynku.Location = new System.Drawing.Point(75, 247);
             this.lblNrbudynku.Name = "lblNrbudynku";
             this.lblNrbudynku.Size = new System.Drawing.Size(93, 20);
             this.lblNrbudynku.TabIndex = 0;
             this.lblNrbudynku.Text = "Nr budynku:";
             // 
-            // textboxNrbudynku
+            // txtNrbudynku
             // 
-            this.textboxNrbudynku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textboxNrbudynku.Location = new System.Drawing.Point(187, 248);
-            this.textboxNrbudynku.Name = "textboxNrbudynku";
-            this.textboxNrbudynku.Size = new System.Drawing.Size(170, 26);
-            this.textboxNrbudynku.TabIndex = 1;
+            this.txtNrbudynku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtNrbudynku.Location = new System.Drawing.Point(186, 247);
+            this.txtNrbudynku.Name = "txtNrbudynku";
+            this.txtNrbudynku.Size = new System.Drawing.Size(170, 26);
+            this.txtNrbudynku.TabIndex = 1;
             // 
             // lblNrlokalu
             // 
             this.lblNrlokalu.AutoSize = true;
             this.lblNrlokalu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNrlokalu.Location = new System.Drawing.Point(70, 286);
+            this.lblNrlokalu.Location = new System.Drawing.Point(75, 278);
             this.lblNrlokalu.Name = "lblNrlokalu";
             this.lblNrlokalu.Size = new System.Drawing.Size(74, 20);
             this.lblNrlokalu.TabIndex = 0;
@@ -204,7 +196,7 @@
             // txtboxNrlokalu
             // 
             this.txtboxNrlokalu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxNrlokalu.Location = new System.Drawing.Point(187, 280);
+            this.txtboxNrlokalu.Location = new System.Drawing.Point(186, 278);
             this.txtboxNrlokalu.Name = "txtboxNrlokalu";
             this.txtboxNrlokalu.Size = new System.Drawing.Size(170, 26);
             this.txtboxNrlokalu.TabIndex = 1;
@@ -213,7 +205,7 @@
             // 
             this.lblKodpocztowy.AutoSize = true;
             this.lblKodpocztowy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKodpocztowy.Location = new System.Drawing.Point(70, 318);
+            this.lblKodpocztowy.Location = new System.Drawing.Point(75, 312);
             this.lblKodpocztowy.Name = "lblKodpocztowy";
             this.lblKodpocztowy.Size = new System.Drawing.Size(111, 20);
             this.lblKodpocztowy.TabIndex = 0;
@@ -222,7 +214,7 @@
             // txtboxKodpocztowy
             // 
             this.txtboxKodpocztowy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxKodpocztowy.Location = new System.Drawing.Point(187, 312);
+            this.txtboxKodpocztowy.Location = new System.Drawing.Point(186, 309);
             this.txtboxKodpocztowy.Name = "txtboxKodpocztowy";
             this.txtboxKodpocztowy.Size = new System.Drawing.Size(170, 26);
             this.txtboxKodpocztowy.TabIndex = 1;
@@ -231,7 +223,7 @@
             // 
             this.lblKraj.AutoSize = true;
             this.lblKraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKraj.Location = new System.Drawing.Point(70, 347);
+            this.lblKraj.Location = new System.Drawing.Point(75, 340);
             this.lblKraj.Name = "lblKraj";
             this.lblKraj.Size = new System.Drawing.Size(40, 20);
             this.lblKraj.TabIndex = 0;
@@ -240,7 +232,7 @@
             // txtboxKraj
             // 
             this.txtboxKraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxKraj.Location = new System.Drawing.Point(187, 347);
+            this.txtboxKraj.Location = new System.Drawing.Point(186, 340);
             this.txtboxKraj.Name = "txtboxKraj";
             this.txtboxKraj.Size = new System.Drawing.Size(170, 26);
             this.txtboxKraj.TabIndex = 1;
@@ -249,23 +241,15 @@
             // 
             this.lblMiasto.AutoSize = true;
             this.lblMiasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblMiasto.Location = new System.Drawing.Point(70, 382);
+            this.lblMiasto.Location = new System.Drawing.Point(75, 371);
             this.lblMiasto.Name = "lblMiasto";
             this.lblMiasto.Size = new System.Drawing.Size(60, 20);
             this.lblMiasto.TabIndex = 0;
             this.lblMiasto.Text = "Miasto:";
             // 
-            // txtboxMiasto
-            // 
-            this.txtboxMiasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxMiasto.Location = new System.Drawing.Point(187, 376);
-            this.txtboxMiasto.Name = "txtboxMiasto";
-            this.txtboxMiasto.Size = new System.Drawing.Size(170, 26);
-            this.txtboxMiasto.TabIndex = 1;
-            // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(115, 470);
+            this.btnDodaj.Location = new System.Drawing.Point(106, 487);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(75, 36);
             this.btnDodaj.TabIndex = 2;
@@ -275,7 +259,7 @@
             // 
             // btnZaktualizuj
             // 
-            this.btnZaktualizuj.Location = new System.Drawing.Point(196, 470);
+            this.btnZaktualizuj.Location = new System.Drawing.Point(187, 487);
             this.btnZaktualizuj.Name = "btnZaktualizuj";
             this.btnZaktualizuj.Size = new System.Drawing.Size(75, 36);
             this.btnZaktualizuj.TabIndex = 2;
@@ -284,7 +268,7 @@
             // 
             // btnUsun
             // 
-            this.btnUsun.Location = new System.Drawing.Point(275, 470);
+            this.btnUsun.Location = new System.Drawing.Point(266, 487);
             this.btnUsun.Name = "btnUsun";
             this.btnUsun.Size = new System.Drawing.Size(75, 36);
             this.btnUsun.TabIndex = 2;
@@ -293,20 +277,20 @@
             // 
             // btnWyczysc
             // 
-            this.btnWyczysc.Location = new System.Drawing.Point(356, 470);
+            this.btnWyczysc.Location = new System.Drawing.Point(347, 487);
             this.btnWyczysc.Name = "btnWyczysc";
             this.btnWyczysc.Size = new System.Drawing.Size(75, 36);
             this.btnWyczysc.TabIndex = 2;
             this.btnWyczysc.Text = "Wyczysc Dane";
             this.btnWyczysc.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // ListaPracownikow
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(376, 124);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(412, 278);
-            this.dataGridView1.TabIndex = 3;
+            this.ListaPracownikow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListaPracownikow.Location = new System.Drawing.Point(376, 124);
+            this.ListaPracownikow.Name = "ListaPracownikow";
+            this.ListaPracownikow.Size = new System.Drawing.Size(412, 278);
+            this.ListaPracownikow.TabIndex = 3;
             // 
             // lblWyszukaj
             // 
@@ -351,21 +335,40 @@
             this.txtDataRozpoczeciaPracy.Size = new System.Drawing.Size(200, 20);
             this.txtDataRozpoczeciaPracy.TabIndex = 8;
             // 
+            // cbMiasto
+            // 
+            this.cbMiasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbMiasto.FormattingEnabled = true;
+            this.cbMiasto.Location = new System.Drawing.Point(186, 371);
+            this.cbMiasto.Name = "cbMiasto";
+            this.cbMiasto.Size = new System.Drawing.Size(170, 28);
+            this.cbMiasto.TabIndex = 9;
+            // 
+            // cbStanowisko
+            // 
+            this.cbStanowisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbStanowisko.FormattingEnabled = true;
+            this.cbStanowisko.Location = new System.Drawing.Point(186, 183);
+            this.cbStanowisko.Name = "cbStanowisko";
+            this.cbStanowisko.Size = new System.Drawing.Size(170, 28);
+            this.cbStanowisko.TabIndex = 10;
+            // 
             // FormPracownicy
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 535);
+            this.Controls.Add(this.cbStanowisko);
+            this.Controls.Add(this.cbMiasto);
             this.Controls.Add(this.txtDataRozpoczeciaPracy);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtboxWyszukaj);
             this.Controls.Add(this.lblWyszukaj);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ListaPracownikow);
             this.Controls.Add(this.btnWyczysc);
             this.Controls.Add(this.btnUsun);
             this.Controls.Add(this.btnZaktualizuj);
             this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.txtboxMiasto);
             this.Controls.Add(this.lblMiasto);
             this.Controls.Add(this.txtboxKraj);
             this.Controls.Add(this.lblKraj);
@@ -373,11 +376,10 @@
             this.Controls.Add(this.lblKodpocztowy);
             this.Controls.Add(this.txtboxNrlokalu);
             this.Controls.Add(this.lblNrlokalu);
-            this.Controls.Add(this.textboxNrbudynku);
+            this.Controls.Add(this.txtNrbudynku);
             this.Controls.Add(this.lblNrbudynku);
             this.Controls.Add(this.txtboxUlica);
             this.Controls.Add(this.lblUlica);
-            this.Controls.Add(this.txtboxStanowisko);
             this.Controls.Add(this.lblStanowisko);
             this.Controls.Add(this.txtboxPesel);
             this.Controls.Add(this.lblPesel);
@@ -390,7 +392,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPracownicy";
             this.Text = "FormPracownicy";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormPracownicy_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -408,11 +411,10 @@
         private System.Windows.Forms.Label lblPesel;
         private System.Windows.Forms.TextBox txtboxPesel;
         private System.Windows.Forms.Label lblStanowisko;
-        private System.Windows.Forms.TextBox txtboxStanowisko;
         private System.Windows.Forms.Label lblUlica;
         private System.Windows.Forms.TextBox txtboxUlica;
         private System.Windows.Forms.Label lblNrbudynku;
-        private System.Windows.Forms.TextBox textboxNrbudynku;
+        private System.Windows.Forms.TextBox txtNrbudynku;
         private System.Windows.Forms.Label lblNrlokalu;
         private System.Windows.Forms.TextBox txtboxNrlokalu;
         private System.Windows.Forms.Label lblKodpocztowy;
@@ -420,16 +422,17 @@
         private System.Windows.Forms.Label lblKraj;
         private System.Windows.Forms.TextBox txtboxKraj;
         private System.Windows.Forms.Label lblMiasto;
-        private System.Windows.Forms.TextBox txtboxMiasto;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnZaktualizuj;
         private System.Windows.Forms.Button btnUsun;
         private System.Windows.Forms.Button btnWyczysc;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ListaPracownikow;
         private System.Windows.Forms.Label lblWyszukaj;
         private System.Windows.Forms.TextBox txtboxWyszukaj;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker txtDataRozpoczeciaPracy;
+        private System.Windows.Forms.ComboBox cbMiasto;
+        private System.Windows.Forms.ComboBox cbStanowisko;
     }
 }

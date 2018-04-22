@@ -15,10 +15,10 @@ namespace PROJEKTapp
     public partial class ZAMOWIENIA
     {
         public int ID_ZAMOWIENIA { get; set; }
-        public string DATA_ZAMOWIENIA { get; set; }
-        public string DATA_REALIZACJI { get; set; }
+        public Nullable<System.DateTime> DATA_ZAMOWIENIA { get; set; }
+        public Nullable<System.DateTime> DATA_REALIZACJI { get; set; }
         public Nullable<int> ID_FIRMY { get; set; }
-        public Nullable<int> ID_STATUSU_ZAM { get; set; }
+        public Nullable<int> ID_STATUSU_ZAMOWIENIA { get; set; }
     
         public virtual FIRMY FIRMY { get; set; }
         public virtual STATUS_ZAMOWIENIA STATUS_ZAMOWIENIA { get; set; }

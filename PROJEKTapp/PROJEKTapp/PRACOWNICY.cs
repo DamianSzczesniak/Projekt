@@ -22,6 +22,7 @@ namespace PROJEKTapp
             this.STANOWISKO_PRACOWNICY = new HashSet<STANOWISKO_PRACOWNICY>();
             this.STAWKA_PRACOWNICY = new HashSet<STAWKA_PRACOWNICY>();
             this.WOLNE_PRACOWNICY = new HashSet<WOLNE_PRACOWNICY>();
+            this.ADRESY_PRACOWNICY = new HashSet<ADRESY_PRACOWNICY>();
             this.SZKOLENIA = new HashSet<SZKOLENIA>();
             this.REALIZACJA_PRODUKCJA = new HashSet<REALIZACJA_PRODUKCJA>();
         }
@@ -36,13 +37,14 @@ namespace PROJEKTapp
         public virtual ICollection<DOKUMENTACJA> DOKUMENTACJA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FAKTURY> FAKTURY { get; set; }
-        public virtual PRACOWNICY_ADRESY_PRACOWNICY PRACOWNICY_ADRESY_PRACOWNICY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<STANOWISKO_PRACOWNICY> STANOWISKO_PRACOWNICY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<STAWKA_PRACOWNICY> STAWKA_PRACOWNICY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<WOLNE_PRACOWNICY> WOLNE_PRACOWNICY { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ADRESY_PRACOWNICY> ADRESY_PRACOWNICY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SZKOLENIA> SZKOLENIA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

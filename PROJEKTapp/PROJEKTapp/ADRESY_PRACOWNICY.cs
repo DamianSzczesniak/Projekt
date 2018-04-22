@@ -17,7 +17,7 @@ namespace PROJEKTapp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ADRESY_PRACOWNICY()
         {
-            this.PRACOWNICY_ADRESY_PRACOWNICY = new HashSet<PRACOWNICY_ADRESY_PRACOWNICY>();
+            this.PRACOWNICY = new HashSet<PRACOWNICY>();
         }
     
         public int ID_ADRESU { get; set; }
@@ -30,6 +30,6 @@ namespace PROJEKTapp
     
         public virtual MIASTA MIASTA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRACOWNICY_ADRESY_PRACOWNICY> PRACOWNICY_ADRESY_PRACOWNICY { get; set; }
+        public virtual ICollection<PRACOWNICY> PRACOWNICY { get; set; }
     }
 }

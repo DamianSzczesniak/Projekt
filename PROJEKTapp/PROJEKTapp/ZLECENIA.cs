@@ -25,13 +25,11 @@ namespace PROJEKTapp
         public System.DateTime DATA_ZLECENIA { get; set; }
         public System.DateTime DATA_REALIZACJI { get; set; }
         public Nullable<int> ID_FIRMY { get; set; }
-        public Nullable<int> ID_STATUS_ZLECENIA { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FAKTURY> FAKTURY { get; set; }
         public virtual FIRMY FIRMY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REALIZACJA_PRODUKCJA> REALIZACJA_PRODUKCJA { get; set; }
-        public virtual STATUS_ZLECENIA STATUS_ZLECENIA { get; set; }
     }
 }

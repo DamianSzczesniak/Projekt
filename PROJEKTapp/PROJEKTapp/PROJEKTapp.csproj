@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{97F9A2BB-1563-46EC-9BA2-9103F3B00242}</ProjectGuid>
+    <ProjectGuid>{9F89492D-ACB0-42E5-A8F0-4E9D4D79B2AC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>PROJEKTapp</RootNamespace>
     <AssemblyName>PROJEKTapp</AssemblyName>
@@ -55,52 +55,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADRESY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="ADRESY_PRACOWNICY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="DOKUMENTACJA.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="DOSTAWA.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="FAKTURY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="FIRMY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormNoweZlecenie.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormNoweZlecenie.Designer.cs">
-      <DependentUpon>FormNoweZlecenie.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormPracownicy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormPracownicy.Designer.cs">
-      <DependentUpon>FormPracownicy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormProdukcja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormProdukcja.Designer.cs">
-      <DependentUpon>FormProdukcja.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormKadry.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormKadry.Designer.cs">
-      <DependentUpon>FormKadry.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FormLogistyka.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormLogistyka.Designer.cs">
-      <DependentUpon>FormLogistyka.cs</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -108,136 +78,163 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="KWZPEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KWZPEntities.Context.tt</DependentUpon>
+    <Compile Include="Forms\FormKadry.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KWZPEntities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+    <Compile Include="Forms\FormKadry.designer.cs">
+      <DependentUpon>FormKadry.cs</DependentUpon>
     </Compile>
-    <Compile Include="KWZPEntities.Designer.cs">
+    <Compile Include="Forms\FormLogistyka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLogistyka.designer.cs">
+      <DependentUpon>FormLogistyka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormNoweZlecenie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNoweZlecenie.designer.cs">
+      <DependentUpon>FormNoweZlecenie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPracownicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPracownicy.designer.cs">
+      <DependentUpon>FormPracownicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProdukcja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProdukcja.designer.cs">
+      <DependentUpon>FormProdukcja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KWZP_PROJEKT_MODEL.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>KWZPEntities.edmx</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KWZP_PROJEKT_MODEL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KWZP_PROJEKT_MODEL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
     </Compile>
     <Compile Include="LOKALIZACJA.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="MASZYNY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="MATERIAL.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="MIASTA.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="MODELE_MASZYN.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="NARZEDZIA.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="OKRES.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PARAMETRY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PARAMETRY_MASZYNY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PARAMETRY_MATERIALU.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PODATEK.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="POJAZDY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="POLPRODUKTY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PRACOWNICY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PRACOWNICY_ADRESY_PRACOWNICY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PROCES.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PRODUKCJA_POLPRODUKTU.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PRODUKT.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="PROJEKT.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="REALIZACJA_PRODUKCJA.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="SLOWNIK_PROCES_TECHNOLOGICZNY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="STANOWISKO.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="STANOWISKO_PRACOWNICY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="STATUS_ZAMOWIENIA.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="STATUS_ZLECENIA.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="STAWKA.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="STAWKA_PRACOWNICY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="SZKOLENIA.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="TYPY_ZMIANY_STANU.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="WALUTY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="WOLNE.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="WOLNE_PRACOWNICY.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="ZAMOWIENIA.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="ZLECENIA.cs">
-      <DependentUpon>KWZPEntities.tt</DependentUpon>
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\FormNoweZlecenie.resx">
-      <DependentUpon>FormNoweZlecenie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormLogistyka.resx">
-      <DependentUpon>FormLogistyka.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormKadry.resx">
       <DependentUpon>FormKadry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLogistyka.resx">
+      <DependentUpon>FormLogistyka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNoweZlecenie.resx">
+      <DependentUpon>FormNoweZlecenie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPracownicy.resx">
       <DependentUpon>FormPracownicy.cs</DependentUpon>
@@ -251,12 +248,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="KWZPEntities.edmx">
+    <EntityDeploy Include="KWZP_PROJEKT_MODEL.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>KWZPEntities.Designer.cs</LastGenOutput>
+      <LastGenOutput>KWZP_PROJEKT_MODEL.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="KWZPEntities.edmx.diagram">
-      <DependentUpon>KWZPEntities.edmx</DependentUpon>
+    <None Include="KWZP_PROJEKT_MODEL.edmx.diagram">
+      <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -273,15 +270,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="KWZPEntities.Context.tt">
+    <Content Include="KWZP_PROJEKT_MODEL.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>KWZPEntities.Context.cs</LastGenOutput>
-      <DependentUpon>KWZPEntities.edmx</DependentUpon>
+      <LastGenOutput>KWZP_PROJEKT_MODEL.Context.cs</LastGenOutput>
+      <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
     </Content>
-    <Content Include="KWZPEntities.tt">
+    <Content Include="KWZP_PROJEKT_MODEL.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KWZPEntities.edmx</DependentUpon>
-      <LastGenOutput>KWZPEntities.cs</LastGenOutput>
+      <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
+      <LastGenOutput>KWZP_PROJEKT_MODEL.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

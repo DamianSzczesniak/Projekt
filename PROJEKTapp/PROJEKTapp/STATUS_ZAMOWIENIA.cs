@@ -20,9 +20,8 @@ namespace PROJEKTapp
             this.ZAMOWIENIA = new HashSet<ZAMOWIENIA>();
         }
     
-        public int ID_STATUS_ZAMOWIENIA { get; set; }
+        public int ID_STATUSU_ZAMOWIENIA { get; set; }
         public string NAZWA { get; set; }
-        public Nullable<System.DateTime> DATA_ZMIANY { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ZAMOWIENIA> ZAMOWIENIA { get; set; }

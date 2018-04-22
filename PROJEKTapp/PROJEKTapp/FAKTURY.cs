@@ -17,8 +17,8 @@ namespace PROJEKTapp
         public int ID_FAKTURY { get; set; }
         public Nullable<int> ID_ZLECENIA { get; set; }
         public Nullable<int> ID_PRACOWNIKA { get; set; }
-        public string DATA_WYSTAWIENIA { get; set; }
-        public string DATA_PLATNOSCI { get; set; }
+        public Nullable<System.DateTime> DATA_WYSTAWIENIA { get; set; }
+        public Nullable<System.DateTime> DATA_PLATNOSCI { get; set; }
         public Nullable<decimal> KWOTA { get; set; }
         public string WALUTA { get; set; }
     

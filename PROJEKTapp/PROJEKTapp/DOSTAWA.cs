@@ -16,8 +16,10 @@ namespace PROJEKTapp
     {
         public int ID_DOSTAWY { get; set; }
         public Nullable<int> ID_ADRESU { get; set; }
-        public Nullable<int> DŁUGOŚĆ_TRASY { get; set; }
+        public Nullable<int> ID_FIRMY { get; set; }
+        public Nullable<int> DLUGOSC_TRASY { get; set; }
     
         public virtual ADRESY ADRESY { get; set; }
+        public virtual FIRMY FIRMY { get; set; }
     }
 }

@@ -49,21 +49,20 @@ namespace PROJEKTapp
         public virtual DbSet<REALIZACJA_PRODUKCJA> REALIZACJA_PRODUKCJA { get; set; }
         public virtual DbSet<SLOWNIK_PROCES_TECHNOLOGICZNY> SLOWNIK_PROCES_TECHNOLOGICZNY { get; set; }
         public virtual DbSet<STANOWISKO> STANOWISKO { get; set; }
+        public virtual DbSet<STANOWISKO_PRACOWNICY> STANOWISKO_PRACOWNICY { get; set; }
         public virtual DbSet<STATUS_ZAMOWIENIA> STATUS_ZAMOWIENIA { get; set; }
         public virtual DbSet<STATUS_ZLECENIA> STATUS_ZLECENIA { get; set; }
         public virtual DbSet<STAWKA> STAWKA { get; set; }
+        public virtual DbSet<STAWKA_PRACOWNICY> STAWKA_PRACOWNICY { get; set; }
         public virtual DbSet<SZKOLENIA> SZKOLENIA { get; set; }
         public virtual DbSet<TYPY_ZMIANY_STANU> TYPY_ZMIANY_STANU { get; set; }
         public virtual DbSet<WALUTY> WALUTY { get; set; }
         public virtual DbSet<WOLNE> WOLNE { get; set; }
+        public virtual DbSet<WOLNE_PRACOWNICY> WOLNE_PRACOWNICY { get; set; }
         public virtual DbSet<ZAMOWIENIA> ZAMOWIENIA { get; set; }
         public virtual DbSet<ZLECENIA> ZLECENIA { get; set; }
         public virtual DbSet<PARAMETRY_MASZYNY> PARAMETRY_MASZYNY { get; set; }
         public virtual DbSet<PARAMETRY_MATERIALU> PARAMETRY_MATERIALU { get; set; }
-        public virtual DbSet<PRACOWNICY_ADRESY_PRACOWNICY> PRACOWNICY_ADRESY_PRACOWNICY { get; set; }
         public virtual DbSet<PRODUKCJA_POLPRODUKTU> PRODUKCJA_POLPRODUKTU { get; set; }
-        public virtual DbSet<STANOWISKO_PRACOWNICY> STANOWISKO_PRACOWNICY { get; set; }
-        public virtual DbSet<STAWKA_PRACOWNICY> STAWKA_PRACOWNICY { get; set; }
-        public virtual DbSet<WOLNE_PRACOWNICY> WOLNE_PRACOWNICY { get; set; }
     }
 }

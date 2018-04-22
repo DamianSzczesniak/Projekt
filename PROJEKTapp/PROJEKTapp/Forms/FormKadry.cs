@@ -12,6 +12,7 @@ namespace PROJEKTapp
 {
     public partial class FormKadry : Form
     {
+        KWZP_PROJEKTEntities kwzpProjektEntities = new KWZP_PROJEKTEntities();//połaczenie z bazą danych
         public FormKadry()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace PROJEKTapp
 
         private void btnPracownicy_Click(object sender, EventArgs e)
         {
-            FormPracownicy Pracownicy = new FormPracownicy();
+            FormPracownicy Pracownicy = new FormPracownicy(kwzpProjektEntities);
             Pracownicy.Show();
         }
 

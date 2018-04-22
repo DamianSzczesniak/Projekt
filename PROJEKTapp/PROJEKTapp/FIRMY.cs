@@ -17,6 +17,7 @@ namespace PROJEKTapp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public FIRMY()
         {
+            this.DOSTAWA = new HashSet<DOSTAWA>();
             this.POJAZDY = new HashSet<POJAZDY>();
             this.ZAMOWIENIA = new HashSet<ZAMOWIENIA>();
             this.ZLECENIA = new HashSet<ZLECENIA>();
@@ -28,6 +29,8 @@ namespace PROJEKTapp
         public string NR_TELEFONU { get; set; }
         public string NIP { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DOSTAWA> DOSTAWA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<POJAZDY> POJAZDY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
