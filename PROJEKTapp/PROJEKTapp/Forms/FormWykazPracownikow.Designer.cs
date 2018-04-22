@@ -35,6 +35,7 @@
             this.txtWyszukajNazwisko = new System.Windows.Forms.TextBox();
             this.btnZaktualizuj = new System.Windows.Forms.Button();
             this.btnUsun = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +71,7 @@
             // txtWyszukajNazwisko
             // 
             this.txtWyszukajNazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtWyszukajNazwisko.Location = new System.Drawing.Point(12, 77);
+            this.txtWyszukajNazwisko.Location = new System.Drawing.Point(148, 77);
             this.txtWyszukajNazwisko.Name = "txtWyszukajNazwisko";
             this.txtWyszukajNazwisko.Size = new System.Drawing.Size(240, 26);
             this.txtWyszukajNazwisko.TabIndex = 15;
@@ -96,10 +97,20 @@
             this.btnUsun.UseVisualStyleBackColor = true;
             this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Wyszukaj Nazwisko";
+            // 
             // FormWykazPracownikow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 555);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUsun);
             this.Controls.Add(this.btnZaktualizuj);
             this.Controls.Add(this.txtWyszukajNazwisko);
@@ -125,5 +136,6 @@
         private System.Windows.Forms.TextBox txtWyszukajNazwisko;
         private System.Windows.Forms.Button btnZaktualizuj;
         private System.Windows.Forms.Button btnUsun;
+        private System.Windows.Forms.Label label1;
     }
 }

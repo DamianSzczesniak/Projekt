@@ -26,6 +26,32 @@ namespace PROJEKTapp
             cbMiasto.DataSource = db.MIASTA.ToList();
             cbMiasto.DisplayMember = "Nazwa";
             cbMiasto.ValueMember = "Id_Miasta";
+            btnUpdate.Hide();
+        }
+
+        public FormPracownicy(KWZP_PROJEKTEntities db, PRACOWNICY pracownik)
+        {
+            this.db = db;
+            InitializeComponent();
+            cbStanowisko.DataSource = db.STANOWISKO.ToList();
+            cbStanowisko.DisplayMember = "Nazwa";
+            cbStanowisko.ValueMember = "Id_Stanowisko";
+
+            cbMiasto.DataSource = db.MIASTA.ToList();
+            cbMiasto.DisplayMember = "Nazwa";
+            cbMiasto.ValueMember = "Id_Miasta";
+
+            btnDodaj.Hide();
+
+            txtboxNazwisko.Text = pracownik.NAZWISKO;
+            txtboxImie.Text = pracownik.IMIE;
+            txtboxKodpocztowy.Text = "";
+            txtboxTel.Text = pracownik.TELEFON;
+            txtboxPesel.Text = pracownik.PESEL;
+            txtboxUlica.Text = "";
+            txtNrbudynku.Text = "";
+            txtboxNrlokalu.Text = "" ;
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

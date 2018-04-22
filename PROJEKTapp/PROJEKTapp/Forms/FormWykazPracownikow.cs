@@ -12,6 +12,7 @@ namespace PROJEKTapp
 {
     public partial class FormWykazPracownikow : Form
     {
+        PRACOWNICY pracownik;
         KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities();//połaczenie z bazą danych
         public FormWykazPracownikow(KWZP_PROJEKTEntities db)
         {
@@ -31,25 +32,29 @@ namespace PROJEKTapp
 
         private void FormWykazPracownikow_Load(object sender, EventArgs e)
         {
-            var bspracownicy = from p in db.PRACOWNICY join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
+            var bspracownicy = from p in db.PRACOWNICY
+                               join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
                                join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
-                               select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA};
-
-            ListaPracownikow.DataSource = bspracownicy.ToList();
+                               select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
+            this.ListaPracownikow.DataSource = bspracownicy.ToList();
         }
 
         private void txtWyszukajNazwisko_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(this.txtWyszukajNazwisko.Text))
             {
-                this.ListaPracownikow.DataSource = db.PRACOWNICY.ToList();
+                var bspracownicy = from p in db.PRACOWNICY
+                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
+                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
+                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
+
+                this.ListaPracownikow.DataSource = bspracownicy.ToList();
             }
             else
             {
-                //Dodać wyszukiwarkę 
+                this.ListaPracownikow.DataSource = db.PRACOWNICY.Where(x => x.NAZWISKO.StartsWith(txtWyszukajNazwisko.Text)).ToList();
             }
-    }
-
+        }
         private void btnUsun_Click(object sender, EventArgs e)
         {
             //usówanie rekordu
@@ -57,7 +62,13 @@ namespace PROJEKTapp
 
         private void btnZaktualizuj_Click(object sender, EventArgs e)
         {
-            //otwierania formularza do edycji, trzeba przypisać dane z zaznaczonego rzędu w ListaPracownikow
+            //otwierania formularza do edycji, trzeba przypisać dane powiązane z zaznaczonym rzędem w ListaPracownikow + przciążenieformularza
+
+            //pracownik = ;
+            //FormPracownicy Pracownicy = new FormPracownicy(db, pracownik);
+            //Pracownicy.Show();
+
         }
+
     }
 }
