@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKadry));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnStatystyki = new System.Windows.Forms.Button();
             this.btnSzkolenia = new System.Windows.Forms.Button();
             this.btnUrlopy = new System.Windows.Forms.Button();
             this.btnWynagrodzenia = new System.Windows.Forms.Button();
             this.btnPracownicy = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnStatystyki = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -53,14 +53,26 @@
             this.panel1.Size = new System.Drawing.Size(944, 59);
             this.panel1.TabIndex = 0;
             // 
+            // btnExit
+            // 
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(863, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(57, 55);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 31);
+            this.label1.Size = new System.Drawing.Size(202, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Kadry i Finanse";
             // 
@@ -78,6 +90,22 @@
             this.panel2.Size = new System.Drawing.Size(944, 135);
             this.panel2.TabIndex = 1;
             // 
+            // btnStatystyki
+            // 
+            this.btnStatystyki.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnStatystyki.FlatAppearance.BorderSize = 0;
+            this.btnStatystyki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatystyki.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnStatystyki.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnStatystyki.Image = ((System.Drawing.Image)(resources.GetObject("btnStatystyki.Image")));
+            this.btnStatystyki.Location = new System.Drawing.Point(752, -3);
+            this.btnStatystyki.Name = "btnStatystyki";
+            this.btnStatystyki.Size = new System.Drawing.Size(188, 135);
+            this.btnStatystyki.TabIndex = 2;
+            this.btnStatystyki.Text = "Statystyki";
+            this.btnStatystyki.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnStatystyki.UseVisualStyleBackColor = false;
+            // 
             // btnSzkolenia
             // 
             this.btnSzkolenia.BackColor = System.Drawing.SystemColors.Highlight;
@@ -93,7 +121,6 @@
             this.btnSzkolenia.Text = "Szkolenia";
             this.btnSzkolenia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSzkolenia.UseVisualStyleBackColor = false;
-            this.btnSzkolenia.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnUrlopy
             // 
@@ -109,7 +136,6 @@
             this.btnUrlopy.Text = "Urlopy";
             this.btnUrlopy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUrlopy.UseVisualStyleBackColor = true;
-            this.btnUrlopy.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnWynagrodzenia
             // 
@@ -126,7 +152,6 @@
             this.btnWynagrodzenia.Text = "Wynagrodzenia";
             this.btnWynagrodzenia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnWynagrodzenia.UseVisualStyleBackColor = false;
-            this.btnWynagrodzenia.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnPracownicy
             // 
@@ -142,36 +167,7 @@
             this.btnPracownicy.Text = "Pracownicy";
             this.btnPracownicy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPracownicy.UseVisualStyleBackColor = true;
-            this.btnPracownicy.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(863, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 55);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnStatystyki
-            // 
-            this.btnStatystyki.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnStatystyki.FlatAppearance.BorderSize = 0;
-            this.btnStatystyki.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatystyki.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnStatystyki.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnStatystyki.Image = ((System.Drawing.Image)(resources.GetObject("btnStatystyki.Image")));
-            this.btnStatystyki.Location = new System.Drawing.Point(752, -3);
-            this.btnStatystyki.Name = "btnStatystyki";
-            this.btnStatystyki.Size = new System.Drawing.Size(188, 135);
-            this.btnStatystyki.TabIndex = 2;
-            this.btnStatystyki.Text = "Statystyki";
-            this.btnStatystyki.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnStatystyki.UseVisualStyleBackColor = false;
-            this.btnStatystyki.Click += new System.EventHandler(this.button1_Click);
+            this.btnPracownicy.Click += new System.EventHandler(this.btnPracownicy_Click);
             // 
             // FormKadry
             // 
@@ -201,7 +197,7 @@
         private System.Windows.Forms.Button btnUrlopy;
         private System.Windows.Forms.Button btnWynagrodzenia;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnStatystyki;
     }
 }
