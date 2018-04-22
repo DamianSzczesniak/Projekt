@@ -50,18 +50,12 @@
             this.txtboxKraj = new System.Windows.Forms.TextBox();
             this.lblMiasto = new System.Windows.Forms.Label();
             this.btnDodaj = new System.Windows.Forms.Button();
-            this.btnZaktualizuj = new System.Windows.Forms.Button();
-            this.btnUsun = new System.Windows.Forms.Button();
             this.btnWyczysc = new System.Windows.Forms.Button();
-            this.ListaPracownikow = new System.Windows.Forms.DataGridView();
-            this.lblWyszukaj = new System.Windows.Forms.Label();
-            this.txtboxWyszukaj = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDataRozpoczeciaPracy = new System.Windows.Forms.DateTimePicker();
             this.cbMiasto = new System.Windows.Forms.ComboBox();
             this.cbStanowisko = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +75,7 @@
             this.txtboxImie.Location = new System.Drawing.Point(186, 59);
             this.txtboxImie.Name = "txtboxImie";
             this.txtboxImie.Size = new System.Drawing.Size(170, 26);
-            this.txtboxImie.TabIndex = 1;
+            this.txtboxImie.TabIndex = 0;
             // 
             // lblNazwisko
             // 
@@ -117,7 +111,7 @@
             this.txtboxTel.Location = new System.Drawing.Point(186, 121);
             this.txtboxTel.Name = "txtboxTel";
             this.txtboxTel.Size = new System.Drawing.Size(170, 26);
-            this.txtboxTel.TabIndex = 1;
+            this.txtboxTel.TabIndex = 2;
             // 
             // lblPesel
             // 
@@ -135,7 +129,7 @@
             this.txtboxPesel.Location = new System.Drawing.Point(186, 152);
             this.txtboxPesel.Name = "txtboxPesel";
             this.txtboxPesel.Size = new System.Drawing.Size(170, 26);
-            this.txtboxPesel.TabIndex = 1;
+            this.txtboxPesel.TabIndex = 3;
             // 
             // lblStanowisko
             // 
@@ -163,7 +157,7 @@
             this.txtboxUlica.Location = new System.Drawing.Point(186, 216);
             this.txtboxUlica.Name = "txtboxUlica";
             this.txtboxUlica.Size = new System.Drawing.Size(170, 26);
-            this.txtboxUlica.TabIndex = 1;
+            this.txtboxUlica.TabIndex = 5;
             // 
             // lblNrbudynku
             // 
@@ -181,7 +175,7 @@
             this.txtNrbudynku.Location = new System.Drawing.Point(186, 247);
             this.txtNrbudynku.Name = "txtNrbudynku";
             this.txtNrbudynku.Size = new System.Drawing.Size(170, 26);
-            this.txtNrbudynku.TabIndex = 1;
+            this.txtNrbudynku.TabIndex = 6;
             // 
             // lblNrlokalu
             // 
@@ -199,7 +193,7 @@
             this.txtboxNrlokalu.Location = new System.Drawing.Point(186, 278);
             this.txtboxNrlokalu.Name = "txtboxNrlokalu";
             this.txtboxNrlokalu.Size = new System.Drawing.Size(170, 26);
-            this.txtboxNrlokalu.TabIndex = 1;
+            this.txtboxNrlokalu.TabIndex = 7;
             // 
             // lblKodpocztowy
             // 
@@ -217,7 +211,7 @@
             this.txtboxKodpocztowy.Location = new System.Drawing.Point(186, 309);
             this.txtboxKodpocztowy.Name = "txtboxKodpocztowy";
             this.txtboxKodpocztowy.Size = new System.Drawing.Size(170, 26);
-            this.txtboxKodpocztowy.TabIndex = 1;
+            this.txtboxKodpocztowy.TabIndex = 8;
             // 
             // lblKraj
             // 
@@ -235,7 +229,8 @@
             this.txtboxKraj.Location = new System.Drawing.Point(186, 340);
             this.txtboxKraj.Name = "txtboxKraj";
             this.txtboxKraj.Size = new System.Drawing.Size(170, 26);
-            this.txtboxKraj.TabIndex = 1;
+            this.txtboxKraj.TabIndex = 9;
+            this.txtboxKraj.Text = "Polska";
             // 
             // lblMiasto
             // 
@@ -252,61 +247,20 @@
             this.btnDodaj.Location = new System.Drawing.Point(106, 487);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(75, 36);
-            this.btnDodaj.TabIndex = 2;
-            this.btnDodaj.Text = "Dodaj Pracownika";
+            this.btnDodaj.TabIndex = 12;
+            this.btnDodaj.Text = "Zapisz";
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
-            // btnZaktualizuj
-            // 
-            this.btnZaktualizuj.Location = new System.Drawing.Point(187, 487);
-            this.btnZaktualizuj.Name = "btnZaktualizuj";
-            this.btnZaktualizuj.Size = new System.Drawing.Size(75, 36);
-            this.btnZaktualizuj.TabIndex = 2;
-            this.btnZaktualizuj.Text = "Zaktualizuj Dane";
-            this.btnZaktualizuj.UseVisualStyleBackColor = true;
-            // 
-            // btnUsun
-            // 
-            this.btnUsun.Location = new System.Drawing.Point(266, 487);
-            this.btnUsun.Name = "btnUsun";
-            this.btnUsun.Size = new System.Drawing.Size(75, 36);
-            this.btnUsun.TabIndex = 2;
-            this.btnUsun.Text = "Usun Pracownika";
-            this.btnUsun.UseVisualStyleBackColor = true;
-            // 
             // btnWyczysc
             // 
-            this.btnWyczysc.Location = new System.Drawing.Point(347, 487);
+            this.btnWyczysc.Location = new System.Drawing.Point(268, 487);
             this.btnWyczysc.Name = "btnWyczysc";
             this.btnWyczysc.Size = new System.Drawing.Size(75, 36);
-            this.btnWyczysc.TabIndex = 2;
+            this.btnWyczysc.TabIndex = 15;
             this.btnWyczysc.Text = "Wyczysc Dane";
             this.btnWyczysc.UseVisualStyleBackColor = true;
-            // 
-            // ListaPracownikow
-            // 
-            this.ListaPracownikow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaPracownikow.Location = new System.Drawing.Point(376, 124);
-            this.ListaPracownikow.Name = "ListaPracownikow";
-            this.ListaPracownikow.Size = new System.Drawing.Size(412, 278);
-            this.ListaPracownikow.TabIndex = 3;
-            // 
-            // lblWyszukaj
-            // 
-            this.lblWyszukaj.AutoSize = true;
-            this.lblWyszukaj.Location = new System.Drawing.Point(384, 101);
-            this.lblWyszukaj.Name = "lblWyszukaj";
-            this.lblWyszukaj.Size = new System.Drawing.Size(53, 13);
-            this.lblWyszukaj.TabIndex = 4;
-            this.lblWyszukaj.Text = "Wyszukaj";
-            // 
-            // txtboxWyszukaj
-            // 
-            this.txtboxWyszukaj.Location = new System.Drawing.Point(443, 96);
-            this.txtboxWyszukaj.Name = "txtboxWyszukaj";
-            this.txtboxWyszukaj.Size = new System.Drawing.Size(181, 20);
-            this.txtboxWyszukaj.TabIndex = 5;
+            this.btnWyczysc.Click += new System.EventHandler(this.btnWyczysc_Click);
             // 
             // pictureBox1
             // 
@@ -325,7 +279,7 @@
             this.label1.Location = new System.Drawing.Point(75, 419);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 20);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Data rozpoczecia pracy:";
             // 
             // txtDataRozpoczeciaPracy
@@ -333,7 +287,7 @@
             this.txtDataRozpoczeciaPracy.Location = new System.Drawing.Point(260, 419);
             this.txtDataRozpoczeciaPracy.Name = "txtDataRozpoczeciaPracy";
             this.txtDataRozpoczeciaPracy.Size = new System.Drawing.Size(200, 20);
-            this.txtDataRozpoczeciaPracy.TabIndex = 8;
+            this.txtDataRozpoczeciaPracy.TabIndex = 11;
             // 
             // cbMiasto
             // 
@@ -342,7 +296,7 @@
             this.cbMiasto.Location = new System.Drawing.Point(186, 371);
             this.cbMiasto.Name = "cbMiasto";
             this.cbMiasto.Size = new System.Drawing.Size(170, 28);
-            this.cbMiasto.TabIndex = 9;
+            this.cbMiasto.TabIndex = 10;
             // 
             // cbStanowisko
             // 
@@ -351,23 +305,18 @@
             this.cbStanowisko.Location = new System.Drawing.Point(186, 183);
             this.cbStanowisko.Name = "cbStanowisko";
             this.cbStanowisko.Size = new System.Drawing.Size(170, 28);
-            this.cbStanowisko.TabIndex = 10;
+            this.cbStanowisko.TabIndex = 4;
             // 
             // FormPracownicy
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(800, 535);
+            this.ClientSize = new System.Drawing.Size(804, 535);
             this.Controls.Add(this.cbStanowisko);
             this.Controls.Add(this.cbMiasto);
             this.Controls.Add(this.txtDataRozpoczeciaPracy);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.txtboxWyszukaj);
-            this.Controls.Add(this.lblWyszukaj);
-            this.Controls.Add(this.ListaPracownikow);
             this.Controls.Add(this.btnWyczysc);
-            this.Controls.Add(this.btnUsun);
-            this.Controls.Add(this.btnZaktualizuj);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.lblMiasto);
             this.Controls.Add(this.txtboxKraj);
@@ -392,8 +341,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormPracownicy";
             this.Text = "FormPracownicy";
-            this.Load += new System.EventHandler(this.FormPracownicy_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -423,12 +370,7 @@
         private System.Windows.Forms.TextBox txtboxKraj;
         private System.Windows.Forms.Label lblMiasto;
         private System.Windows.Forms.Button btnDodaj;
-        private System.Windows.Forms.Button btnZaktualizuj;
-        private System.Windows.Forms.Button btnUsun;
         private System.Windows.Forms.Button btnWyczysc;
-        private System.Windows.Forms.DataGridView ListaPracownikow;
-        private System.Windows.Forms.Label lblWyszukaj;
-        private System.Windows.Forms.TextBox txtboxWyszukaj;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker txtDataRozpoczeciaPracy;

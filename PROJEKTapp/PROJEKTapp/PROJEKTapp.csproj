@@ -108,6 +108,12 @@
     <Compile Include="Forms\FormProdukcja.designer.cs">
       <DependentUpon>FormProdukcja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormWykazPracownikow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormWykazPracownikow.Designer.cs">
+      <DependentUpon>FormWykazPracownikow.cs</DependentUpon>
+    </Compile>
     <Compile Include="KWZP_PROJEKT_MODEL.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPracownicy.resx">
       <DependentUpon>FormPracownicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormWykazPracownikow.resx">
+      <DependentUpon>FormWykazPracownikow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -14,6 +14,7 @@ namespace PROJEKTapp
     public partial class FormPracownicy : Form
     {
         KWZP_PROJEKTEntities db;
+
         public FormPracownicy(KWZP_PROJEKTEntities db)
         {
             this.db = db;
@@ -34,39 +35,52 @@ namespace PROJEKTapp
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            PRACOWNICY pracownicyNew = new PRACOWNICY
+            if (txtboxImie.Text == "" || txtboxNazwisko.Text == "" || txtboxTel.Text=="" || txtboxPesel.Text =="" || txtboxUlica.Text == "" || txtNrbudynku.Text == "" || txtboxNrlokalu.Text == "" || txtboxKodpocztowy.Text == "")
             {
-                IMIE = txtboxImie.Text,
-                NAZWISKO = txtboxNazwisko.Text,
-                PESEL = txtboxPesel.Text,
-                TELEFON = txtboxTel.Text
-            };
-            ADRESY_PRACOWNICY adresypracownicy = new ADRESY_PRACOWNICY
+                MessageBox.Show("Wypełnij wszystkie pola");
+            }
+            else
             {
-                ULICA = txtboxUlica.Text,
-                NR_BUDYNKU = txtNrbudynku.Text,
-                NR_LOKALU = txtboxNrlokalu.Text,
-                KOD_POCZTOWY = txtboxKodpocztowy.Text,
-                ID_MIASTA = (int)cbMiasto.SelectedValue,
-                KRAJ = txtboxKraj.Text,
-            };
-            db.PRACOWNICY.Add(pracownicyNew);
-            db.ADRESY_PRACOWNICY.Add(adresypracownicy);
-            pracownicyNew.ADRESY_PRACOWNICY.Add(adresypracownicy);
+                PRACOWNICY pracownicyNew = new PRACOWNICY
+                {
+                    IMIE = txtboxImie.Text,
+                    NAZWISKO = txtboxNazwisko.Text,
+                    PESEL = txtboxPesel.Text,
+                    TELEFON = txtboxTel.Text
+                };
+                ADRESY_PRACOWNICY adresypracownicy = new ADRESY_PRACOWNICY
+                {
+                    ULICA = txtboxUlica.Text,
+                    NR_BUDYNKU = txtNrbudynku.Text,
+                    NR_LOKALU = txtboxNrlokalu.Text,
+                    KOD_POCZTOWY = txtboxKodpocztowy.Text,
+                    ID_MIASTA = (int)cbMiasto.SelectedValue,
+                    KRAJ = txtboxKraj.Text,
+                };
+                db.PRACOWNICY.Add(pracownicyNew);
+                db.ADRESY_PRACOWNICY.Add(adresypracownicy);
+                pracownicyNew.ADRESY_PRACOWNICY.Add(adresypracownicy);
 
-            STANOWISKO_PRACOWNICY stanowiskopracownicy = new STANOWISKO_PRACOWNICY
-            {
-                ID_PRACOWNIK = pracownicyNew.ID_PRACOWNIK,
-                ID_STANOWISKO = (int)cbStanowisko.SelectedValue,
-                DATA_START = txtDataRozpoczeciaPracy.Value
-            };
-            db.STANOWISKO_PRACOWNICY.Add(stanowiskopracownicy);
-            db.SaveChanges();
+                STANOWISKO_PRACOWNICY stanowiskopracownicy = new STANOWISKO_PRACOWNICY
+                {
+                    ID_PRACOWNIK = pracownicyNew.ID_PRACOWNIK,
+                    ID_STANOWISKO = (int)cbStanowisko.SelectedValue,
+                    DATA_START = txtDataRozpoczeciaPracy.Value
+                };
+                db.STANOWISKO_PRACOWNICY.Add(stanowiskopracownicy);
+                db.SaveChanges();
+            }
         }
-
-        private void FormPracownicy_Load(object sender, EventArgs e)
+        private void btnWyczysc_Click(object sender, EventArgs e)
         {
-            this.ListaPracownikow.DataSource = db.PRACOWNICY.ToList(); //TO DO wybrać dane do wyświetlenia
+            txtboxNazwisko.Clear();
+            txtboxImie.Clear();
+            txtboxKodpocztowy.Clear();
+            txtboxTel.Clear();
+            txtboxPesel.Clear();
+            txtboxUlica.Clear();
+            txtNrbudynku.Clear();
+            txtboxNrlokalu.Clear();
         }
     }
 }
