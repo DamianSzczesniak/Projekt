@@ -34,7 +34,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ComboNumerDostawy = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.TopBar_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -105,14 +105,14 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
-            // comboBox1
+            // ComboNumerDostawy
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(176, 107);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 32);
-            this.comboBox1.TabIndex = 18;
+            this.ComboNumerDostawy.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboNumerDostawy.FormattingEnabled = true;
+            this.ComboNumerDostawy.Location = new System.Drawing.Point(176, 107);
+            this.ComboNumerDostawy.Name = "ComboNumerDostawy";
+            this.ComboNumerDostawy.Size = new System.Drawing.Size(121, 32);
+            this.ComboNumerDostawy.TabIndex = 18;
             // 
             // PrzygotowanieTransportu
             // 
@@ -120,7 +120,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(960, 540);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.ComboNumerDostawy);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
@@ -147,6 +147,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ComboNumerDostawy;
     }
 }
