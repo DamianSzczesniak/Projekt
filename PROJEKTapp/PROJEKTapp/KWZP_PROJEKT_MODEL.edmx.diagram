@@ -86,6 +86,8 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.WYKORZYSTANE_PROCESY" Width="1.5" PointX="15.375" PointY="0.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.OBCIAZENIE_MASZYN" Width="1.5" PointX="15.375" PointY="3.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.OBCIAZENIE_NARZEDZI" Width="1.5" PointX="15.375" PointY="6.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.GABARYT_PRODUTKU" Width="1.5" PointX="15.375" PointY="9.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.MASA_PRODUKTU" Width="1.5" PointX="15.375" PointY="12.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -40,5 +40,17 @@ namespace PROJEKTapp
             Forms_Produkcja.FormObciazenie obciazenie = new Forms_Produkcja.FormObciazenie(kwzpProjektEntities);
             obciazenie.Show();
         }
+
+        private void btnGabaryty_Click(object sender, EventArgs e)
+        {
+            Forms_Produkcja.FormGabaryty gabaryty = new Forms_Produkcja.FormGabaryty(kwzpProjektEntities);
+            gabaryty.Show();
+        }
+
+        private void btnEwidencjaMaszyn_Click(object sender, EventArgs e)
+        {
+            Forms_Produkcja.FormEwidencja ewidencja = new Forms_Produkcja.FormEwidencja(kwzpProjektEntities);
+            ewidencja.Show();
+        }
     }
 }
