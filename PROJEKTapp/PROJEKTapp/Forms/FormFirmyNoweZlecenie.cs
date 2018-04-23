@@ -12,9 +12,11 @@ namespace PROJEKTapp.Forms
 {
     public partial class FormFirmyNoweZlecenie : Form
     {
+        KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities();
         public FormFirmyNoweZlecenie()
         {
             InitializeComponent();
+            dataGridFirmy.DataSource = db.FIRMY.ToList();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
