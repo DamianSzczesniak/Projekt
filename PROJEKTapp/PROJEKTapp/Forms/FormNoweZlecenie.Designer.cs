@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNoweZlecenie));
             this.groupBoxOferta = new System.Windows.Forms.GroupBox();
             this.dataGridViewOferta = new System.Windows.Forms.DataGridView();
             this.ID_Produktu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +48,7 @@
             this.txtBox_Firma = new System.Windows.Forms.TextBox();
             this.lbl_Data_Realizacji = new System.Windows.Forms.Label();
             this.lbl_Firma_Nowe_Zlecenie = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.groupBoxOferta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).BeginInit();
             this.groupBoxNowe_ZLecenie.SuspendLayout();
@@ -152,6 +154,7 @@
             // 
             // groupBoxNowe_ZLecenie
             // 
+            this.groupBoxNowe_ZLecenie.Controls.Add(this.btnExit);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.lbl_Data_Zlecenia);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.txtBox_Data_Zlecenia);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.btn_Dodaj_Zlecenie);
@@ -224,15 +227,30 @@
             this.lbl_Firma_Nowe_Zlecenie.TabIndex = 2;
             this.lbl_Firma_Nowe_Zlecenie.Text = "Firma";
             // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(314, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(38, 36);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // FormNoweZlecenie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 460);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(718, 460);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBoxNowe_ZLecenie);
             this.Controls.Add(this.groupBoxOferta);
             this.Name = "FormNoweZlecenie";
-            this.Text = "Nowe Zlecenie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.groupBoxOferta.ResumeLayout(false);
             this.groupBoxOferta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).EndInit();
@@ -263,5 +281,6 @@
         private System.Windows.Forms.TextBox txtBox_Firma;
         private System.Windows.Forms.Label lbl_Data_Realizacji;
         private System.Windows.Forms.Label lbl_Firma_Nowe_Zlecenie;
+        private System.Windows.Forms.Button btnExit;
     }
 }
