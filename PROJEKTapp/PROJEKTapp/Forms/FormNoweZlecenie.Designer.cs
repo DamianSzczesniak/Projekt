@@ -41,6 +41,7 @@
             this.lbl_Ilosc_Oferta = new System.Windows.Forms.Label();
             this.lblProdukt_Oferta = new System.Windows.Forms.Label();
             this.groupBoxNowe_ZLecenie = new System.Windows.Forms.GroupBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.lbl_Data_Zlecenia = new System.Windows.Forms.Label();
             this.txtBox_Data_Zlecenia = new System.Windows.Forms.TextBox();
             this.btn_Dodaj_Zlecenie = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@
             this.txtBox_Firma = new System.Windows.Forms.TextBox();
             this.lbl_Data_Realizacji = new System.Windows.Forms.Label();
             this.lbl_Firma_Nowe_Zlecenie = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
             this.groupBoxOferta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).BeginInit();
             this.groupBoxNowe_ZLecenie.SuspendLayout();
@@ -133,6 +133,7 @@
             this.btnPrzedstaw_Oferte.TabIndex = 6;
             this.btnPrzedstaw_Oferte.Text = "Przedstaw Oferte";
             this.btnPrzedstaw_Oferte.UseVisualStyleBackColor = true;
+            this.btnPrzedstaw_Oferte.Click += new System.EventHandler(this.btnPrzedstaw_Oferte_Click);
             // 
             // lbl_Ilosc_Oferta
             // 
@@ -168,6 +169,18 @@
             this.groupBoxNowe_ZLecenie.TabIndex = 10;
             this.groupBoxNowe_ZLecenie.TabStop = false;
             this.groupBoxNowe_ZLecenie.Text = "Nowe Zlecenie";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(314, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(38, 36);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lbl_Data_Zlecenia
             // 
@@ -208,6 +221,7 @@
             this.txtBox_Firma.Name = "txtBox_Firma";
             this.txtBox_Firma.Size = new System.Drawing.Size(100, 20);
             this.txtBox_Firma.TabIndex = 3;
+            this.txtBox_Firma.Click += new System.EventHandler(this.txtBox_Firma_Click);
             // 
             // lbl_Data_Realizacji
             // 
@@ -226,18 +240,6 @@
             this.lbl_Firma_Nowe_Zlecenie.Size = new System.Drawing.Size(32, 13);
             this.lbl_Firma_Nowe_Zlecenie.TabIndex = 2;
             this.lbl_Firma_Nowe_Zlecenie.Text = "Firma";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(314, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(38, 36);
-            this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "X";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormNoweZlecenie
             // 

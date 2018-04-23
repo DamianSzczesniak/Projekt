@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROJEKTapp.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -71,6 +72,18 @@ namespace PROJEKTapp
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtBox_Firma_Click(object sender, EventArgs e)
+        {
+            FormFirmyNoweZlecenie FormFirmyNoweZlecenie = new FormFirmyNoweZlecenie();
+            FormFirmyNoweZlecenie.Show();
+        }
+
+        private void btnPrzedstaw_Oferte_Click(object sender, EventArgs e)
+        {
+            FormOferta FormOferta = new FormOferta();
+            FormOferta.Show();
         }
     }
 }
