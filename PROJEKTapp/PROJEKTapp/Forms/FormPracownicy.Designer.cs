@@ -261,7 +261,7 @@
             this.btnWyczysc.TabIndex = 15;
             this.btnWyczysc.Text = "Wyczysc Dane";
             this.btnWyczysc.UseVisualStyleBackColor = true;
-            this.btnWyczysc.Click += new System.EventHandler(this.btnWyczysc_Click);
+
             // 
             // pictureBox1
             // 

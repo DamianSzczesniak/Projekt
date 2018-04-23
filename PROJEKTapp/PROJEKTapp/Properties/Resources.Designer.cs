@@ -63,9 +63,15 @@ namespace PROJEKTapp.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap btnExit_Image {
             get {
                 object obj = ResourceManager.GetObject("btnExit.Image", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap _return {
+            get {
+                object obj = ResourceManager.GetObject("return", resourceCulture);
+>>>>>>> aa8ae705405654819005d8dfd657a5e2a29b0406
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +79,15 @@ namespace PROJEKTapp.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap btnMachine {
             get {
                 object obj = ResourceManager.GetObject("btnMachine", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap Kreator_faktur {
+            get {
+                object obj = ResourceManager.GetObject("Kreator faktur", resourceCulture);
+>>>>>>> aa8ae705405654819005d8dfd657a5e2a29b0406
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +95,15 @@ namespace PROJEKTapp.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap btnMachine1 {
             get {
                 object obj = ResourceManager.GetObject("btnMachine1", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap Przygotowanie_transportu {
+            get {
+                object obj = ResourceManager.GetObject("Przygotowanie transportu", resourceCulture);
+>>>>>>> aa8ae705405654819005d8dfd657a5e2a29b0406
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +111,75 @@ namespace PROJEKTapp.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap btnObciazenie {
             get {
                 object obj = ResourceManager.GetObject("btnObciazenie", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap return1 {
+            get {
+                object obj = ResourceManager.GetObject("return1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap return2 {
+            get {
+                object obj = ResourceManager.GetObject("return2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top_bar {
+            get {
+                object obj = ResourceManager.GetObject("top_bar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap top_bar1 {
+            get {
+                object obj = ResourceManager.GetObject("top_bar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zamowienie_materialu {
+            get {
+                object obj = ResourceManager.GetObject("zamowienie materialu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zmiana_stanu_magazynu {
+            get {
+                object obj = ResourceManager.GetObject("Zmiana stanu magazynu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zmiana_stanu_magazynu1 {
+            get {
+                object obj = ResourceManager.GetObject("Zmiana stanu magazynu1", resourceCulture);
+>>>>>>> aa8ae705405654819005d8dfd657a5e2a29b0406
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -66,6 +66,30 @@
     <Compile Include="DOSTAWA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormZmianaStanuMagazynu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormZmianaStanuMagazynu.Designer.cs">
+      <DependentUpon>FormZmianaStanuMagazynu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KreatorFaktur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KreatorFaktur.Designer.cs">
+      <DependentUpon>KreatorFaktur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrzygotowanieTransportu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrzygotowanieTransportu.Designer.cs">
+      <DependentUpon>PrzygotowanieTransportu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ZamowienieMaterialu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ZamowienieMaterialu.Designer.cs">
+      <DependentUpon>ZamowienieMaterialu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_Produkcja\Ewidencja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +219,7 @@
     <Compile Include="PRACOWNICY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="PracownikDane.cs" />
     <Compile Include="PROCES.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -275,6 +300,18 @@
     <Compile Include="ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormZmianaStanuMagazynu.resx">
+      <DependentUpon>FormZmianaStanuMagazynu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KreatorFaktur.resx">
+      <DependentUpon>KreatorFaktur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrzygotowanieTransportu.resx">
+      <DependentUpon>PrzygotowanieTransportu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ZamowienieMaterialu.resx">
+      <DependentUpon>ZamowienieMaterialu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\Ewidencja.resx">
       <DependentUpon>Ewidencja.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,9 +390,22 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
       <LastGenOutput>KWZP_PROJEKT_MODEL.cs</LastGenOutput>
     </Content>
+<<<<<<< HEAD
     <None Include="Resources\btnObciazenie.png" />
     <None Include="Resources\btnMachine.png" />
     <None Include="Resources\btnExit.Image.png" />
+=======
+    <None Include="Resources\return2.png" />
+    <None Include="Resources\return1.png" />
+    <None Include="Resources\return.png" />
+    <None Include="Resources\Kreator faktur.png" />
+    <None Include="Resources\zamowienie materialu.png" />
+    <None Include="Resources\Zmiana stanu magazynu1.png" />
+    <None Include="Resources\Przygotowanie transportu.png" />
+    <None Include="Resources\Zmiana stanu magazynu.png" />
+    <None Include="Resources\top_bar1.png" />
+    <None Include="Resources\top_bar.png" />
+>>>>>>> aa8ae705405654819005d8dfd657a5e2a29b0406
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -59,42 +59,36 @@ namespace PROJEKTapp
             this.Close();
         }
 
-        private void btnDodaj_Click(object sender, EventArgs e)
+       
+        private void Insertpracownik(string nazwisko, string imie, string telefon, string pesel,
+            string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, int miasto, string kraj,
+            DateTime data, int stanowisko)
         {
-            if (txtboxImie.Text == "" || txtboxNazwisko.Text == "" || txtboxTel.Text=="" || txtboxPesel.Text =="" || txtboxUlica.Text == "" || txtNrbudynku.Text == "" || txtboxNrlokalu.Text == "" || txtboxKodpocztowy.Text == "")
+                    PracownikDane pracownikdane = new PracownikDane();
+                    pracownikdane.Add(nazwisko, imie, telefon, pesel, ulica, nrbudynku, nrlokalu, kodpocztowy, miasto, kraj, data, stanowisko);
+                }
+
+        protected void btnDodaj_Click(object sender, EventArgs e)
+                {
+            if (txtboxImie.Text == "" || txtboxNazwisko.Text == "" || txtboxTel.Text == "" || txtboxPesel.Text == "" || txtboxUlica.Text == "" || txtNrbudynku.Text == "" || txtboxNrlokalu.Text == "" || txtboxKodpocztowy.Text == "")
             {
                 MessageBox.Show("Wypełnij wszystkie pola");
             }
             else
             {
-                PRACOWNICY pracownicyNew = new PRACOWNICY
-                {
-                    IMIE = txtboxImie.Text,
-                    NAZWISKO = txtboxNazwisko.Text,
-                    PESEL = txtboxPesel.Text,
-                    TELEFON = txtboxTel.Text
-                };
-                ADRESY_PRACOWNICY adresypracownicy = new ADRESY_PRACOWNICY
-                {
-                    ULICA = txtboxUlica.Text,
-                    NR_BUDYNKU = txtNrbudynku.Text,
-                    NR_LOKALU = txtboxNrlokalu.Text,
-                    KOD_POCZTOWY = txtboxKodpocztowy.Text,
-                    ID_MIASTA = (int)cbMiasto.SelectedValue,
-                    KRAJ = txtboxKraj.Text,
-                };
-                db.PRACOWNICY.Add(pracownicyNew);
-                db.ADRESY_PRACOWNICY.Add(adresypracownicy);
-                pracownicyNew.ADRESY_PRACOWNICY.Add(adresypracownicy);
-
-                STANOWISKO_PRACOWNICY stanowiskopracownicy = new STANOWISKO_PRACOWNICY
-                {
-                    ID_PRACOWNIK = pracownicyNew.ID_PRACOWNIK,
-                    ID_STANOWISKO = (int)cbStanowisko.SelectedValue,
-                    DATA_START = txtDataRozpoczeciaPracy.Value
-                };
-                db.STANOWISKO_PRACOWNICY.Add(stanowiskopracownicy);
-                db.SaveChanges();
+                Insertpracownik(txtboxNazwisko.Text,
+                                   txtboxImie.Text,
+                                   txtboxTel.Text,
+                                   txtboxPesel.Text,
+                                   txtboxUlica.Text,
+                                   txtNrbudynku.Text,
+                                   txtboxNrlokalu.Text,
+                                   txtboxKodpocztowy.Text,
+                                   (int)cbMiasto.SelectedValue,
+                                   txtboxKraj.Text,
+                                   txtDataRozpoczeciaPracy.Value,
+                                   (int)cbStanowisko.SelectedValue
+                                   );
             }
         }
         private void btnWyczysc_Click(object sender, EventArgs e)
