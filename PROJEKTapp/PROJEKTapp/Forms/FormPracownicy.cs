@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,39 +30,11 @@ namespace PROJEKTapp
             btnUpdate.Hide();
         }
 
-        public FormPracownicy(KWZP_PROJEKTEntities db, string id_pracownik)
-        {
-            this.db = db;
-            int ID = Int32.Parse(id_pracownik);
-            PracownikDane pracownikwyswietl = new PracownikDane(ID);
-            InitializeComponent();
-            cbStanowisko.DataSource = db.STANOWISKO.ToList();
-            cbStanowisko.DisplayMember = "Nazwa";
-            cbStanowisko.ValueMember = "Id_Stanowisko";
-
-            cbMiasto.DataSource = db.MIASTA.ToList();
-            cbMiasto.DisplayMember = "Nazwa";
-            cbMiasto.ValueMember = "Id_Miasta";
-
-            btnDodaj.Hide();
-
-            //txtboxNazwisko.Text = pracownik.NAZWISKO;
-            //txtboxImie.Text = pracownik.IMIE;
-            //txtboxKodpocztowy.Text = "";
-            //txtboxTel.Text = pracownik.TELEFON;
-            //txtboxPesel.Text = pracownik.PESEL;
-            //txtboxUlica.Text = "";
-            //txtNrbudynku.Text = "";
-            //txtboxNrlokalu.Text = "" ;
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-       
         private void Insertpracownik(string nazwisko, string imie, string telefon, string pesel,
             string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, int miasto, string kraj,
             DateTime data, int stanowisko)
@@ -91,6 +64,7 @@ namespace PROJEKTapp
                                    txtDataRozpoczeciaPracy.Value,
                                    (int)cbStanowisko.SelectedValue
                                    );
+                this.Close();
             }
         }
         private void btnWyczysc_Click(object sender, EventArgs e)

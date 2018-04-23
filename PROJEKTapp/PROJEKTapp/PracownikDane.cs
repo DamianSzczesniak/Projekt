@@ -57,21 +57,29 @@ namespace PROJEKTapp
         }
         public void DeletePracownik(int ID_Pracownik)
         {
-            var user = (from o in db.PRACOWNICY
-                        where o.ID_PRACOWNIK == ID_Pracownik
-                        select o).First();
+            var user = (from p in db.PRACOWNICY
+                        //join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
+                        //join apa in p.
+                        where p.ID_PRACOWNIK == ID_Pracownik
+                        select p).First();
+            var stan = (from s in db.STANOWISKO_PRACOWNICY where s.ID_PRACOWNIK== ID_Pracownik select s).First();
+            //from p in db.PRACOWNICY
+            //from ad in p.ADRESY_PRACOWNICY
+            //join c in db.ADRESY_PRACOWNICY on ad.ID_ADRESU equals c.ID_ADRESU
+            //where p.ID_PRACOWNIK == ID_Pracownik
+            //select ad.ID_ADRESU).First();
+
             //dodać pozostałe dane i tabele
+            var pracownicy = db.PRACOWNICY.FirstOrDefault(p => p.ID_PRACOWNIK == ID_Pracownik);
+            var adresy = db.ADRESY_PRACOWNICY.FirstOrDefault(s => s.ID_ADRESU == (from p in db.PRACOWNICY
+                                                                                 from ad in p.ADRESY_PRACOWNICY
+                                                                                 join c in db.ADRESY_PRACOWNICY on ad.ID_ADRESU equals c.ID_ADRESU
+                                                                                 where p.ID_PRACOWNIK == ID_Pracownik
+                                                                                 select ad.ID_ADRESU).FirstOrDefault());
+            pracownicy.ADRESY_PRACOWNICY.Remove(adresy);
+            db.STANOWISKO_PRACOWNICY.Remove(stan);
             db.PRACOWNICY.Remove(user);
             db.SaveChanges();
         }
-        public PracownikDane(int id_pracownik)
-        {
-            var prac = (from p in db.PRACOWNICY
-                        where p.ID_PRACOWNIK == id_pracownik
-                        select p).First();
-            //wczytanie danych
-        }
-        public PracownikDane()
-        { }
     }
 }

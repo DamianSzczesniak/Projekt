@@ -12,8 +12,9 @@ namespace PROJEKTapp
 {
     public partial class FormWykazPracownikow : Form
     {
-        PRACOWNICY pracownik;
+        //PRACOWNICY pracownik;
         KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities();//połaczenie z bazą danych
+
         public FormWykazPracownikow(KWZP_PROJEKTEntities db)
         {
             InitializeComponent();
@@ -44,10 +45,9 @@ namespace PROJEKTapp
             if (string.IsNullOrEmpty(this.txtWyszukajNazwisko.Text))
             {
                 var bspracownicy = from p in db.PRACOWNICY
-                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
-                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
-                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
-
+                                 join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
+                                 join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
+                                 select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
                 this.ListaPracownikow.DataSource = bspracownicy.ToList();
             }
             else
@@ -57,16 +57,87 @@ namespace PROJEKTapp
         }
         private void btnUsun_Click(object sender, EventArgs e)
         {
-            //usówanie rekordu
+            var bspracownicy = from p in db.PRACOWNICY
+                             join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
+                             join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
+                             select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
+            PracownikDane pracownik = new PracownikDane();
+            pracownik.DeletePracownik(Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
+            ListaPracownikow.DataSource = bspracownicy.ToList();
+            ListaPracownikow.Refresh();
         }
 
         private void btnZaktualizuj_Click(object sender, EventArgs e)
         {
-            //otwierania formularza do edycji, trzeba przypisać dane powiązane z zaznaczonym rzędem w ListaPracownikow + przciążenieformularza
-            string id_pracownik = ListaPracownikow.CurrentRow.Cells[0].Value.ToString();
-            FormPracownicy Pracownicy = new FormPracownicy(db, id_pracownik);
-            Pracownicy.Show();
+            lblImie.Show();
+            lblNazwisko.Show();
+            lblTel.Show();
+            lblPesel.Show();
+            lblUlica.Show();
+            lblNrbudynku.Show();
+            lblNrlokalu.Show();
+            lblKodpocztowy.Show();
+            lblMiasto.Show();
+            lblKraj.Show();
+            lblStanowisko.Show();
+            lblDataStart.Show();
+            txtboxImie.Show();
+            txtboxNazwisko.Show();
+            txtboxTel.Show();
+            txtboxUlica.Show();
+            txtNrbudynku.Show();
+            txtboxNrlokalu.Show();
+            txtboxKodpocztowy.Show();
+            cbMiasto.Show();
+            txtboxKraj.Show();
+            cbStanowisko.Show();
+            txtDataRozpoczeciaPracy.Show();
+            ListaPracownikow.Hide();
+            btnDodaj.Hide();
+            btnUsun.Hide();
+            btnZaktualizuj.Hide();
+            btnZaktualizaujZapisz.Show();
+            LWyszukaj.Text = "Pracownik";
+            txtWyszukajNazwisko.Text = ListaPracownikow.CurrentRow.Cells[1].Value.ToString();
+
+            //PRACOWNICY selectedPracownicy = (PRACOWNICY)((DataGridView)sender).CurrentRow.DataBoundItem;
+            //string id_pracownik = ListaPracownikow.CurrentRow.Cells[0].Value.ToString();
+            //this.txtboxNazwisko.Text = selectedPracownicy.NAZWISKO.ToString();
         }
 
+        private void btnZaktualizaujZapisz_Click(object sender, EventArgs e)
+        {
+            lblImie.Hide();
+            lblNazwisko.Hide();
+            lblTel.Hide();
+            lblPesel.Hide();
+            lblUlica.Hide();
+            lblNrbudynku.Hide();
+            lblNrlokalu.Hide();
+            lblKodpocztowy.Hide();
+            lblMiasto.Hide();
+            lblKraj.Hide();
+            lblStanowisko.Hide();
+            lblDataStart.Hide();
+            txtboxImie.Hide();
+            txtboxNazwisko.Hide();
+            txtboxTel.Hide();
+            txtboxUlica.Hide();
+            txtNrbudynku.Hide();
+            txtboxNrlokalu.Hide();
+            txtboxKodpocztowy.Hide();
+            cbMiasto.Hide();
+            txtboxKraj.Hide();
+            cbStanowisko.Hide();
+            txtDataRozpoczeciaPracy.Hide();
+
+            ListaPracownikow.Show();
+            btnDodaj.Show();
+            btnUsun.Show();
+            btnZaktualizuj.Show();
+            btnZaktualizaujZapisz.Hide();
+            LWyszukaj.Text = "Wyszukaj nazwisko";
+            txtWyszukajNazwisko.Clear();
+        }
     }
 }
