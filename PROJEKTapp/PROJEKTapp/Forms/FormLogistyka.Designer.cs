@@ -45,11 +45,11 @@
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(903, 0);
+            this.button1.Location = new System.Drawing.Point(903, -11);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 56);
+            this.button1.Size = new System.Drawing.Size(57, 67);
             this.button1.TabIndex = 7;
             this.button1.Text = "x";
             this.button1.UseVisualStyleBackColor = false;
@@ -120,6 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(960, 540);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Btn_kreat_fak);
