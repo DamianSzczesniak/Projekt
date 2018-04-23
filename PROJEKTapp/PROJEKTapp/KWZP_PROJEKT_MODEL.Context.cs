@@ -64,5 +64,10 @@ namespace PROJEKTapp
         public virtual DbSet<PARAMETRY_MASZYNY> PARAMETRY_MASZYNY { get; set; }
         public virtual DbSet<PARAMETRY_MATERIALU> PARAMETRY_MATERIALU { get; set; }
         public virtual DbSet<PRODUKCJA_POLPRODUKTU> PRODUKCJA_POLPRODUKTU { get; set; }
+        public virtual DbSet<WYKORZYSTANE_MASZYNY> WYKORZYSTANE_MASZYNY { get; set; }
+        public virtual DbSet<WYKORZYSTANE_NARZEDZIA> WYKORZYSTANE_NARZEDZIA { get; set; }
+        public virtual DbSet<WYKORZYSTANE_PROCESY> WYKORZYSTANE_PROCESY { get; set; }
+        public virtual DbSet<OBCIAZENIE_MASZYN> OBCIAZENIE_MASZYN { get; set; }
+        public virtual DbSet<OBCIAZENIE_NARZEDZI> OBCIAZENIE_NARZEDZI { get; set; }
     }
 }

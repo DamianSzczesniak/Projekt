@@ -114,6 +114,18 @@
     <Compile Include="Forms\FormWykazPracownikow.Designer.cs">
       <DependentUpon>FormWykazPracownikow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_Produkcja\FormObciazenie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormObciazenie.Designer.cs">
+      <DependentUpon>FormObciazenie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormWykorzystaneMaszyny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormWykorzystaneMaszyny.Designer.cs">
+      <DependentUpon>FormWykorzystaneMaszyny.cs</DependentUpon>
+    </Compile>
     <Compile Include="KWZP_PROJEKT_MODEL.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,14 +159,20 @@
     <Compile Include="NARZEDZIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="OBCIAZENIE_MASZYN.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OBCIAZENIE_NARZEDZI.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="OKRES.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms_Produkcja\Oszacowanie_terminu.cs">
+    <Compile Include="Forms_Produkcja\FormOszacowanieTerminu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms_Produkcja\Oszacowanie_terminu.Designer.cs">
-      <DependentUpon>Oszacowanie_terminu.cs</DependentUpon>
+    <Compile Include="Forms_Produkcja\FormOszacowanieTerminu.Designer.cs">
+      <DependentUpon>FormOszacowanieTerminu.cs</DependentUpon>
     </Compile>
     <Compile Include="PARAMETRY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
@@ -242,6 +260,15 @@
     <Compile Include="Forms_Produkcja\Wycena.Designer.cs">
       <DependentUpon>Wycena.cs</DependentUpon>
     </Compile>
+    <Compile Include="WYKORZYSTANE_MASZYNY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WYKORZYSTANE_NARZEDZIA.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WYKORZYSTANE_PROCESY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="ZAMOWIENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -269,8 +296,14 @@
     <EmbeddedResource Include="Forms\FormWykazPracownikow.resx">
       <DependentUpon>FormWykazPracownikow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms_Produkcja\Oszacowanie_terminu.resx">
-      <DependentUpon>Oszacowanie_terminu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms_Produkcja\FormObciazenie.resx">
+      <DependentUpon>FormObciazenie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormWykorzystaneMaszyny.resx">
+      <DependentUpon>FormWykorzystaneMaszyny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormOszacowanieTerminu.resx">
+      <DependentUpon>FormOszacowanieTerminu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\Produkcja_glowny.resx">
       <DependentUpon>Produkcja_glowny.cs</DependentUpon>
@@ -283,6 +316,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Forms_Produkcja\Wycena.resx">
       <DependentUpon>Wycena.cs</DependentUpon>
@@ -319,6 +353,9 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
       <LastGenOutput>KWZP_PROJEKT_MODEL.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\btnObciazenie.png" />
+    <None Include="Resources\btnMachine.png" />
+    <None Include="Resources\btnExit.Image.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
