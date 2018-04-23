@@ -14,7 +14,7 @@ namespace PROJEKTapp.Forms_Produkcja
     public partial class FormObciazenie : Form
     {
         string data;
-        string tryb;
+        string tryb = "Obciążenie Maszyn";
         KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities();
 
         public FormObciazenie(KWZP_PROJEKTEntities kwzpProjektEntities)
@@ -24,7 +24,8 @@ namespace PROJEKTapp.Forms_Produkcja
 
         private void FormObciazenie_Load(object sender, EventArgs e)
         {
-           
+            data = dateWybierzDate.Value.ToShortDateString();
+            this.GridObciazenie.DataSource = db.OBCIAZENIE_MASZYN.Where(x => x.DATA_DZIEN.ToString().Equals(data)).ToList();
         }
 
         private void btnExitObciazenie_Click(object sender, EventArgs e)
@@ -41,21 +42,21 @@ namespace PROJEKTapp.Forms_Produkcja
             }
             else
             {
-                this.GridObciazenie.DataSource = db.OBCIAZENIE_MASZYN.Where(x => x.DATA_DZIEN.ToString().Equals(data)).ToList();
+                this.GridObciazenie.DataSource = db.OBCIAZENIE_NARZEDZI.Where(x => x.DATA_DZIEN.ToString().Equals(data)).ToList();
             }
         }
 
         private void dateWybierzDate_ValueChanged(object sender, EventArgs e)
         {
             data = dateWybierzDate.Value.ToShortDateString();
-            test.Text = dateWybierzDate.Value.ToShortDateString();
+
             if (tryb == "Obciążenie Maszyn")
             {
                 this.GridObciazenie.DataSource = db.OBCIAZENIE_MASZYN.Where(x => x.DATA_DZIEN.ToString().Equals(data)).ToList();
             }
             else
             {
-                this.GridObciazenie.DataSource = db.OBCIAZENIE_MASZYN.Where(x => x.DATA_DZIEN.ToString().Equals(data)).ToList();
+                this.GridObciazenie.DataSource = db.OBCIAZENIE_NARZEDZI.Where(x => x.DATA_DZIEN.ToString().Equals(data)).ToList();
             }
         }
     }

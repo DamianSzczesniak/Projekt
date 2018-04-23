@@ -34,7 +34,6 @@
             this.GridObciazenie = new System.Windows.Forms.DataGridView();
             this.cboxTryb = new System.Windows.Forms.ComboBox();
             this.lblTryb = new System.Windows.Forms.Label();
-            this.test = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridObciazenie)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,21 +99,11 @@
             this.lblTryb.TabIndex = 5;
             this.lblTryb.Text = "Wybierz tryb";
             // 
-            // test
-            // 
-            this.test.AutoSize = true;
-            this.test.Location = new System.Drawing.Point(13, 60);
-            this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(24, 13);
-            this.test.TabIndex = 6;
-            this.test.Text = "test";
-            // 
             // FormObciazenie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.test);
             this.Controls.Add(this.lblTryb);
             this.Controls.Add(this.cboxTryb);
             this.Controls.Add(this.GridObciazenie);
@@ -139,6 +128,5 @@
         private System.Windows.Forms.DataGridView GridObciazenie;
         private System.Windows.Forms.ComboBox cboxTryb;
         private System.Windows.Forms.Label lblTryb;
-        private System.Windows.Forms.Label test;
     }
 }

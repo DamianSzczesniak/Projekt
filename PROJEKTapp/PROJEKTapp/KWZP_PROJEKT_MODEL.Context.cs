@@ -12,6 +12,8 @@ namespace PROJEKTapp
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class KWZP_PROJEKTEntities : DbContext
     {
@@ -69,5 +71,58 @@ namespace PROJEKTapp
         public virtual DbSet<WYKORZYSTANE_PROCESY> WYKORZYSTANE_PROCESY { get; set; }
         public virtual DbSet<OBCIAZENIE_MASZYN> OBCIAZENIE_MASZYN { get; set; }
         public virtual DbSet<OBCIAZENIE_NARZEDZI> OBCIAZENIE_NARZEDZI { get; set; }
+    
+        public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
+        {
+            var imieParameter = imie != null ?
+                new ObjectParameter("Imie", imie) :
+                new ObjectParameter("Imie", typeof(string));
+    
+            var nazwiskoParameter = nazwisko != null ?
+                new ObjectParameter("Nazwisko", nazwisko) :
+                new ObjectParameter("Nazwisko", typeof(string));
+    
+            var telParameter = tel != null ?
+                new ObjectParameter("Tel", tel) :
+                new ObjectParameter("Tel", typeof(string));
+    
+            var pESELParameter = pESEL != null ?
+                new ObjectParameter("PESEL", pESEL) :
+                new ObjectParameter("PESEL", typeof(string));
+    
+            var stanowiskoParameter = stanowisko != null ?
+                new ObjectParameter("Stanowisko", stanowisko) :
+                new ObjectParameter("Stanowisko", typeof(string));
+    
+            var ulicaParameter = ulica != null ?
+                new ObjectParameter("Ulica", ulica) :
+                new ObjectParameter("Ulica", typeof(string));
+    
+            var nrbudynkuParameter = nrbudynku != null ?
+                new ObjectParameter("Nrbudynku", nrbudynku) :
+                new ObjectParameter("Nrbudynku", typeof(string));
+    
+            var nrlokaluParameter = nrlokalu != null ?
+                new ObjectParameter("Nrlokalu", nrlokalu) :
+                new ObjectParameter("Nrlokalu", typeof(string));
+    
+            var kodpocztowyParameter = kodpocztowy != null ?
+                new ObjectParameter("Kodpocztowy", kodpocztowy) :
+                new ObjectParameter("Kodpocztowy", typeof(string));
+    
+            var krajParameter = kraj != null ?
+                new ObjectParameter("Kraj", kraj) :
+                new ObjectParameter("Kraj", typeof(string));
+    
+            var miastoParameter = miasto != null ?
+                new ObjectParameter("Miasto", miasto) :
+                new ObjectParameter("Miasto", typeof(string));
+    
+            var dataRozpoczeciaPracyParameter = dataRozpoczeciaPracy.HasValue ?
+                new ObjectParameter("DataRozpoczeciaPracy", dataRozpoczeciaPracy) :
+                new ObjectParameter("DataRozpoczeciaPracy", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AddPracownik_Result>("AddPracownik", imieParameter, nazwiskoParameter, telParameter, pESELParameter, stanowiskoParameter, ulicaParameter, nrbudynkuParameter, nrlokaluParameter, kodpocztowyParameter, krajParameter, miastoParameter, dataRozpoczeciaPracyParameter);
+        }
     }
 }
