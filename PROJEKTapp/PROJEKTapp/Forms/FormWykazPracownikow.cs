@@ -63,11 +63,9 @@ namespace PROJEKTapp
         private void btnZaktualizuj_Click(object sender, EventArgs e)
         {
             //otwierania formularza do edycji, trzeba przypisać dane powiązane z zaznaczonym rzędem w ListaPracownikow + przciążenieformularza
-
-            //pracownik = ;
-            //FormPracownicy Pracownicy = new FormPracownicy(db, pracownik);
-            //Pracownicy.Show();
-
+            string id_pracownik = ListaPracownikow.CurrentRow.Cells[0].Value.ToString();
+            FormPracownicy Pracownicy = new FormPracownicy(db, id_pracownik);
+            Pracownicy.Show();
         }
 
     }

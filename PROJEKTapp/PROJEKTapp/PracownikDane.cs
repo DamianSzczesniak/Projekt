@@ -51,6 +51,7 @@ namespace PROJEKTapp
             prac.NAZWISKO = pracownik.NAZWISKO;
             prac.IMIE = pracownik.IMIE;
             prac.TELEFON = pracownik.TELEFON;
+            prac.PESEL = pracownik.PESEL;
             //dodać pozostałe dane i tabele
             db.SaveChanges();
         }
@@ -63,5 +64,14 @@ namespace PROJEKTapp
             db.PRACOWNICY.Remove(user);
             db.SaveChanges();
         }
+        public PracownikDane(int id_pracownik)
+        {
+            var prac = (from p in db.PRACOWNICY
+                        where p.ID_PRACOWNIK == id_pracownik
+                        select p).First();
+            //wczytanie danych
+        }
+        public PracownikDane()
+        { }
     }
 }

@@ -65,6 +65,7 @@
             this.ListaPracownikow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListaPracownikow.Location = new System.Drawing.Point(12, 109);
             this.ListaPracownikow.Name = "ListaPracownikow";
+            this.ListaPracownikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ListaPracownikow.Size = new System.Drawing.Size(776, 392);
             this.ListaPracownikow.TabIndex = 14;
             // 
