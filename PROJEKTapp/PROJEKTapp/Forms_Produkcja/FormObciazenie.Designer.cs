@@ -70,9 +70,12 @@
             // 
             // GridObciazenie
             // 
+            this.GridObciazenie.AllowUserToAddRows = false;
+            this.GridObciazenie.AllowUserToDeleteRows = false;
             this.GridObciazenie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridObciazenie.Location = new System.Drawing.Point(110, 80);
             this.GridObciazenie.Name = "GridObciazenie";
+            this.GridObciazenie.ReadOnly = true;
             this.GridObciazenie.Size = new System.Drawing.Size(636, 374);
             this.GridObciazenie.TabIndex = 3;
             // 

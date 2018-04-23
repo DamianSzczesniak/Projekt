@@ -29,13 +29,6 @@
           <Property Name="ID_MIASTA" Type="int" />
           <Property Name="KRAJ" Type="varchar" MaxLength="15" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.DATA_STATUSU_ZLECENIA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="DATA_STATUSU_ZLECENIA">
-          <Property Name="ID_ZLECENIA" Type="int" />
-          <Property Name="ID_STATUSU_ZLECENIA" Type="int" />
-          <Property Name="DATA_ZMIANY" Type="date" />
-        </EntityType>-->
         <EntityType Name="DOKUMENTACJA">
           <Key>
             <PropertyRef Name="ID_DOKUMENTACJI" />
@@ -46,12 +39,6 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.DATA_STATUSU_ZLECENIA' does not h
           <Property Name="ID_PRACOWNIK" Type="int" />
           <Property Name="ID_PROJEKTU" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.DOKUMENTACJA_PROCES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="DOKUMENTACJA_PROCES">
-          <Property Name="ID_DOKUMENTACJI" Type="int" />
-          <Property Name="ID_PROCESU" Type="int" />
-        </EntityType>-->
         <EntityType Name="DOSTAWA">
           <Key>
             <PropertyRef Name="ID_DOSTAWY" />
@@ -61,12 +48,6 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.DOKUMENTACJA_PROCES' does not hav
           <Property Name="ID_FIRMY" Type="int" />
           <Property Name="DLUGOSC_TRASY" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.DOSTAWA_POJAZD' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="DOSTAWA_POJAZD">
-          <Property Name="ID_DOSTAWY" Type="int" />
-          <Property Name="ID_POJAZDU" Type="int" />
-        </EntityType>-->
         <EntityType Name="FAKTURY">
           <Key>
             <PropertyRef Name="ID_FAKTURY" />
@@ -79,12 +60,6 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.DOSTAWA_POJAZD' does not have a p
           <Property Name="KWOTA" Type="money" />
           <Property Name="WALUTA" Type="varchar" MaxLength="3" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.FIRMA_ADRES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="FIRMA_ADRES">
-          <Property Name="ID_FIRMY" Type="int" />
-          <Property Name="ID_ADRESU" Type="int" />
-        </EntityType>-->
         <EntityType Name="FIRMY">
           <Key>
             <PropertyRef Name="ID_FIRMY" />
@@ -245,12 +220,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.PARAMETRY_MATERIALU' does not hav
           <Property Name="CZAS_TRWANIA" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.PROCES_NARZEDZIA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="PROCES_NARZEDZIA">
-          <Property Name="ID_NARZEDZIA" Type="int" />
-          <Property Name="ID_PROCESU" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRODUKCJA_POLPRODUKTU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRODUKCJA_POLPRODUKTU">
           <Key>
@@ -408,13 +377,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRODUKCJA_POLPRODUKTU' does not h
           <Property Name="ID_STATUSU_ZAMOWIENIA" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZAMOWIENIA_MATERIALOW' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ZAMOWIENIA_MATERIALOW">
-          <Property Name="ID_ZAMOWIENIA" Type="int" />
-          <Property Name="ID_MATERIALU" Type="int" />
-          <Property Name="ILOSC" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZESPOL_LUDZI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ZESPOL_LUDZI">
           <Key>
@@ -464,38 +426,29 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZESPOL_NARZEDZI' does not have a 
           <Property Name="ID_FIRMY" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DOSTAWA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ZLECENIE_DOSTAWA">
-          <Property Name="ID_ZLECENIA" Type="int" />
-          <Property Name="ID_DOSTAWY" Type="int" />
-        </EntityType>-->
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.GABARYT_PRODUTKU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GABARYT_PRODUTKU">
+          <Key>
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+            <PropertyRef Name="NAZWA_PARAMETRU" />
+            <PropertyRef Name="JEDNOSTKA_MIARY" />
+          </Key>
+          <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NAZWA" Type="varchar" MaxLength="30" />
+          <Property Name="LICZBA_SZTUK" Type="int" />
+          <Property Name="NAZWA_PARAMETRU" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="WARTOŚĆ" Type="int" />
+          <Property Name="JEDNOSTKA_MIARY" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_PRODUKT' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ZLECENIE_PRODUKT">
-          <Property Name="ID_ZLECENIA" Type="int" />
-          <Property Name="ID_PRODUKTU" Type="int" />
-          <Property Name="ILOSC" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_MATERIALOW' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ZMIANA_STANU_MAGAZYNU_MATERIALOW">
-          <Property Name="ID_LOKALIZACJI" Type="int" />
-          <Property Name="ID_MATERIALU" Type="int" />
-          <Property Name="ID_ZLECENIA" Type="int" />
-          <Property Name="ID_TYPU" Type="int" />
-          <Property Name="ILOSC" Type="int" />
-          <Property Name="DATA_WPISU" Type="date" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_PRODUKTOW' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ZMIANA_STANU_MAGAZYNU_PRODUKTOW">
-          <Property Name="ID_LOKALIZACJI" Type="int" />
-          <Property Name="ID_PRODUKTU" Type="int" />
-          <Property Name="ID_ZLECENIA" Type="int" />
-          <Property Name="ID_TYPU" Type="int" />
-          <Property Name="ILOSC" Type="int" />
-          <Property Name="DATA_WPISU" Type="date" />
-        </EntityType>-->
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.MASA_PRODUKTU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MASA_PRODUKTU">
+          <Key>
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+          </Key>
+          <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="MASA_PRODUKTU" Type="int" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.OBCIAZENIE_MASZYN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="OBCIAZENIE_MASZYN">
@@ -573,15 +526,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.DATA_STATUSU_ZLECENIA' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__DATA_STAT__ID_ST__60A75C0F" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.DATA_STATUSU_ZLECENIA' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__DATA_STAT__ID_ZL__5FB337D6" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.DOKUMENTACJA_PROCES' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__DOKUMENTA__ID_DO__40F9A68C" />-->
         <Association Name="FK__DOKUMENTA__ID_PR__3E1D39E1">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="0..1" />
           <End Role="DOKUMENTACJA" Type="Self.DOKUMENTACJA" Multiplicity="*" />
@@ -606,9 +550,6 @@ error 6004: The table 'KWZP_PROJEKT.dbo.DOKUMENTACJA_PROCES' is referenced by a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.DOKUMENTACJA_PROCES' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__DOKUMENTA__ID_PR__41EDCAC5" />-->
         <Association Name="FK__DOSTAWA__ID_ADRE__123EB7A3">
           <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="0..1" />
           <End Role="DOSTAWA" Type="Self.DOSTAWA" Multiplicity="*" />
@@ -633,12 +574,6 @@ error 6004: The table 'KWZP_PROJEKT.dbo.DOKUMENTACJA_PROCES' is referenced by a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.DOSTAWA_POJAZD' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__DOSTAWA_P__ID_DO__151B244E" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.DOSTAWA_POJAZD' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__DOSTAWA_P__ID_PO__160F4887" />-->
         <Association Name="FK__FAKTURY__ID_PRAC__1CBC4616">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="0..1" />
           <End Role="FAKTURY" Type="Self.FAKTURY" Multiplicity="*" />
@@ -663,12 +598,6 @@ error 6004: The table 'KWZP_PROJEKT.dbo.DOSTAWA_POJAZD' is referenced by a relat
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.FIRMA_ADRES' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__FIRMA_ADR__ID_AD__1F98B2C1" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.FIRMA_ADRES' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__FIRMA_ADR__ID_FI__1EA48E88" />-->
         <Association Name="FK__MASZYNY__ID_MODE__6383C8BA">
           <End Role="MODELE_MASZYN" Type="Self.MODELE_MASZYN" Multiplicity="0..1" />
           <End Role="MASZYNY" Type="Self.MASZYNY" Multiplicity="*" />
@@ -813,12 +742,6 @@ error 6004: The table 'KWZP_PROJEKT.dbo.FIRMA_ADRES' is referenced by a relation
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.PROCES_NARZEDZIA' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__PROCES_NA__ID_NA__3A4CA8FD" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.PROCES_NARZEDZIA' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__PROCES_NA__ID_PR__3B40CD36" />-->
         <Association Name="FK__PRODUKCJA__ID_PO__4A8310C6">
           <End Role="POLPRODUKTY" Type="Self.POLPRODUKTY" Multiplicity="0..1" />
           <End Role="PRODUKCJA_POLPRODUKTU" Type="Self.PRODUKCJA_POLPRODUKTU" Multiplicity="*" />
@@ -975,9 +898,6 @@ error 6004: The table 'KWZP_PROJEKT.dbo.PROCES_NARZEDZIA' is referenced by a rel
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZAMOWIENIA_MATERIALOW' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZAMOWIENI__ID_MA__31B762FC" />-->
         <Association Name="FK__ZAMOWIENI__ID_ST__2EDAF651">
           <End Role="STATUS_ZAMOWIENIA" Type="Self.STATUS_ZAMOWIENIA" Multiplicity="0..1" />
           <End Role="ZAMOWIENIA" Type="Self.ZAMOWIENIA" Multiplicity="*" />
@@ -990,9 +910,6 @@ error 6004: The table 'KWZP_PROJEKT.dbo.ZAMOWIENIA_MATERIALOW' is referenced by 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZAMOWIENIA_MATERIALOW' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZAMOWIENI__ID_ZA__30C33EC3" />-->
         <Association Name="FK__ZESPOL_LU__ID_PR__09A971A2">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
           <End Role="ZESPOL_LUDZI" Type="Self.ZESPOL_LUDZI" Multiplicity="*" />
@@ -1101,42 +1018,6 @@ error 6004: The table 'KWZP_PROJEKT.dbo.ZAMOWIENIA_MATERIALOW' is referenced by 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZLECENIE_DOSTAWA' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZLECENIE___ID_DO__18EBB532" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZLECENIE_PRODUKT' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZLECENIE___ID_PR__4E53A1AA" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZLECENIE_DOSTAWA' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZLECENIE___ID_ZL__17F790F9" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZLECENIE_PRODUKT' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZLECENIE___ID_ZL__4D5F7D71" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_MATERIALOW' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZMIANA_ST__ID_LO__236943A5" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_PRODUKTOW' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZMIANA_ST__ID_LO__282DF8C2" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_MATERIALOW' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZMIANA_ST__ID_MA__245D67DE" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_PRODUKTOW' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZMIANA_ST__ID_PR__29221CFB" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_MATERIALOW' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZMIANA_ST__ID_TY__2645B050" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_PRODUKTOW' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZMIANA_ST__ID_TY__2B0A656D" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_MATERIALOW' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZMIANA_ST__ID_ZL__25518C17" />-->
-        <!--Errors Found During Generation:
-error 6004: The table 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_PRODUKTOW' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__ZMIANA_ST__ID_ZL__2A164134" />-->
         <Function Name="AddPracownik" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Imie" Type="varchar" Mode="In" />
           <Parameter Name="Nazwisko" Type="varchar" Mode="In" />
@@ -1235,6 +1116,22 @@ error 6004: The table 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_PRODUKTOW' is refe
     [ZESPOL_NARZEDZI].[ID_REALIZACJA_PRODUKCJA] AS [ID_REALIZACJA_PRODUKCJA], 
     [ZESPOL_NARZEDZI].[ID_NARZEDZIA] AS [ID_NARZEDZIA]
     FROM [dbo].[ZESPOL_NARZEDZI] AS [ZESPOL_NARZEDZI]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GABARYT_PRODUTKU" EntityType="Self.GABARYT_PRODUTKU" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GABARYT_PRODUTKU].[NAZWA_PRODUKTU] AS [NAZWA_PRODUKTU], 
+    [GABARYT_PRODUTKU].[NAZWA] AS [NAZWA], 
+    [GABARYT_PRODUTKU].[LICZBA_SZTUK] AS [LICZBA_SZTUK], 
+    [GABARYT_PRODUTKU].[NAZWA_PARAMETRU] AS [NAZWA_PARAMETRU], 
+    [GABARYT_PRODUTKU].[WARTOŚĆ] AS [WARTOŚĆ], 
+    [GABARYT_PRODUTKU].[JEDNOSTKA_MIARY] AS [JEDNOSTKA_MIARY]
+    FROM [dbo].[GABARYT_PRODUTKU] AS [GABARYT_PRODUTKU]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MASA_PRODUKTU" EntityType="Self.MASA_PRODUKTU" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MASA_PRODUKTU].[NAZWA_PRODUKTU] AS [NAZWA_PRODUKTU], 
+    [MASA_PRODUKTU].[MASA_PRODUKTU] AS [MASA_PRODUKTU]
+    FROM [dbo].[MASA_PRODUKTU] AS [MASA_PRODUKTU]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="OBCIAZENIE_MASZYN" EntityType="Self.OBCIAZENIE_MASZYN" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2486,6 +2383,8 @@ error 6004: The table 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_PRODUKTOW' is refe
             <Parameter Name="Miasto" Mode="In" Type="String" />
             <Parameter Name="DataRozpoczeciaPracy" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <EntitySet Name="GABARYT_PRODUTKU" EntityType="KWZP_PROJEKTModel.GABARYT_PRODUTKU" />
+          <EntitySet Name="MASA_PRODUKTU" EntityType="KWZP_PROJEKTModel.MASA_PRODUKTU" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -2536,6 +2435,26 @@ error 6004: The table 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_PRODUKTOW' is refe
           <Property Type="String" Name="MARKA" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="TYP_MASZYNY" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <EntityType Name="GABARYT_PRODUTKU">
+          <Key>
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+            <PropertyRef Name="NAZWA_PARAMETRU" />
+            <PropertyRef Name="JEDNOSTKA_MIARY" />
+          </Key>
+          <Property Name="NAZWA_PRODUKTU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LICZBA_SZTUK" Type="Int32" />
+          <Property Name="NAZWA_PARAMETRU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WARTOŚĆ" Type="Int32" />
+          <Property Name="JEDNOSTKA_MIARY" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MASA_PRODUKTU">
+          <Key>
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+          </Key>
+          <Property Name="NAZWA_PRODUKTU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MASA_PRODUKTU1" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3040,6 +2959,26 @@ error 6004: The table 'KWZP_PROJEKT.dbo.ZMIANA_STANU_MAGAZYNU_PRODUKTOW' is refe
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="GABARYT_PRODUTKU">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.GABARYT_PRODUTKU">
+              <MappingFragment StoreEntitySet="GABARYT_PRODUTKU">
+                <ScalarProperty Name="JEDNOSTKA_MIARY" ColumnName="JEDNOSTKA_MIARY" />
+                <ScalarProperty Name="WARTOŚĆ" ColumnName="WARTOŚĆ" />
+                <ScalarProperty Name="NAZWA_PARAMETRU" ColumnName="NAZWA_PARAMETRU" />
+                <ScalarProperty Name="LICZBA_SZTUK" ColumnName="LICZBA_SZTUK" />
+                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+                <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASA_PRODUKTU">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.MASA_PRODUKTU">
+              <MappingFragment StoreEntitySet="MASA_PRODUKTU">
+                <ScalarProperty Name="MASA_PRODUKTU1" ColumnName="MASA_PRODUKTU" />
+                <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

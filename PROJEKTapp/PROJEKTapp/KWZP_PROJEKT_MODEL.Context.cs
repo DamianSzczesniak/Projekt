@@ -71,6 +71,8 @@ namespace PROJEKTapp
         public virtual DbSet<WYKORZYSTANE_PROCESY> WYKORZYSTANE_PROCESY { get; set; }
         public virtual DbSet<OBCIAZENIE_MASZYN> OBCIAZENIE_MASZYN { get; set; }
         public virtual DbSet<OBCIAZENIE_NARZEDZI> OBCIAZENIE_NARZEDZI { get; set; }
+        public virtual DbSet<GABARYT_PRODUTKU> GABARYT_PRODUTKU { get; set; }
+        public virtual DbSet<MASA_PRODUKTU> MASA_PRODUKTU { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {

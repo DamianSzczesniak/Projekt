@@ -40,6 +40,8 @@
             // btnExitWykorzystaneMaszyny
             // 
             this.btnExitWykorzystaneMaszyny.BackColor = System.Drawing.SystemColors.Menu;
+            this.btnExitWykorzystaneMaszyny.FlatAppearance.BorderSize = 0;
+            this.btnExitWykorzystaneMaszyny.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitWykorzystaneMaszyny.Image = global::PROJEKTapp.Properties.Resources.btnExit_Image;
             this.btnExitWykorzystaneMaszyny.Location = new System.Drawing.Point(721, 12);
             this.btnExitWykorzystaneMaszyny.Name = "btnExitWykorzystaneMaszyny";
@@ -50,9 +52,12 @@
             // 
             // GridWykorzystaneMaszyny
             // 
+            this.GridWykorzystaneMaszyny.AllowUserToAddRows = false;
+            this.GridWykorzystaneMaszyny.AllowUserToDeleteRows = false;
             this.GridWykorzystaneMaszyny.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridWykorzystaneMaszyny.Location = new System.Drawing.Point(111, 65);
             this.GridWykorzystaneMaszyny.Name = "GridWykorzystaneMaszyny";
+            this.GridWykorzystaneMaszyny.ReadOnly = true;
             this.GridWykorzystaneMaszyny.Size = new System.Drawing.Size(596, 286);
             this.GridWykorzystaneMaszyny.TabIndex = 1;
             // 
