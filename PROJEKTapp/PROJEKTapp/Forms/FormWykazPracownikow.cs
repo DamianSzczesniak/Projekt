@@ -61,6 +61,7 @@ namespace PROJEKTapp
                              join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
                              join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
                              select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
+
             PracownikDane pracownik = new PracownikDane();
             pracownik.DeletePracownik(Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
             ListaPracownikow.DataSource = bspracownicy.ToList();
@@ -100,9 +101,21 @@ namespace PROJEKTapp
             LWyszukaj.Text = "Pracownik";
             txtWyszukajNazwisko.Text = ListaPracownikow.CurrentRow.Cells[1].Value.ToString();
 
-            //PRACOWNICY selectedPracownicy = (PRACOWNICY)((DataGridView)sender).CurrentRow.DataBoundItem;
-            //string id_pracownik = ListaPracownikow.CurrentRow.Cells[0].Value.ToString();
-            //this.txtboxNazwisko.Text = selectedPracownicy.NAZWISKO.ToString();
+            PRACOWNICY pracownik = new PRACOWNICY();
+            //PracownikDane pracownik = new PracownikDane();
+            int Id_Pracownik = (Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
+            //pracownik.WyswietlPracownik(Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
+            pracownik = (from p in db.PRACOWNICY
+                         //from ad in p.ADRESY_PRACOWNICY
+                         //join a in db.ADRESY_PRACOWNICY on ad.ID_ADRESU equals a.ID_ADRESU
+                         where p.ID_PRACOWNIK==Id_Pracownik
+                         select p).First();
+
+            txtboxNazwisko.Text = pracownik.NAZWISKO;
+            txtboxImie.Text = pracownik.IMIE;
+            txtboxTel.Text = pracownik.TELEFON;
+            txtboxPesel.Text = pracownik.PESEL;
+            
         }
 
         private void btnZaktualizaujZapisz_Click(object sender, EventArgs e)
