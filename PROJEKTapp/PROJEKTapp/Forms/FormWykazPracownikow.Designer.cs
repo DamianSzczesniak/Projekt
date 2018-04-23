@@ -61,6 +61,9 @@
             this.lblNazwisko = new System.Windows.Forms.Label();
             this.txtboxImie = new System.Windows.Forms.TextBox();
             this.lblImie = new System.Windows.Forms.Label();
+            this.btnDodajZapisz = new System.Windows.Forms.Button();
+            this.btnWyczysc = new System.Windows.Forms.Button();
+            this.btnAnuluj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).BeginInit();
             this.SuspendLayout();
@@ -134,14 +137,14 @@
             // 
             // btnZaktualizaujZapisz
             // 
-            this.btnZaktualizaujZapisz.Location = new System.Drawing.Point(96, 507);
+            this.btnZaktualizaujZapisz.Location = new System.Drawing.Point(529, 507);
             this.btnZaktualizaujZapisz.Name = "btnZaktualizaujZapisz";
             this.btnZaktualizaujZapisz.Size = new System.Drawing.Size(75, 36);
             this.btnZaktualizaujZapisz.TabIndex = 19;
             this.btnZaktualizaujZapisz.Text = "Zapisz";
             this.btnZaktualizaujZapisz.UseVisualStyleBackColor = true;
             this.btnZaktualizaujZapisz.Visible = false;
-            this.btnZaktualizaujZapisz.Click += new System.EventHandler(this.btnZaktualizaujZapisz_Click);
+            this.btnZaktualizaujZapisz.Click += new System.EventHandler(this.btnDodajZapisz_Click);
             // 
             // cbStanowisko
             // 
@@ -385,6 +388,39 @@
             this.lblImie.Text = "Imie:";
             this.lblImie.Visible = false;
             // 
+            // btnDodajZapisz
+            // 
+            this.btnDodajZapisz.Location = new System.Drawing.Point(529, 507);
+            this.btnDodajZapisz.Name = "btnDodajZapisz";
+            this.btnDodajZapisz.Size = new System.Drawing.Size(75, 36);
+            this.btnDodajZapisz.TabIndex = 19;
+            this.btnDodajZapisz.Text = "Zapisz";
+            this.btnDodajZapisz.UseVisualStyleBackColor = true;
+            this.btnDodajZapisz.Visible = false;
+            this.btnDodajZapisz.Click += new System.EventHandler(this.btnZaktualizaujZapisz_Click);
+            // 
+            // btnWyczysc
+            // 
+            this.btnWyczysc.Location = new System.Drawing.Point(613, 507);
+            this.btnWyczysc.Name = "btnWyczysc";
+            this.btnWyczysc.Size = new System.Drawing.Size(75, 36);
+            this.btnWyczysc.TabIndex = 19;
+            this.btnWyczysc.Text = "Wyczyść formularz";
+            this.btnWyczysc.UseVisualStyleBackColor = true;
+            this.btnWyczysc.Visible = false;
+            this.btnWyczysc.Click += new System.EventHandler(this.btnWyczysc_Click);
+            // 
+            // btnAnuluj
+            // 
+            this.btnAnuluj.Location = new System.Drawing.Point(694, 507);
+            this.btnAnuluj.Name = "btnAnuluj";
+            this.btnAnuluj.Size = new System.Drawing.Size(75, 36);
+            this.btnAnuluj.TabIndex = 19;
+            this.btnAnuluj.Text = "Anuluj";
+            this.btnAnuluj.UseVisualStyleBackColor = true;
+            this.btnAnuluj.Visible = false;
+            this.btnAnuluj.Click += new System.EventHandler(this.btnAnuluj_Click);
+            // 
             // FormWykazPracownikow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -413,6 +449,9 @@
             this.Controls.Add(this.lblNazwisko);
             this.Controls.Add(this.txtboxImie);
             this.Controls.Add(this.lblImie);
+            this.Controls.Add(this.btnAnuluj);
+            this.Controls.Add(this.btnWyczysc);
+            this.Controls.Add(this.btnDodajZapisz);
             this.Controls.Add(this.btnZaktualizaujZapisz);
             this.Controls.Add(this.LWyszukaj);
             this.Controls.Add(this.btnUsun);
@@ -466,5 +505,8 @@
         private System.Windows.Forms.Label lblNazwisko;
         private System.Windows.Forms.TextBox txtboxImie;
         private System.Windows.Forms.Label lblImie;
+        private System.Windows.Forms.Button btnDodajZapisz;
+        private System.Windows.Forms.Button btnWyczysc;
+        private System.Windows.Forms.Button btnAnuluj;
     }
 }

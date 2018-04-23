@@ -473,6 +473,33 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.OBCIAZENIE_NARZEDZI' does not hav
           <Property Name="NR_EWIDENCYJNY" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRACOWNIK_DANE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PRACOWNIK_DANE">
+          <Key>
+            <PropertyRef Name="ID_PRACOWNIK" />
+            <PropertyRef Name="NAZWISKO" />
+            <PropertyRef Name="IMIE" />
+            <PropertyRef Name="PESEL" />
+            <PropertyRef Name="DATA_START" />
+            <PropertyRef Name="STANOWISKO" />
+            <PropertyRef Name="MIASTO" />
+          </Key>
+          <Property Name="ID_PRACOWNIK" Type="int" Nullable="false" />
+          <Property Name="NAZWISKO" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="IMIE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TELEFON" Type="varchar" MaxLength="12" />
+          <Property Name="PESEL" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="DATA_START" Type="date" Nullable="false" />
+          <Property Name="DATA_KONIEC" Type="date" />
+          <Property Name="STANOWISKO" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="ULICA" Type="varchar" MaxLength="30" />
+          <Property Name="NR_BUDYNKU" Type="varchar" MaxLength="10" />
+          <Property Name="NR_LOKALU" Type="varchar" MaxLength="10" />
+          <Property Name="KOD_POCZTOWY" Type="varchar" MaxLength="5" />
+          <Property Name="MIASTO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="KRAJ" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_MASZYNY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -1018,20 +1045,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="AddPracownik" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Imie" Type="varchar" Mode="In" />
-          <Parameter Name="Nazwisko" Type="varchar" Mode="In" />
-          <Parameter Name="Tel" Type="varchar" Mode="In" />
-          <Parameter Name="PESEL" Type="varchar" Mode="In" />
-          <Parameter Name="Stanowisko" Type="char" Mode="In" />
-          <Parameter Name="Ulica" Type="varchar" Mode="In" />
-          <Parameter Name="Nrbudynku" Type="varchar" Mode="In" />
-          <Parameter Name="Nrlokalu" Type="varchar" Mode="In" />
-          <Parameter Name="Kodpocztowy" Type="varchar" Mode="In" />
-          <Parameter Name="Kraj" Type="varchar" Mode="In" />
-          <Parameter Name="Miasto" Type="varchar" Mode="In" />
-          <Parameter Name="DataRozpoczeciaPracy" Type="date" Mode="In" />
-        </Function>
         <EntityContainer Name="KWZP_PROJEKTModelStoreContainer">
           <EntitySet Name="ADRESY" EntityType="Self.ADRESY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADRESY_PRACOWNICY" EntityType="Self.ADRESY_PRACOWNICY" Schema="dbo" store:Type="Tables" />
@@ -1149,6 +1162,24 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
     [OBCIAZENIE_NARZEDZI].[MODEL] AS [MODEL], 
     [OBCIAZENIE_NARZEDZI].[NR_EWIDENCYJNY] AS [NR_EWIDENCYJNY]
     FROM [dbo].[OBCIAZENIE_NARZEDZI] AS [OBCIAZENIE_NARZEDZI]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRACOWNIK_DANE" EntityType="Self.PRACOWNIK_DANE" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRACOWNIK_DANE].[ID_PRACOWNIK] AS [ID_PRACOWNIK], 
+    [PRACOWNIK_DANE].[NAZWISKO] AS [NAZWISKO], 
+    [PRACOWNIK_DANE].[IMIE] AS [IMIE], 
+    [PRACOWNIK_DANE].[TELEFON] AS [TELEFON], 
+    [PRACOWNIK_DANE].[PESEL] AS [PESEL], 
+    [PRACOWNIK_DANE].[DATA_START] AS [DATA_START], 
+    [PRACOWNIK_DANE].[DATA_KONIEC] AS [DATA_KONIEC], 
+    [PRACOWNIK_DANE].[STANOWISKO] AS [STANOWISKO], 
+    [PRACOWNIK_DANE].[ULICA] AS [ULICA], 
+    [PRACOWNIK_DANE].[NR_BUDYNKU] AS [NR_BUDYNKU], 
+    [PRACOWNIK_DANE].[NR_LOKALU] AS [NR_LOKALU], 
+    [PRACOWNIK_DANE].[KOD_POCZTOWY] AS [KOD_POCZTOWY], 
+    [PRACOWNIK_DANE].[MIASTO] AS [MIASTO], 
+    [PRACOWNIK_DANE].[KRAJ] AS [KRAJ]
+    FROM [dbo].[PRACOWNIK_DANE] AS [PRACOWNIK_DANE]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="WYKORZYSTANE_MASZYNY" EntityType="Self.WYKORZYSTANE_MASZYNY" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2385,6 +2416,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           </FunctionImport>
           <EntitySet Name="GABARYT_PRODUTKU" EntityType="KWZP_PROJEKTModel.GABARYT_PRODUTKU" />
           <EntitySet Name="MASA_PRODUKTU" EntityType="KWZP_PROJEKTModel.MASA_PRODUKTU" />
+          <EntitySet Name="PRACOWNIK_DANE" EntityType="KWZP_PROJEKTModel.PRACOWNIK_DANE" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -2454,6 +2486,31 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           </Key>
           <Property Name="NAZWA_PRODUKTU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="MASA_PRODUKTU1" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PRACOWNIK_DANE">
+          <Key>
+            <PropertyRef Name="ID_PRACOWNIK" />
+            <PropertyRef Name="NAZWISKO" />
+            <PropertyRef Name="IMIE" />
+            <PropertyRef Name="PESEL" />
+            <PropertyRef Name="DATA_START" />
+            <PropertyRef Name="STANOWISKO" />
+            <PropertyRef Name="MIASTO" />
+          </Key>
+          <Property Name="ID_PRACOWNIK" Type="Int32" Nullable="false" />
+          <Property Name="NAZWISKO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IMIE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFON" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="PESEL" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_START" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DATA_KONIEC" Type="DateTime" Precision="0" />
+          <Property Name="STANOWISKO" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="ULICA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NR_BUDYNKU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NR_LOKALU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="KOD_POCZTOWY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="MIASTO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KRAJ" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2949,16 +3006,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="AddPracownik" FunctionName="KWZP_PROJEKTModel.Store.AddPracownik">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="KWZP_PROJEKTModel.AddPracownik_Result">
-                <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
-                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
-                <ScalarProperty Name="MARKA" ColumnName="MARKA" />
-                <ScalarProperty Name="TYP_MASZYNY" ColumnName="TYP_MASZYNY" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="GABARYT_PRODUTKU">
             <EntityTypeMapping TypeName="KWZP_PROJEKTModel.GABARYT_PRODUTKU">
               <MappingFragment StoreEntitySet="GABARYT_PRODUTKU">
@@ -2976,6 +3023,26 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
               <MappingFragment StoreEntitySet="MASA_PRODUKTU">
                 <ScalarProperty Name="MASA_PRODUKTU1" ColumnName="MASA_PRODUKTU" />
                 <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRACOWNIK_DANE">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRACOWNIK_DANE">
+              <MappingFragment StoreEntitySet="PRACOWNIK_DANE">
+                <ScalarProperty Name="KRAJ" ColumnName="KRAJ" />
+                <ScalarProperty Name="MIASTO" ColumnName="MIASTO" />
+                <ScalarProperty Name="KOD_POCZTOWY" ColumnName="KOD_POCZTOWY" />
+                <ScalarProperty Name="NR_LOKALU" ColumnName="NR_LOKALU" />
+                <ScalarProperty Name="NR_BUDYNKU" ColumnName="NR_BUDYNKU" />
+                <ScalarProperty Name="ULICA" ColumnName="ULICA" />
+                <ScalarProperty Name="STANOWISKO" ColumnName="STANOWISKO" />
+                <ScalarProperty Name="DATA_KONIEC" ColumnName="DATA_KONIEC" />
+                <ScalarProperty Name="DATA_START" ColumnName="DATA_START" />
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+                <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+                <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
