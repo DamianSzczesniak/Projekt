@@ -57,15 +57,21 @@ namespace PROJEKTapp
         }
         private void btnUsun_Click(object sender, EventArgs e)
         {
-            var bspracownicy = from p in db.PRACOWNICY
-                             join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
-                             join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
-                             select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
-
             PracownikDane pracownik = new PracownikDane();
-            pracownik.DeletePracownik(Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
-            ListaPracownikow.DataSource = bspracownicy.ToList();
-            ListaPracownikow.Refresh();
+            DialogResult result = MessageBox.Show("Czu chcesz usunąć dane pracownika: "+ ListaPracownikow.CurrentRow.Cells[1].Value + " " + ListaPracownikow.CurrentRow.Cells[2].Value, "Confirmation",
+  MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                var bspracownicy = from p in db.PRACOWNICY
+                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
+                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
+                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
+
+                //PracownikDane pracownik = new PracownikDane();
+                pracownik.DeletePracownik(Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
+                ListaPracownikow.DataSource = bspracownicy.ToList();
+                ListaPracownikow.Refresh();
+            }
         }
 
         private void btnZaktualizuj_Click(object sender, EventArgs e)
