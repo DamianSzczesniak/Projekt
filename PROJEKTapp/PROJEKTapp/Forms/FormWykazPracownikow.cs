@@ -202,7 +202,7 @@ namespace PROJEKTapp
             }
         }
 
-        private void btnZaktualizuj_Click(object sender, EventArgs e)
+        private void btnZaktualizuj_Click(object sender, EventArgs e) //otwiera pola potrzeben do edycji pracownika
         {
             btnAnuluj.Show();
             lblImie.Show();
@@ -248,9 +248,7 @@ namespace PROJEKTapp
             txtboxNrlokalu.Clear();
 
             PRACOWNIK_DANE pracownikDane = new PRACOWNIK_DANE();
-            //PracownikDane pracownik = new PracownikDane();
             int Id_Pracownik = (Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
-            //pracownik.WyswietlPracownik(Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
             pracownikDane = (from p in db.PRACOWNIK_DANE
                              where p.ID_PRACOWNIK == Id_Pracownik
                              select p).First();
@@ -267,10 +265,13 @@ namespace PROJEKTapp
             txtboxKraj.Text = pracownikDane.KRAJ;
             cbStanowisko.Text = pracownikDane.STANOWISKO;
             txtDataRozpoczeciaPracy.Value = pracownikDane.DATA_START;
-
-
         }
 
+        private void UpdatePracownik(PRACOWNIK_DANE pracownikDane)
+        {
+            PracownikDane pracownikdane = new PracownikDane();
+            pracownikdane.UpdatePracownik(pracownikDane);
+        }
         private void btnZaktualizaujZapisz_Click(object sender, EventArgs e)
         {
             lblImie.Hide();
@@ -314,6 +315,23 @@ namespace PROJEKTapp
             txtboxUlica.Clear();
             txtNrbudynku.Clear();
             txtboxNrlokalu.Clear();
+
+            PRACOWNIK_DANE pracownikDane = new PRACOWNIK_DANE();
+            pracownikDane.ID_PRACOWNIK = (Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
+            pracownikDane.NAZWISKO = txtboxNazwisko.ToString();
+            pracownikDane.IMIE = txtboxImie.ToString();
+            pracownikDane.TELEFON = txtboxTel.ToString();
+            pracownikDane.PESEL = txtboxPesel.ToString();
+            pracownikDane.ULICA  = txtboxUlica.ToString();
+            pracownikDane.NR_LOKALU = txtboxNrlokalu.ToString();
+            pracownikDane.NR_BUDYNKU = txtNrbudynku.ToString();
+            pracownikDane.KOD_POCZTOWY = txtboxKodpocztowy.ToString();
+            pracownikDane.MIASTO = cbMiasto.ToString();
+            pracownikDane.KRAJ = txtboxKraj.ToString();
+            pracownikDane.STANOWISKO = cbStanowisko.ToString();
+            pracownikDane.DATA_START = txtDataRozpoczeciaPracy.Value;
+            UpdatePracownik(pracownikDane);
+
         }
 
         private void btnAnuluj_Click(object sender, EventArgs e) //anuluj dodawanie

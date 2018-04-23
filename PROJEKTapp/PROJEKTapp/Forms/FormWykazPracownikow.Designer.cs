@@ -144,7 +144,7 @@
             this.btnZaktualizaujZapisz.Text = "Zapisz";
             this.btnZaktualizaujZapisz.UseVisualStyleBackColor = true;
             this.btnZaktualizaujZapisz.Visible = false;
-            this.btnZaktualizaujZapisz.Click += new System.EventHandler(this.btnDodajZapisz_Click);
+            this.btnZaktualizaujZapisz.Click += new System.EventHandler(this.btnZaktualizaujZapisz_Click);
             // 
             // cbStanowisko
             // 
@@ -390,14 +390,14 @@
             // 
             // btnDodajZapisz
             // 
-            this.btnDodajZapisz.Location = new System.Drawing.Point(529, 507);
+            this.btnDodajZapisz.Location = new System.Drawing.Point(448, 507);
             this.btnDodajZapisz.Name = "btnDodajZapisz";
             this.btnDodajZapisz.Size = new System.Drawing.Size(75, 36);
             this.btnDodajZapisz.TabIndex = 19;
             this.btnDodajZapisz.Text = "Zapisz";
             this.btnDodajZapisz.UseVisualStyleBackColor = true;
             this.btnDodajZapisz.Visible = false;
-            this.btnDodajZapisz.Click += new System.EventHandler(this.btnZaktualizaujZapisz_Click);
+            this.btnDodajZapisz.Click += new System.EventHandler(this.btnDodajZapisz_Click);
             // 
             // btnWyczysc
             // 
@@ -462,7 +462,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormWykazPracownikow";
-            this.Text = "Zapisz";
+            this.Text = "a";
             this.Load += new System.EventHandler(this.FormWykazPracownikow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).EndInit();
