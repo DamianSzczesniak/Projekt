@@ -105,6 +105,7 @@
             this.btnStatystyki.Text = "Statystyki";
             this.btnStatystyki.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnStatystyki.UseVisualStyleBackColor = false;
+            this.btnStatystyki.Click += new System.EventHandler(this.btnStatystyki_Click);
             // 
             // btnSzkolenia
             // 

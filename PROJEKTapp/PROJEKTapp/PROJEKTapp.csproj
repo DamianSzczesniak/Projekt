@@ -69,16 +69,16 @@
     <Compile Include="DOSTAWA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormOferta.cs">
+    <Compile Include="Forms_NoweZlecenie\FormOferta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormOferta.Designer.cs">
+    <Compile Include="Forms_NoweZlecenie\FormOferta.Designer.cs">
       <DependentUpon>FormOferta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormFirmyNoweZlecenie.cs">
+    <Compile Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormFirmyNoweZlecenie.Designer.cs">
+    <Compile Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.Designer.cs">
       <DependentUpon>FormFirmyNoweZlecenie.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormZmianaStanuMagazynu.cs">
@@ -129,10 +129,10 @@
     <Compile Include="Forms\FormLogistyka.designer.cs">
       <DependentUpon>FormLogistyka.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormNoweZlecenie.cs">
+    <Compile Include="Forms_NoweZlecenie\FormNoweZlecenie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormNoweZlecenie.designer.cs">
+    <Compile Include="Forms_NoweZlecenie\FormNoweZlecenie.designer.cs">
       <DependentUpon>FormNoweZlecenie.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormPracownicy.cs">
@@ -246,9 +246,18 @@
     <Compile Include="PRACOWNICY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="PRACOWNICY_STANOWISKA.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="PracownikDane.cs" />
     <Compile Include="PRACOWNIK_DANE.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PracStan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PracStan.Designer.cs">
+      <DependentUpon>PracStan.cs</DependentUpon>
     </Compile>
     <Compile Include="PROCES.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
@@ -324,10 +333,10 @@
     <Compile Include="ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\FormOferta.resx">
+    <EmbeddedResource Include="Forms_NoweZlecenie\FormOferta.resx">
       <DependentUpon>FormOferta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormFirmyNoweZlecenie.resx">
+    <EmbeddedResource Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.resx">
       <DependentUpon>FormFirmyNoweZlecenie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormZmianaStanuMagazynu.resx">
@@ -351,7 +360,7 @@
     <EmbeddedResource Include="Forms\FormLogistyka.resx">
       <DependentUpon>FormLogistyka.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormNoweZlecenie.resx">
+    <EmbeddedResource Include="Forms_NoweZlecenie\FormNoweZlecenie.resx">
       <DependentUpon>FormNoweZlecenie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPracownicy.resx">
@@ -374,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\Produkcja_glowny.resx">
       <DependentUpon>Produkcja_glowny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PracStan.resx">
+      <DependentUpon>PracStan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
