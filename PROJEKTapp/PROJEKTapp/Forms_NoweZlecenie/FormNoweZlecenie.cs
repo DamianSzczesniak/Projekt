@@ -22,6 +22,7 @@ namespace PROJEKTapp
             cBox_Produkty_Oferta.DisplayMember = "NAZWA_PRODUKTU";
             cBox_Produkty_Oferta.ValueMember = "Id_Produktu";
             cBox_Produkty_Oferta.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtBox_Data_Zlecenia.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
         
     
