@@ -54,5 +54,11 @@ namespace PROJEKTapp.Forms
             FormFirmyNoweZlecenie FormFirmyNoweZlecenie = new FormFirmyNoweZlecenie();
             FormFirmyNoweZlecenie.Show();
         }
+
+        private void btnWybierz_Click(object sender, EventArgs e)
+        {
+            FormNoweZlecenie.IndexFirmy = dataGridFirmy.CurrentRow.Index;
+            this.Close();
+        }
     }
 }

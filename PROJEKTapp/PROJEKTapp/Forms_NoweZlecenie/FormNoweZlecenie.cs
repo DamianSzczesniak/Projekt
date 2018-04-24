@@ -14,6 +14,7 @@ namespace PROJEKTapp
     public partial class FormNoweZlecenie : Form
     {
         KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities();
+        public static int IndexFirmy;
         public FormNoweZlecenie()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace PROJEKTapp
             cBox_Produkty_Oferta.ValueMember = "Id_Produktu";
             cBox_Produkty_Oferta.DropDownStyle = ComboBoxStyle.DropDownList;
             txtBox_Data_Zlecenia.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            txtBox_Firma.Text = IndexFirmy.ToString();
         }
         
     
@@ -86,6 +88,14 @@ namespace PROJEKTapp
         {
             FormOferta FormOferta = new FormOferta();
             FormOferta.Show();
+        }
+
+        
+
+        private void btnWybierzFirme_Click(object sender, EventArgs e)
+        {
+            FormFirmyNoweZlecenie FormFirmyNoweZlecenie = new FormFirmyNoweZlecenie();
+            FormFirmyNoweZlecenie.Show();
         }
     }
 }

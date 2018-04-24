@@ -105,6 +105,7 @@
             this.btnWybierz.TabIndex = 11;
             this.btnWybierz.Text = "Wybierz";
             this.btnWybierz.UseVisualStyleBackColor = true;
+            this.btnWybierz.Click += new System.EventHandler(this.btnWybierz_Click);
             // 
             // lblAdresEmail
             // 

@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNoweZlecenie));
             this.groupBoxOferta = new System.Windows.Forms.GroupBox();
             this.dataGridViewOferta = new System.Windows.Forms.DataGridView();
+            this.ID_Produktu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Produkt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ilosc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBox_Ilosc_Oferta = new System.Windows.Forms.TextBox();
             this.btn_Dodaj_Oferta = new System.Windows.Forms.Button();
             this.cBox_Produkty_Oferta = new System.Windows.Forms.ComboBox();
@@ -45,10 +48,7 @@
             this.txtBox_Data_Realizacji = new System.Windows.Forms.TextBox();
             this.txtBox_Firma = new System.Windows.Forms.TextBox();
             this.lbl_Data_Realizacji = new System.Windows.Forms.Label();
-            this.lbl_Firma_Nowe_Zlecenie = new System.Windows.Forms.Label();
-            this.ID_Produktu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Produkt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ilosc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnWybierzFirme = new System.Windows.Forms.Button();
             this.groupBoxOferta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).BeginInit();
             this.groupBoxNowe_ZLecenie.SuspendLayout();
@@ -83,6 +83,24 @@
             this.dataGridViewOferta.Size = new System.Drawing.Size(324, 242);
             this.dataGridViewOferta.TabIndex = 12;
             // 
+            // ID_Produktu
+            // 
+            this.ID_Produktu.HeaderText = "ID_Produktu";
+            this.ID_Produktu.Name = "ID_Produktu";
+            this.ID_Produktu.Visible = false;
+            // 
+            // Produkt
+            // 
+            this.Produkt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Produkt.HeaderText = "Produkt";
+            this.Produkt.Name = "Produkt";
+            this.Produkt.ReadOnly = true;
+            // 
+            // Ilosc
+            // 
+            this.Ilosc.HeaderText = "Ilosc";
+            this.Ilosc.Name = "Ilosc";
+            // 
             // txtBox_Ilosc_Oferta
             // 
             this.txtBox_Ilosc_Oferta.Location = new System.Drawing.Point(107, 72);
@@ -110,9 +128,10 @@
             // 
             // btnPrzedstaw_Oferte
             // 
-            this.btnPrzedstaw_Oferte.Location = new System.Drawing.Point(107, 412);
+            this.btnPrzedstaw_Oferte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPrzedstaw_Oferte.Location = new System.Drawing.Point(92, 405);
             this.btnPrzedstaw_Oferte.Name = "btnPrzedstaw_Oferte";
-            this.btnPrzedstaw_Oferte.Size = new System.Drawing.Size(114, 23);
+            this.btnPrzedstaw_Oferte.Size = new System.Drawing.Size(135, 30);
             this.btnPrzedstaw_Oferte.TabIndex = 6;
             this.btnPrzedstaw_Oferte.Text = "Przedstaw Oferte";
             this.btnPrzedstaw_Oferte.UseVisualStyleBackColor = true;
@@ -138,6 +157,7 @@
             // 
             // groupBoxNowe_ZLecenie
             // 
+            this.groupBoxNowe_ZLecenie.Controls.Add(this.btnWybierzFirme);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.btnExit);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.lbl_Data_Zlecenia);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.txtBox_Data_Zlecenia);
@@ -145,7 +165,6 @@
             this.groupBoxNowe_ZLecenie.Controls.Add(this.txtBox_Data_Realizacji);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.txtBox_Firma);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.lbl_Data_Realizacji);
-            this.groupBoxNowe_ZLecenie.Controls.Add(this.lbl_Firma_Nowe_Zlecenie);
             this.groupBoxNowe_ZLecenie.Location = new System.Drawing.Point(355, 2);
             this.groupBoxNowe_ZLecenie.Name = "groupBoxNowe_ZLecenie";
             this.groupBoxNowe_ZLecenie.Size = new System.Drawing.Size(352, 453);
@@ -183,9 +202,10 @@
             // 
             // btn_Dodaj_Zlecenie
             // 
-            this.btn_Dodaj_Zlecenie.Location = new System.Drawing.Point(150, 412);
+            this.btn_Dodaj_Zlecenie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_Dodaj_Zlecenie.Location = new System.Drawing.Point(143, 405);
             this.btn_Dodaj_Zlecenie.Name = "btn_Dodaj_Zlecenie";
-            this.btn_Dodaj_Zlecenie.Size = new System.Drawing.Size(116, 23);
+            this.btn_Dodaj_Zlecenie.Size = new System.Drawing.Size(133, 30);
             this.btn_Dodaj_Zlecenie.TabIndex = 4;
             this.btn_Dodaj_Zlecenie.Text = "Dodaj Zlecenie";
             this.btn_Dodaj_Zlecenie.UseVisualStyleBackColor = true;
@@ -200,10 +220,11 @@
             // 
             // txtBox_Firma
             // 
-            this.txtBox_Firma.Location = new System.Drawing.Point(150, 339);
+            this.txtBox_Firma.Location = new System.Drawing.Point(154, 358);
             this.txtBox_Firma.Name = "txtBox_Firma";
-            this.txtBox_Firma.Size = new System.Drawing.Size(116, 20);
+            this.txtBox_Firma.Size = new System.Drawing.Size(112, 20);
             this.txtBox_Firma.TabIndex = 3;
+            this.txtBox_Firma.Visible = false;
             this.txtBox_Firma.Click += new System.EventHandler(this.txtBox_Firma_Click);
             // 
             // lbl_Data_Realizacji
@@ -215,32 +236,15 @@
             this.lbl_Data_Realizacji.TabIndex = 1;
             this.lbl_Data_Realizacji.Text = "Data Realizacji";
             // 
-            // lbl_Firma_Nowe_Zlecenie
+            // btnWybierzFirme
             // 
-            this.lbl_Firma_Nowe_Zlecenie.AutoSize = true;
-            this.lbl_Firma_Nowe_Zlecenie.Location = new System.Drawing.Point(68, 342);
-            this.lbl_Firma_Nowe_Zlecenie.Name = "lbl_Firma_Nowe_Zlecenie";
-            this.lbl_Firma_Nowe_Zlecenie.Size = new System.Drawing.Size(32, 13);
-            this.lbl_Firma_Nowe_Zlecenie.TabIndex = 2;
-            this.lbl_Firma_Nowe_Zlecenie.Text = "Firma";
-            // 
-            // ID_Produktu
-            // 
-            this.ID_Produktu.HeaderText = "ID_Produktu";
-            this.ID_Produktu.Name = "ID_Produktu";
-            this.ID_Produktu.Visible = false;
-            // 
-            // Produkt
-            // 
-            this.Produkt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Produkt.HeaderText = "Produkt";
-            this.Produkt.Name = "Produkt";
-            this.Produkt.ReadOnly = true;
-            // 
-            // Ilosc
-            // 
-            this.Ilosc.HeaderText = "Ilosc";
-            this.Ilosc.Name = "Ilosc";
+            this.btnWybierzFirme.Location = new System.Drawing.Point(150, 355);
+            this.btnWybierzFirme.Name = "btnWybierzFirme";
+            this.btnWybierzFirme.Size = new System.Drawing.Size(116, 23);
+            this.btnWybierzFirme.TabIndex = 6;
+            this.btnWybierzFirme.Text = "Wybierz Firme";
+            this.btnWybierzFirme.UseVisualStyleBackColor = true;
+            this.btnWybierzFirme.Click += new System.EventHandler(this.btnWybierzFirme_Click);
             // 
             // FormNoweZlecenie
             // 
@@ -280,10 +284,10 @@
         private System.Windows.Forms.TextBox txtBox_Data_Realizacji;
         private System.Windows.Forms.TextBox txtBox_Firma;
         private System.Windows.Forms.Label lbl_Data_Realizacji;
-        private System.Windows.Forms.Label lbl_Firma_Nowe_Zlecenie;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Produktu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Produkt;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ilosc;
+        private System.Windows.Forms.Button btnWybierzFirme;
     }
 }
