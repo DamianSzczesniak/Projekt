@@ -34,5 +34,11 @@ namespace PROJEKTapp
 
         private void btnExit_Click(object sender, EventArgs e) =>
             this.Close();
+
+        private void btnUrlopy_Click(object sender, EventArgs e)
+        {
+            FormUrlopy Urlopy = new FormUrlopy(kwzpProjektEntities);
+           Urlopy.Show();
+        }
     }
 }

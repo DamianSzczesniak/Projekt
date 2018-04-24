@@ -136,6 +136,7 @@
             this.btnUrlopy.Text = "Urlopy";
             this.btnUrlopy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUrlopy.UseVisualStyleBackColor = true;
+            this.btnUrlopy.Click += new System.EventHandler(this.btnUrlopy_Click);
             // 
             // btnWynagrodzenia
             // 
