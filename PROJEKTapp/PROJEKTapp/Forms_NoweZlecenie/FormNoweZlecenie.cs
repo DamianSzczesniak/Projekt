@@ -35,7 +35,7 @@ namespace PROJEKTapp
             ZLECENIA noweZlecenie = new ZLECENIA();
             noweZlecenie.DATA_REALIZACJI = DateTime.Parse(txtBox_Data_Realizacji.Text);
             noweZlecenie.DATA_ZLECENIA = DateTime.Parse(txtBox_Data_Zlecenia.Text);
-            noweZlecenie.ID_FIRMY = int.Parse(txtBox_Firma.Text);
+            noweZlecenie.ID_FIRMY = IndexFirmy;
 
             db.ZLECENIA.Add(noweZlecenie);
             db.SaveChanges();
