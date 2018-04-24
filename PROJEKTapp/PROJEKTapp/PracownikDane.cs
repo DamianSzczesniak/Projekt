@@ -43,34 +43,33 @@ namespace PROJEKTapp
             db.STANOWISKO_PRACOWNICY.Add(stanowiskopracownicy);
             db.SaveChanges();
         }
-        public void UpdatePracownik(int ID, string nazwisko, string imie, string telefon, string pesel)
-           // string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, int miasto, string kraj,
+        public void UpdatePracownik(int ID, string nazwisko, string imie, string telefon, string pesel,
+string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, int miasto, string kraj)
            // DateTime data, int stanowisko)
         {
-            //var prac = (from p in db.PRACOWNICY
+            //var stan = (from p in db.PRACOWNICY
             //            join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
             //            join s in db.STANOWISKO on p.ID_PRACOWNIK equals s.ID_STANOWISKO
-            //            where p.ID_PRACOWNIK == pracownikDane.ID_PRACOWNIK
-            //            select p);
-
+            //            where p.ID_PRACOWNIK == ID
+            //            select s).First();
             var prac = (from p in db.PRACOWNICY
                         where p.ID_PRACOWNIK == ID
                         select p).First();
+            var adr = (from p in db.PRACOWNICY
+                       from ap in p.ADRESY_PRACOWNICY
+                       join ap1 in db.ADRESY_PRACOWNICY on ap.ID_ADRESU equals ap1.ID_ADRESU
+                       where p.ID_PRACOWNIK == ID
+                       select ap).First();
             prac.NAZWISKO = nazwisko;
             prac.IMIE = imie;
             prac.TELEFON = telefon;
             prac.PESEL = pesel;
+            adr.ULICA = ulica;
+            adr.NR_BUDYNKU = nrbudynku;
+            adr.NR_LOKALU = nrlokalu;
+            adr.ID_MIASTA = miasto;
+            adr.KRAJ = kraj;
 
-            //prac.NAZWISKO = pracownikDane.NAZWISKO;
-            //prac.IMIE = pracownikDane.IMIE;
-            //prac.TELEFON = pracownikDane.TELEFON;
-            //prac.PESEL = pracownikDane.PESEL;
-            //prac.ULICA = pracownikDane.ULICA;
-            //prac.NR_LOKALU = pracownikDane.NR_LOKALU;
-            //prac.NR_BUDYNKU = pracownikDane.NR_BUDYNKU;
-            //prac.KOD_POCZTOWY = pracownikDane.KOD_POCZTOWY;
-            //prac.MIASTO = pracownikDane.MIASTO;
-            //prac.KRAJ = pracownikDane.KRAJ;
             //prac.STANOWISKO = pracownikDane.STANOWISKO;
             //prac.DATA_START = pracownikDane.DATA_START;
             ////dodać pozostałe dane i tabele

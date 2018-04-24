@@ -85,7 +85,7 @@
             this.panel2.Controls.Add(this.btnWynagrodzenia);
             this.panel2.Controls.Add(this.btnPracownicy);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 441);
+            this.panel2.Location = new System.Drawing.Point(0, 591);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(944, 135);
             this.panel2.TabIndex = 1;
@@ -173,10 +173,10 @@
             // FormKadry
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(944, 576);
+            this.ClientSize = new System.Drawing.Size(944, 726);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormKadry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

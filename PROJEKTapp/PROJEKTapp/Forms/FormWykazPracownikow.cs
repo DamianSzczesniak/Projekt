@@ -18,6 +18,10 @@ namespace PROJEKTapp
         {
             this.db = db;
             InitializeComponent();
+            btnDodaj.Font = new Font(btnDodaj.Font.FontFamily, 9);
+            btnZaktualizuj.Font = new Font(btnZaktualizuj.Font.FontFamily, 9);
+            btnUsun.Font = new Font(btnUsun.Font.FontFamily, 9);
+
             cbStanowisko.DataSource = db.STANOWISKO.ToList();
             cbStanowisko.DisplayMember = "Nazwa";
             cbStanowisko.ValueMember = "Id_Stanowisko";
@@ -163,6 +167,8 @@ namespace PROJEKTapp
 
         private void FormWykazPracownikow_Load(object sender, EventArgs e)
         {
+            ListaPracownikow.Font = new Font("Tahoma", 12);
+            
             var bspracownicy = from p in db.PRACOWNICY
                                join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
                                join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
@@ -187,7 +193,7 @@ namespace PROJEKTapp
         }
         private void btnUsun_Click(object sender, EventArgs e)
         {
-            PracownikDane pracownik = new PracownikDane();
+           PracownikDane pracownik = new PracownikDane();
             DialogResult result = MessageBox.Show("Czy chcesz usunąć dane pracownika: " + ListaPracownikow.CurrentRow.Cells[1].Value + " " + ListaPracownikow.CurrentRow.Cells[2].Value, "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
@@ -267,10 +273,10 @@ namespace PROJEKTapp
             txtDataRozpoczeciaPracy.Value = pracownikDane.DATA_START;
         }
 
-        private void UpdatePracownik(int ID, string nazwisko, string imie, string telefon, string pesel)
+        private void UpdatePracownik(int ID, string nazwisko, string imie, string telefon, string pesel, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, int miasto, string kraj)
         {
             PracownikDane pracownikdane = new PracownikDane();
-            pracownikdane.UpdatePracownik(ID, nazwisko, imie, telefon, pesel);
+            pracownikdane.UpdatePracownik(ID, nazwisko, imie, telefon, pesel, ulica, nrbudynku, nrlokalu, kodpocztowy, miasto, kraj);
         }
         private void btnZaktualizaujZapisz_Click(object sender, EventArgs e)
         {
@@ -302,17 +308,11 @@ namespace PROJEKTapp
             btnDodajZapisz.Hide();
 
             int ID = (Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
-            // pracownikDane.ULICA  = this.txtboxUlica.Text;
-            // pracownikDane.NR_LOKALU = this.txtboxNrlokalu.Text;
-            // pracownikDane.NR_BUDYNKU = this.txtNrbudynku.Text;
-            // pracownikDane.KOD_POCZTOWY = txtboxKodpocztowy.Text;
-            // //pracownikDane.MIASTO = (int)cbMiasto.SelectedValue;
-            // pracownikDane.KRAJ = this.txtboxKraj.Text;
             //// pracownikDane.STANOWISKO = (int)cbStanowisko.SelectedValue;
             // pracownikDane.DATA_START = this.txtDataRozpoczeciaPracy.Value;
             // //UpdatePracownik(pracownikDane);
 
-            UpdatePracownik(ID, txtboxNazwisko.Text, txtboxImie.Text, txtboxTel.Text, txtboxPesel.Text);
+            UpdatePracownik(ID, txtboxNazwisko.Text, txtboxImie.Text, txtboxTel.Text, txtboxPesel.Text, txtboxUlica.Text, txtNrbudynku.Text, txtboxNrlokalu.Text, txtboxKodpocztowy.Text, (int)cbMiasto.SelectedValue, txtboxKraj.Text);
 
             ListaPracownikow.Show();
             btnDodaj.Show();

@@ -28,8 +28,13 @@ namespace PROJEKTapp
 
         private void btnPracownicy_Click(object sender, EventArgs e)
         {
-            FormWykazPracownikow WykazPracownikow = new FormWykazPracownikow(kwzpProjektEntities);
-            WykazPracownikow.Show();
+            FormWykazPracownikow form = new FormWykazPracownikow(kwzpProjektEntities);
+            form.TopLevel = false;
+            form.Font = new Font("Microsoft Sans Serif", 10);
+            this.Controls.Add(form);
+            form.Show();
+            //FormWykazPracownikow WykazPracownikow = new FormWykazPracownikow(kwzpProjektEntities);
+            //WykazPracownikow.Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e) =>
