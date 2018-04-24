@@ -267,10 +267,10 @@ namespace PROJEKTapp
             txtDataRozpoczeciaPracy.Value = pracownikDane.DATA_START;
         }
 
-        private void UpdatePracownik(PRACOWNIK_DANE pracownikDane)
+        private void UpdatePracownik(int ID, string nazwisko, string imie, string telefon, string pesel)
         {
             PracownikDane pracownikdane = new PracownikDane();
-            pracownikdane.UpdatePracownik(pracownikDane);
+            pracownikdane.UpdatePracownik(ID, nazwisko, imie, telefon, pesel);
         }
         private void btnZaktualizaujZapisz_Click(object sender, EventArgs e)
         {
@@ -287,6 +287,7 @@ namespace PROJEKTapp
             lblStanowisko.Hide();
             lblDataStart.Hide();
             txtboxImie.Hide();
+            txtboxPesel.Hide();
             txtboxNazwisko.Hide();
             txtboxTel.Hide();
             txtboxUlica.Hide();
@@ -300,10 +301,24 @@ namespace PROJEKTapp
             btnWyczysc.Hide();
             btnDodajZapisz.Hide();
 
+            int ID = (Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
+            // pracownikDane.ULICA  = this.txtboxUlica.Text;
+            // pracownikDane.NR_LOKALU = this.txtboxNrlokalu.Text;
+            // pracownikDane.NR_BUDYNKU = this.txtNrbudynku.Text;
+            // pracownikDane.KOD_POCZTOWY = txtboxKodpocztowy.Text;
+            // //pracownikDane.MIASTO = (int)cbMiasto.SelectedValue;
+            // pracownikDane.KRAJ = this.txtboxKraj.Text;
+            //// pracownikDane.STANOWISKO = (int)cbStanowisko.SelectedValue;
+            // pracownikDane.DATA_START = this.txtDataRozpoczeciaPracy.Value;
+            // //UpdatePracownik(pracownikDane);
+
+            UpdatePracownik(ID, txtboxNazwisko.Text, txtboxImie.Text, txtboxTel.Text, txtboxPesel.Text);
+
             ListaPracownikow.Show();
             btnDodaj.Show();
             btnUsun.Show();
             btnZaktualizuj.Show();
+            btnAnuluj.Hide();
             btnZaktualizaujZapisz.Hide();
             LWyszukaj.Text = "Wyszukaj nazwisko";
             txtWyszukajNazwisko.Clear();
@@ -315,23 +330,6 @@ namespace PROJEKTapp
             txtboxUlica.Clear();
             txtNrbudynku.Clear();
             txtboxNrlokalu.Clear();
-
-            PRACOWNIK_DANE pracownikDane = new PRACOWNIK_DANE();
-            pracownikDane.ID_PRACOWNIK = (Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
-            pracownikDane.NAZWISKO = txtboxNazwisko.ToString();
-            pracownikDane.IMIE = txtboxImie.ToString();
-            pracownikDane.TELEFON = txtboxTel.ToString();
-            pracownikDane.PESEL = txtboxPesel.ToString();
-            pracownikDane.ULICA  = txtboxUlica.ToString();
-            pracownikDane.NR_LOKALU = txtboxNrlokalu.ToString();
-            pracownikDane.NR_BUDYNKU = txtNrbudynku.ToString();
-            pracownikDane.KOD_POCZTOWY = txtboxKodpocztowy.ToString();
-            pracownikDane.MIASTO = cbMiasto.ToString();
-            pracownikDane.KRAJ = txtboxKraj.ToString();
-            pracownikDane.STANOWISKO = cbStanowisko.ToString();
-            pracownikDane.DATA_START = txtDataRozpoczeciaPracy.Value;
-            UpdatePracownik(pracownikDane);
-
         }
 
         private void btnAnuluj_Click(object sender, EventArgs e) //anuluj dodawanie

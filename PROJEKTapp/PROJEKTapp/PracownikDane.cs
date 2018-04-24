@@ -43,33 +43,37 @@ namespace PROJEKTapp
             db.STANOWISKO_PRACOWNICY.Add(stanowiskopracownicy);
             db.SaveChanges();
         }
-        public void UpdatePracownik(PRACOWNIK_DANE pracownikDane)
+        public void UpdatePracownik(int ID, string nazwisko, string imie, string telefon, string pesel)
+           // string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, int miasto, string kraj,
+           // DateTime data, int stanowisko)
         {
             //var prac = (from p in db.PRACOWNICY
             //            join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
             //            join s in db.STANOWISKO on p.ID_PRACOWNIK equals s.ID_STANOWISKO
             //            where p.ID_PRACOWNIK == pracownikDane.ID_PRACOWNIK
             //            select p);
-            var prac = (from PRACOWNIK_DANE in db.PRACOWNIK_DANE
-                        where PRACOWNIK_DANE.ID_PRACOWNIK == pracownikDane.ID_PRACOWNIK
-                        select PRACOWNIK_DANE).First();
-            //var prac = (from PRACOWNICY in db.PRACOWNICY
-            //            where PRACOWNICY.ID_PRACOWNIK == pracownikDane.ID_PRACOWNIK
-            //            select PRACOWNICY).First();
 
-            prac.NAZWISKO = pracownikDane.NAZWISKO;
-            prac.IMIE = pracownikDane.IMIE;
-            prac.TELEFON = pracownikDane.TELEFON;
-            prac.PESEL = pracownikDane.PESEL;
-            prac.ULICA = pracownikDane.ULICA;
-            prac.NR_LOKALU = pracownikDane.NR_LOKALU;
-            prac.NR_BUDYNKU = pracownikDane.NR_BUDYNKU;
-            prac.KOD_POCZTOWY = pracownikDane.KOD_POCZTOWY;
-            prac.MIASTO = pracownikDane.MIASTO;
-            prac.KRAJ = pracownikDane.KRAJ;
-            prac.STANOWISKO = pracownikDane.STANOWISKO;
-            prac.DATA_START = pracownikDane.DATA_START;
-            //dodać pozostałe dane i tabele
+            var prac = (from p in db.PRACOWNICY
+                        where p.ID_PRACOWNIK == ID
+                        select p).First();
+            prac.NAZWISKO = nazwisko;
+            prac.IMIE = imie;
+            prac.TELEFON = telefon;
+            prac.PESEL = pesel;
+
+            //prac.NAZWISKO = pracownikDane.NAZWISKO;
+            //prac.IMIE = pracownikDane.IMIE;
+            //prac.TELEFON = pracownikDane.TELEFON;
+            //prac.PESEL = pracownikDane.PESEL;
+            //prac.ULICA = pracownikDane.ULICA;
+            //prac.NR_LOKALU = pracownikDane.NR_LOKALU;
+            //prac.NR_BUDYNKU = pracownikDane.NR_BUDYNKU;
+            //prac.KOD_POCZTOWY = pracownikDane.KOD_POCZTOWY;
+            //prac.MIASTO = pracownikDane.MIASTO;
+            //prac.KRAJ = pracownikDane.KRAJ;
+            //prac.STANOWISKO = pracownikDane.STANOWISKO;
+            //prac.DATA_START = pracownikDane.DATA_START;
+            ////dodać pozostałe dane i tabele
             db.SaveChanges();
         }
         public void DeletePracownik(int ID_Pracownik)
