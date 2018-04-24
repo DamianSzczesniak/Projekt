@@ -21,6 +21,7 @@ namespace PROJEKTapp
             cBox_Produkty_Oferta.DataSource = db.PRODUKT.ToList();
             cBox_Produkty_Oferta.DisplayMember = "NAZWA_PRODUKTU";
             cBox_Produkty_Oferta.ValueMember = "Id_Produktu";
+            cBox_Produkty_Oferta.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         
     
