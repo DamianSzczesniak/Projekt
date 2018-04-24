@@ -69,16 +69,16 @@
     <Compile Include="DOSTAWA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormOferta.cs">
+    <Compile Include="Forms_NoweZlecenie\FormOferta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormOferta.Designer.cs">
+    <Compile Include="Forms_NoweZlecenie\FormOferta.Designer.cs">
       <DependentUpon>FormOferta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormFirmyNoweZlecenie.cs">
+    <Compile Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormFirmyNoweZlecenie.Designer.cs">
+    <Compile Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.Designer.cs">
       <DependentUpon>FormFirmyNoweZlecenie.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormZmianaStanuMagazynu.cs">
@@ -129,10 +129,10 @@
     <Compile Include="Forms\FormLogistyka.designer.cs">
       <DependentUpon>FormLogistyka.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormNoweZlecenie.cs">
+    <Compile Include="Forms_NoweZlecenie\FormNoweZlecenie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormNoweZlecenie.designer.cs">
+    <Compile Include="Forms_NoweZlecenie\FormNoweZlecenie.designer.cs">
       <DependentUpon>FormNoweZlecenie.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormPracownicy.cs">
@@ -324,10 +324,10 @@
     <Compile Include="ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\FormOferta.resx">
+    <EmbeddedResource Include="Forms_NoweZlecenie\FormOferta.resx">
       <DependentUpon>FormOferta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormFirmyNoweZlecenie.resx">
+    <EmbeddedResource Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.resx">
       <DependentUpon>FormFirmyNoweZlecenie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormZmianaStanuMagazynu.resx">
@@ -351,7 +351,7 @@
     <EmbeddedResource Include="Forms\FormLogistyka.resx">
       <DependentUpon>FormLogistyka.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormNoweZlecenie.resx">
+    <EmbeddedResource Include="Forms_NoweZlecenie\FormNoweZlecenie.resx">
       <DependentUpon>FormNoweZlecenie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPracownicy.resx">
