@@ -89,6 +89,7 @@
             this.lblWyszukaj.Size = new System.Drawing.Size(142, 20);
             this.lblWyszukaj.TabIndex = 9;
             this.lblWyszukaj.Text = "Wyszukaj Nazwe";
+            this.lblWyszukaj.Visible = false;
             // 
             // txtBoxWyszukajFirme
             // 
@@ -96,6 +97,7 @@
             this.txtBoxWyszukajFirme.Name = "txtBoxWyszukajFirme";
             this.txtBoxWyszukajFirme.Size = new System.Drawing.Size(144, 20);
             this.txtBoxWyszukajFirme.TabIndex = 10;
+            this.txtBoxWyszukajFirme.Visible = false;
             // 
             // btnWybierz
             // 

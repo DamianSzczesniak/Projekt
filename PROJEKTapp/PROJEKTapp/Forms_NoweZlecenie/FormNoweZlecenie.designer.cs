@@ -65,7 +65,7 @@
             this.groupBoxOferta.Controls.Add(this.lblProdukt_Oferta);
             this.groupBoxOferta.Location = new System.Drawing.Point(12, 2);
             this.groupBoxOferta.Name = "groupBoxOferta";
-            this.groupBoxOferta.Size = new System.Drawing.Size(337, 453);
+            this.groupBoxOferta.Size = new System.Drawing.Size(337, 431);
             this.groupBoxOferta.TabIndex = 9;
             this.groupBoxOferta.TabStop = false;
             this.groupBoxOferta.Text = "Oferta";
@@ -80,7 +80,7 @@
             this.Ilosc});
             this.dataGridViewOferta.Location = new System.Drawing.Point(7, 155);
             this.dataGridViewOferta.Name = "dataGridViewOferta";
-            this.dataGridViewOferta.Size = new System.Drawing.Size(324, 242);
+            this.dataGridViewOferta.Size = new System.Drawing.Size(324, 201);
             this.dataGridViewOferta.TabIndex = 12;
             // 
             // ID_Produktu
@@ -129,7 +129,7 @@
             // btnPrzedstaw_Oferte
             // 
             this.btnPrzedstaw_Oferte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPrzedstaw_Oferte.Location = new System.Drawing.Point(92, 405);
+            this.btnPrzedstaw_Oferte.Location = new System.Drawing.Point(107, 367);
             this.btnPrzedstaw_Oferte.Name = "btnPrzedstaw_Oferte";
             this.btnPrzedstaw_Oferte.Size = new System.Drawing.Size(135, 30);
             this.btnPrzedstaw_Oferte.TabIndex = 6;
@@ -167,7 +167,7 @@
             this.groupBoxNowe_ZLecenie.Controls.Add(this.lbl_Data_Realizacji);
             this.groupBoxNowe_ZLecenie.Location = new System.Drawing.Point(355, 2);
             this.groupBoxNowe_ZLecenie.Name = "groupBoxNowe_ZLecenie";
-            this.groupBoxNowe_ZLecenie.Size = new System.Drawing.Size(352, 453);
+            this.groupBoxNowe_ZLecenie.Size = new System.Drawing.Size(352, 431);
             this.groupBoxNowe_ZLecenie.TabIndex = 10;
             this.groupBoxNowe_ZLecenie.TabStop = false;
             this.groupBoxNowe_ZLecenie.Text = "Nowe Zlecenie";
@@ -187,7 +187,7 @@
             // lbl_Data_Zlecenia
             // 
             this.lbl_Data_Zlecenia.AutoSize = true;
-            this.lbl_Data_Zlecenia.Location = new System.Drawing.Point(43, 100);
+            this.lbl_Data_Zlecenia.Location = new System.Drawing.Point(170, 81);
             this.lbl_Data_Zlecenia.Name = "lbl_Data_Zlecenia";
             this.lbl_Data_Zlecenia.Size = new System.Drawing.Size(74, 13);
             this.lbl_Data_Zlecenia.TabIndex = 0;
@@ -203,9 +203,9 @@
             // btn_Dodaj_Zlecenie
             // 
             this.btn_Dodaj_Zlecenie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_Dodaj_Zlecenie.Location = new System.Drawing.Point(143, 405);
+            this.btn_Dodaj_Zlecenie.Location = new System.Drawing.Point(139, 357);
             this.btn_Dodaj_Zlecenie.Name = "btn_Dodaj_Zlecenie";
-            this.btn_Dodaj_Zlecenie.Size = new System.Drawing.Size(133, 30);
+            this.btn_Dodaj_Zlecenie.Size = new System.Drawing.Size(134, 30);
             this.btn_Dodaj_Zlecenie.TabIndex = 4;
             this.btn_Dodaj_Zlecenie.Text = "Dodaj Zlecenie";
             this.btn_Dodaj_Zlecenie.UseVisualStyleBackColor = true;
@@ -213,14 +213,14 @@
             // 
             // txtBox_Data_Realizacji
             // 
-            this.txtBox_Data_Realizacji.Location = new System.Drawing.Point(150, 218);
+            this.txtBox_Data_Realizacji.Location = new System.Drawing.Point(150, 190);
             this.txtBox_Data_Realizacji.Name = "txtBox_Data_Realizacji";
             this.txtBox_Data_Realizacji.Size = new System.Drawing.Size(116, 20);
             this.txtBox_Data_Realizacji.TabIndex = 3;
             // 
             // txtBox_Firma
             // 
-            this.txtBox_Firma.Location = new System.Drawing.Point(154, 358);
+            this.txtBox_Firma.Location = new System.Drawing.Point(154, 283);
             this.txtBox_Firma.Name = "txtBox_Firma";
             this.txtBox_Firma.Size = new System.Drawing.Size(112, 20);
             this.txtBox_Firma.TabIndex = 3;
@@ -230,7 +230,7 @@
             // lbl_Data_Realizacji
             // 
             this.lbl_Data_Realizacji.AutoSize = true;
-            this.lbl_Data_Realizacji.Location = new System.Drawing.Point(43, 221);
+            this.lbl_Data_Realizacji.Location = new System.Drawing.Point(170, 155);
             this.lbl_Data_Realizacji.Name = "lbl_Data_Realizacji";
             this.lbl_Data_Realizacji.Size = new System.Drawing.Size(78, 13);
             this.lbl_Data_Realizacji.TabIndex = 1;
@@ -238,7 +238,7 @@
             // 
             // btnWybierzFirme
             // 
-            this.btnWybierzFirme.Location = new System.Drawing.Point(150, 355);
+            this.btnWybierzFirme.Location = new System.Drawing.Point(150, 283);
             this.btnWybierzFirme.Name = "btnWybierzFirme";
             this.btnWybierzFirme.Size = new System.Drawing.Size(116, 23);
             this.btnWybierzFirme.TabIndex = 6;
@@ -252,7 +252,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(718, 460);
+            this.ClientSize = new System.Drawing.Size(718, 442);
             this.ControlBox = false;
             this.Controls.Add(this.groupBoxNowe_ZLecenie);
             this.Controls.Add(this.groupBoxOferta);
