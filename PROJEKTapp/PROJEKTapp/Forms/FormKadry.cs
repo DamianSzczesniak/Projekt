@@ -42,8 +42,13 @@ namespace PROJEKTapp
 
         private void btnUrlopy_Click(object sender, EventArgs e)
         {
-            FormUrlopy Urlopy = new FormUrlopy(kwzpProjektEntities);
-           Urlopy.Show();
+
+        }
+
+        private void btnStatystyki_Click(object sender, EventArgs e)
+        {
+            PracStan PracStan = new PracStan(kwzpProjektEntities);
+            PracStan.Show();
         }
     }
 }

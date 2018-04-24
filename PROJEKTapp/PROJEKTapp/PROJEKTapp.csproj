@@ -246,9 +246,18 @@
     <Compile Include="PRACOWNICY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="PRACOWNICY_STANOWISKA.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="PracownikDane.cs" />
     <Compile Include="PRACOWNIK_DANE.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PracStan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PracStan.Designer.cs">
+      <DependentUpon>PracStan.cs</DependentUpon>
     </Compile>
     <Compile Include="PROCES.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
@@ -374,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\Produkcja_glowny.resx">
       <DependentUpon>Produkcja_glowny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PracStan.resx">
+      <DependentUpon>PracStan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
