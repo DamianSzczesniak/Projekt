@@ -12,12 +12,13 @@ namespace PROJEKTapp
 {
     public partial class FormWykazPracownikow : Form
     {
-        KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities(); //połaczenie z bazą danych
+        KWZP_PROJEKTEntities db; //połaczenie z bazą danych
 
         public FormWykazPracownikow(KWZP_PROJEKTEntities db)
         {
             this.db = db;
             InitializeComponent();
+
             btnDodaj.Font = new Font(btnDodaj.Font.FontFamily, 9);
             btnZaktualizuj.Font = new Font(btnZaktualizuj.Font.FontFamily, 9);
             btnUsun.Font = new Font(btnUsun.Font.FontFamily, 9);
@@ -28,9 +29,7 @@ namespace PROJEKTapp
 
             cbMiasto.DataSource = db.MIASTA.ToList();
             cbMiasto.DisplayMember = "Nazwa";
-            cbMiasto.ValueMember = "Id_Miasta";
-
-            
+            cbMiasto.ValueMember = "Id_Miasta"; 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -76,13 +75,13 @@ namespace PROJEKTapp
             btnAnuluj.Show();
         }
 
-        private void Insertpracownik(string nazwisko, string imie, string telefon, string pesel,
-            string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, int miasto, string kraj,
-            DateTime data, int stanowisko)
-        {
-            PracownikDane pracownikdane = new PracownikDane();
-            pracownikdane.Add(nazwisko, imie, telefon, pesel, ulica, nrbudynku, nrlokalu, kodpocztowy, miasto, kraj, data, stanowisko);
-        }
+        //private void Insertpracownik(string nazwisko, string imie, string telefon, string pesel,
+        //    string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, int miasto, string kraj,
+        //    DateTime data, int stanowisko)
+        //{
+        //    PracownikDane pracownikdane = new PracownikDane();
+        //    pracownikdane.Add(nazwisko, imie, telefon, pesel, ulica, nrbudynku, nrlokalu, kodpocztowy, miasto, kraj, data, stanowisko);
+        //}
 
         private void btnDodajZapisz_Click(object sender, EventArgs e) //zapisuje dodanego pracownika
         {
@@ -92,18 +91,27 @@ namespace PROJEKTapp
             }
             else
             {
-                Insertpracownik(txtboxNazwisko.Text,
-                                  txtboxImie.Text,
-                                  txtboxTel.Text,
-                                  txtboxPesel.Text,
-                                  txtboxUlica.Text,
-                                  txtNrbudynku.Text,
-                                  txtboxNrlokalu.Text,
-                                  txtboxKodpocztowy.Text,
-                                  (int)cbMiasto.SelectedValue,
-                                  txtboxKraj.Text,
-                                  txtDataRozpoczeciaPracy.Value,
-                                  (int)cbStanowisko.SelectedValue);
+                PRACOWNICY pracownik = new PRACOWNICY();
+                pracownik.NAZWISKO = this.txtboxNazwisko.Text;
+                pracownik.IMIE = this.txtboxImie.Text;
+                pracownik.TELEFON = this.txtboxTel.Text;
+                pracownik.PESEL = this.txtboxPesel.Text;
+                ADRESY_PRACOWNICY adrespracownika = new ADRESY_PRACOWNICY();
+                adrespracownika.ULICA = this.txtboxUlica.Text;
+                adrespracownika.NR_BUDYNKU = this.txtNrbudynku.Text;
+                adrespracownika.NR_LOKALU = this.txtboxNrlokalu.Text;
+                adrespracownika.KOD_POCZTOWY = this.txtboxKodpocztowy.Text;
+                adrespracownika.ID_MIASTA = (int)cbMiasto.SelectedValue;
+                adrespracownika.KRAJ = this.txtboxKraj.Text;
+                STANOWISKO_PRACOWNICY pracownikstanowisko = new STANOWISKO_PRACOWNICY();
+                pracownikstanowisko.ID_STANOWISKO = (int)cbStanowisko.SelectedValue;
+                pracownikstanowisko.DATA_START = txtDataRozpoczeciaPracy.Value;
+                pracownik.STANOWISKO_PRACOWNICY.Add(pracownikstanowisko);
+                pracownik.ADRESY_PRACOWNICY.Add(adrespracownika);
+                db.PRACOWNICY.Add(pracownik);
+                db.SaveChanges();
+
+
                 lblImie.Hide();
                 txtboxPesel.Hide();
                 lblNazwisko.Hide();
@@ -195,7 +203,6 @@ namespace PROJEKTapp
         }
         private void btnUsun_Click(object sender, EventArgs e)
         {
-           PracownikDane pracownik = new PracownikDane();
             DialogResult result = MessageBox.Show("Czy chcesz usunąć dane pracownika: " + ListaPracownikow.CurrentRow.Cells[1].Value + " " + ListaPracownikow.CurrentRow.Cells[2].Value, "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
@@ -204,7 +211,10 @@ namespace PROJEKTapp
                                    join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
                                    select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
 
-                pracownik.DeletePracownik(Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
+                PRACOWNICY pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ((int)ListaPracownikow.CurrentRow.Cells[0].Value)).First();
+                db.PRACOWNICY.Remove(pracownik);
+                db.SaveChanges();
+
                 ListaPracownikow.DataSource = bspracownicy.ToList();
                 ListaPracownikow.Refresh();
             }

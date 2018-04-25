@@ -50,7 +50,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(944, 59);
+            this.panel1.Size = new System.Drawing.Size(1366, 59);
             this.panel1.TabIndex = 0;
             // 
             // btnExit
@@ -58,7 +58,7 @@
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(863, 3);
+            this.btnExit.Location = new System.Drawing.Point(1297, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(57, 55);
             this.btnExit.TabIndex = 2;
@@ -85,9 +85,9 @@
             this.panel2.Controls.Add(this.btnWynagrodzenia);
             this.panel2.Controls.Add(this.btnPracownicy);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 591);
+            this.panel2.Location = new System.Drawing.Point(0, 633);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(944, 135);
+            this.panel2.Size = new System.Drawing.Size(1366, 135);
             this.panel2.TabIndex = 1;
             // 
             // btnStatystyki
@@ -174,7 +174,7 @@
             // FormKadry
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(944, 726);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));

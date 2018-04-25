@@ -80,5 +80,10 @@ namespace PROJEKTapp.Forms
             db.FIRMY.Add(nowaFirma);
             db.SaveChanges();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
