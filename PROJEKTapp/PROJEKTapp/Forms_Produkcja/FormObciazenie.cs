@@ -13,19 +13,20 @@ namespace PROJEKTapp.Forms_Produkcja
 
     public partial class FormObciazenie : Form
     {
-        string data;
+        DateTime data;
         string tryb = "Obciążenie Maszyn";
-        KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities();
+        KWZP_PROJEKTEntities db;
 
         public FormObciazenie(KWZP_PROJEKTEntities kwzpProjektEntities)
         {
+            this.db=kwzpProjektEntities;
             InitializeComponent();
         }
 
         private void FormObciazenie_Load(object sender, EventArgs e)
         {
-            data = dateWybierzDate.Value.ToShortDateString();
-            this.GridObciazenie.DataSource = db.OBCIAZENIE_MASZYN.Where(x => x.DATA_DZIEN.ToString().Equals(data)).ToList();
+            data = dateWybierzDate.Value.Date;
+            this.GridObciazenie.DataSource = db.OBCIAZENIE_MASZYN.Where(x => x.DATA_DZIEN.Equals(data)).ToList();
         }
 
         private void btnExitObciazenie_Click(object sender, EventArgs e)
@@ -38,25 +39,25 @@ namespace PROJEKTapp.Forms_Produkcja
             tryb = cboxTryb.Text.ToString();
             if (tryb == "Obciążenie Maszyn")
             {
-                this.GridObciazenie.DataSource = db.OBCIAZENIE_MASZYN.Where(x => x.DATA_DZIEN.ToString().Equals(data)).ToList();
+                this.GridObciazenie.DataSource = db.OBCIAZENIE_MASZYN.Where(x => x.DATA_DZIEN.Equals(data)).ToList();
             }
             else
             {
-                this.GridObciazenie.DataSource = db.OBCIAZENIE_NARZEDZI.Where(x => x.DATA_DZIEN.ToString().Equals(data)).ToList();
+                this.GridObciazenie.DataSource = db.OBCIAZENIE_NARZEDZI.Where(x => x.DATA_DZIEN.Equals(data)).ToList();
             }
         }
 
         private void dateWybierzDate_ValueChanged(object sender, EventArgs e)
         {
-            data = dateWybierzDate.Value.ToShortDateString();
+            data = dateWybierzDate.Value;
 
             if (tryb == "Obciążenie Maszyn")
             {
-                this.GridObciazenie.DataSource = db.OBCIAZENIE_MASZYN.Where(x => x.DATA_DZIEN.ToString().Equals(data)).ToList();
+                this.GridObciazenie.DataSource = db.OBCIAZENIE_MASZYN.Where(x => x.DATA_DZIEN.Equals(data)).ToList();
             }
             else
             {
-                this.GridObciazenie.DataSource = db.OBCIAZENIE_NARZEDZI.Where(x => x.DATA_DZIEN.ToString().Equals(data)).ToList();
+                this.GridObciazenie.DataSource = db.OBCIAZENIE_NARZEDZI.Where(x => x.DATA_DZIEN.Equals(data)).ToList();
             }
         }
     }
