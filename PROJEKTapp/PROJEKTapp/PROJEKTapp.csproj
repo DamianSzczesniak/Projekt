@@ -165,6 +165,12 @@
     <Compile Include="Forms_Produkcja\FormGabaryty.Designer.cs">
       <DependentUpon>FormGabaryty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_Produkcja\FormNarzedzia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormNarzedzia.Designer.cs">
+      <DependentUpon>FormNarzedzia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_Produkcja\FormObciazenie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -386,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\FormGabaryty.resx">
       <DependentUpon>FormGabaryty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormNarzedzia.resx">
+      <DependentUpon>FormNarzedzia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\FormObciazenie.resx">
       <DependentUpon>FormObciazenie.cs</DependentUpon>

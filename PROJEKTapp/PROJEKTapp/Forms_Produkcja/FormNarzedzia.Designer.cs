@@ -44,7 +44,7 @@
             // Nazwa
             // 
             this.Nazwa.AutoSize = true;
-            this.Nazwa.Location = new System.Drawing.Point(38, 70);
+            this.Nazwa.Location = new System.Drawing.Point(38, 74);
             this.Nazwa.Name = "Nazwa";
             this.Nazwa.Size = new System.Drawing.Size(40, 13);
             this.Nazwa.TabIndex = 0;
@@ -108,7 +108,7 @@
             // 
             // Zapisz
             // 
-            this.Zapisz.Location = new System.Drawing.Point(41, 377);
+            this.Zapisz.Location = new System.Drawing.Point(96, 311);
             this.Zapisz.Name = "Zapisz";
             this.Zapisz.Size = new System.Drawing.Size(79, 62);
             this.Zapisz.TabIndex = 2;
@@ -118,21 +118,23 @@
             // 
             // Aktualizuj
             // 
-            this.Aktualizuj.Location = new System.Drawing.Point(155, 377);
+            this.Aktualizuj.Location = new System.Drawing.Point(227, 311);
             this.Aktualizuj.Name = "Aktualizuj";
             this.Aktualizuj.Size = new System.Drawing.Size(87, 62);
             this.Aktualizuj.TabIndex = 2;
             this.Aktualizuj.Text = "Aktualizuj";
             this.Aktualizuj.UseVisualStyleBackColor = true;
+            this.Aktualizuj.Click += new System.EventHandler(this.Aktualizuj_Click);
             // 
             // WyczyscDane
             // 
-            this.WyczyscDane.Location = new System.Drawing.Point(272, 377);
+            this.WyczyscDane.Location = new System.Drawing.Point(361, 311);
             this.WyczyscDane.Name = "WyczyscDane";
             this.WyczyscDane.Size = new System.Drawing.Size(81, 62);
             this.WyczyscDane.TabIndex = 2;
             this.WyczyscDane.Text = "Wyczyść dane";
             this.WyczyscDane.UseVisualStyleBackColor = true;
+            this.WyczyscDane.Click += new System.EventHandler(this.WyczyscDane_Click);
             // 
             // FormNarzedzia
             // 

@@ -30,7 +30,7 @@ namespace PROJEKTapp.Forms_Produkcja
             this.textBox3.Text = narzedzia.NR_EWIDENCYJNY;
             this.textBox4.Text = narzedzia.KOSZT_ZA_H.ToString();
             narzedzia.KOSZT_ZA_H = decimal.Parse(this.textBox4.Text);
-        
+
 
         }
 
@@ -42,13 +42,26 @@ namespace PROJEKTapp.Forms_Produkcja
         private void Zapisz_Click(object sender, EventArgs e)
         {
             //dodawanie
-            NARZEDZIA nowenarzedzia= new NARZEDZIA();
-            //doedycji ponizej
-           // nowaFirma.NAZWA_FIRMY = this.textBox4.Text;
-            //nowaFirma.NIP = this.textBox3.Text;
-            //nowaFirma.POJAZDY.Add(db.POJAZDY.First());
-            //db.FIRMY.Add(nowaFirma);
-            //db.SaveChanges();
+            NARZEDZIA noweNarzedzia = new NARZEDZIA();
+            noweNarzedzia.NAZWA = this.textBox1.Text;
+            noweNarzedzia.MODEL = this.textBox2.Text;
+            noweNarzedzia.NR_EWIDENCYJNY = this.textBox3.Text;
+            noweNarzedzia.KOSZT_ZA_H = decimal.Parse(this.textBox4.Text);
+            db.NARZEDZIA.Add(noweNarzedzia);
+            db.SaveChanges();
+        }
+
+        private void Aktualizuj_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WyczyscDane_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
         }
     }
 }
