@@ -333,6 +333,9 @@
     <Compile Include="ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormUrlopy.resx">
+      <DependentUpon>FormUrlopy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_NoweZlecenie\FormOferta.resx">
       <DependentUpon>FormOferta.cs</DependentUpon>
     </EmbeddedResource>

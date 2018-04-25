@@ -16,5 +16,10 @@ namespace PROJEKTapp
         {
             InitializeComponent();
         }
+
+        private void FormUrlopy_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
