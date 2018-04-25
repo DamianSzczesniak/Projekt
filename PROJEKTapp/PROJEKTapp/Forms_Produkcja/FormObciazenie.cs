@@ -60,5 +60,10 @@ namespace PROJEKTapp.Forms_Produkcja
                 this.GridObciazenie.DataSource = db.OBCIAZENIE_NARZEDZI.Where(x => x.DATA_DZIEN.Equals(data)).ToList();
             }
         }
+
+        private void GridObciazenie_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

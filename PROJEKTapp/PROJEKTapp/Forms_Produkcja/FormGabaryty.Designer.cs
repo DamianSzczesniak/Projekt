@@ -43,7 +43,7 @@
             this.btnExitGabaryty.FlatAppearance.BorderSize = 0;
             this.btnExitGabaryty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitGabaryty.Image = global::PROJEKTapp.Properties.Resources.btnExit_Image;
-            this.btnExitGabaryty.Location = new System.Drawing.Point(721, 12);
+            this.btnExitGabaryty.Location = new System.Drawing.Point(1287, 12);
             this.btnExitGabaryty.Name = "btnExitGabaryty";
             this.btnExitGabaryty.Size = new System.Drawing.Size(67, 52);
             this.btnExitGabaryty.TabIndex = 1;
@@ -55,17 +55,17 @@
             this.GridMasaWymiar.AllowUserToAddRows = false;
             this.GridMasaWymiar.AllowUserToDeleteRows = false;
             this.GridMasaWymiar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridMasaWymiar.Location = new System.Drawing.Point(54, 78);
+            this.GridMasaWymiar.Location = new System.Drawing.Point(130, 152);
             this.GridMasaWymiar.Name = "GridMasaWymiar";
             this.GridMasaWymiar.ReadOnly = true;
-            this.GridMasaWymiar.Size = new System.Drawing.Size(721, 299);
+            this.GridMasaWymiar.Size = new System.Drawing.Size(1098, 582);
             this.GridMasaWymiar.TabIndex = 2;
             // 
             // lblTryb
             // 
             this.lblTryb.AutoSize = true;
             this.lblTryb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTryb.Location = new System.Drawing.Point(51, 28);
+            this.lblTryb.Location = new System.Drawing.Point(258, 81);
             this.lblTryb.Name = "lblTryb";
             this.lblTryb.Size = new System.Drawing.Size(99, 17);
             this.lblTryb.TabIndex = 7;
@@ -80,7 +80,7 @@
             this.cboxTryb.Items.AddRange(new object[] {
             "Masa",
             "Wymiar"});
-            this.cboxTryb.Location = new System.Drawing.Point(200, 26);
+            this.cboxTryb.Location = new System.Drawing.Point(407, 79);
             this.cboxTryb.Name = "cboxTryb";
             this.cboxTryb.Size = new System.Drawing.Size(121, 21);
             this.cboxTryb.TabIndex = 8;
@@ -89,7 +89,7 @@
             // 
             // txtNazwaProduktu
             // 
-            this.txtNazwaProduktu.Location = new System.Drawing.Point(534, 26);
+            this.txtNazwaProduktu.Location = new System.Drawing.Point(929, 79);
             this.txtNazwaProduktu.Name = "txtNazwaProduktu";
             this.txtNazwaProduktu.Size = new System.Drawing.Size(100, 20);
             this.txtNazwaProduktu.TabIndex = 10;
@@ -99,7 +99,7 @@
             // 
             this.lblNazwaProduktu.AutoSize = true;
             this.lblNazwaProduktu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNazwaProduktu.Location = new System.Drawing.Point(358, 28);
+            this.lblNazwaProduktu.Location = new System.Drawing.Point(753, 81);
             this.lblNazwaProduktu.Name = "lblNazwaProduktu";
             this.lblNazwaProduktu.Size = new System.Drawing.Size(170, 17);
             this.lblNazwaProduktu.TabIndex = 11;
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.lblNazwaProduktu);
             this.Controls.Add(this.txtNazwaProduktu);
             this.Controls.Add(this.cboxTryb);
