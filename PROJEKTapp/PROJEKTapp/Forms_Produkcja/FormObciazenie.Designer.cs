@@ -51,9 +51,10 @@
             // 
             // dateWybierzDate
             // 
-            this.dateWybierzDate.Location = new System.Drawing.Point(433, 85);
+            this.dateWybierzDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dateWybierzDate.Location = new System.Drawing.Point(363, 74);
             this.dateWybierzDate.Name = "dateWybierzDate";
-            this.dateWybierzDate.Size = new System.Drawing.Size(144, 20);
+            this.dateWybierzDate.Size = new System.Drawing.Size(257, 31);
             this.dateWybierzDate.TabIndex = 1;
             this.dateWybierzDate.Value = new System.DateTime(2018, 4, 23, 0, 0, 0, 0);
             this.dateWybierzDate.ValueChanged += new System.EventHandler(this.dateWybierzDate_ValueChanged);
@@ -61,10 +62,10 @@
             // lblWybierzDate
             // 
             this.lblWybierzDate.AutoSize = true;
-            this.lblWybierzDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblWybierzDate.Location = new System.Drawing.Point(308, 87);
+            this.lblWybierzDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblWybierzDate.Location = new System.Drawing.Point(125, 76);
             this.lblWybierzDate.Name = "lblWybierzDate";
-            this.lblWybierzDate.Size = new System.Drawing.Size(103, 17);
+            this.lblWybierzDate.Size = new System.Drawing.Size(164, 29);
             this.lblWybierzDate.TabIndex = 2;
             this.lblWybierzDate.Text = "Wybierz date";
             // 
@@ -82,13 +83,14 @@
             // 
             // cboxTryb
             // 
+            this.cboxTryb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cboxTryb.FormattingEnabled = true;
             this.cboxTryb.Items.AddRange(new object[] {
             "Obciążenie Maszyn",
             "Obciążenie Narzędzi"});
-            this.cboxTryb.Location = new System.Drawing.Point(906, 83);
+            this.cboxTryb.Location = new System.Drawing.Point(994, 72);
             this.cboxTryb.Name = "cboxTryb";
-            this.cboxTryb.Size = new System.Drawing.Size(121, 21);
+            this.cboxTryb.Size = new System.Drawing.Size(234, 33);
             this.cboxTryb.TabIndex = 4;
             this.cboxTryb.Text = "Obciążenie Maszyn";
             this.cboxTryb.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
@@ -96,10 +98,10 @@
             // lblTryb
             // 
             this.lblTryb.AutoSize = true;
-            this.lblTryb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTryb.Location = new System.Drawing.Point(775, 85);
+            this.lblTryb.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTryb.Location = new System.Drawing.Point(769, 76);
             this.lblTryb.Name = "lblTryb";
-            this.lblTryb.Size = new System.Drawing.Size(99, 17);
+            this.lblTryb.Size = new System.Drawing.Size(156, 29);
             this.lblTryb.TabIndex = 5;
             this.lblTryb.Text = "Wybierz tryb";
             // 

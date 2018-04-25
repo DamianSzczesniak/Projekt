@@ -82,13 +82,13 @@
             // Panel
             // 
             this.Panel.AutoSize = true;
-            this.Panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Panel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Panel.Location = new System.Drawing.Point(12, 9);
+            this.Panel.Location = new System.Drawing.Point(570, 12);
             this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(144, 31);
+            this.Panel.Size = new System.Drawing.Size(258, 42);
             this.Panel.TabIndex = 2;
-            this.Panel.Text = "Produkcja";
+            this.Panel.Text = "PRODUKCJA";
             // 
             // lblDol
             // 
@@ -145,7 +145,7 @@
             this.btnGabaryty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnGabaryty.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGabaryty.Image = global::PROJEKTapp.Properties.Resources.btnObciazenie;
-            this.btnGabaryty.Location = new System.Drawing.Point(690, 668);
+            this.btnGabaryty.Location = new System.Drawing.Point(685, 669);
             this.btnGabaryty.Margin = new System.Windows.Forms.Padding(2);
             this.btnGabaryty.Name = "btnGabaryty";
             this.btnGabaryty.Size = new System.Drawing.Size(341, 100);
