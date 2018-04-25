@@ -31,6 +31,10 @@ namespace PROJEKTapp
             cbMiasto.DataSource = db.MIASTA.ToList();
             cbMiasto.DisplayMember = "Nazwa";
             cbMiasto.ValueMember = "Id_Miasta";
+
+            cbTypUrlopu.DataSource = db.WOLNE.ToList();
+            cbTypUrlopu.DisplayMember = "NAZWA";
+            cbTypUrlopu.ValueMember = "ID_WOLNE";
         }
 
         private void FormKadry_Load(object sender, EventArgs e)
@@ -38,6 +42,7 @@ namespace PROJEKTapp
             pnlUserControl.Hide();
             pnlUserSearch.Hide();
             pnlUserField.Hide();
+            pnlWolne.Hide();
         }
 
         private void btnPracownicy_Click(object sender, EventArgs e)
@@ -48,6 +53,8 @@ namespace PROJEKTapp
                 pnlUserControl.Show();
                 pnlUserSearch.Show();
                 pnlUserField.Hide();
+                pnlWolne.Hide();
+
 
                 var bspracownicy = from p in db.PRACOWNICY
                                    join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
@@ -64,6 +71,7 @@ namespace PROJEKTapp
                 pnlUserControl.Hide();
                 pnlUserSearch.Hide();
                 pnlUserField.Hide();
+                pnlWolne.Hide();
             }
         }
 
@@ -72,10 +80,25 @@ namespace PROJEKTapp
 
         private void btnUrlopy_Click(object sender, EventArgs e)
         {
-
+            if (cont == 1)
+            {
+                cont = 0;
+                pnlUserControl.Show();
+                pnlUserSearch.Show();
+                pnlUserField.Hide();
+                pnlWolne.Hide();
+            }
+            else
+            {
+                cont = 1;
+                pnlUserControl.Hide();
+                pnlUserSearch.Hide();
+                pnlUserField.Hide();
+                pnlWolne.Hide();
+            }
         }
 
-        private void btnStatystyki_Click(object sender, EventArgs e)
+            private void btnStatystyki_Click(object sender, EventArgs e)
         {
             PracStan PracStan = new PracStan(db);
             PracStan.Show();
@@ -99,9 +122,12 @@ namespace PROJEKTapp
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            pnlUserField.Show();
-            czyscform();
-            contzapis = 1;
+            
+            {
+                pnlUserField.Show();
+                czyscform();
+                contzapis = 1;
+            }
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)
