@@ -155,9 +155,9 @@
             this.lblNowaFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblNowaFirma.Location = new System.Drawing.Point(459, 44);
             this.lblNowaFirma.Name = "lblNowaFirma";
-            this.lblNowaFirma.Size = new System.Drawing.Size(117, 24);
+            this.lblNowaFirma.Size = new System.Drawing.Size(124, 24);
             this.lblNowaFirma.TabIndex = 8;
-            this.lblNowaFirma.Text = "Dane Firmy";
+            this.lblNowaFirma.Text = "Dodaj Firme";
             // 
             // txtB_NazwaFirmy
             // 

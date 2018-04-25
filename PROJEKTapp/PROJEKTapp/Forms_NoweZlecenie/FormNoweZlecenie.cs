@@ -18,13 +18,12 @@ namespace PROJEKTapp
         public FormNoweZlecenie()
         {
             InitializeComponent();
-           
+
             cBox_Produkty_Oferta.DataSource = db.PRODUKT.ToList();
             cBox_Produkty_Oferta.DisplayMember = "NAZWA_PRODUKTU";
             cBox_Produkty_Oferta.ValueMember = "Id_Produktu";
             cBox_Produkty_Oferta.DropDownStyle = ComboBoxStyle.DropDownList;
             txtBox_Data_Zlecenia.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            txtBox_Firma.Text = IndexFirmy.ToString();
         }
         
     
@@ -42,7 +41,7 @@ namespace PROJEKTapp
 
             txtBox_Data_Realizacji.Clear();
             txtBox_Data_Zlecenia.Clear();
-            txtBox_Firma.Clear();
+           
 
 
 
