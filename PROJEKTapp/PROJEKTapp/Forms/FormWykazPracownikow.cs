@@ -210,8 +210,8 @@ namespace PROJEKTapp
                                    join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
                                    join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
                                    select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
-
-                PRACOWNICY pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ((int)ListaPracownikow.CurrentRow.Cells[0].Value)).First();
+                int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+                PRACOWNICY pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
                 db.PRACOWNICY.Remove(pracownik);
                 db.SaveChanges();
 
@@ -265,31 +265,26 @@ namespace PROJEKTapp
             txtNrbudynku.Clear();
             txtboxNrlokalu.Clear();
 
-            PRACOWNIK_DANE pracownikDane = new PRACOWNIK_DANE();
-            int Id_Pracownik = (Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value));
-            pracownikDane = (from p in db.PRACOWNIK_DANE
-                             where p.ID_PRACOWNIK == Id_Pracownik
-                             select p).First();
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            PRACOWNICY pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
 
-            txtboxNazwisko.Text = pracownikDane.NAZWISKO;
-            txtboxImie.Text = pracownikDane.IMIE;
-            txtboxTel.Text = pracownikDane.TELEFON;
-            txtboxPesel.Text = pracownikDane.PESEL;
-            txtboxUlica.Text = pracownikDane.ULICA;
-            txtboxNrlokalu.Text = pracownikDane.NR_LOKALU;
-            txtNrbudynku.Text = pracownikDane.NR_BUDYNKU;
-            txtboxKodpocztowy.Text = pracownikDane.KOD_POCZTOWY;
-            cbMiasto.Text = pracownikDane.MIASTO;
-            txtboxKraj.Text = pracownikDane.KRAJ;
-            cbStanowisko.Text = pracownikDane.STANOWISKO;
-            txtDataRozpoczeciaPracy.Value = pracownikDane.DATA_START;
+            txtboxNazwisko.Text = pracownik.NAZWISKO;
+            txtboxImie.Text = pracownik.IMIE;
+            txtboxTel.Text = pracownik.TELEFON;
+            txtboxPesel.Text = pracownik.PESEL;
+
+            ADRESY_PRACOWNICY adrespracownik = pracownik.ADRESY_PRACOWNICY.First();
+            txtboxUlica.Text = adrespracownik.ULICA;
+            txtboxNrlokalu.Text = adrespracownik.NR_LOKALU;
+            txtNrbudynku.Text = adrespracownik.NR_BUDYNKU;
+            txtboxKodpocztowy.Text = adrespracownik.KOD_POCZTOWY;
+            cbMiasto.SelectedValue = adrespracownik.ID_MIASTA;
+            txtboxKraj.Text = adrespracownik.KRAJ;
+            STANOWISKO_PRACOWNICY pracstan = pracownik.STANOWISKO_PRACOWNICY.First();
+            cbStanowisko.SelectedValue = pracstan.ID_STANOWISKO;
+            txtDataRozpoczeciaPracy.Value = pracstan.DATA_START;
         }
 
-        private void UpdatePracownik(int ID, string nazwisko, string imie, string telefon, string pesel, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, int miasto, string kraj)
-        {
-            PracownikDane pracownikdane = new PracownikDane();
-            pracownikdane.UpdatePracownik(ID, nazwisko, imie, telefon, pesel, ulica, nrbudynku, nrlokalu, kodpocztowy, miasto, kraj);
-        }
         private void btnZaktualizaujZapisz_Click(object sender, EventArgs e)
         {
             lblImie.Hide();
@@ -324,7 +319,7 @@ namespace PROJEKTapp
             // pracownikDane.DATA_START = this.txtDataRozpoczeciaPracy.Value;
             // //UpdatePracownik(pracownikDane);
 
-            UpdatePracownik(ID, txtboxNazwisko.Text, txtboxImie.Text, txtboxTel.Text, txtboxPesel.Text, txtboxUlica.Text, txtNrbudynku.Text, txtboxNrlokalu.Text, txtboxKodpocztowy.Text, (int)cbMiasto.SelectedValue, txtboxKraj.Text);
+            //UpdatePracownik(ID, txtboxNazwisko.Text, txtboxImie.Text, txtboxTel.Text, txtboxPesel.Text, txtboxUlica.Text, txtNrbudynku.Text, txtboxNrlokalu.Text, txtboxKodpocztowy.Text, (int)cbMiasto.SelectedValue, txtboxKraj.Text);
 
             ListaPracownikow.Show();
             btnDodaj.Show();
