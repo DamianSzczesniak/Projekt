@@ -35,7 +35,7 @@ namespace PROJEKTapp
 
         private void btnKadry_Click(object sender, EventArgs e)
         {
-            FormKadry Kadry = new FormKadry();
+            FormKadry Kadry = new FormKadry(db);
             Kadry.Show();
         }
 
