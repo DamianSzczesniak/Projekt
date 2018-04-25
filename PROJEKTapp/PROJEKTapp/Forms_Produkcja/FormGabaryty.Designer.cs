@@ -55,17 +55,17 @@
             this.GridMasaWymiar.AllowUserToAddRows = false;
             this.GridMasaWymiar.AllowUserToDeleteRows = false;
             this.GridMasaWymiar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridMasaWymiar.Location = new System.Drawing.Point(221, 149);
+            this.GridMasaWymiar.Location = new System.Drawing.Point(130, 152);
             this.GridMasaWymiar.Name = "GridMasaWymiar";
             this.GridMasaWymiar.ReadOnly = true;
-            this.GridMasaWymiar.Size = new System.Drawing.Size(867, 590);
+            this.GridMasaWymiar.Size = new System.Drawing.Size(1098, 582);
             this.GridMasaWymiar.TabIndex = 2;
             // 
             // lblTryb
             // 
             this.lblTryb.AutoSize = true;
             this.lblTryb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTryb.Location = new System.Drawing.Point(314, 85);
+            this.lblTryb.Location = new System.Drawing.Point(258, 81);
             this.lblTryb.Name = "lblTryb";
             this.lblTryb.Size = new System.Drawing.Size(99, 17);
             this.lblTryb.TabIndex = 7;
@@ -80,7 +80,7 @@
             this.cboxTryb.Items.AddRange(new object[] {
             "Masa",
             "Wymiar"});
-            this.cboxTryb.Location = new System.Drawing.Point(463, 83);
+            this.cboxTryb.Location = new System.Drawing.Point(407, 79);
             this.cboxTryb.Name = "cboxTryb";
             this.cboxTryb.Size = new System.Drawing.Size(121, 21);
             this.cboxTryb.TabIndex = 8;
@@ -89,7 +89,7 @@
             // 
             // txtNazwaProduktu
             // 
-            this.txtNazwaProduktu.Location = new System.Drawing.Point(909, 81);
+            this.txtNazwaProduktu.Location = new System.Drawing.Point(929, 79);
             this.txtNazwaProduktu.Name = "txtNazwaProduktu";
             this.txtNazwaProduktu.Size = new System.Drawing.Size(100, 20);
             this.txtNazwaProduktu.TabIndex = 10;
@@ -99,7 +99,7 @@
             // 
             this.lblNazwaProduktu.AutoSize = true;
             this.lblNazwaProduktu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNazwaProduktu.Location = new System.Drawing.Point(733, 83);
+            this.lblNazwaProduktu.Location = new System.Drawing.Point(753, 81);
             this.lblNazwaProduktu.Name = "lblNazwaProduktu";
             this.lblNazwaProduktu.Size = new System.Drawing.Size(170, 17);
             this.lblNazwaProduktu.TabIndex = 11;
