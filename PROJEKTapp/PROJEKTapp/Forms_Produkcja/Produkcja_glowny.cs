@@ -49,7 +49,7 @@ namespace PROJEKTapp
 
         private void btnEwidencjaMaszyn_Click(object sender, EventArgs e)
         {
-            Forms_Produkcja.FormNarzedzia ewidencja = new Forms_Produkcja.FormNarzedzia(kwzpProjektEntities);
+            Forms_Produkcja.FormEwidencja ewidencja = new Forms_Produkcja.FormEwidencja(kwzpProjektEntities);
             ewidencja.Show();
         }
     }
