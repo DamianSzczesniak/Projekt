@@ -14,6 +14,10 @@ namespace PROJEKTapp
     {
         KWZP_PROJEKTEntities db;//połaczenie z bazą danych
         int cont = 1;
+        int contzapis;
+        PRACOWNICY pracownik;
+        ADRESY_PRACOWNICY adrespracownik;
+        STANOWISKO_PRACOWNICY pracownikstanowisko;
 
         public FormKadry(KWZP_PROJEKTEntities db)
         {
@@ -97,30 +101,30 @@ namespace PROJEKTapp
         {
             pnlUserField.Show();
             czyscform();
+            contzapis = 1;
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)
         {
             pnlUserField.Show();
+            contzapis = 0;
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
-            PRACOWNICY pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
-
+            pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
             txtboxNazwisko.Text = pracownik.NAZWISKO;
             txtboxImie.Text = pracownik.IMIE;
             txtboxTel.Text = pracownik.TELEFON;
             txtboxPesel.Text = pracownik.PESEL;
-
-            ADRESY_PRACOWNICY adrespracownik = pracownik.ADRESY_PRACOWNICY.First();
+            adrespracownik = pracownik.ADRESY_PRACOWNICY.First();
             txtboxUlica.Text = adrespracownik.ULICA;
             txtboxNrlokalu.Text = adrespracownik.NR_LOKALU;
             txtboxNrbudynku.Text = adrespracownik.NR_BUDYNKU;
             txtboxKodpocztowy.Text = adrespracownik.KOD_POCZTOWY;
             cbMiasto.SelectedValue = adrespracownik.ID_MIASTA;
             txtboxKraj.Text = adrespracownik.KRAJ;
-            STANOWISKO_PRACOWNICY pracstan = pracownik.STANOWISKO_PRACOWNICY.First();
-            cbStanowisko.SelectedValue = pracstan.ID_STANOWISKO;
-            txtDataRozpoczeciaPracy.Value = pracstan.DATA_START;
+            pracownikstanowisko = pracownik.STANOWISKO_PRACOWNICY.First();
+            cbStanowisko.SelectedValue = pracownikstanowisko.ID_STANOWISKO;
+            txtDataRozpoczeciaPracy.Value = pracownikstanowisko.DATA_START;
         }
 
         private void btnUsun_Click(object sender, EventArgs e)
@@ -170,33 +174,66 @@ namespace PROJEKTapp
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
         {
-            if (txtboxImie.Text == "" || txtboxNazwisko.Text == "" || txtboxTel.Text == "" || txtboxPesel.Text == "" || txtboxUlica.Text == "" || txtboxNrbudynku.Text == "" || txtboxNrlokalu.Text == "" || txtboxKodpocztowy.Text == "")
-            {
-                MessageBox.Show("Wypełnij wszystkie pola");
-            }
+                if (txtboxImie.Text == "" || txtboxNazwisko.Text == "" || txtboxTel.Text == "" || txtboxPesel.Text == "" || txtboxUlica.Text == "" || txtboxNrbudynku.Text == "" || txtboxNrlokalu.Text == "" || txtboxKodpocztowy.Text == "")
+                {
+                    MessageBox.Show("Wypełnij wszystkie pola");
+                }
+                else if (contzapis == 1)
+                {
+                    PRACOWNICY pracownik = new PRACOWNICY();
+                    pracownik.NAZWISKO = this.txtboxNazwisko.Text;
+                    pracownik.IMIE = this.txtboxImie.Text;
+                    pracownik.TELEFON = this.txtboxTel.Text;
+                    pracownik.PESEL = this.txtboxPesel.Text;
+                    ADRESY_PRACOWNICY adrespracownika = new ADRESY_PRACOWNICY();
+                    adrespracownika.ULICA = this.txtboxUlica.Text;
+                    adrespracownika.NR_BUDYNKU = this.txtboxNrbudynku.Text;
+                    adrespracownika.NR_LOKALU = this.txtboxNrlokalu.Text;
+                    adrespracownika.KOD_POCZTOWY = this.txtboxKodpocztowy.Text;
+                    adrespracownika.ID_MIASTA = (int)cbMiasto.SelectedValue;
+                    adrespracownika.KRAJ = this.txtboxKraj.Text;
+                    STANOWISKO_PRACOWNICY pracownikstanowisko = new STANOWISKO_PRACOWNICY();
+                    pracownikstanowisko.ID_STANOWISKO = (int)cbStanowisko.SelectedValue;
+                    pracownikstanowisko.DATA_START = txtDataRozpoczeciaPracy.Value;
+                    pracownik.STANOWISKO_PRACOWNICY.Add(pracownikstanowisko);
+                    pracownik.ADRESY_PRACOWNICY.Add(adrespracownika);
+                    db.PRACOWNICY.Add(pracownik);
+                    db.SaveChanges();
+                    var bspracownicy = from p in db.PRACOWNICY
+                                       join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
+                                       join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
+                                       select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
+                    ListaPracownikow.DataSource = bspracownicy.ToList();
+                    ListaPracownikow.Refresh();
+                }
             else
             {
-                PRACOWNICY pracownik = new PRACOWNICY();
+                int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+                pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
                 pracownik.NAZWISKO = this.txtboxNazwisko.Text;
                 pracownik.IMIE = this.txtboxImie.Text;
                 pracownik.TELEFON = this.txtboxTel.Text;
                 pracownik.PESEL = this.txtboxPesel.Text;
-                ADRESY_PRACOWNICY adrespracownika = new ADRESY_PRACOWNICY();
-                adrespracownika.ULICA = this.txtboxUlica.Text;
-                adrespracownika.NR_BUDYNKU = this.txtboxNrbudynku.Text;
-                adrespracownika.NR_LOKALU = this.txtboxNrlokalu.Text;
-                adrespracownika.KOD_POCZTOWY = this.txtboxKodpocztowy.Text;
-                adrespracownika.ID_MIASTA = (int)cbMiasto.SelectedValue;
-                adrespracownika.KRAJ = this.txtboxKraj.Text;
-                STANOWISKO_PRACOWNICY pracownikstanowisko = new STANOWISKO_PRACOWNICY();
+                adrespracownik = pracownik.ADRESY_PRACOWNICY.First();
+                adrespracownik.ULICA = this.txtboxUlica.Text;
+                adrespracownik.NR_BUDYNKU = this.txtboxNrbudynku.Text;
+                adrespracownik.NR_LOKALU = this.txtboxNrlokalu.Text;
+                adrespracownik.KOD_POCZTOWY = this.txtboxKodpocztowy.Text;
+                adrespracownik.ID_MIASTA = (int)cbMiasto.SelectedValue;
+                adrespracownik.KRAJ = this.txtboxKraj.Text;
+                pracownikstanowisko = pracownik.STANOWISKO_PRACOWNICY.First();
                 pracownikstanowisko.ID_STANOWISKO = (int)cbStanowisko.SelectedValue;
                 pracownikstanowisko.DATA_START = txtDataRozpoczeciaPracy.Value;
-                pracownik.STANOWISKO_PRACOWNICY.Add(pracownikstanowisko);
-                pracownik.ADRESY_PRACOWNICY.Add(adrespracownika);
-                db.PRACOWNICY.Add(pracownik);
                 db.SaveChanges();
-
+                var bspracownicy = from p in db.PRACOWNICY
+                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
+                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
+                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
+                ListaPracownikow.DataSource = bspracownicy.ToList();
+                ListaPracownikow.Refresh();
+                czyscform();
             }
+           
         }
     }
 }
