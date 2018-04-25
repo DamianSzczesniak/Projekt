@@ -77,11 +77,45 @@ namespace PROJEKTapp.Forms_Produkcja
         private void Aktualizuj_Click(object sender, EventArgs e)
         {
             //edycja
+
+            narzedzia.NAZWA = this.textBox1.Text;
+            narzedzia.MODEL = this.textBox2.Text;
+            narzedzia.NR_EWIDENCYJNY = this.textBox3.Text;
+            narzedzia.KOSZT_ZA_H = decimal.Parse(this.textBox4.Text);
+
+
+            foreach (Control control in this.panelNarzedzia.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = (TextBox)control;
+                    if (!textBox.Name.Contains("text"));
+                   
+                }
+            }
+
+            narzedzia.NAZWA = this.textBox1.Text;
+            narzedzia.MODEL = this.textBox2.Text;
+            narzedzia.NR_EWIDENCYJNY = this.textBox3.Text;
+            narzedzia.KOSZT_ZA_H = decimal.Parse(this.textBox4.Text);
+            
         }
 
         private void ZapiszM_Click(object sender, EventArgs e)
         {
-            //dodawanie
+           
+              
+            MODELE_MASZYN noweModele_Maszyn = new MODELE_MASZYN();
+            noweModele_Maszyn.MODEL = this.textBox5.Text;
+            noweModele_Maszyn.MARKA = this.textBox6.Text;
+            noweModele_Maszyn.TYP_MASZYNY = this.textBox7.Text;
+            noweModele_Maszyn.PRĘDKOŚĆ = int.Parse(this.textBox8.Text);
+            noweModele_Maszyn.POSUW = int.Parse(this.textBox9.Text);
+            noweModele_Maszyn.KOSZT_ZA_H = decimal.Parse(this.textBox10.Text);
+
+            db.MODELE_MASZYN.Add(noweModele_Maszyn);
+            db.SaveChanges();
+            
 
         }
 
@@ -93,6 +127,51 @@ namespace PROJEKTapp.Forms_Produkcja
             textBox8.Clear();
             textBox9.Clear();
             textBox10.Clear();
+        }
+
+        private void panelMaszyny_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelNarzedzia_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labelM_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //edycja
+            maszyny.MODEL = this.textBox5.Text;
+            maszyny.MARKA = this.textBox6.Text;
+            maszyny.TYP_MASZYNY = this.textBox7.Text;
+            maszyny.PRĘDKOŚĆ = int.Parse(this.textBox8.Text);
+            maszyny.POSUW = int.Parse(this.textBox9.Text);
+            maszyny.KOSZT_ZA_H = decimal.Parse(this.textBox10.Text);
+            
+
+ 
+            foreach (Control control in this.panelMaszyny.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = (TextBox)control;
+                    if (!textBox.Name.Contains("text"));
+
+
+                }
+            }
+
         }
     }
 }
