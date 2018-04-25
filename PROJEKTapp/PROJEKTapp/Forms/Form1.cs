@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROJEKTapp.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace PROJEKTapp
 {
     public partial class Form1 : Form
     {
+        KWZP_PROJEKTEntities db;
+
         public Form1()
         {
             InitializeComponent();
+            db = new KWZP_PROJEKTEntities();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,6 +49,12 @@ namespace PROJEKTapp
             FormNoweZlecenie NoweZlecenie = new FormNoweZlecenie();
             NoweZlecenie.Show();
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2(db);
+            form2.Show();
         }
     }
 }

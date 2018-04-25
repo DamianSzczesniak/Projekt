@@ -29,6 +29,8 @@ namespace PROJEKTapp
             cbMiasto.DataSource = db.MIASTA.ToList();
             cbMiasto.DisplayMember = "Nazwa";
             cbMiasto.ValueMember = "Id_Miasta";
+
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
