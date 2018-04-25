@@ -40,7 +40,7 @@ namespace PROJEKTapp.Forms
                 label.Location = new Point(5, currentY);
                 textBox.Text = pojazd.NUMER_REJESTRACYJNY;
                 textBox.Location = new Point(150, currentY);
-                textBox.Name = "txt" + pojazd.ID_POJAZDU;
+                textBox.Name = pojazd.ID_POJAZDU.ToString();
                 this.panel1.Controls.Add(label);
                 this.panel1.Controls.Add(textBox);
                 currentY += 25;
@@ -62,8 +62,19 @@ namespace PROJEKTapp.Forms
             //edycja
             firma.NAZWA_FIRMY = this.textBox1.Text;
             firma.NIP = this.textBox2.Text;
-
-        
+            
+            foreach (Control control in this.panel1.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = (TextBox)control;
+                    if (!textBox.Name.Contains("text"))
+                    {
+                        POJAZDY pojazd = firma.POJAZDY.Where(poj => poj.ID_POJAZDU == int.Parse(textBox.Name)).First();
+                        pojazd.NUMER_REJESTRACYJNY = textBox.Text;
+                    }
+                }
+            }
 
             //usuwanie
             //db.FIRMY.Remove(firma);
