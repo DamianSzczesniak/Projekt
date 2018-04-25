@@ -36,7 +36,7 @@
             this.btnExitEwidencja.FlatAppearance.BorderSize = 0;
             this.btnExitEwidencja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitEwidencja.Image = global::PROJEKTapp.Properties.Resources.btnExit_Image;
-            this.btnExitEwidencja.Location = new System.Drawing.Point(727, 12);
+            this.btnExitEwidencja.Location = new System.Drawing.Point(1293, 12);
             this.btnExitEwidencja.Name = "btnExitEwidencja";
             this.btnExitEwidencja.Size = new System.Drawing.Size(61, 62);
             this.btnExitEwidencja.TabIndex = 1;
@@ -47,7 +47,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.btnExitEwidencja);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormEwidencja";
