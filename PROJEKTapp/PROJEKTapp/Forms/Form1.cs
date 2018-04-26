@@ -23,7 +23,6 @@ namespace PROJEKTapp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //wylaczenie aplikacji
             Application.Exit();
         }
 
