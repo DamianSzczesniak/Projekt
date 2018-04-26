@@ -126,7 +126,6 @@
             this.dataGridView_faktura.RowTemplate.Height = 24;
             this.dataGridView_faktura.Size = new System.Drawing.Size(878, 482);
             this.dataGridView_faktura.TabIndex = 19;
-            this.dataGridView_faktura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_faktura_CellContentClick);
             // 
             // nr_zlec
             // 
@@ -149,7 +148,6 @@
             this.Combo_wyb_zlec.Name = "Combo_wyb_zlec";
             this.Combo_wyb_zlec.Size = new System.Drawing.Size(160, 39);
             this.Combo_wyb_zlec.TabIndex = 21;
-            this.Combo_wyb_zlec.SelectedIndexChanged += new System.EventHandler(this.Combo_wyb_zlec_SelectedIndexChanged);
             // 
             // btnGeneruj
             // 
@@ -328,6 +326,7 @@
             this.listBox_dane_firmy.Name = "listBox_dane_firmy";
             this.listBox_dane_firmy.Size = new System.Drawing.Size(251, 212);
             this.listBox_dane_firmy.TabIndex = 46;
+            this.listBox_dane_firmy.SelectedIndexChanged += new System.EventHandler(this.listBox_dane_firmy_SelectedIndexChanged);
             // 
             // pictureBox2
             // 
