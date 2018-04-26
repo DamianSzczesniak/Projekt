@@ -13,7 +13,6 @@ namespace PROJEKTapp
     public partial class FormKadry : Form
     {
         KWZP_PROJEKTEntities db;//połaczenie z bazą danych
-        int cont = 1;
         int contzapis;
         int formload;
         PRACOWNICY pracownik;
@@ -99,11 +98,6 @@ namespace PROJEKTapp
             this.Close();
         }
 
-            private void btnStatystyki_Click(object sender, EventArgs e)
-        {
-            PracStan PracStan = new PracStan(db);
-            PracStan.Show();
-        }
 
         private void txtWyszukajNazwisko_TextChanged(object sender, EventArgs e)
         {
@@ -261,6 +255,30 @@ namespace PROJEKTapp
                 czyscform();
             }
            
+        }
+
+        private void btnSzkolenia_Click(object sender, EventArgs e)
+        {
+            formload = 1;
+            FormSzkolenie szkolenie = new FormSzkolenie(db, formload);
+            szkolenie.Show();
+            this.Close();
+        }
+
+        private void btnWynagrodzenia_Click(object sender, EventArgs e)
+        {
+            formload = 1;
+            FormWynagordzenie wynagrodzenie = new FormWynagordzenie(db, formload);
+            wynagrodzenie.Show();
+            this.Close();
+        }
+
+        private void btnStatystyki_Click(object sender, EventArgs e)
+        {
+            formload = 1;
+            FormStatystyki statystyki = new FormStatystyki(db, formload);
+            statystyki.Show();
+            this.Close();
         }
     }
 }

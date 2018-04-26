@@ -140,6 +140,7 @@
             this.btnStatystyki.Text = "Statystyki";
             this.btnStatystyki.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnStatystyki.UseVisualStyleBackColor = false;
+            this.btnStatystyki.Click += new System.EventHandler(this.btnStatystyki_Click);
             // 
             // btnSzkolenia
             // 
@@ -156,6 +157,7 @@
             this.btnSzkolenia.Text = "Szkolenia";
             this.btnSzkolenia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSzkolenia.UseVisualStyleBackColor = false;
+            this.btnSzkolenia.Click += new System.EventHandler(this.btnSzkolenia_Click);
             // 
             // btnUrlopy
             // 
@@ -188,6 +190,7 @@
             this.btnWynagrodzenia.Text = "Wynagrodzenia";
             this.btnWynagrodzenia.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnWynagrodzenia.UseVisualStyleBackColor = false;
+            this.btnWynagrodzenia.Click += new System.EventHandler(this.btnWynagrodzenia_Click);
             // 
             // btnPracownicy
             // 

@@ -69,6 +69,18 @@
     <Compile Include="DOSTAWA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormStatystyki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormStatystyki.Designer.cs">
+      <DependentUpon>FormStatystyki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSzkolenie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSzkolenie.Designer.cs">
+      <DependentUpon>FormSzkolenie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,11 +177,17 @@
     <Compile Include="Forms_Produkcja\FormWykorzystaneMaszyny.Designer.cs">
       <DependentUpon>FormWykorzystaneMaszyny.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUrlopy.cs">
+    <Compile Include="Forms\FormUrlopy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUrlopy.Designer.cs">
+    <Compile Include="Forms\FormUrlopy.Designer.cs">
       <DependentUpon>FormUrlopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormWynagordzenie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormWynagordzenie.Designer.cs">
+      <DependentUpon>FormWynagordzenie.cs</DependentUpon>
     </Compile>
     <Compile Include="GABARYT_PRODUTKU.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
@@ -326,6 +344,12 @@
     <Compile Include="ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormStatystyki.resx">
+      <DependentUpon>FormStatystyki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSzkolenie.resx">
+      <DependentUpon>FormSzkolenie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,8 +401,11 @@
     <EmbeddedResource Include="Forms\PracStan.resx">
       <DependentUpon>PracStan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUrlopy.resx">
+    <EmbeddedResource Include="Forms\FormUrlopy.resx">
       <DependentUpon>FormUrlopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormWynagordzenie.resx">
+      <DependentUpon>FormWynagordzenie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

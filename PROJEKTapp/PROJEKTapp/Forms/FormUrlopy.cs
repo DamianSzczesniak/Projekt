@@ -173,5 +173,29 @@ namespace PROJEKTapp
             pnlWolne.Hide();
             czyscform();
         }
+
+        private void btnSzkolenia_Click(object sender, EventArgs e)
+        {
+            formload = 1;
+            FormSzkolenie szkolenie = new FormSzkolenie(db, formload);
+            szkolenie.Show();
+            this.Close();
+        }
+
+        private void btnWynagrodzenia_Click(object sender, EventArgs e)
+        {
+            formload = 1;
+            FormWynagordzenie wynagrodzenie = new FormWynagordzenie(db, formload);
+            wynagrodzenie.Show();
+            this.Close();
+        }
+
+        private void btnStatystyki_Click(object sender, EventArgs e)
+        {
+            formload = 1;
+            FormStatystyki statystyki = new FormStatystyki(db, formload);
+            statystyki.Show();
+            this.Close();
+        }
     }
 }
