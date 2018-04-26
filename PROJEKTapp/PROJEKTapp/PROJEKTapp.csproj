@@ -171,6 +171,12 @@
     <Compile Include="Forms_Produkcja\FormObciazenie.Designer.cs">
       <DependentUpon>FormObciazenie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_Produkcja\FormSpis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormSpis.Designer.cs">
+      <DependentUpon>FormSpis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_Produkcja\FormWykorzystaneMaszyny.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,18 @@
     </Compile>
     <Compile Include="Forms\FormUrlopy.Designer.cs">
       <DependentUpon>FormUrlopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormZmiana_Maszyny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormZmiana_Maszyny.Designer.cs">
+      <DependentUpon>FormZmiana_Maszyny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormZmiana_Narzedzia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormZmiana_Narzedzia.Designer.cs">
+      <DependentUpon>FormZmiana_Narzedzia.cs</DependentUpon>
     </Compile>
     <Compile Include="GABARYT_PRODUTKU.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
@@ -390,8 +408,17 @@
     <EmbeddedResource Include="Forms_Produkcja\FormObciazenie.resx">
       <DependentUpon>FormObciazenie.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormSpis.resx">
+      <DependentUpon>FormSpis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\FormWykorzystaneMaszyny.resx">
       <DependentUpon>FormWykorzystaneMaszyny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormZmiana_Maszyny.resx">
+      <DependentUpon>FormZmiana_Maszyny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormZmiana_Narzedzia.resx">
+      <DependentUpon>FormZmiana_Narzedzia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\Produkcja_glowny.resx">
       <DependentUpon>Produkcja_glowny.cs</DependentUpon>

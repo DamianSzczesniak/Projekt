@@ -83,22 +83,9 @@ namespace PROJEKTapp.Forms_Produkcja
             narzedzia.NR_EWIDENCYJNY = this.textBox3.Text;
             narzedzia.KOSZT_ZA_H = decimal.Parse(this.textBox4.Text);
 
+            db.SaveChanges();
 
-            foreach (Control control in this.panelNarzedzia.Controls)
-            {
-                if (control is TextBox)
-                {
-                    TextBox textBox = (TextBox)control;
-                    if (!textBox.Name.Contains("text"));
-                   
-                }
-            }
 
-            narzedzia.NAZWA = this.textBox1.Text;
-            narzedzia.MODEL = this.textBox2.Text;
-            narzedzia.NR_EWIDENCYJNY = this.textBox3.Text;
-            narzedzia.KOSZT_ZA_H = decimal.Parse(this.textBox4.Text);
-            
         }
 
         private void ZapiszM_Click(object sender, EventArgs e)
@@ -158,19 +145,70 @@ namespace PROJEKTapp.Forms_Produkcja
             maszyny.PRĘDKOŚĆ = int.Parse(this.textBox8.Text);
             maszyny.POSUW = int.Parse(this.textBox9.Text);
             maszyny.KOSZT_ZA_H = decimal.Parse(this.textBox10.Text);
-            
-
- 
-            foreach (Control control in this.panelMaszyny.Controls)
-            {
-                if (control is TextBox)
-                {
-                    TextBox textBox = (TextBox)control;
-                    if (!textBox.Name.Contains("text"));
+            db.SaveChanges();
 
 
-                }
-            }
+           
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
 
         }
     }

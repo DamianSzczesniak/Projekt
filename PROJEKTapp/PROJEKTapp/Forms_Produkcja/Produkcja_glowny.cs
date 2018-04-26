@@ -49,8 +49,8 @@ namespace PROJEKTapp
 
         private void btnEwidencjaMaszyn_Click(object sender, EventArgs e)
         {
-            Forms_Produkcja.FormEwidencja ewidencja = new Forms_Produkcja.FormEwidencja(kwzpProjektEntities);
-            ewidencja.Show();
+            Forms_Produkcja.FormSpis spis = new Forms_Produkcja.FormSpis(kwzpProjektEntities);
+            spis.Show();
         }
     }
 }

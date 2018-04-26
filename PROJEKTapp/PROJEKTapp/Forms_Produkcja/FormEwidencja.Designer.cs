@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnExitEwidencja = new System.Windows.Forms.Button();
             this.panelNarzedzia = new System.Windows.Forms.Panel();
             this.WyczyscDane = new System.Windows.Forms.Button();
             this.Aktualizuj = new System.Windows.Forms.Button();
@@ -43,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.LabelN = new System.Windows.Forms.Label();
             this.panelMaszyny = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.WyczyscDaneM = new System.Windows.Forms.Button();
             this.ZapiszM = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,23 +58,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.labelM = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExitEwidencja = new System.Windows.Forms.Button();
             this.panelNarzedzia.SuspendLayout();
             this.panelMaszyny.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnExitEwidencja
-            // 
-            this.btnExitEwidencja.FlatAppearance.BorderSize = 0;
-            this.btnExitEwidencja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExitEwidencja.Image = global::PROJEKTapp.Properties.Resources.btnExit_Image;
-            this.btnExitEwidencja.Location = new System.Drawing.Point(1724, 15);
-            this.btnExitEwidencja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnExitEwidencja.Name = "btnExitEwidencja";
-            this.btnExitEwidencja.Size = new System.Drawing.Size(81, 76);
-            this.btnExitEwidencja.TabIndex = 1;
-            this.btnExitEwidencja.UseVisualStyleBackColor = true;
-            this.btnExitEwidencja.Click += new System.EventHandler(this.btnExitEwidencja_Click);
             // 
             // panelNarzedzia
             // 
@@ -91,19 +78,17 @@
             this.panelNarzedzia.Controls.Add(this.label2);
             this.panelNarzedzia.Controls.Add(this.label1);
             this.panelNarzedzia.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelNarzedzia.Location = new System.Drawing.Point(35, 98);
-            this.panelNarzedzia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelNarzedzia.Location = new System.Drawing.Point(26, 80);
             this.panelNarzedzia.Name = "panelNarzedzia";
-            this.panelNarzedzia.Size = new System.Drawing.Size(800, 631);
+            this.panelNarzedzia.Size = new System.Drawing.Size(600, 513);
             this.panelNarzedzia.TabIndex = 3;
             this.panelNarzedzia.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNarzedzia_Paint);
             // 
             // WyczyscDane
             // 
-            this.WyczyscDane.Location = new System.Drawing.Point(504, 559);
-            this.WyczyscDane.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.WyczyscDane.Location = new System.Drawing.Point(378, 454);
             this.WyczyscDane.Name = "WyczyscDane";
-            this.WyczyscDane.Size = new System.Drawing.Size(163, 71);
+            this.WyczyscDane.Size = new System.Drawing.Size(122, 58);
             this.WyczyscDane.TabIndex = 2;
             this.WyczyscDane.Text = "Wyczyść dane";
             this.WyczyscDane.UseVisualStyleBackColor = true;
@@ -111,10 +96,9 @@
             // 
             // Aktualizuj
             // 
-            this.Aktualizuj.Location = new System.Drawing.Point(303, 559);
-            this.Aktualizuj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Aktualizuj.Location = new System.Drawing.Point(227, 454);
             this.Aktualizuj.Name = "Aktualizuj";
-            this.Aktualizuj.Size = new System.Drawing.Size(163, 71);
+            this.Aktualizuj.Size = new System.Drawing.Size(122, 58);
             this.Aktualizuj.TabIndex = 2;
             this.Aktualizuj.Text = "Aktualizuj";
             this.Aktualizuj.UseVisualStyleBackColor = true;
@@ -122,10 +106,9 @@
             // 
             // Zapisz
             // 
-            this.Zapisz.Location = new System.Drawing.Point(91, 559);
-            this.Zapisz.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Zapisz.Location = new System.Drawing.Point(68, 454);
             this.Zapisz.Name = "Zapisz";
-            this.Zapisz.Size = new System.Drawing.Size(163, 71);
+            this.Zapisz.Size = new System.Drawing.Size(122, 58);
             this.Zapisz.TabIndex = 2;
             this.Zapisz.Text = "Zapisz";
             this.Zapisz.UseVisualStyleBackColor = true;
@@ -133,84 +116,75 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(217, 414);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Location = new System.Drawing.Point(163, 336);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(448, 22);
+            this.textBox4.Size = new System.Drawing.Size(337, 20);
             this.textBox4.TabIndex = 1;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(217, 313);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Location = new System.Drawing.Point(163, 254);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(448, 22);
+            this.textBox3.Size = new System.Drawing.Size(337, 20);
             this.textBox3.TabIndex = 1;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(217, 196);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Location = new System.Drawing.Point(163, 159);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(448, 22);
+            this.textBox2.Size = new System.Drawing.Size(337, 20);
             this.textBox2.TabIndex = 1;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(217, 105);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(163, 85);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(448, 22);
+            this.textBox1.Size = new System.Drawing.Size(337, 20);
             this.textBox1.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 414);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(30, 336);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 17);
+            this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Cena za godzinę";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 313);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(30, 254);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(130, 17);
+            this.label3.Size = new System.Drawing.Size(99, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Numer ewidencyjny";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 199);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(30, 162);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Model";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 105);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(30, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
+            this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nazwa";
             // 
             // LabelN
             // 
             this.LabelN.AutoSize = true;
-            this.LabelN.Location = new System.Drawing.Point(59, 66);
-            this.LabelN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelN.Location = new System.Drawing.Point(44, 54);
             this.LabelN.Name = "LabelN";
-            this.LabelN.Size = new System.Drawing.Size(180, 17);
+            this.LabelN.Size = new System.Drawing.Size(136, 13);
             this.LabelN.TabIndex = 0;
             this.LabelN.Text = "Dodanie nowego narzędzia";
             // 
@@ -233,19 +207,28 @@
             this.panelMaszyny.Controls.Add(this.label6);
             this.panelMaszyny.Controls.Add(this.label5);
             this.panelMaszyny.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelMaszyny.Location = new System.Drawing.Point(843, 99);
-            this.panelMaszyny.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMaszyny.Location = new System.Drawing.Point(632, 80);
             this.panelMaszyny.Name = "panelMaszyny";
-            this.panelMaszyny.Size = new System.Drawing.Size(800, 630);
+            this.panelMaszyny.Size = new System.Drawing.Size(600, 512);
             this.panelMaszyny.TabIndex = 4;
             this.panelMaszyny.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMaszyny_Paint);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(245, 453);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 58);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Aktualizuj";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // WyczyscDaneM
             // 
-            this.WyczyscDaneM.Location = new System.Drawing.Point(545, 555);
-            this.WyczyscDaneM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.WyczyscDaneM.Location = new System.Drawing.Point(409, 451);
             this.WyczyscDaneM.Name = "WyczyscDaneM";
-            this.WyczyscDaneM.Size = new System.Drawing.Size(135, 71);
+            this.WyczyscDaneM.Size = new System.Drawing.Size(101, 58);
             this.WyczyscDaneM.TabIndex = 3;
             this.WyczyscDaneM.Text = "Wyczyść dane";
             this.WyczyscDaneM.UseVisualStyleBackColor = true;
@@ -253,10 +236,9 @@
             // 
             // ZapiszM
             // 
-            this.ZapiszM.Location = new System.Drawing.Point(87, 555);
-            this.ZapiszM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ZapiszM.Location = new System.Drawing.Point(65, 451);
             this.ZapiszM.Name = "ZapiszM";
-            this.ZapiszM.Size = new System.Drawing.Size(147, 71);
+            this.ZapiszM.Size = new System.Drawing.Size(110, 58);
             this.ZapiszM.TabIndex = 2;
             this.ZapiszM.Text = "Zapisz";
             this.ZapiszM.UseVisualStyleBackColor = true;
@@ -265,144 +247,144 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(59, 169);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(44, 137);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 17);
+            this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Marka";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(59, 443);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(44, 360);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(114, 17);
+            this.label10.Size = new System.Drawing.Size(86, 13);
             this.label10.TabIndex = 0;
             this.label10.Text = "Cena za godzinę";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(59, 367);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(44, 298);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 17);
+            this.label9.Size = new System.Drawing.Size(39, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "Posuw";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(232, 434);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox10.Location = new System.Drawing.Point(174, 353);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(448, 22);
+            this.textBox10.Size = new System.Drawing.Size(337, 20);
             this.textBox10.TabIndex = 1;
+            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(232, 358);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox9.Location = new System.Drawing.Point(174, 291);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(448, 22);
+            this.textBox9.Size = new System.Drawing.Size(337, 20);
             this.textBox9.TabIndex = 1;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(232, 290);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Location = new System.Drawing.Point(174, 236);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(448, 22);
+            this.textBox8.Size = new System.Drawing.Size(337, 20);
             this.textBox8.TabIndex = 1;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(232, 223);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Location = new System.Drawing.Point(174, 181);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(448, 22);
+            this.textBox7.Size = new System.Drawing.Size(337, 20);
             this.textBox7.TabIndex = 1;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(232, 160);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Location = new System.Drawing.Point(174, 130);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(448, 22);
+            this.textBox6.Size = new System.Drawing.Size(337, 20);
             this.textBox6.TabIndex = 1;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(232, 101);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Location = new System.Drawing.Point(174, 82);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(448, 22);
+            this.textBox5.Size = new System.Drawing.Size(337, 20);
             this.textBox5.TabIndex = 1;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(59, 294);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(44, 239);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 17);
+            this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Prędkość";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(59, 231);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(44, 188);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 17);
+            this.label6.Size = new System.Drawing.Size(25, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Typ";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(59, 105);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(44, 85);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Model";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // labelM
             // 
             this.labelM.AutoSize = true;
-            this.labelM.Location = new System.Drawing.Point(854, 74);
-            this.labelM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelM.Location = new System.Drawing.Point(640, 60);
             this.labelM.Name = "labelM";
-            this.labelM.Size = new System.Drawing.Size(223, 17);
+            this.labelM.Size = new System.Drawing.Size(168, 13);
             this.labelM.TabIndex = 0;
             this.labelM.Text = "Dodanie nowego modelu maszyny";
             this.labelM.Click += new System.EventHandler(this.labelM_Click);
             // 
-            // button1
+            // btnExitEwidencja
             // 
-            this.button1.Location = new System.Drawing.Point(327, 558);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 71);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Aktualizuj";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnExitEwidencja.FlatAppearance.BorderSize = 0;
+            this.btnExitEwidencja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitEwidencja.Image = global::PROJEKTapp.Properties.Resources.btnExit_Image;
+            this.btnExitEwidencja.Location = new System.Drawing.Point(1293, 12);
+            this.btnExitEwidencja.Name = "btnExitEwidencja";
+            this.btnExitEwidencja.Size = new System.Drawing.Size(61, 62);
+            this.btnExitEwidencja.TabIndex = 1;
+            this.btnExitEwidencja.UseVisualStyleBackColor = true;
+            this.btnExitEwidencja.Click += new System.EventHandler(this.btnExitEwidencja_Click);
             // 
             // FormEwidencja
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1821, 945);
+            this.ClientSize = new System.Drawing.Size(1366, 780);
             this.Controls.Add(this.LabelN);
             this.Controls.Add(this.labelM);
             this.Controls.Add(this.panelMaszyny);
             this.Controls.Add(this.panelNarzedzia);
             this.Controls.Add(this.btnExitEwidencja);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormEwidencja";
             this.Text = "FormEwidencja";
             this.panelNarzedzia.ResumeLayout(false);
