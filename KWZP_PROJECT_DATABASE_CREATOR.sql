@@ -773,36 +773,6 @@ INSERT DOSTAWA_POJAZD (ID_DOSTAWY, ID_POJAZDU) VALUES (9,2)
 INSERT DOSTAWA_POJAZD (ID_DOSTAWY, ID_POJAZDU) VALUES (10,2)
 --KONIEC TABEL LOGISTYKA
 go
-
---Procedura dodania nowego pracownika
-create procedure AddPracownik
-(
-@Imie		varchar(30),
-@Nazwisko	varchar(30),
-@Tel		varchar(12),
-@PESEL		varchar(11),
-@Stanowisko	char(30),
-@Ulica		varchar(30),
-@Nrbudynku	varchar(10),
-@Nrlokalu	varchar(10),
-@Kodpocztowy	varchar(5),
-@Kraj		varchar(15),
-@Miasto		varchar(50),
-@DataRozpoczeciaPracy	date
-)
-
-as
-begin
-insert into PRACOWNICY (IMIE, NAZWISKO, TELEFON, PESEL) values (@Imie, @Nazwisko, @Tel, @PESEL)
-insert into STANOWISKO (NAZWA) values (@Stanowisko)
-insert into ADRESY_PRACOWNICY (ULICA, NR_BUDYNKU, NR_LOKALU, KOD_POCZTOWY, KRAJ) 
-			values (@Ulica, @Nrbudynku, @Nrlokalu, @Kodpocztowy, @Kraj)
-insert into MIASTA (NAZWA) values (@Miasto)
-insert into STANOWISKO_PRACOWNICY (DATA_START) values (@DataRozpoczeciaPracy)	
-end
---Procedura dodania nowego pracownika
-
-
 --------------------------------------------------------------------------------------------------------------
 --WIDOKI PRODUKCJA--
 
@@ -973,4 +943,10 @@ FROM WOLNE_PRACOWNICY wp
 INNER JOIN PRACOWNICY p ON p.ID_PRACOWNIK = wp.ID_PRACOWNIK
 INNER JOIN STANOWISKO_PRACOWNICY ON STANOWISKO_PRACOWNICY.ID_PRACOWNIK = p.ID_PRACOWNIK
 INNER JOIN STANOWISKO s ON s.ID_STANOWISKO = STANOWISKO_PRACOWNICY.ID_STANOWISKO
+GO
+--Stawka i okres
+CREATE VIEW STAWKA_OKRES AS
+SELECT s.WARTOSC, o.NAZWA, s.ID_STAWKA
+FROM STAWKA s
+INNER JOIN OKRES o ON s.ID_OKRES = o.ID_OKRES
 GO

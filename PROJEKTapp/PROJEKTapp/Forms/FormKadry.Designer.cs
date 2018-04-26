@@ -74,6 +74,11 @@
             this.btnZapiszDodaj = new System.Windows.Forms.Button();
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.pnlUserField = new System.Windows.Forms.Panel();
+            this.chbDataKoniec = new System.Windows.Forms.CheckBox();
+            this.cbOkres = new System.Windows.Forms.ComboBox();
+            this.cbStawka = new System.Windows.Forms.ComboBox();
+            this.txtDataKoniec = new System.Windows.Forms.DateTimePicker();
+            this.chbEdycjaStanoiwska = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlUserControl.SuspendLayout();
@@ -462,7 +467,7 @@
             // 
             this.lblStanowisko.AutoSize = true;
             this.lblStanowisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblStanowisko.Location = new System.Drawing.Point(353, 19);
+            this.lblStanowisko.Location = new System.Drawing.Point(20, 380);
             this.lblStanowisko.Name = "lblStanowisko";
             this.lblStanowisko.Size = new System.Drawing.Size(95, 20);
             this.lblStanowisko.TabIndex = 56;
@@ -481,7 +486,7 @@
             // 
             this.lblDataStart.AutoSize = true;
             this.lblDataStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDataStart.Location = new System.Drawing.Point(352, 81);
+            this.lblDataStart.Location = new System.Drawing.Point(333, 17);
             this.lblDataStart.Name = "lblDataStart";
             this.lblDataStart.Size = new System.Drawing.Size(179, 20);
             this.lblDataStart.TabIndex = 46;
@@ -499,7 +504,7 @@
             // txtDataRozpoczeciaPracy
             // 
             this.txtDataRozpoczeciaPracy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDataRozpoczeciaPracy.Location = new System.Drawing.Point(333, 106);
+            this.txtDataRozpoczeciaPracy.Location = new System.Drawing.Point(337, 40);
             this.txtDataRozpoczeciaPracy.Name = "txtDataRozpoczeciaPracy";
             this.txtDataRozpoczeciaPracy.Size = new System.Drawing.Size(290, 26);
             this.txtDataRozpoczeciaPracy.TabIndex = 67;
@@ -508,9 +513,9 @@
             // 
             this.cbStanowisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbStanowisko.FormattingEnabled = true;
-            this.cbStanowisko.Location = new System.Drawing.Point(348, 44);
+            this.cbStanowisko.Location = new System.Drawing.Point(22, 403);
             this.cbStanowisko.Name = "cbStanowisko";
-            this.cbStanowisko.Size = new System.Drawing.Size(183, 28);
+            this.cbStanowisko.Size = new System.Drawing.Size(248, 28);
             this.cbStanowisko.TabIndex = 60;
             // 
             // btnWyczysc
@@ -545,10 +550,15 @@
             // 
             // pnlUserField
             // 
+            this.pnlUserField.Controls.Add(this.chbEdycjaStanoiwska);
+            this.pnlUserField.Controls.Add(this.chbDataKoniec);
+            this.pnlUserField.Controls.Add(this.cbOkres);
+            this.pnlUserField.Controls.Add(this.cbStawka);
             this.pnlUserField.Controls.Add(this.btnAnuluj);
             this.pnlUserField.Controls.Add(this.btnZapiszDodaj);
             this.pnlUserField.Controls.Add(this.btnWyczysc);
             this.pnlUserField.Controls.Add(this.cbStanowisko);
+            this.pnlUserField.Controls.Add(this.txtDataKoniec);
             this.pnlUserField.Controls.Add(this.txtDataRozpoczeciaPracy);
             this.pnlUserField.Controls.Add(this.txtboxKraj);
             this.pnlUserField.Controls.Add(this.lblDataStart);
@@ -576,6 +586,55 @@
             this.pnlUserField.Name = "pnlUserField";
             this.pnlUserField.Size = new System.Drawing.Size(639, 555);
             this.pnlUserField.TabIndex = 5;
+            // 
+            // chbDataKoniec
+            // 
+            this.chbDataKoniec.AutoSize = true;
+            this.chbDataKoniec.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chbDataKoniec.Location = new System.Drawing.Point(337, 73);
+            this.chbDataKoniec.Name = "chbDataKoniec";
+            this.chbDataKoniec.Size = new System.Drawing.Size(213, 24);
+            this.chbDataKoniec.TabIndex = 71;
+            this.chbDataKoniec.Text = "Znana data końca pracy";
+            this.chbDataKoniec.UseVisualStyleBackColor = true;
+            this.chbDataKoniec.CheckedChanged += new System.EventHandler(this.chbDataKoniec_CheckedChanged);
+            // 
+            // cbOkres
+            // 
+            this.cbOkres.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbOkres.FormattingEnabled = true;
+            this.cbOkres.Location = new System.Drawing.Point(23, 437);
+            this.cbOkres.Name = "cbOkres";
+            this.cbOkres.Size = new System.Drawing.Size(121, 28);
+            this.cbOkres.TabIndex = 70;
+            // 
+            // cbStawka
+            // 
+            this.cbStawka.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbStawka.FormattingEnabled = true;
+            this.cbStawka.Location = new System.Drawing.Point(150, 437);
+            this.cbStawka.Name = "cbStawka";
+            this.cbStawka.Size = new System.Drawing.Size(121, 28);
+            this.cbStawka.TabIndex = 70;
+            // 
+            // txtDataKoniec
+            // 
+            this.txtDataKoniec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtDataKoniec.Location = new System.Drawing.Point(337, 106);
+            this.txtDataKoniec.Name = "txtDataKoniec";
+            this.txtDataKoniec.Size = new System.Drawing.Size(290, 26);
+            this.txtDataKoniec.TabIndex = 67;
+            this.txtDataKoniec.Visible = false;
+            // 
+            // chbEdycjaStanoiwska
+            // 
+            this.chbEdycjaStanoiwska.AutoSize = true;
+            this.chbEdycjaStanoiwska.Location = new System.Drawing.Point(121, 381);
+            this.chbEdycjaStanoiwska.Name = "chbEdycjaStanoiwska";
+            this.chbEdycjaStanoiwska.Size = new System.Drawing.Size(159, 19);
+            this.chbEdycjaStanoiwska.TabIndex = 72;
+            this.chbEdycjaStanoiwska.Text = "Czy zmienić stanoiwsko?";
+            this.chbEdycjaStanoiwska.UseVisualStyleBackColor = true;
             // 
             // FormKadry
             // 
@@ -652,5 +711,10 @@
         private System.Windows.Forms.Button btnZapiszDodaj;
         private System.Windows.Forms.Button btnAnuluj;
         private System.Windows.Forms.Panel pnlUserField;
+        private System.Windows.Forms.ComboBox cbStawka;
+        private System.Windows.Forms.ComboBox cbOkres;
+        private System.Windows.Forms.CheckBox chbDataKoniec;
+        private System.Windows.Forms.DateTimePicker txtDataKoniec;
+        private System.Windows.Forms.CheckBox chbEdycjaStanoiwska;
     }
 }
