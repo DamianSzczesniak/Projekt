@@ -1,4 +1,5 @@
 ﻿using PROJEKTapp.Forms;
+using PROJEKTapp.Forms.Forms_Logistyka;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,7 +39,7 @@ namespace PROJEKTapp
 
         private void Btn_kreat_fak_Click(object sender, EventArgs e)
         {
-            KreatorFaktur KreatorFaktur = new KreatorFaktur(kwzpProjektEntities);
+            FormListaFaktur KreatorFaktur = new FormListaFaktur(kwzpProjektEntities);
             KreatorFaktur.Show();
         }
 

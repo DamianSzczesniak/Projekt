@@ -75,6 +75,12 @@
     <Compile Include="Forms\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Forms_Logistyka\FormListaFaktur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Forms_Logistyka\FormListaFaktur.Designer.cs">
+      <DependentUpon>FormListaFaktur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_NoweZlecenie\FormOferta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,28 +93,28 @@
     <Compile Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.Designer.cs">
       <DependentUpon>FormFirmyNoweZlecenie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormZmianaStanuMagazynu.cs">
+    <Compile Include="Forms\Forms_Logistyka\FormZmianaStanuMagazynu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormZmianaStanuMagazynu.Designer.cs">
+    <Compile Include="Forms\Forms_Logistyka\FormZmianaStanuMagazynu.Designer.cs">
       <DependentUpon>FormZmianaStanuMagazynu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\KreatorFaktur.cs">
+    <Compile Include="Forms\Forms_Logistyka\KreatorFaktur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\KreatorFaktur.Designer.cs">
+    <Compile Include="Forms\Forms_Logistyka\KreatorFaktur.Designer.cs">
       <DependentUpon>KreatorFaktur.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PrzygotowanieTransportu.cs">
+    <Compile Include="Forms\Forms_Logistyka\PrzygotowanieTransportu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PrzygotowanieTransportu.Designer.cs">
+    <Compile Include="Forms\Forms_Logistyka\PrzygotowanieTransportu.Designer.cs">
       <DependentUpon>PrzygotowanieTransportu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ZamowienieMaterialu.cs">
+    <Compile Include="Forms\Forms_Logistyka\ZamowienieMaterialu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ZamowienieMaterialu.Designer.cs">
+    <Compile Include="Forms\Forms_Logistyka\ZamowienieMaterialu.Designer.cs">
       <DependentUpon>ZamowienieMaterialu.cs</DependentUpon>
     </Compile>
     <Compile Include="FAKTURY.cs">
@@ -129,10 +135,10 @@
     <Compile Include="Forms\FormKadry.designer.cs">
       <DependentUpon>FormKadry.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormLogistyka.cs">
+    <Compile Include="Forms\Forms_Logistyka\FormLogistyka.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormLogistyka.designer.cs">
+    <Compile Include="Forms\Forms_Logistyka\FormLogistyka.designer.cs">
       <DependentUpon>FormLogistyka.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms_NoweZlecenie\FormNoweZlecenie.cs">
@@ -342,6 +348,9 @@
     <EmbeddedResource Include="Forms\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Forms_Logistyka\FormListaFaktur.resx">
+      <DependentUpon>FormListaFaktur.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormUrlopy.resx">
       <DependentUpon>FormUrlopy.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,16 +360,16 @@
     <EmbeddedResource Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.resx">
       <DependentUpon>FormFirmyNoweZlecenie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormZmianaStanuMagazynu.resx">
+    <EmbeddedResource Include="Forms\Forms_Logistyka\FormZmianaStanuMagazynu.resx">
       <DependentUpon>FormZmianaStanuMagazynu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\KreatorFaktur.resx">
+    <EmbeddedResource Include="Forms\Forms_Logistyka\KreatorFaktur.resx">
       <DependentUpon>KreatorFaktur.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PrzygotowanieTransportu.resx">
+    <EmbeddedResource Include="Forms\Forms_Logistyka\PrzygotowanieTransportu.resx">
       <DependentUpon>PrzygotowanieTransportu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ZamowienieMaterialu.resx">
+    <EmbeddedResource Include="Forms\Forms_Logistyka\ZamowienieMaterialu.resx">
       <DependentUpon>ZamowienieMaterialu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
@@ -369,7 +378,7 @@
     <EmbeddedResource Include="Forms\FormKadry.resx">
       <DependentUpon>FormKadry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormLogistyka.resx">
+    <EmbeddedResource Include="Forms\Forms_Logistyka\FormLogistyka.resx">
       <DependentUpon>FormLogistyka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_NoweZlecenie\FormNoweZlecenie.resx">

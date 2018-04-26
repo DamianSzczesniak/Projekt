@@ -37,9 +37,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.ButtonDodajRekord = new System.Windows.Forms.Button();
             this.ButtonUsunRekord = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.TopBar_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridRekordyMagazyn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Back
@@ -61,7 +65,7 @@
             // TopBar_2
             // 
             this.TopBar_2.Image = global::PROJEKTapp.Properties.Resources.top_bar1;
-            this.TopBar_2.Location = new System.Drawing.Point(0, 0);
+            this.TopBar_2.Location = new System.Drawing.Point(204, 0);
             this.TopBar_2.Name = "TopBar_2";
             this.TopBar_2.Size = new System.Drawing.Size(960, 72);
             this.TopBar_2.TabIndex = 7;
@@ -74,16 +78,17 @@
             this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label1.Location = new System.Drawing.Point(12, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(355, 24);
+            this.label1.Size = new System.Drawing.Size(272, 24);
             this.label1.TabIndex = 14;
-            this.label1.Text = ".../Logistyka/Zmiana stanu magazynu";
+            this.label1.Text = ".../Logistyka/Stan magazynu";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox1.Location = new System.Drawing.Point(12, 100);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(936, 2);
+            this.pictureBox1.Size = new System.Drawing.Size(1340, 2);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
@@ -92,7 +97,7 @@
             this.GridRekordyMagazyn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridRekordyMagazyn.Location = new System.Drawing.Point(16, 148);
             this.GridRekordyMagazyn.Name = "GridRekordyMagazyn";
-            this.GridRekordyMagazyn.Size = new System.Drawing.Size(932, 341);
+            this.GridRekordyMagazyn.Size = new System.Drawing.Size(1336, 569);
             this.GridRekordyMagazyn.TabIndex = 19;
             // 
             // ComboWyborMagazynu
@@ -121,7 +126,7 @@
             this.ButtonDodajRekord.FlatAppearance.BorderSize = 0;
             this.ButtonDodajRekord.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonDodajRekord.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ButtonDodajRekord.Location = new System.Drawing.Point(752, 498);
+            this.ButtonDodajRekord.Location = new System.Drawing.Point(1162, 723);
             this.ButtonDodajRekord.Name = "ButtonDodajRekord";
             this.ButtonDodajRekord.Size = new System.Drawing.Size(98, 33);
             this.ButtonDodajRekord.TabIndex = 22;
@@ -133,19 +138,38 @@
             this.ButtonUsunRekord.BackColor = System.Drawing.Color.OrangeRed;
             this.ButtonUsunRekord.FlatAppearance.BorderSize = 0;
             this.ButtonUsunRekord.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonUsunRekord.Location = new System.Drawing.Point(856, 498);
+            this.ButtonUsunRekord.Location = new System.Drawing.Point(1266, 723);
             this.ButtonUsunRekord.Name = "ButtonUsunRekord";
             this.ButtonUsunRekord.Size = new System.Drawing.Size(92, 33);
             this.ButtonUsunRekord.TabIndex = 23;
             this.ButtonUsunRekord.Text = "USUŃ";
             this.ButtonUsunRekord.UseVisualStyleBackColor = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(204, 56);
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pictureBox3.Location = new System.Drawing.Point(1162, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(204, 56);
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
+            // 
             // FormZmianaStanuMagazynu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(960, 540);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.ButtonUsunRekord);
             this.Controls.Add(this.ButtonDodajRekord);
             this.Controls.Add(this.ComboWyborMagazynu);
@@ -155,6 +179,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_Back);
             this.Controls.Add(this.TopBar_2);
+            this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormZmianaStanuMagazynu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -162,6 +187,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.TopBar_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridRekordyMagazyn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +204,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ButtonDodajRekord;
         private System.Windows.Forms.Button ButtonUsunRekord;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

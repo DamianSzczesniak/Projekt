@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace PROJEKTapp.Forms
 {
-    public partial class ZamowienieMaterialu : Form
+   public partial class ZamowienieMaterialu : Form
     {
         KWZP_PROJEKTEntities db;
         MATERIAL material;
+        private FIRMY firma;
 
         public ZamowienieMaterialu(KWZP_PROJEKTEntities kwzpProjektEntities)
         {
@@ -24,10 +25,10 @@ namespace PROJEKTapp.Forms
 
             firma = db.FIRMY.First();
 
-            this.textBox1.Text = firma.NAZWA_FIRMY;
-            this.textBox2.Text = firma.NIP;
+            //this.textBox1.Text = firma.NAZWA_FIRMY;
+            //this.textBox2.Text = firma.NIP;
 
-            this.checkBox1.Checked = firma.POJAZDY.Count > 2;
+           // this.checkBox1.Checked = firma.POJAZDY.Count > 2;
 
             int currentY = 150;
             foreach (POJAZDY pojazd in firma.POJAZDY)
@@ -62,7 +63,7 @@ namespace PROJEKTapp.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.panel1.Hide()
+            this.panel1.Hide();
         }
     }
 }
