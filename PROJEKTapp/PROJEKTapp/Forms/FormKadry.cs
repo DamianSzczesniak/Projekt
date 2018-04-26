@@ -15,13 +15,15 @@ namespace PROJEKTapp
         KWZP_PROJEKTEntities db;//połaczenie z bazą danych
         int cont = 1;
         int contzapis;
+        int formload;
         PRACOWNICY pracownik;
         ADRESY_PRACOWNICY adrespracownik;
         STANOWISKO_PRACOWNICY pracownikstanowisko;
 
-        public FormKadry(KWZP_PROJEKTEntities db)
+        public FormKadry(KWZP_PROJEKTEntities db, int formload)
         {
             this.db = db;
+            this.formload = formload;
             InitializeComponent();
 
             cbStanowisko.DataSource = db.STANOWISKO.ToList();
@@ -31,30 +33,42 @@ namespace PROJEKTapp
             cbMiasto.DataSource = db.MIASTA.ToList();
             cbMiasto.DisplayMember = "Nazwa";
             cbMiasto.ValueMember = "Id_Miasta";
-
-            cbTypUrlopu.DataSource = db.WOLNE.ToList();
-            cbTypUrlopu.DisplayMember = "NAZWA";
-            cbTypUrlopu.ValueMember = "ID_WOLNE";
         }
 
         private void FormKadry_Load(object sender, EventArgs e)
         {
-            pnlUserControl.Hide();
-            pnlUserSearch.Hide();
-            pnlUserField.Hide();
-            pnlWolne.Hide();
+            if (formload == 1)
+            {
+                pnlUserControl.Show();
+                pnlUserSearch.Show();
+                pnlUserField.Hide();
+                formload = 0;
+                var bspracownicy = from p in db.PRACOWNICY
+                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
+                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
+                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
+                this.ListaPracownikow.DataSource = bspracownicy.ToList();
+                ListaPracownikow.Columns[0].HeaderText = "NUMER";
+                ListaPracownikow.Columns[0].Width = 60;
+                ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
+            }
+            else
+            {
+                pnlUserControl.Hide();
+                pnlUserSearch.Hide();
+                pnlUserField.Hide();
+                formload = 1;
+            }
         }
 
         private void btnPracownicy_Click(object sender, EventArgs e)
         {
-            if (cont == 1)
+            if (formload == 1)
             {
-                cont = 0;
+                formload = 0;
                 pnlUserControl.Show();
                 pnlUserSearch.Show();
                 pnlUserField.Hide();
-                pnlWolne.Hide();
-
 
                 var bspracownicy = from p in db.PRACOWNICY
                                    join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
@@ -67,11 +81,10 @@ namespace PROJEKTapp
             }
             else
             {
-                cont = 1;
+                formload = 1;
                 pnlUserControl.Hide();
                 pnlUserSearch.Hide();
                 pnlUserField.Hide();
-                pnlWolne.Hide();
             }
         }
 
@@ -80,22 +93,10 @@ namespace PROJEKTapp
 
         private void btnUrlopy_Click(object sender, EventArgs e)
         {
-            if (cont == 1)
-            {
-                cont = 0;
-                pnlUserControl.Show();
-                pnlUserSearch.Show();
-                pnlUserField.Hide();
-                pnlWolne.Hide();
-            }
-            else
-            {
-                cont = 1;
-                pnlUserControl.Hide();
-                pnlUserSearch.Hide();
-                pnlUserField.Hide();
-                pnlWolne.Hide();
-            }
+            formload = 1;
+            FormUrlopy urlopy = new FormUrlopy(db, formload);
+            urlopy.Show();
+            this.Close();
         }
 
             private void btnStatystyki_Click(object sender, EventArgs e)
