@@ -35,11 +35,7 @@ namespace PROJEKTapp
                 pnlUserSearch.Show();
                 pnlWolne.Hide();
                 ladowanieformularzazokienkami = false;
-                var bspracownicy = from p in db.PRACOWNICY
-                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
-                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
-                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
-                this.ListaPracownikow.DataSource = bspracownicy.ToList();
+                this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
                 ListaPracownikow.Columns[0].HeaderText = "NUMER";
                 ListaPracownikow.Columns[0].Width = 60;
                 ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
@@ -65,11 +61,7 @@ namespace PROJEKTapp
                 pnlUserSearch.Show();
                 pnlWolne.Hide();
                 ladowanieformularzazokienkami = false;
-                var bspracownicy = from p in db.PRACOWNICY
-                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
-                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
-                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
-                this.ListaPracownikow.DataSource = bspracownicy.ToList();
+                this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
                 ListaPracownikow.Columns[0].HeaderText = "NUMER";
                 ListaPracownikow.Columns[0].Width = 60;
                 ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
@@ -98,15 +90,11 @@ namespace PROJEKTapp
         {
             if (string.IsNullOrEmpty(this.txtWyszukajNazwisko.Text))
             {
-                var bspracownicy = from p in db.PRACOWNICY
-                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
-                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
-                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
-                this.ListaPracownikow.DataSource = bspracownicy.ToList();
+                this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
             }
             else
             {
-                this.ListaPracownikow.DataSource = db.PRACOWNICY.Where(x => x.NAZWISKO.StartsWith(txtWyszukajNazwisko.Text)).ToList();
+                this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.Where(x => x.NAZWISKO.StartsWith(txtWyszukajNazwisko.Text)).ToList();
             }
         }
 

@@ -13,8 +13,8 @@ namespace PROJEKTapp
     public partial class FormKadry : Form
     {
         KWZP_PROJEKTEntities db;//połaczenie z bazą danych
-        bool TrybPrzyciskuZapisEdycja; //Rozrużnainie zapisu z edycji i zapisu nowego użytkownika
-        bool ladowanieformularzazokienkami; //rozrużnianie sposobu otiwerania formularza (z otwartmi lub zamkniętymi panlami)
+        bool TrybPrzyciskuZapisEdycja;
+        bool ladowanieformularzazokienkami;
         PRACOWNICY pracownik;
         ADRESY_PRACOWNICY adrespracownik;
         STANOWISKO_PRACOWNICY pracownikstanowisko;
@@ -52,11 +52,7 @@ namespace PROJEKTapp
                 pnlUserSearch.Show();
                 pnlUserField.Hide();
                 ladowanieformularzazokienkami = false;
-                var bspracownicy = from p in db.PRACOWNICY
-                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
-                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
-                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
-                this.ListaPracownikow.DataSource = bspracownicy.ToList();
+                this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
                 ListaPracownikow.Columns[0].HeaderText = "NUMER";
                 ListaPracownikow.Columns[0].Width = 60;
                 ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
@@ -78,12 +74,7 @@ namespace PROJEKTapp
                 pnlUserControl.Show();
                 pnlUserSearch.Show();
                 pnlUserField.Hide();
-
-                var bspracownicy = from p in db.PRACOWNICY
-                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
-                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
-                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
-                this.ListaPracownikow.DataSource = bspracownicy.ToList();
+                this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
                 ListaPracownikow.Columns[0].HeaderText = "NUMER";
                 ListaPracownikow.Columns[0].Width = 60;
                 ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
@@ -113,15 +104,11 @@ namespace PROJEKTapp
         {
             if (string.IsNullOrEmpty(this.txtWyszukajNazwisko.Text))
             {
-                var bspracownicy = from p in db.PRACOWNICY
-                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
-                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
-                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
-                this.ListaPracownikow.DataSource = bspracownicy.ToList();
+                this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
             }
             else
             {
-                this.ListaPracownikow.DataSource = db.PRACOWNICY.Where(x => x.NAZWISKO.StartsWith(txtWyszukajNazwisko.Text)).ToList();
+                this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.Where(x => x.NAZWISKO.StartsWith(txtWyszukajNazwisko.Text)).ToList();
             }
         }
 
@@ -134,6 +121,8 @@ namespace PROJEKTapp
                 czyscform();
                 TrybPrzyciskuZapisEdycja = true;
                 txtboxKraj.Text = "Polska";
+                cbOkres.Enabled = true;
+                cbStawka.Enabled = true;
             }
         }
 
@@ -142,6 +131,8 @@ namespace PROJEKTapp
             pnlUserField.Show();
             TrybPrzyciskuZapisEdycja = false;
             chbEdycjaStanoiwska.Show();
+            cbOkres.Enabled = false;
+            cbStawka.Enabled = false;
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
@@ -157,9 +148,9 @@ namespace PROJEKTapp
             cbMiasto.SelectedValue = adrespracownik.ID_MIASTA;
             txtboxKraj.Text = adrespracownik.KRAJ;
             pracownikstawka = pracownik.STAWKA_PRACOWNICY.Last();
-            cbStawka.SelectedValue = pracownikstawka.ID_STAWKA;
+            cbStawka.SelectedValue = (int)pracownikstawka.ID_STAWKA;
             cbOkres.SelectedIndex = (int)pracownikstawka.STAWKA.ID_OKRES;
-            pracownikstanowisko = pracownik.STANOWISKO_PRACOWNICY.First();
+            pracownikstanowisko = pracownik.STANOWISKO_PRACOWNICY.Last();
             cbStanowisko.SelectedValue = pracownikstanowisko.ID_STANOWISKO;
             txtDataRozpoczeciaPracy.Value = pracownikstanowisko.DATA_START;
         }
@@ -169,10 +160,6 @@ namespace PROJEKTapp
             DialogResult result = MessageBox.Show("Czy chcesz usunąć dane pracownika: " + ListaPracownikow.CurrentRow.Cells[1].Value + " " + ListaPracownikow.CurrentRow.Cells[2].Value, "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                var bspracownicy = from p in db.PRACOWNICY
-                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
-                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
-                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
                 int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
                 PRACOWNICY pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
                 STANOWISKO_PRACOWNICY stanowisko = db.STANOWISKO_PRACOWNICY.Where(s => s.ID_PRACOWNIK.Equals(ID)).First(); //sprawdzić usówanie wszystkiech rekordów - czym zastąpić .First()
@@ -186,7 +173,7 @@ namespace PROJEKTapp
                 {
                     MessageBox.Show("Usunięcie pracownika nie powiodło się");
                 }
-                ListaPracownikow.DataSource = bspracownicy.ToList();
+                ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
                 ListaPracownikow.Refresh();
                 pnlUserField.Hide();
             } 
@@ -247,17 +234,17 @@ namespace PROJEKTapp
                     STAWKA_PRACOWNICY stawkapracownika = new STAWKA_PRACOWNICY();
                     stawkapracownika.ID_STAWKA = (int)cbStawka.SelectedValue;
                     stawkapracownika.DATA_START = txtDataRozpoczeciaPracy.Value;
-                    pracownik.STAWKA_PRACOWNICY.Add(stawkapracownika);
+                if (chbDataKoniec.Checked == true)
+                {
+                    stawkapracownika.DATA_KONIEC = txtDataKoniec.Value;
+                }
+                pracownik.STAWKA_PRACOWNICY.Add(stawkapracownika);
                     pracownik.STANOWISKO_PRACOWNICY.Add(pracownikstanowisko);
                     pracownik.ADRESY_PRACOWNICY.Add(adrespracownika);
                     db.PRACOWNICY.Add(pracownik);
                     db.SaveChanges();
-                    var bspracownicy = from p in db.PRACOWNICY
-                                       join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
-                                       join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
-                                       select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
-                    ListaPracownikow.DataSource = bspracownicy.ToList();
-                    ListaPracownikow.Refresh();
+                    ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
+                ListaPracownikow.Refresh();
                 }
             else
             {//Edycja istniejącego pracownika
@@ -274,24 +261,26 @@ namespace PROJEKTapp
                 adrespracownik.KOD_POCZTOWY = this.txtboxKodpocztowy.Text;
                 adrespracownik.ID_MIASTA = (int)cbMiasto.SelectedValue;
                 adrespracownik.KRAJ = this.txtboxKraj.Text;
-                //Zmienić na dodawanie nowego stanowiska
                 if (chbEdycjaStanoiwska.Checked == true)
                 {
-                    STANOWISKO_PRACOWNICY pracownikstanowisko = new STANOWISKO_PRACOWNICY();
-                    pracownikstanowisko.ID_STANOWISKO = (int)cbStanowisko.SelectedValue;
-                    pracownikstanowisko.DATA_START = txtDataRozpoczeciaPracy.Value;
+                    pracownikstanowisko.DATA_KONIEC = txtDataRozpoczeciaPracy.Value;
+                    STANOWISKO_PRACOWNICY pracownikstanowiskoN = new STANOWISKO_PRACOWNICY();
+                    pracownikstanowiskoN.ID_STANOWISKO = (int)cbStanowisko.SelectedValue;
+                    pracownikstanowiskoN.DATA_START = txtDataRozpoczeciaPracy.Value;
                     if (chbDataKoniec.Checked == true)
                     {
                         pracownikstanowisko.DATA_KONIEC = txtDataKoniec.Value;
                     }
-                    pracownik.STANOWISKO_PRACOWNICY.Add(pracownikstanowisko);
+                    pracownik.STANOWISKO_PRACOWNICY.Add(pracownikstanowiskoN);
+                }
+                if (chbZmianaStawki.Checked ==true)
+                {
+                    STAWKA_PRACOWNICY stawkapracownika = new STAWKA_PRACOWNICY();
+                    stawkapracownika.ID_STAWKA = (int)cbStawka.SelectedValue;
+                    pracownik.STAWKA_PRACOWNICY.Add(stawkapracownika);
                 }
                 db.SaveChanges();
-                var bspracownicy = from p in db.PRACOWNICY
-                                   join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
-                                   join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
-                                   select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
-                ListaPracownikow.DataSource = bspracownicy.ToList();
+                ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
                 ListaPracownikow.Refresh();
                 czyscform();
             }
@@ -335,6 +324,20 @@ namespace PROJEKTapp
             cbStawka.DataSource = db.STAWKA.Where(stawka => stawka.ID_OKRES.Equals(((OKRES)this.cbOkres.SelectedValue).ID_OKRES)).ToList();
             cbStawka.DisplayMember = "Wartosc";
             cbStawka.ValueMember = "Id_Stawka";
+        }
+
+        private void chbZmianaStawki_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbZmianaStawki.Checked ==true)
+            {
+                cbOkres.Enabled = true;
+                cbStawka.Enabled = true;
+            }
+            else
+                {
+                cbOkres.Enabled = false;
+                cbStawka.Enabled = false;
+            }
         }
     }
 }

@@ -14,8 +14,8 @@ namespace PROJEKTapp
     
     public partial class STAWKA_OKRES
     {
-        public decimal ID_STAWKA { get; set; }
         public decimal WARTOSC { get; set; }
         public string NAZWA { get; set; }
+        public int ID_STAWKA { get; set; }
     }
 }
