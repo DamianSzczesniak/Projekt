@@ -13,12 +13,12 @@ namespace PROJEKTapp
     public partial class FormWynagordzenie : Form
     {
         KWZP_PROJEKTEntities db;
-        int formload;
+        bool ladowanieformularzazokienkami;
 
-        public FormWynagordzenie(KWZP_PROJEKTEntities db, int formload)
+        public FormWynagordzenie(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
         {
             this.db = db;
-            this.formload = formload;
+            this.ladowanieformularzazokienkami = ladowanieformularzazokienkami;
             InitializeComponent();
         }
 
@@ -34,15 +34,15 @@ namespace PROJEKTapp
 
         private void btnPracownicy_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormKadry kadry = new FormKadry(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormKadry kadry = new FormKadry(db, ladowanieformularzazokienkami);
             kadry.Show();
             this.Close();
         }
 
         private void btnWynagrodzenia_Click(object sender, EventArgs e)
         {
-            if (formload == 1)
+            if (ladowanieformularzazokienkami == true)
             {
                 //formload = 0;
                 //pnlUserControl.Show();
@@ -60,7 +60,7 @@ namespace PROJEKTapp
             }
             else
             {
-                formload = 1;
+                ladowanieformularzazokienkami = true;
                 //pnlUserControl.Hide();
                 //pnlUserSearch.Hide();
                 //pnlUserField.Hide();
@@ -68,24 +68,24 @@ namespace PROJEKTapp
         }
             private void btnUrlopy_Click(object sender, EventArgs e)
             {
-                formload = 1;
-                FormUrlopy urlopy = new FormUrlopy(db, formload);
+                ladowanieformularzazokienkami = true;
+                FormUrlopy urlopy = new FormUrlopy(db, ladowanieformularzazokienkami);
                 urlopy.Show();
                 this.Close();
             }
 
             private void btnSzkolenia_Click(object sender, EventArgs e)
             {
-                formload = 1;
-                FormSzkolenie szkolenie = new FormSzkolenie(db, formload);
+            ladowanieformularzazokienkami = true;
+                FormSzkolenie szkolenie = new FormSzkolenie(db, ladowanieformularzazokienkami);
                 szkolenie.Show();
                 this.Close();
             }
 
         private void btnStatystyki_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormStatystyki statystyki = new FormStatystyki(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormStatystyki statystyki = new FormStatystyki(db, ladowanieformularzazokienkami);
             statystyki.Show();
             this.Close();
         }

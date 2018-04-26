@@ -13,12 +13,12 @@ namespace PROJEKTapp
     public partial class FormStatystyki : Form
     {
         KWZP_PROJEKTEntities db;
-        int formload;
+        bool ladowanieformularzazokienkami;
 
-        public FormStatystyki(KWZP_PROJEKTEntities db, int formload)
+        public FormStatystyki(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
         {
             this.db = db;
-            this.formload = formload;
+            this.ladowanieformularzazokienkami = ladowanieformularzazokienkami;
             InitializeComponent();
         }
 
@@ -34,32 +34,32 @@ namespace PROJEKTapp
 
         private void btnPracownicy_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormKadry kadry = new FormKadry(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormKadry kadry = new FormKadry(db, ladowanieformularzazokienkami);
             kadry.Show();
             this.Close();
         }
 
         private void btnWynagrodzenia_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormWynagordzenie wynagrodzenie = new FormWynagordzenie(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormWynagordzenie wynagrodzenie = new FormWynagordzenie(db, ladowanieformularzazokienkami);
             wynagrodzenie.Show();
             this.Close();
         }
 
         private void btnUrlopy_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormUrlopy urlopy = new FormUrlopy(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormUrlopy urlopy = new FormUrlopy(db, ladowanieformularzazokienkami);
             urlopy.Show();
             this.Close();
         }
 
         private void btnSzkolenia_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormSzkolenie szkolenie = new FormSzkolenie(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormSzkolenie szkolenie = new FormSzkolenie(db, ladowanieformularzazokienkami);
             szkolenie.Show();
             this.Close();
         }

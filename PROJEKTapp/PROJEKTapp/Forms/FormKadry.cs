@@ -13,17 +13,17 @@ namespace PROJEKTapp
     public partial class FormKadry : Form
     {
         KWZP_PROJEKTEntities db;//połaczenie z bazą danych
-        int contzapis;
-        int formload;
+        bool trybprzyciskuzapisedycja; //Rozrużnainie zapisu z edycji i zapisu nowego użytkownika
+        bool ladowanieformularzazokienkami; //rozrużnianie sposobu otiwerania formularza (z otwartmi lub zamkniętymi panlami)
         PRACOWNICY pracownik;
         ADRESY_PRACOWNICY adrespracownik;
         STANOWISKO_PRACOWNICY pracownikstanowisko;
         STAWKA_PRACOWNICY pracownikstawka;
 
-        public FormKadry(KWZP_PROJEKTEntities db, int formload)
+        public FormKadry(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
         {
             this.db = db;
-            this.formload = formload;
+            this.ladowanieformularzazokienkami = ladowanieformularzazokienkami;
             InitializeComponent();
 
             cbStanowisko.DataSource = db.STANOWISKO.ToList();
@@ -34,25 +34,24 @@ namespace PROJEKTapp
             cbMiasto.DisplayMember = "Nazwa";
             cbMiasto.ValueMember = "Id_Miasta";
 
-
             cbOkres.DataSource = db.OKRES.ToList();
             cbOkres.DisplayMember = "Nazwa";
-            cbOkres.ValueMember = "Id_okres";
+            //cbOkres.ValueMember = "Id_okres";
 
-            cbStawka.DataSource = db.STAWKA.Where(s =>s.ID_OKRES.Equals((int)this.cbOkres.SelectedValue)).ToList();
+            cbStawka.DataSource = db.STAWKA.Where(stawka => stawka.ID_OKRES.Equals(((OKRES)this.cbOkres.SelectedValue).ID_OKRES)).ToList();
             cbStawka.DisplayMember = "Wartosc";
-            cbStawka.ValueMember = "Id_Stawka";
+           // cbStawka.ValueMember = "Id_Stawka";
         }
 
 
         private void FormKadry_Load(object sender, EventArgs e)
         {
-            if (formload == 1)
+            if (ladowanieformularzazokienkami == true)
             {
                 pnlUserControl.Show();
                 pnlUserSearch.Show();
                 pnlUserField.Hide();
-                formload = 0;
+                ladowanieformularzazokienkami = false;
                 var bspracownicy = from p in db.PRACOWNICY
                                    join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
                                    join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
@@ -67,15 +66,15 @@ namespace PROJEKTapp
                 pnlUserControl.Hide();
                 pnlUserSearch.Hide();
                 pnlUserField.Hide();
-                formload = 1;
+                ladowanieformularzazokienkami = true;
             }
         }
 
         private void btnPracownicy_Click(object sender, EventArgs e)
         {
-            if (formload == 1)
+            if (ladowanieformularzazokienkami == true)
             {
-                formload = 0;
+                ladowanieformularzazokienkami = false;
                 pnlUserControl.Show();
                 pnlUserSearch.Show();
                 pnlUserField.Hide();
@@ -91,7 +90,7 @@ namespace PROJEKTapp
             }
             else
             {
-                formload = 1;
+                ladowanieformularzazokienkami = true;
                 pnlUserControl.Hide();
                 pnlUserSearch.Hide();
                 pnlUserField.Hide();
@@ -103,8 +102,8 @@ namespace PROJEKTapp
 
         private void btnUrlopy_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormUrlopy urlopy = new FormUrlopy(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormUrlopy urlopy = new FormUrlopy(db, ladowanieformularzazokienkami);
             urlopy.Show();
             this.Close();
         }
@@ -132,14 +131,14 @@ namespace PROJEKTapp
             {
                 pnlUserField.Show();
                 czyscform();
-                contzapis = 1;
+                trybprzyciskuzapisedycja = true;
             }
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)
         {
             pnlUserField.Show();
-            contzapis = 0;
+            trybprzyciskuzapisedycja = false;
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
@@ -172,6 +171,7 @@ namespace PROJEKTapp
                                    select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
                 int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
                 PRACOWNICY pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
+                //STANOWISKO_PRACOWNICY stanowisko = db.STANOWISKO_PRACOWNICY.Where(s => s.ID_PRACOWNIK.Equals(ID)).First(); //Czy da sie wszytkie rekordy
                 db.PRACOWNICY.Remove(pracownik);
                 db.SaveChanges();
                 ListaPracownikow.DataSource = bspracownicy.ToList();
@@ -211,7 +211,7 @@ namespace PROJEKTapp
                 {
                     MessageBox.Show("Wypełnij wszystkie pola");
                 }
-                else if (contzapis == 1) //Tworzenie nowego pracownika
+                else if (trybprzyciskuzapisedycja == true) //Tworzenie nowego pracownika
                 {
                     PRACOWNICY pracownik = new PRACOWNICY();
                     pracownik.NAZWISKO = this.txtboxNazwisko.Text;
@@ -284,24 +284,24 @@ namespace PROJEKTapp
 
         private void btnSzkolenia_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormSzkolenie szkolenie = new FormSzkolenie(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormSzkolenie szkolenie = new FormSzkolenie(db, ladowanieformularzazokienkami);
             szkolenie.Show();
             this.Close();
         }
 
         private void btnWynagrodzenia_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormWynagordzenie wynagrodzenie = new FormWynagordzenie(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormWynagordzenie wynagrodzenie = new FormWynagordzenie(db, ladowanieformularzazokienkami);
             wynagrodzenie.Show();
             this.Close();
         }
 
         private void btnStatystyki_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormStatystyki statystyki = new FormStatystyki(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormStatystyki statystyki = new FormStatystyki(db, ladowanieformularzazokienkami);
             statystyki.Show();
             this.Close();
         }
@@ -316,9 +316,9 @@ namespace PROJEKTapp
 
         private void cbOkres_SelectedValueChanged(object sender, EventArgs e)
         {
-            //cbStawka.DataSource = db.STAWKA.Where(s => s.ID_OKRES.Equals((int)this.cbOkres.SelectedValue)).ToList();
-            //cbStawka.DisplayMember = "Wartosc";
-            //cbStawka.ValueMember = "Id_Stawka";
+            cbStawka.DataSource = db.STAWKA.Where(stawka => stawka.ID_OKRES.Equals(((OKRES)this.cbOkres.SelectedValue).ID_OKRES)).ToList();
+            cbStawka.DisplayMember = "Wartosc";
+            cbStawka.ValueMember = "Id_Stawka";
         }
     }
 }

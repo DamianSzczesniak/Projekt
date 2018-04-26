@@ -13,12 +13,12 @@ namespace PROJEKTapp
     public partial class FormUrlopy : Form
     {
         KWZP_PROJEKTEntities db;
-        int formload;
+        bool ladowanieformularzazokienkami;
         int contzapis;
 
-        public FormUrlopy(KWZP_PROJEKTEntities db, int formload)
+        public FormUrlopy(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
         {
-            this.formload = formload;
+            this.ladowanieformularzazokienkami = ladowanieformularzazokienkami;
             this.db = db;
             InitializeComponent();
 
@@ -29,12 +29,12 @@ namespace PROJEKTapp
 
         private void FormUrlopy_Load(object sender, EventArgs e)
         {
-            if (formload == 1)
+            if (ladowanieformularzazokienkami == true)
             {
                 pnlUrlopyControl.Show();
                 pnlUserSearch.Show();
                 pnlWolne.Hide();
-                formload = 0;
+                ladowanieformularzazokienkami = false;
                 var bspracownicy = from p in db.PRACOWNICY
                                    join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
                                    join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
@@ -49,19 +49,19 @@ namespace PROJEKTapp
                 pnlUrlopyControl.Hide();
                 pnlUserSearch.Hide();
                 pnlWolne.Hide();
-                formload = 1;
+                ladowanieformularzazokienkami = true;
             }
         }
 
         private void btnUrlopy_Click(object sender, EventArgs e)
         {
 
-            if (formload == 1)
+            if (ladowanieformularzazokienkami == true)
             {
                 pnlUrlopyControl.Show();
                 pnlUserSearch.Show();
                 pnlWolne.Hide();
-                formload = 0;
+                ladowanieformularzazokienkami = false;
                 var bspracownicy = from p in db.PRACOWNICY
                                    join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
                                    join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
@@ -76,7 +76,7 @@ namespace PROJEKTapp
                 pnlUrlopyControl.Hide();
                 pnlUserSearch.Hide();
                 pnlWolne.Hide();
-                formload = 1;
+                ladowanieformularzazokienkami = true;
             }
         }
         private void btnExit_Click(object sender, EventArgs e)
@@ -86,8 +86,8 @@ namespace PROJEKTapp
 
         private void btnPracownicy_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormKadry kadry = new FormKadry(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormKadry kadry = new FormKadry(db, ladowanieformularzazokienkami);
             kadry.Show();
             this.Close();
         }
@@ -176,24 +176,24 @@ namespace PROJEKTapp
 
         private void btnSzkolenia_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormSzkolenie szkolenie = new FormSzkolenie(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormSzkolenie szkolenie = new FormSzkolenie(db, ladowanieformularzazokienkami);
             szkolenie.Show();
             this.Close();
         }
 
         private void btnWynagrodzenia_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormWynagordzenie wynagrodzenie = new FormWynagordzenie(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormWynagordzenie wynagrodzenie = new FormWynagordzenie(db, ladowanieformularzazokienkami);
             wynagrodzenie.Show();
             this.Close();
         }
 
         private void btnStatystyki_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormStatystyki statystyki = new FormStatystyki(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormStatystyki statystyki = new FormStatystyki(db, ladowanieformularzazokienkami);
             statystyki.Show();
             this.Close();
         }

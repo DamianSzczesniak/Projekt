@@ -35,8 +35,8 @@ namespace PROJEKTapp
 
         private void btnKadry_Click(object sender, EventArgs e)
         {
-            int formload = 0;
-            FormKadry Kadry = new FormKadry(db, formload);
+            bool ladowanieformularzazokienkami = false;
+            FormKadry Kadry = new FormKadry(db, ladowanieformularzazokienkami);
             Kadry.Show();
         }
 

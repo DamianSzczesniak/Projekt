@@ -74,11 +74,11 @@
             this.btnZapiszDodaj = new System.Windows.Forms.Button();
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.pnlUserField = new System.Windows.Forms.Panel();
+            this.chbEdycjaStanoiwska = new System.Windows.Forms.CheckBox();
             this.chbDataKoniec = new System.Windows.Forms.CheckBox();
             this.cbOkres = new System.Windows.Forms.ComboBox();
             this.cbStawka = new System.Windows.Forms.ComboBox();
             this.txtDataKoniec = new System.Windows.Forms.DateTimePicker();
-            this.chbEdycjaStanoiwska = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlUserControl.SuspendLayout();
@@ -587,6 +587,16 @@
             this.pnlUserField.Size = new System.Drawing.Size(639, 555);
             this.pnlUserField.TabIndex = 5;
             // 
+            // chbEdycjaStanoiwska
+            // 
+            this.chbEdycjaStanoiwska.AutoSize = true;
+            this.chbEdycjaStanoiwska.Location = new System.Drawing.Point(121, 381);
+            this.chbEdycjaStanoiwska.Name = "chbEdycjaStanoiwska";
+            this.chbEdycjaStanoiwska.Size = new System.Drawing.Size(159, 19);
+            this.chbEdycjaStanoiwska.TabIndex = 72;
+            this.chbEdycjaStanoiwska.Text = "Czy zmienić stanoiwsko?";
+            this.chbEdycjaStanoiwska.UseVisualStyleBackColor = true;
+            // 
             // chbDataKoniec
             // 
             this.chbDataKoniec.AutoSize = true;
@@ -607,6 +617,7 @@
             this.cbOkres.Name = "cbOkres";
             this.cbOkres.Size = new System.Drawing.Size(121, 28);
             this.cbOkres.TabIndex = 70;
+            this.cbOkres.SelectedIndexChanged += new System.EventHandler(this.cbOkres_SelectedValueChanged);
             // 
             // cbStawka
             // 
@@ -625,16 +636,6 @@
             this.txtDataKoniec.Size = new System.Drawing.Size(290, 26);
             this.txtDataKoniec.TabIndex = 67;
             this.txtDataKoniec.Visible = false;
-            // 
-            // chbEdycjaStanoiwska
-            // 
-            this.chbEdycjaStanoiwska.AutoSize = true;
-            this.chbEdycjaStanoiwska.Location = new System.Drawing.Point(121, 381);
-            this.chbEdycjaStanoiwska.Name = "chbEdycjaStanoiwska";
-            this.chbEdycjaStanoiwska.Size = new System.Drawing.Size(159, 19);
-            this.chbEdycjaStanoiwska.TabIndex = 72;
-            this.chbEdycjaStanoiwska.Text = "Czy zmienić stanoiwsko?";
-            this.chbEdycjaStanoiwska.UseVisualStyleBackColor = true;
             // 
             // FormKadry
             // 

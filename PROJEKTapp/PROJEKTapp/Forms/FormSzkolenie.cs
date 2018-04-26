@@ -13,13 +13,12 @@ namespace PROJEKTapp
     public partial class FormSzkolenie : Form
     {
         KWZP_PROJEKTEntities db;//połaczenie z bazą danych
-        int contzapis;
-        int formload;
+        bool ladowanieformularzazokienkami;
 
-        public FormSzkolenie(KWZP_PROJEKTEntities db, int formload)
+        public FormSzkolenie(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
         {
             this.db = db;
-            this.formload = formload;
+            this.ladowanieformularzazokienkami = ladowanieformularzazokienkami;
             InitializeComponent();
         }
 
@@ -30,12 +29,12 @@ namespace PROJEKTapp
 
         private void FormSzkolenie_Load(object sender, EventArgs e)
         {
-            if (formload == 1)
+            if (ladowanieformularzazokienkami == true)
             {
                 pnlSzkoleniaControl.Show();
                 pnlUserSearch.Show();
                 //pnlUserField.Hide();
-                formload = 0;
+                ladowanieformularzazokienkami = false;
                 var bspracownicy = from p in db.PRACOWNICY
                                    join sp in db.STANOWISKO_PRACOWNICY on p.ID_PRACOWNIK equals sp.ID_PRACOWNIK
                                    join s in db.STANOWISKO on sp.ID_STANOWISKO equals s.ID_STANOWISKO
@@ -50,15 +49,15 @@ namespace PROJEKTapp
                 pnlSzkoleniaControl.Hide();
                 pnlUserSearch.Hide();
                 //pnlUserField.Hide();
-                formload = 1;
+                ladowanieformularzazokienkami = true;
             }
         }
 
         private void btnSzkolenia_Click(object sender, EventArgs e)
         {
-            if (formload == 1)
+            if (ladowanieformularzazokienkami == true)
             {
-                formload = 0;
+                ladowanieformularzazokienkami = false;
                 pnlSzkoleniaControl.Show();
                 pnlUserSearch.Show();
                 //pnlUserField.Hide();
@@ -74,7 +73,7 @@ namespace PROJEKTapp
             }
             else
             {
-                formload = 1;
+                ladowanieformularzazokienkami = true;
                 pnlSzkoleniaControl.Hide();
                 pnlUserSearch.Hide();
                // pnlUserField.Hide();
@@ -83,32 +82,32 @@ namespace PROJEKTapp
 
         private void btnUrlopy_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormUrlopy urlopy = new FormUrlopy(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormUrlopy urlopy = new FormUrlopy(db, ladowanieformularzazokienkami);
             urlopy.Show();
             this.Close();
         }
 
         private void btnPracownicy_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormKadry kadry = new FormKadry(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormKadry kadry = new FormKadry(db, ladowanieformularzazokienkami);
             kadry.Show();
             this.Close();
         }
 
         private void btnWynagrodzenia_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormWynagordzenie wynagrodzenie = new FormWynagordzenie(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormWynagordzenie wynagrodzenie = new FormWynagordzenie(db, ladowanieformularzazokienkami);
             wynagrodzenie.Show();
             this.Close();
         }
 
         private void btnStatystyki_Click(object sender, EventArgs e)
         {
-            formload = 1;
-            FormStatystyki statystyki = new FormStatystyki(db, formload);
+            ladowanieformularzazokienkami = true;
+            FormStatystyki statystyki = new FormStatystyki(db, ladowanieformularzazokienkami);
             statystyki.Show();
             this.Close();
         }
