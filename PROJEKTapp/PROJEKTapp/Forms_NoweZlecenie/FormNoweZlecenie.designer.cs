@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNoweZlecenie));
             this.groupBoxOferta = new System.Windows.Forms.GroupBox();
             this.dataGridViewOferta = new System.Windows.Forms.DataGridView();
@@ -44,13 +45,19 @@
             this.btnWybierzFirme = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.lbl_Data_Zlecenia = new System.Windows.Forms.Label();
+            this.cbBoxFirmy = new System.Windows.Forms.ComboBox();
             this.txtBox_Data_Zlecenia = new System.Windows.Forms.TextBox();
             this.btn_Dodaj_Zlecenie = new System.Windows.Forms.Button();
+            this.lblFirma = new System.Windows.Forms.Label();
             this.txtBox_Data_Realizacji = new System.Windows.Forms.TextBox();
             this.lbl_Data_Realizacji = new System.Windows.Forms.Label();
+            this.fIRMYBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.FirmyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxOferta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).BeginInit();
             this.groupBoxNowe_ZLecenie.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fIRMYBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FirmyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxOferta
@@ -119,6 +126,7 @@
             // 
             // cBox_Produkty_Oferta
             // 
+            this.cBox_Produkty_Oferta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBox_Produkty_Oferta.FormattingEnabled = true;
             this.cBox_Produkty_Oferta.Location = new System.Drawing.Point(107, 31);
             this.cBox_Produkty_Oferta.Name = "cBox_Produkty_Oferta";
@@ -159,8 +167,10 @@
             this.groupBoxNowe_ZLecenie.Controls.Add(this.btnWybierzFirme);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.btnExit);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.lbl_Data_Zlecenia);
+            this.groupBoxNowe_ZLecenie.Controls.Add(this.cbBoxFirmy);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.txtBox_Data_Zlecenia);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.btn_Dodaj_Zlecenie);
+            this.groupBoxNowe_ZLecenie.Controls.Add(this.lblFirma);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.txtBox_Data_Realizacji);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.lbl_Data_Realizacji);
             this.groupBoxNowe_ZLecenie.Location = new System.Drawing.Point(355, 2);
@@ -172,11 +182,11 @@
             // 
             // btnWybierzFirme
             // 
-            this.btnWybierzFirme.Location = new System.Drawing.Point(150, 294);
+            this.btnWybierzFirme.Location = new System.Drawing.Point(149, 290);
             this.btnWybierzFirme.Name = "btnWybierzFirme";
             this.btnWybierzFirme.Size = new System.Drawing.Size(116, 23);
             this.btnWybierzFirme.TabIndex = 6;
-            this.btnWybierzFirme.Text = "Wybierz Firme";
+            this.btnWybierzFirme.Text = "Ewidencja Firm";
             this.btnWybierzFirme.UseVisualStyleBackColor = true;
             this.btnWybierzFirme.Click += new System.EventHandler(this.btnWybierzFirme_Click);
             // 
@@ -195,15 +205,23 @@
             // lbl_Data_Zlecenia
             // 
             this.lbl_Data_Zlecenia.AutoSize = true;
-            this.lbl_Data_Zlecenia.Location = new System.Drawing.Point(170, 81);
+            this.lbl_Data_Zlecenia.Location = new System.Drawing.Point(165, 63);
             this.lbl_Data_Zlecenia.Name = "lbl_Data_Zlecenia";
             this.lbl_Data_Zlecenia.Size = new System.Drawing.Size(74, 13);
             this.lbl_Data_Zlecenia.TabIndex = 0;
             this.lbl_Data_Zlecenia.Text = "Data Zlecenia";
             // 
+            // cbBoxFirmy
+            // 
+            this.cbBoxFirmy.FormattingEnabled = true;
+            this.cbBoxFirmy.Location = new System.Drawing.Point(124, 253);
+            this.cbBoxFirmy.Name = "cbBoxFirmy";
+            this.cbBoxFirmy.Size = new System.Drawing.Size(166, 21);
+            this.cbBoxFirmy.TabIndex = 8;
+            // 
             // txtBox_Data_Zlecenia
             // 
-            this.txtBox_Data_Zlecenia.Location = new System.Drawing.Point(150, 97);
+            this.txtBox_Data_Zlecenia.Location = new System.Drawing.Point(149, 79);
             this.txtBox_Data_Zlecenia.Name = "txtBox_Data_Zlecenia";
             this.txtBox_Data_Zlecenia.Size = new System.Drawing.Size(116, 20);
             this.txtBox_Data_Zlecenia.TabIndex = 3;
@@ -219,9 +237,18 @@
             this.btn_Dodaj_Zlecenie.UseVisualStyleBackColor = true;
             this.btn_Dodaj_Zlecenie.Click += new System.EventHandler(this.btn_Dodaj_Zlecenie_Click);
             // 
+            // lblFirma
+            // 
+            this.lblFirma.AutoSize = true;
+            this.lblFirma.Location = new System.Drawing.Point(180, 237);
+            this.lblFirma.Name = "lblFirma";
+            this.lblFirma.Size = new System.Drawing.Size(32, 13);
+            this.lblFirma.TabIndex = 7;
+            this.lblFirma.Text = "Firma";
+            // 
             // txtBox_Data_Realizacji
             // 
-            this.txtBox_Data_Realizacji.Location = new System.Drawing.Point(150, 190);
+            this.txtBox_Data_Realizacji.Location = new System.Drawing.Point(149, 166);
             this.txtBox_Data_Realizacji.Name = "txtBox_Data_Realizacji";
             this.txtBox_Data_Realizacji.Size = new System.Drawing.Size(116, 20);
             this.txtBox_Data_Realizacji.TabIndex = 3;
@@ -229,11 +256,19 @@
             // lbl_Data_Realizacji
             // 
             this.lbl_Data_Realizacji.AutoSize = true;
-            this.lbl_Data_Realizacji.Location = new System.Drawing.Point(170, 155);
+            this.lbl_Data_Realizacji.Location = new System.Drawing.Point(165, 150);
             this.lbl_Data_Realizacji.Name = "lbl_Data_Realizacji";
             this.lbl_Data_Realizacji.Size = new System.Drawing.Size(78, 13);
             this.lbl_Data_Realizacji.TabIndex = 1;
             this.lbl_Data_Realizacji.Text = "Data Realizacji";
+            // 
+            // fIRMYBindingSource1
+            // 
+            this.fIRMYBindingSource1.DataSource = typeof(PROJEKTapp.FIRMY);
+            // 
+            // FirmyBindingSource
+            // 
+            this.FirmyBindingSource.DataSource = typeof(PROJEKTapp.FIRMY);
             // 
             // FormNoweZlecenie
             // 
@@ -247,11 +282,14 @@
             this.Controls.Add(this.groupBoxOferta);
             this.Name = "FormNoweZlecenie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.FormNoweZlecenie_Load);
             this.groupBoxOferta.ResumeLayout(false);
             this.groupBoxOferta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).EndInit();
             this.groupBoxNowe_ZLecenie.ResumeLayout(false);
             this.groupBoxNowe_ZLecenie.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fIRMYBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FirmyBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -277,5 +315,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Produkt;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ilosc;
         private System.Windows.Forms.Button btnWybierzFirme;
+        private System.Windows.Forms.ComboBox cbBoxFirmy;
+        private System.Windows.Forms.BindingSource FirmyBindingSource;
+        private System.Windows.Forms.Label lblFirma;
+        private System.Windows.Forms.BindingSource fIRMYBindingSource1;
     }
 }

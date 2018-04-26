@@ -75,17 +75,23 @@
     <Compile Include="Forms\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_NoweZlecenie\FormFirmyDoZlecenia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_NoweZlecenie\FormFirmyDoZlecenia.Designer.cs">
+      <DependentUpon>FormFirmyDoZlecenia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_NoweZlecenie\FormDodajEdytujFirme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_NoweZlecenie\FormDodajEdytujFirme.Designer.cs">
+      <DependentUpon>FormDodajEdytujFirme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_NoweZlecenie\FormOferta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms_NoweZlecenie\FormOferta.Designer.cs">
       <DependentUpon>FormOferta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.Designer.cs">
-      <DependentUpon>FormFirmyNoweZlecenie.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormZmianaStanuMagazynu.cs">
       <SubType>Form</SubType>
@@ -186,6 +192,7 @@
     <Compile Include="GABARYT_PRODUTKU.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="KWZP_PROJEKT_MODEL.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -345,11 +352,14 @@
     <EmbeddedResource Include="Forms\FormUrlopy.resx">
       <DependentUpon>FormUrlopy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms_NoweZlecenie\FormFirmyDoZlecenia.resx">
+      <DependentUpon>FormFirmyDoZlecenia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_NoweZlecenie\FormDodajEdytujFirme.resx">
+      <DependentUpon>FormDodajEdytujFirme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_NoweZlecenie\FormOferta.resx">
       <DependentUpon>FormOferta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.resx">
-      <DependentUpon>FormFirmyNoweZlecenie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormZmianaStanuMagazynu.resx">
       <DependentUpon>FormZmianaStanuMagazynu.cs</DependentUpon>
@@ -417,6 +427,7 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\FIRMY.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
