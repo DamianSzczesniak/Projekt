@@ -41,6 +41,7 @@ namespace PROJEKTapp
         {
             FormListaFaktur KreatorFaktur = new FormListaFaktur(kwzpProjektEntities);
             KreatorFaktur.Show();
+            
         }
 
         private void Btn_przyg_trans_Click(object sender, EventArgs e)

@@ -10,18 +10,36 @@ using System.Windows.Forms;
 
 namespace PROJEKTapp.Forms.Forms_Logistyka
 {
+
     public partial class FormListaFaktur : Form
     {
-        KWZP_PROJEKTEntities kwzpProjektEntities = new KWZP_PROJEKTEntities();
-        public FormListaFaktur(KWZP_PROJEKTEntities kwzpProjektEntities)
+        KWZP_PROJEKTEntities db;
+        ZLECENIA wybraneZlecenie;
+
+        public FormListaFaktur(KWZP_PROJEKTEntities db)
         {
+            this.db = db;
             InitializeComponent();
+            var idfaktura = from fa in db.FAKTURY
+                            join z in db.ZLECENIA on fa.ID_ZLECENIA equals z.ID_ZLECENIA
+                            join f in db.FIRMY on z.ID_FIRMY equals f.ID_FIRMY
+                            join p in db.PRACOWNICY on fa.ID_PRACOWNIKA equals p.ID_PRACOWNIK
+                            select new { fa.ID_FAKTURY, f.NAZWA_FIRMY, f.ADRES_EMAIL, f.NR_TELEFONU, f.NIP, fa.ID_ZLECENIA, fa.DATA_WYSTAWIENIA, fa.DATA_PLATNOSCI, fa.KWOTA, fa.WALUTA, p.IMIE, p.NAZWISKO };
+            this.dataGridView_lista_faktur.DataSource = idfaktura.ToList();
+            
+            Combo_wyb_zlecenia.DataSource = db.ZLECENIA.ToList();
+            Combo_wyb_zlecenia.DisplayMember = "ID_ZLECENIA";
         }
 
         private void ButtonNowaFaktura_Click(object sender, EventArgs e)
         {
-            KreatorFaktur KreatorFaktur = new KreatorFaktur(kwzpProjektEntities);
+            KreatorFaktur KreatorFaktur = new KreatorFaktur(db, wybraneZlecenie);
             KreatorFaktur.Show();
+        }
+
+        private void Combo_wyb_zlecenia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            wybraneZlecenie = (ZLECENIA)Combo_wyb_zlecenia.SelectedValue;
         }
     }
 }
