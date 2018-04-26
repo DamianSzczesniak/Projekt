@@ -129,9 +129,11 @@ namespace PROJEKTapp
         {
             
             {
+                chbEdycjaStanoiwska.Hide();
                 pnlUserField.Show();
                 czyscform();
                 trybprzyciskuzapisedycja = true;
+                txtboxKraj.Text = "Polska";
             }
         }
 
@@ -139,6 +141,7 @@ namespace PROJEKTapp
         {
             pnlUserField.Show();
             trybprzyciskuzapisedycja = false;
+            chbEdycjaStanoiwska.Show();
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
@@ -154,7 +157,7 @@ namespace PROJEKTapp
             cbMiasto.SelectedValue = adrespracownik.ID_MIASTA;
             txtboxKraj.Text = adrespracownik.KRAJ;
             pracownikstawka = pracownik.STAWKA_PRACOWNICY.Last();
-            cbStawka.SelectedValue = pracownikstawka.ID_STAWKA;;
+            cbStawka.SelectedValue = pracownikstawka.ID_STAWKA;
             pracownikstanowisko = pracownik.STANOWISKO_PRACOWNICY.First();
             cbStanowisko.SelectedValue = pracownikstanowisko.ID_STANOWISKO;
             txtDataRozpoczeciaPracy.Value = pracownikstanowisko.DATA_START;
@@ -177,8 +180,9 @@ namespace PROJEKTapp
                 ListaPracownikow.DataSource = bspracownicy.ToList();
                 ListaPracownikow.Refresh();
                 pnlUserField.Hide();
-            }
+            } 
         }
+
 
         private void btnAnuluj_Click(object sender, EventArgs e)
         {
@@ -232,6 +236,10 @@ namespace PROJEKTapp
                 {
                     pracownikstanowisko.DATA_KONIEC = txtDataKoniec.Value;
                 }
+                    STAWKA_PRACOWNICY stawkapracownika = new STAWKA_PRACOWNICY();
+                    stawkapracownika.ID_STAWKA = (int)cbStawka.SelectedValue;
+                    stawkapracownika.DATA_START = txtDataRozpoczeciaPracy.Value;
+                    pracownik.STAWKA_PRACOWNICY.Add(stawkapracownika);
                     pracownik.STANOWISKO_PRACOWNICY.Add(pracownikstanowisko);
                     pracownik.ADRESY_PRACOWNICY.Add(adrespracownika);
                     db.PRACOWNICY.Add(pracownik);

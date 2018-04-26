@@ -594,7 +594,7 @@
             this.chbEdycjaStanoiwska.Name = "chbEdycjaStanoiwska";
             this.chbEdycjaStanoiwska.Size = new System.Drawing.Size(159, 19);
             this.chbEdycjaStanoiwska.TabIndex = 72;
-            this.chbEdycjaStanoiwska.Text = "Czy zmienić stanoiwsko?";
+            this.chbEdycjaStanoiwska.Text = "Czy zmienić stanowisko?";
             this.chbEdycjaStanoiwska.UseVisualStyleBackColor = true;
             // 
             // chbDataKoniec
