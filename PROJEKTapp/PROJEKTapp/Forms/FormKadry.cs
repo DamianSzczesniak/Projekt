@@ -13,7 +13,7 @@ namespace PROJEKTapp
     public partial class FormKadry : Form
     {
         KWZP_PROJEKTEntities db;//połaczenie z bazą danych
-        bool trybprzyciskuzapisedycja; //Rozrużnainie zapisu z edycji i zapisu nowego użytkownika
+        bool TrybPrzyciskuZapisEdycja; //Rozrużnainie zapisu z edycji i zapisu nowego użytkownika
         bool ladowanieformularzazokienkami; //rozrużnianie sposobu otiwerania formularza (z otwartmi lub zamkniętymi panlami)
         PRACOWNICY pracownik;
         ADRESY_PRACOWNICY adrespracownik;
@@ -132,7 +132,7 @@ namespace PROJEKTapp
                 chbEdycjaStanoiwska.Hide();
                 pnlUserField.Show();
                 czyscform();
-                trybprzyciskuzapisedycja = true;
+                TrybPrzyciskuZapisEdycja = true;
                 txtboxKraj.Text = "Polska";
             }
         }
@@ -140,7 +140,7 @@ namespace PROJEKTapp
         private void btnEdytuj_Click(object sender, EventArgs e)
         {
             pnlUserField.Show();
-            trybprzyciskuzapisedycja = false;
+            TrybPrzyciskuZapisEdycja = false;
             chbEdycjaStanoiwska.Show();
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
@@ -158,6 +158,7 @@ namespace PROJEKTapp
             txtboxKraj.Text = adrespracownik.KRAJ;
             pracownikstawka = pracownik.STAWKA_PRACOWNICY.Last();
             cbStawka.SelectedValue = pracownikstawka.ID_STAWKA;
+            cbOkres.SelectedIndex = (int)pracownikstawka.STAWKA.ID_OKRES;
             pracownikstanowisko = pracownik.STANOWISKO_PRACOWNICY.First();
             cbStanowisko.SelectedValue = pracownikstanowisko.ID_STANOWISKO;
             txtDataRozpoczeciaPracy.Value = pracownikstanowisko.DATA_START;
@@ -174,15 +175,22 @@ namespace PROJEKTapp
                                    select new { p.ID_PRACOWNIK, p.NAZWISKO, p.IMIE, p.TELEFON, s.NAZWA };
                 int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
                 PRACOWNICY pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
-                //STANOWISKO_PRACOWNICY stanowisko = db.STANOWISKO_PRACOWNICY.Where(s => s.ID_PRACOWNIK.Equals(ID)).First(); //Czy da sie wszytkie rekordy
-                db.PRACOWNICY.Remove(pracownik);
-                db.SaveChanges();
+                STANOWISKO_PRACOWNICY stanowisko = db.STANOWISKO_PRACOWNICY.Where(s => s.ID_PRACOWNIK.Equals(ID)).First(); //sprawdzić usówanie wszystkiech rekordów - czym zastąpić .First()
+                try
+                {
+                    db.STANOWISKO_PRACOWNICY.Remove(stanowisko);
+                    db.PRACOWNICY.Remove(pracownik);
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Usunięcie pracownika nie powiodło się");
+                }
                 ListaPracownikow.DataSource = bspracownicy.ToList();
                 ListaPracownikow.Refresh();
                 pnlUserField.Hide();
             } 
         }
-
 
         private void btnAnuluj_Click(object sender, EventArgs e)
         {
@@ -215,7 +223,7 @@ namespace PROJEKTapp
                 {
                     MessageBox.Show("Wypełnij wszystkie pola");
                 }
-                else if (trybprzyciskuzapisedycja == true) //Tworzenie nowego pracownika
+                else if (TrybPrzyciskuZapisEdycja == true) //Tworzenie nowego pracownika
                 {
                     PRACOWNICY pracownik = new PRACOWNICY();
                     pracownik.NAZWISKO = this.txtboxNazwisko.Text;
