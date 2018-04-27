@@ -8,20 +8,16 @@ namespace PROJEKTapp.Forms_NoweZlecenie
     public partial class FormFirmyDoZlecenia : Form
     {
         KWZP_PROJEKTEntities db;
-        public FormFirmyDoZlecenia()
+        public FormFirmyDoZlecenia(KWZP_PROJEKTEntities db)
         {
+            this.db = db;
             InitializeComponent();
-        }
-
-        private void FormFirmyDoZlecenia_Load(object sender, EventArgs e)
-        {
-            db = new KWZP_PROJEKTEntities();
             FirmyBindingSource.DataSource = db.FIRMY.ToList();
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            using (FormDodajEdytujFirme frmDEF = new FormDodajEdytujFirme(null))
+            using (FormDodajEdytujFirme frmDEF = new FormDodajEdytujFirme(null, db))
             {
                 if (frmDEF.ShowDialog() == DialogResult.OK)
                     FirmyBindingSource.DataSource = db.FIRMY.ToList();
@@ -32,7 +28,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
         {
             if (FirmyBindingSource == null)
                 return;
-            using (FormDodajEdytujFirme frmDEF = new FormDodajEdytujFirme(FirmyBindingSource.Current as FIRMY))
+            using (FormDodajEdytujFirme frmDEF = new FormDodajEdytujFirme(FirmyBindingSource.Current as FIRMY, db))
             {
                 if (frmDEF.ShowDialog() == DialogResult.OK)
                 {

@@ -185,7 +185,7 @@
             this.Name = "FormFirmyDoZlecenia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ewidencja Firm";
-            this.Load += new System.EventHandler(this.FormFirmyDoZlecenia_Load);
+          
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FirmyBindingSource)).EndInit();
             this.ResumeLayout(false);

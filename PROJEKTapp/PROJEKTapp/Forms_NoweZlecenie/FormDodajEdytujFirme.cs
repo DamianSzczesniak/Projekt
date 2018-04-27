@@ -6,10 +6,10 @@ namespace PROJEKTapp.Forms_NoweZlecenie
     {
         KWZP_PROJEKTEntities db;
 
-        public FormDodajEdytujFirme(FIRMY obj)
+        public FormDodajEdytujFirme(FIRMY obj, KWZP_PROJEKTEntities db)
         {
             InitializeComponent();
-            db = new KWZP_PROJEKTEntities();
+           this.db = db;
               
             if (obj == null)
             {

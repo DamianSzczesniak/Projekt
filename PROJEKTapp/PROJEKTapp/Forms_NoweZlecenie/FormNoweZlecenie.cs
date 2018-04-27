@@ -9,11 +9,12 @@ namespace PROJEKTapp
 {
     public partial class FormNoweZlecenie : Form
     {
-        KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities();
+        KWZP_PROJEKTEntities db;
 
-     
-        public FormNoweZlecenie()
+
+        public FormNoweZlecenie(KWZP_PROJEKTEntities db)
         {
+            this.db = db;
             InitializeComponent();
 
             
@@ -70,10 +71,10 @@ namespace PROJEKTapp
         
         private void btnWybierzFirme_Click(object sender, EventArgs e)
         {
-            using (FormFirmyDoZlecenia formFirmyDoZlecenia = new FormFirmyDoZlecenia())
+            using (FormFirmyDoZlecenia formFirmyDoZlecenia = new FormFirmyDoZlecenia(db))
             {
                 formFirmyDoZlecenia.ShowDialog();
-                KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities();
+               
                 if (! cbBoxFirmy.DataSource.Equals(db.FIRMY.ToList()))
                 {
                     cbBoxFirmy.DataSource = db.FIRMY.ToList();
