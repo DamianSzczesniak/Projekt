@@ -79,6 +79,7 @@
             this.cbOkres = new System.Windows.Forms.ComboBox();
             this.cbStawka = new System.Windows.Forms.ComboBox();
             this.txtDataKoniec = new System.Windows.Forms.DateTimePicker();
+            this.chbZmianaStawki = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlUserControl.SuspendLayout();
@@ -303,7 +304,7 @@
             // 
             this.lblNrbudynku.AutoSize = true;
             this.lblNrbudynku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNrbudynku.Location = new System.Drawing.Point(19, 201);
+            this.lblNrbudynku.Location = new System.Drawing.Point(19, 185);
             this.lblNrbudynku.Name = "lblNrbudynku";
             this.lblNrbudynku.Size = new System.Drawing.Size(93, 20);
             this.lblNrbudynku.TabIndex = 54;
@@ -312,7 +313,7 @@
             // txtboxNrbudynku
             // 
             this.txtboxNrbudynku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxNrbudynku.Location = new System.Drawing.Point(130, 201);
+            this.txtboxNrbudynku.Location = new System.Drawing.Point(130, 185);
             this.txtboxNrbudynku.Name = "txtboxNrbudynku";
             this.txtboxNrbudynku.Size = new System.Drawing.Size(183, 26);
             this.txtboxNrbudynku.TabIndex = 62;
@@ -320,7 +321,7 @@
             // txtboxUlica
             // 
             this.txtboxUlica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxUlica.Location = new System.Drawing.Point(130, 170);
+            this.txtboxUlica.Location = new System.Drawing.Point(130, 154);
             this.txtboxUlica.Name = "txtboxUlica";
             this.txtboxUlica.Size = new System.Drawing.Size(183, 26);
             this.txtboxUlica.TabIndex = 61;
@@ -329,7 +330,7 @@
             // 
             this.lblNrlokalu.AutoSize = true;
             this.lblNrlokalu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNrlokalu.Location = new System.Drawing.Point(19, 232);
+            this.lblNrlokalu.Location = new System.Drawing.Point(19, 216);
             this.lblNrlokalu.Name = "lblNrlokalu";
             this.lblNrlokalu.Size = new System.Drawing.Size(74, 20);
             this.lblNrlokalu.TabIndex = 52;
@@ -339,7 +340,7 @@
             // 
             this.lblUlica.AutoSize = true;
             this.lblUlica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblUlica.Location = new System.Drawing.Point(19, 170);
+            this.lblUlica.Location = new System.Drawing.Point(19, 154);
             this.lblUlica.Name = "lblUlica";
             this.lblUlica.Size = new System.Drawing.Size(48, 20);
             this.lblUlica.TabIndex = 55;
@@ -348,7 +349,7 @@
             // txtboxNrlokalu
             // 
             this.txtboxNrlokalu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxNrlokalu.Location = new System.Drawing.Point(130, 232);
+            this.txtboxNrlokalu.Location = new System.Drawing.Point(130, 216);
             this.txtboxNrlokalu.Name = "txtboxNrlokalu";
             this.txtboxNrlokalu.Size = new System.Drawing.Size(183, 26);
             this.txtboxNrlokalu.TabIndex = 63;
@@ -365,7 +366,7 @@
             // 
             this.lblKodpocztowy.AutoSize = true;
             this.lblKodpocztowy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKodpocztowy.Location = new System.Drawing.Point(19, 266);
+            this.lblKodpocztowy.Location = new System.Drawing.Point(19, 250);
             this.lblKodpocztowy.Name = "lblKodpocztowy";
             this.lblKodpocztowy.Size = new System.Drawing.Size(111, 20);
             this.lblKodpocztowy.TabIndex = 50;
@@ -384,7 +385,7 @@
             // txtboxKodpocztowy
             // 
             this.txtboxKodpocztowy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxKodpocztowy.Location = new System.Drawing.Point(130, 263);
+            this.txtboxKodpocztowy.Location = new System.Drawing.Point(130, 247);
             this.txtboxKodpocztowy.Name = "txtboxKodpocztowy";
             this.txtboxKodpocztowy.Size = new System.Drawing.Size(183, 26);
             this.txtboxKodpocztowy.TabIndex = 64;
@@ -401,7 +402,7 @@
             // 
             this.lblKraj.AutoSize = true;
             this.lblKraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKraj.Location = new System.Drawing.Point(19, 329);
+            this.lblKraj.Location = new System.Drawing.Point(19, 313);
             this.lblKraj.Name = "lblKraj";
             this.lblKraj.Size = new System.Drawing.Size(40, 20);
             this.lblKraj.TabIndex = 49;
@@ -429,7 +430,7 @@
             // 
             this.lblMiasto.AutoSize = true;
             this.lblMiasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblMiasto.Location = new System.Drawing.Point(19, 295);
+            this.lblMiasto.Location = new System.Drawing.Point(19, 279);
             this.lblMiasto.Name = "lblMiasto";
             this.lblMiasto.Size = new System.Drawing.Size(60, 20);
             this.lblMiasto.TabIndex = 47;
@@ -467,7 +468,7 @@
             // 
             this.lblStanowisko.AutoSize = true;
             this.lblStanowisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblStanowisko.Location = new System.Drawing.Point(20, 380);
+            this.lblStanowisko.Location = new System.Drawing.Point(21, 363);
             this.lblStanowisko.Name = "lblStanowisko";
             this.lblStanowisko.Size = new System.Drawing.Size(95, 20);
             this.lblStanowisko.TabIndex = 56;
@@ -477,7 +478,7 @@
             // 
             this.cbMiasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbMiasto.FormattingEnabled = true;
-            this.cbMiasto.Location = new System.Drawing.Point(130, 295);
+            this.cbMiasto.Location = new System.Drawing.Point(130, 279);
             this.cbMiasto.Name = "cbMiasto";
             this.cbMiasto.Size = new System.Drawing.Size(183, 28);
             this.cbMiasto.TabIndex = 66;
@@ -495,7 +496,7 @@
             // txtboxKraj
             // 
             this.txtboxKraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxKraj.Location = new System.Drawing.Point(130, 329);
+            this.txtboxKraj.Location = new System.Drawing.Point(130, 313);
             this.txtboxKraj.Name = "txtboxKraj";
             this.txtboxKraj.Size = new System.Drawing.Size(183, 26);
             this.txtboxKraj.TabIndex = 65;
@@ -513,7 +514,7 @@
             // 
             this.cbStanowisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbStanowisko.FormattingEnabled = true;
-            this.cbStanowisko.Location = new System.Drawing.Point(22, 403);
+            this.cbStanowisko.Location = new System.Drawing.Point(23, 386);
             this.cbStanowisko.Name = "cbStanowisko";
             this.cbStanowisko.Size = new System.Drawing.Size(248, 28);
             this.cbStanowisko.TabIndex = 60;
@@ -550,6 +551,7 @@
             // 
             // pnlUserField
             // 
+            this.pnlUserField.Controls.Add(this.chbZmianaStawki);
             this.pnlUserField.Controls.Add(this.chbEdycjaStanoiwska);
             this.pnlUserField.Controls.Add(this.chbDataKoniec);
             this.pnlUserField.Controls.Add(this.cbOkres);
@@ -590,11 +592,11 @@
             // chbEdycjaStanoiwska
             // 
             this.chbEdycjaStanoiwska.AutoSize = true;
-            this.chbEdycjaStanoiwska.Location = new System.Drawing.Point(121, 381);
+            this.chbEdycjaStanoiwska.Location = new System.Drawing.Point(122, 364);
             this.chbEdycjaStanoiwska.Name = "chbEdycjaStanoiwska";
             this.chbEdycjaStanoiwska.Size = new System.Drawing.Size(159, 19);
             this.chbEdycjaStanoiwska.TabIndex = 72;
-            this.chbEdycjaStanoiwska.Text = "Czy zmienić stanoiwsko?";
+            this.chbEdycjaStanoiwska.Text = "Czy zmienić stanowisko?";
             this.chbEdycjaStanoiwska.UseVisualStyleBackColor = true;
             // 
             // chbDataKoniec
@@ -613,7 +615,7 @@
             // 
             this.cbOkres.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbOkres.FormattingEnabled = true;
-            this.cbOkres.Location = new System.Drawing.Point(23, 437);
+            this.cbOkres.Location = new System.Drawing.Point(25, 445);
             this.cbOkres.Name = "cbOkres";
             this.cbOkres.Size = new System.Drawing.Size(121, 28);
             this.cbOkres.TabIndex = 70;
@@ -623,7 +625,7 @@
             // 
             this.cbStawka.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbStawka.FormattingEnabled = true;
-            this.cbStawka.Location = new System.Drawing.Point(150, 437);
+            this.cbStawka.Location = new System.Drawing.Point(152, 445);
             this.cbStawka.Name = "cbStawka";
             this.cbStawka.Size = new System.Drawing.Size(121, 28);
             this.cbStawka.TabIndex = 70;
@@ -636,6 +638,17 @@
             this.txtDataKoniec.Size = new System.Drawing.Size(290, 26);
             this.txtDataKoniec.TabIndex = 67;
             this.txtDataKoniec.Visible = false;
+            // 
+            // chbZmianaStawki
+            // 
+            this.chbZmianaStawki.AutoSize = true;
+            this.chbZmianaStawki.Location = new System.Drawing.Point(25, 420);
+            this.chbZmianaStawki.Name = "chbZmianaStawki";
+            this.chbZmianaStawki.Size = new System.Drawing.Size(135, 19);
+            this.chbZmianaStawki.TabIndex = 73;
+            this.chbZmianaStawki.Text = "Czy zmienić stawkę?";
+            this.chbZmianaStawki.UseVisualStyleBackColor = true;
+            this.chbZmianaStawki.CheckedChanged += new System.EventHandler(this.chbZmianaStawki_CheckedChanged);
             // 
             // FormKadry
             // 
@@ -717,5 +730,6 @@
         private System.Windows.Forms.CheckBox chbDataKoniec;
         private System.Windows.Forms.DateTimePicker txtDataKoniec;
         private System.Windows.Forms.CheckBox chbEdycjaStanoiwska;
+        private System.Windows.Forms.CheckBox chbZmianaStawki;
     }
 }

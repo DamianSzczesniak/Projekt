@@ -88,9 +88,9 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.OBCIAZENIE_NARZEDZI" Width="1.5" PointX="15.375" PointY="6.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.GABARYT_PRODUTKU" Width="1.5" PointX="15.375" PointY="9.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MASA_PRODUKTU" Width="1.5" PointX="15.375" PointY="12.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNIK_DANE" Width="1.5" PointX="17.375" PointY="0.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_STANOWISKA" Width="1.5" PointX="17.375" PointY="5.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAWKA_OKRES" Width="1.5" PointX="17.375" PointY="8.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_ZATRUDNIENI" Width="1.5" PointX="17.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
