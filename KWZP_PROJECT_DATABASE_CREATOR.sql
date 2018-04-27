@@ -963,7 +963,7 @@ SELECT pra.ID_PRACOWNIK, pra.NAZWISKO, pra.IMIE, pra.TELEFON, s.NAZWA AS STANOWI
 FROM PRACOWNICY pra
 INNER JOIN STANOWISKO_PRACOWNICY sta ON pra.ID_PRACOWNIK = sta.ID_PRACOWNIK
 INNER JOIN STANOWISKO s ON s.ID_STANOWISKO = sta.ID_STANOWISKO
-WHERE sta.DATA_START < dateadd(dd, datediff(dd, 0, getdate()), 0) AND sta.DATA_KONIEC is null OR sta.DATA_KONIEC > dateadd(dd, datediff(dd, 0, getdate()), 0)
+WHERE sta.DATA_KONIEC is null OR sta.DATA_KONIEC > dateadd(dd, datediff(dd, 0, getdate()), 0)
 GO
 SELECT * FROM PRACOWNICY_ZATRUDNIENI
 GO
