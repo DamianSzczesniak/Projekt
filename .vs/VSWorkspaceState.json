@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\PROJEKTapp",
-    "\\PROJEKTapp\\PROJEKTapp"
+    "\\PROJEKTapp\\PROJEKTapp",
+    "\\PROJEKTapp\\PROJEKTapp\\Forms"
   ],
+  "SelectedNode": "\\PROJEKTapp\\PROJEKTapp\\Forms\\FormWykazPracownikow.cs",
   "PreviewInSolutionExplorer": false
 }

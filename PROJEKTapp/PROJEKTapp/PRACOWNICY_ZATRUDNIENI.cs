@@ -12,22 +12,12 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class PRACOWNIK_DANE
+    public partial class PRACOWNICY_ZATRUDNIENI
     {
         public int ID_PRACOWNIK { get; set; }
         public string NAZWISKO { get; set; }
         public string IMIE { get; set; }
         public string TELEFON { get; set; }
-        public string PESEL { get; set; }
-        public System.DateTime DATA_START { get; set; }
-        public Nullable<System.DateTime> DATA_KONIEC { get; set; }
         public string STANOWISKO { get; set; }
-        public string ULICA { get; set; }
-        public string NR_BUDYNKU { get; set; }
-        public string NR_LOKALU { get; set; }
-        public string KOD_POCZTOWY { get; set; }
-        public string MIASTO { get; set; }
-        public string KRAJ { get; set; }
-        public Nullable<int> ID_MIASTA { get; set; }
     }
 }
