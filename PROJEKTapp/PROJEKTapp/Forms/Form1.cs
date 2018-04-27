@@ -47,7 +47,7 @@ namespace PROJEKTapp
 
         private void buttonNoweZlecenie_Click(object sender, EventArgs e)
         {
-            FormNoweZlecenie NoweZlecenie = new FormNoweZlecenie();
+            FormNoweZlecenie NoweZlecenie = new FormNoweZlecenie(db);
             NoweZlecenie.Show();
 
         }
