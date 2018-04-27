@@ -28,19 +28,17 @@ namespace PROJEKTapp
 
             cbStanowisko.DataSource = db.STANOWISKO.ToList();
             cbStanowisko.DisplayMember = "Nazwa";
-            cbStanowisko.ValueMember = "Id_Stanowisko";
+           // cbStanowisko.ValueMember = "Id_Stanowisko";
 
             cbMiasto.DataSource = db.MIASTA.ToList();
             cbMiasto.DisplayMember = "Nazwa";
-            cbMiasto.ValueMember = "Id_Miasta";
+            //cbMiasto.ValueMember = "Id_Miasta";
 
             cbOkres.DataSource = db.OKRES.ToList();
             cbOkres.DisplayMember = "Nazwa";
-            //cbOkres.ValueMember = "Id_okres";
 
             cbStawka.DataSource = db.STAWKA.Where(stawka => stawka.ID_OKRES.Equals(((OKRES)this.cbOkres.SelectedValue).ID_OKRES)).ToList();
             cbStawka.DisplayMember = "Wartosc";
-           // cbStawka.ValueMember = "Id_Stawka";
         }
 
 
@@ -145,13 +143,13 @@ namespace PROJEKTapp
             txtboxNrlokalu.Text = adrespracownik.NR_LOKALU;
             txtboxNrbudynku.Text = adrespracownik.NR_BUDYNKU;
             txtboxKodpocztowy.Text = adrespracownik.KOD_POCZTOWY;
-            cbMiasto.SelectedValue = adrespracownik.ID_MIASTA;
+            (((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA) = (int)adrespracownik.ID_MIASTA;
             txtboxKraj.Text = adrespracownik.KRAJ;
             pracownikstawka = pracownik.STAWKA_PRACOWNICY.Last();
-            cbStawka.SelectedValue = (int)pracownikstawka.ID_STAWKA;
+            ((STAWKA)this.cbStawka.SelectedValue).ID_STAWKA = (int)pracownikstawka.ID_STAWKA;
             cbOkres.SelectedIndex = (int)pracownikstawka.STAWKA.ID_OKRES;
             pracownikstanowisko = pracownik.STANOWISKO_PRACOWNICY.Last();
-            cbStanowisko.SelectedValue = pracownikstanowisko.ID_STANOWISKO;
+            ((STANOWISKO)cbStanowisko.SelectedValue).ID_STANOWISKO = (int)pracownikstanowisko.ID_STANOWISKO;
             txtDataRozpoczeciaPracy.Value = pracownikstanowisko.DATA_START;
         }
 
@@ -222,17 +220,17 @@ namespace PROJEKTapp
                     adrespracownika.NR_BUDYNKU = this.txtboxNrbudynku.Text;
                     adrespracownika.NR_LOKALU = this.txtboxNrlokalu.Text;
                     adrespracownika.KOD_POCZTOWY = this.txtboxKodpocztowy.Text;
-                    adrespracownika.ID_MIASTA = (int)cbMiasto.SelectedValue;
+                    adrespracownika.ID_MIASTA = ((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA;
                     adrespracownika.KRAJ = this.txtboxKraj.Text;
                     STANOWISKO_PRACOWNICY pracownikstanowisko = new STANOWISKO_PRACOWNICY();
-                    pracownikstanowisko.ID_STANOWISKO = (int)cbStanowisko.SelectedValue;
+                pracownikstanowisko.ID_STANOWISKO = ((STANOWISKO)cbStanowisko.SelectedValue).ID_STANOWISKO;
                     pracownikstanowisko.DATA_START = txtDataRozpoczeciaPracy.Value;
                 if (chbDataKoniec.Checked == true)
                 {
                     pracownikstanowisko.DATA_KONIEC = txtDataKoniec.Value;
                 }
                     STAWKA_PRACOWNICY stawkapracownika = new STAWKA_PRACOWNICY();
-                    stawkapracownika.ID_STAWKA = (int)cbStawka.SelectedValue;
+                stawkapracownika.ID_STAWKA = ((STAWKA)this.cbStawka.SelectedValue).ID_STAWKA;
                     stawkapracownika.DATA_START = txtDataRozpoczeciaPracy.Value;
                 if (chbDataKoniec.Checked == true)
                 {
@@ -323,7 +321,6 @@ namespace PROJEKTapp
         {
             cbStawka.DataSource = db.STAWKA.Where(stawka => stawka.ID_OKRES.Equals(((OKRES)this.cbOkres.SelectedValue).ID_OKRES)).ToList();
             cbStawka.DisplayMember = "Wartosc";
-            cbStawka.ValueMember = "Id_Stawka";
         }
 
         private void chbZmianaStawki_CheckedChanged(object sender, EventArgs e)
