@@ -258,14 +258,14 @@
     <Compile Include="PRACOWNICY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="PRACOWNICY_STANOWISKA.cs">
-      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
-    </Compile>
     <Compile Include="Forms\PracStan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\PracStan.Designer.cs">
       <DependentUpon>PracStan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRACOWNICY_STANOWISKA.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PRACOWNICY_ZATRUDNIENI.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>

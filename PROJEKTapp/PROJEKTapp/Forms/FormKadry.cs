@@ -28,11 +28,9 @@ namespace PROJEKTapp
 
             cbStanowisko.DataSource = db.STANOWISKO.ToList();
             cbStanowisko.DisplayMember = "Nazwa";
-           // cbStanowisko.ValueMember = "Id_Stanowisko";
 
             cbMiasto.DataSource = db.MIASTA.ToList();
             cbMiasto.DisplayMember = "Nazwa";
-            //cbMiasto.ValueMember = "Id_Miasta";
 
             cbOkres.DataSource = db.OKRES.ToList();
             cbOkres.DisplayMember = "Nazwa";
@@ -121,6 +119,8 @@ namespace PROJEKTapp
                 txtboxKraj.Text = "Polska";
                 cbOkres.Enabled = true;
                 cbStawka.Enabled = true;
+                cbStanowisko.Enabled = true;
+                txtDataKoniec.Show();
             }
         }
 
@@ -131,6 +131,7 @@ namespace PROJEKTapp
             chbEdycjaStanoiwska.Show();
             cbOkres.Enabled = false;
             cbStawka.Enabled = false;
+            cbStanowisko.Enabled = false;
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
@@ -151,6 +152,17 @@ namespace PROJEKTapp
             pracownikstanowisko = pracownik.STANOWISKO_PRACOWNICY.Last();
             ((STANOWISKO)cbStanowisko.SelectedValue).ID_STANOWISKO = (int)pracownikstanowisko.ID_STANOWISKO;
             txtDataRozpoczeciaPracy.Value = pracownikstanowisko.DATA_START;
+            if (pracownikstanowisko.DATA_KONIEC != null)
+            {
+                txtDataKoniec.Value = (DateTime)pracownikstanowisko.DATA_KONIEC;
+                chbDataKoniec.Checked = true;
+                txtDataKoniec.Show();
+            }
+            else
+            {
+                chbDataKoniec.Checked = false;
+                txtDataKoniec.Hide();
+            }
         }
 
         private void btnUsun_Click(object sender, EventArgs e)
@@ -220,7 +232,7 @@ namespace PROJEKTapp
                     adrespracownika.NR_BUDYNKU = this.txtboxNrbudynku.Text;
                     adrespracownika.NR_LOKALU = this.txtboxNrlokalu.Text;
                     adrespracownika.KOD_POCZTOWY = this.txtboxKodpocztowy.Text;
-                    adrespracownika.ID_MIASTA = ((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA;
+                    adrespracownika.ID_MIASTA = (int)((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA;
                     adrespracownika.KRAJ = this.txtboxKraj.Text;
                     STANOWISKO_PRACOWNICY pracownikstanowisko = new STANOWISKO_PRACOWNICY();
                 pracownikstanowisko.ID_STANOWISKO = ((STANOWISKO)cbStanowisko.SelectedValue).ID_STANOWISKO;
@@ -257,24 +269,36 @@ namespace PROJEKTapp
                 adrespracownik.NR_BUDYNKU = this.txtboxNrbudynku.Text;
                 adrespracownik.NR_LOKALU = this.txtboxNrlokalu.Text;
                 adrespracownik.KOD_POCZTOWY = this.txtboxKodpocztowy.Text;
-                adrespracownik.ID_MIASTA = (int)cbMiasto.SelectedValue;
+                adrespracownik.ID_MIASTA = ((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA;
                 adrespracownik.KRAJ = this.txtboxKraj.Text;
                 if (chbEdycjaStanoiwska.Checked == true)
                 {
                     pracownikstanowisko.DATA_KONIEC = txtDataRozpoczeciaPracy.Value;
                     STANOWISKO_PRACOWNICY pracownikstanowiskoN = new STANOWISKO_PRACOWNICY();
-                    pracownikstanowiskoN.ID_STANOWISKO = (int)cbStanowisko.SelectedValue;
+                    pracownikstanowiskoN.ID_STANOWISKO = ((STANOWISKO)cbStanowisko.SelectedValue).ID_STANOWISKO;
                     pracownikstanowiskoN.DATA_START = txtDataRozpoczeciaPracy.Value;
                     if (chbDataKoniec.Checked == true)
                     {
                         pracownikstanowisko.DATA_KONIEC = txtDataKoniec.Value;
                     }
+                    else
+                    {
+                        pracownikstanowisko.DATA_KONIEC = null;
+                    }
                     pracownik.STANOWISKO_PRACOWNICY.Add(pracownikstanowiskoN);
+                }
+                else if (chbDataKoniec.Checked == true)
+                {
+                    pracownikstanowisko.DATA_KONIEC = txtDataRozpoczeciaPracy.Value;
+                }
+                else
+                {
+                    pracownikstanowisko.DATA_KONIEC = null;
                 }
                 if (chbZmianaStawki.Checked ==true)
                 {
                     STAWKA_PRACOWNICY stawkapracownika = new STAWKA_PRACOWNICY();
-                    stawkapracownika.ID_STAWKA = (int)cbStawka.SelectedValue;
+                    stawkapracownika.ID_STAWKA = ((STAWKA)this.cbStawka.SelectedValue).ID_STAWKA;
                     pracownik.STAWKA_PRACOWNICY.Add(stawkapracownika);
                 }
                 db.SaveChanges();
@@ -282,7 +306,6 @@ namespace PROJEKTapp
                 ListaPracownikow.Refresh();
                 czyscform();
             }
-           
         }
 
         private void btnSzkolenia_Click(object sender, EventArgs e)
@@ -334,6 +357,24 @@ namespace PROJEKTapp
                 {
                 cbOkres.Enabled = false;
                 cbStawka.Enabled = false;
+            }
+        }
+
+        private void chbEdycjaStanoiwska_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbEdycjaStanoiwska.Checked == true)
+            {
+                cbStanowisko.Enabled = true;
+                chbDataKoniec.Checked = false;
+                txtDataRozpoczeciaPracy.Value = DateTime.Now.AddDays(1);
+                txtDataKoniec.Value = DateTime.Now.AddDays(1);
+                lblDataStart.Text = "Nowa data Rozpoczęcia pracy";
+            }
+            else
+            {
+                cbStanowisko.Enabled = false;
+                txtDataRozpoczeciaPracy.Value = pracownikstanowisko.DATA_START;
+                lblDataStart.Text = "Data Rozpoczęcia pracy";
             }
         }
     }

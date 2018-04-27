@@ -74,12 +74,12 @@
             this.btnZapiszDodaj = new System.Windows.Forms.Button();
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.pnlUserField = new System.Windows.Forms.Panel();
+            this.chbZmianaStawki = new System.Windows.Forms.CheckBox();
             this.chbEdycjaStanoiwska = new System.Windows.Forms.CheckBox();
             this.chbDataKoniec = new System.Windows.Forms.CheckBox();
             this.cbOkres = new System.Windows.Forms.ComboBox();
             this.cbStawka = new System.Windows.Forms.ComboBox();
             this.txtDataKoniec = new System.Windows.Forms.DateTimePicker();
-            this.chbZmianaStawki = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlUserControl.SuspendLayout();
@@ -486,10 +486,10 @@
             // lblDataStart
             // 
             this.lblDataStart.AutoSize = true;
-            this.lblDataStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDataStart.Location = new System.Drawing.Point(333, 17);
+            this.lblDataStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblDataStart.Location = new System.Drawing.Point(333, 363);
             this.lblDataStart.Name = "lblDataStart";
-            this.lblDataStart.Size = new System.Drawing.Size(179, 20);
+            this.lblDataStart.Size = new System.Drawing.Size(169, 18);
             this.lblDataStart.TabIndex = 46;
             this.lblDataStart.Text = "Data rozpoczecia pracy:";
             // 
@@ -505,7 +505,7 @@
             // txtDataRozpoczeciaPracy
             // 
             this.txtDataRozpoczeciaPracy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDataRozpoczeciaPracy.Location = new System.Drawing.Point(337, 40);
+            this.txtDataRozpoczeciaPracy.Location = new System.Drawing.Point(337, 386);
             this.txtDataRozpoczeciaPracy.Name = "txtDataRozpoczeciaPracy";
             this.txtDataRozpoczeciaPracy.Size = new System.Drawing.Size(290, 26);
             this.txtDataRozpoczeciaPracy.TabIndex = 67;
@@ -589,23 +589,37 @@
             this.pnlUserField.Size = new System.Drawing.Size(639, 555);
             this.pnlUserField.TabIndex = 5;
             // 
+            // chbZmianaStawki
+            // 
+            this.chbZmianaStawki.AutoSize = true;
+            this.chbZmianaStawki.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chbZmianaStawki.Location = new System.Drawing.Point(25, 420);
+            this.chbZmianaStawki.Name = "chbZmianaStawki";
+            this.chbZmianaStawki.Size = new System.Drawing.Size(179, 22);
+            this.chbZmianaStawki.TabIndex = 73;
+            this.chbZmianaStawki.Text = "Czy zmienić stawkę?";
+            this.chbZmianaStawki.UseVisualStyleBackColor = true;
+            this.chbZmianaStawki.CheckedChanged += new System.EventHandler(this.chbZmianaStawki_CheckedChanged);
+            // 
             // chbEdycjaStanoiwska
             // 
             this.chbEdycjaStanoiwska.AutoSize = true;
+            this.chbEdycjaStanoiwska.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.chbEdycjaStanoiwska.Location = new System.Drawing.Point(122, 364);
             this.chbEdycjaStanoiwska.Name = "chbEdycjaStanoiwska";
-            this.chbEdycjaStanoiwska.Size = new System.Drawing.Size(159, 19);
+            this.chbEdycjaStanoiwska.Size = new System.Drawing.Size(210, 22);
             this.chbEdycjaStanoiwska.TabIndex = 72;
             this.chbEdycjaStanoiwska.Text = "Czy zmienić stanowisko?";
             this.chbEdycjaStanoiwska.UseVisualStyleBackColor = true;
+            this.chbEdycjaStanoiwska.CheckedChanged += new System.EventHandler(this.chbEdycjaStanoiwska_CheckedChanged);
             // 
             // chbDataKoniec
             // 
             this.chbDataKoniec.AutoSize = true;
-            this.chbDataKoniec.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbDataKoniec.Location = new System.Drawing.Point(337, 73);
+            this.chbDataKoniec.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chbDataKoniec.Location = new System.Drawing.Point(337, 419);
             this.chbDataKoniec.Name = "chbDataKoniec";
-            this.chbDataKoniec.Size = new System.Drawing.Size(213, 24);
+            this.chbDataKoniec.Size = new System.Drawing.Size(201, 22);
             this.chbDataKoniec.TabIndex = 71;
             this.chbDataKoniec.Text = "Znana data końca pracy";
             this.chbDataKoniec.UseVisualStyleBackColor = true;
@@ -633,22 +647,11 @@
             // txtDataKoniec
             // 
             this.txtDataKoniec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDataKoniec.Location = new System.Drawing.Point(337, 106);
+            this.txtDataKoniec.Location = new System.Drawing.Point(337, 452);
             this.txtDataKoniec.Name = "txtDataKoniec";
             this.txtDataKoniec.Size = new System.Drawing.Size(290, 26);
             this.txtDataKoniec.TabIndex = 67;
             this.txtDataKoniec.Visible = false;
-            // 
-            // chbZmianaStawki
-            // 
-            this.chbZmianaStawki.AutoSize = true;
-            this.chbZmianaStawki.Location = new System.Drawing.Point(25, 420);
-            this.chbZmianaStawki.Name = "chbZmianaStawki";
-            this.chbZmianaStawki.Size = new System.Drawing.Size(135, 19);
-            this.chbZmianaStawki.TabIndex = 73;
-            this.chbZmianaStawki.Text = "Czy zmienić stawkę?";
-            this.chbZmianaStawki.UseVisualStyleBackColor = true;
-            this.chbZmianaStawki.CheckedChanged += new System.EventHandler(this.chbZmianaStawki_CheckedChanged);
             // 
             // FormKadry
             // 

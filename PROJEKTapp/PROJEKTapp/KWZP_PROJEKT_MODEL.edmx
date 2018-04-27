@@ -275,6 +275,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRODUKCJA_POLPRODUKTU' does not h
           <Key>
             <PropertyRef Name="ID_PRACOWNIK" />
             <PropertyRef Name="ID_STANOWISKO" />
+            <PropertyRef Name="DATA_START" />
           </Key>
           <Property Name="ID_PRACOWNIK" Type="int" Nullable="false" />
           <Property Name="ID_STANOWISKO" Type="int" Nullable="false" />
@@ -1612,12 +1613,12 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <Property Name="PESEL" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="DOKUMENTACJA" Relationship="Self.FK__DOKUMENTA__ID_PR__3E1D39E1" FromRole="PRACOWNICY" ToRole="DOKUMENTACJA" />
           <NavigationProperty Name="FAKTURY" Relationship="Self.FK__FAKTURY__ID_PRAC__1CBC4616" FromRole="PRACOWNICY" ToRole="FAKTURY" />
-          <NavigationProperty Name="STANOWISKO_PRACOWNICY" Relationship="Self.FK__STANOWISK__ID_PR__71D1E811" FromRole="PRACOWNICY" ToRole="STANOWISKO_PRACOWNICY" />
           <NavigationProperty Name="STAWKA_PRACOWNICY" Relationship="Self.FK__STAWKA_PR__ID_PR__7C4F7684" FromRole="PRACOWNICY" ToRole="STAWKA_PRACOWNICY" />
           <NavigationProperty Name="WOLNE_PRACOWNICY" Relationship="Self.FK__WOLNE_PRA__ID_PR__76969D2E" FromRole="PRACOWNICY" ToRole="WOLNE_PRACOWNICY" />
           <NavigationProperty Name="ADRESY_PRACOWNICY" Relationship="Self.PRACOWNICY_ADRESY_PRACOWNICY" FromRole="PRACOWNICY" ToRole="ADRESY_PRACOWNICY" />
           <NavigationProperty Name="SZKOLENIA" Relationship="Self.SZKOLENIE_PRACOWNICY" FromRole="PRACOWNICY" ToRole="SZKOLENIA" />
           <NavigationProperty Name="REALIZACJA_PRODUKCJA" Relationship="Self.ZESPOL_LUDZI" FromRole="PRACOWNICY" ToRole="REALIZACJA_PRODUKCJA" />
+          <NavigationProperty Name="STANOWISKO_PRACOWNICY" Relationship="KWZP_PROJEKTModel.FK__STANOWISK__ID_PR__71D1E811" FromRole="PRACOWNICY" ToRole="STANOWISKO_PRACOWNICY" />
         </EntityType>
         <EntityType Name="PROCES">
           <Key>
@@ -1677,19 +1678,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           </Key>
           <Property Name="ID_STANOWISKO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NAZWA" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="STANOWISKO_PRACOWNICY" Relationship="Self.FK__STANOWISK__ID_ST__72C60C4A" FromRole="STANOWISKO" ToRole="STANOWISKO_PRACOWNICY" />
-        </EntityType>
-        <EntityType Name="STANOWISKO_PRACOWNICY">
-          <Key>
-            <PropertyRef Name="ID_PRACOWNIK" />
-            <PropertyRef Name="ID_STANOWISKO" />
-          </Key>
-          <Property Name="ID_PRACOWNIK" Type="Int32" Nullable="false" />
-          <Property Name="ID_STANOWISKO" Type="Int32" Nullable="false" />
-          <Property Name="DATA_START" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="DATA_KONIEC" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="PRACOWNICY" Relationship="Self.FK__STANOWISK__ID_PR__71D1E811" FromRole="STANOWISKO_PRACOWNICY" ToRole="PRACOWNICY" />
-          <NavigationProperty Name="STANOWISKO" Relationship="Self.FK__STANOWISK__ID_ST__72C60C4A" FromRole="STANOWISKO_PRACOWNICY" ToRole="STANOWISKO" />
+          <NavigationProperty Name="STANOWISKO_PRACOWNICY" Relationship="KWZP_PROJEKTModel.FK__STANOWISK__ID_ST__72C60C4A" FromRole="STANOWISKO" ToRole="STANOWISKO_PRACOWNICY" />
         </EntityType>
         <EntityType Name="STATUS_ZAMOWIENIA">
           <Key>
@@ -2085,18 +2074,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__STANOWISK__ID_PR__71D1E811">
-          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
-          <End Role="STANOWISKO_PRACOWNICY" Type="Self.STANOWISKO_PRACOWNICY" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PRACOWNICY">
-              <PropertyRef Name="ID_PRACOWNIK" />
-            </Principal>
-            <Dependent Role="STANOWISKO_PRACOWNICY">
-              <PropertyRef Name="ID_PRACOWNIK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__STAWKA_PR__ID_PR__7C4F7684">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
           <End Role="STAWKA_PRACOWNICY" Type="Self.STAWKA_PRACOWNICY" Multiplicity="*" />
@@ -2154,18 +2131,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Principal>
             <Dependent Role="REALIZACJA_PRODUKCJA">
               <PropertyRef Name="ID_ZLECENIA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__STANOWISK__ID_ST__72C60C4A">
-          <End Role="STANOWISKO" Type="Self.STANOWISKO" Multiplicity="1" />
-          <End Role="STANOWISKO_PRACOWNICY" Type="Self.STANOWISKO_PRACOWNICY" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="STANOWISKO">
-              <PropertyRef Name="ID_STANOWISKO" />
-            </Principal>
-            <Dependent Role="STANOWISKO_PRACOWNICY">
-              <PropertyRef Name="ID_STANOWISKO" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2254,7 +2219,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <EntitySet Name="REALIZACJA_PRODUKCJA" EntityType="Self.REALIZACJA_PRODUKCJA" />
           <EntitySet Name="SLOWNIK_PROCES_TECHNOLOGICZNY" EntityType="Self.SLOWNIK_PROCES_TECHNOLOGICZNY" />
           <EntitySet Name="STANOWISKO" EntityType="Self.STANOWISKO" />
-          <EntitySet Name="STANOWISKO_PRACOWNICY" EntityType="Self.STANOWISKO_PRACOWNICY" />
           <EntitySet Name="STATUS_ZAMOWIENIA" EntityType="Self.STATUS_ZAMOWIENIA" />
           <EntitySet Name="STATUS_ZLECENIA" EntityType="Self.STATUS_ZLECENIA" />
           <EntitySet Name="STAWKA" EntityType="Self.STAWKA" />
@@ -2353,10 +2317,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             <End Role="POLPRODUKTY" EntitySet="POLPRODUKTY" />
             <End Role="PRODUKCJA_POLPRODUKTU" EntitySet="PRODUKCJA_POLPRODUKTU" />
           </AssociationSet>
-          <AssociationSet Name="FK__STANOWISK__ID_PR__71D1E811" Association="Self.FK__STANOWISK__ID_PR__71D1E811">
-            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
-            <End Role="STANOWISKO_PRACOWNICY" EntitySet="STANOWISKO_PRACOWNICY" />
-          </AssociationSet>
           <AssociationSet Name="FK__STAWKA_PR__ID_PR__7C4F7684" Association="Self.FK__STAWKA_PR__ID_PR__7C4F7684">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="STAWKA_PRACOWNICY" EntitySet="STAWKA_PRACOWNICY" />
@@ -2376,10 +2336,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <AssociationSet Name="FK__REALIZACJ__ID_ZL__03F0984C" Association="Self.FK__REALIZACJ__ID_ZL__03F0984C">
             <End Role="ZLECENIA" EntitySet="ZLECENIA" />
             <End Role="REALIZACJA_PRODUKCJA" EntitySet="REALIZACJA_PRODUKCJA" />
-          </AssociationSet>
-          <AssociationSet Name="FK__STANOWISK__ID_ST__72C60C4A" Association="Self.FK__STANOWISK__ID_ST__72C60C4A">
-            <End Role="STANOWISKO" EntitySet="STANOWISKO" />
-            <End Role="STANOWISKO_PRACOWNICY" EntitySet="STANOWISKO_PRACOWNICY" />
           </AssociationSet>
           <AssociationSet Name="FK__ZAMOWIENI__ID_ST__2EDAF651" Association="Self.FK__ZAMOWIENI__ID_ST__2EDAF651">
             <End Role="STATUS_ZAMOWIENIA" EntitySet="STATUS_ZAMOWIENIA" />
@@ -2441,6 +2397,15 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <EntitySet Name="PRACOWNICY_STANOWISKA" EntityType="KWZP_PROJEKTModel.PRACOWNICY_STANOWISKA" />
           <EntitySet Name="STAWKA_OKRES" EntityType="KWZP_PROJEKTModel.STAWKA_OKRES" />
           <EntitySet Name="PRACOWNICY_ZATRUDNIENI" EntityType="KWZP_PROJEKTModel.PRACOWNICY_ZATRUDNIENI" />
+          <EntitySet Name="STANOWISKO_PRACOWNICY" EntityType="KWZP_PROJEKTModel.STANOWISKO_PRACOWNICY" />
+          <AssociationSet Name="FK__STANOWISK__ID_PR__71D1E811" Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_PR__71D1E811">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="STANOWISKO_PRACOWNICY" EntitySet="STANOWISKO_PRACOWNICY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__STANOWISK__ID_ST__72C60C4A" Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_ST__72C60C4A">
+            <End Role="STANOWISKO" EntitySet="STANOWISKO" />
+            <End Role="STANOWISKO_PRACOWNICY" EntitySet="STANOWISKO_PRACOWNICY" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -2547,6 +2512,43 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <Property Name="TELEFON" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="STANOWISKO" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
         </EntityType>
+        <EntityType Name="STANOWISKO_PRACOWNICY">
+          <Key>
+            <PropertyRef Name="ID_PRACOWNIK" />
+            <PropertyRef Name="ID_STANOWISKO" />
+            <PropertyRef Name="DATA_START" />
+          </Key>
+          <Property Name="ID_PRACOWNIK" Type="Int32" Nullable="false" />
+          <Property Name="ID_STANOWISKO" Type="Int32" Nullable="false" />
+          <Property Name="DATA_START" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DATA_KONIEC" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="PRACOWNICY" Relationship="KWZP_PROJEKTModel.FK__STANOWISK__ID_PR__71D1E811" FromRole="STANOWISKO_PRACOWNICY" ToRole="PRACOWNICY" />
+          <NavigationProperty Name="STANOWISKO" Relationship="KWZP_PROJEKTModel.FK__STANOWISK__ID_ST__72C60C4A" FromRole="STANOWISKO_PRACOWNICY" ToRole="STANOWISKO" />
+        </EntityType>
+        <Association Name="FK__STANOWISK__ID_PR__71D1E811">
+          <End Type="KWZP_PROJEKTModel.PRACOWNICY" Role="PRACOWNICY" Multiplicity="1" />
+          <End Type="KWZP_PROJEKTModel.STANOWISKO_PRACOWNICY" Role="STANOWISKO_PRACOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="ID_PRACOWNIK" />
+            </Principal>
+            <Dependent Role="STANOWISKO_PRACOWNICY">
+              <PropertyRef Name="ID_PRACOWNIK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__STANOWISK__ID_ST__72C60C4A">
+          <End Type="KWZP_PROJEKTModel.STANOWISKO" Role="STANOWISKO" Multiplicity="1" />
+          <End Type="KWZP_PROJEKTModel.STANOWISKO_PRACOWNICY" Role="STANOWISKO_PRACOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STANOWISKO">
+              <PropertyRef Name="ID_STANOWISKO" />
+            </Principal>
+            <Dependent Role="STANOWISKO_PRACOWNICY">
+              <PropertyRef Name="ID_STANOWISKO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2800,16 +2802,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
               <MappingFragment StoreEntitySet="STANOWISKO">
                 <ScalarProperty Name="ID_STANOWISKO" ColumnName="ID_STANOWISKO" />
                 <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="STANOWISKO_PRACOWNICY">
-            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.STANOWISKO_PRACOWNICY">
-              <MappingFragment StoreEntitySet="STANOWISKO_PRACOWNICY">
-                <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
-                <ScalarProperty Name="ID_STANOWISKO" ColumnName="ID_STANOWISKO" />
-                <ScalarProperty Name="DATA_START" ColumnName="DATA_START" />
-                <ScalarProperty Name="DATA_KONIEC" ColumnName="DATA_KONIEC" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3088,6 +3080,16 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
                 <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
                 <ScalarProperty Name="IMIE" ColumnName="IMIE" />
                 <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+                <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STANOWISKO_PRACOWNICY">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.STANOWISKO_PRACOWNICY">
+              <MappingFragment StoreEntitySet="STANOWISKO_PRACOWNICY">
+                <ScalarProperty Name="DATA_KONIEC" ColumnName="DATA_KONIEC" />
+                <ScalarProperty Name="DATA_START" ColumnName="DATA_START" />
+                <ScalarProperty Name="ID_STANOWISKO" ColumnName="ID_STANOWISKO" />
                 <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
               </MappingFragment>
             </EntityTypeMapping>

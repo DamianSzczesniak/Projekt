@@ -29,7 +29,6 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.REALIZACJA_PRODUKCJA" Width="1.5" PointX="7.5" PointY="11" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.SLOWNIK_PROCES_TECHNOLOGICZNY" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STANOWISKO" Width="1.5" PointX="5.25" PointY="31.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.STANOWISKO_PRACOWNICY" Width="1.5" PointX="7.5" PointY="19.375" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STATUS_ZAMOWIENIA" Width="1.5" PointX="8" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STATUS_ZLECENIA" Width="1.5" PointX="10.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAWKA" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
@@ -65,13 +64,11 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__PARAMETRY__ID_PA__339FAB6E" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__PARAMETRY__ID_PA__44CA3770" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__PRODUKCJA__ID_PO__4A8310C6" ManuallyRouted="false" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_PR__71D1E811" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__STAWKA_PR__ID_PR__7C4F7684" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__WOLNE_PRA__ID_PR__76969D2E" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__PROCES__ID_SLOWN__37703C52" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__PRODUKCJA__ID_PR__4B7734FF" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__REALIZACJ__ID_ZL__03F0984C" ManuallyRouted="false" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_ST__72C60C4A" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZAMOWIENI__ID_ST__2EDAF651" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__STAWKA_PR__ID_ST__7D439ABD" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__WOLNE_PRA__ID_WO__75A278F5" ManuallyRouted="false" />
@@ -91,6 +88,9 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_STANOWISKA" Width="1.5" PointX="17.375" PointY="5.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAWKA_OKRES" Width="1.5" PointX="17.375" PointY="8.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_ZATRUDNIENI" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.STANOWISKO_PRACOWNICY" Width="1.5" PointX="10.5" PointY="25.875" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_PR__71D1E811" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_ST__72C60C4A" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
