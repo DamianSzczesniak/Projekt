@@ -91,6 +91,7 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STANOWISKO_PRACOWNICY" Width="1.5" PointX="10.5" PointY="25.875" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_PR__71D1E811" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_ST__72C60C4A" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY_PRACOWNIKA" Width="1.5" PointX="17.375" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

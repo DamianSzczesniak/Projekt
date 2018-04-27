@@ -132,8 +132,13 @@ namespace PROJEKTapp
             cbOkres.Enabled = false;
             cbStawka.Enabled = false;
             cbStanowisko.Enabled = false;
-
+            this.ListaAdresow.Show();
+                
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();
+            this.ListaAdresow.Columns[0].Visible = false;
+            this.ListaAdresow.Columns[1].Visible = false;
+            //int idAdresu = Convert.ToInt32(ListaAdresow.CurrentRow.Cells[0].Value); do event double click
             pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
             txtboxNazwisko.Text = pracownik.NAZWISKO;
             txtboxImie.Text = pracownik.IMIE;
@@ -376,6 +381,11 @@ namespace PROJEKTapp
                 txtDataRozpoczeciaPracy.Value = pracownikstanowisko.DATA_START;
                 lblDataStart.Text = "Data Rozpoczęcia pracy";
             }
+        }
+
+        private void btnSzczegoly_Click(object sender, EventArgs e)
+        {
+            //Ustawić wczytanie formularza jak do edycji ale tylko wyśiwetlanie
         }
     }
 }

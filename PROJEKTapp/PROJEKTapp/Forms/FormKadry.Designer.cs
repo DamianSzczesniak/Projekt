@@ -80,12 +80,15 @@
             this.cbOkres = new System.Windows.Forms.ComboBox();
             this.cbStawka = new System.Windows.Forms.ComboBox();
             this.txtDataKoniec = new System.Windows.Forms.DateTimePicker();
+            this.ListaAdresow = new System.Windows.Forms.DataGridView();
+            this.btnSzczegoly = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlUserControl.SuspendLayout();
             this.pnlUserSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).BeginInit();
             this.pnlUserField.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaAdresow)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -223,16 +226,17 @@
             // 
             this.pnlUserControl.Controls.Add(this.btnUsun);
             this.pnlUserControl.Controls.Add(this.btnEdytuj);
+            this.pnlUserControl.Controls.Add(this.btnSzczegoly);
             this.pnlUserControl.Controls.Add(this.btnDodaj);
-            this.pnlUserControl.Location = new System.Drawing.Point(3, 397);
+            this.pnlUserControl.Location = new System.Drawing.Point(3, 344);
             this.pnlUserControl.Name = "pnlUserControl";
-            this.pnlUserControl.Size = new System.Drawing.Size(160, 230);
+            this.pnlUserControl.Size = new System.Drawing.Size(160, 283);
             this.pnlUserControl.TabIndex = 2;
             // 
             // btnUsun
             // 
             this.btnUsun.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnUsun.Location = new System.Drawing.Point(29, 155);
+            this.btnUsun.Location = new System.Drawing.Point(25, 219);
             this.btnUsun.Name = "btnUsun";
             this.btnUsun.Size = new System.Drawing.Size(106, 61);
             this.btnUsun.TabIndex = 0;
@@ -243,7 +247,7 @@
             // btnEdytuj
             // 
             this.btnEdytuj.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEdytuj.Location = new System.Drawing.Point(29, 88);
+            this.btnEdytuj.Location = new System.Drawing.Point(25, 152);
             this.btnEdytuj.Name = "btnEdytuj";
             this.btnEdytuj.Size = new System.Drawing.Size(106, 61);
             this.btnEdytuj.TabIndex = 0;
@@ -254,7 +258,7 @@
             // btnDodaj
             // 
             this.btnDodaj.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDodaj.Location = new System.Drawing.Point(29, 21);
+            this.btnDodaj.Location = new System.Drawing.Point(25, 85);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(106, 61);
             this.btnDodaj.TabIndex = 0;
@@ -468,7 +472,7 @@
             // 
             this.lblStanowisko.AutoSize = true;
             this.lblStanowisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblStanowisko.Location = new System.Drawing.Point(21, 363);
+            this.lblStanowisko.Location = new System.Drawing.Point(319, 14);
             this.lblStanowisko.Name = "lblStanowisko";
             this.lblStanowisko.Size = new System.Drawing.Size(95, 20);
             this.lblStanowisko.TabIndex = 56;
@@ -487,7 +491,7 @@
             // 
             this.lblDataStart.AutoSize = true;
             this.lblDataStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDataStart.Location = new System.Drawing.Point(333, 363);
+            this.lblDataStart.Location = new System.Drawing.Point(320, 158);
             this.lblDataStart.Name = "lblDataStart";
             this.lblDataStart.Size = new System.Drawing.Size(169, 18);
             this.lblDataStart.TabIndex = 46;
@@ -505,7 +509,7 @@
             // txtDataRozpoczeciaPracy
             // 
             this.txtDataRozpoczeciaPracy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDataRozpoczeciaPracy.Location = new System.Drawing.Point(337, 386);
+            this.txtDataRozpoczeciaPracy.Location = new System.Drawing.Point(323, 187);
             this.txtDataRozpoczeciaPracy.Name = "txtDataRozpoczeciaPracy";
             this.txtDataRozpoczeciaPracy.Size = new System.Drawing.Size(290, 26);
             this.txtDataRozpoczeciaPracy.TabIndex = 67;
@@ -514,7 +518,7 @@
             // 
             this.cbStanowisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbStanowisko.FormattingEnabled = true;
-            this.cbStanowisko.Location = new System.Drawing.Point(23, 386);
+            this.cbStanowisko.Location = new System.Drawing.Point(319, 42);
             this.cbStanowisko.Name = "cbStanowisko";
             this.cbStanowisko.Size = new System.Drawing.Size(248, 28);
             this.cbStanowisko.TabIndex = 60;
@@ -551,6 +555,7 @@
             // 
             // pnlUserField
             // 
+            this.pnlUserField.Controls.Add(this.ListaAdresow);
             this.pnlUserField.Controls.Add(this.chbZmianaStawki);
             this.pnlUserField.Controls.Add(this.chbEdycjaStanoiwska);
             this.pnlUserField.Controls.Add(this.chbDataKoniec);
@@ -593,7 +598,7 @@
             // 
             this.chbZmianaStawki.AutoSize = true;
             this.chbZmianaStawki.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbZmianaStawki.Location = new System.Drawing.Point(25, 420);
+            this.chbZmianaStawki.Location = new System.Drawing.Point(319, 76);
             this.chbZmianaStawki.Name = "chbZmianaStawki";
             this.chbZmianaStawki.Size = new System.Drawing.Size(179, 22);
             this.chbZmianaStawki.TabIndex = 73;
@@ -605,7 +610,7 @@
             // 
             this.chbEdycjaStanoiwska.AutoSize = true;
             this.chbEdycjaStanoiwska.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbEdycjaStanoiwska.Location = new System.Drawing.Point(122, 364);
+            this.chbEdycjaStanoiwska.Location = new System.Drawing.Point(417, 15);
             this.chbEdycjaStanoiwska.Name = "chbEdycjaStanoiwska";
             this.chbEdycjaStanoiwska.Size = new System.Drawing.Size(210, 22);
             this.chbEdycjaStanoiwska.TabIndex = 72;
@@ -617,7 +622,7 @@
             // 
             this.chbDataKoniec.AutoSize = true;
             this.chbDataKoniec.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbDataKoniec.Location = new System.Drawing.Point(337, 419);
+            this.chbDataKoniec.Location = new System.Drawing.Point(323, 219);
             this.chbDataKoniec.Name = "chbDataKoniec";
             this.chbDataKoniec.Size = new System.Drawing.Size(201, 22);
             this.chbDataKoniec.TabIndex = 71;
@@ -629,7 +634,7 @@
             // 
             this.cbOkres.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbOkres.FormattingEnabled = true;
-            this.cbOkres.Location = new System.Drawing.Point(25, 445);
+            this.cbOkres.Location = new System.Drawing.Point(319, 105);
             this.cbOkres.Name = "cbOkres";
             this.cbOkres.Size = new System.Drawing.Size(121, 28);
             this.cbOkres.TabIndex = 70;
@@ -639,7 +644,7 @@
             // 
             this.cbStawka.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbStawka.FormattingEnabled = true;
-            this.cbStawka.Location = new System.Drawing.Point(152, 445);
+            this.cbStawka.Location = new System.Drawing.Point(446, 106);
             this.cbStawka.Name = "cbStawka";
             this.cbStawka.Size = new System.Drawing.Size(121, 28);
             this.cbStawka.TabIndex = 70;
@@ -647,11 +652,31 @@
             // txtDataKoniec
             // 
             this.txtDataKoniec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDataKoniec.Location = new System.Drawing.Point(337, 452);
+            this.txtDataKoniec.Location = new System.Drawing.Point(323, 247);
             this.txtDataKoniec.Name = "txtDataKoniec";
             this.txtDataKoniec.Size = new System.Drawing.Size(290, 26);
             this.txtDataKoniec.TabIndex = 67;
             this.txtDataKoniec.Visible = false;
+            // 
+            // ListaAdresow
+            // 
+            this.ListaAdresow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListaAdresow.Location = new System.Drawing.Point(25, 353);
+            this.ListaAdresow.Name = "ListaAdresow";
+            this.ListaAdresow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ListaAdresow.Size = new System.Drawing.Size(602, 128);
+            this.ListaAdresow.TabIndex = 74;
+            // 
+            // btnSzczegoly
+            // 
+            this.btnSzczegoly.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSzczegoly.Location = new System.Drawing.Point(25, 18);
+            this.btnSzczegoly.Name = "btnSzczegoly";
+            this.btnSzczegoly.Size = new System.Drawing.Size(106, 61);
+            this.btnSzczegoly.TabIndex = 0;
+            this.btnSzczegoly.Text = "Szczegóły";
+            this.btnSzczegoly.UseVisualStyleBackColor = true;
+            this.btnSzczegoly.Click += new System.EventHandler(this.btnSzczegoly_Click);
             // 
             // FormKadry
             // 
@@ -677,6 +702,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).EndInit();
             this.pnlUserField.ResumeLayout(false);
             this.pnlUserField.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaAdresow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -734,5 +760,7 @@
         private System.Windows.Forms.DateTimePicker txtDataKoniec;
         private System.Windows.Forms.CheckBox chbEdycjaStanoiwska;
         private System.Windows.Forms.CheckBox chbZmianaStawki;
+        private System.Windows.Forms.DataGridView ListaAdresow;
+        private System.Windows.Forms.Button btnSzczegoly;
     }
 }
