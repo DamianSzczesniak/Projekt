@@ -16,7 +16,7 @@ namespace PROJEKTapp.Forms
         MATERIAL material;
         private FIRMY firma;
 
-        public ZamowienieMaterialu(KWZP_PROJEKTEntities kwzpProjektEntities)
+        public ZamowienieMaterialu(KWZP_PROJEKTEntities db)
         {
             this.db = db;
             InitializeComponent();

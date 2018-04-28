@@ -54,7 +54,7 @@
             this.label1.Size = new System.Drawing.Size(367, 24);
             this.label1.TabIndex = 13;
             this.label1.Text = ".../Logistyka/Przygotowanie transportu";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // Btn_Back_3
             // 

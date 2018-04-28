@@ -81,7 +81,7 @@
             this.label1.Size = new System.Drawing.Size(272, 24);
             this.label1.TabIndex = 14;
             this.label1.Text = ".../Logistyka/Stan magazynu";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // pictureBox1
             // 

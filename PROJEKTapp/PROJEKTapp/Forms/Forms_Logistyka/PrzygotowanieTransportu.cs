@@ -12,7 +12,7 @@ namespace PROJEKTapp.Forms
 {
     public partial class PrzygotowanieTransportu : Form
     {
-        public PrzygotowanieTransportu(KWZP_PROJEKTEntities kwzpProjektEntities)
+        public PrzygotowanieTransportu(KWZP_PROJEKTEntities db)
         {
             InitializeComponent();
         }
@@ -22,9 +22,6 @@ namespace PROJEKTapp.Forms
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
