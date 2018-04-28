@@ -14,6 +14,7 @@ namespace PROJEKTapp
     
     public partial class FAKTURY
     {
+        internal static readonly object CurrentRow;
 
         public int ID_FAKTURY { get; set; }
         public Nullable<int> ID_ZLECENIA { get; set; }

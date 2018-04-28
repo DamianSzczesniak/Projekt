@@ -15,7 +15,7 @@ namespace PROJEKTapp
     public partial class FormLogistyka : Form
 
     {
-        KWZP_PROJEKTEntities db ;
+        KWZP_PROJEKTEntities kwzpProjektEntities = new KWZP_PROJEKTEntities();
         public FormLogistyka()
         {
             InitializeComponent();
@@ -33,26 +33,26 @@ namespace PROJEKTapp
 
         private void Btn_zmiana_stat_Click(object sender, EventArgs e)
         {
-            FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db);
+            FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(kwzpProjektEntities);
             ZmianaStanuMagazynu.Show();
         }
 
         private void Btn_kreat_fak_Click(object sender, EventArgs e)
         {
-            FormListaFaktur KreatorFaktur = new FormListaFaktur(db);
+            FormListaFaktur KreatorFaktur = new FormListaFaktur(kwzpProjektEntities);
             KreatorFaktur.Show();
             
         }
 
         private void Btn_przyg_trans_Click(object sender, EventArgs e)
         {
-            PrzygotowanieTransportu PrzygotwanieTransportu = new PrzygotowanieTransportu(db);
+            PrzygotowanieTransportu PrzygotwanieTransportu = new PrzygotowanieTransportu(kwzpProjektEntities);
             PrzygotwanieTransportu.Show();
         }
 
         private void Btn_zam_mat_Click(object sender, EventArgs e)
         {
-            ZamowienieMaterialu ZamowienieMaterialu = new ZamowienieMaterialu(db);
+            ZamowienieMaterialu ZamowienieMaterialu = new ZamowienieMaterialu(kwzpProjektEntities);
             ZamowienieMaterialu.Show();
         }
     }

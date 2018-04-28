@@ -22,9 +22,6 @@ namespace PROJEKTapp.Forms
             this.zlecenie = zlecenie;
             this.db = db;
             InitializeComponent();
-
-            comboBoxPracownik.DataSource = db.PRACOWNICY.ToList();
-            comboBoxPracownik.DisplayMember = "Nazwisko";
         }
 
         private void Btn_Back_Click(object sender, EventArgs e)
@@ -32,7 +29,10 @@ namespace PROJEKTapp.Forms
             this.Close();
         }
 
-       
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void btnGeneruj_Click(object sender, EventArgs e)
         {
@@ -42,10 +42,8 @@ namespace PROJEKTapp.Forms
             DateTime dataPlatnosci = dataWystawienia.AddDays(30);
             nowaFaktura.DATA_WYSTAWIENIA = dataWystawienia;
             nowaFaktura.DATA_PLATNOSCI = dataPlatnosci;
-            //nowaFaktura.KWOTA = 
 
-
-            //db.SaveChanges();   
+            db.SaveChanges();   
             
         }
 
