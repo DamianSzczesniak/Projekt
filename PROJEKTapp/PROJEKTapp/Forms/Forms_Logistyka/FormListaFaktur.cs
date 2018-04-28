@@ -15,6 +15,7 @@ namespace PROJEKTapp.Forms.Forms_Logistyka
     {
         KWZP_PROJEKTEntities db;
         ZLECENIA wybraneZlecenie;
+        FAKTURY nowaFaktura;
 
         public FormListaFaktur(KWZP_PROJEKTEntities db)
         {
@@ -33,9 +34,18 @@ namespace PROJEKTapp.Forms.Forms_Logistyka
 
         private void ButtonNowaFaktura_Click(object sender, EventArgs e)
         {
-            KreatorFaktur KreatorFaktur = new KreatorFaktur(db, wybraneZlecenie);
-            KreatorFaktur.Show();
+          
+            if ((ZLECENIA)Combo_wyb_zlecenia.SelectedValue == wybraneZlecenie )
+            {
+                KreatorFaktur KreatorFaktur = new KreatorFaktur(db, wybraneZlecenie);
+                KreatorFaktur.Show();
+            }
+            else
+            {
+                MessageBox.Show("Podano nieprawidłowy numer zlecenia");
+            }
         }
+            
 
         private void Combo_wyb_zlecenia_SelectedIndexChanged(object sender, EventArgs e)
         {

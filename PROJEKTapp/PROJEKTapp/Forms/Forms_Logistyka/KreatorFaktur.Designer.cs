@@ -56,7 +56,7 @@
             this.textBox_adres_email = new System.Windows.Forms.TextBox();
             this.textBox_nr_telefonu = new System.Windows.Forms.TextBox();
             this.textBox_nip = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPracownik = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_faktura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -330,13 +330,13 @@
             this.textBox_nip.Size = new System.Drawing.Size(127, 22);
             this.textBox_nip.TabIndex = 55;
             // 
-            // comboBox1
+            // comboBoxPracownik
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(207, 289);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(127, 24);
-            this.comboBox1.TabIndex = 56;
+            this.comboBoxPracownik.FormattingEnabled = true;
+            this.comboBoxPracownik.Location = new System.Drawing.Point(207, 289);
+            this.comboBoxPracownik.Name = "comboBoxPracownik";
+            this.comboBoxPracownik.Size = new System.Drawing.Size(127, 24);
+            this.comboBoxPracownik.TabIndex = 56;
             // 
             // KreatorFaktur
             // 
@@ -344,7 +344,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(779, 937);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxPracownik);
             this.Controls.Add(this.textBox_nip);
             this.Controls.Add(this.textBox_nr_telefonu);
             this.Controls.Add(this.textBox_adres_email);
@@ -415,6 +415,6 @@
         private System.Windows.Forms.TextBox textBox_adres_email;
         private System.Windows.Forms.TextBox textBox_nr_telefonu;
         private System.Windows.Forms.TextBox textBox_nip;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxPracownik;
     }
 }
