@@ -51,5 +51,10 @@ namespace PROJEKTapp.Forms.Forms_Logistyka
         {
             wybraneZlecenie = (ZLECENIA)Combo_wyb_zlecenia.SelectedValue;
         }
+
+        private void Btn_Back_5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

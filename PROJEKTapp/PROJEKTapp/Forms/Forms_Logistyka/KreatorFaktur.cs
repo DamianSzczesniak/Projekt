@@ -19,12 +19,36 @@ namespace PROJEKTapp.Forms
 
         public KreatorFaktur(KWZP_PROJEKTEntities db, ZLECENIA zlecenie)
         {
+            
             this.zlecenie = zlecenie;
             this.db = db;
             InitializeComponent();
 
             comboBoxPracownik.DataSource = db.PRACOWNICY.ToList();
             comboBoxPracownik.DisplayMember = "Nazwisko";
+            FAKTURY nowaFaktura = new FAKTURY();
+            nowaFaktura.ID_ZLECENIA = zlecenie.ID_ZLECENIA;
+            DateTime dataWystawienia = DateTime.Now;
+            DateTime dataPlatnosci = dataWystawienia.AddDays(30);
+            nowaFaktura.DATA_WYSTAWIENIA = dataWystawienia;
+            nowaFaktura.DATA_PLATNOSCI = dataPlatnosci;
+            //nowaFaktura.KWOTA = KOSZT?
+            db.SaveChanges();
+
+            txtbox_data_plat.Text = dataPlatnosci.ToShortDateString();
+            txtbox_data_wyst.Text = dataWystawienia.ToShortDateString();
+            int kwota = 50000;
+            txtbox_kwota.Text = kwota.ToString();
+            //txtbox_kwota;
+            //txtbox_kwota_zl;
+            //txtbox_nr_faktury.Text = ;
+            // txtbox_nr_zlec;
+            //txtbox_wal;
+            comboBox_kwotaWal.DataSource = db.FAKTURY.ToList();
+
+            comboBox_kwotaWal.DisplayMember = "WALUTA";
+            
+
         }
 
         private void Btn_Back_Click(object sender, EventArgs e)
@@ -32,29 +56,10 @@ namespace PROJEKTapp.Forms
             this.Close();
         }
 
-       
-
-        private void btnGeneruj_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            FAKTURY nowaFaktura = new FAKTURY();
-            nowaFaktura.ID_ZLECENIA = zlecenie.ID_ZLECENIA;
-            DateTime dataWystawienia = DateTime.Now;
-            DateTime dataPlatnosci = dataWystawienia.AddDays(30);
-            nowaFaktura.DATA_WYSTAWIENIA = dataWystawienia;
-            nowaFaktura.DATA_PLATNOSCI = dataPlatnosci;
-            //nowaFaktura.KWOTA = 
-
-
-            db.SaveChanges();   
-            
+            db.SaveChanges();
         }
-
-        private void listBox_dane_firmy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //listBox_dane_firmy.DataSource = db.FIRMY.ToArray();
-        }
-
-
-    }
+    } 
 
 }

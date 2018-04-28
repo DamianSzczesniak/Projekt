@@ -37,6 +37,7 @@
             this.ButtonNowaFaktura = new System.Windows.Forms.Button();
             this.Combo_wyb_zlecenia = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Btn_Back_5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,10 +48,9 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.pictureBox6.Location = new System.Drawing.Point(1549, 0);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox6.Location = new System.Drawing.Point(1162, 0);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(272, 69);
+            this.pictureBox6.Size = new System.Drawing.Size(204, 56);
             this.pictureBox6.TabIndex = 58;
             this.pictureBox6.TabStop = false;
             // 
@@ -58,19 +58,17 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(272, 69);
+            this.pictureBox5.Size = new System.Drawing.Size(204, 56);
             this.pictureBox5.TabIndex = 57;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 123);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 100);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1787, 2);
+            this.pictureBox1.Size = new System.Drawing.Size(1340, 2);
             this.pictureBox1.TabIndex = 56;
             this.pictureBox1.TabStop = false;
             // 
@@ -79,30 +77,27 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label1.Location = new System.Drawing.Point(16, 85);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(12, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 32);
+            this.label1.Size = new System.Drawing.Size(258, 24);
             this.label1.TabIndex = 55;
             this.label1.Text = ".../Logistyka/Kreator faktur";
             // 
             // TopBar_4
             // 
             this.TopBar_4.Image = global::PROJEKTapp.Properties.Resources.top_bar1;
-            this.TopBar_4.Location = new System.Drawing.Point(272, 0);
-            this.TopBar_4.Margin = new System.Windows.Forms.Padding(4);
+            this.TopBar_4.Location = new System.Drawing.Point(204, 0);
             this.TopBar_4.Name = "TopBar_4";
-            this.TopBar_4.Size = new System.Drawing.Size(1280, 89);
+            this.TopBar_4.Size = new System.Drawing.Size(960, 72);
             this.TopBar_4.TabIndex = 54;
             this.TopBar_4.TabStop = false;
             // 
             // dataGridView_lista_faktur
             // 
             this.dataGridView_lista_faktur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_lista_faktur.Location = new System.Drawing.Point(21, 144);
-            this.dataGridView_lista_faktur.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView_lista_faktur.Location = new System.Drawing.Point(16, 117);
             this.dataGridView_lista_faktur.Name = "dataGridView_lista_faktur";
-            this.dataGridView_lista_faktur.Size = new System.Drawing.Size(1784, 705);
+            this.dataGridView_lista_faktur.Size = new System.Drawing.Size(1338, 573);
             this.dataGridView_lista_faktur.TabIndex = 59;
             // 
             // ButtonNowaFaktura
@@ -111,10 +106,9 @@
             this.ButtonNowaFaktura.FlatAppearance.BorderSize = 0;
             this.ButtonNowaFaktura.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonNowaFaktura.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ButtonNowaFaktura.Location = new System.Drawing.Point(1581, 874);
-            this.ButtonNowaFaktura.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonNowaFaktura.Location = new System.Drawing.Point(1186, 710);
             this.ButtonNowaFaktura.Name = "ButtonNowaFaktura";
-            this.ButtonNowaFaktura.Size = new System.Drawing.Size(222, 41);
+            this.ButtonNowaFaktura.Size = new System.Drawing.Size(166, 33);
             this.ButtonNowaFaktura.TabIndex = 60;
             this.ButtonNowaFaktura.Text = "Utwórz nową fakturę";
             this.ButtonNowaFaktura.UseVisualStyleBackColor = false;
@@ -124,10 +118,9 @@
             // 
             this.Combo_wyb_zlecenia.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Combo_wyb_zlecenia.FormattingEnabled = true;
-            this.Combo_wyb_zlecenia.Location = new System.Drawing.Point(1473, 876);
-            this.Combo_wyb_zlecenia.Margin = new System.Windows.Forms.Padding(4);
+            this.Combo_wyb_zlecenia.Location = new System.Drawing.Point(1105, 712);
             this.Combo_wyb_zlecenia.Name = "Combo_wyb_zlecenia";
-            this.Combo_wyb_zlecenia.Size = new System.Drawing.Size(79, 39);
+            this.Combo_wyb_zlecenia.Size = new System.Drawing.Size(60, 32);
             this.Combo_wyb_zlecenia.TabIndex = 61;
             this.Combo_wyb_zlecenia.SelectedIndexChanged += new System.EventHandler(this.Combo_wyb_zlecenia_SelectedIndexChanged);
             // 
@@ -136,19 +129,35 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(1131, 879);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(848, 714);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(314, 32);
+            this.label2.Size = new System.Drawing.Size(237, 24);
             this.label2.TabIndex = 62;
             this.label2.Text = "Wybierz numer zlecenia:";
             // 
+            // Btn_Back_5
+            // 
+            this.Btn_Back_5.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Btn_Back_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Btn_Back_5.FlatAppearance.BorderSize = 0;
+            this.Btn_Back_5.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.Btn_Back_5.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.Btn_Back_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Back_5.Image = global::PROJEKTapp.Properties.Resources.return2;
+            this.Btn_Back_5.Location = new System.Drawing.Point(0, 0);
+            this.Btn_Back_5.Name = "Btn_Back_5";
+            this.Btn_Back_5.Size = new System.Drawing.Size(80, 56);
+            this.Btn_Back_5.TabIndex = 63;
+            this.Btn_Back_5.UseVisualStyleBackColor = false;
+            this.Btn_Back_5.Click += new System.EventHandler(this.Btn_Back_5_Click);
+            // 
             // FormListaFaktur
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1821, 945);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.Btn_Back_5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Combo_wyb_zlecenia);
             this.Controls.Add(this.ButtonNowaFaktura);
@@ -159,7 +168,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TopBar_4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormListaFaktur";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormListaFaktur";
@@ -184,5 +192,6 @@
         private System.Windows.Forms.Button ButtonNowaFaktura;
         private System.Windows.Forms.ComboBox Combo_wyb_zlecenia;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Btn_Back_5;
     }
 }
