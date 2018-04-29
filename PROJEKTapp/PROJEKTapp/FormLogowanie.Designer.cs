@@ -87,6 +87,7 @@
             this.txtBoxHaslo.Name = "txtBoxHaslo";
             this.txtBoxHaslo.Size = new System.Drawing.Size(179, 20);
             this.txtBoxHaslo.TabIndex = 3;
+            this.txtBoxHaslo.UseSystemPasswordChar = true;
             // 
             // FormLogowanie
             // 
