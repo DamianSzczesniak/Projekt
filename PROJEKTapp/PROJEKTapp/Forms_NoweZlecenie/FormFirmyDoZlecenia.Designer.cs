@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.FirmyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNazwaTabeliFirmy = new System.Windows.Forms.Label();
             this.btnUsun = new System.Windows.Forms.Button();
             this.btnEdytuj = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
-            this.FirmyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDFIRMYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAZWAFIRMYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aDRESEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +70,10 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(265, 245);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // FirmyBindingSource
+            // 
+            this.FirmyBindingSource.DataSource = typeof(PROJEKTapp.FIRMY);
             // 
             // lblNazwaTabeliFirmy
             // 
@@ -111,10 +115,6 @@
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
-            // FirmyBindingSource
-            // 
-            this.FirmyBindingSource.DataSource = typeof(PROJEKTapp.FIRMY);
-            // 
             // iDFIRMYDataGridViewTextBoxColumn
             // 
             this.iDFIRMYDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -122,7 +122,6 @@
             this.iDFIRMYDataGridViewTextBoxColumn.HeaderText = "ID_FIRMY";
             this.iDFIRMYDataGridViewTextBoxColumn.Name = "iDFIRMYDataGridViewTextBoxColumn";
             this.iDFIRMYDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDFIRMYDataGridViewTextBoxColumn.Visible = false;
             // 
             // nAZWAFIRMYDataGridViewTextBoxColumn
             // 

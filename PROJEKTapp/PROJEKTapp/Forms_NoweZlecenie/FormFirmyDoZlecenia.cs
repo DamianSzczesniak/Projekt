@@ -22,7 +22,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                 if (frmDEF.ShowDialog() == DialogResult.OK)
                 {
                     FirmyBindingSource.DataSource = db.FIRMY.ToList();
-                   
+                    db.SaveChanges();
                 }
             }
         }
@@ -49,15 +49,19 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             {
                 if (MessageBox.Show("Czy jesteś pewien że chcesz usunąć ten rekord?", "Informacja", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    db.FIRMY.Remove(FirmyBindingSource.Current as FIRMY);
+                    
                     try
                     {
+                        db.FIRMY.Remove(FirmyBindingSource.Current as FIRMY);
                         db.SaveChanges();
                         FirmyBindingSource.RemoveCurrent();
+
                     }
                     catch (System.Data.Entity.Infrastructure.DbUpdateException exc)
                     {
+                        db.FIRMY.Attach(FirmyBindingSource.Current as FIRMY);
                         MessageBox.Show("Ta Firma jest referencją dla innych danych, nie można jej usunąć.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
                     }
                 }
             }

@@ -12,8 +12,13 @@ namespace PROJEKTapp
 {
     public partial class ZleceniaStatusy : Form
     {
-        public ZleceniaStatusy()
+        KWZP_PROJEKTEntities db;
+        int uprawnienia;
+        public ZleceniaStatusy(KWZP_PROJEKTEntities db, int uprawnienia)
         {
+            this.db = db;
+            this.uprawnienia = uprawnienia;
+           // StatusZleceniaDGV.DataSource = 
             InitializeComponent();
         }
     }

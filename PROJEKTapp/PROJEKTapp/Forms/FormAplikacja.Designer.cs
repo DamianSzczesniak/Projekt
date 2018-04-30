@@ -35,23 +35,25 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnZlecenia = new System.Windows.Forms.Button();
+            this.btnStatusyZlecen = new System.Windows.Forms.Button();
             this.btnProdukcja = new System.Windows.Forms.Button();
             this.btnKadry = new System.Windows.Forms.Button();
             this.btnNoweZlecenie = new System.Windows.Forms.Button();
             this.btnLogistyka = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.FormAplikacja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // FormAplikacja
@@ -73,7 +75,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(502, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 16);
+            this.label2.Size = new System.Drawing.Size(242, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Management System Version 1.0";
             // 
@@ -113,6 +115,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel2.Controls.Add(this.btnZlecenia);
+            this.panel2.Controls.Add(this.btnStatusyZlecen);
             this.panel2.Controls.Add(this.btnProdukcja);
             this.panel2.Controls.Add(this.btnKadry);
             this.panel2.Controls.Add(this.btnNoweZlecenie);
@@ -122,6 +126,40 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(227, 298);
             this.panel2.TabIndex = 1;
+            // 
+            // btnZlecenia
+            // 
+            this.btnZlecenia.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnZlecenia.FlatAppearance.BorderSize = 0;
+            this.btnZlecenia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnZlecenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZlecenia.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnZlecenia.Image = ((System.Drawing.Image)(resources.GetObject("btnZlecenia.Image")));
+            this.btnZlecenia.Location = new System.Drawing.Point(-1, 0);
+            this.btnZlecenia.Name = "btnZlecenia";
+            this.btnZlecenia.Size = new System.Drawing.Size(225, 69);
+            this.btnZlecenia.TabIndex = 6;
+            this.btnZlecenia.Text = "ZLECENIA";
+            this.btnZlecenia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnZlecenia.UseVisualStyleBackColor = true;
+            this.btnZlecenia.Click += new System.EventHandler(this.btnZlecenia_Click);
+            // 
+            // btnStatusyZlecen
+            // 
+            this.btnStatusyZlecen.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnStatusyZlecen.FlatAppearance.BorderSize = 0;
+            this.btnStatusyZlecen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatusyZlecen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatusyZlecen.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnStatusyZlecen.Image = ((System.Drawing.Image)(resources.GetObject("btnStatusyZlecen.Image")));
+            this.btnStatusyZlecen.Location = new System.Drawing.Point(0, 0);
+            this.btnStatusyZlecen.Name = "btnStatusyZlecen";
+            this.btnStatusyZlecen.Size = new System.Drawing.Size(225, 69);
+            this.btnStatusyZlecen.TabIndex = 5;
+            this.btnStatusyZlecen.Text = "STATUSY ZLECEN";
+            this.btnStatusyZlecen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStatusyZlecen.UseVisualStyleBackColor = true;
+            this.btnStatusyZlecen.Click += new System.EventHandler(this.btnStatusyZlecen_Click);
             // 
             // btnProdukcja
             // 
@@ -189,35 +227,15 @@
             this.btnLogistyka.UseVisualStyleBackColor = false;
             this.btnLogistyka.Click += new System.EventHandler(this.btnLogistyka_Click);
             // 
-            // pictureBox2
+            // button2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(224, 152);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(479, 298);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(701, 152);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(171, 105);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(701, 257);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(171, 98);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
+            this.button2.Location = new System.Drawing.Point(505, 352);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 41);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox5
             // 
@@ -229,15 +247,35 @@
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
             // 
-            // button2
+            // pictureBox4
             // 
-            this.button2.Location = new System.Drawing.Point(505, 352);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 41);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(701, 257);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(171, 98);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(701, 152);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(171, 105);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(224, 152);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(479, 298);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
@@ -260,10 +298,10 @@
             this.FormAplikacja.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,6 +324,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnNoweZlecenie;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnStatusyZlecen;
+        private System.Windows.Forms.Button btnZlecenia;
     }
 }
 

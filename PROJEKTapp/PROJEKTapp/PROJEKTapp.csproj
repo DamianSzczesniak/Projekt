@@ -371,6 +371,12 @@
     <Compile Include="Forms\ZleceniaStatusy.Designer.cs">
       <DependentUpon>ZleceniaStatusy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_NoweZlecenie\ZleceniaPosredniczacy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_NoweZlecenie\ZleceniaPosredniczacy.Designer.cs">
+      <DependentUpon>ZleceniaPosredniczacy.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormLogowanie.resx">
       <DependentUpon>FormLogowanie.cs</DependentUpon>
     </EmbeddedResource>
@@ -453,6 +459,9 @@
     <EmbeddedResource Include="Forms\ZleceniaStatusy.resx">
       <DependentUpon>ZleceniaStatusy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms_NoweZlecenie\ZleceniaPosredniczacy.resx">
+      <DependentUpon>ZleceniaPosredniczacy.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="KWZP_PROJEKT_MODEL.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>KWZP_PROJEKT_MODEL.Designer.cs</LastGenOutput>
@@ -470,6 +479,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ZleceniaStatusy.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

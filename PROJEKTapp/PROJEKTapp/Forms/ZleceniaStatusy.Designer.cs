@@ -28,33 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.StatusZleceniaDGV = new System.Windows.Forms.DataGridView();
+            this.zleceniaStatusyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.StatusZleceniaDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zleceniaStatusyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // StatusZleceniaDGV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(544, 390);
-            this.dataGridView1.TabIndex = 0;
+            this.StatusZleceniaDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StatusZleceniaDGV.Location = new System.Drawing.Point(82, 58);
+            this.StatusZleceniaDGV.Name = "StatusZleceniaDGV";
+            this.StatusZleceniaDGV.Size = new System.Drawing.Size(413, 299);
+            this.StatusZleceniaDGV.TabIndex = 0;
+            // 
+            // zleceniaStatusyBindingSource
+            // 
+            this.zleceniaStatusyBindingSource.DataSource = typeof(PROJEKTapp.ZleceniaStatusy);
             // 
             // ZleceniaStatusy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(588, 436);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.StatusZleceniaDGV);
             this.Name = "ZleceniaStatusy";
             this.Text = "Statusy Zleceń";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StatusZleceniaDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zleceniaStatusyBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView StatusZleceniaDGV;
+        private System.Windows.Forms.BindingSource zleceniaStatusyBindingSource;
     }
 }

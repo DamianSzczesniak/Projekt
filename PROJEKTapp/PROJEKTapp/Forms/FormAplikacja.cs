@@ -23,26 +23,35 @@ namespace PROJEKTapp
             this.uprawnienia = uprawnienia;
 
             switch (uprawnienia)
-                { 
+                {
+                case 1:
+                    btnStatusyZlecen.Hide();
+                    btnNoweZlecenie.Hide();
+                    break;
                 case 2:
                     btnKadry.Hide();
                     btnProdukcja.Hide();
                     btnNoweZlecenie.Hide();
+                    btnZlecenia.Hide();
                     break;
                 case 3:
                     btnKadry.Hide();
                     btnNoweZlecenie.Hide();
                     btnLogistyka.Hide();
+                    btnZlecenia.Hide();
                     break;
                 case 4:
                     btnProdukcja.Hide();
                     btnNoweZlecenie.Hide();
                     btnLogistyka.Hide();
+                    btnZlecenia.Hide();
                     break;
                 case 5:
                     btnProdukcja.Hide();
                     btnKadry.Hide();
                     btnLogistyka.Hide();
+                    btnStatusyZlecen.Hide();
+                    btnZlecenia.Hide();
                     break;
             }
 
@@ -83,6 +92,18 @@ namespace PROJEKTapp
         {
             Form2 form2 = new Form2(db);
             form2.Show();
+        }
+
+        private void btnZlecenia_Click(object sender, EventArgs e)
+        {
+            ZleceniaPosredniczacy zleceniaPosredniczacy = new ZleceniaPosredniczacy(db, uprawnienia);
+            zleceniaPosredniczacy.Show();
+        }
+
+        private void btnStatusyZlecen_Click(object sender, EventArgs e)
+        {
+            ZleceniaStatusy zleceniaStatusy = new ZleceniaStatusy(db, uprawnienia);
+            zleceniaStatusy.Show();
         }
     }
 }
