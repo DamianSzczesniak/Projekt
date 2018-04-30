@@ -5,16 +5,19 @@ namespace PROJEKTapp.Forms_NoweZlecenie
     public partial class FormDodajEdytujFirme : Form
     {
         KWZP_PROJEKTEntities db;
+        FIRMY obj;
 
         public FormDodajEdytujFirme(FIRMY obj, KWZP_PROJEKTEntities db)
         {
             InitializeComponent();
-           this.db = db;
+            this.db = db;
+            this.obj = obj;
               
             if (obj == null)
             {
                 FirmyBindingSource.DataSource = new FIRMY();
-                db.FIRMY.Add(FirmyBindingSource.Current as FIRMY);
+                
+                
             }
             else
             {
@@ -62,10 +65,18 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     e.Cancel = true;
                     return;
                 }
-                db.SaveChanges();
+                else
+                {
+                    if (obj == null)
+                    {
+                        db.FIRMY.Add(FirmyBindingSource.Current as FIRMY);
+                    }
+                }
                 e.Cancel = false;
+                db.SaveChanges();
             }
             e.Cancel = false;
+            
         }
         
     }

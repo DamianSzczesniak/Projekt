@@ -20,7 +20,10 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             using (FormDodajEdytujFirme frmDEF = new FormDodajEdytujFirme(null, db))
             {
                 if (frmDEF.ShowDialog() == DialogResult.OK)
+                {
                     FirmyBindingSource.DataSource = db.FIRMY.ToList();
+                   
+                }
             }
         }
 
@@ -59,5 +62,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                 }
             }
         }
+
+      
     }
 }
