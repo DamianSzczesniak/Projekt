@@ -338,6 +338,23 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRODUKCJA_POLPRODUKTU' does not h
           <Property Name="ID_TYPU" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NAZWA" Type="varchar" MaxLength="30" />
         </EntityType>
+        <EntityType Name="UPRAWNIENIA">
+          <Key>
+            <PropertyRef Name="ID_UPRAWNIENIA" />
+          </Key>
+          <Property Name="ID_UPRAWNIENIA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAZWA" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UZYTKOWNICY">
+          <Key>
+            <PropertyRef Name="ID_UZYTKOWNIKA" />
+          </Key>
+          <Property Name="ID_UZYTKOWNIKA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_PRACOWNIK" Type="int" />
+          <Property Name="UPRAWNIENIA" Type="int" Nullable="false" />
+          <Property Name="NAZWA_LOGOWANIE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="HASLO" Type="varchar" MaxLength="30" />
+        </EntityType>
         <EntityType Name="WALUTY">
           <Key>
             <PropertyRef Name="ID_WALUTY" />
@@ -544,7 +561,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="NAZWA_PROCESU" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__ADRESY__ID_MIAST__66603565">
+        <Association Name="FK__ADRESY__ID_MIAST__68487DD7">
           <End Role="MIASTA" Type="Self.MIASTA" Multiplicity="0..1" />
           <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -556,7 +573,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ADRESY_PR__ID_MI__693CA210">
+        <Association Name="FK__ADRESY_PR__ID_MI__6B24EA82">
           <End Role="MIASTA" Type="Self.MIASTA" Multiplicity="0..1" />
           <End Role="ADRESY_PRACOWNICY" Type="Self.ADRESY_PRACOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -568,7 +585,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DOKUMENTA__ID_PR__3E1D39E1">
+        <Association Name="FK__DOKUMENTA__ID_PR__40058253">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="0..1" />
           <End Role="DOKUMENTACJA" Type="Self.DOKUMENTACJA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -580,7 +597,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DOKUMENTA__ID_PR__3F115E1A">
+        <Association Name="FK__DOKUMENTA__ID_PR__40F9A68C">
           <End Role="PROJEKT" Type="Self.PROJEKT" Multiplicity="0..1" />
           <End Role="DOKUMENTACJA" Type="Self.DOKUMENTACJA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -592,7 +609,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DOSTAWA__ID_ADRE__123EB7A3">
+        <Association Name="FK__DOSTAWA__ID_ADRE__14270015">
           <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="0..1" />
           <End Role="DOSTAWA" Type="Self.DOSTAWA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -604,7 +621,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DOSTAWA__ID_FIRM__1332DBDC">
+        <Association Name="FK__DOSTAWA__ID_FIRM__151B244E">
           <End Role="FIRMY" Type="Self.FIRMY" Multiplicity="0..1" />
           <End Role="DOSTAWA" Type="Self.DOSTAWA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -616,7 +633,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FAKTURY__ID_PRAC__1CBC4616">
+        <Association Name="FK__FAKTURY__ID_PRAC__1EA48E88">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="0..1" />
           <End Role="FAKTURY" Type="Self.FAKTURY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -628,7 +645,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FAKTURY__ID_ZLEC__1BC821DD">
+        <Association Name="FK__FAKTURY__ID_ZLEC__1DB06A4F">
           <End Role="ZLECENIA" Type="Self.ZLECENIA" Multiplicity="0..1" />
           <End Role="FAKTURY" Type="Self.FAKTURY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -640,7 +657,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MASZYNY__ID_MODE__6383C8BA">
+        <Association Name="FK__MASZYNY__ID_MODE__656C112C">
           <End Role="MODELE_MASZYN" Type="Self.MODELE_MASZYN" Multiplicity="0..1" />
           <End Role="MASZYNY" Type="Self.MASZYNY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -652,7 +669,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PARAMETRY__ID_MA__43D61337">
+        <Association Name="FK__PARAMETRY__ID_MA__45BE5BA9">
           <End Role="MATERIAL" Type="Self.MATERIAL" Multiplicity="0..1" />
           <End Role="PARAMETRY_MATERIALU" Type="Self.PARAMETRY_MATERIALU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -664,7 +681,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PARAMETRY__ID_MO__3493CFA7">
+        <Association Name="FK__PARAMETRY__ID_MO__367C1819">
           <End Role="MODELE_MASZYN" Type="Self.MODELE_MASZYN" Multiplicity="0..1" />
           <End Role="PARAMETRY_MASZYNY" Type="Self.PARAMETRY_MASZYNY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -676,7 +693,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PARAMETRY__ID_PA__339FAB6E">
+        <Association Name="FK__PARAMETRY__ID_PA__3587F3E0">
           <End Role="PARAMETRY" Type="Self.PARAMETRY" Multiplicity="0..1" />
           <End Role="PARAMETRY_MASZYNY" Type="Self.PARAMETRY_MASZYNY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -688,7 +705,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PARAMETRY__ID_PA__44CA3770">
+        <Association Name="FK__PARAMETRY__ID_PA__46B27FE2">
           <End Role="PARAMETRY" Type="Self.PARAMETRY" Multiplicity="0..1" />
           <End Role="PARAMETRY_MATERIALU" Type="Self.PARAMETRY_MATERIALU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -712,7 +729,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__POLPRODUK__ID_DO__489AC854">
+        <Association Name="FK__POLPRODUK__ID_DO__4A8310C6">
           <End Role="DOKUMENTACJA" Type="Self.DOKUMENTACJA" Multiplicity="0..1" />
           <End Role="POLPRODUKTY" Type="Self.POLPRODUKTY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -724,7 +741,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__POLPRODUK__ID_MA__47A6A41B">
+        <Association Name="FK__POLPRODUK__ID_MA__498EEC8D">
           <End Role="MATERIAL" Type="Self.MATERIAL" Multiplicity="0..1" />
           <End Role="POLPRODUKTY" Type="Self.POLPRODUKTY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -736,7 +753,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PRACOWNIC__ID_AD__6EF57B66">
+        <Association Name="FK__PRACOWNIC__ID_AD__70DDC3D8">
           <End Role="ADRESY_PRACOWNICY" Type="Self.ADRESY_PRACOWNICY" Multiplicity="1" />
           <End Role="PRACOWNICY_ADRESY_PRACOWNICY" Type="Self.PRACOWNICY_ADRESY_PRACOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -748,7 +765,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PRACOWNIC__ID_PR__6E01572D">
+        <Association Name="FK__PRACOWNIC__ID_PR__6FE99F9F">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
           <End Role="PRACOWNICY_ADRESY_PRACOWNICY" Type="Self.PRACOWNICY_ADRESY_PRACOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -760,7 +777,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PROCES__ID_MASZY__3864608B">
+        <Association Name="FK__PROCES__ID_MASZY__3A4CA8FD">
           <End Role="MASZYNY" Type="Self.MASZYNY" Multiplicity="0..1" />
           <End Role="PROCES" Type="Self.PROCES" Multiplicity="*" />
           <ReferentialConstraint>
@@ -772,7 +789,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PROCES__ID_SLOWN__37703C52">
+        <Association Name="FK__PROCES__ID_SLOWN__395884C4">
           <End Role="SLOWNIK_PROCES_TECHNOLOGICZNY" Type="Self.SLOWNIK_PROCES_TECHNOLOGICZNY" Multiplicity="0..1" />
           <End Role="PROCES" Type="Self.PROCES" Multiplicity="*" />
           <ReferentialConstraint>
@@ -784,7 +801,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PRODUKCJA__ID_PO__4A8310C6">
+        <Association Name="FK__PRODUKCJA__ID_PO__4C6B5938">
           <End Role="POLPRODUKTY" Type="Self.POLPRODUKTY" Multiplicity="0..1" />
           <End Role="PRODUKCJA_POLPRODUKTU" Type="Self.PRODUKCJA_POLPRODUKTU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -796,7 +813,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PRODUKCJA__ID_PR__4B7734FF">
+        <Association Name="FK__PRODUKCJA__ID_PR__4D5F7D71">
           <End Role="PRODUKT" Type="Self.PRODUKT" Multiplicity="0..1" />
           <End Role="PRODUKCJA_POLPRODUKTU" Type="Self.PRODUKCJA_POLPRODUKTU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -808,7 +825,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__REALIZACJ__ID_ZL__03F0984C">
+        <Association Name="FK__REALIZACJ__ID_ZL__05D8E0BE">
           <End Role="ZLECENIA" Type="Self.ZLECENIA" Multiplicity="1" />
           <End Role="REALIZACJA_PRODUKCJA" Type="Self.REALIZACJA_PRODUKCJA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -820,7 +837,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__STANOWISK__ID_PR__71D1E811">
+        <Association Name="FK__STANOWISK__ID_PR__73BA3083">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
           <End Role="STANOWISKO_PRACOWNICY" Type="Self.STANOWISKO_PRACOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -832,7 +849,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__STANOWISK__ID_ST__72C60C4A">
+        <Association Name="FK__STANOWISK__ID_ST__74AE54BC">
           <End Role="STANOWISKO" Type="Self.STANOWISKO" Multiplicity="1" />
           <End Role="STANOWISKO_PRACOWNICY" Type="Self.STANOWISKO_PRACOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -844,7 +861,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__STAWKA__ID_OKRES__797309D9">
+        <Association Name="FK__STAWKA__ID_OKRES__7B5B524B">
           <End Role="OKRES" Type="Self.OKRES" Multiplicity="1" />
           <End Role="STAWKA" Type="Self.STAWKA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -856,7 +873,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__STAWKA_PR__ID_PR__7C4F7684">
+        <Association Name="FK__STAWKA_PR__ID_PR__7E37BEF6">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
           <End Role="STAWKA_PRACOWNICY" Type="Self.STAWKA_PRACOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -868,7 +885,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__STAWKA_PR__ID_ST__7D439ABD">
+        <Association Name="FK__STAWKA_PR__ID_ST__7F2BE32F">
           <End Role="STAWKA" Type="Self.STAWKA" Multiplicity="1" />
           <End Role="STAWKA_PRACOWNICY" Type="Self.STAWKA_PRACOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -880,7 +897,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SZKOLENIE__ID_PR__00200768">
+        <Association Name="FK__SZKOLENIE__ID_PR__02084FDA">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
           <End Role="SZKOLENIE_PRACOWNICY" Type="Self.SZKOLENIE_PRACOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -892,7 +909,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SZKOLENIE__ID_SZ__01142BA1">
+        <Association Name="FK__SZKOLENIE__ID_SZ__02FC7413">
           <End Role="SZKOLENIA" Type="Self.SZKOLENIA" Multiplicity="1" />
           <End Role="SZKOLENIE_PRACOWNICY" Type="Self.SZKOLENIE_PRACOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -904,7 +921,31 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__WOLNE_PRA__ID_PR__76969D2E">
+        <Association Name="FK__UZYTKOWNI__ID_PR__531856C7">
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="0..1" />
+          <End Role="UZYTKOWNICY" Type="Self.UZYTKOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="ID_PRACOWNIK" />
+            </Principal>
+            <Dependent Role="UZYTKOWNICY">
+              <PropertyRef Name="ID_PRACOWNIK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UZYTKOWNI__UPRAW__540C7B00">
+          <End Role="UPRAWNIENIA" Type="Self.UPRAWNIENIA" Multiplicity="1" />
+          <End Role="UZYTKOWNICY" Type="Self.UZYTKOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UPRAWNIENIA">
+              <PropertyRef Name="ID_UPRAWNIENIA" />
+            </Principal>
+            <Dependent Role="UZYTKOWNICY">
+              <PropertyRef Name="UPRAWNIENIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__WOLNE_PRA__ID_PR__787EE5A0">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
           <End Role="WOLNE_PRACOWNICY" Type="Self.WOLNE_PRACOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -916,7 +957,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__WOLNE_PRA__ID_WO__75A278F5">
+        <Association Name="FK__WOLNE_PRA__ID_WO__778AC167">
           <End Role="WOLNE" Type="Self.WOLNE" Multiplicity="1" />
           <End Role="WOLNE_PRACOWNICY" Type="Self.WOLNE_PRACOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -928,7 +969,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZAMOWIENI__ID_FI__2DE6D218">
+        <Association Name="FK__ZAMOWIENI__ID_FI__2FCF1A8A">
           <End Role="FIRMY" Type="Self.FIRMY" Multiplicity="0..1" />
           <End Role="ZAMOWIENIA" Type="Self.ZAMOWIENIA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -940,7 +981,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZAMOWIENI__ID_ST__2EDAF651">
+        <Association Name="FK__ZAMOWIENI__ID_ST__30C33EC3">
           <End Role="STATUS_ZAMOWIENIA" Type="Self.STATUS_ZAMOWIENIA" Multiplicity="0..1" />
           <End Role="ZAMOWIENIA" Type="Self.ZAMOWIENIA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -952,7 +993,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZESPOL_LU__ID_PR__09A971A2">
+        <Association Name="FK__ZESPOL_LU__ID_PR__0B91BA14">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
           <End Role="ZESPOL_LUDZI" Type="Self.ZESPOL_LUDZI" Multiplicity="*" />
           <ReferentialConstraint>
@@ -964,7 +1005,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZESPOL_LU__ID_RE__08B54D69">
+        <Association Name="FK__ZESPOL_LU__ID_RE__0A9D95DB">
           <End Role="REALIZACJA_PRODUKCJA" Type="Self.REALIZACJA_PRODUKCJA" Multiplicity="1" />
           <End Role="ZESPOL_LUDZI" Type="Self.ZESPOL_LUDZI" Multiplicity="*" />
           <ReferentialConstraint>
@@ -976,7 +1017,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZESPOL_MA__ID_MA__06CD04F7">
+        <Association Name="FK__ZESPOL_MA__ID_MA__08B54D69">
           <End Role="MASZYNY" Type="Self.MASZYNY" Multiplicity="1" />
           <End Role="ZESPOL_MASZYN" Type="Self.ZESPOL_MASZYN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -988,7 +1029,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZESPOL_MA__ID_MA__0F624AF8">
+        <Association Name="FK__ZESPOL_MA__ID_MA__114A936A">
           <End Role="MATERIAL" Type="Self.MATERIAL" Multiplicity="1" />
           <End Role="ZESPOL_MATERIAL" Type="Self.ZESPOL_MATERIAL" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1000,7 +1041,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZESPOL_MA__ID_RE__05D8E0BE">
+        <Association Name="FK__ZESPOL_MA__ID_RE__07C12930">
           <End Role="REALIZACJA_PRODUKCJA" Type="Self.REALIZACJA_PRODUKCJA" Multiplicity="1" />
           <End Role="ZESPOL_MASZYN" Type="Self.ZESPOL_MASZYN" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1012,7 +1053,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZESPOL_MA__ID_RE__0E6E26BF">
+        <Association Name="FK__ZESPOL_MA__ID_RE__10566F31">
           <End Role="REALIZACJA_PRODUKCJA" Type="Self.REALIZACJA_PRODUKCJA" Multiplicity="1" />
           <End Role="ZESPOL_MATERIAL" Type="Self.ZESPOL_MATERIAL" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1024,7 +1065,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZESPOL_NA__ID_NA__0C85DE4D">
+        <Association Name="FK__ZESPOL_NA__ID_NA__0E6E26BF">
           <End Role="NARZEDZIA" Type="Self.NARZEDZIA" Multiplicity="1" />
           <End Role="ZESPOL_NARZEDZI" Type="Self.ZESPOL_NARZEDZI" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1036,7 +1077,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZESPOL_NA__ID_RE__0B91BA14">
+        <Association Name="FK__ZESPOL_NA__ID_RE__0D7A0286">
           <End Role="REALIZACJA_PRODUKCJA" Type="Self.REALIZACJA_PRODUKCJA" Multiplicity="1" />
           <End Role="ZESPOL_NARZEDZI" Type="Self.ZESPOL_NARZEDZI" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1048,7 +1089,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZLECENIA__ID_FIR__5DCAEF64">
+        <Association Name="FK__ZLECENIA__ID_FIR__5FB337D6">
           <End Role="FIRMY" Type="Self.FIRMY" Multiplicity="0..1" />
           <End Role="ZLECENIA" Type="Self.ZLECENIA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1094,6 +1135,8 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <EntitySet Name="SZKOLENIA" EntityType="Self.SZKOLENIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SZKOLENIE_PRACOWNICY" EntityType="Self.SZKOLENIE_PRACOWNICY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TYPY_ZMIANY_STANU" EntityType="Self.TYPY_ZMIANY_STANU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UPRAWNIENIA" EntityType="Self.UPRAWNIENIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UZYTKOWNICY" EntityType="Self.UZYTKOWNICY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WALUTY" EntityType="Self.WALUTY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WOLNE" EntityType="Self.WOLNE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WOLNE_PRACOWNICY" EntityType="Self.WOLNE_PRACOWNICY" Schema="dbo" store:Type="Tables" />
@@ -1224,55 +1267,55 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
     [WYKORZYSTANE_PROCESY].[NAZWA_PROCESU] AS [NAZWA_PROCESU]
     FROM [dbo].[WYKORZYSTANE_PROCESY] AS [WYKORZYSTANE_PROCESY]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__ADRESY__ID_MIAST__66603565" Association="Self.FK__ADRESY__ID_MIAST__66603565">
+          <AssociationSet Name="FK__ADRESY__ID_MIAST__68487DD7" Association="Self.FK__ADRESY__ID_MIAST__68487DD7">
             <End Role="MIASTA" EntitySet="MIASTA" />
             <End Role="ADRESY" EntitySet="ADRESY" />
           </AssociationSet>
-          <AssociationSet Name="FK__ADRESY_PR__ID_MI__693CA210" Association="Self.FK__ADRESY_PR__ID_MI__693CA210">
+          <AssociationSet Name="FK__ADRESY_PR__ID_MI__6B24EA82" Association="Self.FK__ADRESY_PR__ID_MI__6B24EA82">
             <End Role="MIASTA" EntitySet="MIASTA" />
             <End Role="ADRESY_PRACOWNICY" EntitySet="ADRESY_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__DOKUMENTA__ID_PR__3E1D39E1" Association="Self.FK__DOKUMENTA__ID_PR__3E1D39E1">
+          <AssociationSet Name="FK__DOKUMENTA__ID_PR__40058253" Association="Self.FK__DOKUMENTA__ID_PR__40058253">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="DOKUMENTACJA" EntitySet="DOKUMENTACJA" />
           </AssociationSet>
-          <AssociationSet Name="FK__DOKUMENTA__ID_PR__3F115E1A" Association="Self.FK__DOKUMENTA__ID_PR__3F115E1A">
+          <AssociationSet Name="FK__DOKUMENTA__ID_PR__40F9A68C" Association="Self.FK__DOKUMENTA__ID_PR__40F9A68C">
             <End Role="PROJEKT" EntitySet="PROJEKT" />
             <End Role="DOKUMENTACJA" EntitySet="DOKUMENTACJA" />
           </AssociationSet>
-          <AssociationSet Name="FK__DOSTAWA__ID_ADRE__123EB7A3" Association="Self.FK__DOSTAWA__ID_ADRE__123EB7A3">
+          <AssociationSet Name="FK__DOSTAWA__ID_ADRE__14270015" Association="Self.FK__DOSTAWA__ID_ADRE__14270015">
             <End Role="ADRESY" EntitySet="ADRESY" />
             <End Role="DOSTAWA" EntitySet="DOSTAWA" />
           </AssociationSet>
-          <AssociationSet Name="FK__DOSTAWA__ID_FIRM__1332DBDC" Association="Self.FK__DOSTAWA__ID_FIRM__1332DBDC">
+          <AssociationSet Name="FK__DOSTAWA__ID_FIRM__151B244E" Association="Self.FK__DOSTAWA__ID_FIRM__151B244E">
             <End Role="FIRMY" EntitySet="FIRMY" />
             <End Role="DOSTAWA" EntitySet="DOSTAWA" />
           </AssociationSet>
-          <AssociationSet Name="FK__FAKTURY__ID_PRAC__1CBC4616" Association="Self.FK__FAKTURY__ID_PRAC__1CBC4616">
+          <AssociationSet Name="FK__FAKTURY__ID_PRAC__1EA48E88" Association="Self.FK__FAKTURY__ID_PRAC__1EA48E88">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="FAKTURY" EntitySet="FAKTURY" />
           </AssociationSet>
-          <AssociationSet Name="FK__FAKTURY__ID_ZLEC__1BC821DD" Association="Self.FK__FAKTURY__ID_ZLEC__1BC821DD">
+          <AssociationSet Name="FK__FAKTURY__ID_ZLEC__1DB06A4F" Association="Self.FK__FAKTURY__ID_ZLEC__1DB06A4F">
             <End Role="ZLECENIA" EntitySet="ZLECENIA" />
             <End Role="FAKTURY" EntitySet="FAKTURY" />
           </AssociationSet>
-          <AssociationSet Name="FK__MASZYNY__ID_MODE__6383C8BA" Association="Self.FK__MASZYNY__ID_MODE__6383C8BA">
+          <AssociationSet Name="FK__MASZYNY__ID_MODE__656C112C" Association="Self.FK__MASZYNY__ID_MODE__656C112C">
             <End Role="MODELE_MASZYN" EntitySet="MODELE_MASZYN" />
             <End Role="MASZYNY" EntitySet="MASZYNY" />
           </AssociationSet>
-          <AssociationSet Name="FK__PARAMETRY__ID_MA__43D61337" Association="Self.FK__PARAMETRY__ID_MA__43D61337">
+          <AssociationSet Name="FK__PARAMETRY__ID_MA__45BE5BA9" Association="Self.FK__PARAMETRY__ID_MA__45BE5BA9">
             <End Role="MATERIAL" EntitySet="MATERIAL" />
             <End Role="PARAMETRY_MATERIALU" EntitySet="PARAMETRY_MATERIALU" />
           </AssociationSet>
-          <AssociationSet Name="FK__PARAMETRY__ID_MO__3493CFA7" Association="Self.FK__PARAMETRY__ID_MO__3493CFA7">
+          <AssociationSet Name="FK__PARAMETRY__ID_MO__367C1819" Association="Self.FK__PARAMETRY__ID_MO__367C1819">
             <End Role="MODELE_MASZYN" EntitySet="MODELE_MASZYN" />
             <End Role="PARAMETRY_MASZYNY" EntitySet="PARAMETRY_MASZYNY" />
           </AssociationSet>
-          <AssociationSet Name="FK__PARAMETRY__ID_PA__339FAB6E" Association="Self.FK__PARAMETRY__ID_PA__339FAB6E">
+          <AssociationSet Name="FK__PARAMETRY__ID_PA__3587F3E0" Association="Self.FK__PARAMETRY__ID_PA__3587F3E0">
             <End Role="PARAMETRY" EntitySet="PARAMETRY" />
             <End Role="PARAMETRY_MASZYNY" EntitySet="PARAMETRY_MASZYNY" />
           </AssociationSet>
-          <AssociationSet Name="FK__PARAMETRY__ID_PA__44CA3770" Association="Self.FK__PARAMETRY__ID_PA__44CA3770">
+          <AssociationSet Name="FK__PARAMETRY__ID_PA__46B27FE2" Association="Self.FK__PARAMETRY__ID_PA__46B27FE2">
             <End Role="PARAMETRY" EntitySet="PARAMETRY" />
             <End Role="PARAMETRY_MATERIALU" EntitySet="PARAMETRY_MATERIALU" />
           </AssociationSet>
@@ -1280,119 +1323,127 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             <End Role="FIRMY" EntitySet="FIRMY" />
             <End Role="POJAZDY" EntitySet="POJAZDY" />
           </AssociationSet>
-          <AssociationSet Name="FK__POLPRODUK__ID_DO__489AC854" Association="Self.FK__POLPRODUK__ID_DO__489AC854">
+          <AssociationSet Name="FK__POLPRODUK__ID_DO__4A8310C6" Association="Self.FK__POLPRODUK__ID_DO__4A8310C6">
             <End Role="DOKUMENTACJA" EntitySet="DOKUMENTACJA" />
             <End Role="POLPRODUKTY" EntitySet="POLPRODUKTY" />
           </AssociationSet>
-          <AssociationSet Name="FK__POLPRODUK__ID_MA__47A6A41B" Association="Self.FK__POLPRODUK__ID_MA__47A6A41B">
+          <AssociationSet Name="FK__POLPRODUK__ID_MA__498EEC8D" Association="Self.FK__POLPRODUK__ID_MA__498EEC8D">
             <End Role="MATERIAL" EntitySet="MATERIAL" />
             <End Role="POLPRODUKTY" EntitySet="POLPRODUKTY" />
           </AssociationSet>
-          <AssociationSet Name="FK__PRACOWNIC__ID_AD__6EF57B66" Association="Self.FK__PRACOWNIC__ID_AD__6EF57B66">
+          <AssociationSet Name="FK__PRACOWNIC__ID_AD__70DDC3D8" Association="Self.FK__PRACOWNIC__ID_AD__70DDC3D8">
             <End Role="ADRESY_PRACOWNICY" EntitySet="ADRESY_PRACOWNICY" />
             <End Role="PRACOWNICY_ADRESY_PRACOWNICY" EntitySet="PRACOWNICY_ADRESY_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__PRACOWNIC__ID_PR__6E01572D" Association="Self.FK__PRACOWNIC__ID_PR__6E01572D">
+          <AssociationSet Name="FK__PRACOWNIC__ID_PR__6FE99F9F" Association="Self.FK__PRACOWNIC__ID_PR__6FE99F9F">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="PRACOWNICY_ADRESY_PRACOWNICY" EntitySet="PRACOWNICY_ADRESY_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__PROCES__ID_MASZY__3864608B" Association="Self.FK__PROCES__ID_MASZY__3864608B">
+          <AssociationSet Name="FK__PROCES__ID_MASZY__3A4CA8FD" Association="Self.FK__PROCES__ID_MASZY__3A4CA8FD">
             <End Role="MASZYNY" EntitySet="MASZYNY" />
             <End Role="PROCES" EntitySet="PROCES" />
           </AssociationSet>
-          <AssociationSet Name="FK__PROCES__ID_SLOWN__37703C52" Association="Self.FK__PROCES__ID_SLOWN__37703C52">
+          <AssociationSet Name="FK__PROCES__ID_SLOWN__395884C4" Association="Self.FK__PROCES__ID_SLOWN__395884C4">
             <End Role="SLOWNIK_PROCES_TECHNOLOGICZNY" EntitySet="SLOWNIK_PROCES_TECHNOLOGICZNY" />
             <End Role="PROCES" EntitySet="PROCES" />
           </AssociationSet>
-          <AssociationSet Name="FK__PRODUKCJA__ID_PO__4A8310C6" Association="Self.FK__PRODUKCJA__ID_PO__4A8310C6">
+          <AssociationSet Name="FK__PRODUKCJA__ID_PO__4C6B5938" Association="Self.FK__PRODUKCJA__ID_PO__4C6B5938">
             <End Role="POLPRODUKTY" EntitySet="POLPRODUKTY" />
             <End Role="PRODUKCJA_POLPRODUKTU" EntitySet="PRODUKCJA_POLPRODUKTU" />
           </AssociationSet>
-          <AssociationSet Name="FK__PRODUKCJA__ID_PR__4B7734FF" Association="Self.FK__PRODUKCJA__ID_PR__4B7734FF">
+          <AssociationSet Name="FK__PRODUKCJA__ID_PR__4D5F7D71" Association="Self.FK__PRODUKCJA__ID_PR__4D5F7D71">
             <End Role="PRODUKT" EntitySet="PRODUKT" />
             <End Role="PRODUKCJA_POLPRODUKTU" EntitySet="PRODUKCJA_POLPRODUKTU" />
           </AssociationSet>
-          <AssociationSet Name="FK__REALIZACJ__ID_ZL__03F0984C" Association="Self.FK__REALIZACJ__ID_ZL__03F0984C">
+          <AssociationSet Name="FK__REALIZACJ__ID_ZL__05D8E0BE" Association="Self.FK__REALIZACJ__ID_ZL__05D8E0BE">
             <End Role="ZLECENIA" EntitySet="ZLECENIA" />
             <End Role="REALIZACJA_PRODUKCJA" EntitySet="REALIZACJA_PRODUKCJA" />
           </AssociationSet>
-          <AssociationSet Name="FK__STANOWISK__ID_PR__71D1E811" Association="Self.FK__STANOWISK__ID_PR__71D1E811">
+          <AssociationSet Name="FK__STANOWISK__ID_PR__73BA3083" Association="Self.FK__STANOWISK__ID_PR__73BA3083">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="STANOWISKO_PRACOWNICY" EntitySet="STANOWISKO_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__STANOWISK__ID_ST__72C60C4A" Association="Self.FK__STANOWISK__ID_ST__72C60C4A">
+          <AssociationSet Name="FK__STANOWISK__ID_ST__74AE54BC" Association="Self.FK__STANOWISK__ID_ST__74AE54BC">
             <End Role="STANOWISKO" EntitySet="STANOWISKO" />
             <End Role="STANOWISKO_PRACOWNICY" EntitySet="STANOWISKO_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__STAWKA__ID_OKRES__797309D9" Association="Self.FK__STAWKA__ID_OKRES__797309D9">
+          <AssociationSet Name="FK__STAWKA__ID_OKRES__7B5B524B" Association="Self.FK__STAWKA__ID_OKRES__7B5B524B">
             <End Role="OKRES" EntitySet="OKRES" />
             <End Role="STAWKA" EntitySet="STAWKA" />
           </AssociationSet>
-          <AssociationSet Name="FK__STAWKA_PR__ID_PR__7C4F7684" Association="Self.FK__STAWKA_PR__ID_PR__7C4F7684">
+          <AssociationSet Name="FK__STAWKA_PR__ID_PR__7E37BEF6" Association="Self.FK__STAWKA_PR__ID_PR__7E37BEF6">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="STAWKA_PRACOWNICY" EntitySet="STAWKA_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__STAWKA_PR__ID_ST__7D439ABD" Association="Self.FK__STAWKA_PR__ID_ST__7D439ABD">
+          <AssociationSet Name="FK__STAWKA_PR__ID_ST__7F2BE32F" Association="Self.FK__STAWKA_PR__ID_ST__7F2BE32F">
             <End Role="STAWKA" EntitySet="STAWKA" />
             <End Role="STAWKA_PRACOWNICY" EntitySet="STAWKA_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__SZKOLENIE__ID_PR__00200768" Association="Self.FK__SZKOLENIE__ID_PR__00200768">
+          <AssociationSet Name="FK__SZKOLENIE__ID_PR__02084FDA" Association="Self.FK__SZKOLENIE__ID_PR__02084FDA">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="SZKOLENIE_PRACOWNICY" EntitySet="SZKOLENIE_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__SZKOLENIE__ID_SZ__01142BA1" Association="Self.FK__SZKOLENIE__ID_SZ__01142BA1">
+          <AssociationSet Name="FK__SZKOLENIE__ID_SZ__02FC7413" Association="Self.FK__SZKOLENIE__ID_SZ__02FC7413">
             <End Role="SZKOLENIA" EntitySet="SZKOLENIA" />
             <End Role="SZKOLENIE_PRACOWNICY" EntitySet="SZKOLENIE_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__WOLNE_PRA__ID_PR__76969D2E" Association="Self.FK__WOLNE_PRA__ID_PR__76969D2E">
+          <AssociationSet Name="FK__UZYTKOWNI__ID_PR__531856C7" Association="Self.FK__UZYTKOWNI__ID_PR__531856C7">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="UZYTKOWNICY" EntitySet="UZYTKOWNICY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UZYTKOWNI__UPRAW__540C7B00" Association="Self.FK__UZYTKOWNI__UPRAW__540C7B00">
+            <End Role="UPRAWNIENIA" EntitySet="UPRAWNIENIA" />
+            <End Role="UZYTKOWNICY" EntitySet="UZYTKOWNICY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__WOLNE_PRA__ID_PR__787EE5A0" Association="Self.FK__WOLNE_PRA__ID_PR__787EE5A0">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="WOLNE_PRACOWNICY" EntitySet="WOLNE_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__WOLNE_PRA__ID_WO__75A278F5" Association="Self.FK__WOLNE_PRA__ID_WO__75A278F5">
+          <AssociationSet Name="FK__WOLNE_PRA__ID_WO__778AC167" Association="Self.FK__WOLNE_PRA__ID_WO__778AC167">
             <End Role="WOLNE" EntitySet="WOLNE" />
             <End Role="WOLNE_PRACOWNICY" EntitySet="WOLNE_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZAMOWIENI__ID_FI__2DE6D218" Association="Self.FK__ZAMOWIENI__ID_FI__2DE6D218">
+          <AssociationSet Name="FK__ZAMOWIENI__ID_FI__2FCF1A8A" Association="Self.FK__ZAMOWIENI__ID_FI__2FCF1A8A">
             <End Role="FIRMY" EntitySet="FIRMY" />
             <End Role="ZAMOWIENIA" EntitySet="ZAMOWIENIA" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZAMOWIENI__ID_ST__2EDAF651" Association="Self.FK__ZAMOWIENI__ID_ST__2EDAF651">
+          <AssociationSet Name="FK__ZAMOWIENI__ID_ST__30C33EC3" Association="Self.FK__ZAMOWIENI__ID_ST__30C33EC3">
             <End Role="STATUS_ZAMOWIENIA" EntitySet="STATUS_ZAMOWIENIA" />
             <End Role="ZAMOWIENIA" EntitySet="ZAMOWIENIA" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZESPOL_LU__ID_PR__09A971A2" Association="Self.FK__ZESPOL_LU__ID_PR__09A971A2">
+          <AssociationSet Name="FK__ZESPOL_LU__ID_PR__0B91BA14" Association="Self.FK__ZESPOL_LU__ID_PR__0B91BA14">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="ZESPOL_LUDZI" EntitySet="ZESPOL_LUDZI" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZESPOL_LU__ID_RE__08B54D69" Association="Self.FK__ZESPOL_LU__ID_RE__08B54D69">
+          <AssociationSet Name="FK__ZESPOL_LU__ID_RE__0A9D95DB" Association="Self.FK__ZESPOL_LU__ID_RE__0A9D95DB">
             <End Role="REALIZACJA_PRODUKCJA" EntitySet="REALIZACJA_PRODUKCJA" />
             <End Role="ZESPOL_LUDZI" EntitySet="ZESPOL_LUDZI" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZESPOL_MA__ID_MA__06CD04F7" Association="Self.FK__ZESPOL_MA__ID_MA__06CD04F7">
+          <AssociationSet Name="FK__ZESPOL_MA__ID_MA__08B54D69" Association="Self.FK__ZESPOL_MA__ID_MA__08B54D69">
             <End Role="MASZYNY" EntitySet="MASZYNY" />
             <End Role="ZESPOL_MASZYN" EntitySet="ZESPOL_MASZYN" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZESPOL_MA__ID_MA__0F624AF8" Association="Self.FK__ZESPOL_MA__ID_MA__0F624AF8">
+          <AssociationSet Name="FK__ZESPOL_MA__ID_MA__114A936A" Association="Self.FK__ZESPOL_MA__ID_MA__114A936A">
             <End Role="MATERIAL" EntitySet="MATERIAL" />
             <End Role="ZESPOL_MATERIAL" EntitySet="ZESPOL_MATERIAL" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZESPOL_MA__ID_RE__05D8E0BE" Association="Self.FK__ZESPOL_MA__ID_RE__05D8E0BE">
+          <AssociationSet Name="FK__ZESPOL_MA__ID_RE__07C12930" Association="Self.FK__ZESPOL_MA__ID_RE__07C12930">
             <End Role="REALIZACJA_PRODUKCJA" EntitySet="REALIZACJA_PRODUKCJA" />
             <End Role="ZESPOL_MASZYN" EntitySet="ZESPOL_MASZYN" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZESPOL_MA__ID_RE__0E6E26BF" Association="Self.FK__ZESPOL_MA__ID_RE__0E6E26BF">
+          <AssociationSet Name="FK__ZESPOL_MA__ID_RE__10566F31" Association="Self.FK__ZESPOL_MA__ID_RE__10566F31">
             <End Role="REALIZACJA_PRODUKCJA" EntitySet="REALIZACJA_PRODUKCJA" />
             <End Role="ZESPOL_MATERIAL" EntitySet="ZESPOL_MATERIAL" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZESPOL_NA__ID_NA__0C85DE4D" Association="Self.FK__ZESPOL_NA__ID_NA__0C85DE4D">
+          <AssociationSet Name="FK__ZESPOL_NA__ID_NA__0E6E26BF" Association="Self.FK__ZESPOL_NA__ID_NA__0E6E26BF">
             <End Role="NARZEDZIA" EntitySet="NARZEDZIA" />
             <End Role="ZESPOL_NARZEDZI" EntitySet="ZESPOL_NARZEDZI" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZESPOL_NA__ID_RE__0B91BA14" Association="Self.FK__ZESPOL_NA__ID_RE__0B91BA14">
+          <AssociationSet Name="FK__ZESPOL_NA__ID_RE__0D7A0286" Association="Self.FK__ZESPOL_NA__ID_RE__0D7A0286">
             <End Role="REALIZACJA_PRODUKCJA" EntitySet="REALIZACJA_PRODUKCJA" />
             <End Role="ZESPOL_NARZEDZI" EntitySet="ZESPOL_NARZEDZI" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZLECENIA__ID_FIR__5DCAEF64" Association="Self.FK__ZLECENIA__ID_FIR__5DCAEF64">
+          <AssociationSet Name="FK__ZLECENIA__ID_FIR__5FB337D6" Association="Self.FK__ZLECENIA__ID_FIR__5FB337D6">
             <End Role="FIRMY" EntitySet="FIRMY" />
             <End Role="ZLECENIA" EntitySet="ZLECENIA" />
           </AssociationSet>
@@ -1618,6 +1669,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <NavigationProperty Name="ADRESY_PRACOWNICY" Relationship="Self.PRACOWNICY_ADRESY_PRACOWNICY" FromRole="PRACOWNICY" ToRole="ADRESY_PRACOWNICY" />
           <NavigationProperty Name="SZKOLENIA" Relationship="Self.SZKOLENIE_PRACOWNICY" FromRole="PRACOWNICY" ToRole="SZKOLENIA" />
           <NavigationProperty Name="REALIZACJA_PRODUKCJA" Relationship="Self.ZESPOL_LUDZI" FromRole="PRACOWNICY" ToRole="REALIZACJA_PRODUKCJA" />
+          <NavigationProperty Name="UZYTKOWNICY" Relationship="KWZP_PROJEKTModel.FK__UZYTKOWNI__ID_PR__531856C7" FromRole="PRACOWNICY" ToRole="UZYTKOWNICY" />
         </EntityType>
         <EntityType Name="PROCES">
           <Key>
@@ -2441,6 +2493,16 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <EntitySet Name="PRACOWNICY_STANOWISKA" EntityType="KWZP_PROJEKTModel.PRACOWNICY_STANOWISKA" />
           <EntitySet Name="STAWKA_OKRES" EntityType="KWZP_PROJEKTModel.STAWKA_OKRES" />
           <EntitySet Name="PRACOWNICY_ZATRUDNIENI" EntityType="KWZP_PROJEKTModel.PRACOWNICY_ZATRUDNIENI" />
+          <EntitySet Name="UPRAWNIENIA" EntityType="KWZP_PROJEKTModel.UPRAWNIENIA" />
+          <EntitySet Name="UZYTKOWNICY" EntityType="KWZP_PROJEKTModel.UZYTKOWNICY" />
+          <AssociationSet Name="FK__UZYTKOWNI__ID_PR__531856C7" Association="KWZP_PROJEKTModel.FK__UZYTKOWNI__ID_PR__531856C7">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="UZYTKOWNICY" EntitySet="UZYTKOWNICY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UZYTKOWNI__UPRAW__540C7B00" Association="KWZP_PROJEKTModel.FK__UZYTKOWNI__UPRAW__540C7B00">
+            <End Role="UPRAWNIENIA" EntitySet="UPRAWNIENIA" />
+            <End Role="UZYTKOWNICY" EntitySet="UZYTKOWNICY" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -2547,6 +2609,50 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <Property Name="TELEFON" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="STANOWISKO" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
         </EntityType>
+        <EntityType Name="UPRAWNIENIA">
+          <Key>
+            <PropertyRef Name="ID_UPRAWNIENIA" />
+          </Key>
+          <Property Name="ID_UPRAWNIENIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UZYTKOWNICY" Relationship="KWZP_PROJEKTModel.FK__UZYTKOWNI__UPRAW__540C7B00" FromRole="UPRAWNIENIA" ToRole="UZYTKOWNICY" />
+        </EntityType>
+        <EntityType Name="UZYTKOWNICY">
+          <Key>
+            <PropertyRef Name="ID_UZYTKOWNIKA" />
+          </Key>
+          <Property Name="ID_UZYTKOWNIKA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_PRACOWNIK" Type="Int32" />
+          <Property Name="UPRAWNIENIA" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA_LOGOWANIE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="HASLO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PRACOWNICY" Relationship="KWZP_PROJEKTModel.FK__UZYTKOWNI__ID_PR__531856C7" FromRole="UZYTKOWNICY" ToRole="PRACOWNICY" />
+          <NavigationProperty Name="UPRAWNIENIA1" Relationship="KWZP_PROJEKTModel.FK__UZYTKOWNI__UPRAW__540C7B00" FromRole="UZYTKOWNICY" ToRole="UPRAWNIENIA" />
+        </EntityType>
+        <Association Name="FK__UZYTKOWNI__ID_PR__531856C7">
+          <End Type="KWZP_PROJEKTModel.PRACOWNICY" Role="PRACOWNICY" Multiplicity="0..1" />
+          <End Type="KWZP_PROJEKTModel.UZYTKOWNICY" Role="UZYTKOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="ID_PRACOWNIK" />
+            </Principal>
+            <Dependent Role="UZYTKOWNICY">
+              <PropertyRef Name="ID_PRACOWNIK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UZYTKOWNI__UPRAW__540C7B00">
+          <End Type="KWZP_PROJEKTModel.UPRAWNIENIA" Role="UPRAWNIENIA" Multiplicity="1" />
+          <End Type="KWZP_PROJEKTModel.UZYTKOWNICY" Role="UZYTKOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UPRAWNIENIA">
+              <PropertyRef Name="ID_UPRAWNIENIA" />
+            </Principal>
+            <Dependent Role="UZYTKOWNICY">
+              <PropertyRef Name="UPRAWNIENIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3089,6 +3195,25 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
                 <ScalarProperty Name="IMIE" ColumnName="IMIE" />
                 <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
                 <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UPRAWNIENIA">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.UPRAWNIENIA">
+              <MappingFragment StoreEntitySet="UPRAWNIENIA">
+                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+                <ScalarProperty Name="ID_UPRAWNIENIA" ColumnName="ID_UPRAWNIENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UZYTKOWNICY">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.UZYTKOWNICY">
+              <MappingFragment StoreEntitySet="UZYTKOWNICY">
+                <ScalarProperty Name="HASLO" ColumnName="HASLO" />
+                <ScalarProperty Name="NAZWA_LOGOWANIE" ColumnName="NAZWA_LOGOWANIE" />
+                <ScalarProperty Name="UPRAWNIENIA" ColumnName="UPRAWNIENIA" />
+                <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+                <ScalarProperty Name="ID_UZYTKOWNIKA" ColumnName="ID_UZYTKOWNIKA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1bd1e0e91b004edfa3fc57985829d8e3" Name="Diagram1" ZoomLevel="85">
+      <Diagram DiagramId="1bd1e0e91b004edfa3fc57985829d8e3" Name="Diagram1" ZoomLevel="46">
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY_PRACOWNICY" Width="1.5" PointX="2.375" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.DOKUMENTACJA" Width="1.5" PointX="7.5" PointY="15.125" IsExpanded="true" />
@@ -91,6 +91,10 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_STANOWISKA" Width="1.5" PointX="17.375" PointY="5.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAWKA_OKRES" Width="1.5" PointX="17.375" PointY="8.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_ZATRUDNIENI" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.UPRAWNIENIA" Width="1.5" PointX="11.25" PointY="26.625" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.UZYTKOWNICY" Width="1.5" PointX="13.5" PointY="21.25" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__UZYTKOWNI__ID_PR__531856C7" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__UZYTKOWNI__UPRAW__540C7B00" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

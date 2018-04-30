@@ -25,6 +25,7 @@ namespace PROJEKTapp
             this.ADRESY_PRACOWNICY = new HashSet<ADRESY_PRACOWNICY>();
             this.SZKOLENIA = new HashSet<SZKOLENIA>();
             this.REALIZACJA_PRODUKCJA = new HashSet<REALIZACJA_PRODUKCJA>();
+            this.UZYTKOWNICY = new HashSet<UZYTKOWNICY>();
         }
     
         public int ID_PRACOWNIK { get; set; }
@@ -49,5 +50,7 @@ namespace PROJEKTapp
         public virtual ICollection<SZKOLENIA> SZKOLENIA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REALIZACJA_PRODUKCJA> REALIZACJA_PRODUKCJA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UZYTKOWNICY> UZYTKOWNICY { get; set; }
     }
 }
