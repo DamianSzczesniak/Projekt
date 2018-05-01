@@ -63,6 +63,15 @@
     <Compile Include="ADRESY_PRACOWNICY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="AKTUALNY_STATUS_ZLECEN.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AKTUALNY_STATUS_ZLECEN_NAZWY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATA_STATUSU_ZLECENIA.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="DOKUMENTACJA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -466,6 +475,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>KWZP_PROJEKT_MODEL.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="AKTUALNY_STATUS_ZLECEN.datasource" />
+    <None Include="AKTUALNY_STATUS_ZLECEN_NAZWY.datasource" />
     <None Include="KWZP_PROJEKT_MODEL.edmx.diagram">
       <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
     </None>
@@ -479,7 +490,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="ZleceniaStatusy.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

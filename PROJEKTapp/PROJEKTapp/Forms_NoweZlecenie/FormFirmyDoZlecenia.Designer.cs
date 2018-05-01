@@ -122,6 +122,7 @@
             this.iDFIRMYDataGridViewTextBoxColumn.HeaderText = "ID_FIRMY";
             this.iDFIRMYDataGridViewTextBoxColumn.Name = "iDFIRMYDataGridViewTextBoxColumn";
             this.iDFIRMYDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDFIRMYDataGridViewTextBoxColumn.Visible = false;
             // 
             // nAZWAFIRMYDataGridViewTextBoxColumn
             // 

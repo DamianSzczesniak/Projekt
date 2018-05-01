@@ -18,8 +18,14 @@ namespace PROJEKTapp
         {
             this.db = db;
             this.uprawnienia = uprawnienia;
-           // StatusZleceniaDGV.DataSource = 
+
+            
             InitializeComponent();
+        }
+
+        private void ZleceniaStatusy_Load(object sender, EventArgs e)
+        {
+            StatusZleceniaDGV.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.ToList();
         }
     }
 }

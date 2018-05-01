@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1bd1e0e91b004edfa3fc57985829d8e3" Name="Diagram1" ZoomLevel="46">
+      <Diagram DiagramId="1bd1e0e91b004edfa3fc57985829d8e3" Name="Diagram1" ZoomLevel="67">
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY_PRACOWNICY" Width="1.5" PointX="2.375" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.DOKUMENTACJA" Width="1.5" PointX="7.5" PointY="15.125" IsExpanded="true" />
@@ -35,7 +35,7 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAWKA" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAWKA_PRACOWNICY" Width="1.5" PointX="10.5" PointY="11.375" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.SZKOLENIA" Width="1.5" PointX="7.5" PointY="31.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.TYPY_ZMIANY_STANU" Width="1.5" PointX="12.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.TYPY_ZMIANY_STANU" Width="1.5" PointX="13.375" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.WALUTY" Width="1.5" PointX="12.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.WOLNE" Width="1.5" PointX="8.25" PointY="22.5" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.WOLNE_PRACOWNICY" Width="1.5" PointX="10.5" PointY="19.375" IsExpanded="true" />
@@ -95,6 +95,15 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.UZYTKOWNICY" Width="1.5" PointX="13.5" PointY="21.25" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__UZYTKOWNI__ID_PR__531856C7" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__UZYTKOWNI__UPRAW__540C7B00" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.KREATOR_FAKTUR" Width="1.5" PointX="17.75" PointY="11.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_URLOP_STANOWISKO" Width="1.5" PointX="17.75" PointY="16.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNIK_DANE" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZAPOTRZEBOWANIE_MATERIAL" Width="1.5" PointX="2.75" PointY="18.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.DATA_STATUSU_ZLECENIA" Width="1.5" PointX="16" PointY="18.25" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__DATA_STAT__ID_ST__6383C8BA" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__DATA_STAT__ID_ZL__628FA481" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN" Width="1.5" PointX="17.375" PointY="11.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN_NAZWY" Width="1.5" PointX="17.375" PointY="14.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
