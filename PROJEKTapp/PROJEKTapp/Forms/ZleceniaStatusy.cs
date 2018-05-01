@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Tracing;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,29 +20,58 @@ namespace PROJEKTapp
             this.db = db;
             this.uprawnienia = uprawnienia;
 
-            
+
             InitializeComponent();
         }
 
         private void ZleceniaStatusy_Load(object sender, EventArgs e)
         {
             // StatusZleceniaDGV.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.ToList();
+
+            SprawdzanieUprawnien(uprawnienia);
+
+        }
+
+
+        public void SprawdzanieUprawnien(int uprawnienia)
+        {
             switch (uprawnienia)
             {
                 case 1:
-                    StatusZleceniaDGV.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.ToList();
+                    aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.ToList();
                     break;
                 case 2:
-                    StatusZleceniaDGV.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value < 5 || a.Status.Value > 5 && a.Status.Value < 9).ToList();
+                    aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value < 5 || a.Status.Value > 5 && a.Status.Value < 9).ToList();
                     break;
                 case 3:
-                    StatusZleceniaDGV.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value < 7 && a.Status.Value > 3 ).ToList();
+                    aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value < 7 && a.Status.Value > 3).ToList();
                     break;
                 case 4:
-                    StatusZleceniaDGV.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value > 7).ToList();
+                    aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value > 7).ToList();
                     break;
 
             }
         }
+
+        private void btnNastepnyStatus_Click(object sender, EventArgs e)
+        {
+            if ((aKTUALNYSTATUSZLECENNAZWYBindingSource.Current as AKTUALNY_STATUS_ZLECEN_NAZWY).Status < 10)
+            {
+            DATA_STATUSU_ZLECENIA dataStatusuZlecenia = new DATA_STATUSU_ZLECENIA();
+            AKTUALNY_STATUS_ZLECEN_NAZWY zlecenie = aKTUALNYSTATUSZLECENNAZWYBindingSource.Current as AKTUALNY_STATUS_ZLECEN_NAZWY;
+            dataStatusuZlecenia.ID_ZLECENIA = zlecenie.ID_ZLECENIA;
+            dataStatusuZlecenia.ID_STATUSU_ZLECENIA = int.Parse(zlecenie.Status.ToString()) + 1;
+            dataStatusuZlecenia.DATA_ZMIANY = DateTime.Now;
+            db.DATA_STATUSU_ZLECENIA.Add(dataStatusuZlecenia);
+            db.SaveChanges();
+
+            KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
+            db.AKTUALNY_STATUS_ZLECEN_NAZWY = nDB.AKTUALNY_STATUS_ZLECEN_NAZWY;
+            SprawdzanieUprawnien(uprawnienia);
+            }
+
+        }
     }
 }
+    
+
