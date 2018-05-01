@@ -55,19 +55,27 @@ namespace PROJEKTapp
 
         private void btnNastepnyStatus_Click(object sender, EventArgs e)
         {
-            if ((aKTUALNYSTATUSZLECENNAZWYBindingSource.Current as AKTUALNY_STATUS_ZLECEN_NAZWY).Status < 10)
+            if ((aKTUALNYSTATUSZLECENNAZWYBindingSource.Current as AKTUALNY_STATUS_ZLECEN_NAZWY).Status < db.STATUS_ZLECENIA.ToList().LongCount() )
             {
-            DATA_STATUSU_ZLECENIA dataStatusuZlecenia = new DATA_STATUSU_ZLECENIA();
-            AKTUALNY_STATUS_ZLECEN_NAZWY zlecenie = aKTUALNYSTATUSZLECENNAZWYBindingSource.Current as AKTUALNY_STATUS_ZLECEN_NAZWY;
-            dataStatusuZlecenia.ID_ZLECENIA = zlecenie.ID_ZLECENIA;
-            dataStatusuZlecenia.ID_STATUSU_ZLECENIA = int.Parse(zlecenie.Status.ToString()) + 1;
-            dataStatusuZlecenia.DATA_ZMIANY = DateTime.Now;
-            db.DATA_STATUSU_ZLECENIA.Add(dataStatusuZlecenia);
-            db.SaveChanges();
+                
+                DATA_STATUSU_ZLECENIA dataStatusuZlecenia = new DATA_STATUSU_ZLECENIA();
+                AKTUALNY_STATUS_ZLECEN_NAZWY zlecenie = aKTUALNYSTATUSZLECENNAZWYBindingSource.Current as AKTUALNY_STATUS_ZLECEN_NAZWY;
+                if (!(uprawnienia == 2 && (int.Parse(zlecenie.Status.ToString()) + 1 == 5 || int.Parse(zlecenie.Status.ToString()) + 1 == 9)))
+                {
+                    if (!(uprawnienia == 3 && int.Parse(zlecenie.Status.ToString()) + 1 != 7 ))
+                    {
+                        
+                        dataStatusuZlecenia.ID_ZLECENIA = zlecenie.ID_ZLECENIA;
+                        dataStatusuZlecenia.ID_STATUSU_ZLECENIA = int.Parse(zlecenie.Status.ToString()) + 1;
+                        dataStatusuZlecenia.DATA_ZMIANY = DateTime.Now;
+                        db.DATA_STATUSU_ZLECENIA.Add(dataStatusuZlecenia);
+                        db.SaveChanges();
 
-            KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
-            db.AKTUALNY_STATUS_ZLECEN_NAZWY = nDB.AKTUALNY_STATUS_ZLECEN_NAZWY;
-            SprawdzanieUprawnien(uprawnienia);
+                        KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
+                        db.AKTUALNY_STATUS_ZLECEN_NAZWY = nDB.AKTUALNY_STATUS_ZLECEN_NAZWY;
+                        SprawdzanieUprawnien(uprawnienia);
+                    }
+                }
             }
 
         }
