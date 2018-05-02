@@ -316,8 +316,6 @@ namespace PROJEKTapp
                 }
                 else
                 {
-                    int idAdresu = Convert.ToInt32(ListaAdresow.CurrentRow.Cells[1].Value);
-                    adrespracownik = pracownik.ADRESY_PRACOWNICY.Where(adres => adres.ID_ADRESU.Equals(idAdresu)).First();
                     adrespracownik.ULICA = this.txtboxUlica.Text;
                     adrespracownik.NR_BUDYNKU = this.txtboxNrbudynku.Text;
                     adrespracownik.NR_LOKALU = this.txtboxNrlokalu.Text;
