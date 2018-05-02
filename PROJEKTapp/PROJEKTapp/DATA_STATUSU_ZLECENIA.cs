@@ -12,18 +12,13 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class STATUS_ZLECENIA
+    public partial class DATA_STATUSU_ZLECENIA
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public STATUS_ZLECENIA()
-        {
-            this.DATA_STATUSU_ZLECENIA = new HashSet<DATA_STATUSU_ZLECENIA>();
-        }
-    
+        public int ID_ZLECENIA { get; set; }
         public int ID_STATUSU_ZLECENIA { get; set; }
-        public string ETAP { get; set; }
+        public Nullable<System.DateTime> DATA_ZMIANY { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DATA_STATUSU_ZLECENIA> DATA_STATUSU_ZLECENIA { get; set; }
+        public virtual STATUS_ZLECENIA STATUS_ZLECENIA { get; set; }
+        public virtual ZLECENIA ZLECENIA { get; set; }
     }
 }

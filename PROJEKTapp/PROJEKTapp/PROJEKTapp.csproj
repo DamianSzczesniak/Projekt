@@ -63,6 +63,15 @@
     <Compile Include="ADRESY_PRACOWNICY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="AKTUALNY_STATUS_ZLECEN.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AKTUALNY_STATUS_ZLECEN_NAZWY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATA_STATUSU_ZLECENIA.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="DOKUMENTACJA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -365,6 +374,18 @@
     <Compile Include="ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ZleceniaStatusy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ZleceniaStatusy.Designer.cs">
+      <DependentUpon>ZleceniaStatusy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_NoweZlecenie\ZleceniaPosredniczacy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_NoweZlecenie\ZleceniaPosredniczacy.Designer.cs">
+      <DependentUpon>ZleceniaPosredniczacy.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormLogowanie.resx">
       <DependentUpon>FormLogowanie.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,10 +465,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Forms\ZleceniaStatusy.resx">
+      <DependentUpon>ZleceniaStatusy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_NoweZlecenie\ZleceniaPosredniczacy.resx">
+      <DependentUpon>ZleceniaPosredniczacy.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="KWZP_PROJEKT_MODEL.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>KWZP_PROJEKT_MODEL.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="AKTUALNY_STATUS_ZLECEN.datasource" />
+    <None Include="AKTUALNY_STATUS_ZLECEN_NAZWY.datasource" />
     <None Include="KWZP_PROJEKT_MODEL.edmx.diagram">
       <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
     </None>
