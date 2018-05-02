@@ -12,8 +12,10 @@ namespace PROJEKTapp.Forms
 {
     public partial class FormZmianaStanuMagazynu : Form
     {
-        public FormZmianaStanuMagazynu(KWZP_PROJEKTEntities kwzpProjektEntities)
+        KWZP_PROJEKTEntities db;
+        public FormZmianaStanuMagazynu(KWZP_PROJEKTEntities db)
         {
+            this.db = db;
             InitializeComponent();
         }
 
@@ -22,17 +24,7 @@ namespace PROJEKTapp.Forms
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ButtonZmianaStanu_Click(object sender, EventArgs e)
         {
 
         }

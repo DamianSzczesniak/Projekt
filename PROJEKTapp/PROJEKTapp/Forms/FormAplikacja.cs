@@ -64,7 +64,7 @@ namespace PROJEKTapp
 
         private void btnLogistyka_Click(object sender, EventArgs e)
         {
-            FormLogistyka Logistyka = new FormLogistyka();
+            FormLogistyka Logistyka = new FormLogistyka(db);
             Logistyka.Show();
         }
 

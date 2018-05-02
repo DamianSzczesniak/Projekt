@@ -126,28 +126,28 @@
     <Compile Include="Forms_NoweZlecenie\FormOferta.Designer.cs">
       <DependentUpon>FormOferta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormZmianaStanuMagazynu.cs">
+    <Compile Include="Froms_Logistyka\FormZmianaStanuMagazynu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormZmianaStanuMagazynu.Designer.cs">
+    <Compile Include="Froms_Logistyka\FormZmianaStanuMagazynu.Designer.cs">
       <DependentUpon>FormZmianaStanuMagazynu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\KreatorFaktur.cs">
+    <Compile Include="Froms_Logistyka\KreatorFaktur.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\KreatorFaktur.Designer.cs">
+    <Compile Include="Froms_Logistyka\KreatorFaktur.Designer.cs">
       <DependentUpon>KreatorFaktur.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PrzygotowanieTransportu.cs">
+    <Compile Include="Froms_Logistyka\PrzygotowanieTransportu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PrzygotowanieTransportu.Designer.cs">
+    <Compile Include="Froms_Logistyka\PrzygotowanieTransportu.Designer.cs">
       <DependentUpon>PrzygotowanieTransportu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ZamowienieMaterialu.cs">
+    <Compile Include="Froms_Logistyka\ZamowienieMaterialu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ZamowienieMaterialu.Designer.cs">
+    <Compile Include="Froms_Logistyka\ZamowienieMaterialu.Designer.cs">
       <DependentUpon>ZamowienieMaterialu.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormAplikacja.cs">
@@ -162,10 +162,10 @@
     <Compile Include="Forms\FormKadry.designer.cs">
       <DependentUpon>FormKadry.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormLogistyka.cs">
+    <Compile Include="Froms_Logistyka\FormLogistyka.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormLogistyka.designer.cs">
+    <Compile Include="Froms_Logistyka\FormLogistyka.designer.cs">
       <DependentUpon>FormLogistyka.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms_NoweZlecenie\FormNoweZlecenie.cs">
@@ -407,16 +407,16 @@
     <EmbeddedResource Include="Forms_NoweZlecenie\FormOferta.resx">
       <DependentUpon>FormOferta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormZmianaStanuMagazynu.resx">
+    <EmbeddedResource Include="Froms_Logistyka\FormZmianaStanuMagazynu.resx">
       <DependentUpon>FormZmianaStanuMagazynu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\KreatorFaktur.resx">
+    <EmbeddedResource Include="Froms_Logistyka\KreatorFaktur.resx">
       <DependentUpon>KreatorFaktur.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PrzygotowanieTransportu.resx">
+    <EmbeddedResource Include="Froms_Logistyka\PrzygotowanieTransportu.resx">
       <DependentUpon>PrzygotowanieTransportu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ZamowienieMaterialu.resx">
+    <EmbeddedResource Include="Froms_Logistyka\ZamowienieMaterialu.resx">
       <DependentUpon>ZamowienieMaterialu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormAplikacja.resx">
@@ -425,7 +425,7 @@
     <EmbeddedResource Include="Forms\FormKadry.resx">
       <DependentUpon>FormKadry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormLogistyka.resx">
+    <EmbeddedResource Include="Froms_Logistyka\FormLogistyka.resx">
       <DependentUpon>FormLogistyka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_NoweZlecenie\FormNoweZlecenie.resx">
@@ -522,5 +522,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
