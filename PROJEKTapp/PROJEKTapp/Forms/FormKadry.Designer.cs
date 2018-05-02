@@ -41,6 +41,7 @@
             this.pnlUserControl = new System.Windows.Forms.Panel();
             this.btnUsun = new System.Windows.Forms.Button();
             this.btnEdytuj = new System.Windows.Forms.Button();
+            this.btnSzczegoly = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.pnlUserSearch = new System.Windows.Forms.Panel();
             this.LWyszukaj = new System.Windows.Forms.Label();
@@ -74,14 +75,14 @@
             this.btnZapiszDodaj = new System.Windows.Forms.Button();
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.pnlUserField = new System.Windows.Forms.Panel();
+            this.ListaAdresow = new System.Windows.Forms.DataGridView();
             this.chbZmianaStawki = new System.Windows.Forms.CheckBox();
             this.chbEdycjaStanoiwska = new System.Windows.Forms.CheckBox();
             this.chbDataKoniec = new System.Windows.Forms.CheckBox();
             this.cbOkres = new System.Windows.Forms.ComboBox();
             this.cbStawka = new System.Windows.Forms.ComboBox();
             this.txtDataKoniec = new System.Windows.Forms.DateTimePicker();
-            this.ListaAdresow = new System.Windows.Forms.DataGridView();
-            this.btnSzczegoly = new System.Windows.Forms.Button();
+            this.chbNowyAdres = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlUserControl.SuspendLayout();
@@ -255,6 +256,17 @@
             this.btnEdytuj.UseVisualStyleBackColor = true;
             this.btnEdytuj.Click += new System.EventHandler(this.btnEdytuj_Click);
             // 
+            // btnSzczegoly
+            // 
+            this.btnSzczegoly.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSzczegoly.Location = new System.Drawing.Point(25, 18);
+            this.btnSzczegoly.Name = "btnSzczegoly";
+            this.btnSzczegoly.Size = new System.Drawing.Size(106, 61);
+            this.btnSzczegoly.TabIndex = 0;
+            this.btnSzczegoly.Text = "Szczegóły";
+            this.btnSzczegoly.UseVisualStyleBackColor = true;
+            this.btnSzczegoly.Click += new System.EventHandler(this.btnSzczegoly_Click);
+            // 
             // btnDodaj
             // 
             this.btnDodaj.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -308,7 +320,7 @@
             // 
             this.lblNrbudynku.AutoSize = true;
             this.lblNrbudynku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNrbudynku.Location = new System.Drawing.Point(19, 185);
+            this.lblNrbudynku.Location = new System.Drawing.Point(19, 194);
             this.lblNrbudynku.Name = "lblNrbudynku";
             this.lblNrbudynku.Size = new System.Drawing.Size(93, 20);
             this.lblNrbudynku.TabIndex = 54;
@@ -317,7 +329,7 @@
             // txtboxNrbudynku
             // 
             this.txtboxNrbudynku.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxNrbudynku.Location = new System.Drawing.Point(130, 185);
+            this.txtboxNrbudynku.Location = new System.Drawing.Point(130, 194);
             this.txtboxNrbudynku.Name = "txtboxNrbudynku";
             this.txtboxNrbudynku.Size = new System.Drawing.Size(183, 26);
             this.txtboxNrbudynku.TabIndex = 62;
@@ -325,7 +337,7 @@
             // txtboxUlica
             // 
             this.txtboxUlica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxUlica.Location = new System.Drawing.Point(130, 154);
+            this.txtboxUlica.Location = new System.Drawing.Point(130, 163);
             this.txtboxUlica.Name = "txtboxUlica";
             this.txtboxUlica.Size = new System.Drawing.Size(183, 26);
             this.txtboxUlica.TabIndex = 61;
@@ -334,7 +346,7 @@
             // 
             this.lblNrlokalu.AutoSize = true;
             this.lblNrlokalu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNrlokalu.Location = new System.Drawing.Point(19, 216);
+            this.lblNrlokalu.Location = new System.Drawing.Point(19, 225);
             this.lblNrlokalu.Name = "lblNrlokalu";
             this.lblNrlokalu.Size = new System.Drawing.Size(74, 20);
             this.lblNrlokalu.TabIndex = 52;
@@ -344,7 +356,7 @@
             // 
             this.lblUlica.AutoSize = true;
             this.lblUlica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblUlica.Location = new System.Drawing.Point(19, 154);
+            this.lblUlica.Location = new System.Drawing.Point(19, 163);
             this.lblUlica.Name = "lblUlica";
             this.lblUlica.Size = new System.Drawing.Size(48, 20);
             this.lblUlica.TabIndex = 55;
@@ -353,7 +365,7 @@
             // txtboxNrlokalu
             // 
             this.txtboxNrlokalu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxNrlokalu.Location = new System.Drawing.Point(130, 216);
+            this.txtboxNrlokalu.Location = new System.Drawing.Point(130, 225);
             this.txtboxNrlokalu.Name = "txtboxNrlokalu";
             this.txtboxNrlokalu.Size = new System.Drawing.Size(183, 26);
             this.txtboxNrlokalu.TabIndex = 63;
@@ -370,7 +382,7 @@
             // 
             this.lblKodpocztowy.AutoSize = true;
             this.lblKodpocztowy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKodpocztowy.Location = new System.Drawing.Point(19, 250);
+            this.lblKodpocztowy.Location = new System.Drawing.Point(19, 259);
             this.lblKodpocztowy.Name = "lblKodpocztowy";
             this.lblKodpocztowy.Size = new System.Drawing.Size(111, 20);
             this.lblKodpocztowy.TabIndex = 50;
@@ -389,7 +401,7 @@
             // txtboxKodpocztowy
             // 
             this.txtboxKodpocztowy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxKodpocztowy.Location = new System.Drawing.Point(130, 247);
+            this.txtboxKodpocztowy.Location = new System.Drawing.Point(130, 256);
             this.txtboxKodpocztowy.Name = "txtboxKodpocztowy";
             this.txtboxKodpocztowy.Size = new System.Drawing.Size(183, 26);
             this.txtboxKodpocztowy.TabIndex = 64;
@@ -406,7 +418,7 @@
             // 
             this.lblKraj.AutoSize = true;
             this.lblKraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblKraj.Location = new System.Drawing.Point(19, 313);
+            this.lblKraj.Location = new System.Drawing.Point(19, 322);
             this.lblKraj.Name = "lblKraj";
             this.lblKraj.Size = new System.Drawing.Size(40, 20);
             this.lblKraj.TabIndex = 49;
@@ -434,7 +446,7 @@
             // 
             this.lblMiasto.AutoSize = true;
             this.lblMiasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblMiasto.Location = new System.Drawing.Point(19, 279);
+            this.lblMiasto.Location = new System.Drawing.Point(19, 288);
             this.lblMiasto.Name = "lblMiasto";
             this.lblMiasto.Size = new System.Drawing.Size(60, 20);
             this.lblMiasto.TabIndex = 47;
@@ -482,7 +494,7 @@
             // 
             this.cbMiasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbMiasto.FormattingEnabled = true;
-            this.cbMiasto.Location = new System.Drawing.Point(130, 279);
+            this.cbMiasto.Location = new System.Drawing.Point(130, 288);
             this.cbMiasto.Name = "cbMiasto";
             this.cbMiasto.Size = new System.Drawing.Size(183, 28);
             this.cbMiasto.TabIndex = 66;
@@ -491,7 +503,7 @@
             // 
             this.lblDataStart.AutoSize = true;
             this.lblDataStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDataStart.Location = new System.Drawing.Point(320, 158);
+            this.lblDataStart.Location = new System.Drawing.Point(320, 165);
             this.lblDataStart.Name = "lblDataStart";
             this.lblDataStart.Size = new System.Drawing.Size(169, 18);
             this.lblDataStart.TabIndex = 46;
@@ -500,7 +512,7 @@
             // txtboxKraj
             // 
             this.txtboxKraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtboxKraj.Location = new System.Drawing.Point(130, 313);
+            this.txtboxKraj.Location = new System.Drawing.Point(130, 322);
             this.txtboxKraj.Name = "txtboxKraj";
             this.txtboxKraj.Size = new System.Drawing.Size(183, 26);
             this.txtboxKraj.TabIndex = 65;
@@ -509,7 +521,7 @@
             // txtDataRozpoczeciaPracy
             // 
             this.txtDataRozpoczeciaPracy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDataRozpoczeciaPracy.Location = new System.Drawing.Point(323, 187);
+            this.txtDataRozpoczeciaPracy.Location = new System.Drawing.Point(323, 192);
             this.txtDataRozpoczeciaPracy.Name = "txtDataRozpoczeciaPracy";
             this.txtDataRozpoczeciaPracy.Size = new System.Drawing.Size(290, 26);
             this.txtDataRozpoczeciaPracy.TabIndex = 67;
@@ -555,6 +567,7 @@
             // 
             // pnlUserField
             // 
+            this.pnlUserField.Controls.Add(this.chbNowyAdres);
             this.pnlUserField.Controls.Add(this.ListaAdresow);
             this.pnlUserField.Controls.Add(this.chbZmianaStawki);
             this.pnlUserField.Controls.Add(this.chbEdycjaStanoiwska);
@@ -594,6 +607,16 @@
             this.pnlUserField.Size = new System.Drawing.Size(639, 555);
             this.pnlUserField.TabIndex = 5;
             // 
+            // ListaAdresow
+            // 
+            this.ListaAdresow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListaAdresow.Location = new System.Drawing.Point(25, 353);
+            this.ListaAdresow.Name = "ListaAdresow";
+            this.ListaAdresow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ListaAdresow.Size = new System.Drawing.Size(602, 128);
+            this.ListaAdresow.TabIndex = 74;
+            this.ListaAdresow.DoubleClick += new System.EventHandler(this.ListaAdresow_DoubleClick);
+            // 
             // chbZmianaStawki
             // 
             this.chbZmianaStawki.AutoSize = true;
@@ -622,7 +645,7 @@
             // 
             this.chbDataKoniec.AutoSize = true;
             this.chbDataKoniec.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbDataKoniec.Location = new System.Drawing.Point(323, 219);
+            this.chbDataKoniec.Location = new System.Drawing.Point(323, 225);
             this.chbDataKoniec.Name = "chbDataKoniec";
             this.chbDataKoniec.Size = new System.Drawing.Size(201, 22);
             this.chbDataKoniec.TabIndex = 71;
@@ -652,31 +675,24 @@
             // txtDataKoniec
             // 
             this.txtDataKoniec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDataKoniec.Location = new System.Drawing.Point(323, 247);
+            this.txtDataKoniec.Location = new System.Drawing.Point(323, 256);
             this.txtDataKoniec.Name = "txtDataKoniec";
             this.txtDataKoniec.Size = new System.Drawing.Size(290, 26);
             this.txtDataKoniec.TabIndex = 67;
             this.txtDataKoniec.Visible = false;
             // 
-            // ListaAdresow
+            // chbNowyAdres
             // 
-            this.ListaAdresow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaAdresow.Location = new System.Drawing.Point(25, 353);
-            this.ListaAdresow.Name = "ListaAdresow";
-            this.ListaAdresow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ListaAdresow.Size = new System.Drawing.Size(602, 128);
-            this.ListaAdresow.TabIndex = 74;
-            // 
-            // btnSzczegoly
-            // 
-            this.btnSzczegoly.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSzczegoly.Location = new System.Drawing.Point(25, 18);
-            this.btnSzczegoly.Name = "btnSzczegoly";
-            this.btnSzczegoly.Size = new System.Drawing.Size(106, 61);
-            this.btnSzczegoly.TabIndex = 0;
-            this.btnSzczegoly.Text = "Szczegóły";
-            this.btnSzczegoly.UseVisualStyleBackColor = true;
-            this.btnSzczegoly.Click += new System.EventHandler(this.btnSzczegoly_Click);
+            this.chbNowyAdres.AutoSize = true;
+            this.chbNowyAdres.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chbNowyAdres.Location = new System.Drawing.Point(25, 138);
+            this.chbNowyAdres.Name = "chbNowyAdres";
+            this.chbNowyAdres.Size = new System.Drawing.Size(169, 22);
+            this.chbNowyAdres.TabIndex = 75;
+            this.chbNowyAdres.Text = "Dodać nowy adres?";
+            this.chbNowyAdres.UseVisualStyleBackColor = true;
+            this.chbNowyAdres.Visible = false;
+            this.chbNowyAdres.CheckedChanged += new System.EventHandler(this.chbNowyAdres_CheckedChanged);
             // 
             // FormKadry
             // 
@@ -762,5 +778,6 @@
         private System.Windows.Forms.CheckBox chbZmianaStawki;
         private System.Windows.Forms.DataGridView ListaAdresow;
         private System.Windows.Forms.Button btnSzczegoly;
+        private System.Windows.Forms.CheckBox chbNowyAdres;
     }
 }

@@ -115,12 +115,15 @@ namespace PROJEKTapp
                 chbEdycjaStanoiwska.Hide();
                 pnlUserField.Show();
                 czyscform();
+                btnZapiszDodaj.Show();
                 TrybPrzyciskuZapisEdycja = true;
                 txtboxKraj.Text = "Polska";
                 cbOkres.Enabled = true;
                 cbStawka.Enabled = true;
                 cbStanowisko.Enabled = true;
                 txtDataKoniec.Show();
+                ListaAdresow.Hide();
+                chbNowyAdres.Hide();
             }
         }
 
@@ -133,12 +136,14 @@ namespace PROJEKTapp
             cbStawka.Enabled = false;
             cbStanowisko.Enabled = false;
             this.ListaAdresow.Show();
-                
+            chbNowyAdres.Show();
+            btnZapiszDodaj.Show();
+
+
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();
             this.ListaAdresow.Columns[0].Visible = false;
             this.ListaAdresow.Columns[1].Visible = false;
-            //int idAdresu = Convert.ToInt32(ListaAdresow.CurrentRow.Cells[0].Value); do event double click
             pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
             txtboxNazwisko.Text = pracownik.NAZWISKO;
             txtboxImie.Text = pracownik.IMIE;
@@ -269,13 +274,6 @@ namespace PROJEKTapp
                 pracownik.IMIE = this.txtboxImie.Text;
                 pracownik.TELEFON = this.txtboxTel.Text;
                 pracownik.PESEL = this.txtboxPesel.Text;
-                adrespracownik = pracownik.ADRESY_PRACOWNICY.First();
-                adrespracownik.ULICA = this.txtboxUlica.Text;
-                adrespracownik.NR_BUDYNKU = this.txtboxNrbudynku.Text;
-                adrespracownik.NR_LOKALU = this.txtboxNrlokalu.Text;
-                adrespracownik.KOD_POCZTOWY = this.txtboxKodpocztowy.Text;
-                adrespracownik.ID_MIASTA = ((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA;
-                adrespracownik.KRAJ = this.txtboxKraj.Text;
                 if (chbEdycjaStanoiwska.Checked == true)
                 {
                     pracownikstanowisko.DATA_KONIEC = txtDataRozpoczeciaPracy.Value;
@@ -305,6 +303,27 @@ namespace PROJEKTapp
                     STAWKA_PRACOWNICY stawkapracownika = new STAWKA_PRACOWNICY();
                     stawkapracownika.ID_STAWKA = ((STAWKA)this.cbStawka.SelectedValue).ID_STAWKA;
                     pracownik.STAWKA_PRACOWNICY.Add(stawkapracownika);
+                }
+                if (chbNowyAdres.Checked == true)
+                {
+                    ADRESY_PRACOWNICY adrespracownika = new ADRESY_PRACOWNICY();
+                    adrespracownika.ULICA = this.txtboxUlica.Text;
+                    adrespracownika.NR_BUDYNKU = this.txtboxNrbudynku.Text;
+                    adrespracownika.NR_LOKALU = this.txtboxNrlokalu.Text;
+                    adrespracownika.KOD_POCZTOWY = this.txtboxKodpocztowy.Text;
+                    adrespracownika.ID_MIASTA = (int)((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA;
+                    adrespracownika.KRAJ = this.txtboxKraj.Text;
+                }
+                else
+                {
+                    int idAdresu = Convert.ToInt32(ListaAdresow.CurrentRow.Cells[1].Value);
+                    adrespracownik = pracownik.ADRESY_PRACOWNICY.Where(adres => adres.ID_ADRESU.Equals(idAdresu)).First();
+                    adrespracownik.ULICA = this.txtboxUlica.Text;
+                    adrespracownik.NR_BUDYNKU = this.txtboxNrbudynku.Text;
+                    adrespracownik.NR_LOKALU = this.txtboxNrlokalu.Text;
+                    adrespracownik.KOD_POCZTOWY = this.txtboxKodpocztowy.Text;
+                    adrespracownik.ID_MIASTA = ((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA;
+                    adrespracownik.KRAJ = this.txtboxKraj.Text;
                 }
                 db.SaveChanges();
                 ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
@@ -385,7 +404,86 @@ namespace PROJEKTapp
 
         private void btnSzczegoly_Click(object sender, EventArgs e)
         {
-            //Ustawić wczytanie formularza jak do edycji ale tylko wyśiwetlanie
+            pnlUserField.Show();
+            chbEdycjaStanoiwska.Show();
+            cbOkres.Enabled = false;
+            cbStawka.Enabled = false;
+            cbStanowisko.Enabled = false;
+            this.ListaAdresow.Show();
+            chbNowyAdres.Hide();
+            btnZapiszDodaj.Hide();
+
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();
+            this.ListaAdresow.Columns[0].Visible = false;
+            this.ListaAdresow.Columns[1].Visible = false;
+            pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
+            txtboxNazwisko.Text = pracownik.NAZWISKO;
+            txtboxImie.Text = pracownik.IMIE;
+            txtboxTel.Text = pracownik.TELEFON;
+            txtboxPesel.Text = pracownik.PESEL;
+            adrespracownik = pracownik.ADRESY_PRACOWNICY.First();
+            txtboxUlica.Text = adrespracownik.ULICA;
+            txtboxNrlokalu.Text = adrespracownik.NR_LOKALU;
+            txtboxNrbudynku.Text = adrespracownik.NR_BUDYNKU;
+            txtboxKodpocztowy.Text = adrespracownik.KOD_POCZTOWY;
+            (((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA) = (int)adrespracownik.ID_MIASTA;
+            txtboxKraj.Text = adrespracownik.KRAJ;
+            pracownikstawka = pracownik.STAWKA_PRACOWNICY.Last();
+            ((STAWKA)this.cbStawka.SelectedValue).ID_STAWKA = (int)pracownikstawka.ID_STAWKA;
+            cbOkres.SelectedIndex = (int)pracownikstawka.STAWKA.ID_OKRES;
+            pracownikstanowisko = pracownik.STANOWISKO_PRACOWNICY.Last();
+            ((STANOWISKO)cbStanowisko.SelectedValue).ID_STANOWISKO = (int)pracownikstanowisko.ID_STANOWISKO;
+            txtDataRozpoczeciaPracy.Value = pracownikstanowisko.DATA_START;
+            if (pracownikstanowisko.DATA_KONIEC != null)
+            {
+                txtDataKoniec.Value = (DateTime)pracownikstanowisko.DATA_KONIEC;
+                chbDataKoniec.Checked = true;
+                txtDataKoniec.Show();
+            }
+            else
+            {
+                chbDataKoniec.Checked = false;
+                txtDataKoniec.Hide();
+            }
+        }
+
+        private void ListaAdresow_DoubleClick(object sender, EventArgs e)
+        {
+            chbNowyAdres.Checked = false;
+            int idAdresu = Convert.ToInt32(ListaAdresow.CurrentRow.Cells[1].Value);
+            adrespracownik = pracownik.ADRESY_PRACOWNICY.Where(adres=> adres.ID_ADRESU.Equals(idAdresu)).First();
+            txtboxUlica.Text = adrespracownik.ULICA;
+            txtboxNrlokalu.Text = adrespracownik.NR_LOKALU;
+            txtboxNrbudynku.Text = adrespracownik.NR_BUDYNKU;
+            txtboxKodpocztowy.Text = adrespracownik.KOD_POCZTOWY;
+            (((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA) = (int)adrespracownik.ID_MIASTA;
+            txtboxKraj.Text = adrespracownik.KRAJ;
+
+        }
+
+        private void chbNowyAdres_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbNowyAdres.Checked == true)
+            {
+                txtboxUlica.Clear();
+                txtboxNrbudynku.Clear();
+                txtboxNrlokalu.Clear();
+                txtboxKodpocztowy.Clear();
+                txtboxKraj.Text = "Polska";
+                (((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA) = 1;
+            }
+            else
+            {
+                int idAdresu = Convert.ToInt32(ListaAdresow.CurrentRow.Cells[1].Value);
+                adrespracownik = pracownik.ADRESY_PRACOWNICY.Where(adres => adres.ID_ADRESU.Equals(idAdresu)).First();
+                txtboxUlica.Text = adrespracownik.ULICA;
+                txtboxNrlokalu.Text = adrespracownik.NR_LOKALU;
+                txtboxNrbudynku.Text = adrespracownik.NR_BUDYNKU;
+                txtboxKodpocztowy.Text = adrespracownik.KOD_POCZTOWY;
+                (((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA) = (int)adrespracownik.ID_MIASTA;
+                txtboxKraj.Text = adrespracownik.KRAJ;
+            }
         }
     }
 }

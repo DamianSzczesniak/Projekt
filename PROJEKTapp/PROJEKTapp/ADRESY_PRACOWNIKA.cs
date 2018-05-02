@@ -20,5 +20,6 @@ namespace PROJEKTapp
         public string NR_BUDYNKU { get; set; }
         public string NR_LOKALU { get; set; }
         public string MIASTO { get; set; }
+        public string KOD_POCZTOWY { get; set; }
     }
 }
