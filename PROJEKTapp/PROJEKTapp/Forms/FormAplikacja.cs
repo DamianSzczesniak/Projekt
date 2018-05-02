@@ -105,5 +105,12 @@ namespace PROJEKTapp
             ZleceniaStatusy zleceniaStatusy = new ZleceniaStatusy(db, uprawnienia);
             zleceniaStatusy.Show();
         }
+
+        private void btnWyloguj_Click(object sender, EventArgs e)
+        {
+            FormLogowanie formLogowanie = new FormLogowanie();
+            formLogowanie.Show();
+            this.Close();
+        }
     }
 }
