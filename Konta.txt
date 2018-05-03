@@ -1,0 +1,10 @@
+Pe軟e:
+Login: PREZES Has這: PREZES
+Tylko Produkcja: 
+Login: PRODUKCJA Has這: PRODUKCJA
+Tylko Kadry:
+Login: KADRY Has這: KADRY
+Tylko Logistyka:
+Login: LOGISTYKA Has這: LOGISTYKA
+Tylko Nowe Zlecenia:
+Login: ZLECENIA Has這: ZLECENIA

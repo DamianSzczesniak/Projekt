@@ -77,7 +77,11 @@ namespace PROJEKTapp
         public virtual DbSet<PRACOWNICY_ZATRUDNIENI> PRACOWNICY_ZATRUDNIENI { get; set; }
         public virtual DbSet<STANOWISKO_PRACOWNICY> STANOWISKO_PRACOWNICY { get; set; }
         public virtual DbSet<ADRESY_PRACOWNIKA> ADRESY_PRACOWNIKA { get; set; }
-    
+        public virtual DbSet<UPRAWNIENIA> UPRAWNIENIA { get; set; }
+        public virtual DbSet<UZYTKOWNICY> UZYTKOWNICY { get; set; }
+        public virtual DbSet<DATA_STATUSU_ZLECENIA> DATA_STATUSU_ZLECENIA { get; set; }
+        public virtual DbSet<AKTUALNY_STATUS_ZLECEN> AKTUALNY_STATUS_ZLECEN { get; set; }
+        public virtual DbSet<AKTUALNY_STATUS_ZLECEN_NAZWY> AKTUALNY_STATUS_ZLECEN_NAZWY { get; set; }
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {
             var imieParameter = imie != null ?

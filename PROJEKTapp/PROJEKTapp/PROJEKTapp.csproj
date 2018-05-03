@@ -64,6 +64,13 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="ADRESY_PRACOWNIKA.cs">
+    <Compile Include="AKTUALNY_STATUS_ZLECEN.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AKTUALNY_STATUS_ZLECEN_NAZWY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DATA_STATUSU_ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="DOKUMENTACJA.cs">
@@ -71,6 +78,18 @@
     </Compile>
     <Compile Include="DOSTAWA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FAKTURY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FIRMY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogowanie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogowanie.Designer.cs">
+      <DependentUpon>FormLogowanie.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormStatystyki.cs">
       <SubType>Form</SubType>
@@ -90,17 +109,23 @@
     <Compile Include="Forms\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_NoweZlecenie\FormDodajEdytujFirme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_NoweZlecenie\FormDodajEdytujFirme.Designer.cs">
+      <DependentUpon>FormDodajEdytujFirme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_NoweZlecenie\FormFirmyDoZlecenia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_NoweZlecenie\FormFirmyDoZlecenia.Designer.cs">
+      <DependentUpon>FormFirmyDoZlecenia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_NoweZlecenie\FormOferta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms_NoweZlecenie\FormOferta.Designer.cs">
       <DependentUpon>FormOferta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.Designer.cs">
-      <DependentUpon>FormFirmyNoweZlecenie.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormZmianaStanuMagazynu.cs">
       <SubType>Form</SubType>
@@ -126,17 +151,11 @@
     <Compile Include="Forms\ZamowienieMaterialu.Designer.cs">
       <DependentUpon>ZamowienieMaterialu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FAKTURY.cs">
-      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FIRMY.cs">
-      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Forms\FormAplikacja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\FormAplikacja.Designer.cs">
+      <DependentUpon>FormAplikacja.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormKadry.cs">
       <SubType>Form</SubType>
@@ -210,6 +229,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PracStan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PracStan.Designer.cs">
+      <DependentUpon>PracStan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Produkcja\Produkcja_glowny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\Produkcja_glowny.Designer.cs">
+      <DependentUpon>Produkcja_glowny.cs</DependentUpon>
+    </Compile>
     <Compile Include="LOKALIZACJA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -276,12 +307,6 @@
     <Compile Include="PROCES.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms_Produkcja\Produkcja_glowny.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_Produkcja\Produkcja_glowny.Designer.cs">
-      <DependentUpon>Produkcja_glowny.cs</DependentUpon>
-    </Compile>
     <Compile Include="PRODUKCJA_POLPRODUKTU.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -326,6 +351,12 @@
     <Compile Include="TYPY_ZMIANY_STANU.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="UPRAWNIENIA.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UZYTKOWNICY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="WALUTY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -350,6 +381,21 @@
     <Compile Include="ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ZleceniaStatusy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ZleceniaStatusy.Designer.cs">
+      <DependentUpon>ZleceniaStatusy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_NoweZlecenie\ZleceniaPosredniczacy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_NoweZlecenie\ZleceniaPosredniczacy.Designer.cs">
+      <DependentUpon>ZleceniaPosredniczacy.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormLogowanie.resx">
+      <DependentUpon>FormLogowanie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormStatystyki.resx">
       <DependentUpon>FormStatystyki.cs</DependentUpon>
     </EmbeddedResource>
@@ -359,11 +405,14 @@
     <EmbeddedResource Include="Forms\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms_NoweZlecenie\FormDodajEdytujFirme.resx">
+      <DependentUpon>FormDodajEdytujFirme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_NoweZlecenie\FormFirmyDoZlecenia.resx">
+      <DependentUpon>FormFirmyDoZlecenia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_NoweZlecenie\FormOferta.resx">
       <DependentUpon>FormOferta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_NoweZlecenie\FormFirmyNoweZlecenie.resx">
-      <DependentUpon>FormFirmyNoweZlecenie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormZmianaStanuMagazynu.resx">
       <DependentUpon>FormZmianaStanuMagazynu.cs</DependentUpon>
@@ -377,8 +426,8 @@
     <EmbeddedResource Include="Forms\ZamowienieMaterialu.resx">
       <DependentUpon>ZamowienieMaterialu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormAplikacja.resx">
+      <DependentUpon>FormAplikacja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormKadry.resx">
       <DependentUpon>FormKadry.cs</DependentUpon>
@@ -423,10 +472,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Forms\ZleceniaStatusy.resx">
+      <DependentUpon>ZleceniaStatusy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_NoweZlecenie\ZleceniaPosredniczacy.resx">
+      <DependentUpon>ZleceniaPosredniczacy.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="KWZP_PROJEKT_MODEL.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>KWZP_PROJEKT_MODEL.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="AKTUALNY_STATUS_ZLECEN.datasource" />
+    <None Include="AKTUALNY_STATUS_ZLECEN_NAZWY.datasource" />
     <None Include="KWZP_PROJEKT_MODEL.edmx.diagram">
       <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
     </None>
