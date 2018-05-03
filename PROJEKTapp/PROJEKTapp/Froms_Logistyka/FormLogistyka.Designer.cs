@@ -28,32 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            
             this.Btn_kreat_fak = new System.Windows.Forms.Button();
             this.Btn_zam_mat = new System.Windows.Forms.Button();
             this.Btn_przyg_trans = new System.Windows.Forms.Button();
             this.Btn_zmiana_stat = new System.Windows.Forms.Button();
             this.TopBar = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Btn_Back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TopBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(903, -11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 67);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "x";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Btn_kreat_fak
             // 
@@ -61,7 +46,7 @@
             this.Btn_kreat_fak.FlatAppearance.BorderSize = 0;
             this.Btn_kreat_fak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_kreat_fak.Image = global::PROJEKTapp.Properties.Resources.Kreator_faktur;
-            this.Btn_kreat_fak.Location = new System.Drawing.Point(259, 390);
+            this.Btn_kreat_fak.Location = new System.Drawing.Point(204, 466);
             this.Btn_kreat_fak.Name = "Btn_kreat_fak";
             this.Btn_kreat_fak.Size = new System.Drawing.Size(437, 63);
             this.Btn_kreat_fak.TabIndex = 6;
@@ -74,7 +59,7 @@
             this.Btn_zam_mat.FlatAppearance.BorderSize = 0;
             this.Btn_zam_mat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_zam_mat.Image = global::PROJEKTapp.Properties.Resources.zamowienie_materialu;
-            this.Btn_zam_mat.Location = new System.Drawing.Point(259, 303);
+            this.Btn_zam_mat.Location = new System.Drawing.Point(204, 387);
             this.Btn_zam_mat.Name = "Btn_zam_mat";
             this.Btn_zam_mat.Size = new System.Drawing.Size(437, 63);
             this.Btn_zam_mat.TabIndex = 5;
@@ -87,7 +72,7 @@
             this.Btn_przyg_trans.FlatAppearance.BorderSize = 0;
             this.Btn_przyg_trans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_przyg_trans.Image = global::PROJEKTapp.Properties.Resources.Przygotowanie_transportu;
-            this.Btn_przyg_trans.Location = new System.Drawing.Point(259, 213);
+            this.Btn_przyg_trans.Location = new System.Drawing.Point(204, 302);
             this.Btn_przyg_trans.Name = "Btn_przyg_trans";
             this.Btn_przyg_trans.Size = new System.Drawing.Size(437, 63);
             this.Btn_przyg_trans.TabIndex = 4;
@@ -100,7 +85,7 @@
             this.Btn_zmiana_stat.FlatAppearance.BorderSize = 0;
             this.Btn_zmiana_stat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_zmiana_stat.Image = global::PROJEKTapp.Properties.Resources.Zmiana_stanu_magazynu;
-            this.Btn_zmiana_stat.Location = new System.Drawing.Point(259, 122);
+            this.Btn_zmiana_stat.Location = new System.Drawing.Point(204, 224);
             this.Btn_zmiana_stat.Name = "Btn_zmiana_stat";
             this.Btn_zmiana_stat.Size = new System.Drawing.Size(437, 63);
             this.Btn_zmiana_stat.TabIndex = 3;
@@ -110,19 +95,45 @@
             // TopBar
             // 
             this.TopBar.Image = global::PROJEKTapp.Properties.Resources.top_bar1;
-            this.TopBar.Location = new System.Drawing.Point(0, 0);
+            this.TopBar.Location = new System.Drawing.Point(-68, 0);
             this.TopBar.Name = "TopBar";
             this.TopBar.Size = new System.Drawing.Size(960, 72);
             this.TopBar.TabIndex = 2;
             this.TopBar.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pictureBox2.Location = new System.Drawing.Point(1164, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(204, 56);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // Btn_Back
+            // 
+            this.Btn_Back.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Btn_Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Btn_Back.FlatAppearance.BorderSize = 0;
+            this.Btn_Back.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.Btn_Back.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.Btn_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Back.Image = global::PROJEKTapp.Properties.Resources.return2;
+            this.Btn_Back.Location = new System.Drawing.Point(722, 0);
+            this.Btn_Back.Name = "Btn_Back";
+            this.Btn_Back.Size = new System.Drawing.Size(80, 44);
+            this.Btn_Back.TabIndex = 10;
+            this.Btn_Back.UseVisualStyleBackColor = false;
+            this.Btn_Back.Click += new System.EventHandler(this.Btn_Back_Click);
             // 
             // FormLogistyka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(960, 540);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(801, 768);
+            this.Controls.Add(this.Btn_Back); 
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Btn_kreat_fak);
             this.Controls.Add(this.Btn_zam_mat);
             this.Controls.Add(this.Btn_przyg_trans);
@@ -133,6 +144,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormLogistyka_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TopBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -144,5 +156,7 @@
         private System.Windows.Forms.Button Btn_zam_mat;
         private System.Windows.Forms.Button Btn_kreat_fak;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button Btn_Back;
     }
 }

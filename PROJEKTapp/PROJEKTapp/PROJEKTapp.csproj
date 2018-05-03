@@ -129,6 +129,12 @@
     <Compile Include="Forms_NoweZlecenie\FormOferta.Designer.cs">
       <DependentUpon>FormOferta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Froms_Logistyka\FormListaFaktur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Froms_Logistyka\FormListaFaktur.Designer.cs">
+      <DependentUpon>FormListaFaktur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Froms_Logistyka\FormZmianaStanuMagazynu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_NoweZlecenie\FormOferta.resx">
       <DependentUpon>FormOferta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Froms_Logistyka\FormListaFaktur.resx">
+      <DependentUpon>FormListaFaktur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Froms_Logistyka\FormZmianaStanuMagazynu.resx">
       <DependentUpon>FormZmianaStanuMagazynu.cs</DependentUpon>

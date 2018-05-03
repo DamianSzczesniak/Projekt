@@ -1,4 +1,5 @@
 ﻿using PROJEKTapp.Forms;
+using PROJEKTapp.Forms.Forms_Logistyka;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace PROJEKTapp
 
     {
         KWZP_PROJEKTEntities db;
-        public FormLogistyka( KWZP_PROJEKTEntities db)
+        public FormLogistyka(KWZP_PROJEKTEntities db)
         {
             this.db = db;
             InitializeComponent();
@@ -26,11 +27,7 @@ namespace PROJEKTapp
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+       
         private void Btn_zmiana_stat_Click(object sender, EventArgs e)
         {
             FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db);
@@ -39,8 +36,9 @@ namespace PROJEKTapp
 
         private void Btn_kreat_fak_Click(object sender, EventArgs e)
         {
-            KreatorFaktur KreatorFaktur = new KreatorFaktur(db);
+            FormListaFaktur KreatorFaktur = new FormListaFaktur(db);
             KreatorFaktur.Show();
+            
         }
 
         private void Btn_przyg_trans_Click(object sender, EventArgs e)
@@ -53,6 +51,11 @@ namespace PROJEKTapp
         {
             ZamowienieMaterialu ZamowienieMaterialu = new ZamowienieMaterialu(db);
             ZamowienieMaterialu.Show();
+        }
+
+        private void Btn_Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 
