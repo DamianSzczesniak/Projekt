@@ -51,7 +51,6 @@ namespace PROJEKTapp
         public virtual DbSet<REALIZACJA_PRODUKCJA> REALIZACJA_PRODUKCJA { get; set; }
         public virtual DbSet<SLOWNIK_PROCES_TECHNOLOGICZNY> SLOWNIK_PROCES_TECHNOLOGICZNY { get; set; }
         public virtual DbSet<STANOWISKO> STANOWISKO { get; set; }
-        public virtual DbSet<STANOWISKO_PRACOWNICY> STANOWISKO_PRACOWNICY { get; set; }
         public virtual DbSet<STATUS_ZAMOWIENIA> STATUS_ZAMOWIENIA { get; set; }
         public virtual DbSet<STATUS_ZLECENIA> STATUS_ZLECENIA { get; set; }
         public virtual DbSet<STAWKA> STAWKA { get; set; }
@@ -76,12 +75,13 @@ namespace PROJEKTapp
         public virtual DbSet<PRACOWNICY_STANOWISKA> PRACOWNICY_STANOWISKA { get; set; }
         public virtual DbSet<STAWKA_OKRES> STAWKA_OKRES { get; set; }
         public virtual DbSet<PRACOWNICY_ZATRUDNIENI> PRACOWNICY_ZATRUDNIENI { get; set; }
+        public virtual DbSet<STANOWISKO_PRACOWNICY> STANOWISKO_PRACOWNICY { get; set; }
+        public virtual DbSet<ADRESY_PRACOWNIKA> ADRESY_PRACOWNIKA { get; set; }
         public virtual DbSet<UPRAWNIENIA> UPRAWNIENIA { get; set; }
         public virtual DbSet<UZYTKOWNICY> UZYTKOWNICY { get; set; }
         public virtual DbSet<DATA_STATUSU_ZLECENIA> DATA_STATUSU_ZLECENIA { get; set; }
         public virtual DbSet<AKTUALNY_STATUS_ZLECEN> AKTUALNY_STATUS_ZLECEN { get; set; }
         public virtual DbSet<AKTUALNY_STATUS_ZLECEN_NAZWY> AKTUALNY_STATUS_ZLECEN_NAZWY { get; set; }
-    
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {
             var imieParameter = imie != null ?
