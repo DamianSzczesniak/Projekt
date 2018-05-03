@@ -59,7 +59,7 @@
             this.btnZaloguj.Location = new System.Drawing.Point(83, 107);
             this.btnZaloguj.Name = "btnZaloguj";
             this.btnZaloguj.Size = new System.Drawing.Size(75, 23);
-            this.btnZaloguj.TabIndex = 1;
+            this.btnZaloguj.TabIndex = 2;
             this.btnZaloguj.Text = "Zaloguj";
             this.btnZaloguj.UseVisualStyleBackColor = true;
             this.btnZaloguj.Click += new System.EventHandler(this.btnZaloguj_Click);
@@ -69,7 +69,7 @@
             this.btnWyjdz.Location = new System.Drawing.Point(187, 107);
             this.btnWyjdz.Name = "btnWyjdz";
             this.btnWyjdz.Size = new System.Drawing.Size(75, 23);
-            this.btnWyjdz.TabIndex = 2;
+            this.btnWyjdz.TabIndex = 3;
             this.btnWyjdz.Text = "Wyjdź";
             this.btnWyjdz.UseVisualStyleBackColor = true;
             this.btnWyjdz.Click += new System.EventHandler(this.btnWyjdz_Click);
@@ -79,14 +79,14 @@
             this.txtBoxLogin.Location = new System.Drawing.Point(83, 25);
             this.txtBoxLogin.Name = "txtBoxLogin";
             this.txtBoxLogin.Size = new System.Drawing.Size(179, 20);
-            this.txtBoxLogin.TabIndex = 3;
+            this.txtBoxLogin.TabIndex = 0;
             // 
             // txtBoxHaslo
             // 
             this.txtBoxHaslo.Location = new System.Drawing.Point(83, 66);
             this.txtBoxHaslo.Name = "txtBoxHaslo";
             this.txtBoxHaslo.Size = new System.Drawing.Size(179, 20);
-            this.txtBoxHaslo.TabIndex = 3;
+            this.txtBoxHaslo.TabIndex = 1;
             this.txtBoxHaslo.UseSystemPasswordChar = true;
             // 
             // FormLogowanie

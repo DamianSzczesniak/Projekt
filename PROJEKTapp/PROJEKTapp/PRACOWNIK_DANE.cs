@@ -15,19 +15,24 @@ namespace PROJEKTapp
 using System;
     using System.Collections.Generic;
     
-public partial class ADRESY
+public partial class PRACOWNIK_DANE
 {
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-    public ADRESY()
-    {
+    public int ID_PRACOWNIK { get; set; }
 
-        this.DOSTAWA = new HashSet<DOSTAWA>();
+    public string NAZWISKO { get; set; }
 
-    }
+    public string IMIE { get; set; }
 
+    public string TELEFON { get; set; }
 
-    public int ID_ADRESU { get; set; }
+    public string PESEL { get; set; }
+
+    public System.DateTime DATA_START { get; set; }
+
+    public Nullable<System.DateTime> DATA_KONIEC { get; set; }
+
+    public string STANOWISKO { get; set; }
 
     public string ULICA { get; set; }
 
@@ -37,17 +42,9 @@ public partial class ADRESY
 
     public string KOD_POCZTOWY { get; set; }
 
-    public Nullable<int> ID_MIASTA { get; set; }
-
     public string KRAJ { get; set; }
 
-
-
-    public virtual MIASTA MIASTA { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<DOSTAWA> DOSTAWA { get; set; }
+    public string MIASTO { get; set; }
 
 }
 

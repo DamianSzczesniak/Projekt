@@ -13,17 +13,24 @@ namespace PROJEKTapp
 {
 
 using System;
+    using System.Collections.Generic;
     
-public partial class AddPracownik_Result
+public partial class ADRESY_PRACOWNIKA
 {
 
-    public string NAZWA_PRODUKTU { get; set; }
+    public int IDP { get; set; }
 
-    public string MODEL { get; set; }
+    public int IDA { get; set; }
 
-    public string MARKA { get; set; }
+    public string ULICA { get; set; }
 
-    public string TYP_MASZYNY { get; set; }
+    public string NR_BUDYNKU { get; set; }
+
+    public string NR_LOKALU { get; set; }
+
+    public string KOD_POCZTOWY { get; set; }
+
+    public string MIASTO { get; set; }
 
 }
 
