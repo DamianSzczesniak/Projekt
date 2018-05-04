@@ -47,6 +47,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Btn_Back = new System.Windows.Forms.Button();
             this.FormAplikacja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -59,6 +60,7 @@
             // FormAplikacja
             // 
             this.FormAplikacja.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.FormAplikacja.Controls.Add(this.Btn_Back);
             this.FormAplikacja.Controls.Add(this.label2);
             this.FormAplikacja.Controls.Add(this.pictureBox1);
             this.FormAplikacja.Controls.Add(this.button1);
@@ -75,7 +77,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(502, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(242, 16);
+            this.label2.Size = new System.Drawing.Size(233, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Management System Version 1.0";
             // 
@@ -94,9 +96,9 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(776, 44);
+            this.button1.Location = new System.Drawing.Point(741, 44);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 75);
+            this.button1.Size = new System.Drawing.Size(92, 94);
             this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnExit);
@@ -277,6 +279,22 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
+            // Btn_Back
+            // 
+            this.Btn_Back.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Btn_Back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Btn_Back.FlatAppearance.BorderSize = 0;
+            this.Btn_Back.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.HotTrack;
+            this.Btn_Back.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.HotTrack;
+            this.Btn_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Back.Image = global::PROJEKTapp.Properties.Resources.return2;
+            this.Btn_Back.Location = new System.Drawing.Point(792, 0);
+            this.Btn_Back.Name = "Btn_Back";
+            this.Btn_Back.Size = new System.Drawing.Size(80, 44);
+            this.Btn_Back.TabIndex = 9;
+            this.Btn_Back.UseVisualStyleBackColor = false;
+            this.Btn_Back.Click += new System.EventHandler(this.btnWyloguj_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -326,6 +344,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnStatusyZlecen;
         private System.Windows.Forms.Button btnZlecenia;
+        private System.Windows.Forms.Button Btn_Back;
     }
 }
 
