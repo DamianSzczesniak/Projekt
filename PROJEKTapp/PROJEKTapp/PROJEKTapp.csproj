@@ -532,6 +532,7 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="PRACOWNICY.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -542,7 +543,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="SPIS_UZYTKOWNIKOW.datasource" />
-    <None Include="UZYTKOWNICY.datasource" />
+    <None Include="UPRAWNIENIA.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

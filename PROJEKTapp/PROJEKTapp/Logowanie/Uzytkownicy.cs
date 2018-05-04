@@ -21,19 +21,40 @@ namespace PROJEKTapp.Logowanie
 
         private void Uzytkownicy_Load(object sender, EventArgs e)
         {
-           //  = db.SPIS_UZYTKOWNIKOW.ToList();
+          sPISUZYTKOWNIKOWBindingSource.DataSource = db.SPIS_UZYTKOWNIKOW.ToList();
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            using (Zmiana_Danych_Uzytkownika zDU = new Zmiana_Danych_Uzytkownika(0, db))
+           
+
+            using (Zmiana_Danych_Uzytkownika zDU = new Zmiana_Danych_Uzytkownika(null, db))
             {
-                //if (frmDEF.ShowDialog() == DialogResult.OK)
-                //{
-                //    FirmyBindingSource.DataSource = db.FIRMY.ToList();
-                //    db.SaveChanges();
-                //}
+                if (zDU.ShowDialog() == DialogResult.OK)
+                {
+                  
+                }
             }
+        }
+
+        private void btnEdytuj_Click(object sender, EventArgs e)
+        {
+            SPIS_UZYTKOWNIKOW dane = sPISUZYTKOWNIKOWBindingSource.Current as SPIS_UZYTKOWNIKOW;
+
+            using (Zmiana_Danych_Uzytkownika zDU = new Zmiana_Danych_Uzytkownika(dane, db))
+            {
+                if (zDU.ShowDialog() == DialogResult.OK)
+                {
+                    KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
+                    db.SPIS_UZYTKOWNIKOW = ndb.SPIS_UZYTKOWNIKOW;
+                    sPISUZYTKOWNIKOWBindingSource.DataSource = db.SPIS_UZYTKOWNIKOW.ToList();
+                }
+            }
+        }
+
+        private void btnUsun_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
