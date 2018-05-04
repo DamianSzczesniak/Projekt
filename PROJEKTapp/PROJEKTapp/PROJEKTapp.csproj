@@ -129,17 +129,23 @@
     <Compile Include="Forms_NoweZlecenie\FormOferta.Designer.cs">
       <DependentUpon>FormOferta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Froms_Logistyka\AkcjaMagazynProduktów.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Froms_Logistyka\AkcjaMagazynProduktów.Designer.cs">
+      <DependentUpon>AkcjaMagazynProduktów.cs</DependentUpon>
+    </Compile>
     <Compile Include="Froms_Logistyka\FormListaFaktur.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Froms_Logistyka\FormListaFaktur.Designer.cs">
       <DependentUpon>FormListaFaktur.cs</DependentUpon>
     </Compile>
-    <Compile Include="Froms_Logistyka\FormZmianaStanuMagazynu.cs">
+    <Compile Include="Froms_Logistyka\FormZmianaStanuMagazynuProduktu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Froms_Logistyka\FormZmianaStanuMagazynu.Designer.cs">
-      <DependentUpon>FormZmianaStanuMagazynu.cs</DependentUpon>
+    <Compile Include="Froms_Logistyka\FormZmianaStanuMagazynuProduktu.Designer.cs">
+      <DependentUpon>FormZmianaStanuMagazynuProduktu.cs</DependentUpon>
     </Compile>
     <Compile Include="Froms_Logistyka\KreatorFaktur.cs">
       <SubType>Form</SubType>
@@ -249,6 +255,24 @@
     <Compile Include="Forms_Produkcja\Produkcja_glowny.Designer.cs">
       <DependentUpon>Produkcja_glowny.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logowanie\Uzytkownicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logowanie\Uzytkownicy.Designer.cs">
+      <DependentUpon>Uzytkownicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logowanie\ZmianaHasla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logowanie\ZmianaHasla.Designer.cs">
+      <DependentUpon>ZmianaHasla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logowanie\Zmiana_Danych_Uzytkownika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logowanie\Zmiana_Danych_Uzytkownika.Designer.cs">
+      <DependentUpon>Zmiana_Danych_Uzytkownika.cs</DependentUpon>
+    </Compile>
     <Compile Include="LOKALIZACJA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -330,6 +354,9 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="SLOWNIK_PROCES_TECHNOLOGICZNY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPIS_UZYTKOWNIKOW.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="STANOWISKO.cs">
@@ -425,8 +452,8 @@
     <EmbeddedResource Include="Froms_Logistyka\FormListaFaktur.resx">
       <DependentUpon>FormListaFaktur.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Froms_Logistyka\FormZmianaStanuMagazynu.resx">
-      <DependentUpon>FormZmianaStanuMagazynu.cs</DependentUpon>
+    <EmbeddedResource Include="Froms_Logistyka\FormZmianaStanuMagazynuProduktu.resx">
+      <DependentUpon>FormZmianaStanuMagazynuProduktu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Froms_Logistyka\KreatorFaktur.resx">
       <DependentUpon>KreatorFaktur.cs</DependentUpon>
@@ -473,6 +500,9 @@
     <EmbeddedResource Include="Forms\FormWynagordzenie.resx">
       <DependentUpon>FormWynagordzenie.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logowanie\Uzytkownicy.resx">
+      <DependentUpon>Uzytkownicy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -508,6 +538,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="UZYTKOWNICY.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

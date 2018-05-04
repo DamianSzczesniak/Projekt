@@ -12,15 +12,15 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class ZAMOWIENIA
+    public partial class SPIS_UZYTKOWNIKOW
     {
-        public int ID_ZAMOWIENIA { get; set; }
-        public Nullable<System.DateTime> DATA_ZAMOWIENIA { get; set; }
-        public Nullable<System.DateTime> DATA_REALIZACJI { get; set; }
-        public Nullable<int> ID_FIRMY { get; set; }
-        public Nullable<int> ID_STATUSU_ZAMOWIENIA { get; set; }
-    
-        public virtual FIRMY FIRMY { get; set; }
-        public virtual STATUS_ZAMOWIENIA STATUS_ZAMOWIENIA { get; set; }
+        public int ID_UZYTKOWNIKA { get; set; }
+        public Nullable<int> ID_PRACOWNIK { get; set; }
+        public int UPRAWNIENIA { get; set; }
+        public string NAZWA_LOGOWANIE { get; set; }
+        public string HASLO { get; set; }
+        public string Poziom_Uprawnien { get; set; }
+        public string IMIE { get; set; }
+        public string NAZWISKO { get; set; }
     }
 }

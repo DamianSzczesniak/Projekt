@@ -108,9 +108,9 @@
             this.ButtonDodajRekord.FlatAppearance.BorderSize = 0;
             this.ButtonDodajRekord.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonDodajRekord.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ButtonDodajRekord.Location = new System.Drawing.Point(212, 495);
+            this.ButtonDodajRekord.Location = new System.Drawing.Point(220, 495);
             this.ButtonDodajRekord.Name = "ButtonDodajRekord";
-            this.ButtonDodajRekord.Size = new System.Drawing.Size(305, 33);
+            this.ButtonDodajRekord.Size = new System.Drawing.Size(285, 37);
             this.ButtonDodajRekord.TabIndex = 22;
             this.ButtonDodajRekord.Text = "Rejestruj Akcje";
             this.ButtonDodajRekord.UseVisualStyleBackColor = false;

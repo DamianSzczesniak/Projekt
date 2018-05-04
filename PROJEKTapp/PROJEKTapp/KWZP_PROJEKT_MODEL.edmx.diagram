@@ -4,14 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1bd1e0e91b004edfa3fc57985829d8e3" Name="Diagram1" ZoomLevel="67">
+      <Diagram DiagramId="1bd1e0e91b004edfa3fc57985829d8e3" Name="Diagram1" ZoomLevel="57">
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY_PRACOWNICY" Width="1.5" PointX="2.375" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.DOKUMENTACJA" Width="1.5" PointX="7.5" PointY="15.125" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.DOSTAWA" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.FAKTURY" Width="1.5" PointX="10.5" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.FIRMY" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.LOKALIZACJA" Width="1.5" PointX="10.75" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MASZYNY" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MATERIAL" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MIASTA" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
@@ -105,6 +104,8 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN" Width="1.5" PointX="17.375" PointY="11.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN_NAZWY" Width="1.5" PointX="17.375" PointY="14.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY_PRACOWNIKA" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.SPIS_UZYTKOWNIKOW" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.LOKALIZACJA" Width="1.5" PointX="11" PointY="7" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
