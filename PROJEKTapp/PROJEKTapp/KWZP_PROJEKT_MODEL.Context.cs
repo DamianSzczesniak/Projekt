@@ -83,8 +83,8 @@ namespace PROJEKTapp
         public virtual DbSet<ADRESY_PRACOWNIKA> ADRESY_PRACOWNIKA { get; set; }
         public virtual DbSet<PRACOWNICY_URLOP_STANOWISKO> PRACOWNICY_URLOP_STANOWISKO { get; set; }
         public virtual DbSet<PRACOWNIK_DANE> PRACOWNIK_DANE { get; set; }
-        public virtual DbSet<SPIS_UZYTKOWNIKOW> SPIS_UZYTKOWNIKOW { get; set; }
         public virtual DbSet<LOKALIZACJA> LOKALIZACJA { get; set; }
+        public virtual DbSet<SPIS_UZYTKOWNIKOW> SPIS_UZYTKOWNIKOW { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {

@@ -12,8 +12,12 @@ namespace PROJEKTapp.Logowanie
 {
     public partial class Zmiana_Danych_Uzytkownika : Form
     {
-        public Zmiana_Danych_Uzytkownika()
+        KWZP_PROJEKTEntities db;
+        int id_uzytkownika;
+        public Zmiana_Danych_Uzytkownika(int id_uzytkownika, KWZP_PROJEKTEntities db)
         {
+            this.db = db;
+            this.id_uzytkownika = id_uzytkownika;
             InitializeComponent();
         }
     }

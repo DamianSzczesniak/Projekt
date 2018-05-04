@@ -612,18 +612,20 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.SPIS_UZYTKOWNIKOW' does not have 
             <PropertyRef Name="ID_UZYTKOWNIKA" />
             <PropertyRef Name="UPRAWNIENIA" />
             <PropertyRef Name="NAZWA_LOGOWANIE" />
-            <PropertyRef Name="Poziom_Uprawnien" />
+            <PropertyRef Name="POZIOM_UPRAWNIEN" />
             <PropertyRef Name="IMIE" />
             <PropertyRef Name="NAZWISKO" />
+            <PropertyRef Name="PESEL" />
           </Key>
           <Property Name="ID_UZYTKOWNIKA" Type="int" Nullable="false" />
           <Property Name="ID_PRACOWNIK" Type="int" />
           <Property Name="UPRAWNIENIA" Type="int" Nullable="false" />
           <Property Name="NAZWA_LOGOWANIE" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="HASLO" Type="varchar" MaxLength="30" />
-          <Property Name="Poziom_Uprawnien" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="POZIOM_UPRAWNIEN" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="IMIE" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="NAZWISKO" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="PESEL" Type="nvarchar" MaxLength="11" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAWKA_OKRES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1428,9 +1430,10 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
     [SPIS_UZYTKOWNIKOW].[UPRAWNIENIA] AS [UPRAWNIENIA], 
     [SPIS_UZYTKOWNIKOW].[NAZWA_LOGOWANIE] AS [NAZWA_LOGOWANIE], 
     [SPIS_UZYTKOWNIKOW].[HASLO] AS [HASLO], 
-    [SPIS_UZYTKOWNIKOW].[Poziom_Uprawnien] AS [Poziom_Uprawnien], 
+    [SPIS_UZYTKOWNIKOW].[POZIOM_UPRAWNIEN] AS [POZIOM_UPRAWNIEN], 
     [SPIS_UZYTKOWNIKOW].[IMIE] AS [IMIE], 
-    [SPIS_UZYTKOWNIKOW].[NAZWISKO] AS [NAZWISKO]
+    [SPIS_UZYTKOWNIKOW].[NAZWISKO] AS [NAZWISKO], 
+    [SPIS_UZYTKOWNIKOW].[PESEL] AS [PESEL]
     FROM [dbo].[SPIS_UZYTKOWNIKOW] AS [SPIS_UZYTKOWNIKOW]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="STAWKA_OKRES" EntityType="Self.STAWKA_OKRES" store:Type="Views" store:Schema="dbo">
@@ -2710,8 +2713,8 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <EntitySet Name="ADRESY_PRACOWNIKA" EntityType="KWZP_PROJEKTModel.ADRESY_PRACOWNIKA" />
           <EntitySet Name="PRACOWNICY_URLOP_STANOWISKO" EntityType="KWZP_PROJEKTModel.PRACOWNICY_URLOP_STANOWISKO" />
           <EntitySet Name="PRACOWNIK_DANE" EntityType="KWZP_PROJEKTModel.PRACOWNIK_DANE" />
-          <EntitySet Name="SPIS_UZYTKOWNIKOW" EntityType="KWZP_PROJEKTModel.SPIS_UZYTKOWNIKOW" />
           <EntitySet Name="LOKALIZACJA" EntityType="KWZP_PROJEKTModel.LOKALIZACJA" />
+          <EntitySet Name="SPIS_UZYTKOWNIKOW" EntityType="KWZP_PROJEKTModel.SPIS_UZYTKOWNIKOW" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -2965,24 +2968,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <Property Name="KRAJ" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="MIASTO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="SPIS_UZYTKOWNIKOW">
-          <Key>
-            <PropertyRef Name="ID_UZYTKOWNIKA" />
-            <PropertyRef Name="UPRAWNIENIA" />
-            <PropertyRef Name="NAZWA_LOGOWANIE" />
-            <PropertyRef Name="Poziom_Uprawnien" />
-            <PropertyRef Name="IMIE" />
-            <PropertyRef Name="NAZWISKO" />
-          </Key>
-          <Property Name="ID_UZYTKOWNIKA" Type="Int32" Nullable="false" />
-          <Property Name="ID_PRACOWNIK" Type="Int32" />
-          <Property Name="UPRAWNIENIA" Type="Int32" Nullable="false" />
-          <Property Name="NAZWA_LOGOWANIE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="HASLO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="Poziom_Uprawnien" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="IMIE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="NAZWISKO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="LOKALIZACJA">
           <Key>
             <PropertyRef Name="ID_LOKALIZACJI" />
@@ -2991,6 +2976,26 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <Property Name="SEKTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="ALEJKA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="CzyPelne" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SPIS_UZYTKOWNIKOW">
+          <Key>
+            <PropertyRef Name="ID_UZYTKOWNIKA" />
+            <PropertyRef Name="UPRAWNIENIA" />
+            <PropertyRef Name="NAZWA_LOGOWANIE" />
+            <PropertyRef Name="POZIOM_UPRAWNIEN" />
+            <PropertyRef Name="IMIE" />
+            <PropertyRef Name="NAZWISKO" />
+            <PropertyRef Name="PESEL" />
+          </Key>
+          <Property Name="ID_UZYTKOWNIKA" Type="Int32" Nullable="false" />
+          <Property Name="ID_PRACOWNIK" Type="Int32" />
+          <Property Name="UPRAWNIENIA" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA_LOGOWANIE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="HASLO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="POZIOM_UPRAWNIEN" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IMIE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWISKO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PESEL" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3614,20 +3619,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SPIS_UZYTKOWNIKOW">
-            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.SPIS_UZYTKOWNIKOW">
-              <MappingFragment StoreEntitySet="SPIS_UZYTKOWNIKOW">
-                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
-                <ScalarProperty Name="IMIE" ColumnName="IMIE" />
-                <ScalarProperty Name="Poziom_Uprawnien" ColumnName="Poziom_Uprawnien" />
-                <ScalarProperty Name="HASLO" ColumnName="HASLO" />
-                <ScalarProperty Name="NAZWA_LOGOWANIE" ColumnName="NAZWA_LOGOWANIE" />
-                <ScalarProperty Name="UPRAWNIENIA" ColumnName="UPRAWNIENIA" />
-                <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
-                <ScalarProperty Name="ID_UZYTKOWNIKA" ColumnName="ID_UZYTKOWNIKA" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="LOKALIZACJA">
             <EntityTypeMapping TypeName="KWZP_PROJEKTModel.LOKALIZACJA">
               <MappingFragment StoreEntitySet="LOKALIZACJA">
@@ -3635,6 +3626,21 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
                 <ScalarProperty Name="ALEJKA" ColumnName="ALEJKA" />
                 <ScalarProperty Name="SEKTOR" ColumnName="SEKTOR" />
                 <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SPIS_UZYTKOWNIKOW">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.SPIS_UZYTKOWNIKOW">
+              <MappingFragment StoreEntitySet="SPIS_UZYTKOWNIKOW">
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+                <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+                <ScalarProperty Name="POZIOM_UPRAWNIEN" ColumnName="POZIOM_UPRAWNIEN" />
+                <ScalarProperty Name="HASLO" ColumnName="HASLO" />
+                <ScalarProperty Name="NAZWA_LOGOWANIE" ColumnName="NAZWA_LOGOWANIE" />
+                <ScalarProperty Name="UPRAWNIENIA" ColumnName="UPRAWNIENIA" />
+                <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+                <ScalarProperty Name="ID_UZYTKOWNIKA" ColumnName="ID_UZYTKOWNIKA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

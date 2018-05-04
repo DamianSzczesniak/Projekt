@@ -19,8 +19,9 @@ namespace PROJEKTapp
         public int UPRAWNIENIA { get; set; }
         public string NAZWA_LOGOWANIE { get; set; }
         public string HASLO { get; set; }
-        public string Poziom_Uprawnien { get; set; }
+        public string POZIOM_UPRAWNIEN { get; set; }
         public string IMIE { get; set; }
         public string NAZWISKO { get; set; }
+        public string PESEL { get; set; }
     }
 }

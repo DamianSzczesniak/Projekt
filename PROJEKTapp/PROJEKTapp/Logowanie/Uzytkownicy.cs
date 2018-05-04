@@ -21,7 +21,19 @@ namespace PROJEKTapp.Logowanie
 
         private void Uzytkownicy_Load(object sender, EventArgs e)
         {
-            DGW_KOnta_Uzytkownikow.DataSource = db.SPIS_UZYTKOWNIKOW.ToList();
+           //  = db.SPIS_UZYTKOWNIKOW.ToList();
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            using (Zmiana_Danych_Uzytkownika zDU = new Zmiana_Danych_Uzytkownika(0, db))
+            {
+                //if (frmDEF.ShowDialog() == DialogResult.OK)
+                //{
+                //    FirmyBindingSource.DataSource = db.FIRMY.ToList();
+                //    db.SaveChanges();
+                //}
+            }
         }
     }
 }
