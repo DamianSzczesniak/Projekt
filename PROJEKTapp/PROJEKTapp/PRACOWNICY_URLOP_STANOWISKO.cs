@@ -13,17 +13,20 @@ namespace PROJEKTapp
 {
 
 using System;
+    using System.Collections.Generic;
     
-public partial class AddPracownik_Result
+public partial class PRACOWNICY_URLOP_STANOWISKO
 {
 
-    public string NAZWA_PRODUKTU { get; set; }
+    public System.DateTime DATA_START { get; set; }
 
-    public string MODEL { get; set; }
+    public System.DateTime DATA_KONIEC { get; set; }
 
-    public string MARKA { get; set; }
+    public string NAZWISKO { get; set; }
 
-    public string TYP_MASZYNY { get; set; }
+    public string IMIE { get; set; }
+
+    public string STANOWISKO { get; set; }
 
 }
 

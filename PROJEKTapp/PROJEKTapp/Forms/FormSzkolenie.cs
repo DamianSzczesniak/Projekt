@@ -14,12 +14,24 @@ namespace PROJEKTapp
     {
         KWZP_PROJEKTEntities db;//połaczenie z bazą danych
         bool ladowanieformularzazokienkami;
+        PRACOWNICY pracownik;
 
         public FormSzkolenie(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
         {
             this.db = db;
             this.ladowanieformularzazokienkami = ladowanieformularzazokienkami;
             InitializeComponent();
+
+            int rok = DateTime.Now.Year;
+            for (int i = rok - 5; i <= rok + 5; i++)
+            {
+                cbRokSzkolenia.Items.Add(i.ToString());
+            }
+            cbRokSzkolenia.SelectedIndex = 5;
+
+            //cbSzkolenia.DataSource = db.SZKOLENIA.Where(szkolenia => szkolenia.DATA_START.Year.Equals(cbRokSzkolenia.SelectedValue)).ToList();
+            cbSzkolenia.DataSource = db.SZKOLENIA.ToList();
+            cbSzkolenia.DisplayMember = "NAZWA_SZKOLENIA";
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -33,7 +45,8 @@ namespace PROJEKTapp
             {
                 pnlSzkoleniaControl.Show();
                 pnlUserSearch.Show();
-                //pnlUserField.Hide();
+                pnlNoweSzkolenie.Hide();
+                pnlDodajSzkolenie.Hide();
                 ladowanieformularzazokienkami = false;
                 this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
                 ListaPracownikow.Columns[0].HeaderText = "NUMER";
@@ -44,7 +57,7 @@ namespace PROJEKTapp
             {
                 pnlSzkoleniaControl.Hide();
                 pnlUserSearch.Hide();
-                //pnlUserField.Hide();
+                pnlNoweSzkolenie.Hide();
                 ladowanieformularzazokienkami = true;
             }
         }
@@ -56,7 +69,7 @@ namespace PROJEKTapp
                 ladowanieformularzazokienkami = false;
                 pnlSzkoleniaControl.Show();
                 pnlUserSearch.Show();
-                //pnlUserField.Hide();
+                pnlNoweSzkolenie.Hide();
                 this.ListaPracownikow.DataSource = 
                 ListaPracownikow.Columns[0].HeaderText = "NUMER";
                 ListaPracownikow.Columns[0].Width = 60;
@@ -67,7 +80,7 @@ namespace PROJEKTapp
                 ladowanieformularzazokienkami = true;
                 pnlSzkoleniaControl.Hide();
                 pnlUserSearch.Hide();
-               // pnlUserField.Hide();
+                pnlNoweSzkolenie.Hide();
             }
         }
 
@@ -101,6 +114,68 @@ namespace PROJEKTapp
             FormStatystyki statystyki = new FormStatystyki(db, ladowanieformularzazokienkami);
             statystyki.Show();
             this.Close();
+        }
+
+        private void btnNoweSzkolenie_Click(object sender, EventArgs e)
+        {
+            pnlDodajSzkolenie.Hide();
+            pnlNoweSzkolenie.Show();
+        }
+
+        private void btnZapiszDodaj_Click(object sender, EventArgs e)
+        {
+            if (txtboxOpis.Text == "" || txtboxNazwa.Text == "")
+            {
+                MessageBox.Show("Wypełnij wszystkie pola");
+            }
+            else
+            {
+                SZKOLENIA szkolenie = new SZKOLENIA();
+                szkolenie.NAZWA_SZKOLENIA = this.txtboxNazwa.Text;
+                szkolenie.OPIS_SZKOLENIA = this.txtboxOpis.Text;
+                szkolenie.DATA_START = this.dtpStart.Value;
+                szkolenie.DATA_KONIEC = this.dtpKoniec.Value;
+                db.SZKOLENIA.Add(szkolenie);
+                db.SaveChanges();
+                pnlDodajSzkolenie.Hide();
+            }
+            
+        }
+
+        private void btnWyczysc_Click(object sender, EventArgs e)
+        {
+            txtboxNazwa.Clear();
+            txtboxOpis.Clear();
+        }
+
+        private void btnAnuluj_Click(object sender, EventArgs e)
+        {
+            pnlNoweSzkolenie.Hide();
+            txtboxNazwa.Clear();
+            txtboxOpis.Clear();
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            pnlDodajSzkolenie.Show();
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            lblPracownik.Text = "Szkolenie pracownika " + ListaPracownikow.CurrentRow.Cells[1].Value + " " + ListaPracownikow.CurrentRow.Cells[2].Value;
+        }
+
+        private void btnAnulujSzkolenie_Click(object sender, EventArgs e)
+        {
+            pnlDodajSzkolenie.Hide();
+        }
+
+        private void btnZapiszSzkolenie_Click(object sender, EventArgs e)
+        {
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
+            SZKOLENIA szkolenie;
+            szkolenie = ((SZKOLENIA)cbSzkolenia.SelectedValue);
+            pracownik.SZKOLENIA.Add(szkolenie);
+            db.SaveChanges();
+            pnlDodajSzkolenie.Hide();
         }
     }
 }

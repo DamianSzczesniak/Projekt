@@ -104,6 +104,7 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DATA_STAT__ID_ZL__628FA481" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN" Width="1.5" PointX="17.375" PointY="11.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN_NAZWY" Width="1.5" PointX="17.375" PointY="14.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY_PRACOWNIKA" Width="1.5" PointX="0.75" PointY="18.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
