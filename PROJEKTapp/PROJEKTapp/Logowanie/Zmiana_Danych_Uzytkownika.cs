@@ -35,6 +35,16 @@ namespace PROJEKTapp.Logowanie
                 txtBLogin.Text = dane.NAZWA_LOGOWANIE;
                 txtBHaslo.Text = dane.HASLO;
             }
+            else
+            {
+                txtBoxPESEL.Hide();
+                cBPracownik.DataSource = db.PRACOWNICY.ToList();
+                cBPracownik.ValueMember = "ID_PRACOWNIK";
+                cBPracownik.DisplayMember = "PESEL";
+                cBPoziom.DataSource = db.UPRAWNIENIA.ToList();
+                cBPoziom.ValueMember = "ID_UPRAWNIENIA";
+                cBPoziom.DisplayMember = "NAZWA";
+            }
         }
 
         private void btnZapisz_Click(object sender, EventArgs e)
@@ -48,6 +58,17 @@ namespace PROJEKTapp.Logowanie
                 s.HASLO = txtBHaslo.Text;
                 s.ID_UZYTKOWNIKA = dane.ID_UZYTKOWNIKA;
                 db.Entry(s).State = EntityState.Modified;
+                db.SaveChanges();
+                this.Close();
+            }
+            else
+            {
+                UZYTKOWNICY s = new UZYTKOWNICY();
+                s.ID_PRACOWNIK = int.Parse(cBPracownik.SelectedValue.ToString());
+                s.UPRAWNIENIA = int.Parse(cBPoziom.SelectedValue.ToString());
+                s.NAZWA_LOGOWANIE = txtBLogin.Text;
+                s.HASLO = txtBHaslo.Text;
+                db.UZYTKOWNICY.Add(s);
                 db.SaveChanges();
                 this.Close();
             }

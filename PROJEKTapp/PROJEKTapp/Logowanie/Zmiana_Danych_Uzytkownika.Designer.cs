@@ -48,15 +48,12 @@
             // cBPracownik
             // 
             this.cBPracownik.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.pRACOWNICYBindingSource, "ID_PRACOWNIK", true));
-            this.cBPracownik.DataSource = this.pRACOWNICYBindingSource;
-            this.cBPracownik.DisplayMember = "PESEL";
             this.cBPracownik.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBPracownik.FormattingEnabled = true;
             this.cBPracownik.Location = new System.Drawing.Point(143, 19);
             this.cBPracownik.Name = "cBPracownik";
             this.cBPracownik.Size = new System.Drawing.Size(190, 21);
             this.cBPracownik.TabIndex = 0;
-            this.cBPracownik.ValueMember = "ID_PRACOWNIK";
             // 
             // pRACOWNICYBindingSource
             // 

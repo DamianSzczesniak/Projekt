@@ -503,6 +503,9 @@
     <EmbeddedResource Include="Logowanie\Uzytkownicy.resx">
       <DependentUpon>Uzytkownicy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logowanie\ZmianaHasla.resx">
+      <DependentUpon>ZmianaHasla.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logowanie\Zmiana_Danych_Uzytkownika.resx">
       <DependentUpon>Zmiana_Danych_Uzytkownika.cs</DependentUpon>
     </EmbeddedResource>
