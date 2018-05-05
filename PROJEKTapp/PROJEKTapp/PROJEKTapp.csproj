@@ -365,6 +365,12 @@
     <Compile Include="STANOWISKO_PRACOWNICY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="STAN_MATERIALY_NAZWY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="STAN_PRODUKTY_NAZWY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="STATUS_ZAMOWIENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -381,9 +387,6 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="SZKOLENIA.cs">
-      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TYPY_ZMIANY_STANU.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="UPRAWNIENIA.cs">
@@ -428,6 +431,12 @@
     <Compile Include="Forms_NoweZlecenie\ZleceniaPosredniczacy.Designer.cs">
       <DependentUpon>ZleceniaPosredniczacy.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZMIANA_STANU_MAGAZYNU_MATERIALOW.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZMIANA_STANU_MAGAZYNU_PRODUKTOW.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormLogowanie.resx">
       <DependentUpon>FormLogowanie.cs</DependentUpon>
     </EmbeddedResource>
@@ -448,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_NoweZlecenie\FormOferta.resx">
       <DependentUpon>FormOferta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Froms_Logistyka\AkcjaMagazynProduktów.resx">
+      <DependentUpon>AkcjaMagazynProduktów.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Froms_Logistyka\FormListaFaktur.resx">
       <DependentUpon>FormListaFaktur.cs</DependentUpon>
@@ -546,6 +558,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="SPIS_UZYTKOWNIKOW.datasource" />
+    <None Include="STAN_MATERIALY_NAZWY.datasource" />
+    <None Include="STAN_PRODUKTY_NAZWY.datasource" />
     <None Include="UPRAWNIENIA.datasource" />
   </ItemGroup>
   <ItemGroup>

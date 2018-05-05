@@ -28,16 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Btn_Back = new System.Windows.Forms.Button();
-            this.TopBar_2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.GridRekordyMagazyn = new System.Windows.Forms.DataGridView();
-            this.ComboWyborMagazynu = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.DGV_MATERIALY = new System.Windows.Forms.DataGridView();
             this.ButtonDodajRekord = new System.Windows.Forms.Button();
+            this.TopBar_2 = new System.Windows.Forms.PictureBox();
+            this.checkBSurowce = new System.Windows.Forms.CheckBox();
+            this.checkBMaterialy = new System.Windows.Forms.CheckBox();
+            this.checkBWszystkie = new System.Windows.Forms.CheckBox();
+            this.cBoxFlitracja = new System.Windows.Forms.ComboBox();
+            this.DGV_PRODUKTY = new System.Windows.Forms.DataGridView();
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sEKTORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aLEJKADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTANDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTANPRODUKTYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nAZWADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDZLECENIADataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sEKTORDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aLEJKADataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTANDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDMATERIALUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTANMATERIALYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_MATERIALY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopBar_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridRekordyMagazyn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_PRODUKTY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTANPRODUKTYNAZWYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTANMATERIALYNAZWYBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Back
@@ -56,51 +77,26 @@
             this.Btn_Back.UseVisualStyleBackColor = false;
             this.Btn_Back.Click += new System.EventHandler(this.Btn_Back_Click);
             // 
-            // TopBar_2
+            // DGV_MATERIALY
             // 
-            this.TopBar_2.Image = global::PROJEKTapp.Properties.Resources.top_bar1;
-            this.TopBar_2.Location = new System.Drawing.Point(-135, 0);
-            this.TopBar_2.Name = "TopBar_2";
-            this.TopBar_2.Size = new System.Drawing.Size(1070, 83);
-            this.TopBar_2.TabIndex = 7;
-            this.TopBar_2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 100);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(936, 2);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
-            // GridRekordyMagazyn
-            // 
-            this.GridRekordyMagazyn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridRekordyMagazyn.Location = new System.Drawing.Point(16, 154);
-            this.GridRekordyMagazyn.Name = "GridRekordyMagazyn";
-            this.GridRekordyMagazyn.Size = new System.Drawing.Size(706, 335);
-            this.GridRekordyMagazyn.TabIndex = 19;
-            // 
-            // ComboWyborMagazynu
-            // 
-            this.ComboWyborMagazynu.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboWyborMagazynu.FormattingEnabled = true;
-            this.ComboWyborMagazynu.Location = new System.Drawing.Point(187, 107);
-            this.ComboWyborMagazynu.Name = "ComboWyborMagazynu";
-            this.ComboWyborMagazynu.Size = new System.Drawing.Size(121, 32);
-            this.ComboWyborMagazynu.TabIndex = 21;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(12, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 24);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Wybór magazynu:";
+            this.DGV_MATERIALY.AllowUserToAddRows = false;
+            this.DGV_MATERIALY.AllowUserToDeleteRows = false;
+            this.DGV_MATERIALY.AutoGenerateColumns = false;
+            this.DGV_MATERIALY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_MATERIALY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nAZWADataGridViewTextBoxColumn,
+            this.iDZLECENIADataGridViewTextBoxColumn1,
+            this.sEKTORDataGridViewTextBoxColumn1,
+            this.aLEJKADataGridViewTextBoxColumn1,
+            this.sTANDataGridViewTextBoxColumn1,
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1,
+            this.iDMATERIALUDataGridViewTextBoxColumn});
+            this.DGV_MATERIALY.DataSource = this.sTANMATERIALYNAZWYBindingSource;
+            this.DGV_MATERIALY.Location = new System.Drawing.Point(16, 154);
+            this.DGV_MATERIALY.Name = "DGV_MATERIALY";
+            this.DGV_MATERIALY.ReadOnly = true;
+            this.DGV_MATERIALY.Size = new System.Drawing.Size(706, 335);
+            this.DGV_MATERIALY.TabIndex = 19;
             // 
             // ButtonDodajRekord
             // 
@@ -115,38 +111,259 @@
             this.ButtonDodajRekord.Text = "Rejestruj Akcje";
             this.ButtonDodajRekord.UseVisualStyleBackColor = false;
             // 
+            // TopBar_2
+            // 
+            this.TopBar_2.Image = global::PROJEKTapp.Properties.Resources.top_bar1;
+            this.TopBar_2.Location = new System.Drawing.Point(-135, 0);
+            this.TopBar_2.Name = "TopBar_2";
+            this.TopBar_2.Size = new System.Drawing.Size(1070, 83);
+            this.TopBar_2.TabIndex = 7;
+            this.TopBar_2.TabStop = false;
+            // 
+            // checkBSurowce
+            // 
+            this.checkBSurowce.AutoSize = true;
+            this.checkBSurowce.Location = new System.Drawing.Point(209, 94);
+            this.checkBSurowce.Name = "checkBSurowce";
+            this.checkBSurowce.Size = new System.Drawing.Size(68, 17);
+            this.checkBSurowce.TabIndex = 23;
+            this.checkBSurowce.Text = "Surowce";
+            this.checkBSurowce.UseVisualStyleBackColor = true;
+            this.checkBSurowce.CheckedChanged += new System.EventHandler(this.checkBSurowce_CheckedChanged);
+            // 
+            // checkBMaterialy
+            // 
+            this.checkBMaterialy.AutoSize = true;
+            this.checkBMaterialy.Location = new System.Drawing.Point(209, 118);
+            this.checkBMaterialy.Name = "checkBMaterialy";
+            this.checkBMaterialy.Size = new System.Drawing.Size(70, 17);
+            this.checkBMaterialy.TabIndex = 24;
+            this.checkBMaterialy.Text = "Materiały";
+            this.checkBMaterialy.UseVisualStyleBackColor = true;
+            this.checkBMaterialy.CheckedChanged += new System.EventHandler(this.checkBMaterialy_CheckedChanged);
+            // 
+            // checkBWszystkie
+            // 
+            this.checkBWszystkie.AutoSize = true;
+            this.checkBWszystkie.Location = new System.Drawing.Point(384, 94);
+            this.checkBWszystkie.Name = "checkBWszystkie";
+            this.checkBWszystkie.Size = new System.Drawing.Size(74, 17);
+            this.checkBWszystkie.TabIndex = 25;
+            this.checkBWszystkie.Text = "Wszystkie";
+            this.checkBWszystkie.UseVisualStyleBackColor = true;
+            // 
+            // cBoxFlitracja
+            // 
+            this.cBoxFlitracja.FormattingEnabled = true;
+            this.cBoxFlitracja.Location = new System.Drawing.Point(384, 116);
+            this.cBoxFlitracja.Name = "cBoxFlitracja";
+            this.cBoxFlitracja.Size = new System.Drawing.Size(121, 21);
+            this.cBoxFlitracja.TabIndex = 27;
+            // 
+            // DGV_PRODUKTY
+            // 
+            this.DGV_PRODUKTY.AllowUserToAddRows = false;
+            this.DGV_PRODUKTY.AllowUserToDeleteRows = false;
+            this.DGV_PRODUKTY.AutoGenerateColumns = false;
+            this.DGV_PRODUKTY.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_PRODUKTY.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn,
+            this.iDZLECENIADataGridViewTextBoxColumn,
+            this.sEKTORDataGridViewTextBoxColumn,
+            this.aLEJKADataGridViewTextBoxColumn,
+            this.sTANDataGridViewTextBoxColumn,
+            this.iDPRODUKTUDataGridViewTextBoxColumn,
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn});
+            this.DGV_PRODUKTY.DataSource = this.sTANPRODUKTYNAZWYBindingSource;
+            this.DGV_PRODUKTY.Location = new System.Drawing.Point(16, 154);
+            this.DGV_PRODUKTY.Name = "DGV_PRODUKTY";
+            this.DGV_PRODUKTY.ReadOnly = true;
+            this.DGV_PRODUKTY.Size = new System.Drawing.Size(706, 335);
+            this.DGV_PRODUKTY.TabIndex = 28;
+            // 
+            // nAZWAPRODUKTUDataGridViewTextBoxColumn
+            // 
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.DataPropertyName = "NAZWA_PRODUKTU";
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.HeaderText = "NAZWA PRODUKTU";
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.Name = "nAZWAPRODUKTUDataGridViewTextBoxColumn";
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDZLECENIADataGridViewTextBoxColumn
+            // 
+            this.iDZLECENIADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
+            this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDZLECENIADataGridViewTextBoxColumn.Width = 101;
+            // 
+            // sEKTORDataGridViewTextBoxColumn
+            // 
+            this.sEKTORDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sEKTORDataGridViewTextBoxColumn.DataPropertyName = "SEKTOR";
+            this.sEKTORDataGridViewTextBoxColumn.HeaderText = "SEKTOR";
+            this.sEKTORDataGridViewTextBoxColumn.Name = "sEKTORDataGridViewTextBoxColumn";
+            this.sEKTORDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sEKTORDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // aLEJKADataGridViewTextBoxColumn
+            // 
+            this.aLEJKADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.aLEJKADataGridViewTextBoxColumn.DataPropertyName = "ALEJKA";
+            this.aLEJKADataGridViewTextBoxColumn.HeaderText = "ALEJKA";
+            this.aLEJKADataGridViewTextBoxColumn.Name = "aLEJKADataGridViewTextBoxColumn";
+            this.aLEJKADataGridViewTextBoxColumn.ReadOnly = true;
+            this.aLEJKADataGridViewTextBoxColumn.Width = 71;
+            // 
+            // sTANDataGridViewTextBoxColumn
+            // 
+            this.sTANDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sTANDataGridViewTextBoxColumn.DataPropertyName = "STAN";
+            this.sTANDataGridViewTextBoxColumn.HeaderText = "STAN";
+            this.sTANDataGridViewTextBoxColumn.Name = "sTANDataGridViewTextBoxColumn";
+            this.sTANDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sTANDataGridViewTextBoxColumn.Width = 61;
+            // 
+            // iDPRODUKTUDataGridViewTextBoxColumn
+            // 
+            this.iDPRODUKTUDataGridViewTextBoxColumn.DataPropertyName = "ID_PRODUKTU";
+            this.iDPRODUKTUDataGridViewTextBoxColumn.HeaderText = "ID_PRODUKTU";
+            this.iDPRODUKTUDataGridViewTextBoxColumn.Name = "iDPRODUKTUDataGridViewTextBoxColumn";
+            this.iDPRODUKTUDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDPRODUKTUDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iDLOKALIZACJIDataGridViewTextBoxColumn
+            // 
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn.DataPropertyName = "ID_LOKALIZACJI";
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn.HeaderText = "ID_LOKALIZACJI";
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn.Name = "iDLOKALIZACJIDataGridViewTextBoxColumn";
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sTANPRODUKTYNAZWYBindingSource
+            // 
+            this.sTANPRODUKTYNAZWYBindingSource.DataSource = typeof(PROJEKTapp.STAN_PRODUKTY_NAZWY);
+            // 
+            // nAZWADataGridViewTextBoxColumn
+            // 
+            this.nAZWADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nAZWADataGridViewTextBoxColumn.DataPropertyName = "NAZWA";
+            this.nAZWADataGridViewTextBoxColumn.HeaderText = "NAZWA MATERIALU";
+            this.nAZWADataGridViewTextBoxColumn.Name = "nAZWADataGridViewTextBoxColumn";
+            this.nAZWADataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDZLECENIADataGridViewTextBoxColumn1
+            // 
+            this.iDZLECENIADataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.iDZLECENIADataGridViewTextBoxColumn1.DataPropertyName = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn1.HeaderText = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn1.Name = "iDZLECENIADataGridViewTextBoxColumn1";
+            this.iDZLECENIADataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iDZLECENIADataGridViewTextBoxColumn1.Width = 101;
+            // 
+            // sEKTORDataGridViewTextBoxColumn1
+            // 
+            this.sEKTORDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sEKTORDataGridViewTextBoxColumn1.DataPropertyName = "SEKTOR";
+            this.sEKTORDataGridViewTextBoxColumn1.HeaderText = "SEKTOR";
+            this.sEKTORDataGridViewTextBoxColumn1.Name = "sEKTORDataGridViewTextBoxColumn1";
+            this.sEKTORDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.sEKTORDataGridViewTextBoxColumn1.Width = 76;
+            // 
+            // aLEJKADataGridViewTextBoxColumn1
+            // 
+            this.aLEJKADataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.aLEJKADataGridViewTextBoxColumn1.DataPropertyName = "ALEJKA";
+            this.aLEJKADataGridViewTextBoxColumn1.HeaderText = "ALEJKA";
+            this.aLEJKADataGridViewTextBoxColumn1.Name = "aLEJKADataGridViewTextBoxColumn1";
+            this.aLEJKADataGridViewTextBoxColumn1.ReadOnly = true;
+            this.aLEJKADataGridViewTextBoxColumn1.Width = 71;
+            // 
+            // sTANDataGridViewTextBoxColumn1
+            // 
+            this.sTANDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sTANDataGridViewTextBoxColumn1.DataPropertyName = "STAN";
+            this.sTANDataGridViewTextBoxColumn1.HeaderText = "STAN";
+            this.sTANDataGridViewTextBoxColumn1.Name = "sTANDataGridViewTextBoxColumn1";
+            this.sTANDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.sTANDataGridViewTextBoxColumn1.Width = 61;
+            // 
+            // iDLOKALIZACJIDataGridViewTextBoxColumn1
+            // 
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.DataPropertyName = "ID_LOKALIZACJI";
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.HeaderText = "ID_LOKALIZACJI";
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.Name = "iDLOKALIZACJIDataGridViewTextBoxColumn1";
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // iDMATERIALUDataGridViewTextBoxColumn
+            // 
+            this.iDMATERIALUDataGridViewTextBoxColumn.DataPropertyName = "ID_MATERIALU";
+            this.iDMATERIALUDataGridViewTextBoxColumn.HeaderText = "ID_MATERIALU";
+            this.iDMATERIALUDataGridViewTextBoxColumn.Name = "iDMATERIALUDataGridViewTextBoxColumn";
+            this.iDMATERIALUDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDMATERIALUDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sTANMATERIALYNAZWYBindingSource
+            // 
+            this.sTANMATERIALYNAZWYBindingSource.DataSource = typeof(PROJEKTapp.STAN_MATERIALY_NAZWY);
+            // 
             // FormZmianaStanuMagazynu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(734, 544);
+            this.Controls.Add(this.DGV_PRODUKTY);
+            this.Controls.Add(this.cBoxFlitracja);
+            this.Controls.Add(this.checkBWszystkie);
+            this.Controls.Add(this.checkBMaterialy);
+            this.Controls.Add(this.checkBSurowce);
             this.Controls.Add(this.ButtonDodajRekord);
-            this.Controls.Add(this.ComboWyborMagazynu);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.GridRekordyMagazyn);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.DGV_MATERIALY);
             this.Controls.Add(this.Btn_Back);
             this.Controls.Add(this.TopBar_2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormZmianaStanuMagazynu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormZmianaStanuMagazynu";
+            this.Load += new System.EventHandler(this.FormZmianaStanuMagazynu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_MATERIALY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopBar_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridRekordyMagazyn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_PRODUKTY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTANPRODUKTYNAZWYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTANMATERIALYNAZWYBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox TopBar_2;
         private System.Windows.Forms.Button Btn_Back;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView GridRekordyMagazyn;
-        private System.Windows.Forms.ComboBox ComboWyborMagazynu;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView DGV_MATERIALY;
         private System.Windows.Forms.Button ButtonDodajRekord;
+        private System.Windows.Forms.PictureBox TopBar_2;
+        private System.Windows.Forms.CheckBox checkBSurowce;
+        private System.Windows.Forms.CheckBox checkBMaterialy;
+        private System.Windows.Forms.CheckBox checkBWszystkie;
+        private System.Windows.Forms.ComboBox cBoxFlitracja;
+        private System.Windows.Forms.DataGridView DGV_PRODUKTY;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nAZWADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDZLECENIADataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sEKTORDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aLEJKADataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTANDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDLOKALIZACJIDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDMATERIALUDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sTANMATERIALYNAZWYBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nAZWAPRODUKTUDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDZLECENIADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sEKTORDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aLEJKADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTANDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDPRODUKTUDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDLOKALIZACJIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sTANPRODUKTYNAZWYBindingSource;
     }
 }

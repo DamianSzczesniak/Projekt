@@ -34,7 +34,6 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAWKA" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAWKA_PRACOWNICY" Width="1.5" PointX="10.5" PointY="11.375" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.SZKOLENIA" Width="1.5" PointX="7.5" PointY="31.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.TYPY_ZMIANY_STANU" Width="1.5" PointX="13.375" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.WALUTY" Width="1.5" PointX="12.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.WOLNE" Width="1.5" PointX="8.25" PointY="22.5" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.WOLNE_PRACOWNICY" Width="1.5" PointX="10.5" PointY="19.375" IsExpanded="true" />
@@ -106,6 +105,16 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY_PRACOWNIKA" Width="1.5" PointX="0.75" PointY="18.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.LOKALIZACJA" Width="1.5" PointX="11" PointY="7" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.SPIS_UZYTKOWNIKOW" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZMIANA_STANU_MAGAZYNU_MATERIALOW" Width="1.5" PointX="16.25" PointY="21.125" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Width="1.5" PointX="19" PointY="20.125" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_LO__25518C17" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_LO__2A164134" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_MA__2645B050" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_PR__2B0A656D" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_ZL__2739D489" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_ZL__2BFE89A6" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAN_MATERIALY_NAZWY" Width="1.5" PointX="19.375" PointY="4.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAN_PRODUKTY_NAZWY" Width="1.5" PointX="19.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

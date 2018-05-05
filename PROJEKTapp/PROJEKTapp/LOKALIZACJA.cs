@@ -14,9 +14,21 @@ namespace PROJEKTapp
     
     public partial class LOKALIZACJA
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public LOKALIZACJA()
+        {
+            this.ZMIANA_STANU_MAGAZYNU_MATERIALOW = new HashSet<ZMIANA_STANU_MAGAZYNU_MATERIALOW>();
+            this.ZMIANA_STANU_MAGAZYNU_PRODUKTOW = new HashSet<ZMIANA_STANU_MAGAZYNU_PRODUKTOW>();
+        }
+    
         public int ID_LOKALIZACJI { get; set; }
         public string SEKTOR { get; set; }
         public string ALEJKA { get; set; }
         public Nullable<bool> CzyPelne { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ZMIANA_STANU_MAGAZYNU_MATERIALOW> ZMIANA_STANU_MAGAZYNU_MATERIALOW { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ZMIANA_STANU_MAGAZYNU_PRODUKTOW> ZMIANA_STANU_MAGAZYNU_PRODUKTOW { get; set; }
     }
 }

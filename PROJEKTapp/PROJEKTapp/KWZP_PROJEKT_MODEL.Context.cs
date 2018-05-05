@@ -56,7 +56,6 @@ namespace PROJEKTapp
         public virtual DbSet<STAWKA> STAWKA { get; set; }
         public virtual DbSet<STAWKA_PRACOWNICY> STAWKA_PRACOWNICY { get; set; }
         public virtual DbSet<SZKOLENIA> SZKOLENIA { get; set; }
-        public virtual DbSet<TYPY_ZMIANY_STANU> TYPY_ZMIANY_STANU { get; set; }
         public virtual DbSet<WALUTY> WALUTY { get; set; }
         public virtual DbSet<WOLNE> WOLNE { get; set; }
         public virtual DbSet<WOLNE_PRACOWNICY> WOLNE_PRACOWNICY { get; set; }
@@ -85,6 +84,10 @@ namespace PROJEKTapp
         public virtual DbSet<PRACOWNIK_DANE> PRACOWNIK_DANE { get; set; }
         public virtual DbSet<LOKALIZACJA> LOKALIZACJA { get; set; }
         public virtual DbSet<SPIS_UZYTKOWNIKOW> SPIS_UZYTKOWNIKOW { get; set; }
+        public virtual DbSet<ZMIANA_STANU_MAGAZYNU_MATERIALOW> ZMIANA_STANU_MAGAZYNU_MATERIALOW { get; set; }
+        public virtual DbSet<ZMIANA_STANU_MAGAZYNU_PRODUKTOW> ZMIANA_STANU_MAGAZYNU_PRODUKTOW { get; set; }
+        public virtual DbSet<STAN_MATERIALY_NAZWY> STAN_MATERIALY_NAZWY { get; set; }
+        public virtual DbSet<STAN_PRODUKTY_NAZWY> STAN_PRODUKTY_NAZWY { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {

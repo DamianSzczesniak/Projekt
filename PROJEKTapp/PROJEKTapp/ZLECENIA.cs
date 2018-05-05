@@ -20,6 +20,8 @@ namespace PROJEKTapp
             this.FAKTURY = new HashSet<FAKTURY>();
             this.REALIZACJA_PRODUKCJA = new HashSet<REALIZACJA_PRODUKCJA>();
             this.DATA_STATUSU_ZLECENIA = new HashSet<DATA_STATUSU_ZLECENIA>();
+            this.ZMIANA_STANU_MAGAZYNU_MATERIALOW = new HashSet<ZMIANA_STANU_MAGAZYNU_MATERIALOW>();
+            this.ZMIANA_STANU_MAGAZYNU_PRODUKTOW = new HashSet<ZMIANA_STANU_MAGAZYNU_PRODUKTOW>();
         }
     
         public int ID_ZLECENIA { get; set; }
@@ -34,5 +36,9 @@ namespace PROJEKTapp
         public virtual ICollection<REALIZACJA_PRODUKCJA> REALIZACJA_PRODUKCJA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DATA_STATUSU_ZLECENIA> DATA_STATUSU_ZLECENIA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ZMIANA_STANU_MAGAZYNU_MATERIALOW> ZMIANA_STANU_MAGAZYNU_MATERIALOW { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ZMIANA_STANU_MAGAZYNU_PRODUKTOW> ZMIANA_STANU_MAGAZYNU_PRODUKTOW { get; set; }
     }
 }
