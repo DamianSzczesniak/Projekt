@@ -88,6 +88,10 @@ namespace PROJEKTapp
         public virtual DbSet<ZMIANA_STANU_MAGAZYNU_PRODUKTOW> ZMIANA_STANU_MAGAZYNU_PRODUKTOW { get; set; }
         public virtual DbSet<STAN_MATERIALY_NAZWY> STAN_MATERIALY_NAZWY { get; set; }
         public virtual DbSet<STAN_PRODUKTY_NAZWY> STAN_PRODUKTY_NAZWY { get; set; }
+        public virtual DbSet<KREATOR_FAKTUR> KREATOR_FAKTUR { get; set; }
+        public virtual DbSet<PRZYGOTOWANIE_TRANSPORTU> PRZYGOTOWANIE_TRANSPORTU { get; set; }
+        public virtual DbSet<ZAPOTRZEBOWANIE_MATERIAL> ZAPOTRZEBOWANIE_MATERIAL { get; set; }
+        public virtual DbSet<ZLECENIA_LOKALIZACJA> ZLECENIA_LOKALIZACJA { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {

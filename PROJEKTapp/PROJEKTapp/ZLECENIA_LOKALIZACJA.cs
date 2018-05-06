@@ -12,14 +12,13 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class STAN_PRODUKTY_NAZWY
+    public partial class ZLECENIA_LOKALIZACJA
     {
-        public int ID_PRODUKTU { get; set; }
         public int ID_ZLECENIA { get; set; }
-        public int ID_LOKALIZACJI { get; set; }
-        public Nullable<int> STAN { get; set; }
+        public Nullable<int> ID_PRODUKTU { get; set; }
+        public string NAZWA_PRODUKTU { get; set; }
+        public Nullable<int> ILOSC { get; set; }
         public string SEKTOR { get; set; }
         public string ALEJKA { get; set; }
-        public string NAZWA_PRODUKTU { get; set; }
     }
 }

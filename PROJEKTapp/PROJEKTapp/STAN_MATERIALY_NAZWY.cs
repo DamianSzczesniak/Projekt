@@ -14,12 +14,12 @@ namespace PROJEKTapp
     
     public partial class STAN_MATERIALY_NAZWY
     {
-        public Nullable<int> ID_MATERIALU { get; set; }
-        public Nullable<int> ID_ZLECENIA { get; set; }
-        public Nullable<int> ID_LOKALIZACJI { get; set; }
+        public int ID_MATERIALU { get; set; }
+        public int ID_ZLECENIA { get; set; }
+        public int ID_LOKALIZACJI { get; set; }
         public Nullable<int> STAN { get; set; }
         public string SEKTOR { get; set; }
         public string ALEJKA { get; set; }
-        public string NAZWA { get; set; }
+        public string PELNA_NAZWA_MATERIALU { get; set; }
     }
 }

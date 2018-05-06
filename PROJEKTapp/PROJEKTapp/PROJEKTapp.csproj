@@ -228,6 +228,9 @@
     <Compile Include="GABARYT_PRODUTKU.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="KREATOR_FAKTUR.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="KWZP_PROJEKT_MODEL.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -350,6 +353,9 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PRZYGOTOWANIE_TRANSPORTU.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="REALIZACJA_PRODUKCJA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -416,6 +422,9 @@
     <Compile Include="ZAMOWIENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="ZAPOTRZEBOWANIE_MATERIAL.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -430,6 +439,9 @@
     </Compile>
     <Compile Include="Forms_NoweZlecenie\ZleceniaPosredniczacy.Designer.cs">
       <DependentUpon>ZleceniaPosredniczacy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZLECENIA_LOKALIZACJA.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="ZMIANA_STANU_MAGAZYNU_MATERIALOW.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
@@ -559,7 +571,6 @@
     </Compile>
     <None Include="SPIS_UZYTKOWNIKOW.datasource" />
     <None Include="STAN_MATERIALY_NAZWY.datasource" />
-    <None Include="STAN_PRODUKTY_NAZWY.datasource" />
     <None Include="UPRAWNIENIA.datasource" />
   </ItemGroup>
   <ItemGroup>

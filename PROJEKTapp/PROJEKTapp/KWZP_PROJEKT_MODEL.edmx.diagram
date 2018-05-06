@@ -115,6 +115,8 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_ZL__2BFE89A6" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAN_MATERIALY_NAZWY" Width="1.5" PointX="19.375" PointY="4.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAN_PRODUKTY_NAZWY" Width="1.5" PointX="19.375" PointY="8.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRZYGOTOWANIE_TRANSPORTU" Width="1.5" PointX="19.375" PointY="12.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_LOKALIZACJA" Width="1.5" PointX="20.375" PointY="15.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

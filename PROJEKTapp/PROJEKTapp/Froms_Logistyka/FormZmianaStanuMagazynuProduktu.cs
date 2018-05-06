@@ -53,7 +53,35 @@ namespace PROJEKTapp.Forms
         {
             sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.ToList();
             sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
+            
+            cBoxFlitracja.DataSource = db.ZLECENIA.ToList();
+            cBoxFlitracja.ValueMember = "ID_ZLECENIA";
+            cBoxFlitracja.SelectedValue = "ID_ZLECENIA";
             checkBMaterialy.Checked = true;
+            checkBWszystkie.Checked = true;
+
+           
+        }
+
+        private void checkBWszystkie_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBWszystkie.Checked)
+            {
+               sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.ToList();
+                sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
+            }
+            else
+            {
+                int g = int.Parse(cBoxFlitracja.SelectedValue.ToString());
+                sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
+                sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
+            }
+        }
+
+        private void cBoxFlitracja_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            checkBWszystkie.Checked = false;
+           
         }
     }
 }
