@@ -25,11 +25,6 @@ namespace PROJEKTapp.Forms
             this.Close();
         }
 
-        private void ButtonZmianaStanu_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkBSurowce_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBProdukty.Checked )
@@ -136,7 +131,9 @@ namespace PROJEKTapp.Forms
         {
             db.SaveChanges();
             KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
-            db = ndb;
+            db.STAN_MATERIALY_NAZWY = ndb.STAN_MATERIALY_NAZWY;
+            db.STAN_PRODUKTY_NAZWY = ndb.STAN_PRODUKTY_NAZWY;
+            db.SaveChanges();
 
             if (checkBWszystkie.Checked)
             {
@@ -157,8 +154,7 @@ namespace PROJEKTapp.Forms
             {
                 if (AMP.ShowDialog() == DialogResult.OK)
                 {
-                   // FirmyBindingSource.DataSource = db.FIRMY.ToList();
-                    db.SaveChanges();
+                    zapisZmianWidok();
                 }
             }
         }
