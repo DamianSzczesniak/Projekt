@@ -14,10 +14,12 @@ namespace PROJEKTapp.Froms_Logistyka
     {
         KWZP_PROJEKTEntities db;
         bool materialy;
-        public AkcjaMagazynProduktów(KWZP_PROJEKTEntities db, bool materialy)
+        object dane;
+        public AkcjaMagazynProduktów(KWZP_PROJEKTEntities db, bool materialy,object dane)
         {
             this.db = db;
             this.materialy = materialy;
+            this.dane = dane;
             InitializeComponent();
         }
 
@@ -25,17 +27,35 @@ namespace PROJEKTapp.Froms_Logistyka
         {
             if (materialy)
             {
-                lblItem.Text = "Materiał :";
-                cBoxSurPro.DataSource = db.STAN_MATERIALY_NAZWY.ToList();
-                cBoxSurPro.DisplayMember = "PELNA_NAZWA_MATERIALU";
-                cBoxSurPro.ValueMember = "ID_MATERIALU";
+                if (dane == null)
+                {
+                    lblItem.Text = "Materiał :";
+                    cBoxSurPro.DataSource = db.STAN_MATERIALY_NAZWY.ToList();
+                    cBoxSurPro.DisplayMember = "PELNA_NAZWA_MATERIALU";
+                    cBoxSurPro.ValueMember = "ID_MATERIALU";
+                    txtBoxRAkcji.Text = "DODAWANIE";
+                }
+                else
+                {
+                    txtBoxRAkcji.Text = "ODBIÓR";
+
+                }
             }
             else
             {
-                lblItem.Text = "Produkt :";
-                cBoxSurPro.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
-                cBoxSurPro.DisplayMember = "NAZWA_PRODUKTU";
-                cBoxSurPro.ValueMember = "ID_PRODUKTU";
+                if (dane == null)
+                {
+                    lblItem.Text = "Produkt :";
+                    cBoxSurPro.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
+                    cBoxSurPro.DisplayMember = "NAZWA_PRODUKTU";
+                    cBoxSurPro.ValueMember = "ID_PRODUKTU";
+                    txtBoxRAkcji.Text = "DODAWANIE";
+                }
+                else
+                {
+                    txtBoxRAkcji.Text = "ODBIÓR";
+
+                }
             }
         }
     }

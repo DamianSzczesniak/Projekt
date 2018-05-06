@@ -52,6 +52,7 @@ namespace PROJEKTapp.Forms
 
         private void FormZmianaStanuMagazynu_Load(object sender, EventArgs e)
         {
+            
             sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.ToList();
             sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
             
@@ -87,12 +88,35 @@ namespace PROJEKTapp.Forms
 
         private void btnZdejmij_Click(object sender, EventArgs e)
         {
+            if (checkBMaterialy.Checked)
+            {
+                using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANMATERIALYNAZWYBindingSource.Current as STAN_MATERIALY_NAZWY))
+                {
+                    if (AMP.ShowDialog() == DialogResult.OK)
+                    {
+                        // FirmyBindingSource.DataSource = db.FIRMY.ToList();
+                        db.SaveChanges();
+                    }
 
+                }
+            }
+            else
+            {
+                using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANPRODUKTYNAZWYBindingSource.Current as STAN_MATERIALY_NAZWY))
+                {
+                    if (AMP.ShowDialog() == DialogResult.OK)
+                    {
+                        // FirmyBindingSource.DataSource = db.FIRMY.ToList();
+                        db.SaveChanges();
+                    }
+
+                }
+            }
         }
 
         private void ButtonDodajRekord_Click(object sender, EventArgs e)
         {
-            using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked) )
+            using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, null) )
             {
                 if (AMP.ShowDialog() == DialogResult.OK)
                 {

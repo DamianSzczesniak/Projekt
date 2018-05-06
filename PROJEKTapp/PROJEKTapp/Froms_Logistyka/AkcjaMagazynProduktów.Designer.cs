@@ -36,9 +36,9 @@
             this.btnZapisz = new System.Windows.Forms.Button();
             this.cBoxSurPro = new System.Windows.Forms.ComboBox();
             this.cBoxLokalizacja = new System.Windows.Forms.ComboBox();
-            this.cBoxRodzajAkcji = new System.Windows.Forms.ComboBox();
             this.txtBoxIlosc = new System.Windows.Forms.TextBox();
             this.cBoxPrzypisaneZlecenie = new System.Windows.Forms.ComboBox();
+            this.txtBoxRAkcji = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblItem
@@ -111,14 +111,6 @@
             this.cBoxLokalizacja.Size = new System.Drawing.Size(152, 21);
             this.cBoxLokalizacja.TabIndex = 9;
             // 
-            // cBoxRodzajAkcji
-            // 
-            this.cBoxRodzajAkcji.FormattingEnabled = true;
-            this.cBoxRodzajAkcji.Location = new System.Drawing.Point(147, 80);
-            this.cBoxRodzajAkcji.Name = "cBoxRodzajAkcji";
-            this.cBoxRodzajAkcji.Size = new System.Drawing.Size(152, 21);
-            this.cBoxRodzajAkcji.TabIndex = 10;
-            // 
             // txtBoxIlosc
             // 
             this.txtBoxIlosc.Location = new System.Drawing.Point(146, 136);
@@ -134,14 +126,22 @@
             this.cBoxPrzypisaneZlecenie.Size = new System.Drawing.Size(152, 21);
             this.cBoxPrzypisaneZlecenie.TabIndex = 12;
             // 
+            // txtBoxRAkcji
+            // 
+            this.txtBoxRAkcji.Location = new System.Drawing.Point(147, 80);
+            this.txtBoxRAkcji.Name = "txtBoxRAkcji";
+            this.txtBoxRAkcji.ReadOnly = true;
+            this.txtBoxRAkcji.Size = new System.Drawing.Size(151, 20);
+            this.txtBoxRAkcji.TabIndex = 13;
+            // 
             // AkcjaMagazynProduktów
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(318, 332);
+            this.Controls.Add(this.txtBoxRAkcji);
             this.Controls.Add(this.cBoxPrzypisaneZlecenie);
             this.Controls.Add(this.txtBoxIlosc);
-            this.Controls.Add(this.cBoxRodzajAkcji);
             this.Controls.Add(this.cBoxLokalizacja);
             this.Controls.Add(this.cBoxSurPro);
             this.Controls.Add(this.btnZapisz);
@@ -168,8 +168,8 @@
         private System.Windows.Forms.Button btnZapisz;
         private System.Windows.Forms.ComboBox cBoxSurPro;
         private System.Windows.Forms.ComboBox cBoxLokalizacja;
-        private System.Windows.Forms.ComboBox cBoxRodzajAkcji;
         private System.Windows.Forms.TextBox txtBoxIlosc;
         private System.Windows.Forms.ComboBox cBoxPrzypisaneZlecenie;
+        private System.Windows.Forms.TextBox txtBoxRAkcji;
     }
 }
