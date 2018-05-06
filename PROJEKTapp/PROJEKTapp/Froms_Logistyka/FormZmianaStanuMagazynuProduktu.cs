@@ -114,8 +114,7 @@ namespace PROJEKTapp.Forms
                 {
                     if (AMP.ShowDialog() == DialogResult.OK)
                     {
-                        // FirmyBindingSource.DataSource = db.FIRMY.ToList();
-                        db.SaveChanges();
+                        zapisZmianWidok();
                     }
 
                 }
@@ -126,11 +125,29 @@ namespace PROJEKTapp.Forms
                 {
                     if (AMP.ShowDialog() == DialogResult.OK)
                     {
-                        // FirmyBindingSource.DataSource = db.FIRMY.ToList();
-                        db.SaveChanges();
+                        zapisZmianWidok();
                     }
-
+                    
                 }
+            }
+        }
+
+        public void zapisZmianWidok()
+        {
+            db.SaveChanges();
+            KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
+            db = ndb;
+
+            if (checkBWszystkie.Checked)
+            {
+                sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.ToList();
+                sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
+            }
+            else
+            {
+                int g = int.Parse(cBoxFlitracja.SelectedValue.ToString());
+                sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
+                sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
             }
         }
 

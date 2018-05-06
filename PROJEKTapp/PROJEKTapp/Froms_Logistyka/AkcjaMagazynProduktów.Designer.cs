@@ -39,6 +39,8 @@
             this.txtBoxIlosc = new System.Windows.Forms.TextBox();
             this.cBoxPrzypisaneZlecenie = new System.Windows.Forms.ComboBox();
             this.txtBoxRAkcji = new System.Windows.Forms.TextBox();
+            this.txtBoxData = new System.Windows.Forms.TextBox();
+            this.lblData = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblItem
@@ -88,13 +90,14 @@
             // 
             // btnZapisz
             // 
-            this.btnZapisz.Location = new System.Drawing.Point(122, 297);
+            this.btnZapisz.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnZapisz.Location = new System.Drawing.Point(122, 338);
             this.btnZapisz.Name = "btnZapisz";
             this.btnZapisz.Size = new System.Drawing.Size(75, 23);
             this.btnZapisz.TabIndex = 5;
             this.btnZapisz.Text = "Zapisz";
             this.btnZapisz.UseVisualStyleBackColor = true;
-            this.btnZapisz.Click += new System.EventHandler(this.btnZapisz_Click);
+          
             // 
             // cBoxSurPro
             // 
@@ -139,11 +142,30 @@
             this.txtBoxRAkcji.Size = new System.Drawing.Size(151, 20);
             this.txtBoxRAkcji.TabIndex = 13;
             // 
+            // txtBoxData
+            // 
+            this.txtBoxData.Location = new System.Drawing.Point(147, 296);
+            this.txtBoxData.Name = "txtBoxData";
+            this.txtBoxData.ReadOnly = true;
+            this.txtBoxData.Size = new System.Drawing.Size(152, 20);
+            this.txtBoxData.TabIndex = 14;
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(30, 296);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(39, 13);
+            this.lblData.TabIndex = 15;
+            this.lblData.Text = "Data : ";
+            // 
             // AkcjaMagazynProduktów
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 332);
+            this.ClientSize = new System.Drawing.Size(318, 378);
+            this.Controls.Add(this.lblData);
+            this.Controls.Add(this.txtBoxData);
             this.Controls.Add(this.txtBoxRAkcji);
             this.Controls.Add(this.cBoxPrzypisaneZlecenie);
             this.Controls.Add(this.txtBoxIlosc);
@@ -157,6 +179,7 @@
             this.Controls.Add(this.lblItem);
             this.Name = "AkcjaMagazynProduktów";
             this.Text = "AkcjaMagazynProduktów";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AkcjaMagazynProduktów_FormClosing);
             this.Load += new System.EventHandler(this.AkcjaMagazynProduktów_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,5 +199,7 @@
         private System.Windows.Forms.TextBox txtBoxIlosc;
         private System.Windows.Forms.ComboBox cBoxPrzypisaneZlecenie;
         private System.Windows.Forms.TextBox txtBoxRAkcji;
+        private System.Windows.Forms.TextBox txtBoxData;
+        private System.Windows.Forms.Label lblData;
     }
 }

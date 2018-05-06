@@ -123,7 +123,7 @@
             this.btnZapisz.TabIndex = 4;
             this.btnZapisz.Text = "Zapisz";
             this.btnZapisz.UseVisualStyleBackColor = true;
-          
+            
             // 
             // FormDodajEdytujFirme
             // 
