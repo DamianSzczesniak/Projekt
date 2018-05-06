@@ -94,6 +94,7 @@
             this.btnZapisz.TabIndex = 5;
             this.btnZapisz.Text = "Zapisz";
             this.btnZapisz.UseVisualStyleBackColor = true;
+            this.btnZapisz.Click += new System.EventHandler(this.btnZapisz_Click);
             // 
             // cBoxSurPro
             // 
@@ -107,6 +108,7 @@
             // 
             // cBoxLokalizacja
             // 
+            this.cBoxLokalizacja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxLokalizacja.FormattingEnabled = true;
             this.cBoxLokalizacja.Location = new System.Drawing.Point(147, 191);
             this.cBoxLokalizacja.Name = "cBoxLokalizacja";
@@ -122,6 +124,7 @@
             // 
             // cBoxPrzypisaneZlecenie
             // 
+            this.cBoxPrzypisaneZlecenie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxPrzypisaneZlecenie.FormattingEnabled = true;
             this.cBoxPrzypisaneZlecenie.Location = new System.Drawing.Point(146, 247);
             this.cBoxPrzypisaneZlecenie.Name = "cBoxPrzypisaneZlecenie";

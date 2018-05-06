@@ -122,7 +122,7 @@ namespace PROJEKTapp.Forms
             }
             else
             {
-                using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANPRODUKTYNAZWYBindingSource.Current as STAN_MATERIALY_NAZWY))
+                using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANPRODUKTYNAZWYBindingSource.Current as STAN_PRODUKTY_NAZWY))
                 {
                     if (AMP.ShowDialog() == DialogResult.OK)
                     {
