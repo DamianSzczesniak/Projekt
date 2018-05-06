@@ -38,6 +38,10 @@ namespace PROJEKTapp.Forms
                 DGV_PRODUKTY.Show();
                 DGV_MATERIALY.Hide();
             }
+            else
+            {
+                checkBMaterialy.Checked = true;
+            }
         }
 
         private void checkBMaterialy_CheckedChanged(object sender, EventArgs e)
@@ -48,6 +52,10 @@ namespace PROJEKTapp.Forms
                 DGV_MATERIALY.Show();
                 DGV_PRODUKTY.Hide();
             }
+            else
+            {
+                checkBProdukty.Checked = true;
+            }
         }
 
         private void FormZmianaStanuMagazynu_Load(object sender, EventArgs e)
@@ -55,14 +63,17 @@ namespace PROJEKTapp.Forms
             
             sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.ToList();
             sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
-            
+            checkBMaterialy.Checked = true;
+            checkBWszystkie.Checked = true;
             cBoxFlitracja.DataSource = db.ZLECENIA.ToList();
             cBoxFlitracja.ValueMember = "ID_ZLECENIA";
             cBoxFlitracja.SelectedValue = "ID_ZLECENIA";
-            checkBMaterialy.Checked = true;
-            checkBWszystkie.Checked = true;
+            
 
-           
+
+
+
+
         }
 
         private void checkBWszystkie_CheckedChanged(object sender, EventArgs e)
@@ -82,8 +93,17 @@ namespace PROJEKTapp.Forms
 
         private void cBoxFlitracja_SelectedIndexChanged(object sender, EventArgs e)
         {
-            checkBWszystkie.Checked = false;
-           
+            
+             if   (checkBWszystkie.Checked == false)
+            {
+                int g = int.Parse(cBoxFlitracja.SelectedValue.ToString());
+                sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
+                sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
+            }
+            
+
+
+
         }
 
         private void btnZdejmij_Click(object sender, EventArgs e)

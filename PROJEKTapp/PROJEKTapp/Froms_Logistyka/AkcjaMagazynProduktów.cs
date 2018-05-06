@@ -30,15 +30,20 @@ namespace PROJEKTapp.Froms_Logistyka
                 if (dane == null)
                 {
                     lblItem.Text = "Materiał :";
-                    cBoxSurPro.DataSource = db.STAN_MATERIALY_NAZWY.ToList();
+                    cBoxSurPro.DataSource = db.MATERIAL.ToList();
                     cBoxSurPro.DisplayMember = "PELNA_NAZWA_MATERIALU";
                     cBoxSurPro.ValueMember = "ID_MATERIALU";
                     txtBoxRAkcji.Text = "DODAWANIE";
                 }
                 else
                 {
+                    STAN_MATERIALY_NAZWY sTAN_MATERIALY_NAZWY = dane as STAN_MATERIALY_NAZWY;
                     txtBoxRAkcji.Text = "ODBIÓR";
-
+                    lblItem.Text = "Materiał :";
+                    cBoxSurPro.DataSource = db.MATERIAL.Where( a => a.ID_MATERIALU == sTAN_MATERIALY_NAZWY.ID_MATERIALU).ToList();
+                    cBoxSurPro.DisplayMember = "PELNA_NAZWA_MATERIALU";
+                    cBoxSurPro.ValueMember = "ID_MATERIALU";
+                    
                 }
             }
             else
@@ -46,15 +51,21 @@ namespace PROJEKTapp.Froms_Logistyka
                 if (dane == null)
                 {
                     lblItem.Text = "Produkt :";
-                    cBoxSurPro.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
+                    cBoxSurPro.DataSource = db.PRODUKT.ToList();
                     cBoxSurPro.DisplayMember = "NAZWA_PRODUKTU";
                     cBoxSurPro.ValueMember = "ID_PRODUKTU";
                     txtBoxRAkcji.Text = "DODAWANIE";
                 }
                 else
                 {
+                    STAN_PRODUKTY_NAZWY sTAN_PRODUKTY_NAZWY = dane as STAN_PRODUKTY_NAZWY;
                     txtBoxRAkcji.Text = "ODBIÓR";
-
+                    lblItem.Text = "Produkt :";
+                    cBoxSurPro.DataSource = db.PRODUKT.Where(a => a.ID_PRODUKTU == sTAN_PRODUKTY_NAZWY.ID_PRODUKTU).ToList();
+                    cBoxSurPro.DisplayMember = "NAZWA_PRODUKTU";
+                    cBoxSurPro.ValueMember = "ID_PRODUKTU";
+                    
+                  
                 }
             }
         }

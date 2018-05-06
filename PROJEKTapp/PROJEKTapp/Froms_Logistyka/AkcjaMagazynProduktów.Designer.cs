@@ -97,6 +97,8 @@
             // 
             // cBoxSurPro
             // 
+            this.cBoxSurPro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxSurPro.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cBoxSurPro.FormattingEnabled = true;
             this.cBoxSurPro.Location = new System.Drawing.Point(146, 24);
             this.cBoxSurPro.Name = "cBoxSurPro";
