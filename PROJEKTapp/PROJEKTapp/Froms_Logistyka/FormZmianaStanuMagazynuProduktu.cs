@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROJEKTapp.Froms_Logistyka;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +32,7 @@ namespace PROJEKTapp.Forms
 
         private void checkBSurowce_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBSurowce.Checked )
+            if (checkBProdukty.Checked )
             {
                 checkBMaterialy.Checked = false;
                 DGV_PRODUKTY.Show();
@@ -43,7 +44,7 @@ namespace PROJEKTapp.Forms
         {
             if (checkBMaterialy.Checked)
             {
-                checkBSurowce.Checked = false;
+                checkBProdukty.Checked = false;
                 DGV_MATERIALY.Show();
                 DGV_PRODUKTY.Hide();
             }
@@ -82,6 +83,23 @@ namespace PROJEKTapp.Forms
         {
             checkBWszystkie.Checked = false;
            
+        }
+
+        private void btnZdejmij_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonDodajRekord_Click(object sender, EventArgs e)
+        {
+            using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked) )
+            {
+                if (AMP.ShowDialog() == DialogResult.OK)
+                {
+                   // FirmyBindingSource.DataSource = db.FIRMY.ToList();
+                    db.SaveChanges();
+                }
+            }
         }
     }
 }
