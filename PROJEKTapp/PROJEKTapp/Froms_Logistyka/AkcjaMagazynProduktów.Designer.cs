@@ -97,7 +97,6 @@
             this.btnZapisz.TabIndex = 5;
             this.btnZapisz.Text = "Zapisz";
             this.btnZapisz.UseVisualStyleBackColor = true;
-          
             // 
             // cBoxSurPro
             // 
@@ -108,6 +107,7 @@
             this.cBoxSurPro.Name = "cBoxSurPro";
             this.cBoxSurPro.Size = new System.Drawing.Size(152, 21);
             this.cBoxSurPro.TabIndex = 8;
+ 
             // 
             // cBoxLokalizacja
             // 
@@ -133,6 +133,7 @@
             this.cBoxPrzypisaneZlecenie.Name = "cBoxPrzypisaneZlecenie";
             this.cBoxPrzypisaneZlecenie.Size = new System.Drawing.Size(152, 21);
             this.cBoxPrzypisaneZlecenie.TabIndex = 12;
+            this.cBoxPrzypisaneZlecenie.Click += new System.EventHandler(this.cBoxPrzypisaneZlecenie_Click);
             // 
             // txtBoxRAkcji
             // 
