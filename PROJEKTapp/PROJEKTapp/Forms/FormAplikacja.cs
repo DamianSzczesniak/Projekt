@@ -1,4 +1,5 @@
 ﻿using PROJEKTapp.Forms;
+using PROJEKTapp.Logowanie;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,38 +16,45 @@ namespace PROJEKTapp
     {
         KWZP_PROJEKTEntities db;
         int uprawnienia;
+        int id_uzytkownika;
 
-        public Form1(KWZP_PROJEKTEntities db, int uprawnienia)
+        public Form1(KWZP_PROJEKTEntities db, int uprawnienia, int id_uzytkwonika)
         {
             InitializeComponent();
             this.db = db;
             this.uprawnienia = uprawnienia;
+            this.id_uzytkownika = id_uzytkwonika;
 
             switch (uprawnienia)
                 {
                 case 1:
+                  
                     btnStatusyZlecen.Hide();
                     btnNoweZlecenie.Hide();
                     break;
                 case 2:
+                   
                     btnKadry.Hide();
                     btnProdukcja.Hide();
                     btnNoweZlecenie.Hide();
                     btnZlecenia.Hide();
                     break;
                 case 3:
+                   
                     btnKadry.Hide();
                     btnNoweZlecenie.Hide();
                     btnLogistyka.Hide();
                     btnZlecenia.Hide();
                     break;
                 case 4:
+                   
                     btnProdukcja.Hide();
                     btnNoweZlecenie.Hide();
                     btnLogistyka.Hide();
                     btnZlecenia.Hide();
                     break;
                 case 5:
+                 
                     btnProdukcja.Hide();
                     btnKadry.Hide();
                     btnLogistyka.Hide();
@@ -110,7 +118,22 @@ namespace PROJEKTapp
         {
             FormLogowanie formLogowanie = new FormLogowanie();
             formLogowanie.Show();
-            this.Close();
+            Close();
+        }
+
+        private void btnUzytkownik_Click(object sender, EventArgs e)
+        {
+            if (uprawnienia !=1)
+            {
+                ZmianaHasla zh = new ZmianaHasla(db,id_uzytkownika);
+                zh.Show();
+            }
+            else
+            {
+                Uzytkownicy uz = new Uzytkownicy(db);
+                uz.Show();
+            }
+
         }
     }
 }

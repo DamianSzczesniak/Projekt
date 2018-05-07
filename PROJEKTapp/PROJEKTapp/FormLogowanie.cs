@@ -23,7 +23,7 @@ namespace PROJEKTapp
 
         private void btnWyjdz_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnZaloguj_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace PROJEKTapp
                 {
                     if (user.HASLO == txtBoxHaslo.Text)
                     {
-                        Form1 form1 = new Form1(db, user.UPRAWNIENIA);
+                        Form1 form1 = new Form1(db, user.UPRAWNIENIA, user.ID_UZYTKOWNIKA);
                         form1.Show();
                         this.Hide();
                     }
@@ -57,6 +57,11 @@ namespace PROJEKTapp
             {
                 MessageBox.Show("Proszę wypełnić wszystkie pola.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void FormLogowanie_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

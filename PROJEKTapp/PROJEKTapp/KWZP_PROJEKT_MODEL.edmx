@@ -86,9 +86,7 @@
           <Property Name="ID_LOKALIZACJI" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SEKTOR" Type="varchar" MaxLength="30" />
           <Property Name="ALEJKA" Type="varchar" MaxLength="30" />
-          <Property Name="REAGAL" Type="varchar" MaxLength="30" />
-          <Property Name="POZIOM" Type="varchar" MaxLength="30" />
-          <Property Name="KOSZ" Type="varchar" MaxLength="30" />
+          <Property Name="CzyPelne" Type="bit" />
         </EntityType>
         <EntityType Name="MASZYNY">
           <Key>
@@ -341,13 +339,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRODUKCJA_POLPRODUKTU' does not h
           <Property Name="ID_PRACOWNIK" Type="int" Nullable="false" />
           <Property Name="ID_SZKOLENIA" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="TYPY_ZMIANY_STANU">
-          <Key>
-            <PropertyRef Name="ID_TYPU" />
-          </Key>
-          <Property Name="ID_TYPU" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NAZWA" Type="varchar" MaxLength="30" />
-        </EntityType>
         <EntityType Name="UPRAWNIENIA">
           <Key>
             <PropertyRef Name="ID_UPRAWNIENIA" />
@@ -452,6 +443,28 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZESPOL_NARZEDZI' does not have a 
           <Property Name="DATA_REALIZACJI" Type="date" Nullable="false" />
           <Property Name="ID_FIRMY" Type="int" />
         </EntityType>
+        <EntityType Name="ZMIANA_STANU_MAGAZYNU_MATERIALOW">
+          <Key>
+            <PropertyRef Name="ID_ZMIANY_MAT" />
+          </Key>
+          <Property Name="ID_ZMIANY_MAT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_LOKALIZACJI" Type="int" />
+          <Property Name="ID_MATERIALU" Type="int" />
+          <Property Name="ID_ZLECENIA" Type="int" />
+          <Property Name="ILOSC" Type="int" />
+          <Property Name="DATA_WPISU" Type="date" />
+        </EntityType>
+        <EntityType Name="ZMIANA_STANU_MAGAZYNU_PRODUKTOW">
+          <Key>
+            <PropertyRef Name="ID_ZMIANY_PRODUKTU" />
+          </Key>
+          <Property Name="ID_ZMIANY_PRODUKTU" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_LOKALIZACJI" Type="int" />
+          <Property Name="ID_PRODUKTU" Type="int" />
+          <Property Name="ID_ZLECENIA" Type="int" />
+          <Property Name="ILOSC" Type="int" />
+          <Property Name="DATA_WPISU" Type="date" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.ADRESY_PRACOWNIKA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ADRESY_PRACOWNIKA">
@@ -501,6 +514,25 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.GABARYT_PRODUTKU' does not have a
           <Property Name="NAZWA_PARAMETRU" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="WARTOŚĆ" Type="int" />
           <Property Name="JEDNOSTKA_MIARY" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.KREATOR_FAKTUR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="KREATOR_FAKTUR">
+          <Key>
+            <PropertyRef Name="ID_FAKTURY" />
+          </Key>
+          <Property Name="ID_FAKTURY" Type="int" Nullable="false" />
+          <Property Name="NAZWA_FIRMY" Type="varchar" MaxLength="30" />
+          <Property Name="ADRES_EMAIL" Type="varchar" MaxLength="30" />
+          <Property Name="NR_TELEFONU" Type="varchar" MaxLength="12" />
+          <Property Name="NIP" Type="varchar" MaxLength="10" />
+          <Property Name="ID_ZLECENIA" Type="int" />
+          <Property Name="DATA_WYSTAWIENIA" Type="date" />
+          <Property Name="DATA_PLATNOSCI" Type="date" />
+          <Property Name="KWOTA" Type="money" />
+          <Property Name="WALUTA" Type="varchar" MaxLength="3" />
+          <Property Name="IMIE" Type="varchar" MaxLength="30" />
+          <Property Name="NAZWISKO" Type="varchar" MaxLength="30" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.MASA_PRODUKTU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -608,6 +640,91 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRACOWNIK_DANE' does not have a p
           <Property Name="MIASTO" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRZYGOTOWANIE_TRANSPORTU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PRZYGOTOWANIE_TRANSPORTU">
+          <Key>
+            <PropertyRef Name="ID_POJAZDU" />
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+          </Key>
+          <Property Name="ID_POJAZDU" Type="int" Nullable="false" />
+          <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ILOSC" Type="int" />
+          <Property Name="SEKTOR" Type="varchar" MaxLength="30" />
+          <Property Name="ALEJKA" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.SPIS_UZYTKOWNIKOW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SPIS_UZYTKOWNIKOW">
+          <Key>
+            <PropertyRef Name="ID_UZYTKOWNIKA" />
+            <PropertyRef Name="UPRAWNIENIA" />
+            <PropertyRef Name="NAZWA_LOGOWANIE" />
+            <PropertyRef Name="POZIOM_UPRAWNIEN" />
+            <PropertyRef Name="IMIE" />
+            <PropertyRef Name="NAZWISKO" />
+            <PropertyRef Name="PESEL" />
+          </Key>
+          <Property Name="ID_UZYTKOWNIKA" Type="int" Nullable="false" />
+          <Property Name="ID_PRACOWNIK" Type="int" />
+          <Property Name="UPRAWNIENIA" Type="int" Nullable="false" />
+          <Property Name="NAZWA_LOGOWANIE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="HASLO" Type="varchar" MaxLength="30" />
+          <Property Name="POZIOM_UPRAWNIEN" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="IMIE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NAZWISKO" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="PESEL" Type="nvarchar" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'KWZP_PROJEKT.dbo.STAN_MATERIALY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="STAN_MATERIALY">
+          <Property Name="ID_MATERIALU" Type="int" />
+          <Property Name="ID_ZLECENIA" Type="int" />
+          <Property Name="ID_LOKALIZACJI" Type="int" />
+          <Property Name="STAN" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAN_MATERIALY_NAZWY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="STAN_MATERIALY_NAZWY">
+          <Key>
+            <PropertyRef Name="PELNA_NAZWA_MATERIALU" />
+            <PropertyRef Name="ID_MATERIALU" />
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="ID_LOKALIZACJI" />
+          </Key>
+          <Property Name="ID_MATERIALU" Type="int" Nullable="false" />
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+          <Property Name="ID_LOKALIZACJI" Type="int" Nullable="false" />
+          <Property Name="STAN" Type="int" />
+          <Property Name="SEKTOR" Type="varchar" MaxLength="30" />
+          <Property Name="ALEJKA" Type="varchar" MaxLength="30" />
+          <Property Name="PELNA_NAZWA_MATERIALU" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'KWZP_PROJEKT.dbo.STAN_PRODUKTY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="STAN_PRODUKTY">
+          <Property Name="ID_PRODUKTU" Type="int" />
+          <Property Name="ID_ZLECENIA" Type="int" />
+          <Property Name="ID_LOKALIZACJI" Type="int" />
+          <Property Name="STAN" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAN_PRODUKTY_NAZWY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="STAN_PRODUKTY_NAZWY">
+          <Key>
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+            <PropertyRef Name="ID_PRODUKTU" />
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="ID_LOKALIZACJI" />
+          </Key>
+          <Property Name="ID_PRODUKTU" Type="int" Nullable="false" />
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+          <Property Name="ID_LOKALIZACJI" Type="int" Nullable="false" />
+          <Property Name="STAN" Type="int" />
+          <Property Name="SEKTOR" Type="varchar" MaxLength="30" />
+          <Property Name="ALEJKA" Type="varchar" MaxLength="30" />
+          <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAWKA_OKRES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="STAWKA_OKRES">
           <Key>
@@ -649,6 +766,47 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="NAZWA_PROCESU" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZAPOTRZEBOWANIE_MATERIAL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ZAPOTRZEBOWANIE_MATERIAL">
+          <Key>
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="int" />
+          <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NAZWA" Type="varchar" MaxLength="30" />
+          <Property Name="OZNACZENIE_SUROWCA" Type="varchar" MaxLength="15" />
+          <Property Name="Nazwa_MATERIAL" Type="nvarchar" MaxLength="50" />
+          <Property Name="WARTOŚĆ" Type="int" />
+          <Property Name="LICZBA_SZTUK" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_LOKALIZACJA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ZLECENIA_LOKALIZACJA">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+          <Property Name="ID_PRODUKTU" Type="int" />
+          <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" />
+          <Property Name="ILOSC" Type="int" />
+          <Property Name="SEKTOR" Type="varchar" MaxLength="30" />
+          <Property Name="ALEJKA" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ZLECENIE_DLA_DOSTAWY">
+          <Property Name="ID_ZLECENIA" Type="int" />
+          <Property Name="NAZWA_FIRMY" Type="varchar" MaxLength="30" />
+          <Property Name="DLUGOSC_TRASY" Type="int" />
+          <Property Name="ULICA" Type="varchar" MaxLength="30" />
+          <Property Name="NR_BUDYNKU" Type="varchar" MaxLength="10" />
+          <Property Name="NR_LOKALU" Type="varchar" MaxLength="10" />
+          <Property Name="KOD_POCZTOWY" Type="varchar" MaxLength="5" />
+          <Property Name="KRAJ" Type="varchar" MaxLength="15" />
+          <Property Name="nazwa" Type="varchar" MaxLength="50" />
+          <Property Name="ID_POJAZDU" Type="int" />
+        </EntityType>-->
         <Association Name="FK__ADRESY__ID_MIAST__693CA210">
           <End Role="MIASTA" Type="Self.MIASTA" Multiplicity="0..1" />
           <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="*" />
@@ -697,7 +855,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DOKUMENTA__ID_PR__40F9A68C">
+        <Association Name="FK__DOKUMENTA__ID_PR__3F115E1A">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="0..1" />
           <End Role="DOKUMENTACJA" Type="Self.DOKUMENTACJA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -709,7 +867,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DOKUMENTA__ID_PR__41EDCAC5">
+        <Association Name="FK__DOKUMENTA__ID_PR__40058253">
           <End Role="PROJEKT" Type="Self.PROJEKT" Multiplicity="0..1" />
           <End Role="DOKUMENTACJA" Type="Self.DOKUMENTACJA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -781,7 +939,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PARAMETRY__ID_MA__46B27FE2">
+        <Association Name="FK__PARAMETRY__ID_MA__44CA3770">
           <End Role="MATERIAL" Type="Self.MATERIAL" Multiplicity="0..1" />
           <End Role="PARAMETRY_MATERIALU" Type="Self.PARAMETRY_MATERIALU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -793,7 +951,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PARAMETRY__ID_MO__37703C52">
+        <Association Name="FK__PARAMETRY__ID_MO__3587F3E0">
           <End Role="MODELE_MASZYN" Type="Self.MODELE_MASZYN" Multiplicity="0..1" />
           <End Role="PARAMETRY_MASZYNY" Type="Self.PARAMETRY_MASZYNY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -805,7 +963,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PARAMETRY__ID_PA__367C1819">
+        <Association Name="FK__PARAMETRY__ID_PA__3493CFA7">
           <End Role="PARAMETRY" Type="Self.PARAMETRY" Multiplicity="0..1" />
           <End Role="PARAMETRY_MASZYNY" Type="Self.PARAMETRY_MASZYNY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -817,7 +975,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PARAMETRY__ID_PA__47A6A41B">
+        <Association Name="FK__PARAMETRY__ID_PA__45BE5BA9">
           <End Role="PARAMETRY" Type="Self.PARAMETRY" Multiplicity="0..1" />
           <End Role="PARAMETRY_MATERIALU" Type="Self.PARAMETRY_MATERIALU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -841,7 +999,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__POLPRODUK__ID_DO__4B7734FF">
+        <Association Name="FK__POLPRODUK__ID_DO__498EEC8D">
           <End Role="DOKUMENTACJA" Type="Self.DOKUMENTACJA" Multiplicity="0..1" />
           <End Role="POLPRODUKTY" Type="Self.POLPRODUKTY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -853,7 +1011,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__POLPRODUK__ID_MA__4A8310C6">
+        <Association Name="FK__POLPRODUK__ID_MA__489AC854">
           <End Role="MATERIAL" Type="Self.MATERIAL" Multiplicity="0..1" />
           <End Role="POLPRODUKTY" Type="Self.POLPRODUKTY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -889,7 +1047,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PROCES__ID_MASZY__3B40CD36">
+        <Association Name="FK__PROCES__ID_MASZY__395884C4">
           <End Role="MASZYNY" Type="Self.MASZYNY" Multiplicity="0..1" />
           <End Role="PROCES" Type="Self.PROCES" Multiplicity="*" />
           <ReferentialConstraint>
@@ -901,7 +1059,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PROCES__ID_SLOWN__3A4CA8FD">
+        <Association Name="FK__PROCES__ID_SLOWN__3864608B">
           <End Role="SLOWNIK_PROCES_TECHNOLOGICZNY" Type="Self.SLOWNIK_PROCES_TECHNOLOGICZNY" Multiplicity="0..1" />
           <End Role="PROCES" Type="Self.PROCES" Multiplicity="*" />
           <ReferentialConstraint>
@@ -913,7 +1071,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PRODUKCJA__ID_PO__4D5F7D71">
+        <Association Name="FK__PRODUKCJA__ID_PO__4B7734FF">
           <End Role="POLPRODUKTY" Type="Self.POLPRODUKTY" Multiplicity="0..1" />
           <End Role="PRODUKCJA_POLPRODUKTU" Type="Self.PRODUKCJA_POLPRODUKTU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -925,7 +1083,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PRODUKCJA__ID_PR__4E53A1AA">
+        <Association Name="FK__PRODUKCJA__ID_PR__4C6B5938">
           <End Role="PRODUKT" Type="Self.PRODUKT" Multiplicity="0..1" />
           <End Role="PRODUKCJA_POLPRODUKTU" Type="Self.PRODUKCJA_POLPRODUKTU" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1033,7 +1191,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__UZYTKOWNI__ID_PR__540C7B00">
+        <Association Name="FK__UZYTKOWNI__ID_PR__531856C7">
           <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="0..1" />
           <End Role="UZYTKOWNICY" Type="Self.UZYTKOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1045,7 +1203,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__UZYTKOWNI__UPRAW__55009F39">
+        <Association Name="FK__UZYTKOWNI__UPRAW__540C7B00">
           <End Role="UPRAWNIENIA" Type="Self.UPRAWNIENIA" Multiplicity="1" />
           <End Role="UZYTKOWNICY" Type="Self.UZYTKOWNICY" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1081,7 +1239,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZAMOWIENI__ID_FI__30C33EC3">
+        <Association Name="FK__ZAMOWIENI__ID_FI__2EDAF651">
           <End Role="FIRMY" Type="Self.FIRMY" Multiplicity="0..1" />
           <End Role="ZAMOWIENIA" Type="Self.ZAMOWIENIA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1093,7 +1251,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ZAMOWIENI__ID_ST__31B762FC">
+        <Association Name="FK__ZAMOWIENI__ID_ST__2FCF1A8A">
           <End Role="STATUS_ZAMOWIENIA" Type="Self.STATUS_ZAMOWIENIA" Multiplicity="0..1" />
           <End Role="ZAMOWIENIA" Type="Self.ZAMOWIENIA" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1213,6 +1371,78 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__ZMIANA_ST__ID_LO__25518C17">
+          <End Role="LOKALIZACJA" Type="Self.LOKALIZACJA" Multiplicity="0..1" />
+          <End Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW" Type="Self.ZMIANA_STANU_MAGAZYNU_MATERIALOW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOKALIZACJA">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Principal>
+            <Dependent Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ZMIANA_ST__ID_LO__2A164134">
+          <End Role="LOKALIZACJA" Type="Self.LOKALIZACJA" Multiplicity="0..1" />
+          <End Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Type="Self.ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOKALIZACJA">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Principal>
+            <Dependent Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ZMIANA_ST__ID_MA__2645B050">
+          <End Role="MATERIAL" Type="Self.MATERIAL" Multiplicity="0..1" />
+          <End Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW" Type="Self.ZMIANA_STANU_MAGAZYNU_MATERIALOW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATERIAL">
+              <PropertyRef Name="ID_MATERIALU" />
+            </Principal>
+            <Dependent Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW">
+              <PropertyRef Name="ID_MATERIALU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ZMIANA_ST__ID_PR__2B0A656D">
+          <End Role="PRODUKT" Type="Self.PRODUKT" Multiplicity="0..1" />
+          <End Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Type="Self.ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUKT">
+              <PropertyRef Name="ID_PRODUKTU" />
+            </Principal>
+            <Dependent Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW">
+              <PropertyRef Name="ID_PRODUKTU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ZMIANA_ST__ID_ZL__2739D489">
+          <End Role="ZLECENIA" Type="Self.ZLECENIA" Multiplicity="0..1" />
+          <End Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW" Type="Self.ZMIANA_STANU_MAGAZYNU_MATERIALOW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZLECENIA">
+              <PropertyRef Name="ID_ZLECENIA" />
+            </Principal>
+            <Dependent Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW">
+              <PropertyRef Name="ID_ZLECENIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ZMIANA_ST__ID_ZL__2BFE89A6">
+          <End Role="ZLECENIA" Type="Self.ZLECENIA" Multiplicity="0..1" />
+          <End Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Type="Self.ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZLECENIA">
+              <PropertyRef Name="ID_ZLECENIA" />
+            </Principal>
+            <Dependent Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW">
+              <PropertyRef Name="ID_ZLECENIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="KWZP_PROJEKTModelStoreContainer">
           <EntitySet Name="ADRESY" EntityType="Self.ADRESY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADRESY_PRACOWNICY" EntityType="Self.ADRESY_PRACOWNICY" Schema="dbo" store:Type="Tables" />
@@ -1247,7 +1477,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <EntitySet Name="STAWKA_PRACOWNICY" EntityType="Self.STAWKA_PRACOWNICY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SZKOLENIA" EntityType="Self.SZKOLENIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SZKOLENIE_PRACOWNICY" EntityType="Self.SZKOLENIE_PRACOWNICY" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TYPY_ZMIANY_STANU" EntityType="Self.TYPY_ZMIANY_STANU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UPRAWNIENIA" EntityType="Self.UPRAWNIENIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UZYTKOWNICY" EntityType="Self.UZYTKOWNICY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WALUTY" EntityType="Self.WALUTY" Schema="dbo" store:Type="Tables" />
@@ -1255,6 +1484,8 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <EntitySet Name="WOLNE_PRACOWNICY" EntityType="Self.WOLNE_PRACOWNICY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ZAMOWIENIA" EntityType="Self.ZAMOWIENIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ZLECENIA" EntityType="Self.ZLECENIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZMIANA_STANU_MAGAZYNU_MATERIALOW" EntityType="Self.ZMIANA_STANU_MAGAZYNU_MATERIALOW" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" EntityType="Self.ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PARAMETRY_MASZYNY" EntityType="Self.PARAMETRY_MASZYNY" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [PARAMETRY_MASZYNY].[ID_PARAMETR] AS [ID_PARAMETR], 
@@ -1335,6 +1566,22 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
     [GABARYT_PRODUTKU].[JEDNOSTKA_MIARY] AS [JEDNOSTKA_MIARY]
     FROM [dbo].[GABARYT_PRODUTKU] AS [GABARYT_PRODUTKU]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="KREATOR_FAKTUR" EntityType="Self.KREATOR_FAKTUR" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [KREATOR_FAKTUR].[ID_FAKTURY] AS [ID_FAKTURY], 
+    [KREATOR_FAKTUR].[NAZWA_FIRMY] AS [NAZWA_FIRMY], 
+    [KREATOR_FAKTUR].[ADRES_EMAIL] AS [ADRES_EMAIL], 
+    [KREATOR_FAKTUR].[NR_TELEFONU] AS [NR_TELEFONU], 
+    [KREATOR_FAKTUR].[NIP] AS [NIP], 
+    [KREATOR_FAKTUR].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [KREATOR_FAKTUR].[DATA_WYSTAWIENIA] AS [DATA_WYSTAWIENIA], 
+    [KREATOR_FAKTUR].[DATA_PLATNOSCI] AS [DATA_PLATNOSCI], 
+    [KREATOR_FAKTUR].[KWOTA] AS [KWOTA], 
+    [KREATOR_FAKTUR].[WALUTA] AS [WALUTA], 
+    [KREATOR_FAKTUR].[IMIE] AS [IMIE], 
+    [KREATOR_FAKTUR].[NAZWISKO] AS [NAZWISKO]
+    FROM [dbo].[KREATOR_FAKTUR] AS [KREATOR_FAKTUR]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="MASA_PRODUKTU" EntityType="Self.MASA_PRODUKTU" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [MASA_PRODUKTU].[NAZWA_PRODUKTU] AS [NAZWA_PRODUKTU], 
@@ -1403,6 +1650,50 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
     [PRACOWNIK_DANE].[MIASTO] AS [MIASTO]
     FROM [dbo].[PRACOWNIK_DANE] AS [PRACOWNIK_DANE]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="PRZYGOTOWANIE_TRANSPORTU" EntityType="Self.PRZYGOTOWANIE_TRANSPORTU" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRZYGOTOWANIE_TRANSPORTU].[ID_POJAZDU] AS [ID_POJAZDU], 
+    [PRZYGOTOWANIE_TRANSPORTU].[NAZWA_PRODUKTU] AS [NAZWA_PRODUKTU], 
+    [PRZYGOTOWANIE_TRANSPORTU].[ILOSC] AS [ILOSC], 
+    [PRZYGOTOWANIE_TRANSPORTU].[SEKTOR] AS [SEKTOR], 
+    [PRZYGOTOWANIE_TRANSPORTU].[ALEJKA] AS [ALEJKA]
+    FROM [dbo].[PRZYGOTOWANIE_TRANSPORTU] AS [PRZYGOTOWANIE_TRANSPORTU]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SPIS_UZYTKOWNIKOW" EntityType="Self.SPIS_UZYTKOWNIKOW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SPIS_UZYTKOWNIKOW].[ID_UZYTKOWNIKA] AS [ID_UZYTKOWNIKA], 
+    [SPIS_UZYTKOWNIKOW].[ID_PRACOWNIK] AS [ID_PRACOWNIK], 
+    [SPIS_UZYTKOWNIKOW].[UPRAWNIENIA] AS [UPRAWNIENIA], 
+    [SPIS_UZYTKOWNIKOW].[NAZWA_LOGOWANIE] AS [NAZWA_LOGOWANIE], 
+    [SPIS_UZYTKOWNIKOW].[HASLO] AS [HASLO], 
+    [SPIS_UZYTKOWNIKOW].[POZIOM_UPRAWNIEN] AS [POZIOM_UPRAWNIEN], 
+    [SPIS_UZYTKOWNIKOW].[IMIE] AS [IMIE], 
+    [SPIS_UZYTKOWNIKOW].[NAZWISKO] AS [NAZWISKO], 
+    [SPIS_UZYTKOWNIKOW].[PESEL] AS [PESEL]
+    FROM [dbo].[SPIS_UZYTKOWNIKOW] AS [SPIS_UZYTKOWNIKOW]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="STAN_MATERIALY_NAZWY" EntityType="Self.STAN_MATERIALY_NAZWY" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [STAN_MATERIALY_NAZWY].[ID_MATERIALU] AS [ID_MATERIALU], 
+    [STAN_MATERIALY_NAZWY].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [STAN_MATERIALY_NAZWY].[ID_LOKALIZACJI] AS [ID_LOKALIZACJI], 
+    [STAN_MATERIALY_NAZWY].[STAN] AS [STAN], 
+    [STAN_MATERIALY_NAZWY].[SEKTOR] AS [SEKTOR], 
+    [STAN_MATERIALY_NAZWY].[ALEJKA] AS [ALEJKA], 
+    [STAN_MATERIALY_NAZWY].[PELNA_NAZWA_MATERIALU] AS [PELNA_NAZWA_MATERIALU]
+    FROM [dbo].[STAN_MATERIALY_NAZWY] AS [STAN_MATERIALY_NAZWY]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="STAN_PRODUKTY_NAZWY" EntityType="Self.STAN_PRODUKTY_NAZWY" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [STAN_PRODUKTY_NAZWY].[ID_PRODUKTU] AS [ID_PRODUKTU], 
+    [STAN_PRODUKTY_NAZWY].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [STAN_PRODUKTY_NAZWY].[ID_LOKALIZACJI] AS [ID_LOKALIZACJI], 
+    [STAN_PRODUKTY_NAZWY].[STAN] AS [STAN], 
+    [STAN_PRODUKTY_NAZWY].[SEKTOR] AS [SEKTOR], 
+    [STAN_PRODUKTY_NAZWY].[ALEJKA] AS [ALEJKA], 
+    [STAN_PRODUKTY_NAZWY].[NAZWA_PRODUKTU] AS [NAZWA_PRODUKTU]
+    FROM [dbo].[STAN_PRODUKTY_NAZWY] AS [STAN_PRODUKTY_NAZWY]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="STAWKA_OKRES" EntityType="Self.STAWKA_OKRES" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [STAWKA_OKRES].[WARTOSC] AS [WARTOSC], 
@@ -1431,6 +1722,27 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
     [WYKORZYSTANE_PROCESY].[NAZWA_PROCESU] AS [NAZWA_PROCESU]
     FROM [dbo].[WYKORZYSTANE_PROCESY] AS [WYKORZYSTANE_PROCESY]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="ZAPOTRZEBOWANIE_MATERIAL" EntityType="Self.ZAPOTRZEBOWANIE_MATERIAL" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ZAPOTRZEBOWANIE_MATERIAL].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [ZAPOTRZEBOWANIE_MATERIAL].[NAZWA_PRODUKTU] AS [NAZWA_PRODUKTU], 
+    [ZAPOTRZEBOWANIE_MATERIAL].[NAZWA] AS [NAZWA], 
+    [ZAPOTRZEBOWANIE_MATERIAL].[OZNACZENIE_SUROWCA] AS [OZNACZENIE_SUROWCA], 
+    [ZAPOTRZEBOWANIE_MATERIAL].[Nazwa_MATERIAL] AS [Nazwa_MATERIAL], 
+    [ZAPOTRZEBOWANIE_MATERIAL].[WARTOŚĆ] AS [WARTOŚĆ], 
+    [ZAPOTRZEBOWANIE_MATERIAL].[LICZBA_SZTUK] AS [LICZBA_SZTUK]
+    FROM [dbo].[ZAPOTRZEBOWANIE_MATERIAL] AS [ZAPOTRZEBOWANIE_MATERIAL]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ZLECENIA_LOKALIZACJA" EntityType="Self.ZLECENIA_LOKALIZACJA" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ZLECENIA_LOKALIZACJA].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [ZLECENIA_LOKALIZACJA].[ID_PRODUKTU] AS [ID_PRODUKTU], 
+    [ZLECENIA_LOKALIZACJA].[NAZWA_PRODUKTU] AS [NAZWA_PRODUKTU], 
+    [ZLECENIA_LOKALIZACJA].[ILOSC] AS [ILOSC], 
+    [ZLECENIA_LOKALIZACJA].[SEKTOR] AS [SEKTOR], 
+    [ZLECENIA_LOKALIZACJA].[ALEJKA] AS [ALEJKA]
+    FROM [dbo].[ZLECENIA_LOKALIZACJA] AS [ZLECENIA_LOKALIZACJA]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__ADRESY__ID_MIAST__693CA210" Association="Self.FK__ADRESY__ID_MIAST__693CA210">
             <End Role="MIASTA" EntitySet="MIASTA" />
             <End Role="ADRESY" EntitySet="ADRESY" />
@@ -1447,11 +1759,11 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             <End Role="ZLECENIA" EntitySet="ZLECENIA" />
             <End Role="DATA_STATUSU_ZLECENIA" EntitySet="DATA_STATUSU_ZLECENIA" />
           </AssociationSet>
-          <AssociationSet Name="FK__DOKUMENTA__ID_PR__40F9A68C" Association="Self.FK__DOKUMENTA__ID_PR__40F9A68C">
+          <AssociationSet Name="FK__DOKUMENTA__ID_PR__3F115E1A" Association="Self.FK__DOKUMENTA__ID_PR__3F115E1A">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="DOKUMENTACJA" EntitySet="DOKUMENTACJA" />
           </AssociationSet>
-          <AssociationSet Name="FK__DOKUMENTA__ID_PR__41EDCAC5" Association="Self.FK__DOKUMENTA__ID_PR__41EDCAC5">
+          <AssociationSet Name="FK__DOKUMENTA__ID_PR__40058253" Association="Self.FK__DOKUMENTA__ID_PR__40058253">
             <End Role="PROJEKT" EntitySet="PROJEKT" />
             <End Role="DOKUMENTACJA" EntitySet="DOKUMENTACJA" />
           </AssociationSet>
@@ -1475,19 +1787,19 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             <End Role="MODELE_MASZYN" EntitySet="MODELE_MASZYN" />
             <End Role="MASZYNY" EntitySet="MASZYNY" />
           </AssociationSet>
-          <AssociationSet Name="FK__PARAMETRY__ID_MA__46B27FE2" Association="Self.FK__PARAMETRY__ID_MA__46B27FE2">
+          <AssociationSet Name="FK__PARAMETRY__ID_MA__44CA3770" Association="Self.FK__PARAMETRY__ID_MA__44CA3770">
             <End Role="MATERIAL" EntitySet="MATERIAL" />
             <End Role="PARAMETRY_MATERIALU" EntitySet="PARAMETRY_MATERIALU" />
           </AssociationSet>
-          <AssociationSet Name="FK__PARAMETRY__ID_MO__37703C52" Association="Self.FK__PARAMETRY__ID_MO__37703C52">
+          <AssociationSet Name="FK__PARAMETRY__ID_MO__3587F3E0" Association="Self.FK__PARAMETRY__ID_MO__3587F3E0">
             <End Role="MODELE_MASZYN" EntitySet="MODELE_MASZYN" />
             <End Role="PARAMETRY_MASZYNY" EntitySet="PARAMETRY_MASZYNY" />
           </AssociationSet>
-          <AssociationSet Name="FK__PARAMETRY__ID_PA__367C1819" Association="Self.FK__PARAMETRY__ID_PA__367C1819">
+          <AssociationSet Name="FK__PARAMETRY__ID_PA__3493CFA7" Association="Self.FK__PARAMETRY__ID_PA__3493CFA7">
             <End Role="PARAMETRY" EntitySet="PARAMETRY" />
             <End Role="PARAMETRY_MASZYNY" EntitySet="PARAMETRY_MASZYNY" />
           </AssociationSet>
-          <AssociationSet Name="FK__PARAMETRY__ID_PA__47A6A41B" Association="Self.FK__PARAMETRY__ID_PA__47A6A41B">
+          <AssociationSet Name="FK__PARAMETRY__ID_PA__45BE5BA9" Association="Self.FK__PARAMETRY__ID_PA__45BE5BA9">
             <End Role="PARAMETRY" EntitySet="PARAMETRY" />
             <End Role="PARAMETRY_MATERIALU" EntitySet="PARAMETRY_MATERIALU" />
           </AssociationSet>
@@ -1495,11 +1807,11 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             <End Role="FIRMY" EntitySet="FIRMY" />
             <End Role="POJAZDY" EntitySet="POJAZDY" />
           </AssociationSet>
-          <AssociationSet Name="FK__POLPRODUK__ID_DO__4B7734FF" Association="Self.FK__POLPRODUK__ID_DO__4B7734FF">
+          <AssociationSet Name="FK__POLPRODUK__ID_DO__498EEC8D" Association="Self.FK__POLPRODUK__ID_DO__498EEC8D">
             <End Role="DOKUMENTACJA" EntitySet="DOKUMENTACJA" />
             <End Role="POLPRODUKTY" EntitySet="POLPRODUKTY" />
           </AssociationSet>
-          <AssociationSet Name="FK__POLPRODUK__ID_MA__4A8310C6" Association="Self.FK__POLPRODUK__ID_MA__4A8310C6">
+          <AssociationSet Name="FK__POLPRODUK__ID_MA__489AC854" Association="Self.FK__POLPRODUK__ID_MA__489AC854">
             <End Role="MATERIAL" EntitySet="MATERIAL" />
             <End Role="POLPRODUKTY" EntitySet="POLPRODUKTY" />
           </AssociationSet>
@@ -1511,19 +1823,19 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="PRACOWNICY_ADRESY_PRACOWNICY" EntitySet="PRACOWNICY_ADRESY_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__PROCES__ID_MASZY__3B40CD36" Association="Self.FK__PROCES__ID_MASZY__3B40CD36">
+          <AssociationSet Name="FK__PROCES__ID_MASZY__395884C4" Association="Self.FK__PROCES__ID_MASZY__395884C4">
             <End Role="MASZYNY" EntitySet="MASZYNY" />
             <End Role="PROCES" EntitySet="PROCES" />
           </AssociationSet>
-          <AssociationSet Name="FK__PROCES__ID_SLOWN__3A4CA8FD" Association="Self.FK__PROCES__ID_SLOWN__3A4CA8FD">
+          <AssociationSet Name="FK__PROCES__ID_SLOWN__3864608B" Association="Self.FK__PROCES__ID_SLOWN__3864608B">
             <End Role="SLOWNIK_PROCES_TECHNOLOGICZNY" EntitySet="SLOWNIK_PROCES_TECHNOLOGICZNY" />
             <End Role="PROCES" EntitySet="PROCES" />
           </AssociationSet>
-          <AssociationSet Name="FK__PRODUKCJA__ID_PO__4D5F7D71" Association="Self.FK__PRODUKCJA__ID_PO__4D5F7D71">
+          <AssociationSet Name="FK__PRODUKCJA__ID_PO__4B7734FF" Association="Self.FK__PRODUKCJA__ID_PO__4B7734FF">
             <End Role="POLPRODUKTY" EntitySet="POLPRODUKTY" />
             <End Role="PRODUKCJA_POLPRODUKTU" EntitySet="PRODUKCJA_POLPRODUKTU" />
           </AssociationSet>
-          <AssociationSet Name="FK__PRODUKCJA__ID_PR__4E53A1AA" Association="Self.FK__PRODUKCJA__ID_PR__4E53A1AA">
+          <AssociationSet Name="FK__PRODUKCJA__ID_PR__4C6B5938" Association="Self.FK__PRODUKCJA__ID_PR__4C6B5938">
             <End Role="PRODUKT" EntitySet="PRODUKT" />
             <End Role="PRODUKCJA_POLPRODUKTU" EntitySet="PRODUKCJA_POLPRODUKTU" />
           </AssociationSet>
@@ -1559,11 +1871,11 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             <End Role="SZKOLENIA" EntitySet="SZKOLENIA" />
             <End Role="SZKOLENIE_PRACOWNICY" EntitySet="SZKOLENIE_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__UZYTKOWNI__ID_PR__540C7B00" Association="Self.FK__UZYTKOWNI__ID_PR__540C7B00">
+          <AssociationSet Name="FK__UZYTKOWNI__ID_PR__531856C7" Association="Self.FK__UZYTKOWNI__ID_PR__531856C7">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="UZYTKOWNICY" EntitySet="UZYTKOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__UZYTKOWNI__UPRAW__55009F39" Association="Self.FK__UZYTKOWNI__UPRAW__55009F39">
+          <AssociationSet Name="FK__UZYTKOWNI__UPRAW__540C7B00" Association="Self.FK__UZYTKOWNI__UPRAW__540C7B00">
             <End Role="UPRAWNIENIA" EntitySet="UPRAWNIENIA" />
             <End Role="UZYTKOWNICY" EntitySet="UZYTKOWNICY" />
           </AssociationSet>
@@ -1575,11 +1887,11 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
             <End Role="WOLNE" EntitySet="WOLNE" />
             <End Role="WOLNE_PRACOWNICY" EntitySet="WOLNE_PRACOWNICY" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZAMOWIENI__ID_FI__30C33EC3" Association="Self.FK__ZAMOWIENI__ID_FI__30C33EC3">
+          <AssociationSet Name="FK__ZAMOWIENI__ID_FI__2EDAF651" Association="Self.FK__ZAMOWIENI__ID_FI__2EDAF651">
             <End Role="FIRMY" EntitySet="FIRMY" />
             <End Role="ZAMOWIENIA" EntitySet="ZAMOWIENIA" />
           </AssociationSet>
-          <AssociationSet Name="FK__ZAMOWIENI__ID_ST__31B762FC" Association="Self.FK__ZAMOWIENI__ID_ST__31B762FC">
+          <AssociationSet Name="FK__ZAMOWIENI__ID_ST__2FCF1A8A" Association="Self.FK__ZAMOWIENI__ID_ST__2FCF1A8A">
             <End Role="STATUS_ZAMOWIENIA" EntitySet="STATUS_ZAMOWIENIA" />
             <End Role="ZAMOWIENIA" EntitySet="ZAMOWIENIA" />
           </AssociationSet>
@@ -1618,6 +1930,30 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <AssociationSet Name="FK__ZLECENIA__ID_FIR__5FB337D6" Association="Self.FK__ZLECENIA__ID_FIR__5FB337D6">
             <End Role="FIRMY" EntitySet="FIRMY" />
             <End Role="ZLECENIA" EntitySet="ZLECENIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZMIANA_ST__ID_LO__25518C17" Association="Self.FK__ZMIANA_ST__ID_LO__25518C17">
+            <End Role="LOKALIZACJA" EntitySet="LOKALIZACJA" />
+            <End Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW" EntitySet="ZMIANA_STANU_MAGAZYNU_MATERIALOW" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZMIANA_ST__ID_LO__2A164134" Association="Self.FK__ZMIANA_ST__ID_LO__2A164134">
+            <End Role="LOKALIZACJA" EntitySet="LOKALIZACJA" />
+            <End Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" EntitySet="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZMIANA_ST__ID_MA__2645B050" Association="Self.FK__ZMIANA_ST__ID_MA__2645B050">
+            <End Role="MATERIAL" EntitySet="MATERIAL" />
+            <End Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW" EntitySet="ZMIANA_STANU_MAGAZYNU_MATERIALOW" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZMIANA_ST__ID_PR__2B0A656D" Association="Self.FK__ZMIANA_ST__ID_PR__2B0A656D">
+            <End Role="PRODUKT" EntitySet="PRODUKT" />
+            <End Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" EntitySet="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZMIANA_ST__ID_ZL__2739D489" Association="Self.FK__ZMIANA_ST__ID_ZL__2739D489">
+            <End Role="ZLECENIA" EntitySet="ZLECENIA" />
+            <End Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW" EntitySet="ZMIANA_STANU_MAGAZYNU_MATERIALOW" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZMIANA_ST__ID_ZL__2BFE89A6" Association="Self.FK__ZMIANA_ST__ID_ZL__2BFE89A6">
+            <End Role="ZLECENIA" EntitySet="ZLECENIA" />
+            <End Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" EntitySet="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -1704,17 +2040,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <NavigationProperty Name="ZAMOWIENIA" Relationship="Self.FK__ZAMOWIENI__ID_FI__2DE6D218" FromRole="FIRMY" ToRole="ZAMOWIENIA" />
           <NavigationProperty Name="ZLECENIA" Relationship="Self.FK__ZLECENIA__ID_FIR__5DCAEF64" FromRole="FIRMY" ToRole="ZLECENIA" />
         </EntityType>
-        <EntityType Name="LOKALIZACJA">
-          <Key>
-            <PropertyRef Name="ID_LOKALIZACJI" />
-          </Key>
-          <Property Name="ID_LOKALIZACJI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SEKTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="ALEJKA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="REAGAL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="POZIOM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="KOSZ" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="MASZYNY">
           <Key>
             <PropertyRef Name="ID_MASZYNY" />
@@ -1737,6 +2062,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <NavigationProperty Name="PARAMETRY_MATERIALU" Relationship="Self.FK__PARAMETRY__ID_MA__43D61337" FromRole="MATERIAL" ToRole="PARAMETRY_MATERIALU" />
           <NavigationProperty Name="POLPRODUKTY" Relationship="Self.FK__POLPRODUK__ID_MA__47A6A41B" FromRole="MATERIAL" ToRole="POLPRODUKTY" />
           <NavigationProperty Name="REALIZACJA_PRODUKCJA" Relationship="Self.ZESPOL_MATERIAL" FromRole="MATERIAL" ToRole="REALIZACJA_PRODUKCJA" />
+          <NavigationProperty Name="ZMIANA_STANU_MAGAZYNU_MATERIALOW" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_MA__2645B050" FromRole="MATERIAL" ToRole="ZMIANA_STANU_MAGAZYNU_MATERIALOW" />
         </EntityType>
         <EntityType Name="MIASTA">
           <Key>
@@ -1862,6 +2188,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <Property Name="NAZWA_PRODUKTU" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="OPIS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="PRODUKCJA_POLPRODUKTU" Relationship="Self.FK__PRODUKCJA__ID_PR__4B7734FF" FromRole="PRODUKT" ToRole="PRODUKCJA_POLPRODUKTU" />
+          <NavigationProperty Name="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_PR__2B0A656D" FromRole="PRODUKT" ToRole="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" />
         </EntityType>
         <EntityType Name="PROJEKT">
           <Key>
@@ -1965,13 +2292,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <Property Name="DATA_KONIEC" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="PRACOWNICY" Relationship="Self.SZKOLENIE_PRACOWNICY" FromRole="SZKOLENIA" ToRole="PRACOWNICY" />
         </EntityType>
-        <EntityType Name="TYPY_ZMIANY_STANU">
-          <Key>
-            <PropertyRef Name="ID_TYPU" />
-          </Key>
-          <Property Name="ID_TYPU" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NAZWA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="WALUTY">
           <Key>
             <PropertyRef Name="ID_WALUTY" />
@@ -2027,6 +2347,8 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <NavigationProperty Name="FIRMY" Relationship="Self.FK__ZLECENIA__ID_FIR__5DCAEF64" FromRole="ZLECENIA" ToRole="FIRMY" />
           <NavigationProperty Name="REALIZACJA_PRODUKCJA" Relationship="Self.FK__REALIZACJ__ID_ZL__03F0984C" FromRole="ZLECENIA" ToRole="REALIZACJA_PRODUKCJA" />
           <NavigationProperty Name="DATA_STATUSU_ZLECENIA" Relationship="KWZP_PROJEKTModel.FK__DATA_STAT__ID_ZL__628FA481" FromRole="ZLECENIA" ToRole="DATA_STATUSU_ZLECENIA" />
+          <NavigationProperty Name="ZMIANA_STANU_MAGAZYNU_MATERIALOW" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_ZL__2739D489" FromRole="ZLECENIA" ToRole="ZMIANA_STANU_MAGAZYNU_MATERIALOW" />
+          <NavigationProperty Name="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_ZL__2BFE89A6" FromRole="ZLECENIA" ToRole="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" />
         </EntityType>
         <EntityType Name="PARAMETRY_MASZYNY">
           <Key>
@@ -2463,7 +2785,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <EntitySet Name="DOSTAWA" EntityType="Self.DOSTAWA" />
           <EntitySet Name="FAKTURY" EntityType="Self.FAKTURY" />
           <EntitySet Name="FIRMY" EntityType="Self.FIRMY" />
-          <EntitySet Name="LOKALIZACJA" EntityType="Self.LOKALIZACJA" />
           <EntitySet Name="MASZYNY" EntityType="Self.MASZYNY" />
           <EntitySet Name="MATERIAL" EntityType="Self.MATERIAL" />
           <EntitySet Name="MIASTA" EntityType="Self.MIASTA" />
@@ -2487,7 +2808,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <EntitySet Name="STAWKA" EntityType="Self.STAWKA" />
           <EntitySet Name="STAWKA_PRACOWNICY" EntityType="Self.STAWKA_PRACOWNICY" />
           <EntitySet Name="SZKOLENIA" EntityType="Self.SZKOLENIA" />
-          <EntitySet Name="TYPY_ZMIANY_STANU" EntityType="Self.TYPY_ZMIANY_STANU" />
           <EntitySet Name="WALUTY" EntityType="Self.WALUTY" />
           <EntitySet Name="WOLNE" EntityType="Self.WOLNE" />
           <EntitySet Name="WOLNE_PRACOWNICY" EntityType="Self.WOLNE_PRACOWNICY" />
@@ -2692,6 +3012,40 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <EntitySet Name="ADRESY_PRACOWNIKA" EntityType="KWZP_PROJEKTModel.ADRESY_PRACOWNIKA" />
           <EntitySet Name="PRACOWNICY_URLOP_STANOWISKO" EntityType="KWZP_PROJEKTModel.PRACOWNICY_URLOP_STANOWISKO" />
           <EntitySet Name="PRACOWNIK_DANE" EntityType="KWZP_PROJEKTModel.PRACOWNIK_DANE" />
+          <EntitySet Name="LOKALIZACJA" EntityType="KWZP_PROJEKTModel.LOKALIZACJA" />
+          <EntitySet Name="SPIS_UZYTKOWNIKOW" EntityType="KWZP_PROJEKTModel.SPIS_UZYTKOWNIKOW" />
+          <EntitySet Name="ZMIANA_STANU_MAGAZYNU_MATERIALOW" EntityType="KWZP_PROJEKTModel.ZMIANA_STANU_MAGAZYNU_MATERIALOW" />
+          <EntitySet Name="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" EntityType="KWZP_PROJEKTModel.ZMIANA_STANU_MAGAZYNU_PRODUKTOW" />
+          <AssociationSet Name="FK__ZMIANA_ST__ID_LO__25518C17" Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_LO__25518C17">
+            <End Role="LOKALIZACJA" EntitySet="LOKALIZACJA" />
+            <End Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW" EntitySet="ZMIANA_STANU_MAGAZYNU_MATERIALOW" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZMIANA_ST__ID_LO__2A164134" Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_LO__2A164134">
+            <End Role="LOKALIZACJA" EntitySet="LOKALIZACJA" />
+            <End Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" EntitySet="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZMIANA_ST__ID_MA__2645B050" Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_MA__2645B050">
+            <End Role="MATERIAL" EntitySet="MATERIAL" />
+            <End Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW" EntitySet="ZMIANA_STANU_MAGAZYNU_MATERIALOW" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZMIANA_ST__ID_PR__2B0A656D" Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_PR__2B0A656D">
+            <End Role="PRODUKT" EntitySet="PRODUKT" />
+            <End Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" EntitySet="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZMIANA_ST__ID_ZL__2739D489" Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_ZL__2739D489">
+            <End Role="ZLECENIA" EntitySet="ZLECENIA" />
+            <End Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW" EntitySet="ZMIANA_STANU_MAGAZYNU_MATERIALOW" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZMIANA_ST__ID_ZL__2BFE89A6" Association="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_ZL__2BFE89A6">
+            <End Role="ZLECENIA" EntitySet="ZLECENIA" />
+            <End Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" EntitySet="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" />
+          </AssociationSet>
+          <EntitySet Name="STAN_MATERIALY_NAZWY" EntityType="KWZP_PROJEKTModel.STAN_MATERIALY_NAZWY" />
+          <EntitySet Name="STAN_PRODUKTY_NAZWY" EntityType="KWZP_PROJEKTModel.STAN_PRODUKTY_NAZWY" />
+          <EntitySet Name="KREATOR_FAKTUR" EntityType="KWZP_PROJEKTModel.KREATOR_FAKTUR" />
+          <EntitySet Name="PRZYGOTOWANIE_TRANSPORTU" EntityType="KWZP_PROJEKTModel.PRZYGOTOWANIE_TRANSPORTU" />
+          <EntitySet Name="ZAPOTRZEBOWANIE_MATERIAL" EntityType="KWZP_PROJEKTModel.ZAPOTRZEBOWANIE_MATERIAL" />
+          <EntitySet Name="ZLECENIA_LOKALIZACJA" EntityType="KWZP_PROJEKTModel.ZLECENIA_LOKALIZACJA" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -2945,6 +3299,218 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <Property Name="KRAJ" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="MIASTO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="LOKALIZACJA">
+          <Key>
+            <PropertyRef Name="ID_LOKALIZACJI" />
+          </Key>
+          <Property Name="ID_LOKALIZACJI" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SEKTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ALEJKA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CzyPelne" Type="Boolean" />
+          <NavigationProperty Name="ZMIANA_STANU_MAGAZYNU_MATERIALOW" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_LO__25518C17" FromRole="LOKALIZACJA" ToRole="ZMIANA_STANU_MAGAZYNU_MATERIALOW" />
+          <NavigationProperty Name="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_LO__2A164134" FromRole="LOKALIZACJA" ToRole="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" />
+        </EntityType>
+        <EntityType Name="SPIS_UZYTKOWNIKOW">
+          <Key>
+            <PropertyRef Name="ID_UZYTKOWNIKA" />
+            <PropertyRef Name="UPRAWNIENIA" />
+            <PropertyRef Name="NAZWA_LOGOWANIE" />
+            <PropertyRef Name="POZIOM_UPRAWNIEN" />
+            <PropertyRef Name="IMIE" />
+            <PropertyRef Name="NAZWISKO" />
+            <PropertyRef Name="PESEL" />
+          </Key>
+          <Property Name="ID_UZYTKOWNIKA" Type="Int32" Nullable="false" />
+          <Property Name="ID_PRACOWNIK" Type="Int32" />
+          <Property Name="UPRAWNIENIA" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA_LOGOWANIE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="HASLO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="POZIOM_UPRAWNIEN" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IMIE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWISKO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PESEL" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ZMIANA_STANU_MAGAZYNU_MATERIALOW">
+          <Key>
+            <PropertyRef Name="ID_ZMIANY_MAT" />
+          </Key>
+          <Property Name="ID_ZMIANY_MAT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_LOKALIZACJI" Type="Int32" />
+          <Property Name="ID_MATERIALU" Type="Int32" />
+          <Property Name="ID_ZLECENIA" Type="Int32" />
+          <Property Name="ILOSC" Type="Int32" />
+          <Property Name="DATA_WPISU" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="LOKALIZACJA" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_LO__25518C17" FromRole="ZMIANA_STANU_MAGAZYNU_MATERIALOW" ToRole="LOKALIZACJA" />
+          <NavigationProperty Name="MATERIAL" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_MA__2645B050" FromRole="ZMIANA_STANU_MAGAZYNU_MATERIALOW" ToRole="MATERIAL" />
+          <NavigationProperty Name="ZLECENIA" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_ZL__2739D489" FromRole="ZMIANA_STANU_MAGAZYNU_MATERIALOW" ToRole="ZLECENIA" />
+        </EntityType>
+        <EntityType Name="ZMIANA_STANU_MAGAZYNU_PRODUKTOW">
+          <Key>
+            <PropertyRef Name="ID_ZMIANY_PRODUKTU" />
+          </Key>
+          <Property Name="ID_ZMIANY_PRODUKTU" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_LOKALIZACJI" Type="Int32" />
+          <Property Name="ID_PRODUKTU" Type="Int32" />
+          <Property Name="ID_ZLECENIA" Type="Int32" />
+          <Property Name="ILOSC" Type="Int32" />
+          <Property Name="DATA_WPISU" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="LOKALIZACJA" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_LO__2A164134" FromRole="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" ToRole="LOKALIZACJA" />
+          <NavigationProperty Name="PRODUKT" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_PR__2B0A656D" FromRole="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" ToRole="PRODUKT" />
+          <NavigationProperty Name="ZLECENIA" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_ZL__2BFE89A6" FromRole="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" ToRole="ZLECENIA" />
+        </EntityType>
+        <Association Name="FK__ZMIANA_ST__ID_LO__25518C17">
+          <End Type="KWZP_PROJEKTModel.LOKALIZACJA" Role="LOKALIZACJA" Multiplicity="0..1" />
+          <End Type="KWZP_PROJEKTModel.ZMIANA_STANU_MAGAZYNU_MATERIALOW" Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOKALIZACJA">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Principal>
+            <Dependent Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ZMIANA_ST__ID_LO__2A164134">
+          <End Type="KWZP_PROJEKTModel.LOKALIZACJA" Role="LOKALIZACJA" Multiplicity="0..1" />
+          <End Type="KWZP_PROJEKTModel.ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOKALIZACJA">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Principal>
+            <Dependent Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ZMIANA_ST__ID_MA__2645B050">
+          <End Type="KWZP_PROJEKTModel.MATERIAL" Role="MATERIAL" Multiplicity="0..1" />
+          <End Type="KWZP_PROJEKTModel.ZMIANA_STANU_MAGAZYNU_MATERIALOW" Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATERIAL">
+              <PropertyRef Name="ID_MATERIALU" />
+            </Principal>
+            <Dependent Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW">
+              <PropertyRef Name="ID_MATERIALU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ZMIANA_ST__ID_PR__2B0A656D">
+          <End Type="KWZP_PROJEKTModel.PRODUKT" Role="PRODUKT" Multiplicity="0..1" />
+          <End Type="KWZP_PROJEKTModel.ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUKT">
+              <PropertyRef Name="ID_PRODUKTU" />
+            </Principal>
+            <Dependent Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW">
+              <PropertyRef Name="ID_PRODUKTU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ZMIANA_ST__ID_ZL__2739D489">
+          <End Type="KWZP_PROJEKTModel.ZLECENIA" Role="ZLECENIA" Multiplicity="0..1" />
+          <End Type="KWZP_PROJEKTModel.ZMIANA_STANU_MAGAZYNU_MATERIALOW" Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZLECENIA">
+              <PropertyRef Name="ID_ZLECENIA" />
+            </Principal>
+            <Dependent Role="ZMIANA_STANU_MAGAZYNU_MATERIALOW">
+              <PropertyRef Name="ID_ZLECENIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ZMIANA_ST__ID_ZL__2BFE89A6">
+          <End Type="KWZP_PROJEKTModel.ZLECENIA" Role="ZLECENIA" Multiplicity="0..1" />
+          <End Type="KWZP_PROJEKTModel.ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZLECENIA">
+              <PropertyRef Name="ID_ZLECENIA" />
+            </Principal>
+            <Dependent Role="ZMIANA_STANU_MAGAZYNU_PRODUKTOW">
+              <PropertyRef Name="ID_ZLECENIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="STAN_MATERIALY_NAZWY">
+          <Key>
+            <PropertyRef Name="PELNA_NAZWA_MATERIALU" />
+            <PropertyRef Name="ID_MATERIALU" />
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="ID_LOKALIZACJI" />
+          </Key>
+          <Property Name="ID_MATERIALU" Type="Int32" Nullable="false" />
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="ID_LOKALIZACJI" Type="Int32" Nullable="false" />
+          <Property Name="STAN" Type="Int32" />
+          <Property Name="SEKTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ALEJKA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PELNA_NAZWA_MATERIALU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="STAN_PRODUKTY_NAZWY">
+          <Key>
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+            <PropertyRef Name="ID_PRODUKTU" />
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="ID_LOKALIZACJI" />
+          </Key>
+          <Property Name="ID_PRODUKTU" Type="Int32" Nullable="false" />
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="ID_LOKALIZACJI" Type="Int32" Nullable="false" />
+          <Property Name="STAN" Type="Int32" />
+          <Property Name="SEKTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ALEJKA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWA_PRODUKTU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="KREATOR_FAKTUR">
+          <Key>
+            <PropertyRef Name="ID_FAKTURY" />
+          </Key>
+          <Property Name="ID_FAKTURY" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA_FIRMY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ADRES_EMAIL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NR_TELEFONU" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="NIP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ID_ZLECENIA" Type="Int32" />
+          <Property Name="DATA_WYSTAWIENIA" Type="DateTime" Precision="0" />
+          <Property Name="DATA_PLATNOSCI" Type="DateTime" Precision="0" />
+          <Property Name="KWOTA" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="WALUTA" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="IMIE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWISKO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PRZYGOTOWANIE_TRANSPORTU">
+          <Key>
+            <PropertyRef Name="ID_POJAZDU" />
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+          </Key>
+          <Property Name="ID_POJAZDU" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA_PRODUKTU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ILOSC" Type="Int32" />
+          <Property Name="SEKTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ALEJKA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ZAPOTRZEBOWANIE_MATERIAL">
+          <Key>
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" />
+          <Property Name="NAZWA_PRODUKTU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OZNACZENIE_SUROWCA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Nazwa_MATERIAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WARTOŚĆ" Type="Int32" />
+          <Property Name="LICZBA_SZTUK" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ZLECENIA_LOKALIZACJA">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="ID_PRODUKTU" Type="Int32" />
+          <Property Name="NAZWA_PRODUKTU" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ILOSC" Type="Int32" />
+          <Property Name="SEKTOR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ALEJKA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3019,18 +3585,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
                 <ScalarProperty Name="ADRES_EMAIL" ColumnName="ADRES_EMAIL" />
                 <ScalarProperty Name="NR_TELEFONU" ColumnName="NR_TELEFONU" />
                 <ScalarProperty Name="NIP" ColumnName="NIP" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LOKALIZACJA">
-            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.LOKALIZACJA">
-              <MappingFragment StoreEntitySet="LOKALIZACJA">
-                <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
-                <ScalarProperty Name="SEKTOR" ColumnName="SEKTOR" />
-                <ScalarProperty Name="ALEJKA" ColumnName="ALEJKA" />
-                <ScalarProperty Name="REAGAL" ColumnName="REAGAL" />
-                <ScalarProperty Name="POZIOM" ColumnName="POZIOM" />
-                <ScalarProperty Name="KOSZ" ColumnName="KOSZ" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3254,14 +3808,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
                 <ScalarProperty Name="OPIS_SZKOLENIA" ColumnName="OPIS_SZKOLENIA" />
                 <ScalarProperty Name="DATA_START" ColumnName="DATA_START" />
                 <ScalarProperty Name="DATA_KONIEC" ColumnName="DATA_KONIEC" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TYPY_ZMIANY_STANU">
-            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.TYPY_ZMIANY_STANU">
-              <MappingFragment StoreEntitySet="TYPY_ZMIANY_STANU">
-                <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
-                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3576,6 +4122,135 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
                 <ScalarProperty Name="IMIE" ColumnName="IMIE" />
                 <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
                 <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOKALIZACJA">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.LOKALIZACJA">
+              <MappingFragment StoreEntitySet="LOKALIZACJA">
+                <ScalarProperty Name="CzyPelne" ColumnName="CzyPelne" />
+                <ScalarProperty Name="ALEJKA" ColumnName="ALEJKA" />
+                <ScalarProperty Name="SEKTOR" ColumnName="SEKTOR" />
+                <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SPIS_UZYTKOWNIKOW">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.SPIS_UZYTKOWNIKOW">
+              <MappingFragment StoreEntitySet="SPIS_UZYTKOWNIKOW">
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+                <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+                <ScalarProperty Name="POZIOM_UPRAWNIEN" ColumnName="POZIOM_UPRAWNIEN" />
+                <ScalarProperty Name="HASLO" ColumnName="HASLO" />
+                <ScalarProperty Name="NAZWA_LOGOWANIE" ColumnName="NAZWA_LOGOWANIE" />
+                <ScalarProperty Name="UPRAWNIENIA" ColumnName="UPRAWNIENIA" />
+                <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+                <ScalarProperty Name="ID_UZYTKOWNIKA" ColumnName="ID_UZYTKOWNIKA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZMIANA_STANU_MAGAZYNU_MATERIALOW">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ZMIANA_STANU_MAGAZYNU_MATERIALOW">
+              <MappingFragment StoreEntitySet="ZMIANA_STANU_MAGAZYNU_MATERIALOW">
+                <ScalarProperty Name="DATA_WPISU" ColumnName="DATA_WPISU" />
+                <ScalarProperty Name="ILOSC" ColumnName="ILOSC" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+                <ScalarProperty Name="ID_MATERIALU" ColumnName="ID_MATERIALU" />
+                <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+                <ScalarProperty Name="ID_ZMIANY_MAT" ColumnName="ID_ZMIANY_MAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZMIANA_STANU_MAGAZYNU_PRODUKTOW">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ZMIANA_STANU_MAGAZYNU_PRODUKTOW">
+              <MappingFragment StoreEntitySet="ZMIANA_STANU_MAGAZYNU_PRODUKTOW">
+                <ScalarProperty Name="DATA_WPISU" ColumnName="DATA_WPISU" />
+                <ScalarProperty Name="ILOSC" ColumnName="ILOSC" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+                <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
+                <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+                <ScalarProperty Name="ID_ZMIANY_PRODUKTU" ColumnName="ID_ZMIANY_PRODUKTU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STAN_MATERIALY_NAZWY">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.STAN_MATERIALY_NAZWY">
+              <MappingFragment StoreEntitySet="STAN_MATERIALY_NAZWY">
+                <ScalarProperty Name="PELNA_NAZWA_MATERIALU" ColumnName="PELNA_NAZWA_MATERIALU" />
+                <ScalarProperty Name="ALEJKA" ColumnName="ALEJKA" />
+                <ScalarProperty Name="SEKTOR" ColumnName="SEKTOR" />
+                <ScalarProperty Name="STAN" ColumnName="STAN" />
+                <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+                <ScalarProperty Name="ID_MATERIALU" ColumnName="ID_MATERIALU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STAN_PRODUKTY_NAZWY">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.STAN_PRODUKTY_NAZWY">
+              <MappingFragment StoreEntitySet="STAN_PRODUKTY_NAZWY">
+                <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
+                <ScalarProperty Name="ALEJKA" ColumnName="ALEJKA" />
+                <ScalarProperty Name="SEKTOR" ColumnName="SEKTOR" />
+                <ScalarProperty Name="STAN" ColumnName="STAN" />
+                <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+                <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KREATOR_FAKTUR">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.KREATOR_FAKTUR">
+              <MappingFragment StoreEntitySet="KREATOR_FAKTUR">
+                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+                <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+                <ScalarProperty Name="WALUTA" ColumnName="WALUTA" />
+                <ScalarProperty Name="KWOTA" ColumnName="KWOTA" />
+                <ScalarProperty Name="DATA_PLATNOSCI" ColumnName="DATA_PLATNOSCI" />
+                <ScalarProperty Name="DATA_WYSTAWIENIA" ColumnName="DATA_WYSTAWIENIA" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="NR_TELEFONU" ColumnName="NR_TELEFONU" />
+                <ScalarProperty Name="ADRES_EMAIL" ColumnName="ADRES_EMAIL" />
+                <ScalarProperty Name="NAZWA_FIRMY" ColumnName="NAZWA_FIRMY" />
+                <ScalarProperty Name="ID_FAKTURY" ColumnName="ID_FAKTURY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRZYGOTOWANIE_TRANSPORTU">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRZYGOTOWANIE_TRANSPORTU">
+              <MappingFragment StoreEntitySet="PRZYGOTOWANIE_TRANSPORTU">
+                <ScalarProperty Name="ALEJKA" ColumnName="ALEJKA" />
+                <ScalarProperty Name="SEKTOR" ColumnName="SEKTOR" />
+                <ScalarProperty Name="ILOSC" ColumnName="ILOSC" />
+                <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
+                <ScalarProperty Name="ID_POJAZDU" ColumnName="ID_POJAZDU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZAPOTRZEBOWANIE_MATERIAL">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ZAPOTRZEBOWANIE_MATERIAL">
+              <MappingFragment StoreEntitySet="ZAPOTRZEBOWANIE_MATERIAL">
+                <ScalarProperty Name="LICZBA_SZTUK" ColumnName="LICZBA_SZTUK" />
+                <ScalarProperty Name="WARTOŚĆ" ColumnName="WARTOŚĆ" />
+                <ScalarProperty Name="Nazwa_MATERIAL" ColumnName="Nazwa_MATERIAL" />
+                <ScalarProperty Name="OZNACZENIE_SUROWCA" ColumnName="OZNACZENIE_SUROWCA" />
+                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+                <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZLECENIA_LOKALIZACJA">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ZLECENIA_LOKALIZACJA">
+              <MappingFragment StoreEntitySet="ZLECENIA_LOKALIZACJA">
+                <ScalarProperty Name="ALEJKA" ColumnName="ALEJKA" />
+                <ScalarProperty Name="SEKTOR" ColumnName="SEKTOR" />
+                <ScalarProperty Name="ILOSC" ColumnName="ILOSC" />
+                <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
+                <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
