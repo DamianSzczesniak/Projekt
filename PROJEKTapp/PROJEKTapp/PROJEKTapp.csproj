@@ -69,6 +69,9 @@
     <Compile Include="AKTUALNY_STATUS_ZLECEN_NAZWY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="CZAS_PRACY_MASZYN.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="DATA_STATUSU_ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -191,6 +194,12 @@
     </Compile>
     <Compile Include="Forms_Produkcja\FormObciazenie.Designer.cs">
       <DependentUpon>FormObciazenie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormRezerwacjaMaszyn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormRezerwacjaMaszyn.designer.cs">
+      <DependentUpon>FormRezerwacjaMaszyn.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms_Produkcja\FormWykorzystaneMaszyny.cs">
       <SubType>Form</SubType>
@@ -439,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\FormObciazenie.resx">
       <DependentUpon>FormObciazenie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormRezerwacjaMaszyn.resx">
+      <DependentUpon>FormRezerwacjaMaszyn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\FormWykorzystaneMaszyny.resx">
       <DependentUpon>FormWykorzystaneMaszyny.cs</DependentUpon>

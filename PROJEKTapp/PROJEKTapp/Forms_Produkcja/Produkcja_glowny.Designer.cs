@@ -38,6 +38,7 @@
             this.btnWykorzystaneMaszyny = new System.Windows.Forms.Button();
             this.btnGabaryty = new System.Windows.Forms.Button();
             this.btnEwidencjaMaszyn = new System.Windows.Forms.Button();
+            this.btnRezerwacjaMaszyn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,10 +174,29 @@
             this.btnEwidencjaMaszyn.UseVisualStyleBackColor = false;
             this.btnEwidencjaMaszyn.Click += new System.EventHandler(this.btnEwidencjaMaszyn_Click);
             // 
+            // btnRezerwacjaMaszyn
+            // 
+            this.btnRezerwacjaMaszyn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnRezerwacjaMaszyn.FlatAppearance.BorderSize = 0;
+            this.btnRezerwacjaMaszyn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRezerwacjaMaszyn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRezerwacjaMaszyn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRezerwacjaMaszyn.Image = global::PROJEKTapp.Properties.Resources.btnMachine1;
+            this.btnRezerwacjaMaszyn.Location = new System.Drawing.Point(228, 133);
+            this.btnRezerwacjaMaszyn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRezerwacjaMaszyn.Name = "btnRezerwacjaMaszyn";
+            this.btnRezerwacjaMaszyn.Size = new System.Drawing.Size(145, 100);
+            this.btnRezerwacjaMaszyn.TabIndex = 6;
+            this.btnRezerwacjaMaszyn.Text = "Rezerwacja Maszyn";
+            this.btnRezerwacjaMaszyn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRezerwacjaMaszyn.UseVisualStyleBackColor = true;
+            this.btnRezerwacjaMaszyn.Click += new System.EventHandler(this.btnRezerwacjaMaszyn_Click);
+            // 
             // Produkcja_glowny
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.btnRezerwacjaMaszyn);
             this.Controls.Add(this.btnEwidencjaMaszyn);
             this.Controls.Add(this.btnGabaryty);
             this.Controls.Add(this.btnEwidencja);
@@ -205,5 +225,6 @@
         private System.Windows.Forms.Label lblDol;
         private System.Windows.Forms.Button btnGabaryty;
         private System.Windows.Forms.Button btnEwidencjaMaszyn;
+        private System.Windows.Forms.Button btnRezerwacjaMaszyn;
     }
 }

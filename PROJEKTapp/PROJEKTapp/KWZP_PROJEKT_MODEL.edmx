@@ -471,6 +471,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.AKTUALNY_STATUS_ZLECEN_NAZWY' doe
           <Property Name="ETAP" Type="varchar" MaxLength="30" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.CZAS_PRACY_MASZYN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CZAS_PRACY_MASZYN">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="NR_EWIDENCYJNY" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+          <Property Name="NR_EWIDENCYJNY" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ILOSC_DNI_PRACY" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.GABARYT_PRODUTKU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="GABARYT_PRODUTKU">
           <Key>
@@ -1253,6 +1264,13 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
     [AKTUALNY_STATUS_ZLECEN_NAZWY].[Status] AS [Status], 
     [AKTUALNY_STATUS_ZLECEN_NAZWY].[ETAP] AS [ETAP]
     FROM [dbo].[AKTUALNY_STATUS_ZLECEN_NAZWY] AS [AKTUALNY_STATUS_ZLECEN_NAZWY]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CZAS_PRACY_MASZYN" EntityType="Self.CZAS_PRACY_MASZYN" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CZAS_PRACY_MASZYN].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [CZAS_PRACY_MASZYN].[NR_EWIDENCYJNY] AS [NR_EWIDENCYJNY], 
+    [CZAS_PRACY_MASZYN].[ILOSC_DNI_PRACY] AS [ILOSC_DNI_PRACY]
+    FROM [dbo].[CZAS_PRACY_MASZYN] AS [CZAS_PRACY_MASZYN]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="GABARYT_PRODUTKU" EntityType="Self.GABARYT_PRODUTKU" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2590,6 +2608,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           </AssociationSet>
           <EntitySet Name="AKTUALNY_STATUS_ZLECEN" EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN" />
           <EntitySet Name="AKTUALNY_STATUS_ZLECEN_NAZWY" EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN_NAZWY" />
+          <EntitySet Name="CZAS_PRACY_MASZYN" EntityType="KWZP_PROJEKTModel.CZAS_PRACY_MASZYN" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -2789,6 +2808,15 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Int32" />
           <Property Name="ETAP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CZAS_PRACY_MASZYN">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="NR_EWIDENCYJNY" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="NR_EWIDENCYJNY" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ILOSC_DNI_PRACY" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3376,6 +3404,15 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
               <MappingFragment StoreEntitySet="AKTUALNY_STATUS_ZLECEN_NAZWY">
                 <ScalarProperty Name="ETAP" ColumnName="ETAP" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CZAS_PRACY_MASZYN">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.CZAS_PRACY_MASZYN">
+              <MappingFragment StoreEntitySet="CZAS_PRACY_MASZYN">
+                <ScalarProperty Name="ILOSC_DNI_PRACY" ColumnName="ILOSC_DNI_PRACY" />
+                <ScalarProperty Name="NR_EWIDENCYJNY" ColumnName="NR_EWIDENCYJNY" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
               </MappingFragment>
             </EntityTypeMapping>
