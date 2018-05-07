@@ -443,6 +443,9 @@
     <Compile Include="ZLECENIA_LOKALIZACJA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="ZLECENIE_PRODUKT.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="ZMIANA_STANU_MAGAZYNU_MATERIALOW.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>

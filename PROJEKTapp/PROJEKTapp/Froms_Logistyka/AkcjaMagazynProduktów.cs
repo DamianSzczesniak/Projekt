@@ -66,11 +66,15 @@ namespace PROJEKTapp.Froms_Logistyka
                     cBoxSurPro.DataSource = db.PRODUKT.ToList();
                     cBoxSurPro.DisplayMember = "NAZWA_PRODUKTU";
                     cBoxSurPro.ValueMember = "ID_PRODUKTU";
+                    
+                   
+
                     txtBoxRAkcji.Text = "DODAWANIE";
                     cBoxLokalizacja.DataSource = db.LOKALIZACJA.Where(a => a.CzyPelne == false).ToList();
                     cBoxLokalizacja.DisplayMember = "ID_LOKALIZACJI";
                     cBoxLokalizacja.ValueMember = "ID_LOKALIZACJI";
                     cBoxPrzypisaneZlecenie.DataSource = db.ZLECENIA.ToList();
+                  
                     cBoxPrzypisaneZlecenie.DisplayMember = "ID_ZLECENIA";
                     cBoxPrzypisaneZlecenie.ValueMember = "ID_ZLECENIA";
                 }
@@ -203,6 +207,33 @@ namespace PROJEKTapp.Froms_Logistyka
             }
         }
 
-        
+   
+
+        private void cBoxPrzypisaneZlecenie_Click(object sender, EventArgs e)
+        {
+            if (materialy)
+            {
+                if (dane == null)
+                {
+
+                    //  cBoxPrzypisaneZlecenie.DataSource = db.ZLECENIA.ToList();
+                    //   cBoxPrzypisaneZlecenie.DisplayMember = "ID_ZLECENIA";
+                    // cBoxPrzypisaneZlecenie.ValueMember = "ID_ZLECENIA";
+                }
+
+            }
+            else
+            {
+                if (dane == null)
+                {
+
+                    int ktoreZlecenia = int.Parse(cBoxSurPro.SelectedValue.ToString());
+                    cBoxPrzypisaneZlecenie.DataSource = db.ZLECENIE_PRODUKT.Where(b => b.ID_PRODUKTU == ktoreZlecenia).ToList();
+                    cBoxPrzypisaneZlecenie.DisplayMember = "ID_ZLECENIA";
+                    cBoxPrzypisaneZlecenie.ValueMember = "ID_ZLECENIA";
+                }
+
+            }
+        }
     }
 }
