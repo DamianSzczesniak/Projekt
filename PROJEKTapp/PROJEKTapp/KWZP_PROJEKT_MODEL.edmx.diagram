@@ -41,7 +41,7 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA" Width="1.5" PointX="5.25" PointY="25" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PARAMETRY_MASZYNY" Width="1.5" PointX="13.5" PointY="18.375" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PARAMETRY_MATERIALU" Width="1.5" PointX="10.5" PointY="23.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKCJA_POLPRODUKTU" Width="1.5" PointX="15" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKCJA_POLPRODUKTU" Width="1.5" PointX="15.375" PointY="15.375" IsExpanded="true" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ADRESY__ID_MIAST__66603565" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DOSTAWA__ID_ADRE__123EB7A3" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ADRESY_PR__ID_MI__693CA210" ManuallyRouted="false" />
@@ -100,8 +100,8 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.DATA_STATUSU_ZLECENIA" Width="1.5" PointX="16" PointY="18.25" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DATA_STAT__ID_ST__6383C8BA" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DATA_STAT__ID_ZL__628FA481" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN" Width="1.5" PointX="17.375" PointY="11.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN_NAZWY" Width="1.5" PointX="17.375" PointY="14.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN" Width="1.5" PointX="22" PointY="11.25" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN_NAZWY" Width="1.5" PointX="21.875" PointY="13.625" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY_PRACOWNIKA" Width="1.5" PointX="0.75" PointY="18.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.LOKALIZACJA" Width="1.5" PointX="11" PointY="7" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.SPIS_UZYTKOWNIKOW" Width="1.5" PointX="19.375" PointY="0.75" />
@@ -117,6 +117,10 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAN_PRODUKTY_NAZWY" Width="1.5" PointX="19.375" PointY="8.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRZYGOTOWANIE_TRANSPORTU" Width="1.5" PointX="19.375" PointY="12.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_LOKALIZACJA" Width="1.5" PointX="20.375" PointY="15.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIE_PRODUKT" Width="1.5" PointX="19" PointY="24.375" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZLECENIE___ID_PR__503BEA1C" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZLECENIE___ID_ZL__4F47C5E3" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_MATERIALY" Width="1.5" PointX="21.375" PointY="4.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

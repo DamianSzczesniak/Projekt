@@ -41,13 +41,13 @@ namespace PROJEKTapp
                     aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.ToList();
                     break;
                 case 2:
-                    aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value < 5 || a.Status.Value > 5 && a.Status.Value < 9).ToList();
+                    aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value < 5 || a.Status.Value > 5 && a.Status.Value < 10).ToList();
                     break;
                 case 3:
                     aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value < 7 && a.Status.Value > 3).ToList();
                     break;
                 case 4:
-                    aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value > 7).ToList();
+                    aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value > 8).ToList();
                     break;
 
             }
@@ -60,9 +60,9 @@ namespace PROJEKTapp
                 
                 DATA_STATUSU_ZLECENIA dataStatusuZlecenia = new DATA_STATUSU_ZLECENIA();
                 AKTUALNY_STATUS_ZLECEN_NAZWY zlecenie = aKTUALNYSTATUSZLECENNAZWYBindingSource.Current as AKTUALNY_STATUS_ZLECEN_NAZWY;
-                if (!(uprawnienia == 2 && (int.Parse(zlecenie.Status.ToString()) + 1 == 5 || int.Parse(zlecenie.Status.ToString()) + 1 == 9)))
+                if (!(uprawnienia == 2 && (int.Parse(zlecenie.Status.ToString()) + 1 == 5 || int.Parse(zlecenie.Status.ToString()) + 1 == 10)))
                 {
-                    if (!(uprawnienia == 3 && int.Parse(zlecenie.Status.ToString()) + 1 != 7 ))
+                    if (!(uprawnienia == 3 && int.Parse(zlecenie.Status.ToString()) + 1 == 7 ))
                     {
                         
                         dataStatusuZlecenia.ID_ZLECENIA = zlecenie.ID_ZLECENIA;
