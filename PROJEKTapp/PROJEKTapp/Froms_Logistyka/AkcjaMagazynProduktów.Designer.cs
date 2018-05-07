@@ -41,6 +41,7 @@
             this.txtBoxRAkcji = new System.Windows.Forms.TextBox();
             this.txtBoxData = new System.Windows.Forms.TextBox();
             this.lblData = new System.Windows.Forms.Label();
+            this.checkBoxPelne = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblItem
@@ -91,7 +92,7 @@
             // btnZapisz
             // 
             this.btnZapisz.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnZapisz.Location = new System.Drawing.Point(122, 338);
+            this.btnZapisz.Location = new System.Drawing.Point(119, 368);
             this.btnZapisz.Name = "btnZapisz";
             this.btnZapisz.Size = new System.Drawing.Size(75, 23);
             this.btnZapisz.TabIndex = 5;
@@ -107,7 +108,7 @@
             this.cBoxSurPro.Name = "cBoxSurPro";
             this.cBoxSurPro.Size = new System.Drawing.Size(152, 21);
             this.cBoxSurPro.TabIndex = 8;
- 
+            this.cBoxSurPro.DropDownClosed += new System.EventHandler(this.cBoxPrzypisaneZlecenie_Click);
             // 
             // cBoxLokalizacja
             // 
@@ -124,6 +125,7 @@
             this.txtBoxIlosc.Name = "txtBoxIlosc";
             this.txtBoxIlosc.Size = new System.Drawing.Size(152, 20);
             this.txtBoxIlosc.TabIndex = 11;
+            this.txtBoxIlosc.Enter += new System.EventHandler(this.cBoxPrzypisaneZlecenie_Click);
             // 
             // cBoxPrzypisaneZlecenie
             // 
@@ -160,11 +162,22 @@
             this.lblData.TabIndex = 15;
             this.lblData.Text = "Data : ";
             // 
+            // checkBoxPelne
+            // 
+            this.checkBoxPelne.AutoSize = true;
+            this.checkBoxPelne.Location = new System.Drawing.Point(114, 335);
+            this.checkBoxPelne.Name = "checkBoxPelne";
+            this.checkBoxPelne.Size = new System.Drawing.Size(111, 17);
+            this.checkBoxPelne.TabIndex = 16;
+            this.checkBoxPelne.Text = "Lokalizacja Pełna";
+            this.checkBoxPelne.UseVisualStyleBackColor = true;
+            // 
             // AkcjaMagazynProduktów
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(318, 378);
+            this.ClientSize = new System.Drawing.Size(318, 403);
+            this.Controls.Add(this.checkBoxPelne);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.txtBoxData);
             this.Controls.Add(this.txtBoxRAkcji);
@@ -202,5 +215,6 @@
         private System.Windows.Forms.TextBox txtBoxRAkcji;
         private System.Windows.Forms.TextBox txtBoxData;
         private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.CheckBox checkBoxPelne;
     }
 }

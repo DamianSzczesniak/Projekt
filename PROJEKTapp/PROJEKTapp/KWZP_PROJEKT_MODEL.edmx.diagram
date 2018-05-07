@@ -120,6 +120,7 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIE_PRODUKT" Width="1.5" PointX="19" PointY="24.375" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZLECENIE___ID_PR__503BEA1C" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZLECENIE___ID_ZL__4F47C5E3" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_MATERIALY" Width="1.5" PointX="21.375" PointY="4.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
