@@ -13,57 +13,28 @@ namespace PROJEKTapp.Forms
    public partial class ZamowienieMaterialu : Form
     {
         KWZP_PROJEKTEntities db;
-        MATERIAL material;
-        private FIRMY firma;
 
         public ZamowienieMaterialu(KWZP_PROJEKTEntities db)
         {
             this.db = db;
             InitializeComponent();
-            this.button1.Text = "Show";
-            this.button2.Text = "Hide";
-
-            firma = db.FIRMY.First();
-
-            //this.textBox1.Text = firma.NAZWA_FIRMY;
-            //this.textBox2.Text = firma.NIP;
-
-           // this.checkBox1.Checked = firma.POJAZDY.Count > 2;
-
-            int currentY = 150;
-            foreach (POJAZDY pojazd in firma.POJAZDY)
-            {
-                TextBox textBox = new TextBox();
-                Label label = new Label();
-                label.Text = pojazd.MARKA + " " + pojazd.MODEL;
-                label.Location = new Point(5, currentY);
-                textBox.Text = pojazd.NUMER_REJESTRACYJNY;
-                textBox.Location = new Point(150, currentY);
-                textBox.Name = "txt" + pojazd.ID_POJAZDU;
-                this.panel1.Controls.Add(label);
-                this.panel1.Controls.Add(textBox);
-                currentY += 25;
-            }
+            comboBoxNrZlecenia.DataSource = db.ZLECENIA.ToList();
+            comboBoxNrZlecenia.ValueMember = "ID_ZLECENIA";
+            comboBoxNrZlecenia.SelectedValue = "ID_ZLECENIA";
+    
         }
 
-        private void Btn_Back_Click(object sender, EventArgs e)
+
+        private void BtnShow_MouseClick_1(object sender, MouseEventArgs e)
+        { 
+            
+        }
+
+        private void BtnSprDost_MouseClick(object sender, MouseEventArgs e)
         {
-            this.Close();
+            int g = int.Parse(comboBoxNrZlecenia.SelectedValue.ToString());
+            db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
         }
 
-        private void ZamowienieMaterialu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.panel1.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.panel1.Hide();
-        }
     }
 }
