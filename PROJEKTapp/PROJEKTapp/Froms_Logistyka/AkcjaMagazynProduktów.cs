@@ -215,10 +215,12 @@ namespace PROJEKTapp.Froms_Logistyka
             {
                 if (dane == null)
                 {
+                   
 
-                    //  cBoxPrzypisaneZlecenie.DataSource = db.ZLECENIA.ToList();
-                    //   cBoxPrzypisaneZlecenie.DisplayMember = "ID_ZLECENIA";
-                    // cBoxPrzypisaneZlecenie.ValueMember = "ID_ZLECENIA";
+
+                    //cBoxPrzypisaneZlecenie.DataSource = db.ZLECENIE_PRODUKT.Where(b => b.ID_PRODUKTU == pRODUKT.ID_PRODUKTU).ToList();
+                    //cBoxPrzypisaneZlecenie.DisplayMember = "ID_ZLECENIA";
+                    //cBoxPrzypisaneZlecenie.ValueMember = "ID_ZLECENIA";
                 }
 
             }
@@ -228,6 +230,7 @@ namespace PROJEKTapp.Froms_Logistyka
                 {
 
                     int ktoreZlecenia = int.Parse(cBoxSurPro.SelectedValue.ToString());
+
                     cBoxPrzypisaneZlecenie.DataSource = db.ZLECENIE_PRODUKT.Where(b => b.ID_PRODUKTU == ktoreZlecenia).ToList();
                     cBoxPrzypisaneZlecenie.DisplayMember = "ID_ZLECENIA";
                     cBoxPrzypisaneZlecenie.ValueMember = "ID_ZLECENIA";

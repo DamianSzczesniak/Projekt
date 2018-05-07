@@ -41,7 +41,7 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA" Width="1.5" PointX="5.25" PointY="25" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PARAMETRY_MASZYNY" Width="1.5" PointX="13.5" PointY="18.375" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PARAMETRY_MATERIALU" Width="1.5" PointX="10.5" PointY="23.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKCJA_POLPRODUKTU" Width="1.5" PointX="15" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKCJA_POLPRODUKTU" Width="1.5" PointX="15.375" PointY="15.375" IsExpanded="true" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ADRESY__ID_MIAST__66603565" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DOSTAWA__ID_ADRE__123EB7A3" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ADRESY_PR__ID_MI__693CA210" ManuallyRouted="false" />
