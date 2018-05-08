@@ -544,6 +544,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRACOWNICY_STANOWISKA' does not h
           <Property Name="DATA_KONIEC" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRACOWNICY_W_PRACY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PRACOWNICY_W_PRACY">
+          <Key>
+            <PropertyRef Name="DATA_DZIEN" />
+          </Key>
+          <Property Name="IMIE" Type="varchar" MaxLength="30" />
+          <Property Name="NAZWISKO" Type="varchar" MaxLength="30" />
+          <Property Name="STANOWISKO" Type="char" MaxLength="30" />
+          <Property Name="DATA_DZIEN" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRACOWNICY_ZATRUDNIENI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRACOWNICY_ZATRUDNIENI">
           <Key>
@@ -1313,6 +1324,14 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
     [PRACOWNICY_STANOWISKA].[DATA_START] AS [DATA_START], 
     [PRACOWNICY_STANOWISKA].[DATA_KONIEC] AS [DATA_KONIEC]
     FROM [dbo].[PRACOWNICY_STANOWISKA] AS [PRACOWNICY_STANOWISKA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRACOWNICY_W_PRACY" EntityType="Self.PRACOWNICY_W_PRACY" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRACOWNICY_W_PRACY].[IMIE] AS [IMIE], 
+    [PRACOWNICY_W_PRACY].[NAZWISKO] AS [NAZWISKO], 
+    [PRACOWNICY_W_PRACY].[STANOWISKO] AS [STANOWISKO], 
+    [PRACOWNICY_W_PRACY].[DATA_DZIEN] AS [DATA_DZIEN]
+    FROM [dbo].[PRACOWNICY_W_PRACY] AS [PRACOWNICY_W_PRACY]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="PRACOWNICY_ZATRUDNIENI" EntityType="Self.PRACOWNICY_ZATRUDNIENI" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2609,6 +2628,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <EntitySet Name="AKTUALNY_STATUS_ZLECEN" EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN" />
           <EntitySet Name="AKTUALNY_STATUS_ZLECEN_NAZWY" EntityType="KWZP_PROJEKTModel.AKTUALNY_STATUS_ZLECEN_NAZWY" />
           <EntitySet Name="CZAS_PRACY_MASZYN" EntityType="KWZP_PROJEKTModel.CZAS_PRACY_MASZYN" />
+          <EntitySet Name="PRACOWNICY_W_PRACY" EntityType="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -2817,6 +2837,15 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
           <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
           <Property Name="NR_EWIDENCYJNY" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="ILOSC_DNI_PRACY" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PRACOWNICY_W_PRACY">
+          <Key>
+            <PropertyRef Name="DATA_DZIEN" />
+          </Key>
+          <Property Name="IMIE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWISKO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="STANOWISKO" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="DATA_DZIEN" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -3414,6 +3443,16 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_PROCESY' does not ha
                 <ScalarProperty Name="ILOSC_DNI_PRACY" ColumnName="ILOSC_DNI_PRACY" />
                 <ScalarProperty Name="NR_EWIDENCYJNY" ColumnName="NR_EWIDENCYJNY" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRACOWNICY_W_PRACY">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY">
+              <MappingFragment StoreEntitySet="PRACOWNICY_W_PRACY">
+                <ScalarProperty Name="DATA_DZIEN" ColumnName="DATA_DZIEN" />
+                <ScalarProperty Name="STANOWISKO" ColumnName="STANOWISKO" />
+                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+                <ScalarProperty Name="IMIE" ColumnName="IMIE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -14,7 +14,6 @@ namespace PROJEKTapp.Forms_Produkcja
     {
         KWZP_PROJEKTEntities db;
         DateTime data = new DateTime();
-        int id;
 
         public FormRezerwacjaMaszyn(KWZP_PROJEKTEntities db)
         {
@@ -36,7 +35,8 @@ namespace PROJEKTapp.Forms_Produkcja
 
         private void RezerwujMaszyny_Click(object sender, EventArgs e)
         {
-           List<CZAS_PRACY_MASZYN> CzasyPracy = this.db.CZAS_PRACY_MASZYN.Where(x => x.ID_ZLECENIA == ((ZLECENIA) cboxWybierzZlecenie.SelectedValue).ID_ZLECENIA).ToList();
+            List<CZAS_PRACY_MASZYN> CzasyPracy = this.db.CZAS_PRACY_MASZYN.Where(x => x.ID_ZLECENIA == ((ZLECENIA) cboxWybierzZlecenie.SelectedValue).ID_ZLECENIA).ToList();
+            this.GridSprawdzenie.DataSource = CzasyPracy;
         }
     }
 }

@@ -303,6 +303,9 @@
     <Compile Include="PRACOWNICY_STANOWISKA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="PRACOWNICY_W_PRACY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="PRACOWNICY_ZATRUDNIENI.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>

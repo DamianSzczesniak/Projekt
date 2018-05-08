@@ -32,6 +32,8 @@
             this.lblWyborZlecenia = new System.Windows.Forms.Label();
             this.cboxWybierzZlecenie = new System.Windows.Forms.ComboBox();
             this.RezerwujMaszyny = new System.Windows.Forms.Button();
+            this.GridSprawdzenie = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.GridSprawdzenie)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExitRezerwacjaMaszyn
@@ -75,11 +77,20 @@
             this.RezerwujMaszyny.UseVisualStyleBackColor = true;
             this.RezerwujMaszyny.Click += new System.EventHandler(this.RezerwujMaszyny_Click);
             // 
+            // GridSprawdzenie
+            // 
+            this.GridSprawdzenie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridSprawdzenie.Location = new System.Drawing.Point(464, 136);
+            this.GridSprawdzenie.Name = "GridSprawdzenie";
+            this.GridSprawdzenie.Size = new System.Drawing.Size(240, 150);
+            this.GridSprawdzenie.TabIndex = 6;
+            // 
             // FormRezerwacjaMaszyn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.GridSprawdzenie);
             this.Controls.Add(this.RezerwujMaszyny);
             this.Controls.Add(this.cboxWybierzZlecenie);
             this.Controls.Add(this.lblWyborZlecenia);
@@ -87,6 +98,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRezerwacjaMaszyn";
             this.Text = "FormRezerwacjaMaszyn";
+            ((System.ComponentModel.ISupportInitialize)(this.GridSprawdzenie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,5 +110,6 @@
         private System.Windows.Forms.Label lblWyborZlecenia;
         private System.Windows.Forms.ComboBox cboxWybierzZlecenie;
         private System.Windows.Forms.Button RezerwujMaszyny;
+        private System.Windows.Forms.DataGridView GridSprawdzenie;
     }
 }

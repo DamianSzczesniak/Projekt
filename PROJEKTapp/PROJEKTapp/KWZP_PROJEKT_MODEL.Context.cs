@@ -82,6 +82,7 @@ namespace PROJEKTapp
         public virtual DbSet<AKTUALNY_STATUS_ZLECEN> AKTUALNY_STATUS_ZLECEN { get; set; }
         public virtual DbSet<AKTUALNY_STATUS_ZLECEN_NAZWY> AKTUALNY_STATUS_ZLECEN_NAZWY { get; set; }
         public virtual DbSet<CZAS_PRACY_MASZYN> CZAS_PRACY_MASZYN { get; set; }
+        public virtual DbSet<PRACOWNICY_W_PRACY> PRACOWNICY_W_PRACY { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {

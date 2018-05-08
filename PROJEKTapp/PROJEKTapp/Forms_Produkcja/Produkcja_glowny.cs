@@ -14,6 +14,7 @@ namespace PROJEKTapp
     public partial class Produkcja_glowny : Form
     {
         KWZP_PROJEKTEntities db;
+        DateTime data = new DateTime();
         public Produkcja_glowny(KWZP_PROJEKTEntities db)
         {
             this.db = db;
@@ -53,6 +54,11 @@ namespace PROJEKTapp
         {
             Forms_Produkcja.FormRezerwacjaMaszyn rezerwacja = new Forms_Produkcja.FormRezerwacjaMaszyn(db);
             rezerwacja.Show();
+        }
+
+        private void Produkcja_glowny_Load(object sender, EventArgs e)
+        {
+            GridPracownicyWPracy.DataSource = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();
         }
     }
 }

@@ -39,7 +39,9 @@
             this.btnGabaryty = new System.Windows.Forms.Button();
             this.btnEwidencjaMaszyn = new System.Windows.Forms.Button();
             this.btnRezerwacjaMaszyn = new System.Windows.Forms.Button();
+            this.GridPracownicyWPracy = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPracownicyWPracy)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -182,7 +184,7 @@
             this.btnRezerwacjaMaszyn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRezerwacjaMaszyn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRezerwacjaMaszyn.Image = global::PROJEKTapp.Properties.Resources.btnMachine1;
-            this.btnRezerwacjaMaszyn.Location = new System.Drawing.Point(228, 133);
+            this.btnRezerwacjaMaszyn.Location = new System.Drawing.Point(455, 164);
             this.btnRezerwacjaMaszyn.Margin = new System.Windows.Forms.Padding(2);
             this.btnRezerwacjaMaszyn.Name = "btnRezerwacjaMaszyn";
             this.btnRezerwacjaMaszyn.Size = new System.Drawing.Size(145, 100);
@@ -192,10 +194,19 @@
             this.btnRezerwacjaMaszyn.UseVisualStyleBackColor = true;
             this.btnRezerwacjaMaszyn.Click += new System.EventHandler(this.btnRezerwacjaMaszyn_Click);
             // 
+            // GridPracownicyWPracy
+            // 
+            this.GridPracownicyWPracy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridPracownicyWPracy.Location = new System.Drawing.Point(8, 65);
+            this.GridPracownicyWPracy.Name = "GridPracownicyWPracy";
+            this.GridPracownicyWPracy.Size = new System.Drawing.Size(442, 196);
+            this.GridPracownicyWPracy.TabIndex = 7;
+            // 
             // Produkcja_glowny
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.GridPracownicyWPracy);
             this.Controls.Add(this.btnRezerwacjaMaszyn);
             this.Controls.Add(this.btnEwidencjaMaszyn);
             this.Controls.Add(this.btnGabaryty);
@@ -208,8 +219,10 @@
             this.Name = "Produkcja_glowny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produkcja_glowny";
+            this.Load += new System.EventHandler(this.Produkcja_glowny_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPracownicyWPracy)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -225,5 +238,6 @@
         private System.Windows.Forms.Button btnGabaryty;
         private System.Windows.Forms.Button btnEwidencjaMaszyn;
         private System.Windows.Forms.Button btnRezerwacjaMaszyn;
+        private System.Windows.Forms.DataGridView GridPracownicyWPracy;
     }
 }
