@@ -13,10 +13,11 @@ namespace PROJEKTapp.Forms_Produkcja
     public partial class FormWykorzystaneMaszyny : Form
     {
         string tryb;
-        KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities();
+        KWZP_PROJEKTEntities db;
 
         public FormWykorzystaneMaszyny(KWZP_PROJEKTEntities kwzpProjektEntities)
         {
+            this.db = db;
             InitializeComponent();
         }
 
@@ -66,6 +67,16 @@ namespace PROJEKTapp.Forms_Produkcja
         }
 
         private void lblNazwaProduktu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GridWykorzystaneMaszyny_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblTrybFiltracji_Click(object sender, EventArgs e)
         {
 
         }

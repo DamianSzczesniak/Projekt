@@ -43,7 +43,7 @@
             this.btnExitWykorzystaneMaszyny.FlatAppearance.BorderSize = 0;
             this.btnExitWykorzystaneMaszyny.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitWykorzystaneMaszyny.Image = global::PROJEKTapp.Properties.Resources.btnExit_Image;
-            this.btnExitWykorzystaneMaszyny.Location = new System.Drawing.Point(721, 12);
+            this.btnExitWykorzystaneMaszyny.Location = new System.Drawing.Point(1287, 12);
             this.btnExitWykorzystaneMaszyny.Name = "btnExitWykorzystaneMaszyny";
             this.btnExitWykorzystaneMaszyny.Size = new System.Drawing.Size(67, 52);
             this.btnExitWykorzystaneMaszyny.TabIndex = 0;
@@ -55,40 +55,44 @@
             this.GridWykorzystaneMaszyny.AllowUserToAddRows = false;
             this.GridWykorzystaneMaszyny.AllowUserToDeleteRows = false;
             this.GridWykorzystaneMaszyny.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridWykorzystaneMaszyny.Location = new System.Drawing.Point(111, 65);
+            this.GridWykorzystaneMaszyny.Location = new System.Drawing.Point(130, 152);
             this.GridWykorzystaneMaszyny.Name = "GridWykorzystaneMaszyny";
             this.GridWykorzystaneMaszyny.ReadOnly = true;
-            this.GridWykorzystaneMaszyny.Size = new System.Drawing.Size(596, 286);
+            this.GridWykorzystaneMaszyny.Size = new System.Drawing.Size(1098, 582);
             this.GridWykorzystaneMaszyny.TabIndex = 1;
+            this.GridWykorzystaneMaszyny.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridWykorzystaneMaszyny_CellContentClick);
             // 
             // lblNazwaProduktu
             // 
             this.lblNazwaProduktu.AutoSize = true;
-            this.lblNazwaProduktu.Location = new System.Drawing.Point(108, 27);
+            this.lblNazwaProduktu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNazwaProduktu.Location = new System.Drawing.Point(125, 72);
             this.lblNazwaProduktu.Name = "lblNazwaProduktu";
-            this.lblNazwaProduktu.Size = new System.Drawing.Size(115, 13);
+            this.lblNazwaProduktu.Size = new System.Drawing.Size(273, 29);
             this.lblNazwaProduktu.TabIndex = 2;
             this.lblNazwaProduktu.Text = "Wpisz nazwę produktu";
             this.lblNazwaProduktu.Click += new System.EventHandler(this.lblNazwaProduktu_Click);
             // 
             // txtNazwaProduktu
             // 
-            this.txtNazwaProduktu.Location = new System.Drawing.Point(229, 23);
+            this.txtNazwaProduktu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtNazwaProduktu.Location = new System.Drawing.Point(417, 72);
             this.txtNazwaProduktu.Name = "txtNazwaProduktu";
-            this.txtNazwaProduktu.Size = new System.Drawing.Size(100, 20);
+            this.txtNazwaProduktu.Size = new System.Drawing.Size(168, 31);
             this.txtNazwaProduktu.TabIndex = 3;
             this.txtNazwaProduktu.TextChanged += new System.EventHandler(this.txtNazwaProduktu_TextChanged);
             // 
             // cboxWybierzTryb
             // 
+            this.cboxWybierzTryb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cboxWybierzTryb.FormattingEnabled = true;
             this.cboxWybierzTryb.Items.AddRange(new object[] {
             "Wykorzystane Maszyny",
             "Wykorzystane Narzędzia",
             "Wykorzystane Procesy"});
-            this.cboxWybierzTryb.Location = new System.Drawing.Point(537, 23);
+            this.cboxWybierzTryb.Location = new System.Drawing.Point(973, 72);
             this.cboxWybierzTryb.Name = "cboxWybierzTryb";
-            this.cboxWybierzTryb.Size = new System.Drawing.Size(147, 21);
+            this.cboxWybierzTryb.Size = new System.Drawing.Size(255, 33);
             this.cboxWybierzTryb.TabIndex = 4;
             this.cboxWybierzTryb.Text = "Wykorzystane Maszyny";
             this.cboxWybierzTryb.SelectedIndexChanged += new System.EventHandler(this.cboxWybierzTryb_SelectedIndexChanged);
@@ -96,17 +100,19 @@
             // lblTrybFiltracji
             // 
             this.lblTrybFiltracji.AutoSize = true;
-            this.lblTrybFiltracji.Location = new System.Drawing.Point(434, 27);
+            this.lblTrybFiltracji.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTrybFiltracji.Location = new System.Drawing.Point(709, 72);
             this.lblTrybFiltracji.Name = "lblTrybFiltracji";
-            this.lblTrybFiltracji.Size = new System.Drawing.Size(97, 13);
+            this.lblTrybFiltracji.Size = new System.Drawing.Size(241, 29);
             this.lblTrybFiltracji.TabIndex = 5;
             this.lblTrybFiltracji.Text = "Wybierz tryb filtracji";
+            this.lblTrybFiltracji.Click += new System.EventHandler(this.lblTrybFiltracji_Click);
             // 
             // FormWykorzystaneMaszyny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.lblTrybFiltracji);
             this.Controls.Add(this.cboxWybierzTryb);
             this.Controls.Add(this.txtNazwaProduktu);
