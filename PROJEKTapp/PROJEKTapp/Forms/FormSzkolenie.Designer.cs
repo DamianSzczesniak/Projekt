@@ -40,7 +40,6 @@
             this.btnPracownicy = new System.Windows.Forms.Button();
             this.pnlSzkoleniaControl = new System.Windows.Forms.Panel();
             this.btnUsun = new System.Windows.Forms.Button();
-            this.btnEdytuj = new System.Windows.Forms.Button();
             this.btnNoweSzkolenie = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.pnlUserSearch = new System.Windows.Forms.Panel();
@@ -66,8 +65,8 @@
             this.cbRokSzkolenia = new System.Windows.Forms.ComboBox();
             this.cbSzkolenia = new System.Windows.Forms.ComboBox();
             this.KalendarzSzkolenia = new System.Windows.Forms.MonthCalendar();
-            this.btnZapiszSzkolenie = new System.Windows.Forms.Button();
             this.btnSprawdz = new System.Windows.Forms.Button();
+            this.btnZapiszSzkolenie = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlSzkoleniaControl.SuspendLayout();
@@ -211,38 +210,28 @@
             // pnlSzkoleniaControl
             // 
             this.pnlSzkoleniaControl.Controls.Add(this.btnUsun);
-            this.pnlSzkoleniaControl.Controls.Add(this.btnEdytuj);
             this.pnlSzkoleniaControl.Controls.Add(this.btnNoweSzkolenie);
             this.pnlSzkoleniaControl.Controls.Add(this.btnDodaj);
-            this.pnlSzkoleniaControl.Location = new System.Drawing.Point(0, 289);
+            this.pnlSzkoleniaControl.Location = new System.Drawing.Point(0, 377);
             this.pnlSzkoleniaControl.Name = "pnlSzkoleniaControl";
-            this.pnlSzkoleniaControl.Size = new System.Drawing.Size(160, 338);
+            this.pnlSzkoleniaControl.Size = new System.Drawing.Size(160, 250);
             this.pnlSzkoleniaControl.TabIndex = 6;
             // 
             // btnUsun
             // 
             this.btnUsun.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnUsun.Location = new System.Drawing.Point(29, 155);
+            this.btnUsun.Location = new System.Drawing.Point(29, 88);
             this.btnUsun.Name = "btnUsun";
             this.btnUsun.Size = new System.Drawing.Size(106, 61);
             this.btnUsun.TabIndex = 0;
             this.btnUsun.Text = "Usuń";
             this.btnUsun.UseVisualStyleBackColor = true;
-            // 
-            // btnEdytuj
-            // 
-            this.btnEdytuj.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEdytuj.Location = new System.Drawing.Point(29, 88);
-            this.btnEdytuj.Name = "btnEdytuj";
-            this.btnEdytuj.Size = new System.Drawing.Size(106, 61);
-            this.btnEdytuj.TabIndex = 0;
-            this.btnEdytuj.Text = "Edytuj";
-            this.btnEdytuj.UseVisualStyleBackColor = true;
+            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
             // 
             // btnNoweSzkolenie
             // 
             this.btnNoweSzkolenie.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnNoweSzkolenie.Location = new System.Drawing.Point(29, 260);
+            this.btnNoweSzkolenie.Location = new System.Drawing.Point(29, 179);
             this.btnNoweSzkolenie.Name = "btnNoweSzkolenie";
             this.btnNoweSzkolenie.Size = new System.Drawing.Size(106, 61);
             this.btnNoweSzkolenie.TabIndex = 0;
@@ -491,16 +480,6 @@
             this.KalendarzSzkolenia.Name = "KalendarzSzkolenia";
             this.KalendarzSzkolenia.TabIndex = 1;
             // 
-            // btnZapiszSzkolenie
-            // 
-            this.btnZapiszSzkolenie.Location = new System.Drawing.Point(19, 265);
-            this.btnZapiszSzkolenie.Name = "btnZapiszSzkolenie";
-            this.btnZapiszSzkolenie.Size = new System.Drawing.Size(91, 49);
-            this.btnZapiszSzkolenie.TabIndex = 71;
-            this.btnZapiszSzkolenie.Text = "Zapisz";
-            this.btnZapiszSzkolenie.UseVisualStyleBackColor = true;
-            this.btnZapiszSzkolenie.Click += new System.EventHandler(this.btnZapiszSzkolenie_Click);
-            // 
             // btnSprawdz
             // 
             this.btnSprawdz.Location = new System.Drawing.Point(20, 118);
@@ -510,6 +489,16 @@
             this.btnSprawdz.Text = "Sprawdź";
             this.btnSprawdz.UseVisualStyleBackColor = true;
             this.btnSprawdz.Click += new System.EventHandler(this.btnSprawdz_Click);
+            // 
+            // btnZapiszSzkolenie
+            // 
+            this.btnZapiszSzkolenie.Location = new System.Drawing.Point(19, 265);
+            this.btnZapiszSzkolenie.Name = "btnZapiszSzkolenie";
+            this.btnZapiszSzkolenie.Size = new System.Drawing.Size(91, 49);
+            this.btnZapiszSzkolenie.TabIndex = 71;
+            this.btnZapiszSzkolenie.Text = "Zapisz";
+            this.btnZapiszSzkolenie.UseVisualStyleBackColor = true;
+            this.btnZapiszSzkolenie.Click += new System.EventHandler(this.btnZapiszSzkolenie_Click);
             // 
             // FormSzkolenie
             // 
@@ -555,7 +544,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlSzkoleniaControl;
         private System.Windows.Forms.Button btnUsun;
-        private System.Windows.Forms.Button btnEdytuj;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Panel pnlUserSearch;
         private System.Windows.Forms.Label LWyszukaj;
