@@ -15,7 +15,7 @@ namespace PROJEKTapp.Forms_Produkcja
         string tryb;
         KWZP_PROJEKTEntities db;
 
-        public FormWykorzystaneMaszyny(KWZP_PROJEKTEntities kwzpProjektEntities)
+        public FormWykorzystaneMaszyny(KWZP_PROJEKTEntities db)
         {
             this.db = db;
             InitializeComponent();
