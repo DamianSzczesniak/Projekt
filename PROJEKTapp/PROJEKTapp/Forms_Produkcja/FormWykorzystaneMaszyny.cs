@@ -13,10 +13,11 @@ namespace PROJEKTapp.Forms_Produkcja
     public partial class FormWykorzystaneMaszyny : Form
     {
         string tryb;
-        KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities();
+        KWZP_PROJEKTEntities db;
 
-        public FormWykorzystaneMaszyny(KWZP_PROJEKTEntities kwzpProjektEntities)
+        public FormWykorzystaneMaszyny(KWZP_PROJEKTEntities db)
         {
+            this.db = db;
             InitializeComponent();
         }
 

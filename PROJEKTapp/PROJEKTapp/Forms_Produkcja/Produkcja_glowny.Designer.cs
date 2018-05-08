@@ -208,7 +208,6 @@
             this.Name = "Produkcja_glowny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produkcja_glowny";
-            this.Load += new System.EventHandler(this.Produkcja_glowny_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

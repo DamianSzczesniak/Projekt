@@ -12,11 +12,12 @@ namespace PROJEKTapp.Forms_Produkcja
 {
     public partial class FormGabaryty : Form
     {
-        KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities();
+        KWZP_PROJEKTEntities db;
         string tryb = "Masa";
 
-        public FormGabaryty(KWZP_PROJEKTEntities kwzpProjektEntities)
+        public FormGabaryty(KWZP_PROJEKTEntities db)
         {
+            this.db = db;
             InitializeComponent();
         }
 

@@ -41,7 +41,7 @@ namespace PROJEKTapp
 
         private void btnProdukcja_Click(object sender, EventArgs e)
         {
-            Produkcja_glowny Produkcja_glowny = new Produkcja_glowny();
+            Produkcja_glowny Produkcja_glowny = new Produkcja_glowny(db);
             Produkcja_glowny.Show();
         }
 

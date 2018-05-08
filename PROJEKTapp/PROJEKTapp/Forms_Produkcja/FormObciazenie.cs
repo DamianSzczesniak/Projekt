@@ -15,10 +15,11 @@ namespace PROJEKTapp.Forms_Produkcja
     {
         string data;
         string tryb = "Obciążenie Maszyn";
-        KWZP_PROJEKTEntities db = new KWZP_PROJEKTEntities();
+        KWZP_PROJEKTEntities db;
 
-        public FormObciazenie(KWZP_PROJEKTEntities kwzpProjektEntities)
+        public FormObciazenie(KWZP_PROJEKTEntities db)
         {
+            this.db = db;
             InitializeComponent();
         }
 
