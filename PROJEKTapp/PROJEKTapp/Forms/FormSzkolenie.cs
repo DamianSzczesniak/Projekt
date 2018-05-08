@@ -154,6 +154,7 @@ namespace PROJEKTapp
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             ZapiszUsun = true;
+            btnSprawdz.Show();
             pnlDodajSzkolenie.Show();
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             lblPracownik.Text = "Szkolenie pracownika " + ListaPracownikow.CurrentRow.Cells[1].Value + " " + ListaPracownikow.CurrentRow.Cells[2].Value;
@@ -238,6 +239,14 @@ namespace PROJEKTapp
             cbSzkolenia.DataSource = db.SZKOLENIA_PRACOWNIKA.Where(szkolenia => ((szkolenia.ID_PRACOWNIK).Equals(ID)))
                 .Where(dataSzkolenia => ((dataSzkolenia.DATA_START.Year).ToString()).Equals(cbRokSzkolenia.SelectedItem.ToString())).ToList();
             cbSzkolenia.DisplayMember = "NAZWA_SZKOLENIA";
+        }
+
+        private void ListaPracownikow_MouseClick(object sender, MouseEventArgs e)
+        {
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            dgvSzkoleniaPracownika.DataSource = db.SZKOLENIA_PRACOWNIKA.Where(pracownik => pracownik.ID_PRACOWNIK.Equals(ID)).ToList();
+            ListaPracownikow.Refresh();
+            this.dgvSzkoleniaPracownika.Columns[5].Visible = false;
         }
     }
 }

@@ -43,6 +43,7 @@
             this.btnNoweSzkolenie = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.pnlUserSearch = new System.Windows.Forms.Panel();
+            this.dgvSzkoleniaPracownika = new System.Windows.Forms.DataGridView();
             this.LWyszukaj = new System.Windows.Forms.Label();
             this.txtWyszukajNazwisko = new System.Windows.Forms.TextBox();
             this.ListaPracownikow = new System.Windows.Forms.DataGridView();
@@ -71,6 +72,7 @@
             this.panel2.SuspendLayout();
             this.pnlSzkoleniaControl.SuspendLayout();
             this.pnlUserSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSzkoleniaPracownika)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).BeginInit();
             this.pnlNoweSzkolenie.SuspendLayout();
             this.pnlDodajSzkolenie.SuspendLayout();
@@ -252,6 +254,7 @@
             // 
             // pnlUserSearch
             // 
+            this.pnlUserSearch.Controls.Add(this.dgvSzkoleniaPracownika);
             this.pnlUserSearch.Controls.Add(this.LWyszukaj);
             this.pnlUserSearch.Controls.Add(this.txtWyszukajNazwisko);
             this.pnlUserSearch.Controls.Add(this.ListaPracownikow);
@@ -259,6 +262,15 @@
             this.pnlUserSearch.Name = "pnlUserSearch";
             this.pnlUserSearch.Size = new System.Drawing.Size(552, 562);
             this.pnlUserSearch.TabIndex = 7;
+            // 
+            // dgvSzkoleniaPracownika
+            // 
+            this.dgvSzkoleniaPracownika.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSzkoleniaPracownika.Location = new System.Drawing.Point(6, 352);
+            this.dgvSzkoleniaPracownika.Name = "dgvSzkoleniaPracownika";
+            this.dgvSzkoleniaPracownika.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSzkoleniaPracownika.Size = new System.Drawing.Size(531, 210);
+            this.dgvSzkoleniaPracownika.TabIndex = 22;
             // 
             // LWyszukaj
             // 
@@ -284,8 +296,9 @@
             this.ListaPracownikow.Location = new System.Drawing.Point(6, 43);
             this.ListaPracownikow.Name = "ListaPracownikow";
             this.ListaPracownikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ListaPracownikow.Size = new System.Drawing.Size(531, 505);
+            this.ListaPracownikow.Size = new System.Drawing.Size(531, 300);
             this.ListaPracownikow.TabIndex = 19;
+            this.ListaPracownikow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListaPracownikow_MouseClick);
             // 
             // pnlNoweSzkolenie
             // 
@@ -522,6 +535,7 @@
             this.pnlSzkoleniaControl.ResumeLayout(false);
             this.pnlUserSearch.ResumeLayout(false);
             this.pnlUserSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSzkoleniaPracownika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).EndInit();
             this.pnlNoweSzkolenie.ResumeLayout(false);
             this.pnlNoweSzkolenie.PerformLayout();
@@ -571,5 +585,6 @@
         private System.Windows.Forms.Button btnAnulujSzkolenie;
         private System.Windows.Forms.Button btnZapiszSzkolenie;
         private System.Windows.Forms.Button btnSprawdz;
+        private System.Windows.Forms.DataGridView dgvSzkoleniaPracownika;
     }
 }
