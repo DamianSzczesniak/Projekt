@@ -67,6 +67,7 @@
             this.cbSzkolenia = new System.Windows.Forms.ComboBox();
             this.KalendarzSzkolenia = new System.Windows.Forms.MonthCalendar();
             this.btnZapiszSzkolenie = new System.Windows.Forms.Button();
+            this.btnSprawdz = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlSzkoleniaControl.SuspendLayout();
@@ -426,6 +427,7 @@
             this.pnlDodajSzkolenie.Controls.Add(this.cbRokSzkolenia);
             this.pnlDodajSzkolenie.Controls.Add(this.cbSzkolenia);
             this.pnlDodajSzkolenie.Controls.Add(this.KalendarzSzkolenia);
+            this.pnlDodajSzkolenie.Controls.Add(this.btnSprawdz);
             this.pnlDodajSzkolenie.Controls.Add(this.btnZapiszSzkolenie);
             this.pnlDodajSzkolenie.Location = new System.Drawing.Point(733, 296);
             this.pnlDodajSzkolenie.Name = "pnlDodajSzkolenie";
@@ -484,6 +486,7 @@
             // 
             // KalendarzSzkolenia
             // 
+            this.KalendarzSzkolenia.Enabled = false;
             this.KalendarzSzkolenia.Location = new System.Drawing.Point(340, 5);
             this.KalendarzSzkolenia.Name = "KalendarzSzkolenia";
             this.KalendarzSzkolenia.TabIndex = 1;
@@ -497,6 +500,16 @@
             this.btnZapiszSzkolenie.Text = "Zapisz";
             this.btnZapiszSzkolenie.UseVisualStyleBackColor = true;
             this.btnZapiszSzkolenie.Click += new System.EventHandler(this.btnZapiszSzkolenie_Click);
+            // 
+            // btnSprawdz
+            // 
+            this.btnSprawdz.Location = new System.Drawing.Point(20, 118);
+            this.btnSprawdz.Name = "btnSprawdz";
+            this.btnSprawdz.Size = new System.Drawing.Size(91, 49);
+            this.btnSprawdz.TabIndex = 71;
+            this.btnSprawdz.Text = "Sprawdź";
+            this.btnSprawdz.UseVisualStyleBackColor = true;
+            this.btnSprawdz.Click += new System.EventHandler(this.btnSprawdz_Click);
             // 
             // FormSzkolenie
             // 
@@ -569,5 +582,6 @@
         private System.Windows.Forms.Label lblPracownik;
         private System.Windows.Forms.Button btnAnulujSzkolenie;
         private System.Windows.Forms.Button btnZapiszSzkolenie;
+        private System.Windows.Forms.Button btnSprawdz;
     }
 }

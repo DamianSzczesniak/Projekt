@@ -181,5 +181,11 @@ namespace PROJEKTapp
         {
             cbSzkolenia.DataSource = db.SZKOLENIA.Where(szkolenia => ((szkolenia.DATA_START.Year).ToString()).Equals(cbRokSzkolenia.SelectedItem.ToString())).ToList();
         }
+
+        private void btnSprawdz_Click(object sender, EventArgs e)
+        {
+            KalendarzSzkolenia.SelectionStart = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_START;
+            KalendarzSzkolenia.SelectionEnd = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_KONIEC;
+        }
     }
 }
