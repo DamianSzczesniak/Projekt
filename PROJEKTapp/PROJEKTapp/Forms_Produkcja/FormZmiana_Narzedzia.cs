@@ -15,20 +15,12 @@ namespace PROJEKTapp.Forms_Produkcja
     {
         KWZP_PROJEKTEntities db;
         NARZEDZIA narzedzie;
-        public FormZmiana_Narzedzia()
+        public FormZmiana_Narzedzia(KWZP_PROJEKTEntities db)
         {
+            this.db = db;
             InitializeComponent();
         }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelMaszyny_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void ZapiszM_Click(object sender, EventArgs e)
         {

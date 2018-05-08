@@ -71,12 +71,12 @@ namespace PROJEKTapp.Forms_Produkcja
         {
             if (tryb == "Ewidencja Maszyn")
             {
-                Forms_Produkcja.FormZmiana_Maszyny zmianaMaszyny = new Forms_Produkcja.FormZmiana_Maszyny();
+                Forms_Produkcja.FormZmiana_Maszyny zmianaMaszyny = new Forms_Produkcja.FormZmiana_Maszyny(db);
                 zmianaMaszyny.Show();
             }
             else
             {
-                Forms_Produkcja.FormZmiana_Narzedzia zmianaNarzedzia = new Forms_Produkcja.FormZmiana_Narzedzia();
+                Forms_Produkcja.FormZmiana_Narzedzia zmianaNarzedzia = new Forms_Produkcja.FormZmiana_Narzedzia(db);
                 zmianaNarzedzia.Show();
             }
 

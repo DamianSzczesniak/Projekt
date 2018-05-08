@@ -14,8 +14,9 @@ namespace PROJEKTapp.Forms_Produkcja
     {
         KWZP_PROJEKTEntities db;
         MODELE_MASZYN maszyny;
-        public FormZmiana_Maszyny()
+        public FormZmiana_Maszyny(KWZP_PROJEKTEntities db)
         {
+            this.db = db;
             InitializeComponent();
         }
 

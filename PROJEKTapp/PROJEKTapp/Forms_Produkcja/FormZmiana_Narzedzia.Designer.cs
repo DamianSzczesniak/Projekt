@@ -107,7 +107,7 @@
             this.panelNarzedzia.Name = "panelNarzedzia";
             this.panelNarzedzia.Size = new System.Drawing.Size(800, 630);
             this.panelNarzedzia.TabIndex = 6;
-            this.panelNarzedzia.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMaszyny_Paint);
+            
             // 
             // label7
             // 
@@ -126,7 +126,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(448, 22);
             this.textBox8.TabIndex = 1;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            
             // 
             // textBox7
             // 
