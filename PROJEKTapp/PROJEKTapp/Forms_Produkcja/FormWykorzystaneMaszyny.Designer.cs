@@ -60,7 +60,6 @@
             this.GridWykorzystaneMaszyny.ReadOnly = true;
             this.GridWykorzystaneMaszyny.Size = new System.Drawing.Size(1098, 582);
             this.GridWykorzystaneMaszyny.TabIndex = 1;
-            this.GridWykorzystaneMaszyny.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridWykorzystaneMaszyny_CellContentClick);
             // 
             // lblNazwaProduktu
             // 
@@ -71,7 +70,6 @@
             this.lblNazwaProduktu.Size = new System.Drawing.Size(273, 29);
             this.lblNazwaProduktu.TabIndex = 2;
             this.lblNazwaProduktu.Text = "Wpisz nazwę produktu";
-            this.lblNazwaProduktu.Click += new System.EventHandler(this.lblNazwaProduktu_Click);
             // 
             // txtNazwaProduktu
             // 
@@ -106,13 +104,12 @@
             this.lblTrybFiltracji.Size = new System.Drawing.Size(241, 29);
             this.lblTrybFiltracji.TabIndex = 5;
             this.lblTrybFiltracji.Text = "Wybierz tryb filtracji";
-            this.lblTrybFiltracji.Click += new System.EventHandler(this.lblTrybFiltracji_Click);
             // 
             // FormWykorzystaneMaszyny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(1300, 768);
             this.Controls.Add(this.lblTrybFiltracji);
             this.Controls.Add(this.cboxWybierzTryb);
             this.Controls.Add(this.txtNazwaProduktu);
@@ -121,7 +118,7 @@
             this.Controls.Add(this.btnExitWykorzystaneMaszyny);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormWykorzystaneMaszyny";
-            this.Text = "Form1";
+            this.Text = "WYKORZYSTANE MASZYNY";
             this.Load += new System.EventHandler(this.FormWykorzystaneMaszyny_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridWykorzystaneMaszyny)).EndInit();
             this.ResumeLayout(false);

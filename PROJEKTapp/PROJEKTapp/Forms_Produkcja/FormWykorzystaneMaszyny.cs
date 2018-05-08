@@ -66,19 +66,6 @@ namespace PROJEKTapp.Forms_Produkcja
             }
         }
 
-        private void lblNazwaProduktu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GridWykorzystaneMaszyny_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void lblTrybFiltracji_Click(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }

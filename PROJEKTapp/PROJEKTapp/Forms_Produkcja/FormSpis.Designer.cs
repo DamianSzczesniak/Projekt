@@ -83,7 +83,7 @@
             this.lblNazwaProduktu.Size = new System.Drawing.Size(258, 29);
             this.lblNazwaProduktu.TabIndex = 8;
             this.lblNazwaProduktu.Text = "Wpisz nazwę modelu";
-            this.lblNazwaProduktu.Click += new System.EventHandler(this.lblNazwaProduktu_Click);
+
             // 
             // GridWykorzystaneMaszyny
             // 

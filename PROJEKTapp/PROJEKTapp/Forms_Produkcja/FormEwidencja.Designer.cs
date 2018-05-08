@@ -82,7 +82,7 @@
             this.panelNarzedzia.Name = "panelNarzedzia";
             this.panelNarzedzia.Size = new System.Drawing.Size(600, 513);
             this.panelNarzedzia.TabIndex = 3;
-            this.panelNarzedzia.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNarzedzia_Paint);
+
             // 
             // WyczyscDane
             // 
@@ -127,7 +127,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(337, 20);
             this.textBox3.TabIndex = 1;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+
             // 
             // textBox2
             // 
@@ -211,7 +211,7 @@
             this.panelMaszyny.Name = "panelMaszyny";
             this.panelMaszyny.Size = new System.Drawing.Size(600, 512);
             this.panelMaszyny.TabIndex = 4;
-            this.panelMaszyny.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMaszyny_Paint);
+
             // 
             // button1
             // 
@@ -252,7 +252,7 @@
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Marka";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+
             // 
             // label10
             // 
@@ -262,7 +262,7 @@
             this.label10.Size = new System.Drawing.Size(86, 13);
             this.label10.TabIndex = 0;
             this.label10.Text = "Cena za godzinę";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+
             // 
             // label9
             // 
@@ -272,7 +272,7 @@
             this.label9.Size = new System.Drawing.Size(39, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "Posuw";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+
             // 
             // textBox10
             // 
@@ -280,7 +280,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(337, 20);
             this.textBox10.TabIndex = 1;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+
             // 
             // textBox9
             // 
@@ -288,7 +288,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(337, 20);
             this.textBox9.TabIndex = 1;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+
             // 
             // textBox8
             // 
@@ -296,7 +296,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(337, 20);
             this.textBox8.TabIndex = 1;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+
             // 
             // textBox7
             // 
@@ -304,7 +304,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(337, 20);
             this.textBox7.TabIndex = 1;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+
             // 
             // textBox6
             // 
@@ -312,7 +312,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(337, 20);
             this.textBox6.TabIndex = 1;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+
             // 
             // textBox5
             // 
@@ -320,7 +320,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(337, 20);
             this.textBox5.TabIndex = 1;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+
             // 
             // label8
             // 
@@ -330,7 +330,7 @@
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Prędkość";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+
             // 
             // label6
             // 
@@ -340,7 +340,7 @@
             this.label6.Size = new System.Drawing.Size(25, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Typ";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+
             // 
             // label5
             // 
@@ -350,7 +350,7 @@
             this.label5.Size = new System.Drawing.Size(36, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Model";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+
             // 
             // labelM
             // 
@@ -360,7 +360,7 @@
             this.labelM.Size = new System.Drawing.Size(168, 13);
             this.labelM.TabIndex = 0;
             this.labelM.Text = "Dodanie nowego modelu maszyny";
-            this.labelM.Click += new System.EventHandler(this.labelM_Click);
+
             // 
             // btnExitEwidencja
             // 

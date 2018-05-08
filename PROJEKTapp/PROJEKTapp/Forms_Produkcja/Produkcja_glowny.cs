@@ -20,10 +20,7 @@ namespace PROJEKTapp
             InitializeComponent();
         }
 
-        private void Produkcja_glowny_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnExitProd_Click(object sender, EventArgs e)
         {

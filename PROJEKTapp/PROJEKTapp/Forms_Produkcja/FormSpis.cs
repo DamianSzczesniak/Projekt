@@ -21,10 +21,7 @@ namespace PROJEKTapp.Forms_Produkcja
             InitializeComponent();
         }
 
-        private void lblNazwaProduktu_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void cboxWybierzTryb_SelectedIndexChanged(object sender, EventArgs e)
         {
