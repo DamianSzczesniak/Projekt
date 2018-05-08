@@ -809,6 +809,19 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_MATERIALY' does not have
           <Property Name="ID_POLPRODUKTU" Type="int" Nullable="false" />
           <Property Name="ID_MATERIAL" Type="int" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ZLECENIA_PRODUKTY_NAZWY">
+          <Key>
+            <PropertyRef Name="ID_PRODUKTU" />
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+          </Key>
+          <Property Name="ID_PRODUKTU" Type="int" Nullable="false" />
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+          <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ILOSC" Type="int" />
+        </EntityType>
         <Association Name="FK__ADRESY__ID_MIAST__693CA210">
           <End Role="MIASTA" Type="Self.MIASTA" Multiplicity="0..1" />
           <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="*" />
@@ -1783,6 +1796,14 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_MATERIALY' does not have
     [ZLECENIA_MATERIALY].[ID_POLPRODUKTU] AS [ID_POLPRODUKTU], 
     [ZLECENIA_MATERIALY].[ID_MATERIAL] AS [ID_MATERIAL]
     FROM [dbo].[ZLECENIA_MATERIALY] AS [ZLECENIA_MATERIALY]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ZLECENIA_PRODUKTY_NAZWY" EntityType="Self.ZLECENIA_PRODUKTY_NAZWY" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ZLECENIA_PRODUKTY_NAZWY].[ID_PRODUKTU] AS [ID_PRODUKTU], 
+    [ZLECENIA_PRODUKTY_NAZWY].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [ZLECENIA_PRODUKTY_NAZWY].[NAZWA_PRODUKTU] AS [NAZWA_PRODUKTU], 
+    [ZLECENIA_PRODUKTY_NAZWY].[ILOSC] AS [ILOSC]
+    FROM [dbo].[ZLECENIA_PRODUKTY_NAZWY] AS [ZLECENIA_PRODUKTY_NAZWY]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__ADRESY__ID_MIAST__693CA210" Association="Self.FK__ADRESY__ID_MIAST__693CA210">
             <End Role="MIASTA" EntitySet="MIASTA" />
@@ -3108,6 +3129,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_MATERIALY' does not have
           </AssociationSet>
           <EntitySet Name="ZLECENIA_MATERIALY" EntityType="KWZP_PROJEKTModel.ZLECENIA_MATERIALY" />
           <EntitySet Name="HISTORIA_STATUS_ZLECENIA" EntityType="KWZP_PROJEKTModel.HISTORIA_STATUS_ZLECENIA" />
+          <EntitySet Name="ZLECENIA_PRODUKTY_NAZWY" EntityType="KWZP_PROJEKTModel.ZLECENIA_PRODUKTY_NAZWY" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -3626,6 +3648,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_MATERIALY' does not have
           <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
           <Property Name="ETAP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DATA_ZMIANY" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="ZLECENIA_PRODUKTY_NAZWY">
+          <Key>
+            <PropertyRef Name="ID_PRODUKTU" />
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+          </Key>
+          <Property Name="ID_PRODUKTU" Type="Int32" Nullable="false" />
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA_PRODUKTU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ILOSC" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4394,6 +4427,16 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_MATERIALY' does not have
                 <ScalarProperty Name="DATA_ZMIANY" ColumnName="DATA_ZMIANY" />
                 <ScalarProperty Name="ETAP" ColumnName="ETAP" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZLECENIA_PRODUKTY_NAZWY">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ZLECENIA_PRODUKTY_NAZWY">
+              <MappingFragment StoreEntitySet="ZLECENIA_PRODUKTY_NAZWY">
+                <ScalarProperty Name="ILOSC" ColumnName="ILOSC" />
+                <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+                <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

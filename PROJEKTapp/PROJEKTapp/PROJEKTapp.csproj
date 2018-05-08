@@ -455,6 +455,9 @@
     <Compile Include="ZLECENIA_MATERIALY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="ZLECENIA_PRODUKTY_NAZWY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="ZLECENIE_PRODUKT.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -592,6 +595,8 @@
     <None Include="SPIS_UZYTKOWNIKOW.datasource" />
     <None Include="STAN_MATERIALY_NAZWY.datasource" />
     <None Include="UPRAWNIENIA.datasource" />
+    <None Include="ZLECENIA_PRODUKTY_NAZWY.datasource" />
+    <None Include="ZLECENIE_PRODUKT.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
