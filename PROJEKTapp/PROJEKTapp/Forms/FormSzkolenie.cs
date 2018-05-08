@@ -29,8 +29,7 @@ namespace PROJEKTapp
             }
             cbRokSzkolenia.SelectedIndex = 5;
 
-            //cbSzkolenia.DataSource = db.SZKOLENIA.Where(szkolenia => szkolenia.DATA_START.Year.Equals(cbRokSzkolenia.SelectedValue)).ToList();
-            cbSzkolenia.DataSource = db.SZKOLENIA.ToList();
+            cbSzkolenia.DataSource = db.SZKOLENIA.Where(szkolenia => ((szkolenia.DATA_START.Year).ToString()).Equals(cbRokSzkolenia.SelectedItem.ToString())).ToList();
             cbSzkolenia.DisplayMember = "NAZWA_SZKOLENIA";
         }
 
@@ -172,10 +171,15 @@ namespace PROJEKTapp
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
             SZKOLENIA szkolenie;
-            szkolenie = ((SZKOLENIA)cbSzkolenia.SelectedValue);
+            szkolenie = ((SZKOLENIA)this.cbSzkolenia.SelectedValue);
             pracownik.SZKOLENIA.Add(szkolenie);
             db.SaveChanges();
             pnlDodajSzkolenie.Hide();
+        }
+
+        private void cbRokSzkolenia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbSzkolenia.DataSource = db.SZKOLENIA.Where(szkolenia => ((szkolenia.DATA_START.Year).ToString()).Equals(cbRokSzkolenia.SelectedItem.ToString())).ToList();
         }
     }
 }
