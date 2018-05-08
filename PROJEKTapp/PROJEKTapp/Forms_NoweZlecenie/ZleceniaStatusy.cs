@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROJEKTapp.Forms_NoweZlecenie;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,12 +43,15 @@ namespace PROJEKTapp
                     break;
                 case 2:
                     aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value < 5 || a.Status.Value > 5 && a.Status.Value < 10).ToList();
+                    btnHZlecen.Hide();
                     break;
                 case 3:
                     aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value < 7 && a.Status.Value > 3).ToList();
+                    btnHZlecen.Hide();
                     break;
                 case 4:
                     aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value > 8).ToList();
+                    btnHZlecen.Hide();
                     break;
 
             }
@@ -78,6 +82,19 @@ namespace PROJEKTapp
                 }
             }
 
+        }
+
+        private void btnHZlecen_Click(object sender, EventArgs e)
+        {
+            AKTUALNY_STATUS_ZLECEN_NAZWY s = aKTUALNYSTATUSZLECENNAZWYBindingSource.Current as AKTUALNY_STATUS_ZLECEN_NAZWY;
+            using (HistoriaStatusyZlecenia historiaStatusyZlecenia = new HistoriaStatusyZlecenia(db, s ))
+            {
+                if (historiaStatusyZlecenia.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    
+                }
+            }
         }
     }
 }

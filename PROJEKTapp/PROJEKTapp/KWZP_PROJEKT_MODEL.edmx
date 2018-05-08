@@ -525,6 +525,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.GABARYT_PRODUTKU' does not have a
           <Property Name="JEDNOSTKA_MIARY" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.HISTORIA_STATUS_ZLECENIA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="HISTORIA_STATUS_ZLECENIA">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="ETAP" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+          <Property Name="ETAP" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DATA_ZMIANY" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.KREATOR_FAKTUR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="KREATOR_FAKTUR">
           <Key>
@@ -1581,6 +1592,13 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_MATERIALY' does not have
     [GABARYT_PRODUTKU].[WARTOŚĆ] AS [WARTOŚĆ], 
     [GABARYT_PRODUTKU].[JEDNOSTKA_MIARY] AS [JEDNOSTKA_MIARY]
     FROM [dbo].[GABARYT_PRODUTKU] AS [GABARYT_PRODUTKU]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="HISTORIA_STATUS_ZLECENIA" EntityType="Self.HISTORIA_STATUS_ZLECENIA" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [HISTORIA_STATUS_ZLECENIA].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [HISTORIA_STATUS_ZLECENIA].[ETAP] AS [ETAP], 
+    [HISTORIA_STATUS_ZLECENIA].[DATA_ZMIANY] AS [DATA_ZMIANY]
+    FROM [dbo].[HISTORIA_STATUS_ZLECENIA] AS [HISTORIA_STATUS_ZLECENIA]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="KREATOR_FAKTUR" EntityType="Self.KREATOR_FAKTUR" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3089,6 +3107,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_MATERIALY' does not have
             <End Role="ZLECENIE_PRODUKT" EntitySet="ZLECENIE_PRODUKT" />
           </AssociationSet>
           <EntitySet Name="ZLECENIA_MATERIALY" EntityType="KWZP_PROJEKTModel.ZLECENIA_MATERIALY" />
+          <EntitySet Name="HISTORIA_STATUS_ZLECENIA" EntityType="KWZP_PROJEKTModel.HISTORIA_STATUS_ZLECENIA" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -3598,6 +3617,15 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_MATERIALY' does not have
           <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
           <Property Name="ID_POLPRODUKTU" Type="Int32" Nullable="false" />
           <Property Name="ID_MATERIAL" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HISTORIA_STATUS_ZLECENIA">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="ETAP" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="ETAP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DATA_ZMIANY" Type="DateTime" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4356,6 +4384,15 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_MATERIALY' does not have
               <MappingFragment StoreEntitySet="ZLECENIA_MATERIALY">
                 <ScalarProperty Name="ID_MATERIAL" ColumnName="ID_MATERIAL" />
                 <ScalarProperty Name="ID_POLPRODUKTU" ColumnName="ID_POLPRODUKTU" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HISTORIA_STATUS_ZLECENIA">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.HISTORIA_STATUS_ZLECENIA">
+              <MappingFragment StoreEntitySet="HISTORIA_STATUS_ZLECENIA">
+                <ScalarProperty Name="DATA_ZMIANY" ColumnName="DATA_ZMIANY" />
+                <ScalarProperty Name="ETAP" ColumnName="ETAP" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
               </MappingFragment>
             </EntityTypeMapping>
