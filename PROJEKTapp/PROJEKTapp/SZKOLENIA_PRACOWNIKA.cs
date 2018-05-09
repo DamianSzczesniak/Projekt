@@ -13,17 +13,22 @@ namespace PROJEKTapp
 {
 
 using System;
+    using System.Collections.Generic;
     
-public partial class AddPracownik_Result
+public partial class SZKOLENIA_PRACOWNIKA
 {
 
-    public string NAZWA_PRODUKTU { get; set; }
+    public int ID_SZKOLENIA { get; set; }
 
-    public string MODEL { get; set; }
+    public string NAZWA_SZKOLENIA { get; set; }
 
-    public string MARKA { get; set; }
+    public string OPIS_SZKOLENIA { get; set; }
 
-    public string TYP_MASZYNY { get; set; }
+    public System.DateTime DATA_START { get; set; }
+
+    public System.DateTime DATA_KONIEC { get; set; }
+
+    public int ID_PRACOWNIK { get; set; }
 
 }
 
