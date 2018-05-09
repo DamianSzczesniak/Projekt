@@ -46,10 +46,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(327, 558);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(245, 453);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 71);
+            this.button1.Size = new System.Drawing.Size(110, 58);
             this.button1.TabIndex = 4;
             this.button1.Text = "Aktualizuj";
             this.button1.UseVisualStyleBackColor = true;
@@ -57,10 +57,9 @@
             // 
             // WyczyscDaneM
             // 
-            this.WyczyscDaneM.Location = new System.Drawing.Point(545, 555);
-            this.WyczyscDaneM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.WyczyscDaneM.Location = new System.Drawing.Point(409, 451);
             this.WyczyscDaneM.Name = "WyczyscDaneM";
-            this.WyczyscDaneM.Size = new System.Drawing.Size(135, 71);
+            this.WyczyscDaneM.Size = new System.Drawing.Size(101, 58);
             this.WyczyscDaneM.TabIndex = 3;
             this.WyczyscDaneM.Text = "Wyczyść dane";
             this.WyczyscDaneM.UseVisualStyleBackColor = true;
@@ -68,10 +67,9 @@
             // 
             // ZapiszM
             // 
-            this.ZapiszM.Location = new System.Drawing.Point(87, 555);
-            this.ZapiszM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ZapiszM.Location = new System.Drawing.Point(65, 451);
             this.ZapiszM.Name = "ZapiszM";
-            this.ZapiszM.Size = new System.Drawing.Size(147, 71);
+            this.ZapiszM.Size = new System.Drawing.Size(110, 58);
             this.ZapiszM.TabIndex = 2;
             this.ZapiszM.Text = "Zapisz";
             this.ZapiszM.UseVisualStyleBackColor = true;
@@ -80,10 +78,9 @@
             // labelM
             // 
             this.labelM.AutoSize = true;
-            this.labelM.Location = new System.Drawing.Point(144, -50);
-            this.labelM.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelM.Location = new System.Drawing.Point(108, -41);
             this.labelM.Name = "labelM";
-            this.labelM.Size = new System.Drawing.Size(223, 17);
+            this.labelM.Size = new System.Drawing.Size(168, 13);
             this.labelM.TabIndex = 5;
             this.labelM.Text = "Dodanie nowego modelu maszyny";
             // 
@@ -102,94 +99,83 @@
             this.panelNarzedzia.Controls.Add(this.label6);
             this.panelNarzedzia.Controls.Add(this.label5);
             this.panelNarzedzia.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panelNarzedzia.Location = new System.Drawing.Point(37, 15);
-            this.panelNarzedzia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelNarzedzia.Location = new System.Drawing.Point(28, 12);
             this.panelNarzedzia.Name = "panelNarzedzia";
-            this.panelNarzedzia.Size = new System.Drawing.Size(800, 630);
+            this.panelNarzedzia.Size = new System.Drawing.Size(600, 512);
             this.panelNarzedzia.TabIndex = 6;
-            
+            this.panelNarzedzia.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNarzedzia_Paint);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(59, 210);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(44, 171);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 17);
+            this.label7.Size = new System.Drawing.Size(36, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Model";
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(232, 398);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Location = new System.Drawing.Point(174, 323);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(448, 22);
+            this.textBox8.Size = new System.Drawing.Size(337, 20);
             this.textBox8.TabIndex = 1;
-            
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(232, 294);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox7.Location = new System.Drawing.Point(174, 239);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(448, 22);
+            this.textBox7.Size = new System.Drawing.Size(337, 20);
             this.textBox7.TabIndex = 1;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(232, 202);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Location = new System.Drawing.Point(174, 164);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(448, 22);
+            this.textBox6.Size = new System.Drawing.Size(337, 20);
             this.textBox6.TabIndex = 1;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(232, 107);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Location = new System.Drawing.Point(174, 87);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(448, 22);
+            this.textBox5.Size = new System.Drawing.Size(337, 20);
             this.textBox5.TabIndex = 1;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(59, 401);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(44, 326);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 17);
+            this.label8.Size = new System.Drawing.Size(87, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "Koszt za godzinę";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(59, 303);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(44, 246);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 17);
+            this.label6.Size = new System.Drawing.Size(80, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Nr Ewidencyjny";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(59, 111);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(44, 90);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 17);
+            this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Nazwa";
             // 
             // FormZmiana_Narzedzia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1800, 897);
+            this.ClientSize = new System.Drawing.Size(1263, 729);
             this.Controls.Add(this.labelM);
             this.Controls.Add(this.panelNarzedzia);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormZmiana_Narzedzia";
             this.Text = "FormZmiana_Narzedzia";
             this.panelNarzedzia.ResumeLayout(false);

@@ -66,16 +66,23 @@ namespace PROJEKTapp.Forms_Produkcja
 
         private void ZapiszEdytuj_Click(object sender, EventArgs e)
         {
+
             if (tryb == "Ewidencja Maszyn")
             {
-                Forms_Produkcja.FormZmiana_Maszyny zmianaMaszyny = new Forms_Produkcja.FormZmiana_Maszyny(db);
+                object send = EwidencjaMaszynyNarzedzia.CurrentRow;
+                Forms_Produkcja.FormZmiana_Maszyny zmianaMaszyny = new Forms_Produkcja.FormZmiana_Maszyny(db, send, tryb);
                 zmianaMaszyny.Show();
+
             }
             else
             {
-                Forms_Produkcja.FormZmiana_Narzedzia zmianaNarzedzia = new Forms_Produkcja.FormZmiana_Narzedzia(db);
+                object send = EwidencjaMaszynyNarzedzia.CurrentRow;
+                Forms_Produkcja.FormZmiana_Narzedzia zmianaNarzedzia = new Forms_Produkcja.FormZmiana_Narzedzia(db, send, tryb);
                 zmianaNarzedzia.Show();
             }
+
+
+            
 
 
         }

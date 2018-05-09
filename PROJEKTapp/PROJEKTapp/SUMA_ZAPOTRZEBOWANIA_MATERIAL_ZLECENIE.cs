@@ -12,13 +12,11 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class PRZYGOTOWANIE_TRANSPORTU
+    public partial class SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE
     {
-        public int ID_POJAZDU { get; set; }
-        public string NAZWA_PRODUKTU { get; set; }
-        public Nullable<int> ILOSC { get; set; }
-        public string SEKTOR { get; set; }
-        public string ALEJKA { get; set; }
-        public int ID_DOSTAWY { get; set; }
+        public int ID_ZLECENIA { get; set; }
+        public int ID_MATERIAL { get; set; }
+        public string NAZWA { get; set; }
+        public Nullable<int> SUMA_MATERIALU { get; set; }
     }
 }

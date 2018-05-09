@@ -14,10 +14,27 @@ namespace PROJEKTapp.Forms_Produkcja
     {
         KWZP_PROJEKTEntities db;
         MODELE_MASZYN maszyny;
-        public FormZmiana_Maszyny(KWZP_PROJEKTEntities db)
+        object send;
+        string tryb;
+        
+        public FormZmiana_Maszyny(KWZP_PROJEKTEntities db, object send, string tryb)
         {
+            this.send = send;
             this.db = db;
+            this.tryb = tryb;
             InitializeComponent();
+
+            MODELE_MASZYN maszyny = new MODELE_MASZYN();
+            maszyny = (MODELE_MASZYN)send;
+            textBox1.Text = maszyny.MODEL;
+            textBox2.Text = maszyny.MARKA;
+            textBox3.Text = maszyny.PRĘDKOŚĆ.ToString();
+            textBox4.Text = maszyny.KOSZT_ZA_H.ToString();
+            textBox5.Text = maszyny.TYP_MASZYNY;
+            textBox6.Text = maszyny.POSUW.ToString();
+
+
+
         }
 
         private void Zapisz_Click(object sender, EventArgs e)

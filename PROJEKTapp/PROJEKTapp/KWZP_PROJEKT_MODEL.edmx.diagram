@@ -96,7 +96,6 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.KREATOR_FAKTUR" Width="1.5" PointX="17.75" PointY="11.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_URLOP_STANOWISKO" Width="1.5" PointX="17.75" PointY="16.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNIK_DANE" Width="1.5" PointX="0.75" PointY="18.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZAPOTRZEBOWANIE_MATERIAL" Width="1.5" PointX="2.75" PointY="18.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.DATA_STATUSU_ZLECENIA" Width="1.5" PointX="16" PointY="18.25" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DATA_STAT__ID_ST__6383C8BA" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DATA_STAT__ID_ZL__628FA481" />
@@ -125,6 +124,8 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.HISTORIA_STATUS_ZLECENIA" Width="1.5" PointX="21.375" PointY="0.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_MATERIALY" Width="1.5" PointX="21.375" PointY="3.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_PRODUKTY_NAZWY" Width="1.5" PointX="21.375" PointY="6.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" Width="1.875" PointX="21.375" PointY="21.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE" Width="1.5" PointX="24" PointY="21.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

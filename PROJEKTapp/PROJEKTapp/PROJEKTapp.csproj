@@ -324,6 +324,12 @@
     <Compile Include="NARZEDZIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Froms_Logistyka\NoweZamówienie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Froms_Logistyka\NoweZamówienie.Designer.cs">
+      <DependentUpon>NoweZamówienie.cs</DependentUpon>
+    </Compile>
     <Compile Include="OBCIAZENIE_MASZYN.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -419,6 +425,9 @@
     <Compile Include="STAWKA_PRACOWNICY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="SZKOLENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -455,7 +464,7 @@
     <Compile Include="ZAMOWIENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="ZAPOTRZEBOWANIE_MATERIAL.cs">
+    <Compile Include="ZAMOWIENIA_MATERIALU_NAZLECENIE.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="ZLECENIA.cs">
@@ -587,6 +596,9 @@
     <EmbeddedResource Include="Logowanie\Zmiana_Danych_Uzytkownika.resx">
       <DependentUpon>Zmiana_Danych_Uzytkownika.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Froms_Logistyka\NoweZamówienie.resx">
+      <DependentUpon>NoweZamówienie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -627,6 +639,7 @@
     </Compile>
     <None Include="SPIS_UZYTKOWNIKOW.datasource" />
     <None Include="STAN_MATERIALY_NAZWY.datasource" />
+    <None Include="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE.datasource" />
     <None Include="UPRAWNIENIA.datasource" />
     <None Include="ZLECENIA_PRODUKTY_NAZWY.datasource" />
     <None Include="ZLECENIE_PRODUKT.datasource" />
