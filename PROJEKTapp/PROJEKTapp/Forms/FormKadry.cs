@@ -156,7 +156,7 @@ namespace PROJEKTapp
             txtboxNrlokalu.Text = adrespracownik.NR_LOKALU;
             txtboxNrbudynku.Text = adrespracownik.NR_BUDYNKU;
             txtboxKodpocztowy.Text = adrespracownik.KOD_POCZTOWY;
-            cbMiasto.SelectedIndex = (int)(adrespracownik.ID_MIASTA);
+            cbMiasto.SelectedIndex = (int)(adrespracownik.ID_MIASTA - 1);
             txtboxKraj.Text = adrespracownik.KRAJ;
             pracownikstawka = pracownik.STAWKA_PRACOWNICY.Last();
             cbOkres.SelectedIndex = (int)(pracownikstawka.STAWKA.ID_OKRES - 1);
@@ -329,6 +329,7 @@ namespace PROJEKTapp
                 ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
                 ListaPracownikow.Refresh();
                 czyscform();
+                pnlUserField.Hide();
             }
         }
 
@@ -427,13 +428,14 @@ namespace PROJEKTapp
             txtboxNrlokalu.Text = adrespracownik.NR_LOKALU;
             txtboxNrbudynku.Text = adrespracownik.NR_BUDYNKU;
             txtboxKodpocztowy.Text = adrespracownik.KOD_POCZTOWY;
-            (((MIASTA)this.cbMiasto.SelectedValue).ID_MIASTA) = (int)adrespracownik.ID_MIASTA;
+            cbMiasto.SelectedIndex = (int)(adrespracownik.ID_MIASTA - 1);
             txtboxKraj.Text = adrespracownik.KRAJ;
             pracownikstawka = pracownik.STAWKA_PRACOWNICY.Last();
-            ((STAWKA)this.cbStawka.SelectedValue).ID_STAWKA = (int)pracownikstawka.ID_STAWKA;
-            cbOkres.SelectedIndex = (int)pracownikstawka.STAWKA.ID_OKRES;
+            pracownikstawka = pracownik.STAWKA_PRACOWNICY.Last();
+            cbOkres.SelectedIndex = (int)(pracownikstawka.STAWKA.ID_OKRES - 1);
+            cbStawka.Text = pracownikstawka.STAWKA.WARTOSC.ToString();
             pracownikstanowisko = pracownik.STANOWISKO_PRACOWNICY.Last();
-            ((STANOWISKO)cbStanowisko.SelectedValue).ID_STANOWISKO = (int)pracownikstanowisko.ID_STANOWISKO;
+            cbStanowisko.SelectedIndex = (pracownikstanowisko.ID_STANOWISKO - 1);
             txtDataRozpoczeciaPracy.Value = pracownikstanowisko.DATA_START;
             if (pracownikstanowisko.DATA_KONIEC != null)
             {
