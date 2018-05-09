@@ -193,6 +193,7 @@ namespace PROJEKTapp
                 wolnepracownik.DATA_START = txtDataStart.Value;
                 wolnepracownik.ID_WOLNE = (int)cbTypUrlopu.SelectedValue;
                 wolnepracownik.ID_PRACOWNIK = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+                db.WOLNE_PRACOWNICY.Add(wolnepracownik);
                 db.SaveChanges();
                 ListaPracownikow.Refresh();
                 pnlWolne.Hide();
