@@ -747,6 +747,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLE
         <EntityType Name="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
           <Key>
             <PropertyRef Name="ID_ZLECENIA" />
+            
             <PropertyRef Name="ID_MATERIAL" />
           </Key>
           <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
@@ -768,6 +769,22 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.SZKOLENIA_PRACOWNIKA' does not ha
           <Property Name="ID_SZKOLENIA" Type="int" Nullable="false" />
           <Property Name="NAZWA_SZKOLENIA" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="OPIS_SZKOLENIA" Type="varchar" MaxLength="50" />
+          <Property Name="DATA_START" Type="date" Nullable="false" />
+          <Property Name="DATA_KONIEC" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.URLOPY_PRACOWNIKA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="URLOPY_PRACOWNIKA">
+          <Key>
+            <PropertyRef Name="ID_PRACOWNIK" />
+            <PropertyRef Name="SYMBOL" />
+            <PropertyRef Name="NAZWA" />
+            <PropertyRef Name="DATA_START" />
+            <PropertyRef Name="DATA_KONIEC" />
+          </Key>
+          <Property Name="ID_PRACOWNIK" Type="int" Nullable="false" />
+          <Property Name="SYMBOL" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="NAZWA" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="DATA_START" Type="date" Nullable="false" />
           <Property Name="DATA_KONIEC" Type="date" Nullable="false" />
         </EntityType>
@@ -807,8 +824,10 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZAMOWIENIA_MATERIALU_NAZLECENIE' 
           <Key>
             <PropertyRef Name="ID_ZLECENIA" />
             <PropertyRef Name="ID_PRODUKTU" />
-            <PropertyRef Name="ID_MATERIAL" />
+            
+            
             <PropertyRef Name="ID_POLPRODUKTU" />
+            <PropertyRef Name="ID_MATERIAL" />
           </Key>
           <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
           <Property Name="ID_PRODUKTU" Type="int" Nullable="false" />
@@ -1801,6 +1820,15 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
     [SZKOLENIA_PRACOWNIKA].[DATA_START] AS [DATA_START], 
     [SZKOLENIA_PRACOWNIKA].[DATA_KONIEC] AS [DATA_KONIEC]
     FROM [dbo].[SZKOLENIA_PRACOWNIKA] AS [SZKOLENIA_PRACOWNIKA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="URLOPY_PRACOWNIKA" EntityType="Self.URLOPY_PRACOWNIKA" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [URLOPY_PRACOWNIKA].[ID_PRACOWNIK] AS [ID_PRACOWNIK], 
+    [URLOPY_PRACOWNIKA].[SYMBOL] AS [SYMBOL], 
+    [URLOPY_PRACOWNIKA].[NAZWA] AS [NAZWA], 
+    [URLOPY_PRACOWNIKA].[DATA_START] AS [DATA_START], 
+    [URLOPY_PRACOWNIKA].[DATA_KONIEC] AS [DATA_KONIEC]
+    FROM [dbo].[URLOPY_PRACOWNIKA] AS [URLOPY_PRACOWNIKA]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="WYKORZYSTANE_MASZYNY" EntityType="Self.WYKORZYSTANE_MASZYNY" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3187,6 +3215,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <EntitySet Name="SZKOLENIA_PRACOWNIKA" EntityType="KWZP_PROJEKTModel.SZKOLENIA_PRACOWNIKA" />
           <EntitySet Name="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" EntityType="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" />
           <EntitySet Name="ZAMOWIENIA_MATERIALU_NAZLECENIE" EntityType="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE" />
+          <EntitySet Name="URLOPY_PRACOWNIKA" EntityType="KWZP_PROJEKTModel.URLOPY_PRACOWNIKA" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -3747,6 +3776,20 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="LICZBA_SZTUK" Type="Int32" Nullable="false" />
           <Property Name="SUMA_p" Type="Int32" />
+        </EntityType>
+        <EntityType Name="URLOPY_PRACOWNIKA">
+          <Key>
+            <PropertyRef Name="ID_PRACOWNIK" />
+            <PropertyRef Name="SYMBOL" />
+            <PropertyRef Name="NAZWA" />
+            <PropertyRef Name="DATA_START" />
+            <PropertyRef Name="DATA_KONIEC" />
+          </Key>
+          <Property Name="ID_PRACOWNIK" Type="Int32" Nullable="false" />
+          <Property Name="SYMBOL" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_START" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DATA_KONIEC" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4549,6 +4592,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
                 <ScalarProperty Name="ILOSC" ColumnName="ILOSC" />
                 <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="URLOPY_PRACOWNIKA">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.URLOPY_PRACOWNIKA">
+              <MappingFragment StoreEntitySet="URLOPY_PRACOWNIKA">
+                <ScalarProperty Name="DATA_KONIEC" ColumnName="DATA_KONIEC" />
+                <ScalarProperty Name="DATA_START" ColumnName="DATA_START" />
+                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+                <ScalarProperty Name="SYMBOL" ColumnName="SYMBOL" />
+                <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
