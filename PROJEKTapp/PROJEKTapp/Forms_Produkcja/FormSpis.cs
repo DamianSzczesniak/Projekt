@@ -81,12 +81,6 @@ namespace PROJEKTapp.Forms_Produkcja
                 zmianaNarzedzia.Show();
             }
 
-       
-
-
-            
-
-
         }
 
         private void Usun_Click(object sender, EventArgs e)
@@ -109,7 +103,6 @@ namespace PROJEKTapp.Forms_Produkcja
                         {
                             MessageBox.Show("Usunięcie zakończone nie powodzeniem. Powód: " + ex.Message, "Uwaga", MessageBoxButtons.OK);
                         }
-
 
                     }
 
@@ -161,6 +154,11 @@ namespace PROJEKTapp.Forms_Produkcja
                 Forms_Produkcja.FormNoweNarzedzie noweNarzedzia = new Forms_Produkcja.FormNoweNarzedzie(db);
                 noweNarzedzia.Show();
             }
+        }
+
+        private void btnExitWykorzystaneMaszyny_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

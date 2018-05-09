@@ -79,7 +79,6 @@
             this.GridObciazenie.ReadOnly = true;
             this.GridObciazenie.Size = new System.Drawing.Size(1098, 582);
             this.GridObciazenie.TabIndex = 3;
-            this.GridObciazenie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridObciazenie_CellContentClick);
             // 
             // cboxTryb
             // 

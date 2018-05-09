@@ -78,20 +78,6 @@ namespace PROJEKTapp.Forms_Produkcja
         
         }
 
-        private void panelNarzedzia_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
     }
 

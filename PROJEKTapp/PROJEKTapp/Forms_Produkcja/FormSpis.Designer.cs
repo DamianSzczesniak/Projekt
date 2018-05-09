@@ -107,6 +107,7 @@
             this.btnExitWykorzystaneMaszyny.Size = new System.Drawing.Size(67, 52);
             this.btnExitWykorzystaneMaszyny.TabIndex = 6;
             this.btnExitWykorzystaneMaszyny.UseVisualStyleBackColor = false;
+            this.btnExitWykorzystaneMaszyny.Click += new System.EventHandler(this.btnExitWykorzystaneMaszyny_Click);
             // 
             // EwidencjaMaszynyNarzedzia
             // 

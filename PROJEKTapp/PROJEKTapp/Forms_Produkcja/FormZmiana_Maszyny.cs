@@ -33,8 +33,6 @@ namespace PROJEKTapp.Forms_Produkcja
             textBox5.Text = maszyny.TYP_MASZYNY;
             textBox6.Text = maszyny.POSUW.ToString();
 
-
-
         }
 
         private void Zapisz_Click(object sender, EventArgs e)

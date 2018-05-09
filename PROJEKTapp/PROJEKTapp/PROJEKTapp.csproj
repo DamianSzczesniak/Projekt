@@ -225,12 +225,6 @@
     <Compile Include="Forms_NoweZlecenie\FormNoweZlecenie.designer.cs">
       <DependentUpon>FormNoweZlecenie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms_Produkcja\FormEwidencja.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_Produkcja\FormEwidencja.Designer.cs">
-      <DependentUpon>FormEwidencja.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms_Produkcja\FormGabaryty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -574,9 +568,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_NoweZlecenie\FormNoweZlecenie.resx">
       <DependentUpon>FormNoweZlecenie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_Produkcja\FormEwidencja.resx">
-      <DependentUpon>FormEwidencja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\FormGabaryty.resx">
       <DependentUpon>FormGabaryty.cs</DependentUpon>

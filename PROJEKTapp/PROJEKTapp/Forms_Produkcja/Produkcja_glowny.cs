@@ -20,7 +20,6 @@ namespace PROJEKTapp
             InitializeComponent();
         }
 
-       
 
         private void btnExitProd_Click(object sender, EventArgs e)
         {

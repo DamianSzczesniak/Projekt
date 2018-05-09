@@ -103,7 +103,6 @@
             this.panelNarzedzia.Name = "panelNarzedzia";
             this.panelNarzedzia.Size = new System.Drawing.Size(600, 512);
             this.panelNarzedzia.TabIndex = 6;
-            this.panelNarzedzia.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNarzedzia_Paint);
             // 
             // label7
             // 
@@ -141,7 +140,6 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(337, 20);
             this.textBox5.TabIndex = 1;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label8
             // 
