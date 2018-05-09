@@ -137,10 +137,12 @@ namespace PROJEKTapp
 
                 }
             }
+            int suma = 0;
             foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY)
             {
                 int dlugoscwolne = wolne.DATA_KONIEC.Subtract(wolne.DATA_START).Days + 1;
                 DateTime aktualnaData = wolne.DATA_START;
+                suma += dlugoscwolne;
                 for (int i = 0; i < dlugoscwolne; i++)
                 {
                     KalendarzUrlop.BoldedDates = KalendarzUrlop.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
@@ -148,7 +150,9 @@ namespace PROJEKTapp
                 }
             }
 
-            textBoxWykorzystany.Text = " ";
+            textBoxWykorzystany.Text = suma.ToString();
+            int pozostalo = 26-suma; 
+            textBoxPozostalo.Text = pozostalo.ToString();
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)
