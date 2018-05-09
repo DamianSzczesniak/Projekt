@@ -500,6 +500,7 @@
             this.txtDataKoniec.Name = "txtDataKoniec";
             this.txtDataKoniec.Size = new System.Drawing.Size(225, 20);
             this.txtDataKoniec.TabIndex = 4;
+            this.txtDataKoniec.ValueChanged += new System.EventHandler(this.txtDataKoniec_ValueChanged);
             // 
             // label4
             // 
