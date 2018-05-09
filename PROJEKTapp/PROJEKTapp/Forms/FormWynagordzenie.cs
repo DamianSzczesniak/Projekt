@@ -28,7 +28,7 @@ namespace PROJEKTapp
             if (ladowanieformularzazokienkami == true)
             {
                 pnlWynagordzenia.Show();
-                dgvWyplaty.DataSource = db.PENSJE.Where(miesiac => miesiac.DATA_START < dtpMiesiac.Value).Where(datakoniec => datakoniec.DATA_KONIEC == null).ToList();
+                dgvWyplaty.DataSource = db.PENSJE.Where(miesiac => miesiac.DATA_START < dtpMiesiac.Value).Where(datakoniec => datakoniec.DATA_KONIEC > dtpMiesiac.Value || datakoniec.DATA_KONIEC == null).ToList();
                 dgvWyplaty.Columns[0].Visible = false;
                 dgvWyplaty.Columns[3].Visible = false;
                 dgvWyplaty.Columns[4].Visible = false;
@@ -47,11 +47,11 @@ namespace PROJEKTapp
         {
             if (string.IsNullOrEmpty(this.txtWyszukajNazwisko.Text))
             {
-                this.dgvWyplaty.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
+                this.dgvWyplaty.DataSource = db.PENSJE.Where(miesiac => miesiac.DATA_START < dtpMiesiac.Value).Where(datakoniec => datakoniec.DATA_KONIEC > dtpMiesiac.Value || datakoniec.DATA_KONIEC == null).ToList();
             }
             else
             {
-                this.dgvWyplaty.DataSource = db.PRACOWNICY_ZATRUDNIENI.Where(x => x.NAZWISKO.StartsWith(txtWyszukajNazwisko.Text)).ToList();
+                this.dgvWyplaty.DataSource = db.PENSJE.Where(miesiac => miesiac.DATA_START < dtpMiesiac.Value).Where(datakoniec => datakoniec.DATA_KONIEC > dtpMiesiac.Value || datakoniec.DATA_KONIEC == null).Where(x => x.NAZWISKO.StartsWith(txtWyszukajNazwisko.Text)).ToList();
             }
         }
 

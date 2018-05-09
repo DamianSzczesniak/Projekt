@@ -226,6 +226,7 @@
             this.txtWyszukajNazwisko.Name = "txtWyszukajNazwisko";
             this.txtWyszukajNazwisko.Size = new System.Drawing.Size(253, 26);
             this.txtWyszukajNazwisko.TabIndex = 22;
+            this.txtWyszukajNazwisko.TextChanged += new System.EventHandler(this.txtWyszukajNazwisko_TextChanged);
             // 
             // FormWynagordzenie
             // 
