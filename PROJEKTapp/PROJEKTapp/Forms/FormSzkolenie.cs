@@ -57,6 +57,8 @@ namespace PROJEKTapp
                 this.dgvSzkoleniaPracownika.DataSource = db.SZKOLENIA_PRACOWNIKA.Where(pracownik => pracownik.ID_PRACOWNIK.Equals(ID)).ToList();
                 this.dgvSzkoleniaPracownika.Columns[0].Visible = false;
                 this.dgvSzkoleniaPracownika.Columns[1].Visible = false;
+                dgvSzkoleniaPracownika.Columns[2].HeaderText = "Szkolenie";
+                dgvSzkoleniaPracownika.Columns[3].HeaderText = "Opis";
             }
             else
             {
@@ -75,10 +77,6 @@ namespace PROJEKTapp
                 pnlSzkoleniaControl.Show();
                 pnlUserSearch.Show();
                 pnlNoweSzkolenie.Hide();
-                this.ListaPracownikow.DataSource =
-                ListaPracownikow.Columns[0].HeaderText = "NUMER";
-                ListaPracownikow.Columns[0].Width = 60;
-                ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
             }
             else
             {

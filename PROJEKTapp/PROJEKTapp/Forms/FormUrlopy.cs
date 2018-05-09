@@ -14,6 +14,8 @@ namespace PROJEKTapp
     {
         KWZP_PROJEKTEntities db;
         bool ladowanieformularzazokienkami;
+        PRACOWNICY pracownik;
+
 
         public FormUrlopy(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
         {
@@ -50,8 +52,8 @@ namespace PROJEKTapp
                 ladowanieformularzazokienkami = true;
             }
             
-            monthCalendar1.SelectionStart = DateTime.Now;
-            monthCalendar1.SelectionEnd = DateTime.Now.AddDays(3);
+            KalendarzUrlop.SelectionStart = DateTime.Now;
+            KalendarzUrlop.SelectionEnd = DateTime.Now.AddDays(3);
                 }
 
         private void btnUrlopy_Click(object sender, EventArgs e)
@@ -119,6 +121,31 @@ namespace PROJEKTapp
         {
             pnlWolne.Show();
             czyscform();
+            
+            KalendarzUrlop.BoldedDates = new DateTime[] { };
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            this.pracownik = db.PRACOWNICY.Where(pracownik => pracownik.ID_PRACOWNIK == ID).First();
+            foreach (SZKOLENIA szkolenie in pracownik.SZKOLENIA)
+            {
+                int dlugoscSzkolenia = szkolenie.DATA_KONIEC.Subtract(szkolenie.DATA_START).Days + 1;
+                DateTime aktualnaData = szkolenie.DATA_START;
+                for (int i = 0; i < dlugoscSzkolenia; i++)
+                {
+                    KalendarzUrlop.BoldedDates = KalendarzUrlop.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
+
+                }
+            }
+            foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY)
+            {
+                int dlugoscwolne = wolne.DATA_KONIEC.Subtract(wolne.DATA_START).Days + 1;
+                DateTime aktualnaData = wolne.DATA_START;
+                for (int i = 0; i < dlugoscwolne; i++)
+                {
+                    KalendarzUrlop.BoldedDates = KalendarzUrlop.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
+
+                }
+            }
+
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)

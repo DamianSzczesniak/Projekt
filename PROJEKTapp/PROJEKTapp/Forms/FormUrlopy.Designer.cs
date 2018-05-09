@@ -45,13 +45,14 @@
             this.pnlUserSearch = new System.Windows.Forms.Panel();
             this.LWyszukaj = new System.Windows.Forms.Label();
             this.txtWyszukajNazwisko = new System.Windows.Forms.TextBox();
+            this.dgvUrlopyPraconik = new System.Windows.Forms.DataGridView();
             this.ListaPracownikow = new System.Windows.Forms.DataGridView();
             this.pnlWolne = new System.Windows.Forms.Panel();
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.btnZapiszDodaj = new System.Windows.Forms.Button();
             this.btnWyczysc = new System.Windows.Forms.Button();
             this.txtDataStart = new System.Windows.Forms.DateTimePicker();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.KalendarzUrlop = new System.Windows.Forms.MonthCalendar();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -69,14 +70,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbTypUrlopu = new System.Windows.Forms.ComboBox();
-            this.dgvUrlopyPraconik = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlUrlopyControl.SuspendLayout();
             this.pnlUserSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUrlopyPraconik)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).BeginInit();
             this.pnlWolne.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUrlopyPraconik)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -282,6 +282,15 @@
             this.txtWyszukajNazwisko.Size = new System.Drawing.Size(253, 26);
             this.txtWyszukajNazwisko.TabIndex = 20;
             // 
+            // dgvUrlopyPraconik
+            // 
+            this.dgvUrlopyPraconik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUrlopyPraconik.Location = new System.Drawing.Point(6, 345);
+            this.dgvUrlopyPraconik.Name = "dgvUrlopyPraconik";
+            this.dgvUrlopyPraconik.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUrlopyPraconik.Size = new System.Drawing.Size(531, 203);
+            this.dgvUrlopyPraconik.TabIndex = 19;
+            // 
             // ListaPracownikow
             // 
             this.ListaPracownikow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -298,7 +307,7 @@
             this.pnlWolne.Controls.Add(this.btnZapiszDodaj);
             this.pnlWolne.Controls.Add(this.btnWyczysc);
             this.pnlWolne.Controls.Add(this.txtDataStart);
-            this.pnlWolne.Controls.Add(this.monthCalendar1);
+            this.pnlWolne.Controls.Add(this.KalendarzUrlop);
             this.pnlWolne.Controls.Add(this.label2);
             this.pnlWolne.Controls.Add(this.label12);
             this.pnlWolne.Controls.Add(this.label11);
@@ -358,11 +367,11 @@
             this.txtDataStart.Size = new System.Drawing.Size(225, 20);
             this.txtDataStart.TabIndex = 3;
             // 
-            // monthCalendar1
+            // KalendarzUrlop
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(361, 6);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
+            this.KalendarzUrlop.Location = new System.Drawing.Point(361, 6);
+            this.KalendarzUrlop.Name = "KalendarzUrlop";
+            this.KalendarzUrlop.TabIndex = 0;
             // 
             // label2
             // 
@@ -520,15 +529,6 @@
             this.cbTypUrlopu.Size = new System.Drawing.Size(185, 21);
             this.cbTypUrlopu.TabIndex = 2;
             // 
-            // dgvUrlopyPraconik
-            // 
-            this.dgvUrlopyPraconik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUrlopyPraconik.Location = new System.Drawing.Point(6, 345);
-            this.dgvUrlopyPraconik.Name = "dgvUrlopyPraconik";
-            this.dgvUrlopyPraconik.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUrlopyPraconik.Size = new System.Drawing.Size(531, 203);
-            this.dgvUrlopyPraconik.TabIndex = 19;
-            // 
             // FormUrlopy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -550,10 +550,10 @@
             this.pnlUrlopyControl.ResumeLayout(false);
             this.pnlUserSearch.ResumeLayout(false);
             this.pnlUserSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUrlopyPraconik)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).EndInit();
             this.pnlWolne.ResumeLayout(false);
             this.pnlWolne.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUrlopyPraconik)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -579,7 +579,7 @@
         private System.Windows.Forms.DataGridView ListaPracownikow;
         private System.Windows.Forms.Panel pnlWolne;
         private System.Windows.Forms.DateTimePicker txtDataStart;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar KalendarzUrlop;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
