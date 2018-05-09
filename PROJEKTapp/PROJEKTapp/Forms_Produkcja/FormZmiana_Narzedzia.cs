@@ -15,12 +15,24 @@ namespace PROJEKTapp.Forms_Produkcja
     {
         KWZP_PROJEKTEntities db;
         NARZEDZIA narzedzie;
-        public FormZmiana_Narzedzia(KWZP_PROJEKTEntities db)
+        object send;
+        string tryb;
+        public FormZmiana_Narzedzia(KWZP_PROJEKTEntities db, object send, string tryb)
         {
             this.db = db;
+            this.send = send;
+            this.tryb = tryb;
             InitializeComponent();
+
+            NARZEDZIA narzedzia = new NARZEDZIA();
+            narzedzia = (NARZEDZIA)send;
+            textBox5.Text = narzedzia.NAZWA;
+            textBox6.Text = narzedzia.MODEL;
+            textBox7.Text = narzedzia.NR_EWIDENCYJNY.ToString();
+            textBox8.Text = narzedzia.KOSZT_ZA_H.ToString();
+
         }
-        
+
 
         private void ZapiszM_Click(object sender, EventArgs e)
         {
@@ -64,6 +76,11 @@ namespace PROJEKTapp.Forms_Produkcja
             textBox7.Clear();
             textBox8.Clear();
         
+        }
+
+        private void panelNarzedzia_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
     }
