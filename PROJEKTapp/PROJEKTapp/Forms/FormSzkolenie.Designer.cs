@@ -488,7 +488,6 @@
             // 
             // KalendarzSzkolenia
             // 
-            this.KalendarzSzkolenia.Enabled = false;
             this.KalendarzSzkolenia.Location = new System.Drawing.Point(340, 5);
             this.KalendarzSzkolenia.Name = "KalendarzSzkolenia";
             this.KalendarzSzkolenia.TabIndex = 1;
