@@ -71,7 +71,7 @@ namespace PROJEKTapp
                 pnlSzkoleniaControl.Show();
                 pnlUserSearch.Show();
                 pnlNoweSzkolenie.Hide();
-                this.ListaPracownikow.DataSource = 
+                this.ListaPracownikow.DataSource =
                 ListaPracownikow.Columns[0].HeaderText = "NUMER";
                 ListaPracownikow.Columns[0].Width = 60;
                 ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
@@ -125,18 +125,16 @@ namespace PROJEKTapp
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
         {
-           
-               
-                    SZKOLENIA szkolenie = new SZKOLENIA();
-                    szkolenie.NAZWA_SZKOLENIA = this.txtboxNazwa.Text;
-                    szkolenie.OPIS_SZKOLENIA = this.txtboxOpis.Text;
-                    szkolenie.DATA_START = this.dtpStart.Value;
-                    szkolenie.DATA_KONIEC = this.dtpKoniec.Value;
-                    db.SZKOLENIA.Add(szkolenie);
-                    db.SaveChanges();
-                    pnlDodajSzkolenie.Hide();
+            SZKOLENIA szkolenie = new SZKOLENIA();
+            szkolenie.NAZWA_SZKOLENIA = this.txtboxNazwa.Text;
+            szkolenie.OPIS_SZKOLENIA = this.txtboxOpis.Text;
+            szkolenie.DATA_START = this.dtpStart.Value;
+            szkolenie.DATA_KONIEC = this.dtpKoniec.Value;
+            db.SZKOLENIA.Add(szkolenie);
+            db.SaveChanges();
+            pnlDodajSzkolenie.Hide();
         }
-            
+
 
         private void btnWyczysc_Click(object sender, EventArgs e)
         {
@@ -157,7 +155,20 @@ namespace PROJEKTapp
             btnSprawdz.Show();
             pnlDodajSzkolenie.Show();
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
-            lblPracownik.Text = "Szkolenie pracownika " + ListaPracownikow.CurrentRow.Cells[1].Value + " " + ListaPracownikow.CurrentRow.Cells[2].Value;
+            this.pracownik = db.PRACOWNICY.Where(pracownik => pracownik.ID_PRACOWNIK == ID).First();
+            lblPracownik.Text = "Szkolenie pracownika " + pracownik.IMIE + " " + pracownik.NAZWISKO;
+
+            KalendarzSzkolenia.BoldedDates = new DateTime[] {};
+
+            foreach (SZKOLENIA szkolenie in pracownik.SZKOLENIA)
+            {
+                int dlugoscSzkolenia = szkolenie.DATA_KONIEC.Subtract(szkolenie.DATA_START).Days;
+                DateTime aktualnaData = szkolenie.DATA_START;
+                for (int i = 0; i < dlugoscSzkolenia; i++)
+                {
+                    KalendarzSzkolenia.BoldedDates = KalendarzSzkolenia.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
+                }
+            }
         }
 
         private void btnAnulujSzkolenie_Click(object sender, EventArgs e)
@@ -226,6 +237,7 @@ namespace PROJEKTapp
         {
             KalendarzSzkolenia.SelectionStart = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_START;
             KalendarzSzkolenia.SelectionEnd = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_KONIEC;
+
         }
 
         private void btnUsun_Click(object sender, EventArgs e)

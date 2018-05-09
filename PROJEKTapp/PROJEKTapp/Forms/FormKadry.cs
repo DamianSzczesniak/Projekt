@@ -141,8 +141,8 @@ namespace PROJEKTapp
             chbNowyAdres.Show();
             btnZapiszDodaj.Show();
 
-
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            db = new KWZP_PROJEKTEntities();
             this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();
             this.ListaAdresow.Columns[0].Visible = false;
             this.ListaAdresow.Columns[1].Visible = false;
