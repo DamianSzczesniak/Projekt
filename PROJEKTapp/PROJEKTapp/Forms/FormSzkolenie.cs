@@ -167,6 +167,7 @@ namespace PROJEKTapp
                 for (int i = 0; i < dlugoscSzkolenia; i++)
                 {
                     KalendarzSzkolenia.BoldedDates = KalendarzSzkolenia.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
+
                 }
             }
         }
