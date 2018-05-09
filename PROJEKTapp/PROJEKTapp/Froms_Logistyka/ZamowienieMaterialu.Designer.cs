@@ -33,13 +33,17 @@
             this.TopBar_5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnSprDost = new System.Windows.Forms.Button();
+            this.BtnNoweZam = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxNrZlecenia = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.GridVwZapMat = new System.Windows.Forms.DataGridView();
-            this.sTANMATERIALYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDMATERIALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAZWADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sUMAMATERIALUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.BtnShow = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TopBar_5)).BeginInit();
@@ -47,7 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridVwZapMat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTANMATERIALYNAZWYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Back_5
@@ -64,11 +68,12 @@
             this.Btn_Back_5.Size = new System.Drawing.Size(80, 56);
             this.Btn_Back_5.TabIndex = 13;
             this.Btn_Back_5.UseVisualStyleBackColor = false;
+            this.Btn_Back_5.Click += new System.EventHandler(this.Btn_Back_5_Click);
             // 
             // TopBar_5
             // 
             this.TopBar_5.Image = global::PROJEKTapp.Properties.Resources.top_bar1;
-            this.TopBar_5.Location = new System.Drawing.Point(204, 0);
+            this.TopBar_5.Location = new System.Drawing.Point(-167, 0);
             this.TopBar_5.Name = "TopBar_5";
             this.TopBar_5.Size = new System.Drawing.Size(960, 72);
             this.TopBar_5.TabIndex = 12;
@@ -94,14 +99,14 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
-            // BtnSprDost
+            // BtnNoweZam
             // 
-            this.BtnSprDost.Location = new System.Drawing.Point(31, 345);
-            this.BtnSprDost.Name = "BtnSprDost";
-            this.BtnSprDost.Size = new System.Drawing.Size(966, 26);
-            this.BtnSprDost.TabIndex = 19;
-            this.BtnSprDost.Text = "Sprawdź dostępność materiałów";
-            this.BtnSprDost.UseVisualStyleBackColor = true;
+            this.BtnNoweZam.Location = new System.Drawing.Point(79, 359);
+            this.BtnNoweZam.Name = "BtnNoweZam";
+            this.BtnNoweZam.Size = new System.Drawing.Size(446, 26);
+            this.BtnNoweZam.TabIndex = 19;
+            this.BtnNoweZam.Text = "Generuj nowe zamówienie";
+            this.BtnNoweZam.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -119,7 +124,6 @@
             this.comboBoxNrZlecenia.Name = "comboBoxNrZlecenia";
             this.comboBoxNrZlecenia.Size = new System.Drawing.Size(121, 21);
             this.comboBoxNrZlecenia.TabIndex = 21;
-            this.comboBoxNrZlecenia.SelectedIndexChanged += new System.EventHandler(this.comboBoxNrZlecenia_SelectedIndexChanged_1);
             // 
             // pictureBox2
             // 
@@ -141,15 +145,58 @@
             // 
             // GridVwZapMat
             // 
+            this.GridVwZapMat.AllowUserToAddRows = false;
+            this.GridVwZapMat.AllowUserToDeleteRows = false;
+            this.GridVwZapMat.AutoGenerateColumns = false;
             this.GridVwZapMat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridVwZapMat.Location = new System.Drawing.Point(31, 178);
+            this.GridVwZapMat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDZLECENIADataGridViewTextBoxColumn,
+            this.iDMATERIALDataGridViewTextBoxColumn,
+            this.nAZWADataGridViewTextBoxColumn,
+            this.sUMAMATERIALUDataGridViewTextBoxColumn});
+            this.GridVwZapMat.DataSource = this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource;
+            this.GridVwZapMat.Location = new System.Drawing.Point(79, 178);
             this.GridVwZapMat.Name = "GridVwZapMat";
-            this.GridVwZapMat.Size = new System.Drawing.Size(966, 161);
+            this.GridVwZapMat.ReadOnly = true;
+            this.GridVwZapMat.Size = new System.Drawing.Size(446, 161);
             this.GridVwZapMat.TabIndex = 26;
             // 
-            // sTANMATERIALYNAZWYBindingSource
+            // iDZLECENIADataGridViewTextBoxColumn
             // 
-            this.sTANMATERIALYNAZWYBindingSource.DataSource = typeof(PROJEKTapp.STAN_MATERIALY_NAZWY);
+            this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
+            this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDZLECENIADataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iDMATERIALDataGridViewTextBoxColumn
+            // 
+            this.iDMATERIALDataGridViewTextBoxColumn.DataPropertyName = "ID_MATERIAL";
+            this.iDMATERIALDataGridViewTextBoxColumn.HeaderText = "ID_MATERIAL";
+            this.iDMATERIALDataGridViewTextBoxColumn.Name = "iDMATERIALDataGridViewTextBoxColumn";
+            this.iDMATERIALDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDMATERIALDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nAZWADataGridViewTextBoxColumn
+            // 
+            this.nAZWADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nAZWADataGridViewTextBoxColumn.DataPropertyName = "NAZWA";
+            this.nAZWADataGridViewTextBoxColumn.HeaderText = "NAZWA";
+            this.nAZWADataGridViewTextBoxColumn.Name = "nAZWADataGridViewTextBoxColumn";
+            this.nAZWADataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sUMAMATERIALUDataGridViewTextBoxColumn
+            // 
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.DataPropertyName = "SUMA_MATERIALU";
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.HeaderText = "SUMA_MATERIALU";
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.Name = "sUMAMATERIALUDataGridViewTextBoxColumn";
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.Width = 131;
+            // 
+            // sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource
+            // 
+            this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource.DataSource = typeof(PROJEKTapp.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE);
             // 
             // label3
             // 
@@ -168,20 +215,21 @@
             this.BtnShow.TabIndex = 29;
             this.BtnShow.Text = "Pokaż";
             this.BtnShow.UseVisualStyleBackColor = true;
+            this.BtnShow.Click += new System.EventHandler(this.BtnShow_Click);
             // 
             // ZamowienieMaterialu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(620, 397);
             this.Controls.Add(this.BtnShow);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.GridVwZapMat);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.comboBoxNrZlecenia);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.BtnSprDost);
+            this.Controls.Add(this.BtnNoweZam);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_Back_5);
@@ -196,7 +244,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridVwZapMat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTANMATERIALYNAZWYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,7 +256,7 @@
         private System.Windows.Forms.PictureBox TopBar_5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button BtnSprDost;
+        private System.Windows.Forms.Button BtnNoweZam;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxNrZlecenia;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -216,6 +264,10 @@
         private System.Windows.Forms.DataGridView GridVwZapMat;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnShow;
-        private System.Windows.Forms.BindingSource sTANMATERIALYNAZWYBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDZLECENIADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDMATERIALDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nAZWADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sUMAMATERIALUDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource;
     }
 }

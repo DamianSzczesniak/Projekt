@@ -22,14 +22,10 @@ namespace PROJEKTapp.Forms
             InitializeComponent();
             comboBoxNrZlecenia.DataSource = db.AKTUALNY_STATUS_ZLECEN.Where(a => a.Status == 1).ToList();
             comboBoxNrZlecenia.ValueMember = "ID_ZLECENIA";
-            int k = int.Parse(comboBoxNrZlecenia.SelectedValue.ToString());
-            this.GridVwZapMat.DataSource = db.ZAPOTRZEBOWANIE_MATERIAL.Where(x => x.ID_ZLECENIA == k).ToList();
+           
 
         }
-        private void comboBoxNrZlecenia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            NRZlecenia = (ZLECENIA)comboBoxNrZlecenia.SelectedValue;
-        }
+        
 
         private void BtnNoweZam_MouseClick(object sender, MouseEventArgs e)
         {
@@ -45,9 +41,17 @@ namespace PROJEKTapp.Forms
             }
         }
 
-        private void comboBoxNrZlecenia_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
+      
 
+        private void Btn_Back_5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnShow_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(comboBoxNrZlecenia.SelectedValue.ToString());
+            sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource.DataSource = db.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE.Where(a => a.ID_ZLECENIA == id).ToList();
         }
     }
 

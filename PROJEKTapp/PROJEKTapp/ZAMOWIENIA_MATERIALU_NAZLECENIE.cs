@@ -12,14 +12,15 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class ZAPOTRZEBOWANIE_MATERIAL
+    public partial class ZAMOWIENIA_MATERIALU_NAZLECENIE
     {
-        public Nullable<int> ID_ZLECENIA { get; set; }
-        public string NAZWA_PRODUKTU { get; set; }
+        public int ID_ZLECENIA { get; set; }
+        public int ID_PRODUKTU { get; set; }
+        public Nullable<int> ILOSC { get; set; }
+        public int ID_POLPRODUKTU { get; set; }
+        public int ID_MATERIAL { get; set; }
         public string NAZWA { get; set; }
-        public string OZNACZENIE_SUROWCA { get; set; }
-        public string Nazwa_MATERIAL { get; set; }
-        public Nullable<int> WARTOŚĆ { get; set; }
-        public Nullable<int> LICZBA_SZTUK { get; set; }
+        public int LICZBA_SZTUK { get; set; }
+        public Nullable<int> SUMA_p { get; set; }
     }
 }
