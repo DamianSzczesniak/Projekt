@@ -122,7 +122,7 @@ namespace PROJEKTapp
         {
             pnlWolne.Show();
             czyscform();
-            textBoxWnioskowany.Text = "------";
+            txtBoxWnioskowany.Text = "------";
 
             KalendarzUrlop.BoldedDates = new DateTime[] { };
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
@@ -142,7 +142,6 @@ namespace PROJEKTapp
             {
                 int dlugoscwolne = wolne.DATA_KONIEC.Subtract(wolne.DATA_START).Days + 1;
                 DateTime aktualnaData = wolne.DATA_START;
-                suma += dlugoscwolne;
                 for (int i = 0; i < dlugoscwolne; i++)
                 {
                     KalendarzUrlop.BoldedDates = KalendarzUrlop.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
@@ -150,9 +149,16 @@ namespace PROJEKTapp
                 }
             }
 
-            textBoxWykorzystany.Text = suma.ToString();
+            foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY.Where(data => data.DATA_START.Year.Equals(txtDataStart.Value.Year)))//TODO rok wybierany z datetimepicker reagowanie na zmianę
+            {
+                int dlugoscwolne = wolne.DATA_KONIEC.Subtract(wolne.DATA_START).Days + 1;
+                DateTime aktualnaData = wolne.DATA_START;
+                suma += dlugoscwolne;
+            }
+
+                txtBoxWykorzystany.Text = suma.ToString();
             int pozostalo = 26-suma; 
-            textBoxPozostalo.Text = pozostalo.ToString();
+            txtBoxPozostalo.Text = pozostalo.ToString();
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)
@@ -252,7 +258,7 @@ namespace PROJEKTapp
         private void txtDataKoniec_ValueChanged(object sender, EventArgs e)
         {
             int Wnioskowany = (txtDataKoniec.Value - txtDataStart.Value).Days + 1;
-            textBoxWnioskowany.Text = Wnioskowany.ToString();
+            txtBoxWnioskowany.Text = Wnioskowany.ToString();
         }
     }
 }

@@ -57,12 +57,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxWnioskowany = new System.Windows.Forms.TextBox();
+            this.txtBoxWnioskowany = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxPozostalo = new System.Windows.Forms.TextBox();
+            this.txtBoxPozostalo = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxWykorzystany = new System.Windows.Forms.TextBox();
+            this.txtBoxWykorzystany = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -312,12 +312,12 @@
             this.pnlWolne.Controls.Add(this.label12);
             this.pnlWolne.Controls.Add(this.label11);
             this.pnlWolne.Controls.Add(this.label6);
-            this.pnlWolne.Controls.Add(this.textBoxWnioskowany);
+            this.pnlWolne.Controls.Add(this.txtBoxWnioskowany);
             this.pnlWolne.Controls.Add(this.label3);
-            this.pnlWolne.Controls.Add(this.textBoxPozostalo);
+            this.pnlWolne.Controls.Add(this.txtBoxPozostalo);
             this.pnlWolne.Controls.Add(this.label13);
             this.pnlWolne.Controls.Add(this.label7);
-            this.pnlWolne.Controls.Add(this.textBoxWykorzystany);
+            this.pnlWolne.Controls.Add(this.txtBoxWykorzystany);
             this.pnlWolne.Controls.Add(this.label8);
             this.pnlWolne.Controls.Add(this.label9);
             this.pnlWolne.Controls.Add(this.label10);
@@ -413,13 +413,13 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Weryfikacja urlopu przysługującego:";
             // 
-            // textBoxWnioskowany
+            // txtBoxWnioskowany
             // 
-            this.textBoxWnioskowany.Enabled = false;
-            this.textBoxWnioskowany.Location = new System.Drawing.Point(262, 365);
-            this.textBoxWnioskowany.Name = "textBoxWnioskowany";
-            this.textBoxWnioskowany.Size = new System.Drawing.Size(151, 20);
-            this.textBoxWnioskowany.TabIndex = 9;
+            this.txtBoxWnioskowany.Enabled = false;
+            this.txtBoxWnioskowany.Location = new System.Drawing.Point(262, 365);
+            this.txtBoxWnioskowany.Name = "txtBoxWnioskowany";
+            this.txtBoxWnioskowany.Size = new System.Drawing.Size(151, 20);
+            this.txtBoxWnioskowany.TabIndex = 9;
             // 
             // label3
             // 
@@ -431,13 +431,13 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Okres urlopu:";
             // 
-            // textBoxPozostalo
+            // txtBoxPozostalo
             // 
-            this.textBoxPozostalo.Enabled = false;
-            this.textBoxPozostalo.Location = new System.Drawing.Point(262, 340);
-            this.textBoxPozostalo.Name = "textBoxPozostalo";
-            this.textBoxPozostalo.Size = new System.Drawing.Size(151, 20);
-            this.textBoxPozostalo.TabIndex = 8;
+            this.txtBoxPozostalo.Enabled = false;
+            this.txtBoxPozostalo.Location = new System.Drawing.Point(262, 340);
+            this.txtBoxPozostalo.Name = "txtBoxPozostalo";
+            this.txtBoxPozostalo.Size = new System.Drawing.Size(151, 20);
+            this.txtBoxPozostalo.TabIndex = 8;
             // 
             // label13
             // 
@@ -459,13 +459,13 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Przysługujący:";
             // 
-            // textBoxWykorzystany
+            // txtBoxWykorzystany
             // 
-            this.textBoxWykorzystany.Enabled = false;
-            this.textBoxWykorzystany.Location = new System.Drawing.Point(262, 315);
-            this.textBoxWykorzystany.Name = "textBoxWykorzystany";
-            this.textBoxWykorzystany.Size = new System.Drawing.Size(151, 20);
-            this.textBoxWykorzystany.TabIndex = 7;
+            this.txtBoxWykorzystany.Enabled = false;
+            this.txtBoxWykorzystany.Location = new System.Drawing.Point(262, 315);
+            this.txtBoxWykorzystany.Name = "txtBoxWykorzystany";
+            this.txtBoxWykorzystany.Size = new System.Drawing.Size(151, 20);
+            this.txtBoxWykorzystany.TabIndex = 7;
             // 
             // label8
             // 
@@ -588,11 +588,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxWnioskowany;
+        private System.Windows.Forms.TextBox txtBoxWnioskowany;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxPozostalo;
+        private System.Windows.Forms.TextBox txtBoxPozostalo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxWykorzystany;
+        private System.Windows.Forms.TextBox txtBoxWykorzystany;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
