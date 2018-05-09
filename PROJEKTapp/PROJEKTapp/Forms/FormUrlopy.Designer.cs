@@ -59,6 +59,7 @@
             this.textBoxWnioskowany = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPozostalo = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxWykorzystany = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -68,13 +69,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbTypUrlopu = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.dgvUrlopyPraconik = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlUrlopyControl.SuspendLayout();
             this.pnlUserSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).BeginInit();
             this.pnlWolne.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUrlopyPraconik)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -255,6 +257,7 @@
             // 
             this.pnlUserSearch.Controls.Add(this.LWyszukaj);
             this.pnlUserSearch.Controls.Add(this.txtWyszukajNazwisko);
+            this.pnlUserSearch.Controls.Add(this.dgvUrlopyPraconik);
             this.pnlUserSearch.Controls.Add(this.ListaPracownikow);
             this.pnlUserSearch.Location = new System.Drawing.Point(166, 62);
             this.pnlUserSearch.Name = "pnlUserSearch";
@@ -285,8 +288,9 @@
             this.ListaPracownikow.Location = new System.Drawing.Point(6, 43);
             this.ListaPracownikow.Name = "ListaPracownikow";
             this.ListaPracownikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ListaPracownikow.Size = new System.Drawing.Size(531, 505);
+            this.ListaPracownikow.Size = new System.Drawing.Size(531, 291);
             this.ListaPracownikow.TabIndex = 19;
+            this.ListaPracownikow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListaPracownikow_MouseClick);
             // 
             // pnlWolne
             // 
@@ -424,6 +428,16 @@
             this.textBoxPozostalo.Size = new System.Drawing.Size(151, 20);
             this.textBoxPozostalo.TabIndex = 8;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(261, 292);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(27, 20);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "26";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -506,15 +520,14 @@
             this.cbTypUrlopu.Size = new System.Drawing.Size(185, 21);
             this.cbTypUrlopu.TabIndex = 2;
             // 
-            // label13
+            // dgvUrlopyPraconik
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(261, 292);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(27, 20);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "26";
+            this.dgvUrlopyPraconik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUrlopyPraconik.Location = new System.Drawing.Point(6, 345);
+            this.dgvUrlopyPraconik.Name = "dgvUrlopyPraconik";
+            this.dgvUrlopyPraconik.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUrlopyPraconik.Size = new System.Drawing.Size(531, 203);
+            this.dgvUrlopyPraconik.TabIndex = 19;
             // 
             // FormUrlopy
             // 
@@ -540,6 +553,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).EndInit();
             this.pnlWolne.ResumeLayout(false);
             this.pnlWolne.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUrlopyPraconik)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -586,5 +600,6 @@
         private System.Windows.Forms.Button btnZapiszDodaj;
         private System.Windows.Forms.Button btnWyczysc;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView dgvUrlopyPraconik;
     }
 }

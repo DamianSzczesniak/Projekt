@@ -217,7 +217,7 @@ INSERT WALUTY(nazwa, kurs_do_pln, DATA_KURS) VALUES ('RUB', 0.0546,'2018-04-18')
 
 INSERT WOLNE(SYMBOL, NAZWA) VALUES ('L4' ,'Zwolnienie lekarskie') 
 INSERT WOLNE(SYMBOL, NAZWA) VALUES ('U_P' ,'Urlop płatny') 
-INSERT WOLNE(SYMBOL, NAZWA) VALUES ('NŻ' ,'Urlop "na rządanie"') 
+INSERT WOLNE(SYMBOL, NAZWA) VALUES ('NŻ' ,'Urlop "na żądanie"') 
 INSERT WOLNE(SYMBOL, NAZWA) VALUES ('MAMA','Urlop macierzyński') 
 INSERT WOLNE(SYMBOL, NAZWA) VALUES ('TATA' ,'Urlop tacierzyński') 
 INSERT WOLNE(SYMBOL, NAZWA) VALUES ('OKOL' ,'Urlop okolicznościowy')

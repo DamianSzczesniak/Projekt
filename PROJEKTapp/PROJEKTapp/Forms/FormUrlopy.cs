@@ -38,6 +38,9 @@ namespace PROJEKTapp
                 ListaPracownikow.Columns[0].HeaderText = "NUMER";
                 ListaPracownikow.Columns[0].Width = 60;
                 ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
+                int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+                this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+                dgvUrlopyPraconik.Columns[0].Visible = false;
             }
             else
             {
@@ -177,6 +180,13 @@ namespace PROJEKTapp
             FormStatystyki statystyki = new FormStatystyki(db, ladowanieformularzazokienkami);
             statystyki.Show();
             this.Close();
+        }
+
+        private void ListaPracownikow_MouseClick(object sender, MouseEventArgs e)
+        {
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+            dgvUrlopyPraconik.Columns[0].Visible = false;
         }
     }
 }
