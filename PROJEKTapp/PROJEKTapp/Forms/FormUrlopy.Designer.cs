@@ -62,13 +62,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxWykorzystany = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBoxPrzysluguje = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDataKoniec = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbTypUrlopu = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlUrlopyControl.SuspendLayout();
@@ -302,10 +302,10 @@
             this.pnlWolne.Controls.Add(this.textBoxWnioskowany);
             this.pnlWolne.Controls.Add(this.label3);
             this.pnlWolne.Controls.Add(this.textBoxPozostalo);
+            this.pnlWolne.Controls.Add(this.label13);
             this.pnlWolne.Controls.Add(this.label7);
             this.pnlWolne.Controls.Add(this.textBoxWykorzystany);
             this.pnlWolne.Controls.Add(this.label8);
-            this.pnlWolne.Controls.Add(this.textBoxPrzysluguje);
             this.pnlWolne.Controls.Add(this.label9);
             this.pnlWolne.Controls.Add(this.label10);
             this.pnlWolne.Controls.Add(this.txtDataKoniec);
@@ -451,13 +451,6 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "Wykorzystany:";
             // 
-            // textBoxPrzysluguje
-            // 
-            this.textBoxPrzysluguje.Location = new System.Drawing.Point(262, 290);
-            this.textBoxPrzysluguje.Name = "textBoxPrzysluguje";
-            this.textBoxPrzysluguje.Size = new System.Drawing.Size(151, 20);
-            this.textBoxPrzysluguje.TabIndex = 6;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -512,6 +505,16 @@
             this.cbTypUrlopu.Name = "cbTypUrlopu";
             this.cbTypUrlopu.Size = new System.Drawing.Size(185, 21);
             this.cbTypUrlopu.TabIndex = 2;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(261, 292);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(27, 20);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "26";
             // 
             // FormUrlopy
             // 
@@ -573,7 +576,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxWykorzystany;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxPrzysluguje;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker txtDataKoniec;
@@ -583,5 +585,6 @@
         private System.Windows.Forms.Button btnAnuluj;
         private System.Windows.Forms.Button btnZapiszDodaj;
         private System.Windows.Forms.Button btnWyczysc;
+        private System.Windows.Forms.Label label13;
     }
 }

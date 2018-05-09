@@ -14,7 +14,6 @@ namespace PROJEKTapp
     {
         KWZP_PROJEKTEntities db;
         bool ladowanieformularzazokienkami;
-        int contzapis;
 
         public FormUrlopy(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
         {
@@ -117,14 +116,12 @@ namespace PROJEKTapp
         {
             pnlWolne.Show();
             czyscform();
-            contzapis = 1;
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)
         {
             pnlWolne.Show();
             czyscform();
-            contzapis = 0;
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
 
@@ -136,9 +133,7 @@ namespace PROJEKTapp
         }
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
-        {
-            if (contzapis ==1)
-            {
+        {     
                 WOLNE_PRACOWNICY wolnepracownik = new WOLNE_PRACOWNICY();
                 wolnepracownik.DATA_KONIEC = txtDataKoniec.Value;
                 wolnepracownik.DATA_START = txtDataStart.Value;
@@ -147,11 +142,6 @@ namespace PROJEKTapp
                 db.SaveChanges();
                 ListaPracownikow.Refresh();
                 pnlUrlopyControl.Hide();
-            }
-            else
-            {
-                //zapis edycji
-            }
         }
 
         private void btnWyczysc_Click(object sender, EventArgs e)
