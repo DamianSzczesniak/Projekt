@@ -43,6 +43,7 @@ namespace PROJEKTapp
                 int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
                 this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
                 dgvUrlopyPraconik.Columns[0].Visible = false;
+                dgvUrlopyPraconik.ClearSelection();
             }
             else
             {
@@ -159,7 +160,28 @@ namespace PROJEKTapp
 
         private void btnUsun_Click(object sender, EventArgs e)
         {
-
+            if (dgvUrlopyPraconik.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Najpierw wybierz szkolenie do usunięcia");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Czy chcesz usunąć Urlop: "+ dgvUrlopyPraconik.CurrentRow.Cells[2].Value + ", pracownikowi: " + ListaPracownikow.CurrentRow.Cells[1].Value + " " + ListaPracownikow.CurrentRow.Cells[2].Value, "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    int ID = Convert.ToInt32(dgvUrlopyPraconik.CurrentRow.Cells[0].Value);
+                    DateTime DataStart= (DateTime)dgvUrlopyPraconik.CurrentRow.Cells[3].Value;
+                    
+                    WOLNE_PRACOWNICY wolneUsun = db.WOLNE_PRACOWNICY.Where(wolne => wolne.ID_PRACOWNIK.Equals(ID))
+                        .Where(wolnedata => wolnedata.DATA_START.Equals(DataStart)).First();
+                    
+                    db.WOLNE_PRACOWNICY.Remove(wolneUsun);
+                    db.SaveChanges();
+                    this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+                    dgvUrlopyPraconik.Columns[0].Visible = false;
+                    this.dgvUrlopyPraconik.Refresh();
+                }
+            }
         }
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
