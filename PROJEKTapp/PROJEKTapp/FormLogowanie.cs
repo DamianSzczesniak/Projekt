@@ -63,5 +63,40 @@ namespace PROJEKTapp
         {
             Application.Exit();
         }
+
+        private void FormLogowanie_DoubleClick(object sender, EventArgs e)
+        {
+            txtBoxLogin.Text = "PREZES";
+            txtBoxHaslo.Text = "PREZES";
+            if (!String.IsNullOrWhiteSpace(txtBoxLogin.Text) && !String.IsNullOrWhiteSpace(txtBoxHaslo.Text))
+            {
+                var user = db.UZYTKOWNICY.FirstOrDefault(u => u.NAZWA_LOGOWANIE == txtBoxLogin.Text);
+                if (user != null)
+                {
+                    if (user.HASLO == txtBoxHaslo.Text)
+                    {
+                        Form1 form1 = new Form1(db, user.UPRAWNIENIA, user.ID_UZYTKOWNIKA);
+                        form1.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Wpisano niepoprawny login i/lub hasło.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtBoxHaslo.Clear();
+                        txtBoxLogin.Clear();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Wpisano niepoprawny login i/lub hasło.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtBoxHaslo.Clear();
+                    txtBoxLogin.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Proszę wypełnić wszystkie pola.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

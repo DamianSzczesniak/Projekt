@@ -741,6 +741,23 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAWKA_OKRES' does not have a pri
           <Property Name="ID_STAWKA" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.SZKOLENIA_PRACOWNIKA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SZKOLENIA_PRACOWNIKA">
+          <Key>
+            <PropertyRef Name="ID_PRACOWNIK" />
+            <PropertyRef Name="ID_SZKOLENIA" />
+            <PropertyRef Name="NAZWA_SZKOLENIA" />
+            <PropertyRef Name="DATA_START" />
+            <PropertyRef Name="DATA_KONIEC" />
+          </Key>
+          <Property Name="ID_PRACOWNIK" Type="int" Nullable="false" />
+          <Property Name="ID_SZKOLENIA" Type="int" Nullable="false" />
+          <Property Name="NAZWA_SZKOLENIA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OPIS_SZKOLENIA" Type="varchar" MaxLength="50" />
+          <Property Name="DATA_START" Type="date" Nullable="false" />
+          <Property Name="DATA_KONIEC" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.WYKORZYSTANE_MASZYNY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -1747,6 +1764,16 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
     [STAWKA_OKRES].[NAZWA] AS [NAZWA], 
     [STAWKA_OKRES].[ID_STAWKA] AS [ID_STAWKA]
     FROM [dbo].[STAWKA_OKRES] AS [STAWKA_OKRES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SZKOLENIA_PRACOWNIKA" EntityType="Self.SZKOLENIA_PRACOWNIKA" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SZKOLENIA_PRACOWNIKA].[ID_PRACOWNIK] AS [ID_PRACOWNIK], 
+    [SZKOLENIA_PRACOWNIKA].[ID_SZKOLENIA] AS [ID_SZKOLENIA], 
+    [SZKOLENIA_PRACOWNIKA].[NAZWA_SZKOLENIA] AS [NAZWA_SZKOLENIA], 
+    [SZKOLENIA_PRACOWNIKA].[OPIS_SZKOLENIA] AS [OPIS_SZKOLENIA], 
+    [SZKOLENIA_PRACOWNIKA].[DATA_START] AS [DATA_START], 
+    [SZKOLENIA_PRACOWNIKA].[DATA_KONIEC] AS [DATA_KONIEC]
+    FROM [dbo].[SZKOLENIA_PRACOWNIKA] AS [SZKOLENIA_PRACOWNIKA]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="WYKORZYSTANE_MASZYNY" EntityType="Self.WYKORZYSTANE_MASZYNY" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3130,6 +3157,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <EntitySet Name="ZLECENIA_MATERIALY" EntityType="KWZP_PROJEKTModel.ZLECENIA_MATERIALY" />
           <EntitySet Name="HISTORIA_STATUS_ZLECENIA" EntityType="KWZP_PROJEKTModel.HISTORIA_STATUS_ZLECENIA" />
           <EntitySet Name="ZLECENIA_PRODUKTY_NAZWY" EntityType="KWZP_PROJEKTModel.ZLECENIA_PRODUKTY_NAZWY" />
+          <EntitySet Name="SZKOLENIA_PRACOWNIKA" EntityType="KWZP_PROJEKTModel.SZKOLENIA_PRACOWNIKA" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -3659,6 +3687,21 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
           <Property Name="NAZWA_PRODUKTU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="ILOSC" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SZKOLENIA_PRACOWNIKA">
+          <Key>
+            <PropertyRef Name="ID_PRACOWNIK" />
+            <PropertyRef Name="ID_SZKOLENIA" />
+            <PropertyRef Name="NAZWA_SZKOLENIA" />
+            <PropertyRef Name="DATA_START" />
+            <PropertyRef Name="DATA_KONIEC" />
+          </Key>
+          <Property Name="ID_PRACOWNIK" Type="Int32" Nullable="false" />
+          <Property Name="ID_SZKOLENIA" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA_SZKOLENIA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OPIS_SZKOLENIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_START" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DATA_KONIEC" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4437,6 +4480,18 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
                 <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
                 <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SZKOLENIA_PRACOWNIKA">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.SZKOLENIA_PRACOWNIKA">
+              <MappingFragment StoreEntitySet="SZKOLENIA_PRACOWNIKA">
+                <ScalarProperty Name="DATA_KONIEC" ColumnName="DATA_KONIEC" />
+                <ScalarProperty Name="DATA_START" ColumnName="DATA_START" />
+                <ScalarProperty Name="OPIS_SZKOLENIA" ColumnName="OPIS_SZKOLENIA" />
+                <ScalarProperty Name="NAZWA_SZKOLENIA" ColumnName="NAZWA_SZKOLENIA" />
+                <ScalarProperty Name="ID_SZKOLENIA" ColumnName="ID_SZKOLENIA" />
+                <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
