@@ -18,7 +18,7 @@ namespace PROJEKTapp
         public Nullable<int> ID_PARAMETR { get; set; }
         public int WARTOŚĆ { get; set; }
     
-        public virtual MATERIAL MATERIAL { get; set; }
         public virtual PARAMETRY PARAMETRY { get; set; }
+        public virtual MATERIAL MATERIAL { get; set; }
     }
 }

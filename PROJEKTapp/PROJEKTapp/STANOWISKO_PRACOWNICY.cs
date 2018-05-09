@@ -19,7 +19,7 @@ namespace PROJEKTapp
         public System.DateTime DATA_START { get; set; }
         public Nullable<System.DateTime> DATA_KONIEC { get; set; }
     
-        public virtual PRACOWNICY PRACOWNICY { get; set; }
         public virtual STANOWISKO STANOWISKO { get; set; }
+        public virtual PRACOWNICY PRACOWNICY { get; set; }
     }
 }

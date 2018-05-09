@@ -26,8 +26,8 @@ namespace PROJEKTapp
         public int LICZBA_SZTUK { get; set; }
     
         public virtual DOKUMENTACJA DOKUMENTACJA { get; set; }
-        public virtual MATERIAL MATERIAL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PRODUKCJA_POLPRODUKTU> PRODUKCJA_POLPRODUKTU { get; set; }
+        public virtual MATERIAL MATERIAL { get; set; }
     }
 }

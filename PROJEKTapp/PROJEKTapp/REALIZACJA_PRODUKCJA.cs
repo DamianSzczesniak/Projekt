@@ -17,10 +17,10 @@ namespace PROJEKTapp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public REALIZACJA_PRODUKCJA()
         {
-            this.PRACOWNICY = new HashSet<PRACOWNICY>();
-            this.MASZYNY = new HashSet<MASZYNY>();
-            this.MATERIAL = new HashSet<MATERIAL>();
-            this.NARZEDZIA = new HashSet<NARZEDZIA>();
+            this.ZESPOL_MASZYN = new HashSet<ZESPOL_MASZYN>();
+            this.ZESPOL_MATERIAL = new HashSet<ZESPOL_MATERIAL>();
+            this.ZESPOL_NARZEDZI = new HashSet<ZESPOL_NARZEDZI>();
+            this.ZESPOL_LUDZI = new HashSet<ZESPOL_LUDZI>();
         }
     
         public int ID_REALIZACJA_PRODUKCJA { get; set; }
@@ -28,14 +28,14 @@ namespace PROJEKTapp
         public System.DateTime DATA_DZIEN { get; set; }
         public int LICZBA_SZTUK { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ZESPOL_MASZYN> ZESPOL_MASZYN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ZESPOL_MATERIAL> ZESPOL_MATERIAL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ZESPOL_NARZEDZI> ZESPOL_NARZEDZI { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ZESPOL_LUDZI> ZESPOL_LUDZI { get; set; }
         public virtual ZLECENIA ZLECENIA { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRACOWNICY> PRACOWNICY { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MASZYNY> MASZYNY { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MATERIAL> MATERIAL { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NARZEDZIA> NARZEDZIA { get; set; }
     }
 }

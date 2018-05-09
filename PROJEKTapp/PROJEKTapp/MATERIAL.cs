@@ -19,7 +19,7 @@ namespace PROJEKTapp
         {
             this.PARAMETRY_MATERIALU = new HashSet<PARAMETRY_MATERIALU>();
             this.POLPRODUKTY = new HashSet<POLPRODUKTY>();
-            this.REALIZACJA_PRODUKCJA = new HashSet<REALIZACJA_PRODUKCJA>();
+            this.ZESPOL_MATERIAL = new HashSet<ZESPOL_MATERIAL>();
         }
     
         public int ID_MATERIALU { get; set; }
@@ -32,6 +32,6 @@ namespace PROJEKTapp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<POLPRODUKTY> POLPRODUKTY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<REALIZACJA_PRODUKCJA> REALIZACJA_PRODUKCJA { get; set; }
+        public virtual ICollection<ZESPOL_MATERIAL> ZESPOL_MATERIAL { get; set; }
     }
 }

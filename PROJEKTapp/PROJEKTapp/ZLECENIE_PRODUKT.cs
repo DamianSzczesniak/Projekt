@@ -12,14 +12,14 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class STAWKA_PRACOWNICY
+    public partial class ZLECENIE_PRODUKT
     {
-        public int ID_PRACOWNIK { get; set; }
-        public int ID_STAWKA { get; set; }
-        public System.DateTime DATA_START { get; set; }
-        public Nullable<System.DateTime> DATA_KONIEC { get; set; }
+        public int ID_ZLECENIE_PRODUKT { get; set; }
+        public Nullable<int> ID_ZLECENIA { get; set; }
+        public Nullable<int> ID_PRODUKTU { get; set; }
+        public Nullable<int> ILOSC { get; set; }
     
-        public virtual STAWKA STAWKA { get; set; }
-        public virtual PRACOWNICY PRACOWNICY { get; set; }
+        public virtual PRODUKT PRODUKT { get; set; }
+        public virtual ZLECENIA ZLECENIA { get; set; }
     }
 }

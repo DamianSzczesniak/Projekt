@@ -17,7 +17,7 @@ namespace PROJEKTapp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NARZEDZIA()
         {
-            this.REALIZACJA_PRODUKCJA = new HashSet<REALIZACJA_PRODUKCJA>();
+            this.ZESPOL_NARZEDZI = new HashSet<ZESPOL_NARZEDZI>();
         }
     
         public int ID_NARZEDZIA { get; set; }
@@ -27,6 +27,6 @@ namespace PROJEKTapp
         public decimal KOSZT_ZA_H { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<REALIZACJA_PRODUKCJA> REALIZACJA_PRODUKCJA { get; set; }
+        public virtual ICollection<ZESPOL_NARZEDZI> ZESPOL_NARZEDZI { get; set; }
     }
 }

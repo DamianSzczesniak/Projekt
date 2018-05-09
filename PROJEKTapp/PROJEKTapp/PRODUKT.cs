@@ -18,6 +18,7 @@ namespace PROJEKTapp
         public PRODUKT()
         {
             this.PRODUKCJA_POLPRODUKTU = new HashSet<PRODUKCJA_POLPRODUKTU>();
+            this.ZLECENIE_PRODUKT = new HashSet<ZLECENIE_PRODUKT>();
         }
     
         public int ID_PRODUKTU { get; set; }
@@ -26,5 +27,7 @@ namespace PROJEKTapp
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PRODUKCJA_POLPRODUKTU> PRODUKCJA_POLPRODUKTU { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ZLECENIE_PRODUKT> ZLECENIE_PRODUKT { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace PROJEKTapp
         public string NAZWA_LOGOWANIE { get; set; }
         public string HASLO { get; set; }
     
-        public virtual PRACOWNICY PRACOWNICY { get; set; }
         public virtual UPRAWNIENIA UPRAWNIENIA1 { get; set; }
+        public virtual PRACOWNICY PRACOWNICY { get; set; }
     }
 }

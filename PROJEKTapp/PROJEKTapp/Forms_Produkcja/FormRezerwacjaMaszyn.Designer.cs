@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnExitRezerwacjaMaszyn = new System.Windows.Forms.Button();
             this.lblWyborZlecenia = new System.Windows.Forms.Label();
             this.cboxWybierzZlecenie = new System.Windows.Forms.ComboBox();
             this.RezerwujMaszyny = new System.Windows.Forms.Button();
             this.GridSprawdzenie = new System.Windows.Forms.DataGridView();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.GridSprawdzenie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExitRezerwacjaMaszyn
@@ -69,7 +74,7 @@
             // 
             // RezerwujMaszyny
             // 
-            this.RezerwujMaszyny.Location = new System.Drawing.Point(121, 224);
+            this.RezerwujMaszyny.Location = new System.Drawing.Point(58, 235);
             this.RezerwujMaszyny.Name = "RezerwujMaszyny";
             this.RezerwujMaszyny.Size = new System.Drawing.Size(179, 95);
             this.RezerwujMaszyny.TabIndex = 5;
@@ -80,16 +85,33 @@
             // GridSprawdzenie
             // 
             this.GridSprawdzenie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridSprawdzenie.Location = new System.Drawing.Point(464, 136);
+            this.GridSprawdzenie.Location = new System.Drawing.Point(58, 68);
             this.GridSprawdzenie.Name = "GridSprawdzenie";
             this.GridSprawdzenie.Size = new System.Drawing.Size(240, 150);
             this.GridSprawdzenie.TabIndex = 6;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(323, 68);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(670, 522);
+            this.chart1.TabIndex = 7;
+            this.chart1.Text = "chart1";
             // 
             // FormRezerwacjaMaszyn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.GridSprawdzenie);
             this.Controls.Add(this.RezerwujMaszyny);
             this.Controls.Add(this.cboxWybierzZlecenie);
@@ -99,6 +121,7 @@
             this.Name = "FormRezerwacjaMaszyn";
             this.Text = "FormRezerwacjaMaszyn";
             ((System.ComponentModel.ISupportInitialize)(this.GridSprawdzenie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +134,6 @@
         private System.Windows.Forms.ComboBox cboxWybierzZlecenie;
         private System.Windows.Forms.Button RezerwujMaszyny;
         private System.Windows.Forms.DataGridView GridSprawdzenie;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

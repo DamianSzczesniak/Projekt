@@ -19,7 +19,7 @@ namespace PROJEKTapp
         public Nullable<int> ID_MASZYNY { get; set; }
         public Nullable<int> CZAS_TRWANIA { get; set; }
     
-        public virtual MASZYNY MASZYNY { get; set; }
         public virtual SLOWNIK_PROCES_TECHNOLOGICZNY SLOWNIK_PROCES_TECHNOLOGICZNY { get; set; }
+        public virtual MASZYNY MASZYNY { get; set; }
     }
 }
