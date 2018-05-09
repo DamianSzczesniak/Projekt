@@ -12,10 +12,11 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class ZLECENIA_MATERIALY
+    public partial class PRACOWNICY_W_PRACY
     {
-        public int ID_ZLECENIA { get; set; }
-        public int ID_POLPRODUKTU { get; set; }
-        public int ID_MATERIAL { get; set; }
+        public string IMIE { get; set; }
+        public string NAZWISKO { get; set; }
+        public string STANOWISKO { get; set; }
+        public System.DateTime DATA_DZIEN { get; set; }
     }
 }
