@@ -81,6 +81,8 @@ namespace PROJEKTapp.Forms_Produkcja
                 zmianaNarzedzia.Show();
             }
 
+       
+
 
             
 
@@ -149,7 +151,18 @@ namespace PROJEKTapp.Forms_Produkcja
 
         private void buttonUtworz_Click(object sender, EventArgs e)
         {
-
+            if (tryb == "Ewidencja Maszyn")
+            {
+                Forms_Produkcja.FormNowaMaszyna nowaMaszyna = new Forms_Produkcja.FormNowaMaszyna(db);
+                nowaMaszyna.Show();
+                
+            }
+            else
+            {
+                
+                Forms_Produkcja.FormNoweNarzedzie noweNarzedzia = new Forms_Produkcja.FormNoweNarzedzie(db);
+                noweNarzedzia.Show();
+            }
         }
     }
 }

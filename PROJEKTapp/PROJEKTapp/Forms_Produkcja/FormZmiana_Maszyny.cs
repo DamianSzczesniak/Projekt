@@ -89,5 +89,6 @@ namespace PROJEKTapp.Forms_Produkcja
                 textBox6.Clear();
             }
         }
+
     }
 }

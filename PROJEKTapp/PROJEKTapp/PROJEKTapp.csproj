@@ -135,6 +135,18 @@
     <Compile Include="Forms_NoweZlecenie\HistoriaStatusyZlecenia.Designer.cs">
       <DependentUpon>HistoriaStatusyZlecenia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_Produkcja\FormNowaMaszyna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormNowaMaszyna.Designer.cs">
+      <DependentUpon>FormNowaMaszyna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormNoweNarzedzie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormNoweNarzedzie.Designer.cs">
+      <DependentUpon>FormNoweNarzedzie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms_Produkcja\FormSpis.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -517,6 +529,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_NoweZlecenie\HistoriaStatusyZlecenia.resx">
       <DependentUpon>HistoriaStatusyZlecenia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormNowaMaszyna.resx">
+      <DependentUpon>FormNowaMaszyna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormNoweNarzedzie.resx">
+      <DependentUpon>FormNoweNarzedzie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\FormSpis.resx">
       <DependentUpon>FormSpis.cs</DependentUpon>
