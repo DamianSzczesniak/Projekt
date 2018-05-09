@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produkcja_glowny));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExitProd = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.Panel = new System.Windows.Forms.Label();
             this.lblDol = new System.Windows.Forms.Label();
-            this.btnEwidencja = new System.Windows.Forms.Button();
-            this.btnWykorzystaneMaszyny = new System.Windows.Forms.Button();
-            this.btnGabaryty = new System.Windows.Forms.Button();
             this.btnEwidencjaMaszyn = new System.Windows.Forms.Button();
+            this.btnGabaryty = new System.Windows.Forms.Button();
+            this.btnEwidencja = new System.Windows.Forms.Button();
+            this.btnExitProd = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnWykorzystaneMaszyny = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,82 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1366, 59);
             this.panel1.TabIndex = 1;
+            // 
+            // Panel
+            // 
+            this.Panel.AutoSize = true;
+            this.Panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Panel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Panel.Location = new System.Drawing.Point(570, 12);
+            this.Panel.Name = "Panel";
+            this.Panel.Size = new System.Drawing.Size(258, 42);
+            this.Panel.TabIndex = 2;
+            this.Panel.Text = "PRODUKCJA";
+            // 
+            // lblDol
+            // 
+            this.lblDol.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.lblDol.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.lblDol.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblDol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblDol.Location = new System.Drawing.Point(0, 668);
+            this.lblDol.Name = "lblDol";
+            this.lblDol.Size = new System.Drawing.Size(1366, 100);
+            this.lblDol.TabIndex = 3;
+            // 
+            // btnEwidencjaMaszyn
+            // 
+            this.btnEwidencjaMaszyn.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnEwidencjaMaszyn.FlatAppearance.BorderSize = 0;
+            this.btnEwidencjaMaszyn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEwidencjaMaszyn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnEwidencjaMaszyn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEwidencjaMaszyn.Image = global::PROJEKTapp.Properties.Resources.Book_designed_by_Benny_Forsberg_from_the_Noun_Project___with_lines1;
+            this.btnEwidencjaMaszyn.Location = new System.Drawing.Point(1025, 668);
+            this.btnEwidencjaMaszyn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEwidencjaMaszyn.Name = "btnEwidencjaMaszyn";
+            this.btnEwidencjaMaszyn.Size = new System.Drawing.Size(341, 100);
+            this.btnEwidencjaMaszyn.TabIndex = 5;
+            this.btnEwidencjaMaszyn.Text = "Ewidencja";
+            this.btnEwidencjaMaszyn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEwidencjaMaszyn.UseVisualStyleBackColor = false;
+            this.btnEwidencjaMaszyn.Click += new System.EventHandler(this.btnEwidencjaMaszyn_Click);
+            // 
+            // btnGabaryty
+            // 
+            this.btnGabaryty.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnGabaryty.FlatAppearance.BorderSize = 0;
+            this.btnGabaryty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGabaryty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnGabaryty.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGabaryty.Image = global::PROJEKTapp.Properties.Resources._112_512;
+            this.btnGabaryty.Location = new System.Drawing.Point(685, 669);
+            this.btnGabaryty.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGabaryty.Name = "btnGabaryty";
+            this.btnGabaryty.Size = new System.Drawing.Size(341, 100);
+            this.btnGabaryty.TabIndex = 4;
+            this.btnGabaryty.Text = "Gabaryty";
+            this.btnGabaryty.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnGabaryty.UseVisualStyleBackColor = false;
+            this.btnGabaryty.Click += new System.EventHandler(this.btnGabaryty_Click);
+            // 
+            // btnEwidencja
+            // 
+            this.btnEwidencja.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnEwidencja.FlatAppearance.BorderSize = 0;
+            this.btnEwidencja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEwidencja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnEwidencja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEwidencja.Image = global::PROJEKTapp.Properties.Resources.Sports_Weightlift_icon;
+            this.btnEwidencja.Location = new System.Drawing.Point(345, 668);
+            this.btnEwidencja.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEwidencja.Name = "btnEwidencja";
+            this.btnEwidencja.Size = new System.Drawing.Size(341, 100);
+            this.btnEwidencja.TabIndex = 2;
+            this.btnEwidencja.Text = "Obciążenie";
+            this.btnEwidencja.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEwidencja.UseVisualStyleBackColor = false;
+            this.btnEwidencja.Click += new System.EventHandler(this.btnEwidencja_Click);
             // 
             // btnExitProd
             // 
@@ -79,46 +155,6 @@
             this.btnExit.TabIndex = 2;
             this.btnExit.UseVisualStyleBackColor = true;
             // 
-            // Panel
-            // 
-            this.Panel.AutoSize = true;
-            this.Panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Panel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Panel.Location = new System.Drawing.Point(570, 12);
-            this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(258, 42);
-            this.Panel.TabIndex = 2;
-            this.Panel.Text = "PRODUKCJA";
-            // 
-            // lblDol
-            // 
-            this.lblDol.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.lblDol.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.lblDol.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblDol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDol.Location = new System.Drawing.Point(0, 668);
-            this.lblDol.Name = "lblDol";
-            this.lblDol.Size = new System.Drawing.Size(1366, 100);
-            this.lblDol.TabIndex = 3;
-            // 
-            // btnEwidencja
-            // 
-            this.btnEwidencja.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnEwidencja.FlatAppearance.BorderSize = 0;
-            this.btnEwidencja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEwidencja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEwidencja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEwidencja.Image = global::PROJEKTapp.Properties.Resources.btnObciazenie;
-            this.btnEwidencja.Location = new System.Drawing.Point(345, 668);
-            this.btnEwidencja.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEwidencja.Name = "btnEwidencja";
-            this.btnEwidencja.Size = new System.Drawing.Size(341, 100);
-            this.btnEwidencja.TabIndex = 2;
-            this.btnEwidencja.Text = "Obciążenie";
-            this.btnEwidencja.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEwidencja.UseVisualStyleBackColor = false;
-            this.btnEwidencja.Click += new System.EventHandler(this.btnEwidencja_Click);
-            // 
             // btnWykorzystaneMaszyny
             // 
             this.btnWykorzystaneMaszyny.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -136,42 +172,6 @@
             this.btnWykorzystaneMaszyny.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnWykorzystaneMaszyny.UseVisualStyleBackColor = true;
             this.btnWykorzystaneMaszyny.Click += new System.EventHandler(this.btnWykorzystaneMaszyny_Click);
-            // 
-            // btnGabaryty
-            // 
-            this.btnGabaryty.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnGabaryty.FlatAppearance.BorderSize = 0;
-            this.btnGabaryty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGabaryty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnGabaryty.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGabaryty.Image = global::PROJEKTapp.Properties.Resources.btnObciazenie;
-            this.btnGabaryty.Location = new System.Drawing.Point(685, 669);
-            this.btnGabaryty.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGabaryty.Name = "btnGabaryty";
-            this.btnGabaryty.Size = new System.Drawing.Size(341, 100);
-            this.btnGabaryty.TabIndex = 4;
-            this.btnGabaryty.Text = "Gabaryty";
-            this.btnGabaryty.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnGabaryty.UseVisualStyleBackColor = false;
-            this.btnGabaryty.Click += new System.EventHandler(this.btnGabaryty_Click);
-            // 
-            // btnEwidencjaMaszyn
-            // 
-            this.btnEwidencjaMaszyn.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnEwidencjaMaszyn.FlatAppearance.BorderSize = 0;
-            this.btnEwidencjaMaszyn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEwidencjaMaszyn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEwidencjaMaszyn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEwidencjaMaszyn.Image = global::PROJEKTapp.Properties.Resources.btnObciazenie;
-            this.btnEwidencjaMaszyn.Location = new System.Drawing.Point(1025, 668);
-            this.btnEwidencjaMaszyn.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEwidencjaMaszyn.Name = "btnEwidencjaMaszyn";
-            this.btnEwidencjaMaszyn.Size = new System.Drawing.Size(341, 100);
-            this.btnEwidencjaMaszyn.TabIndex = 5;
-            this.btnEwidencjaMaszyn.Text = "Ewidencja";
-            this.btnEwidencjaMaszyn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEwidencjaMaszyn.UseVisualStyleBackColor = false;
-            this.btnEwidencjaMaszyn.Click += new System.EventHandler(this.btnEwidencjaMaszyn_Click);
             // 
             // Produkcja_glowny
             // 

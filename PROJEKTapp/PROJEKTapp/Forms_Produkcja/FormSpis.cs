@@ -93,7 +93,6 @@ namespace PROJEKTapp.Forms_Produkcja
         {
             if (tryb == "Ewidencja Maszyn")
             {
-                this.EwidencjaMaszynyNarzedzia.DataSource = db.MODELE_MASZYN.Where(x => x.MODEL.StartsWith(txtNazwaProduktu.Text)).ToList();
 
                 DialogResult result = MessageBox.Show("Czy chcesz usunąć maszynę: " + EwidencjaMaszynyNarzedzia.CurrentRow.Cells[1].Value + " " + EwidencjaMaszynyNarzedzia.CurrentRow.Cells[2].Value, "Confirmation", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
@@ -120,7 +119,6 @@ namespace PROJEKTapp.Forms_Produkcja
 
             else
             {
-                this.EwidencjaMaszynyNarzedzia.DataSource = db.NARZEDZIA.Where(x => x.MODEL.StartsWith(txtNazwaProduktu.Text)).ToList();
 
                 DialogResult result = MessageBox.Show("Czy chcesz usunąć narzedzie: " + EwidencjaMaszynyNarzedzia.CurrentRow.Cells[1].Value + " " + EwidencjaMaszynyNarzedzia.CurrentRow.Cells[2].Value, "Confirmation", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)

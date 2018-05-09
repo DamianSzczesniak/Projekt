@@ -17,7 +17,7 @@ namespace PROJEKTapp.Properties {
     /// </summary>
     // Ta klasa została automatycznie wygenerowana za pomocą klasy StronglyTypedResourceBuilder
     // przez narzędzie, takie jak ResGen lub Visual Studio.
-    // Aby dodać lub usunąć składową, edytuj plik ResX, a następnie ponownie uruchom narzędzie ResGen
+    // Aby dodać lub usunąć członka, edytuj plik .ResX, a następnie ponownie uruchom ResGen
     // z opcją /str lub ponownie utwórz projekt VS.
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -63,9 +63,39 @@ namespace PROJEKTapp.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _112_512 {
+            get {
+                object obj = ResourceManager.GetObject("112-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _return {
             get {
                 object obj = ResourceManager.GetObject("return", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Book_designed_by_Benny_Forsberg_from_the_Noun_Project___with_lines {
+            get {
+                object obj = ResourceManager.GetObject("Book_designed_by_Benny_Forsberg_from_the_Noun_Project_-_with_lines", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Book_designed_by_Benny_Forsberg_from_the_Noun_Project___with_lines1 {
+            get {
+                object obj = ResourceManager.GetObject("Book_designed_by_Benny_Forsberg_from_the_Noun_Project_-_with_lines1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +153,16 @@ namespace PROJEKTapp.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Material_icons_02_49_512 {
+            get {
+                object obj = ResourceManager.GetObject("Material_icons-02-49-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Przygotowanie_transportu {
             get {
                 object obj = ResourceManager.GetObject("Przygotowanie transportu", resourceCulture);
@@ -146,6 +186,16 @@ namespace PROJEKTapp.Properties {
         internal static System.Drawing.Bitmap return2 {
             get {
                 object obj = ResourceManager.GetObject("return2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sports_Weightlift_icon {
+            get {
+                object obj = ResourceManager.GetObject("Sports-Weightlift-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

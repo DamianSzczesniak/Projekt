@@ -669,6 +669,11 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
       <LastGenOutput>KWZP_PROJEKT_MODEL.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Book_designed_by_Benny_Forsberg_from_the_Noun_Project_-_with_lines1.png" />
+    <None Include="Resources\Book_designed_by_Benny_Forsberg_from_the_Noun_Project_-_with_lines.png" />
+    <None Include="Resources\112-512.png" />
+    <None Include="Resources\Material_icons-02-49-512.png" />
+    <None Include="Resources\Sports-Weightlift-icon.png" />
     <None Include="Resources\btnObciazenie.png" />
     <None Include="Resources\btnMachine.png" />
     <None Include="Resources\btnExit.Image.png" />
