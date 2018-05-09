@@ -33,7 +33,6 @@ namespace PROJEKTapp.Forms
             nowaFaktura.DATA_WYSTAWIENIA = dataWystawienia;
             nowaFaktura.DATA_PLATNOSCI = dataPlatnosci;
             //nowaFaktura.KWOTA = KOSZT?
-            db.SaveChanges();
 
             txtbox_data_plat.Text = dataPlatnosci.ToShortDateString();
             txtbox_data_wyst.Text = dataWystawienia.ToShortDateString();
