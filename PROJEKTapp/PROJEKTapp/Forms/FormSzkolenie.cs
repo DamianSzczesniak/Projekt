@@ -53,6 +53,10 @@ namespace PROJEKTapp
                 ListaPracownikow.Columns[0].HeaderText = "NUMER";
                 ListaPracownikow.Columns[0].Width = 60;
                 ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
+                int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+                this.dgvSzkoleniaPracownika.DataSource = db.SZKOLENIA_PRACOWNIKA.Where(pracownik => pracownik.ID_PRACOWNIK.Equals(ID)).ToList();
+                this.dgvSzkoleniaPracownika.Columns[0].Visible = false;
+                this.dgvSzkoleniaPracownika.Columns[1].Visible = false;
             }
             else
             {
@@ -162,9 +166,19 @@ namespace PROJEKTapp
 
             foreach (SZKOLENIA szkolenie in pracownik.SZKOLENIA)
             {
-                int dlugoscSzkolenia = szkolenie.DATA_KONIEC.Subtract(szkolenie.DATA_START).Days;
+                int dlugoscSzkolenia = szkolenie.DATA_KONIEC.Subtract(szkolenie.DATA_START).Days + 1;
                 DateTime aktualnaData = szkolenie.DATA_START;
                 for (int i = 0; i < dlugoscSzkolenia; i++)
+                {
+                    KalendarzSzkolenia.BoldedDates = KalendarzSzkolenia.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
+
+                }
+            }
+            foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY)
+            {
+                int dlugoscwolne = wolne.DATA_KONIEC.Subtract(wolne.DATA_START).Days + 1;
+                DateTime aktualnaData = wolne.DATA_START;
+                for (int i = 0; i < dlugoscwolne; i++)
                 {
                     KalendarzSzkolenia.BoldedDates = KalendarzSzkolenia.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
 
@@ -259,7 +273,8 @@ namespace PROJEKTapp
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             dgvSzkoleniaPracownika.DataSource = db.SZKOLENIA_PRACOWNIKA.Where(pracownik => pracownik.ID_PRACOWNIK.Equals(ID)).ToList();
             ListaPracownikow.Refresh();
-            this.dgvSzkoleniaPracownika.Columns[5].Visible = false;
+            this.dgvSzkoleniaPracownika.Columns[0].Visible = false;
+            this.dgvSzkoleniaPracownika.Columns[1].Visible = false;
         }
     }
 }
