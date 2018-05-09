@@ -39,9 +39,14 @@
             this.btnWynagrodzenia = new System.Windows.Forms.Button();
             this.btnPracownicy = new System.Windows.Forms.Button();
             this.dgvWyplaty = new System.Windows.Forms.DataGridView();
+            this.pnlWynagordzenia = new System.Windows.Forms.Panel();
+            this.dtpMiesiac = new System.Windows.Forms.DateTimePicker();
+            this.LWyszukaj = new System.Windows.Forms.Label();
+            this.txtWyszukajNazwisko = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWyplaty)).BeginInit();
+            this.pnlWynagordzenia.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -178,17 +183,56 @@
             // dgvWyplaty
             // 
             this.dgvWyplaty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWyplaty.Location = new System.Drawing.Point(355, 80);
+            this.dgvWyplaty.Location = new System.Drawing.Point(740, 57);
             this.dgvWyplaty.Name = "dgvWyplaty";
-            this.dgvWyplaty.Size = new System.Drawing.Size(967, 533);
+            this.dgvWyplaty.Size = new System.Drawing.Size(566, 487);
             this.dgvWyplaty.TabIndex = 8;
+            // 
+            // pnlWynagordzenia
+            // 
+            this.pnlWynagordzenia.Controls.Add(this.LWyszukaj);
+            this.pnlWynagordzenia.Controls.Add(this.txtWyszukajNazwisko);
+            this.pnlWynagordzenia.Controls.Add(this.dtpMiesiac);
+            this.pnlWynagordzenia.Controls.Add(this.dgvWyplaty);
+            this.pnlWynagordzenia.Location = new System.Drawing.Point(34, 65);
+            this.pnlWynagordzenia.Name = "pnlWynagordzenia";
+            this.pnlWynagordzenia.Size = new System.Drawing.Size(1320, 559);
+            this.pnlWynagordzenia.TabIndex = 9;
+            // 
+            // dtpMiesiac
+            // 
+            this.dtpMiesiac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dtpMiesiac.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpMiesiac.Location = new System.Drawing.Point(576, 17);
+            this.dtpMiesiac.Name = "dtpMiesiac";
+            this.dtpMiesiac.Size = new System.Drawing.Size(127, 26);
+            this.dtpMiesiac.TabIndex = 9;
+            this.dtpMiesiac.ValueChanged += new System.EventHandler(this.dtpMiesiac_ValueChanged);
+            // 
+            // LWyszukaj
+            // 
+            this.LWyszukaj.AutoSize = true;
+            this.LWyszukaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LWyszukaj.Location = new System.Drawing.Point(776, 17);
+            this.LWyszukaj.Name = "LWyszukaj";
+            this.LWyszukaj.Size = new System.Drawing.Size(147, 20);
+            this.LWyszukaj.TabIndex = 23;
+            this.LWyszukaj.Text = "Wyszukaj Nazwisko";
+            // 
+            // txtWyszukajNazwisko
+            // 
+            this.txtWyszukajNazwisko.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtWyszukajNazwisko.Location = new System.Drawing.Point(929, 11);
+            this.txtWyszukajNazwisko.Name = "txtWyszukajNazwisko";
+            this.txtWyszukajNazwisko.Size = new System.Drawing.Size(253, 26);
+            this.txtWyszukajNazwisko.TabIndex = 22;
             // 
             // FormWynagordzenie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
-            this.Controls.Add(this.dgvWyplaty);
+            this.Controls.Add(this.pnlWynagordzenia);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -200,6 +244,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWyplaty)).EndInit();
+            this.pnlWynagordzenia.ResumeLayout(false);
+            this.pnlWynagordzenia.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -216,5 +262,9 @@
         private System.Windows.Forms.Button btnWynagrodzenia;
         private System.Windows.Forms.Button btnPracownicy;
         private System.Windows.Forms.DataGridView dgvWyplaty;
+        private System.Windows.Forms.Panel pnlWynagordzenia;
+        private System.Windows.Forms.DateTimePicker dtpMiesiac;
+        private System.Windows.Forms.Label LWyszukaj;
+        private System.Windows.Forms.TextBox txtWyszukajNazwisko;
     }
 }
