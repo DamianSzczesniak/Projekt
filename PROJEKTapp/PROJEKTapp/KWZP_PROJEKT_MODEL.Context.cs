@@ -104,6 +104,8 @@ namespace PROJEKTapp
         public virtual DbSet<ZESPOL_MASZYN> ZESPOL_MASZYN { get; set; }
         public virtual DbSet<ZESPOL_NARZEDZI> ZESPOL_NARZEDZI { get; set; }
         public virtual DbSet<URLOPY_PRACOWNIKA> URLOPY_PRACOWNIKA { get; set; }
+        public virtual DbSet<KOSZTY_CZASY_PRODUKCJI> KOSZTY_CZASY_PRODUKCJI { get; set; }
+        public virtual DbSet<OFERTA> OFERTA { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {

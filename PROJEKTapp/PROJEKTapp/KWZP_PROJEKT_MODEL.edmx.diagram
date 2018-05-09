@@ -133,6 +133,8 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZESPOL_NA__ID_NA__114A936A" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZESPOL_MA__ID_RE__09A971A2" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZESPOL_NA__ID_RE__10566F31" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.KOSZTY_CZASY_PRODUKCJI" Width="1.5" PointX="23.375" PointY="3.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.OFERTA" Width="2.75" PointX="23.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

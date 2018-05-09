@@ -558,6 +558,16 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.HISTORIA_STATUS_ZLECENIA' does no
           <Property Name="DATA_ZMIANY" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.KOSZTY_CZASY_PRODUKCJI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="KOSZTY_CZASY_PRODUKCJI">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+          <Property Name="KOSZT_PRODUKCJI" Type="money" />
+          <Property Name="ILOSC_DNI_PRACY" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.KREATOR_FAKTUR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="KREATOR_FAKTUR">
           <Key>
@@ -607,6 +617,16 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.OBCIAZENIE_NARZEDZI' does not hav
           <Property Name="NAZWA" Type="nvarchar" MaxLength="50" />
           <Property Name="MODEL" Type="nvarchar" MaxLength="50" />
           <Property Name="NR_EWIDENCYJNY" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.OFERTA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OFERTA">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+          <Property Name="KOSZT_CALKOWITY_PRODUKCJI" Type="money" />
+          <Property Name="CZAS_PRODUKCJI" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRACOWNICY_STANOWISKA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1706,6 +1726,13 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
     [HISTORIA_STATUS_ZLECENIA].[DATA_ZMIANY] AS [DATA_ZMIANY]
     FROM [dbo].[HISTORIA_STATUS_ZLECENIA] AS [HISTORIA_STATUS_ZLECENIA]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="KOSZTY_CZASY_PRODUKCJI" EntityType="Self.KOSZTY_CZASY_PRODUKCJI" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [KOSZTY_CZASY_PRODUKCJI].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [KOSZTY_CZASY_PRODUKCJI].[KOSZT_PRODUKCJI] AS [KOSZT_PRODUKCJI], 
+    [KOSZTY_CZASY_PRODUKCJI].[ILOSC_DNI_PRACY] AS [ILOSC_DNI_PRACY]
+    FROM [dbo].[KOSZTY_CZASY_PRODUKCJI] AS [KOSZTY_CZASY_PRODUKCJI]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="KREATOR_FAKTUR" EntityType="Self.KREATOR_FAKTUR" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [KREATOR_FAKTUR].[ID_FAKTURY] AS [ID_FAKTURY], 
@@ -1744,6 +1771,13 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
     [OBCIAZENIE_NARZEDZI].[MODEL] AS [MODEL], 
     [OBCIAZENIE_NARZEDZI].[NR_EWIDENCYJNY] AS [NR_EWIDENCYJNY]
     FROM [dbo].[OBCIAZENIE_NARZEDZI] AS [OBCIAZENIE_NARZEDZI]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OFERTA" EntityType="Self.OFERTA" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OFERTA].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [OFERTA].[KOSZT_CALKOWITY_PRODUKCJI] AS [KOSZT_CALKOWITY_PRODUKCJI], 
+    [OFERTA].[CZAS_PRODUKCJI] AS [CZAS_PRODUKCJI]
+    FROM [dbo].[OFERTA] AS [OFERTA]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="PRACOWNICY_STANOWISKA" EntityType="Self.PRACOWNICY_STANOWISKA" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3222,6 +3256,8 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
             <End Role="ZESPOL_NARZEDZI" EntitySet="ZESPOL_NARZEDZI" />
           </AssociationSet>
           <EntitySet Name="URLOPY_PRACOWNIKA" EntityType="KWZP_PROJEKTModel.URLOPY_PRACOWNIKA" />
+          <EntitySet Name="KOSZTY_CZASY_PRODUKCJI" EntityType="KWZP_PROJEKTModel.KOSZTY_CZASY_PRODUKCJI" />
+          <EntitySet Name="OFERTA" EntityType="KWZP_PROJEKTModel.OFERTA" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -3941,6 +3977,22 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="DATA_START" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DATA_KONIEC" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="KOSZTY_CZASY_PRODUKCJI">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="KOSZT_PRODUKCJI" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ILOSC_DNI_PRACY" Type="Int32" />
+        </EntityType>
+        <EntityType Name="OFERTA">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="KOSZT_CALKOWITY_PRODUKCJI" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CZAS_PRODUKCJI" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4786,6 +4838,24 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
                 <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
                 <ScalarProperty Name="SYMBOL" ColumnName="SYMBOL" />
                 <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KOSZTY_CZASY_PRODUKCJI">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.KOSZTY_CZASY_PRODUKCJI">
+              <MappingFragment StoreEntitySet="KOSZTY_CZASY_PRODUKCJI">
+                <ScalarProperty Name="ILOSC_DNI_PRACY" ColumnName="ILOSC_DNI_PRACY" />
+                <ScalarProperty Name="KOSZT_PRODUKCJI" ColumnName="KOSZT_PRODUKCJI" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OFERTA">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.OFERTA">
+              <MappingFragment StoreEntitySet="OFERTA">
+                <ScalarProperty Name="CZAS_PRODUKCJI" ColumnName="CZAS_PRODUKCJI" />
+                <ScalarProperty Name="KOSZT_CALKOWITY_PRODUKCJI" ColumnName="KOSZT_CALKOWITY_PRODUKCJI" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
