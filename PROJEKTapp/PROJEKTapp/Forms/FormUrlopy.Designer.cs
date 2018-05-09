@@ -415,6 +415,7 @@
             // 
             // textBoxWnioskowany
             // 
+            this.textBoxWnioskowany.Enabled = false;
             this.textBoxWnioskowany.Location = new System.Drawing.Point(262, 365);
             this.textBoxWnioskowany.Name = "textBoxWnioskowany";
             this.textBoxWnioskowany.Size = new System.Drawing.Size(151, 20);
@@ -432,6 +433,7 @@
             // 
             // textBoxPozostalo
             // 
+            this.textBoxPozostalo.Enabled = false;
             this.textBoxPozostalo.Location = new System.Drawing.Point(262, 340);
             this.textBoxPozostalo.Name = "textBoxPozostalo";
             this.textBoxPozostalo.Size = new System.Drawing.Size(151, 20);
@@ -459,6 +461,7 @@
             // 
             // textBoxWykorzystany
             // 
+            this.textBoxWykorzystany.Enabled = false;
             this.textBoxWykorzystany.Location = new System.Drawing.Point(262, 315);
             this.textBoxWykorzystany.Name = "textBoxWykorzystany";
             this.textBoxWykorzystany.Size = new System.Drawing.Size(151, 20);

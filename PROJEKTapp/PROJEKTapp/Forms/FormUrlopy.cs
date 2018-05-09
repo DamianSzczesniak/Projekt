@@ -123,6 +123,7 @@ namespace PROJEKTapp
             pnlWolne.Show();
             czyscform();
             textBoxWnioskowany.Text = "------";
+
             KalendarzUrlop.BoldedDates = new DateTime[] { };
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             this.pracownik = db.PRACOWNICY.Where(pracownik => pracownik.ID_PRACOWNIK == ID).First();
@@ -147,6 +148,7 @@ namespace PROJEKTapp
                 }
             }
 
+            textBoxWykorzystany.Text = " ";
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)
@@ -193,7 +195,7 @@ namespace PROJEKTapp
                 wolnepracownik.ID_PRACOWNIK = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
                 db.SaveChanges();
                 ListaPracownikow.Refresh();
-                pnlUrlopyControl.Hide();
+                pnlWolne.Hide();
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
                 dgvUrlopyPraconik.Columns[0].Visible = false;
@@ -246,7 +248,6 @@ namespace PROJEKTapp
         {
             int Wnioskowany = (txtDataKoniec.Value - txtDataStart.Value).Days + 1;
             textBoxWnioskowany.Text = Wnioskowany.ToString();
-
         }
     }
 }
