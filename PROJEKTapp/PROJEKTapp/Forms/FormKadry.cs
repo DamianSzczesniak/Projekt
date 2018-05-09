@@ -329,6 +329,7 @@ namespace PROJEKTapp
                 ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
                 ListaPracownikow.Refresh();
                 czyscform();
+                pnlUserField.Hide();
             }
         }
 
