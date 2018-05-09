@@ -135,6 +135,7 @@ namespace PROJEKTapp
             pnlUserField.Show();
             TrybPrzyciskuZapisEdycja = false;
             chbEdycjaStanoiwska.Show();
+            chbZmianaStawki.Show();
             cbOkres.Enabled = false;
             cbStawka.Enabled = false;
             cbStanowisko.Enabled = false;
