@@ -10,60 +10,45 @@ using System.Windows.Forms;
 
 namespace PROJEKTapp.Forms
 {
-   public partial class ZamowienieMaterialu : Form
+    public partial class ZamowienieMaterialu : Form
     {
         KWZP_PROJEKTEntities db;
-        MATERIAL material;
-        private FIRMY firma;
+        ZLECENIA NRZlecenia;
+        ZAMOWIENIA NoweZamowienie;
 
         public ZamowienieMaterialu(KWZP_PROJEKTEntities db)
         {
             this.db = db;
             InitializeComponent();
-            this.button1.Text = "Show";
-            this.button2.Text = "Hide";
+            comboBoxNrZlecenia.DataSource = db.AKTUALNY_STATUS_ZLECEN.Where(a => a.Status == 1).ToList();
+            comboBoxNrZlecenia.ValueMember = "ID_ZLECENIA";
+            int k = int.Parse(comboBoxNrZlecenia.SelectedValue.ToString());
+            this.GridVwZapMat.DataSource = db.ZAPOTRZEBOWANIE_MATERIAL.Where(x => x.ID_ZLECENIA == k).ToList();
 
-            firma = db.FIRMY.First();
+        }
+        private void comboBoxNrZlecenia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            NRZlecenia = (ZLECENIA)comboBoxNrZlecenia.SelectedValue;
+        }
 
-            //this.textBox1.Text = firma.NAZWA_FIRMY;
-            //this.textBox2.Text = firma.NIP;
+        private void BtnNoweZam_MouseClick(object sender, MouseEventArgs e)
+        {
 
-           // this.checkBox1.Checked = firma.POJAZDY.Count > 2;
-
-            int currentY = 150;
-            foreach (POJAZDY pojazd in firma.POJAZDY)
+            if ((ZLECENIA)comboBoxNrZlecenia.SelectedValue == NRZlecenia)
             {
-                TextBox textBox = new TextBox();
-                Label label = new Label();
-                label.Text = pojazd.MARKA + " " + pojazd.MODEL;
-                label.Location = new Point(5, currentY);
-                textBox.Text = pojazd.NUMER_REJESTRACYJNY;
-                textBox.Location = new Point(150, currentY);
-                textBox.Name = "txt" + pojazd.ID_POJAZDU;
-                this.panel1.Controls.Add(label);
-                this.panel1.Controls.Add(textBox);
-                currentY += 25;
+               // NoweZamowienie NoweZamowienie = new NoweZamowienie(db, NRZlecenia);
+               // Show();
+            }
+            else
+            {
+                MessageBox.Show("Podano nieprawidłowy numer zlecenia");
             }
         }
 
-        private void Btn_Back_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void ZamowienieMaterialu_Load(object sender, EventArgs e)
+        private void comboBoxNrZlecenia_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.panel1.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.panel1.Hide();
         }
     }
+
 }

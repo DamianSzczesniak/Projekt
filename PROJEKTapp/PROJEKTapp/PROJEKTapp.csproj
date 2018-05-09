@@ -324,6 +324,12 @@
     <Compile Include="NARZEDZIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="Froms_Logistyka\NoweZamówienie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Froms_Logistyka\NoweZamówienie.Designer.cs">
+      <DependentUpon>NoweZamówienie.cs</DependentUpon>
+    </Compile>
     <Compile Include="OBCIAZENIE_MASZYN.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -583,6 +589,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Logowanie\Zmiana_Danych_Uzytkownika.resx">
       <DependentUpon>Zmiana_Danych_Uzytkownika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Froms_Logistyka\NoweZamówienie.resx">
+      <DependentUpon>NoweZamówienie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
