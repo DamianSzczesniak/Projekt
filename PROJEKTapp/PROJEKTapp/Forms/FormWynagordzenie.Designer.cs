@@ -38,8 +38,10 @@
             this.btnUrlopy = new System.Windows.Forms.Button();
             this.btnWynagrodzenia = new System.Windows.Forms.Button();
             this.btnPracownicy = new System.Windows.Forms.Button();
+            this.dgvWyplaty = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWyplaty)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -173,11 +175,20 @@
             this.btnPracownicy.UseVisualStyleBackColor = true;
             this.btnPracownicy.Click += new System.EventHandler(this.btnPracownicy_Click);
             // 
+            // dgvWyplaty
+            // 
+            this.dgvWyplaty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWyplaty.Location = new System.Drawing.Point(355, 80);
+            this.dgvWyplaty.Name = "dgvWyplaty";
+            this.dgvWyplaty.Size = new System.Drawing.Size(967, 533);
+            this.dgvWyplaty.TabIndex = 8;
+            // 
             // FormWynagordzenie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.dgvWyplaty);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -188,6 +199,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWyplaty)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -203,5 +215,6 @@
         private System.Windows.Forms.Button btnUrlopy;
         private System.Windows.Forms.Button btnWynagrodzenia;
         private System.Windows.Forms.Button btnPracownicy;
+        private System.Windows.Forms.DataGridView dgvWyplaty;
     }
 }

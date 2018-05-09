@@ -126,6 +126,7 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_PRODUKTY_NAZWY" Width="1.5" PointX="21.375" PointY="6.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" Width="1.875" PointX="21.375" PointY="21.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE" Width="1.5" PointX="24" PointY="21.375" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PENSJE" Width="1.5" PointX="23.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

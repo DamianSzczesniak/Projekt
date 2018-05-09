@@ -20,11 +20,13 @@ namespace PROJEKTapp
             this.db = db;
             this.ladowanieformularzazokienkami = ladowanieformularzazokienkami;
             InitializeComponent();
+            
         }
 
         private void FormWynagordzenie_Load(object sender, EventArgs e)
         {
             //if (formload ==1)
+            dgvWyplaty.DataSource = db.PENSJE.ToList();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
