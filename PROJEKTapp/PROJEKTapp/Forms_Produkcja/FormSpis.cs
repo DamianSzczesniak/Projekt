@@ -69,14 +69,14 @@ namespace PROJEKTapp.Forms_Produkcja
 
             if (tryb == "Ewidencja Maszyn")
             {
-                object send = EwidencjaMaszynyNarzedzia.CurrentRow;
+                MODELE_MASZYN send = (MODELE_MASZYN)EwidencjaMaszynyNarzedzia.CurrentRow.DataBoundItem;
                 Forms_Produkcja.FormZmiana_Maszyny zmianaMaszyny = new Forms_Produkcja.FormZmiana_Maszyny(db, send, tryb);
                 zmianaMaszyny.Show();
 
             }
             else
             {
-                object send = EwidencjaMaszynyNarzedzia.CurrentRow;
+                NARZEDZIA send = (NARZEDZIA)EwidencjaMaszynyNarzedzia.CurrentRow.DataBoundItem;
                 Forms_Produkcja.FormZmiana_Narzedzia zmianaNarzedzia = new Forms_Produkcja.FormZmiana_Narzedzia(db, send, tryb);
                 zmianaNarzedzia.Show();
             }
@@ -144,6 +144,11 @@ namespace PROJEKTapp.Forms_Produkcja
                 }
             }
 
+
+        }
+
+        private void buttonUtworz_Click(object sender, EventArgs e)
+        {
 
         }
     }
