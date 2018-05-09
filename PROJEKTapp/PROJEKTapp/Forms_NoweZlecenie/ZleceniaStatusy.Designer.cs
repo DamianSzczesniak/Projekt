@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.StatusZleceniaDGV = new System.Windows.Forms.DataGridView();
             this.btnNastepnyStatus = new System.Windows.Forms.Button();
+            this.btnHZlecen = new System.Windows.Forms.Button();
             this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eTAPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +67,16 @@
             this.btnNastepnyStatus.UseVisualStyleBackColor = true;
             this.btnNastepnyStatus.Click += new System.EventHandler(this.btnNastepnyStatus_Click);
             // 
+            // btnHZlecen
+            // 
+            this.btnHZlecen.Location = new System.Drawing.Point(133, 325);
+            this.btnHZlecen.Name = "btnHZlecen";
+            this.btnHZlecen.Size = new System.Drawing.Size(202, 23);
+            this.btnHZlecen.TabIndex = 2;
+            this.btnHZlecen.Text = "Historia zmiany statusu zlecenia";
+            this.btnHZlecen.UseVisualStyleBackColor = true;
+            this.btnHZlecen.Click += new System.EventHandler(this.btnHZlecen_Click);
+            // 
             // iDZLECENIADataGridViewTextBoxColumn
             // 
             this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
@@ -97,7 +108,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 341);
+            this.ClientSize = new System.Drawing.Size(474, 360);
+            this.Controls.Add(this.btnHZlecen);
             this.Controls.Add(this.btnNastepnyStatus);
             this.Controls.Add(this.StatusZleceniaDGV);
             this.Name = "ZleceniaStatusy";
@@ -117,5 +129,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eTAPDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnNastepnyStatus;
+        private System.Windows.Forms.Button btnHZlecen;
     }
 }

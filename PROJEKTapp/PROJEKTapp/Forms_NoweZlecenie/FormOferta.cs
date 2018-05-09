@@ -12,8 +12,13 @@ namespace PROJEKTapp.Forms
 {
     public partial class FormOferta : Form
     {
-        public FormOferta()
+        KWZP_PROJEKTEntities db;
+        List<ZLECENIA_PRODUKTY_NAZWY> zLECENIA_PRODUKTY_s;
+        public FormOferta(KWZP_PROJEKTEntities db, List<ZLECENIA_PRODUKTY_NAZWY> zLECENIA_PRODUKTY_s)
         {
+            this.db = db;
+            this.zLECENIA_PRODUKTY_s = zLECENIA_PRODUKTY_s;
+              
             InitializeComponent();
         }
 

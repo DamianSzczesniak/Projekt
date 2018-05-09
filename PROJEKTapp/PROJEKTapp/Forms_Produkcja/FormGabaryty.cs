@@ -61,5 +61,10 @@ namespace PROJEKTapp.Forms_Produkcja
                 this.GridMasaWymiar.DataSource = db.MASA_PRODUKTU.Where(x => x.NAZWA_PRODUKTU.StartsWith(txtNazwaProduktu.Text)).ToList();
             }
         }
+
+        private void lblTryb_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

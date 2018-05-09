@@ -104,6 +104,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logowanie";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogowanie_FormClosed);
+            this.DoubleClick += new System.EventHandler(this.FormLogowanie_DoubleClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 

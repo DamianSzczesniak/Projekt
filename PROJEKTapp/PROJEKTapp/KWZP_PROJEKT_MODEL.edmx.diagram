@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1bd1e0e91b004edfa3fc57985829d8e3" Name="Diagram1" ZoomLevel="65">
+      <Diagram DiagramId="1bd1e0e91b004edfa3fc57985829d8e3" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY_PRACOWNICY" Width="1.5" PointX="2.375" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.DOKUMENTACJA" Width="1.5" PointX="7.5" PointY="15.125" IsExpanded="true" />
@@ -121,7 +121,9 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZLECENIE___ID_PR__503BEA1C" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZLECENIE___ID_ZL__4F47C5E3" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_MATERIALY" Width="1.5" PointX="21.375" PointY="4.5" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.SZKOLENIA_PRACOWNIKA" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.HISTORIA_STATUS_ZLECENIA" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_PRODUKTY_NAZWY" Width="1.5" PointX="21.375" PointY="7.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.SZKOLENIA_PRACOWNIKA" Width="1.5" PointX="21.375" PointY="18.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
