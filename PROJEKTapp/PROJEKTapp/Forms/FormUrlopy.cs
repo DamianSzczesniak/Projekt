@@ -194,6 +194,10 @@ namespace PROJEKTapp
                 db.SaveChanges();
                 ListaPracownikow.Refresh();
                 pnlUrlopyControl.Hide();
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+                dgvUrlopyPraconik.Columns[0].Visible = false;
+                this.dgvUrlopyPraconik.Refresh();
         }
 
         private void btnWyczysc_Click(object sender, EventArgs e)

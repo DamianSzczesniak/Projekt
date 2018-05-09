@@ -30,14 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStatystyki));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnStatystyki = new System.Windows.Forms.Button();
             this.btnSzkolenia = new System.Windows.Forms.Button();
             this.btnUrlopy = new System.Windows.Forms.Button();
             this.btnWynagrodzenia = new System.Windows.Forms.Button();
             this.btnPracownicy = new System.Windows.Forms.Button();
+            this.btnRozliczenieProjektow = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1366, 59);
             this.panel1.TabIndex = 8;
+            // 
+            // btnExit
+            // 
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(1281, 1);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(57, 55);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label1
             // 
@@ -77,18 +90,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1366, 135);
             this.panel2.TabIndex = 9;
-            // 
-            // btnExit
-            // 
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(1281, 1);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(57, 55);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnStatystyki
             // 
@@ -173,11 +174,24 @@
             this.btnPracownicy.UseVisualStyleBackColor = true;
             this.btnPracownicy.Click += new System.EventHandler(this.btnPracownicy_Click);
             // 
+            // btnRozliczenieProjektow
+            // 
+            this.btnRozliczenieProjektow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRozliczenieProjektow.Location = new System.Drawing.Point(12, 65);
+            this.btnRozliczenieProjektow.Name = "btnRozliczenieProjektow";
+            this.btnRozliczenieProjektow.Size = new System.Drawing.Size(231, 103);
+            this.btnRozliczenieProjektow.TabIndex = 10;
+            this.btnRozliczenieProjektow.Text = "Pokaż podsumowanie projektów";
+            this.btnRozliczenieProjektow.UseVisualStyleBackColor = true;
+            this.btnRozliczenieProjektow.Visible = false;
+            this.btnRozliczenieProjektow.Click += new System.EventHandler(this.btnRozliczenieProjektow_Click);
+            // 
             // FormStatystyki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.btnRozliczenieProjektow);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -203,5 +217,6 @@
         private System.Windows.Forms.Button btnUrlopy;
         private System.Windows.Forms.Button btnWynagrodzenia;
         private System.Windows.Forms.Button btnPracownicy;
+        private System.Windows.Forms.Button btnRozliczenieProjektow;
     }
 }
