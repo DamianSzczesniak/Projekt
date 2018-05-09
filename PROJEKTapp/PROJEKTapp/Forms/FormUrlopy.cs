@@ -14,7 +14,6 @@ namespace PROJEKTapp
     {
         KWZP_PROJEKTEntities db;
         bool ladowanieformularzazokienkami;
-        int contzapis;
 
         public FormUrlopy(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
         {
@@ -39,6 +38,9 @@ namespace PROJEKTapp
                 ListaPracownikow.Columns[0].HeaderText = "NUMER";
                 ListaPracownikow.Columns[0].Width = 60;
                 ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
+                int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+                this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+                dgvUrlopyPraconik.Columns[0].Visible = false;
             }
             else
             {
@@ -117,14 +119,12 @@ namespace PROJEKTapp
         {
             pnlWolne.Show();
             czyscform();
-            contzapis = 1;
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)
         {
             pnlWolne.Show();
             czyscform();
-            contzapis = 0;
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
 
@@ -136,9 +136,7 @@ namespace PROJEKTapp
         }
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
-        {
-            if (contzapis ==1)
-            {
+        {     
                 WOLNE_PRACOWNICY wolnepracownik = new WOLNE_PRACOWNICY();
                 wolnepracownik.DATA_KONIEC = txtDataKoniec.Value;
                 wolnepracownik.DATA_START = txtDataStart.Value;
@@ -147,11 +145,6 @@ namespace PROJEKTapp
                 db.SaveChanges();
                 ListaPracownikow.Refresh();
                 pnlUrlopyControl.Hide();
-            }
-            else
-            {
-                //zapis edycji
-            }
         }
 
         private void btnWyczysc_Click(object sender, EventArgs e)
@@ -187,6 +180,13 @@ namespace PROJEKTapp
             FormStatystyki statystyki = new FormStatystyki(db, ladowanieformularzazokienkami);
             statystyki.Show();
             this.Close();
+        }
+
+        private void ListaPracownikow_MouseClick(object sender, MouseEventArgs e)
+        {
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+            dgvUrlopyPraconik.Columns[0].Visible = false;
         }
     }
 }

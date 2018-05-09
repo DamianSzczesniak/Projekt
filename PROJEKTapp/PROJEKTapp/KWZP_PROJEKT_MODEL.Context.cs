@@ -92,10 +92,11 @@ namespace PROJEKTapp
         public virtual DbSet<PRZYGOTOWANIE_TRANSPORTU> PRZYGOTOWANIE_TRANSPORTU { get; set; }
         public virtual DbSet<ZLECENIA_LOKALIZACJA> ZLECENIA_LOKALIZACJA { get; set; }
         public virtual DbSet<ZLECENIE_PRODUKT> ZLECENIE_PRODUKT { get; set; }
-        public virtual DbSet<ZLECENIA_MATERIALY> ZLECENIA_MATERIALY { get; set; }
-        public virtual DbSet<HISTORIA_STATUS_ZLECENIA> HISTORIA_STATUS_ZLECENIA { get; set; }
-        public virtual DbSet<ZLECENIA_PRODUKTY_NAZWY> ZLECENIA_PRODUKTY_NAZWY { get; set; }
         public virtual DbSet<SZKOLENIA_PRACOWNIKA> SZKOLENIA_PRACOWNIKA { get; set; }
+        public virtual DbSet<URLOPY_PRACOWNIKA> URLOPY_PRACOWNIKA { get; set; }
+        public virtual DbSet<HISTORIA_STATUS_ZLECENIA> HISTORIA_STATUS_ZLECENIA { get; set; }
+        public virtual DbSet<ZLECENIA_MATERIALY> ZLECENIA_MATERIALY { get; set; }
+        public virtual DbSet<ZLECENIA_PRODUKTY_NAZWY> ZLECENIA_PRODUKTY_NAZWY { get; set; }
         public virtual DbSet<SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE> SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE { get; set; }
         public virtual DbSet<ZAMOWIENIA_MATERIALU_NAZLECENIE> ZAMOWIENIA_MATERIALU_NAZLECENIE { get; set; }
     
