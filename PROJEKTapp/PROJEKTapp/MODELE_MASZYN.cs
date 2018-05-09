@@ -17,8 +17,8 @@ namespace PROJEKTapp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MODELE_MASZYN()
         {
-            this.MASZYNY = new HashSet<MASZYNY>();
             this.PARAMETRY_MASZYNY = new HashSet<PARAMETRY_MASZYNY>();
+            this.MASZYNY = new HashSet<MASZYNY>();
         }
     
         public int ID_MODEL_MASZYNY { get; set; }
@@ -30,8 +30,8 @@ namespace PROJEKTapp
         public decimal KOSZT_ZA_H { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MASZYNY> MASZYNY { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PARAMETRY_MASZYNY> PARAMETRY_MASZYNY { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MASZYNY> MASZYNY { get; set; }
     }
 }

@@ -14,13 +14,12 @@ namespace PROJEKTapp
     public partial class Produkcja_glowny : Form
     {
         KWZP_PROJEKTEntities db;
+        DateTime data = new DateTime();
         public Produkcja_glowny(KWZP_PROJEKTEntities db)
         {
             this.db = db;
             InitializeComponent();
         }
-
-       
 
         private void btnExitProd_Click(object sender, EventArgs e)
         {
@@ -47,8 +46,19 @@ namespace PROJEKTapp
 
         private void btnEwidencjaMaszyn_Click(object sender, EventArgs e)
         {
-            Forms_Produkcja.FormSpis spis = new Forms_Produkcja.FormSpis(db);
-            spis.Show();
+            Forms_Produkcja.FormEwidencja ewidencja = new Forms_Produkcja.FormEwidencja(db);
+            ewidencja.Show();
+        }
+
+        private void btnRezerwacjaMaszyn_Click(object sender, EventArgs e)
+        {
+            Forms_Produkcja.FormRezerwacjaMaszyn rezerwacja = new Forms_Produkcja.FormRezerwacjaMaszyn(db);
+            rezerwacja.Show();
+        }
+
+        private void Produkcja_glowny_Load(object sender, EventArgs e)
+        {
+            GridPracownicyWPracy.DataSource = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();
         }
     }
 }
