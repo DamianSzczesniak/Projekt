@@ -46,7 +46,7 @@
             // 
             this.lblTrybFiltracji.AutoSize = true;
             this.lblTrybFiltracji.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTrybFiltracji.Location = new System.Drawing.Point(645, 59);
+            this.lblTrybFiltracji.Location = new System.Drawing.Point(557, 59);
             this.lblTrybFiltracji.Name = "lblTrybFiltracji";
             this.lblTrybFiltracji.Size = new System.Drawing.Size(241, 29);
             this.lblTrybFiltracji.TabIndex = 11;
@@ -59,7 +59,7 @@
             this.cboxWybierzTryb.Items.AddRange(new object[] {
             "Ewidencja Maszyn",
             "Ewidencja Narzędzia"});
-            this.cboxWybierzTryb.Location = new System.Drawing.Point(909, 59);
+            this.cboxWybierzTryb.Location = new System.Drawing.Point(813, 59);
             this.cboxWybierzTryb.Name = "cboxWybierzTryb";
             this.cboxWybierzTryb.Size = new System.Drawing.Size(255, 33);
             this.cboxWybierzTryb.TabIndex = 10;
