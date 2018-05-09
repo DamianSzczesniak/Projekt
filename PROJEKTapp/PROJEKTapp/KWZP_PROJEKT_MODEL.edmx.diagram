@@ -121,7 +121,9 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZLECENIE___ID_PR__503BEA1C" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZLECENIE___ID_ZL__4F47C5E3" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_MATERIALY" Width="1.5" PointX="21.375" PointY="4.5" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.SZKOLENIA_PRACOWNIKA" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.HISTORIA_STATUS_ZLECENIA" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_PRODUKTY_NAZWY" Width="1.5" PointX="21.375" PointY="7.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.SZKOLENIA_PRACOWNIKA" Width="1.5" PointX="21.375" PointY="18.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

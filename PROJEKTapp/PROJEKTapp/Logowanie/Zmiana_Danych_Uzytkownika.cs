@@ -57,9 +57,23 @@ namespace PROJEKTapp.Logowanie
                 s.NAZWA_LOGOWANIE = txtBLogin.Text;
                 s.HASLO = txtBHaslo.Text;
                 s.ID_UZYTKOWNIKA = dane.ID_UZYTKOWNIKA;
-                db.Entry(s).State = EntityState.Modified;
-                db.SaveChanges();
-                this.Close();
+                try
+                {
+                    db.Entry(s).State = EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("Akcje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                catch (Exception esc)
+                {
+                   
+                    KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
+                    db = nDB;
+                    db.Entry(s).State = EntityState.Modified;
+                    db.SaveChanges();
+                    MessageBox.Show("Akcje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
             else
             {

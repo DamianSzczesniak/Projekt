@@ -50,7 +50,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 59);
+            this.panel1.Size = new System.Drawing.Size(1366, 59);
             this.panel1.TabIndex = 1;
             // 
             // btnExitProd
@@ -61,7 +61,7 @@
             this.btnExitProd.FlatAppearance.BorderSize = 0;
             this.btnExitProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitProd.Image = global::PROJEKTapp.Properties.Resources.btnExit_Image;
-            this.btnExitProd.Location = new System.Drawing.Point(517, 9);
+            this.btnExitProd.Location = new System.Drawing.Point(1292, 12);
             this.btnExitProd.Name = "btnExitProd";
             this.btnExitProd.Size = new System.Drawing.Size(71, 42);
             this.btnExitProd.TabIndex = 3;
@@ -73,7 +73,7 @@
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(863, 3);
+            this.btnExit.Location = new System.Drawing.Point(1297, 3);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(57, 55);
             this.btnExit.TabIndex = 2;
@@ -82,13 +82,13 @@
             // Panel
             // 
             this.Panel.AutoSize = true;
-            this.Panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Panel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Panel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Panel.Location = new System.Drawing.Point(12, 9);
+            this.Panel.Location = new System.Drawing.Point(570, 12);
             this.Panel.Name = "Panel";
-            this.Panel.Size = new System.Drawing.Size(144, 31);
+            this.Panel.Size = new System.Drawing.Size(258, 42);
             this.Panel.TabIndex = 2;
-            this.Panel.Text = "Produkcja";
+            this.Panel.Text = "PRODUKCJA";
             // 
             // lblDol
             // 
@@ -96,9 +96,9 @@
             this.lblDol.BackColor = System.Drawing.SystemColors.HotTrack;
             this.lblDol.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblDol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDol.Location = new System.Drawing.Point(0, 266);
+            this.lblDol.Location = new System.Drawing.Point(0, 668);
             this.lblDol.Name = "lblDol";
-            this.lblDol.Size = new System.Drawing.Size(600, 100);
+            this.lblDol.Size = new System.Drawing.Size(1366, 100);
             this.lblDol.TabIndex = 3;
             // 
             // btnEwidencja
@@ -109,10 +109,10 @@
             this.btnEwidencja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnEwidencja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEwidencja.Image = global::PROJEKTapp.Properties.Resources.btnObciazenie;
-            this.btnEwidencja.Location = new System.Drawing.Point(157, 266);
+            this.btnEwidencja.Location = new System.Drawing.Point(345, 668);
             this.btnEwidencja.Margin = new System.Windows.Forms.Padding(2);
             this.btnEwidencja.Name = "btnEwidencja";
-            this.btnEwidencja.Size = new System.Drawing.Size(145, 100);
+            this.btnEwidencja.Size = new System.Drawing.Size(341, 100);
             this.btnEwidencja.TabIndex = 2;
             this.btnEwidencja.Text = "Obciążenie";
             this.btnEwidencja.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -127,10 +127,10 @@
             this.btnWykorzystaneMaszyny.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWykorzystaneMaszyny.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnWykorzystaneMaszyny.Image = global::PROJEKTapp.Properties.Resources.btnMachine1;
-            this.btnWykorzystaneMaszyny.Location = new System.Drawing.Point(8, 266);
+            this.btnWykorzystaneMaszyny.Location = new System.Drawing.Point(0, 668);
             this.btnWykorzystaneMaszyny.Margin = new System.Windows.Forms.Padding(2);
             this.btnWykorzystaneMaszyny.Name = "btnWykorzystaneMaszyny";
-            this.btnWykorzystaneMaszyny.Size = new System.Drawing.Size(145, 100);
+            this.btnWykorzystaneMaszyny.Size = new System.Drawing.Size(341, 100);
             this.btnWykorzystaneMaszyny.TabIndex = 0;
             this.btnWykorzystaneMaszyny.Text = "Wykorzystane Zasoby";
             this.btnWykorzystaneMaszyny.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -145,10 +145,10 @@
             this.btnGabaryty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnGabaryty.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGabaryty.Image = global::PROJEKTapp.Properties.Resources.btnObciazenie;
-            this.btnGabaryty.Location = new System.Drawing.Point(306, 266);
+            this.btnGabaryty.Location = new System.Drawing.Point(685, 669);
             this.btnGabaryty.Margin = new System.Windows.Forms.Padding(2);
             this.btnGabaryty.Name = "btnGabaryty";
-            this.btnGabaryty.Size = new System.Drawing.Size(145, 100);
+            this.btnGabaryty.Size = new System.Drawing.Size(341, 100);
             this.btnGabaryty.TabIndex = 4;
             this.btnGabaryty.Text = "Gabaryty";
             this.btnGabaryty.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -163,10 +163,10 @@
             this.btnEwidencjaMaszyn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnEwidencjaMaszyn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEwidencjaMaszyn.Image = global::PROJEKTapp.Properties.Resources.btnObciazenie;
-            this.btnEwidencjaMaszyn.Location = new System.Drawing.Point(455, 266);
+            this.btnEwidencjaMaszyn.Location = new System.Drawing.Point(1025, 668);
             this.btnEwidencjaMaszyn.Margin = new System.Windows.Forms.Padding(2);
             this.btnEwidencjaMaszyn.Name = "btnEwidencjaMaszyn";
-            this.btnEwidencjaMaszyn.Size = new System.Drawing.Size(145, 100);
+            this.btnEwidencjaMaszyn.Size = new System.Drawing.Size(341, 100);
             this.btnEwidencjaMaszyn.TabIndex = 5;
             this.btnEwidencjaMaszyn.Text = "Ewidencja";
             this.btnEwidencjaMaszyn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -176,7 +176,7 @@
             // Produkcja_glowny
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.btnEwidencjaMaszyn);
             this.Controls.Add(this.btnGabaryty);
             this.Controls.Add(this.btnEwidencja);
@@ -188,7 +188,6 @@
             this.Name = "Produkcja_glowny";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produkcja_glowny";
-            this.Load += new System.EventHandler(this.Produkcja_glowny_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

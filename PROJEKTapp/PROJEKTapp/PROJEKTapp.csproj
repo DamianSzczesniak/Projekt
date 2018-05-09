@@ -129,6 +129,30 @@
     <Compile Include="Forms_NoweZlecenie\FormOferta.Designer.cs">
       <DependentUpon>FormOferta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms_NoweZlecenie\HistoriaStatusyZlecenia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_NoweZlecenie\HistoriaStatusyZlecenia.Designer.cs">
+      <DependentUpon>HistoriaStatusyZlecenia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormSpis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormSpis.Designer.cs">
+      <DependentUpon>FormSpis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormZmiana_Maszyny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormZmiana_Maszyny.Designer.cs">
+      <DependentUpon>FormZmiana_Maszyny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormZmiana_Narzedzia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormZmiana_Narzedzia.Designer.cs">
+      <DependentUpon>FormZmiana_Narzedzia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Froms_Logistyka\AkcjaMagazynProduktów.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +250,9 @@
       <DependentUpon>FormWynagordzenie.cs</DependentUpon>
     </Compile>
     <Compile Include="GABARYT_PRODUTKU.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HISTORIA_STATUS_ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="KREATOR_FAKTUR.cs">
@@ -449,6 +476,9 @@
     <Compile Include="ZLECENIA_MATERIALY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="ZLECENIA_PRODUKTY_NAZWY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="ZLECENIE_PRODUKT.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -478,6 +508,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_NoweZlecenie\FormOferta.resx">
       <DependentUpon>FormOferta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_NoweZlecenie\HistoriaStatusyZlecenia.resx">
+      <DependentUpon>HistoriaStatusyZlecenia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormSpis.resx">
+      <DependentUpon>FormSpis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormZmiana_Maszyny.resx">
+      <DependentUpon>FormZmiana_Maszyny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormZmiana_Narzedzia.resx">
+      <DependentUpon>FormZmiana_Narzedzia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Froms_Logistyka\AkcjaMagazynProduktów.resx">
       <DependentUpon>AkcjaMagazynProduktów.cs</DependentUpon>
@@ -564,6 +606,8 @@
     </EntityDeploy>
     <None Include="AKTUALNY_STATUS_ZLECEN.datasource" />
     <None Include="AKTUALNY_STATUS_ZLECEN_NAZWY.datasource" />
+    <None Include="DATA_STATUSU_ZLECENIA.datasource" />
+    <None Include="HISTORIA_STATUS_ZLECENIA.datasource" />
     <None Include="KWZP_PROJEKT_MODEL.edmx.diagram">
       <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
     </None>
@@ -581,6 +625,8 @@
     <None Include="SPIS_UZYTKOWNIKOW.datasource" />
     <None Include="STAN_MATERIALY_NAZWY.datasource" />
     <None Include="UPRAWNIENIA.datasource" />
+    <None Include="ZLECENIA_PRODUKTY_NAZWY.datasource" />
+    <None Include="ZLECENIE_PRODUKT.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
