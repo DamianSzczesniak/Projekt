@@ -240,6 +240,7 @@
             this.btnEdytuj.TabIndex = 0;
             this.btnEdytuj.Text = "Edytuj";
             this.btnEdytuj.UseVisualStyleBackColor = true;
+            this.btnEdytuj.Visible = false;
             this.btnEdytuj.Click += new System.EventHandler(this.btnEdytuj_Click);
             // 
             // btnDodaj
