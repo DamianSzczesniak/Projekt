@@ -39,14 +39,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.GridVwZapMat = new System.Windows.Forms.DataGridView();
-            this.GridVwDostMat = new System.Windows.Forms.DataGridView();
-            this.iDMATERIALUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDLOKALIZACJIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTANDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sEKTORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aLEJKADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pELNANAZWAMATERIALUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTANMATERIALYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.BtnShow = new System.Windows.Forms.Button();
@@ -55,7 +47,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridVwZapMat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridVwDostMat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTANMATERIALYNAZWYBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +102,6 @@
             this.BtnSprDost.TabIndex = 19;
             this.BtnSprDost.Text = "Sprawdź dostępność materiałów";
             this.BtnSprDost.UseVisualStyleBackColor = true;
-            this.BtnSprDost.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnSprDost_MouseClick);
             // 
             // label2
             // 
@@ -129,6 +119,7 @@
             this.comboBoxNrZlecenia.Name = "comboBoxNrZlecenia";
             this.comboBoxNrZlecenia.Size = new System.Drawing.Size(121, 21);
             this.comboBoxNrZlecenia.TabIndex = 21;
+            this.comboBoxNrZlecenia.SelectedIndexChanged += new System.EventHandler(this.comboBoxNrZlecenia_SelectedIndexChanged_1);
             // 
             // pictureBox2
             // 
@@ -156,66 +147,6 @@
             this.GridVwZapMat.Size = new System.Drawing.Size(966, 161);
             this.GridVwZapMat.TabIndex = 26;
             // 
-            // GridVwDostMat
-            // 
-            this.GridVwDostMat.AutoGenerateColumns = false;
-            this.GridVwDostMat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridVwDostMat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDMATERIALUDataGridViewTextBoxColumn,
-            this.iDZLECENIADataGridViewTextBoxColumn,
-            this.iDLOKALIZACJIDataGridViewTextBoxColumn,
-            this.sTANDataGridViewTextBoxColumn,
-            this.sEKTORDataGridViewTextBoxColumn,
-            this.aLEJKADataGridViewTextBoxColumn,
-            this.pELNANAZWAMATERIALUDataGridViewTextBoxColumn});
-            this.GridVwDostMat.DataSource = this.sTANMATERIALYNAZWYBindingSource;
-            this.GridVwDostMat.Location = new System.Drawing.Point(31, 377);
-            this.GridVwDostMat.Name = "GridVwDostMat";
-            this.GridVwDostMat.Size = new System.Drawing.Size(966, 171);
-            this.GridVwDostMat.TabIndex = 27;
-            // 
-            // iDMATERIALUDataGridViewTextBoxColumn
-            // 
-            this.iDMATERIALUDataGridViewTextBoxColumn.DataPropertyName = "ID_MATERIALU";
-            this.iDMATERIALUDataGridViewTextBoxColumn.HeaderText = "ID_MATERIALU";
-            this.iDMATERIALUDataGridViewTextBoxColumn.Name = "iDMATERIALUDataGridViewTextBoxColumn";
-            // 
-            // iDZLECENIADataGridViewTextBoxColumn
-            // 
-            this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID_ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
-            // 
-            // iDLOKALIZACJIDataGridViewTextBoxColumn
-            // 
-            this.iDLOKALIZACJIDataGridViewTextBoxColumn.DataPropertyName = "ID_LOKALIZACJI";
-            this.iDLOKALIZACJIDataGridViewTextBoxColumn.HeaderText = "ID_LOKALIZACJI";
-            this.iDLOKALIZACJIDataGridViewTextBoxColumn.Name = "iDLOKALIZACJIDataGridViewTextBoxColumn";
-            // 
-            // sTANDataGridViewTextBoxColumn
-            // 
-            this.sTANDataGridViewTextBoxColumn.DataPropertyName = "STAN";
-            this.sTANDataGridViewTextBoxColumn.HeaderText = "STAN";
-            this.sTANDataGridViewTextBoxColumn.Name = "sTANDataGridViewTextBoxColumn";
-            // 
-            // sEKTORDataGridViewTextBoxColumn
-            // 
-            this.sEKTORDataGridViewTextBoxColumn.DataPropertyName = "SEKTOR";
-            this.sEKTORDataGridViewTextBoxColumn.HeaderText = "SEKTOR";
-            this.sEKTORDataGridViewTextBoxColumn.Name = "sEKTORDataGridViewTextBoxColumn";
-            // 
-            // aLEJKADataGridViewTextBoxColumn
-            // 
-            this.aLEJKADataGridViewTextBoxColumn.DataPropertyName = "ALEJKA";
-            this.aLEJKADataGridViewTextBoxColumn.HeaderText = "ALEJKA";
-            this.aLEJKADataGridViewTextBoxColumn.Name = "aLEJKADataGridViewTextBoxColumn";
-            // 
-            // pELNANAZWAMATERIALUDataGridViewTextBoxColumn
-            // 
-            this.pELNANAZWAMATERIALUDataGridViewTextBoxColumn.DataPropertyName = "PELNA_NAZWA_MATERIALU";
-            this.pELNANAZWAMATERIALUDataGridViewTextBoxColumn.HeaderText = "PELNA_NAZWA_MATERIALU";
-            this.pELNANAZWAMATERIALUDataGridViewTextBoxColumn.Name = "pELNANAZWAMATERIALUDataGridViewTextBoxColumn";
-            // 
             // sTANMATERIALYNAZWYBindingSource
             // 
             this.sTANMATERIALYNAZWYBindingSource.DataSource = typeof(PROJEKTapp.STAN_MATERIALY_NAZWY);
@@ -237,7 +168,6 @@
             this.BtnShow.TabIndex = 29;
             this.BtnShow.Text = "Pokaż";
             this.BtnShow.UseVisualStyleBackColor = true;
-            this.BtnShow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BtnShow_MouseClick_1);
             // 
             // ZamowienieMaterialu
             // 
@@ -247,7 +177,6 @@
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.BtnShow);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.GridVwDostMat);
             this.Controls.Add(this.GridVwZapMat);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.comboBoxNrZlecenia);
@@ -267,7 +196,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridVwZapMat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridVwDostMat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTANMATERIALYNAZWYBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -286,16 +214,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.DataGridView GridVwZapMat;
-        private System.Windows.Forms.DataGridView GridVwDostMat;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnShow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDMATERIALUDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDZLECENIADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDLOKALIZACJIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sTANDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sEKTORDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aLEJKADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pELNANAZWAMATERIALUDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource sTANMATERIALYNAZWYBindingSource;
     }
 }
