@@ -238,7 +238,11 @@ namespace PROJEKTapp
                         {
                             MessageBox.Show("Usunięcie pracownika nie powiodło się");
                         }
+
+                        dgvSzkoleniaPracownika.DataSource = db.SZKOLENIA_PRACOWNIKA.Where(prac => prac.ID_PRACOWNIK.Equals(ID)).ToList();
                         ListaPracownikow.Refresh();
+                        this.dgvSzkoleniaPracownika.Columns[0].Visible = false;
+                        this.dgvSzkoleniaPracownika.Columns[1].Visible = false;
                         pnlDodajSzkolenie.Hide();
                         btnSprawdz.Show();
                         cbSzkolenia.SelectedItem = null;
