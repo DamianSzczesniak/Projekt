@@ -81,6 +81,7 @@ namespace PROJEKTapp.Forms
             dATA_STATUSU_.ID_ZLECENIA = int.Parse(comboBoxNrZlecenia.SelectedValue.ToString());
             dATA_STATUSU_.ID_STATUSU_ZLECENIA = 2;
             db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_);
+           // foreach(SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE element on sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource.DataSource as SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE);
 
 
             MessageBox.Show("Akcje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
