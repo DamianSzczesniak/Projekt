@@ -23,10 +23,10 @@ namespace PROJEKTapp.Forms_Produkcja
         private void button2_Click(object sender, EventArgs e)
         {
             NARZEDZIA noweNarzedzie = new NARZEDZIA();
-            noweNarzedzie.NAZWA = this.textBox1.Text;
-            noweNarzedzie.MODEL = this.textBox2.Text;
-            noweNarzedzie.NR_EWIDENCYJNY = this.textBox3.Text;
-            noweNarzedzie.KOSZT_ZA_H = decimal.Parse(this.textBox4.Text);
+            noweNarzedzie.NAZWA = this.textBoxNazwa.Text;
+            noweNarzedzie.MODEL = this.textBoxModel.Text;
+            noweNarzedzie.NR_EWIDENCYJNY = this.textBoxNrEwidencyjny.Text;
+            noweNarzedzie.KOSZT_ZA_H = decimal.Parse(this.textBoxCenaZaH.Text);
 
 
             db.NARZEDZIA.Add(noweNarzedzie);
@@ -35,21 +35,21 @@ namespace PROJEKTapp.Forms_Produkcja
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
+            textBoxNazwa.Clear();
+            textBoxModel.Clear();
+            textBoxNrEwidencyjny.Clear();
+            textBoxCenaZaH.Clear();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox3.Text))
+            if (!string.IsNullOrEmpty(textBoxNrEwidencyjny.Text))
             {
                 int parsedVal;
-                if (!int.TryParse(textBox3.Text, out parsedVal))
+                if (!int.TryParse(textBoxNrEwidencyjny.Text, out parsedVal))
                 {
                     MessageBox.Show("To pole może zawierać tylko liczbę. ");
-                    textBox3.Clear();
+                    textBoxNrEwidencyjny.Clear();
                     return;
                 }
             }
@@ -57,13 +57,13 @@ namespace PROJEKTapp.Forms_Produkcja
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox4.Text))
+            if (!string.IsNullOrEmpty(textBoxCenaZaH.Text))
             {
                 int parsedVal;
-                if (!int.TryParse(textBox4.Text, out parsedVal))
+                if (!int.TryParse(textBoxCenaZaH.Text, out parsedVal))
                 {
                     MessageBox.Show("To pole może zawierać tylko liczbę. ");
-                    textBox4.Clear();
+                    textBoxCenaZaH.Clear();
                     return;
                 }
             }

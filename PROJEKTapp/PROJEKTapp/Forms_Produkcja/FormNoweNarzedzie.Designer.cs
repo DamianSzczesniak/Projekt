@@ -35,10 +35,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxCenaZaH = new System.Windows.Forms.TextBox();
+            this.textBoxNrEwidencyjny = new System.Windows.Forms.TextBox();
+            this.textBoxNazwa = new System.Windows.Forms.TextBox();
+            this.textBoxModel = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,10 +51,10 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBoxCenaZaH);
+            this.panel1.Controls.Add(this.textBoxNrEwidencyjny);
+            this.panel1.Controls.Add(this.textBoxNazwa);
+            this.panel1.Controls.Add(this.textBoxModel);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(793, 558);
@@ -116,35 +116,35 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Model";
             // 
-            // textBox4
+            // textBoxCenaZaH
             // 
-            this.textBox4.Location = new System.Drawing.Point(172, 292);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(337, 20);
-            this.textBox4.TabIndex = 6;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBoxCenaZaH.Location = new System.Drawing.Point(172, 292);
+            this.textBoxCenaZaH.Name = "textBoxCenaZaH";
+            this.textBoxCenaZaH.Size = new System.Drawing.Size(337, 20);
+            this.textBoxCenaZaH.TabIndex = 6;
+            this.textBoxCenaZaH.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // textBox3
+            // textBoxNrEwidencyjny
             // 
-            this.textBox3.Location = new System.Drawing.Point(172, 208);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(337, 20);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBoxNrEwidencyjny.Location = new System.Drawing.Point(172, 208);
+            this.textBoxNrEwidencyjny.Name = "textBoxNrEwidencyjny";
+            this.textBoxNrEwidencyjny.Size = new System.Drawing.Size(337, 20);
+            this.textBoxNrEwidencyjny.TabIndex = 7;
+            this.textBoxNrEwidencyjny.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox1
+            // textBoxNazwa
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(337, 20);
-            this.textBox1.TabIndex = 8;
+            this.textBoxNazwa.Location = new System.Drawing.Point(172, 56);
+            this.textBoxNazwa.Name = "textBoxNazwa";
+            this.textBoxNazwa.Size = new System.Drawing.Size(337, 20);
+            this.textBoxNazwa.TabIndex = 8;
             // 
-            // textBox2
+            // textBoxModel
             // 
-            this.textBox2.Location = new System.Drawing.Point(172, 133);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(337, 20);
-            this.textBox2.TabIndex = 9;
+            this.textBoxModel.Location = new System.Drawing.Point(172, 133);
+            this.textBoxModel.Name = "textBoxModel";
+            this.textBoxModel.Size = new System.Drawing.Size(337, 20);
+            this.textBoxModel.TabIndex = 9;
             // 
             // FormNoweNarzedzie
             // 
@@ -167,10 +167,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxCenaZaH;
+        private System.Windows.Forms.TextBox textBoxNrEwidencyjny;
+        private System.Windows.Forms.TextBox textBoxNazwa;
+        private System.Windows.Forms.TextBox textBoxModel;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
     }

@@ -35,13 +35,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.DodajMaszyne = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxPosuw = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxCenazaH = new System.Windows.Forms.TextBox();
+            this.textBoxTypMaszyny = new System.Windows.Forms.TextBox();
+            this.textBoxModel = new System.Windows.Forms.TextBox();
+            this.textBoxPredkosc = new System.Windows.Forms.TextBox();
+            this.textBoxMarka = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label4
@@ -109,13 +109,13 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Predkość";
             // 
-            // textBox6
+            // textBoxPosuw
             // 
-            this.textBox6.Location = new System.Drawing.Point(143, 252);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(337, 20);
-            this.textBox6.TabIndex = 21;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.textBoxPosuw.Location = new System.Drawing.Point(143, 252);
+            this.textBoxPosuw.Name = "textBoxPosuw";
+            this.textBoxPosuw.Size = new System.Drawing.Size(337, 20);
+            this.textBoxPosuw.TabIndex = 21;
+            this.textBoxPosuw.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label6
             // 
@@ -126,42 +126,42 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Posuw";
             // 
-            // textBox4
+            // textBoxCenazaH
             // 
-            this.textBox4.Location = new System.Drawing.Point(143, 298);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(337, 20);
-            this.textBox4.TabIndex = 22;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBoxCenazaH.Location = new System.Drawing.Point(143, 298);
+            this.textBoxCenazaH.Name = "textBoxCenazaH";
+            this.textBoxCenazaH.Size = new System.Drawing.Size(337, 20);
+            this.textBoxCenazaH.TabIndex = 22;
+            this.textBoxCenazaH.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // textBox5
+            // textBoxTypMaszyny
             // 
-            this.textBox5.Location = new System.Drawing.Point(143, 175);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(337, 20);
-            this.textBox5.TabIndex = 23;
+            this.textBoxTypMaszyny.Location = new System.Drawing.Point(143, 175);
+            this.textBoxTypMaszyny.Name = "textBoxTypMaszyny";
+            this.textBoxTypMaszyny.Size = new System.Drawing.Size(337, 20);
+            this.textBoxTypMaszyny.TabIndex = 23;
             // 
-            // textBox1
+            // textBoxModel
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(337, 20);
-            this.textBox1.TabIndex = 26;
+            this.textBoxModel.Location = new System.Drawing.Point(143, 63);
+            this.textBoxModel.Name = "textBoxModel";
+            this.textBoxModel.Size = new System.Drawing.Size(337, 20);
+            this.textBoxModel.TabIndex = 26;
             // 
-            // textBox3
+            // textBoxPredkosc
             // 
-            this.textBox3.Location = new System.Drawing.Point(143, 216);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(337, 20);
-            this.textBox3.TabIndex = 24;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBoxPredkosc.Location = new System.Drawing.Point(143, 216);
+            this.textBoxPredkosc.Name = "textBoxPredkosc";
+            this.textBoxPredkosc.Size = new System.Drawing.Size(337, 20);
+            this.textBoxPredkosc.TabIndex = 24;
+            this.textBoxPredkosc.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox2
+            // textBoxMarka
             // 
-            this.textBox2.Location = new System.Drawing.Point(143, 121);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(337, 20);
-            this.textBox2.TabIndex = 25;
+            this.textBoxMarka.Location = new System.Drawing.Point(143, 121);
+            this.textBoxMarka.Name = "textBoxMarka";
+            this.textBoxMarka.Size = new System.Drawing.Size(337, 20);
+            this.textBoxMarka.TabIndex = 25;
             // 
             // FormNowaMaszyna
             // 
@@ -176,13 +176,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.DodajMaszyne);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBoxPosuw);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxCenazaH);
+            this.Controls.Add(this.textBoxTypMaszyny);
+            this.Controls.Add(this.textBoxModel);
+            this.Controls.Add(this.textBoxPredkosc);
+            this.Controls.Add(this.textBoxMarka);
             this.Name = "FormNowaMaszyna";
             this.Text = "FormNowaMaszyna";
             this.ResumeLayout(false);
@@ -199,12 +199,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button DodajMaszyne;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxPosuw;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxCenazaH;
+        private System.Windows.Forms.TextBox textBoxTypMaszyny;
+        private System.Windows.Forms.TextBox textBoxModel;
+        private System.Windows.Forms.TextBox textBoxPredkosc;
+        private System.Windows.Forms.TextBox textBoxMarka;
     }
 }

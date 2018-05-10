@@ -22,12 +22,12 @@ namespace PROJEKTapp.Forms_Produkcja
         private void DodajMaszyne_Click(object sender, EventArgs e)
         {
             MODELE_MASZYN noweModele_Maszyn = new MODELE_MASZYN();
-            noweModele_Maszyn.MODEL = this.textBox1.Text;
-            noweModele_Maszyn.MARKA = this.textBox2.Text;
-            noweModele_Maszyn.TYP_MASZYNY = this.textBox5.Text;
-            noweModele_Maszyn.PRĘDKOŚĆ = int.Parse(this.textBox3.Text);
-            noweModele_Maszyn.POSUW = int.Parse(this.textBox6.Text);
-            noweModele_Maszyn.KOSZT_ZA_H = decimal.Parse(this.textBox4.Text);
+            noweModele_Maszyn.MODEL = this.textBoxModel.Text;
+            noweModele_Maszyn.MARKA = this.textBoxMarka.Text;
+            noweModele_Maszyn.TYP_MASZYNY = this.textBoxTypMaszyny.Text;
+            noweModele_Maszyn.PRĘDKOŚĆ = int.Parse(this.textBoxPredkosc.Text);
+            noweModele_Maszyn.POSUW = int.Parse(this.textBoxPosuw.Text);
+            noweModele_Maszyn.KOSZT_ZA_H = decimal.Parse(this.textBoxCenazaH.Text);
 
             db.MODELE_MASZYN.Add(noweModele_Maszyn);
             db.SaveChanges();
@@ -35,23 +35,23 @@ namespace PROJEKTapp.Forms_Produkcja
 
         private void WyczyscDane_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
-            textBox5.Clear();
-            textBox6.Clear();
+            textBoxModel.Clear();
+            textBoxMarka.Clear();
+            textBoxPredkosc.Clear();
+            textBoxCenazaH.Clear();
+            textBoxTypMaszyny.Clear();
+            textBoxPosuw.Clear();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox3.Text))
+            if (!string.IsNullOrEmpty(textBoxPredkosc.Text))
             {
                 int parsedVal;
-                if (!int.TryParse(textBox3.Text, out parsedVal))
+                if (!int.TryParse(textBoxPredkosc.Text, out parsedVal))
                 {
                     MessageBox.Show("To pole może zawierać tylko liczbę. ");
-                    textBox3.Clear();
+                    textBoxPredkosc.Clear();
                     return;
                 }
             }
@@ -59,13 +59,13 @@ namespace PROJEKTapp.Forms_Produkcja
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox6.Text))
+            if (!string.IsNullOrEmpty(textBoxPosuw.Text))
             {
                 int parsedVal;
-                if (!int.TryParse(textBox6.Text, out parsedVal))
+                if (!int.TryParse(textBoxPosuw.Text, out parsedVal))
                 {
                     MessageBox.Show("To pole może zawierać tylko liczbę. ");
-                    textBox6.Clear();
+                    textBoxPosuw.Clear();
                     return;
                 }
             }
@@ -73,16 +73,17 @@ namespace PROJEKTapp.Forms_Produkcja
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox4.Text))
+            if (!string.IsNullOrEmpty(textBoxCenazaH.Text))
             {
                 int parsedVal;
-                if (!int.TryParse(textBox4.Text, out parsedVal))
+                if (!int.TryParse(textBoxCenazaH.Text, out parsedVal))
                 {
                     MessageBox.Show("To pole może zawierać tylko liczbę. ");
-                    textBox4.Clear();
+                    textBoxCenazaH.Clear();
                     return;
                 }
             }
         }
+
     }
 }
