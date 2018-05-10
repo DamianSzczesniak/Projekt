@@ -13,10 +13,11 @@ namespace PROJEKTapp
     {
         KWZP_PROJEKTEntities db;
         List<ZLECENIA_PRODUKTY_NAZWY> lZP = new List<ZLECENIA_PRODUKTY_NAZWY>();
-        ZLECENIA noweZlecenie = new ZLECENIA();
-        public FormNoweZlecenie(KWZP_PROJEKTEntities db)
+        ZLECENIA zlecenie;
+        public FormNoweZlecenie(ZLECENIA zlecenie, KWZP_PROJEKTEntities db)
         {
             this.db = db;
+            this.zlecenie = zlecenie;
             InitializeComponent();
 
             
@@ -38,13 +39,13 @@ namespace PROJEKTapp
         private void btn_Dodaj_Zlecenie_Click(object sender, EventArgs e)
         {
           
-            ZLECENIA noweZlecenie = new ZLECENIA();
-            noweZlecenie.DATA_REALIZACJI = DateTime.Parse(txtBox_Data_Realizacji.Text);
-            noweZlecenie.DATA_ZLECENIA = DateTime.Parse(txtBox_Data_Zlecenia.Text);
-            noweZlecenie.ID_FIRMY = int.Parse(cbBoxFirmy.SelectedValue.ToString());
+            ZLECENIA zlecenie = new ZLECENIA();
+            zlecenie.DATA_REALIZACJI = DateTime.Parse(txtBox_Data_Realizacji.Text);
+            zlecenie.DATA_ZLECENIA = DateTime.Parse(txtBox_Data_Zlecenia.Text);
+            zlecenie.ID_FIRMY = int.Parse(cbBoxFirmy.SelectedValue.ToString());
             int  id = db.ZLECENIA.Max(a => a.ID_ZLECENIA);
-            noweZlecenie.ID_ZLECENIA = id;
-            db.Entry(noweZlecenie).State = EntityState.Modified; 
+            zlecenie.ID_ZLECENIA = id;
+            db.Entry(zlecenie).State = EntityState.Modified; 
             db.SaveChanges();
             DATA_STATUSU_ZLECENIA dATA_STATUSU_ZLECENIA = new DATA_STATUSU_ZLECENIA();
             dATA_STATUSU_ZLECENIA.ID_ZLECENIA = id;
@@ -122,13 +123,12 @@ namespace PROJEKTapp
         {
             
 
-            noweZlecenie.DATA_REALIZACJI = DateTime.Parse(txtBox_Data_Zlecenia.Text);
-            noweZlecenie.DATA_ZLECENIA = DateTime.Parse(txtBox_Data_Zlecenia.Text);
-            noweZlecenie.ID_FIRMY = 1;
+            zlecenie.DATA_REALIZACJI = DateTime.Parse(txtBox_Data_Zlecenia.Text);
+            zlecenie.DATA_ZLECENIA = DateTime.Parse(txtBox_Data_Zlecenia.Text);
+            zlecenie.ID_FIRMY = 1;
             int id = db.ZLECENIA.Max(a => a.ID_ZLECENIA);
-            noweZlecenie.ID_ZLECENIA = id;
-            
-            db.ZLECENIA.Add(noweZlecenie);
+            zlecenie.ID_ZLECENIA = id;
+            db.ZLECENIA.Add(zlecenie);
             db.SaveChanges();
 
             foreach (ZLECENIA_PRODUKTY_NAZWY element in lZP)
@@ -225,7 +225,7 @@ namespace PROJEKTapp
                 db.ZLECENIE_PRODUKT.Remove(zLECENIE_PRODUKT);
                 db.SaveChanges();
             }
-            ZLECENIA zLECENIA = db.ZLECENIA.First(a => a.ID_ZLECENIA == noweZlecenie.ID_ZLECENIA);
+            ZLECENIA zLECENIA = db.ZLECENIA.First(a => a.ID_ZLECENIA == zlecenie.ID_ZLECENIA);
          
             db.ZLECENIA.Remove(zLECENIA);
             db.SaveChanges();
