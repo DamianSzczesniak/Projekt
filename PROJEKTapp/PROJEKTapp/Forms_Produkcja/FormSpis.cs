@@ -69,21 +69,17 @@ namespace PROJEKTapp.Forms_Produkcja
 
             if (tryb == "Ewidencja Maszyn")
             {
-                object send = EwidencjaMaszynyNarzedzia.CurrentRow;
+                MODELE_MASZYN send = (MODELE_MASZYN)EwidencjaMaszynyNarzedzia.CurrentRow.DataBoundItem;
                 Forms_Produkcja.FormZmiana_Maszyny zmianaMaszyny = new Forms_Produkcja.FormZmiana_Maszyny(db, send, tryb);
                 zmianaMaszyny.Show();
 
             }
             else
             {
-                object send = EwidencjaMaszynyNarzedzia.CurrentRow;
+                NARZEDZIA send = (NARZEDZIA)EwidencjaMaszynyNarzedzia.CurrentRow.DataBoundItem;
                 Forms_Produkcja.FormZmiana_Narzedzia zmianaNarzedzia = new Forms_Produkcja.FormZmiana_Narzedzia(db, send, tryb);
                 zmianaNarzedzia.Show();
             }
-
-
-            
-
 
         }
 
@@ -91,7 +87,6 @@ namespace PROJEKTapp.Forms_Produkcja
         {
             if (tryb == "Ewidencja Maszyn")
             {
-                this.EwidencjaMaszynyNarzedzia.DataSource = db.MODELE_MASZYN.Where(x => x.MODEL.StartsWith(txtNazwaProduktu.Text)).ToList();
 
                 DialogResult result = MessageBox.Show("Czy chcesz usunąć maszynę: " + EwidencjaMaszynyNarzedzia.CurrentRow.Cells[1].Value + " " + EwidencjaMaszynyNarzedzia.CurrentRow.Cells[2].Value, "Confirmation", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
@@ -109,7 +104,6 @@ namespace PROJEKTapp.Forms_Produkcja
                             MessageBox.Show("Usunięcie zakończone nie powodzeniem. Powód: " + ex.Message, "Uwaga", MessageBoxButtons.OK);
                         }
 
-
                     }
 
                     OdswiezListe();
@@ -118,7 +112,6 @@ namespace PROJEKTapp.Forms_Produkcja
 
             else
             {
-                this.EwidencjaMaszynyNarzedzia.DataSource = db.NARZEDZIA.Where(x => x.MODEL.StartsWith(txtNazwaProduktu.Text)).ToList();
 
                 DialogResult result = MessageBox.Show("Czy chcesz usunąć narzedzie: " + EwidencjaMaszynyNarzedzia.CurrentRow.Cells[1].Value + " " + EwidencjaMaszynyNarzedzia.CurrentRow.Cells[2].Value, "Confirmation", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
@@ -145,6 +138,27 @@ namespace PROJEKTapp.Forms_Produkcja
             }
 
 
+        }
+
+        private void buttonUtworz_Click(object sender, EventArgs e)
+        {
+            if (tryb == "Ewidencja Maszyn")
+            {
+                Forms_Produkcja.FormNowaMaszyna nowaMaszyna = new Forms_Produkcja.FormNowaMaszyna(db);
+                nowaMaszyna.Show();
+                
+            }
+            else
+            {
+                
+                Forms_Produkcja.FormNoweNarzedzie noweNarzedzia = new Forms_Produkcja.FormNoweNarzedzie(db);
+                noweNarzedzia.Show();
+            }
+        }
+
+        private void btnExitWykorzystaneMaszyny_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

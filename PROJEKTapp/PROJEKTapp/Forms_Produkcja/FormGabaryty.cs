@@ -62,9 +62,5 @@ namespace PROJEKTapp.Forms_Produkcja
             }
         }
 
-        private void lblTryb_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

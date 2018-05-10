@@ -61,9 +61,5 @@ namespace PROJEKTapp.Forms_Produkcja
             }
         }
 
-        private void GridObciazenie_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

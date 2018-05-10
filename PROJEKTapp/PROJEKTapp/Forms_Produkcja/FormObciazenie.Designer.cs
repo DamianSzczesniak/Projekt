@@ -52,9 +52,9 @@
             // dateWybierzDate
             // 
             this.dateWybierzDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateWybierzDate.Location = new System.Drawing.Point(363, 74);
+            this.dateWybierzDate.Location = new System.Drawing.Point(295, 76);
             this.dateWybierzDate.Name = "dateWybierzDate";
-            this.dateWybierzDate.Size = new System.Drawing.Size(257, 31);
+            this.dateWybierzDate.Size = new System.Drawing.Size(390, 31);
             this.dateWybierzDate.TabIndex = 1;
             this.dateWybierzDate.Value = new System.DateTime(2018, 4, 23, 0, 0, 0, 0);
             this.dateWybierzDate.ValueChanged += new System.EventHandler(this.dateWybierzDate_ValueChanged);
@@ -79,7 +79,6 @@
             this.GridObciazenie.ReadOnly = true;
             this.GridObciazenie.Size = new System.Drawing.Size(1098, 582);
             this.GridObciazenie.TabIndex = 3;
-            this.GridObciazenie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridObciazenie_CellContentClick);
             // 
             // cboxTryb
             // 
@@ -88,7 +87,7 @@
             this.cboxTryb.Items.AddRange(new object[] {
             "Obciążenie Maszyn",
             "Obciążenie Narzędzi"});
-            this.cboxTryb.Location = new System.Drawing.Point(994, 72);
+            this.cboxTryb.Location = new System.Drawing.Point(942, 72);
             this.cboxTryb.Name = "cboxTryb";
             this.cboxTryb.Size = new System.Drawing.Size(234, 33);
             this.cboxTryb.TabIndex = 4;

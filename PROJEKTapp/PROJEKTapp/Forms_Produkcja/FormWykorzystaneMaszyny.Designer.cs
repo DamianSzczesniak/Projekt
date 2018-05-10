@@ -34,6 +34,7 @@
             this.txtNazwaProduktu = new System.Windows.Forms.TextBox();
             this.cboxWybierzTryb = new System.Windows.Forms.ComboBox();
             this.lblTrybFiltracji = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridWykorzystaneMaszyny)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,11 +106,25 @@
             this.lblTrybFiltracji.TabIndex = 5;
             this.lblTrybFiltracji.Text = "Wybierz tryb filtracji";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Menu;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::PROJEKTapp.Properties.Resources.btnExit_Image;
+            this.button1.Location = new System.Drawing.Point(1214, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(67, 52);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormWykorzystaneMaszyny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 768);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblTrybFiltracji);
             this.Controls.Add(this.cboxWybierzTryb);
             this.Controls.Add(this.txtNazwaProduktu);
@@ -134,5 +149,6 @@
         private System.Windows.Forms.TextBox txtNazwaProduktu;
         private System.Windows.Forms.ComboBox cboxWybierzTryb;
         private System.Windows.Forms.Label lblTrybFiltracji;
+        private System.Windows.Forms.Button button1;
     }
 }
