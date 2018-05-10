@@ -49,9 +49,10 @@
             // 
             // WyczyscDane
             // 
-            this.WyczyscDane.Location = new System.Drawing.Point(336, 306);
+            this.WyczyscDane.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.WyczyscDane.Location = new System.Drawing.Point(381, 336);
             this.WyczyscDane.Name = "WyczyscDane";
-            this.WyczyscDane.Size = new System.Drawing.Size(143, 79);
+            this.WyczyscDane.Size = new System.Drawing.Size(171, 112);
             this.WyczyscDane.TabIndex = 12;
             this.WyczyscDane.Text = "Wyczyść dane";
             this.WyczyscDane.UseVisualStyleBackColor = true;
@@ -59,9 +60,10 @@
             // 
             // Aktualizuj
             // 
-            this.Aktualizuj.Location = new System.Drawing.Point(166, 306);
+            this.Aktualizuj.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.Aktualizuj.Location = new System.Drawing.Point(191, 336);
             this.Aktualizuj.Name = "Aktualizuj";
-            this.Aktualizuj.Size = new System.Drawing.Size(147, 79);
+            this.Aktualizuj.Size = new System.Drawing.Size(175, 112);
             this.Aktualizuj.TabIndex = 13;
             this.Aktualizuj.Text = "Zapisz";
             this.Aktualizuj.UseVisualStyleBackColor = true;
@@ -69,9 +71,10 @@
             // 
             // Dodaj
             // 
-            this.Dodaj.Location = new System.Drawing.Point(12, 306);
+            this.Dodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.Dodaj.Location = new System.Drawing.Point(14, 336);
             this.Dodaj.Name = "Dodaj";
-            this.Dodaj.Size = new System.Drawing.Size(134, 79);
+            this.Dodaj.Size = new System.Drawing.Size(162, 112);
             this.Dodaj.TabIndex = 14;
             this.Dodaj.Text = "Dodaj nową na podstawie istniejącej maszyny";
             this.Dodaj.UseVisualStyleBackColor = true;
@@ -79,104 +82,116 @@
             // 
             // textBoxCenaZaH
             // 
-            this.textBoxCenaZaH.Location = new System.Drawing.Point(101, 251);
+            this.textBoxCenaZaH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxCenaZaH.Location = new System.Drawing.Point(155, 275);
             this.textBoxCenaZaH.Name = "textBoxCenaZaH";
-            this.textBoxCenaZaH.Size = new System.Drawing.Size(337, 20);
+            this.textBoxCenaZaH.Size = new System.Drawing.Size(367, 26);
             this.textBoxCenaZaH.TabIndex = 8;
             // 
             // textBoxPredkosc
             // 
-            this.textBoxPredkosc.Location = new System.Drawing.Point(101, 169);
+            this.textBoxPredkosc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxPredkosc.Location = new System.Drawing.Point(155, 178);
             this.textBoxPredkosc.Name = "textBoxPredkosc";
-            this.textBoxPredkosc.Size = new System.Drawing.Size(337, 20);
+            this.textBoxPredkosc.Size = new System.Drawing.Size(367, 26);
             this.textBoxPredkosc.TabIndex = 9;
             this.textBoxPredkosc.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBoxMarka
             // 
-            this.textBoxMarka.Location = new System.Drawing.Point(101, 74);
+            this.textBoxMarka.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxMarka.Location = new System.Drawing.Point(155, 74);
             this.textBoxMarka.Name = "textBoxMarka";
-            this.textBoxMarka.Size = new System.Drawing.Size(337, 20);
+            this.textBoxMarka.Size = new System.Drawing.Size(367, 26);
             this.textBoxMarka.TabIndex = 10;
             // 
             // textBoxModel
             // 
-            this.textBoxModel.Location = new System.Drawing.Point(101, 16);
+            this.textBoxModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxModel.Location = new System.Drawing.Point(155, 16);
             this.textBoxModel.Name = "textBoxModel";
-            this.textBoxModel.Size = new System.Drawing.Size(337, 20);
+            this.textBoxModel.Size = new System.Drawing.Size(367, 26);
             this.textBoxModel.TabIndex = 11;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 251);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Location = new System.Drawing.Point(10, 275);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
+            this.label4.Size = new System.Drawing.Size(128, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Cena za godzinę";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 169);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Location = new System.Drawing.Point(10, 178);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(75, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Predkość";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 16);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(10, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Model";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 78);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(13, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(53, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "Marka";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 130);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Location = new System.Drawing.Point(12, 131);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 13);
+            this.label5.Size = new System.Drawing.Size(99, 20);
             this.label5.TabIndex = 7;
             this.label5.Text = "Typ maszyny";
             // 
             // textBoxTypMaszyny
             // 
-            this.textBoxTypMaszyny.Location = new System.Drawing.Point(101, 128);
+            this.textBoxTypMaszyny.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxTypMaszyny.Location = new System.Drawing.Point(155, 128);
             this.textBoxTypMaszyny.Name = "textBoxTypMaszyny";
-            this.textBoxTypMaszyny.Size = new System.Drawing.Size(337, 20);
+            this.textBoxTypMaszyny.Size = new System.Drawing.Size(367, 26);
             this.textBoxTypMaszyny.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 205);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.Location = new System.Drawing.Point(10, 228);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.Size = new System.Drawing.Size(56, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "Posuw";
             // 
             // textBoxPosuw
             // 
-            this.textBoxPosuw.Location = new System.Drawing.Point(101, 205);
+            this.textBoxPosuw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxPosuw.Location = new System.Drawing.Point(155, 228);
             this.textBoxPosuw.Name = "textBoxPosuw";
-            this.textBoxPosuw.Size = new System.Drawing.Size(337, 20);
+            this.textBoxPosuw.Size = new System.Drawing.Size(367, 26);
             this.textBoxPosuw.TabIndex = 8;
             // 
             // panelMaszyny
             // 
-            this.panelMaszyny.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panelMaszyny.BackColor = System.Drawing.SystemColors.Control;
             this.panelMaszyny.Controls.Add(this.label4);
             this.panelMaszyny.Controls.Add(this.label1);
             this.panelMaszyny.Controls.Add(this.WyczyscDane);
@@ -195,7 +210,7 @@
             this.panelMaszyny.Location = new System.Drawing.Point(0, 24);
             this.panelMaszyny.Margin = new System.Windows.Forms.Padding(2);
             this.panelMaszyny.Name = "panelMaszyny";
-            this.panelMaszyny.Size = new System.Drawing.Size(601, 417);
+            this.panelMaszyny.Size = new System.Drawing.Size(800, 600);
             this.panelMaszyny.TabIndex = 15;
             // 
             // FormZmiana_Maszyny
@@ -203,7 +218,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1012, 596);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panelMaszyny);
             this.Name = "FormZmiana_Maszyny";
             this.Text = "FormZmiana_Maszyny";
