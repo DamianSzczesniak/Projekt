@@ -764,6 +764,14 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.SPIS_UZYTKOWNIKOW' does not have 
           <Property Name="PESEL" Type="nvarchar" MaxLength="11" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6013: The table/view 'KWZP_PROJEKT.dbo.STAN_MATERIALY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="STAN_MATERIALY">
+          <Property Name="ID_MATERIALU" Type="int" />
+          <Property Name="ID_ZLECENIA" Type="int" />
+          <Property Name="ID_LOKALIZACJI" Type="int" />
+          <Property Name="STAN" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAN_MATERIALY_NAZWY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="STAN_MATERIALY_NAZWY">
           <Key>
@@ -780,6 +788,14 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAN_MATERIALY_NAZWY' does not ha
           <Property Name="ALEJKA" Type="varchar" MaxLength="30" />
           <Property Name="PELNA_NAZWA_MATERIALU" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'KWZP_PROJEKT.dbo.STAN_PRODUKTY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="STAN_PRODUKTY">
+          <Property Name="ID_PRODUKTU" Type="int" />
+          <Property Name="ID_ZLECENIA" Type="int" />
+          <Property Name="ID_LOKALIZACJI" Type="int" />
+          <Property Name="STAN" Type="int" />
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAN_PRODUKTY_NAZWY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="STAN_PRODUKTY_NAZWY">
@@ -802,6 +818,8 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.Status_detale_zlecenie' does not 
         <EntityType Name="Status_detale_zlecenie">
           <Key>
             <PropertyRef Name="ID_ZLECENIA" />
+            
+            
           </Key>
           <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
           <Property Name="Status" Type="int" />
@@ -920,6 +938,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZAMOWIENIA_MATERIALU_NAZLECENIE' 
           <Property Name="SUMA_p" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.zestawienie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="zestawienie">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+          <Property Name="wydatki" Type="money" />
+          <Property Name="obroty" Type="numeric" Precision="23" Scale="6" />
+          <Property Name="zarobek" Type="numeric" Precision="22" Scale="6" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_LOKALIZACJA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ZLECENIA_LOKALIZACJA">
           <Key>
@@ -957,6 +986,20 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="ILOSC" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ZLECENIE_DLA_DOSTAWY">
+          <Property Name="ID_ZLECENIA" Type="int" />
+          <Property Name="NAZWA_FIRMY" Type="varchar" MaxLength="30" />
+          <Property Name="DLUGOSC_TRASY" Type="int" />
+          <Property Name="ULICA" Type="varchar" MaxLength="30" />
+          <Property Name="NR_BUDYNKU" Type="varchar" MaxLength="10" />
+          <Property Name="NR_LOKALU" Type="varchar" MaxLength="10" />
+          <Property Name="KOD_POCZTOWY" Type="varchar" MaxLength="5" />
+          <Property Name="KRAJ" Type="varchar" MaxLength="15" />
+          <Property Name="nazwa" Type="varchar" MaxLength="50" />
+          <Property Name="ID_POJAZDU" Type="int" />
+        </EntityType>-->
         <Association Name="FK__ADRESY__ID_MIAST__6754599E">
           <End Role="MIASTA" Type="Self.MIASTA" Multiplicity="0..1" />
           <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="*" />
@@ -1985,6 +2028,14 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
     [ZAMOWIENIA_MATERIALU_NAZLECENIE].[LICZBA_SZTUK] AS [LICZBA_SZTUK], 
     [ZAMOWIENIA_MATERIALU_NAZLECENIE].[SUMA_p] AS [SUMA_p]
     FROM [dbo].[ZAMOWIENIA_MATERIALU_NAZLECENIE] AS [ZAMOWIENIA_MATERIALU_NAZLECENIE]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="zestawienie" EntityType="Self.zestawienie" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [zestawienie].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [zestawienie].[wydatki] AS [wydatki], 
+    [zestawienie].[obroty] AS [obroty], 
+    [zestawienie].[zarobek] AS [zarobek]
+    FROM [dbo].[zestawienie] AS [zestawienie]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ZLECENIA_LOKALIZACJA" EntityType="Self.ZLECENIA_LOKALIZACJA" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3249,6 +3300,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
             <End Role="ZAMOWIENIA" EntitySet="ZAMOWIENIA" />
           </AssociationSet>
           <EntitySet Name="Status_detale_zlecenie" EntityType="KWZP_PROJEKTModel.Status_detale_zlecenie" />
+          <EntitySet Name="zestawienie" EntityType="KWZP_PROJEKTModel.zestawienie" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -4038,6 +4090,15 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="DATA_REALIZACJI" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DATA_ZLECENIA" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="NAZWA_FIRMY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="zestawienie">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="wydatki" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="obroty" Type="Decimal" Precision="23" Scale="6" />
+          <Property Name="zarobek" Type="Decimal" Precision="22" Scale="6" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4919,6 +4980,16 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
                 <ScalarProperty Name="ID_FIRMY" ColumnName="ID_FIRMY" />
                 <ScalarProperty Name="ETAP" ColumnName="ETAP" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zestawienie">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.zestawienie">
+              <MappingFragment StoreEntitySet="zestawienie">
+                <ScalarProperty Name="zarobek" ColumnName="zarobek" />
+                <ScalarProperty Name="obroty" ColumnName="obroty" />
+                <ScalarProperty Name="wydatki" ColumnName="wydatki" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
               </MappingFragment>
             </EntityTypeMapping>

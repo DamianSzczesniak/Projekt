@@ -1457,3 +1457,15 @@ from AKTUALNY_STATUS_ZLECEN_NAZWY a
 inner join ZLECENIA b on a.ID_ZLECENIA = b.ID_ZLECENIA
 inner join FIRMY c on b.ID_FIRMY = c.ID_FIRMY
 go
+
+create view zestawienie as 
+select 
+o.ID_ZLECENIA,
+o.KOSZT_CALKOWITY_PRODUKCJI as wydatki,
+o.KOSZT_CALKOWITY_PRODUKCJI * 1.33 as obroty,
+o.KOSZT_CALKOWITY_PRODUKCJI * 0.33 as zarobek
+
+
+
+from OFERTA o;
+go

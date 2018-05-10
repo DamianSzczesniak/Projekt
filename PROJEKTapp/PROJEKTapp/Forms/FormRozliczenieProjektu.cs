@@ -12,9 +12,12 @@ namespace PROJEKTapp
 {
     public partial class FormRozliczenieProjektu : Form
     {
-        public FormRozliczenieProjektu()
+        KWZP_PROJEKTEntities db;
+        public FormRozliczenieProjektu(KWZP_PROJEKTEntities db)
         {
+            this.db = db;
             InitializeComponent();
+            zestawienieBindingSource.DataSource = db.zestawienie.ToList();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

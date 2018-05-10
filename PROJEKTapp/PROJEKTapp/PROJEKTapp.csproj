@@ -498,6 +498,9 @@
     <Compile Include="ZESPOL_NARZEDZI.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="zestawienie.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -677,6 +680,7 @@
     <None Include="Status_detale_zlecenie.datasource" />
     <None Include="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE.datasource" />
     <None Include="UPRAWNIENIA.datasource" />
+    <None Include="zestawienie.datasource" />
     <None Include="ZLECENIA_PRODUKTY_NAZWY.datasource" />
     <None Include="ZLECENIE_PRODUKT.datasource" />
   </ItemGroup>

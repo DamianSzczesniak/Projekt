@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.StatusZleceniaDGV = new System.Windows.Forms.DataGridView();
+            this.statusdetalezlecenieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnNastepnyStatus = new System.Windows.Forms.Button();
+            this.btnHZlecen = new System.Windows.Forms.Button();
             this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eTAPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAZWAFIRMYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATAZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dATAREALIZACJIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDFIRMYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eTAPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusdetalezlecenieBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnNastepnyStatus = new System.Windows.Forms.Button();
-            this.btnHZlecen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StatusZleceniaDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statusdetalezlecenieBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -52,18 +52,42 @@
             this.StatusZleceniaDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StatusZleceniaDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDZLECENIADataGridViewTextBoxColumn,
+            this.eTAPDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn,
             this.nAZWAFIRMYDataGridViewTextBoxColumn,
             this.dATAZLECENIADataGridViewTextBoxColumn,
             this.dATAREALIZACJIDataGridViewTextBoxColumn,
-            this.iDFIRMYDataGridViewTextBoxColumn,
-            this.eTAPDataGridViewTextBoxColumn});
+            this.iDFIRMYDataGridViewTextBoxColumn});
             this.StatusZleceniaDGV.DataSource = this.statusdetalezlecenieBindingSource;
             this.StatusZleceniaDGV.Location = new System.Drawing.Point(12, 12);
             this.StatusZleceniaDGV.Name = "StatusZleceniaDGV";
             this.StatusZleceniaDGV.ReadOnly = true;
-            this.StatusZleceniaDGV.Size = new System.Drawing.Size(672, 258);
+            this.StatusZleceniaDGV.Size = new System.Drawing.Size(780, 258);
             this.StatusZleceniaDGV.TabIndex = 0;
+            // 
+            // statusdetalezlecenieBindingSource
+            // 
+            this.statusdetalezlecenieBindingSource.DataSource = typeof(PROJEKTapp.Status_detale_zlecenie);
+            // 
+            // btnNastepnyStatus
+            // 
+            this.btnNastepnyStatus.Location = new System.Drawing.Point(313, 285);
+            this.btnNastepnyStatus.Name = "btnNastepnyStatus";
+            this.btnNastepnyStatus.Size = new System.Drawing.Size(202, 23);
+            this.btnNastepnyStatus.TabIndex = 1;
+            this.btnNastepnyStatus.Text = "Przekaż zlecenie do nastepnego etapu";
+            this.btnNastepnyStatus.UseVisualStyleBackColor = true;
+            this.btnNastepnyStatus.Click += new System.EventHandler(this.btnNastepnyStatus_Click);
+            // 
+            // btnHZlecen
+            // 
+            this.btnHZlecen.Location = new System.Drawing.Point(313, 325);
+            this.btnHZlecen.Name = "btnHZlecen";
+            this.btnHZlecen.Size = new System.Drawing.Size(202, 23);
+            this.btnHZlecen.TabIndex = 2;
+            this.btnHZlecen.Text = "Historia zmiany statusu zlecenia";
+            this.btnHZlecen.UseVisualStyleBackColor = true;
+            this.btnHZlecen.Click += new System.EventHandler(this.btnHZlecen_Click);
             // 
             // iDZLECENIADataGridViewTextBoxColumn
             // 
@@ -73,6 +97,14 @@
             this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
             this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
             this.iDZLECENIADataGridViewTextBoxColumn.Width = 101;
+            // 
+            // eTAPDataGridViewTextBoxColumn
+            // 
+            this.eTAPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.eTAPDataGridViewTextBoxColumn.DataPropertyName = "ETAP";
+            this.eTAPDataGridViewTextBoxColumn.HeaderText = "ETAP";
+            this.eTAPDataGridViewTextBoxColumn.Name = "eTAPDataGridViewTextBoxColumn";
+            this.eTAPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // statusDataGridViewTextBoxColumn
             // 
@@ -118,42 +150,11 @@
             this.iDFIRMYDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDFIRMYDataGridViewTextBoxColumn.Visible = false;
             // 
-            // eTAPDataGridViewTextBoxColumn
-            // 
-            this.eTAPDataGridViewTextBoxColumn.DataPropertyName = "ETAP";
-            this.eTAPDataGridViewTextBoxColumn.HeaderText = "ETAP";
-            this.eTAPDataGridViewTextBoxColumn.Name = "eTAPDataGridViewTextBoxColumn";
-            this.eTAPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusdetalezlecenieBindingSource
-            // 
-            this.statusdetalezlecenieBindingSource.DataSource = typeof(PROJEKTapp.Status_detale_zlecenie);
-            // 
-            // btnNastepnyStatus
-            // 
-            this.btnNastepnyStatus.Location = new System.Drawing.Point(242, 296);
-            this.btnNastepnyStatus.Name = "btnNastepnyStatus";
-            this.btnNastepnyStatus.Size = new System.Drawing.Size(202, 23);
-            this.btnNastepnyStatus.TabIndex = 1;
-            this.btnNastepnyStatus.Text = "Przekaż zlecenie do nastepnego etapu";
-            this.btnNastepnyStatus.UseVisualStyleBackColor = true;
-            this.btnNastepnyStatus.Click += new System.EventHandler(this.btnNastepnyStatus_Click);
-            // 
-            // btnHZlecen
-            // 
-            this.btnHZlecen.Location = new System.Drawing.Point(242, 325);
-            this.btnHZlecen.Name = "btnHZlecen";
-            this.btnHZlecen.Size = new System.Drawing.Size(202, 23);
-            this.btnHZlecen.TabIndex = 2;
-            this.btnHZlecen.Text = "Historia zmiany statusu zlecenia";
-            this.btnHZlecen.UseVisualStyleBackColor = true;
-            this.btnHZlecen.Click += new System.EventHandler(this.btnHZlecen_Click);
-            // 
             // ZleceniaStatusy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(701, 360);
+            this.ClientSize = new System.Drawing.Size(804, 360);
             this.Controls.Add(this.btnHZlecen);
             this.Controls.Add(this.btnNastepnyStatus);
             this.Controls.Add(this.StatusZleceniaDGV);
@@ -171,13 +172,13 @@
         private System.Windows.Forms.DataGridView StatusZleceniaDGV;
         private System.Windows.Forms.Button btnNastepnyStatus;
         private System.Windows.Forms.Button btnHZlecen;
+        private System.Windows.Forms.BindingSource statusdetalezlecenieBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDZLECENIADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eTAPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nAZWAFIRMYDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dATAZLECENIADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dATAREALIZACJIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDFIRMYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn eTAPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource statusdetalezlecenieBindingSource;
     }
 }

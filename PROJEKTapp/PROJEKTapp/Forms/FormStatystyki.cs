@@ -89,7 +89,7 @@ namespace PROJEKTapp
 
         private void btnRozliczenieProjektow_Click(object sender, EventArgs e)
         {
-            FormRozliczenieProjektu RozliczenieProjektow = new FormRozliczenieProjektu();
+            FormRozliczenieProjektu RozliczenieProjektow = new FormRozliczenieProjektu(db);
             RozliczenieProjektow.Show();
         }
     }

@@ -107,6 +107,7 @@ namespace PROJEKTapp
         public virtual DbSet<PENSJE> PENSJE { get; set; }
         public virtual DbSet<ZAMOWIENIA> ZAMOWIENIA { get; set; }
         public virtual DbSet<Status_detale_zlecenie> Status_detale_zlecenie { get; set; }
+        public virtual DbSet<zestawienie> zestawienie { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {
