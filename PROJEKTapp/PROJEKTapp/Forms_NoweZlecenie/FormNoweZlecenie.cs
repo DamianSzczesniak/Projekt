@@ -31,6 +31,7 @@ namespace PROJEKTapp
             cBox_Produkty_Oferta.DropDownStyle = ComboBoxStyle.DropDownList;
 
             txtBox_Data_Zlecenia.Text = DateTime.Now.ToString("dd/MM/yyyy");
+          
         }
         
     

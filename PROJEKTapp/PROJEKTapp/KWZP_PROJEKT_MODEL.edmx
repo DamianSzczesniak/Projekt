@@ -802,8 +802,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.Status_detale_zlecenie' does not 
         <EntityType Name="Status_detale_zlecenie">
           <Key>
             <PropertyRef Name="ID_ZLECENIA" />
-            <PropertyRef Name="DATA_REALIZACJI" />
-            <PropertyRef Name="DATA_ZLECENIA" />
           </Key>
           <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
           <Property Name="Status" Type="int" />
@@ -4032,8 +4030,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
         <EntityType Name="Status_detale_zlecenie">
           <Key>
             <PropertyRef Name="ID_ZLECENIA" />
-            <PropertyRef Name="DATA_REALIZACJI" />
-            <PropertyRef Name="DATA_ZLECENIA" />
           </Key>
           <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Int32" />

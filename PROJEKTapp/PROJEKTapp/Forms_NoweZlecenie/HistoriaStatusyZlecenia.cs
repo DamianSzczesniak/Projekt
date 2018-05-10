@@ -13,8 +13,8 @@ namespace PROJEKTapp.Forms_NoweZlecenie
     public partial class HistoriaStatusyZlecenia : Form
     {
         KWZP_PROJEKTEntities db;
-        AKTUALNY_STATUS_ZLECEN_NAZWY aKTUALNY_STATUS;
-        public HistoriaStatusyZlecenia(KWZP_PROJEKTEntities db, AKTUALNY_STATUS_ZLECEN_NAZWY aKTUALNY_STATUS)
+        Status_detale_zlecenie aKTUALNY_STATUS;
+        public HistoriaStatusyZlecenia(KWZP_PROJEKTEntities db, Status_detale_zlecenie aKTUALNY_STATUS)
         {
             this.db = db;
             this.aKTUALNY_STATUS = aKTUALNY_STATUS;

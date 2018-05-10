@@ -39,18 +39,18 @@ namespace PROJEKTapp
             switch (uprawnienia)
             {
                 case 1:
-                    aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.ToList();
+                    statusdetalezlecenieBindingSource.DataSource = db.Status_detale_zlecenie.ToList();
                     break;
                 case 2:
-                    aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value < 5 || a.Status.Value > 5 && a.Status.Value < 10).ToList();
+                    statusdetalezlecenieBindingSource.DataSource = db.Status_detale_zlecenie.Where(a => a.Status.Value < 5 || a.Status.Value > 5 && a.Status.Value < 10).ToList();
                     btnHZlecen.Hide();
                     break;
                 case 3:
-                    aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value < 7 && a.Status.Value > 3).ToList();
+                    statusdetalezlecenieBindingSource.DataSource = db.Status_detale_zlecenie.Where(a => a.Status.Value < 7 && a.Status.Value > 3).ToList();
                     btnHZlecen.Hide();
                     break;
                 case 4:
-                    aKTUALNYSTATUSZLECENNAZWYBindingSource.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.Status.Value > 8).ToList();
+                    statusdetalezlecenieBindingSource.DataSource = db.Status_detale_zlecenie.Where(a => a.Status.Value > 8).ToList();
                     btnHZlecen.Hide();
                     break;
 
@@ -59,11 +59,11 @@ namespace PROJEKTapp
 
         private void btnNastepnyStatus_Click(object sender, EventArgs e)
         {
-            if ((aKTUALNYSTATUSZLECENNAZWYBindingSource.Current as AKTUALNY_STATUS_ZLECEN_NAZWY).Status < db.STATUS_ZLECENIA.ToList().LongCount() )
+            if ((statusdetalezlecenieBindingSource.Current as Status_detale_zlecenie).Status < db.STATUS_ZLECENIA.ToList().LongCount() )
             {
                 
                 DATA_STATUSU_ZLECENIA dataStatusuZlecenia = new DATA_STATUSU_ZLECENIA();
-                AKTUALNY_STATUS_ZLECEN_NAZWY zlecenie = aKTUALNYSTATUSZLECENNAZWYBindingSource.Current as AKTUALNY_STATUS_ZLECEN_NAZWY;
+                Status_detale_zlecenie zlecenie = statusdetalezlecenieBindingSource.Current as Status_detale_zlecenie;
                 if (!(uprawnienia == 2 && (int.Parse(zlecenie.Status.ToString()) + 1 == 5 || int.Parse(zlecenie.Status.ToString()) + 1 == 10)))
                 {
                     if (!(uprawnienia == 3 && int.Parse(zlecenie.Status.ToString()) + 1 == 7 ))
@@ -76,7 +76,7 @@ namespace PROJEKTapp
                         db.SaveChanges();
 
                         KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
-                        db.AKTUALNY_STATUS_ZLECEN_NAZWY = nDB.AKTUALNY_STATUS_ZLECEN_NAZWY;
+                        db.Status_detale_zlecenie = nDB.Status_detale_zlecenie;
                         SprawdzanieUprawnien(uprawnienia);
                     }
                 }
@@ -86,7 +86,7 @@ namespace PROJEKTapp
 
         private void btnHZlecen_Click(object sender, EventArgs e)
         {
-            AKTUALNY_STATUS_ZLECEN_NAZWY s = aKTUALNYSTATUSZLECENNAZWYBindingSource.Current as AKTUALNY_STATUS_ZLECEN_NAZWY;
+            Status_detale_zlecenie s = statusdetalezlecenieBindingSource.Current as Status_detale_zlecenie;
             using (HistoriaStatusyZlecenia historiaStatusyZlecenia = new HistoriaStatusyZlecenia(db, s ))
             {
                 if (historiaStatusyZlecenia.ShowDialog() == DialogResult.OK)

@@ -674,6 +674,7 @@
     </Compile>
     <None Include="SPIS_UZYTKOWNIKOW.datasource" />
     <None Include="STAN_MATERIALY_NAZWY.datasource" />
+    <None Include="Status_detale_zlecenie.datasource" />
     <None Include="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE.datasource" />
     <None Include="UPRAWNIENIA.datasource" />
     <None Include="ZLECENIA_PRODUKTY_NAZWY.datasource" />
