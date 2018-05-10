@@ -629,6 +629,28 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.OFERTA' does not have a primary k
           <Property Name="CZAS_PRODUKCJI" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.PENSJE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PENSJE">
+          <Key>
+            <PropertyRef Name="ID_PRACOWNIK" />
+            <PropertyRef Name="NAZWISKO" />
+            <PropertyRef Name="IMIE" />
+            <PropertyRef Name="WARTOSC" />
+            <PropertyRef Name="ID_OKRES" />
+            <PropertyRef Name="NAZWA" />
+            <PropertyRef Name="DATA_START" />
+          </Key>
+          <Property Name="ID_PRACOWNIK" Type="int" Nullable="false" />
+          <Property Name="NAZWISKO" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="IMIE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="WARTOSC" Type="money" Nullable="false" />
+          <Property Name="ID_OKRES" Type="int" Nullable="false" />
+          <Property Name="NAZWA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PENSJA_MSC" Type="float" />
+          <Property Name="DATA_START" Type="date" Nullable="false" />
+          <Property Name="DATA_KONIEC" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRACOWNICY_STANOWISKA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRACOWNICY_STANOWISKA">
           <Key>
@@ -1589,6 +1611,9 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="podziel_miesiac" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+          <Parameter Name="p_idokresu" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="KWZP_PROJEKTModelStoreContainer">
           <EntitySet Name="ADRESY" EntityType="Self.ADRESY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ADRESY_PRACOWNICY" EntityType="Self.ADRESY_PRACOWNICY" Schema="dbo" store:Type="Tables" />
@@ -1778,6 +1803,19 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
     [OFERTA].[KOSZT_CALKOWITY_PRODUKCJI] AS [KOSZT_CALKOWITY_PRODUKCJI], 
     [OFERTA].[CZAS_PRODUKCJI] AS [CZAS_PRODUKCJI]
     FROM [dbo].[OFERTA] AS [OFERTA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PENSJE" EntityType="Self.PENSJE" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PENSJE].[ID_PRACOWNIK] AS [ID_PRACOWNIK], 
+    [PENSJE].[NAZWISKO] AS [NAZWISKO], 
+    [PENSJE].[IMIE] AS [IMIE], 
+    [PENSJE].[WARTOSC] AS [WARTOSC], 
+    [PENSJE].[ID_OKRES] AS [ID_OKRES], 
+    [PENSJE].[NAZWA] AS [NAZWA], 
+    [PENSJE].[PENSJA_MSC] AS [PENSJA_MSC], 
+    [PENSJE].[DATA_START] AS [DATA_START], 
+    [PENSJE].[DATA_KONIEC] AS [DATA_KONIEC]
+    FROM [dbo].[PENSJE] AS [PENSJE]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="PRACOWNICY_STANOWISKA" EntityType="Self.PRACOWNICY_STANOWISKA" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3258,6 +3296,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <EntitySet Name="URLOPY_PRACOWNIKA" EntityType="KWZP_PROJEKTModel.URLOPY_PRACOWNIKA" />
           <EntitySet Name="KOSZTY_CZASY_PRODUKCJI" EntityType="KWZP_PROJEKTModel.KOSZTY_CZASY_PRODUKCJI" />
           <EntitySet Name="OFERTA" EntityType="KWZP_PROJEKTModel.OFERTA" />
+          <EntitySet Name="PENSJE" EntityType="KWZP_PROJEKTModel.PENSJE" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -3993,6 +4032,26 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
           <Property Name="KOSZT_CALKOWITY_PRODUKCJI" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="CZAS_PRODUKCJI" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PENSJE">
+          <Key>
+            <PropertyRef Name="ID_PRACOWNIK" />
+            <PropertyRef Name="NAZWISKO" />
+            <PropertyRef Name="IMIE" />
+            <PropertyRef Name="WARTOSC" />
+            <PropertyRef Name="ID_OKRES" />
+            <PropertyRef Name="NAZWA" />
+            <PropertyRef Name="DATA_START" />
+          </Key>
+          <Property Name="ID_PRACOWNIK" Type="Int32" Nullable="false" />
+          <Property Name="NAZWISKO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IMIE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="WARTOSC" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ID_OKRES" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PENSJA_MSC" Type="Double" />
+          <Property Name="DATA_START" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DATA_KONIEC" Type="DateTime" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4856,6 +4915,21 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
                 <ScalarProperty Name="CZAS_PRODUKCJI" ColumnName="CZAS_PRODUKCJI" />
                 <ScalarProperty Name="KOSZT_CALKOWITY_PRODUKCJI" ColumnName="KOSZT_CALKOWITY_PRODUKCJI" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PENSJE">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PENSJE">
+              <MappingFragment StoreEntitySet="PENSJE">
+                <ScalarProperty Name="DATA_KONIEC" ColumnName="DATA_KONIEC" />
+                <ScalarProperty Name="DATA_START" ColumnName="DATA_START" />
+                <ScalarProperty Name="PENSJA_MSC" ColumnName="PENSJA_MSC" />
+                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+                <ScalarProperty Name="ID_OKRES" ColumnName="ID_OKRES" />
+                <ScalarProperty Name="WARTOSC" ColumnName="WARTOSC" />
+                <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+                <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

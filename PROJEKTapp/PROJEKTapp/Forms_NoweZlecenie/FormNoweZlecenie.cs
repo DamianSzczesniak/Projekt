@@ -51,6 +51,9 @@ namespace PROJEKTapp
 
             db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_ZLECENIA);
             db.SaveChanges();
+
+            MessageBox.Show("Akcje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
 
 
@@ -225,6 +228,7 @@ namespace PROJEKTapp
          
             db.ZLECENIA.Remove(zLECENIA);
             db.SaveChanges();
+            this.Close();
         }
     }
 }
