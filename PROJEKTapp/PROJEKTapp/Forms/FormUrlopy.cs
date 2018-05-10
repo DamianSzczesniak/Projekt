@@ -52,9 +52,7 @@ namespace PROJEKTapp
                 pnlWolne.Hide();
                 ladowanieformularzazokienkami = true;
             }
-            
-            KalendarzUrlop.SelectionStart = DateTime.Now;
-            KalendarzUrlop.SelectionEnd = DateTime.Now.AddDays(3);
+           
                 }
 
         private void btnUrlopy_Click(object sender, EventArgs e)
@@ -259,6 +257,12 @@ namespace PROJEKTapp
         {
             int Wnioskowany = (txtDataKoniec.Value - txtDataStart.Value).Days + 1;
             txtBoxWnioskowany.Text = Wnioskowany.ToString();
+        }
+
+        private void btnSprawdz_Click(object sender, EventArgs e)
+        {
+            KalendarzUrlop.SelectionStart = txtDataStart.Value;
+            KalendarzUrlop.SelectionEnd = txtDataKoniec.Value;
         }
     }
 }

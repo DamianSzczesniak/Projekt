@@ -44,12 +44,6 @@ namespace PROJEKTapp
             gabaryty.Show();
         }
 
-        private void btnEwidencjaMaszyn_Click(object sender, EventArgs e)
-        {
-            Forms_Produkcja.FormEwidencja ewidencja = new Forms_Produkcja.FormEwidencja(db);
-            ewidencja.Show();
-        }
-
         private void btnRezerwacjaMaszyn_Click(object sender, EventArgs e)
         {
             Forms_Produkcja.FormRezerwacjaMaszyn rezerwacja = new Forms_Produkcja.FormRezerwacjaMaszyn(db);
@@ -59,6 +53,12 @@ namespace PROJEKTapp
         private void Produkcja_glowny_Load(object sender, EventArgs e)
         {
             GridPracownicyWPracy.DataSource = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();
+        }
+
+        private void btnEwidencjaMaszyn_Click(object sender, EventArgs e)
+        {
+            Forms_Produkcja.FormSpis spis = new Forms_Produkcja.FormSpis(db);
+            spis.Show();
         }
     }
 }

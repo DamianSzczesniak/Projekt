@@ -70,7 +70,6 @@
             this.lblTryb.Size = new System.Drawing.Size(156, 29);
             this.lblTryb.TabIndex = 7;
             this.lblTryb.Text = "Wybierz tryb";
-            this.lblTryb.Click += new System.EventHandler(this.lblTryb_Click);
             // 
             // cboxTryb
             // 

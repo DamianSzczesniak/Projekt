@@ -37,6 +37,7 @@
             this.EwidencjaMaszynyNarzedzia = new System.Windows.Forms.DataGridView();
             this.ZapiszEdytuj = new System.Windows.Forms.Button();
             this.Usun = new System.Windows.Forms.Button();
+            this.buttonUtworz = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridWykorzystaneMaszyny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EwidencjaMaszynyNarzedzia)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +46,7 @@
             // 
             this.lblTrybFiltracji.AutoSize = true;
             this.lblTrybFiltracji.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTrybFiltracji.Location = new System.Drawing.Point(645, 59);
+            this.lblTrybFiltracji.Location = new System.Drawing.Point(557, 59);
             this.lblTrybFiltracji.Name = "lblTrybFiltracji";
             this.lblTrybFiltracji.Size = new System.Drawing.Size(241, 29);
             this.lblTrybFiltracji.TabIndex = 11;
@@ -58,7 +59,7 @@
             this.cboxWybierzTryb.Items.AddRange(new object[] {
             "Ewidencja Maszyn",
             "Ewidencja Narzędzia"});
-            this.cboxWybierzTryb.Location = new System.Drawing.Point(909, 59);
+            this.cboxWybierzTryb.Location = new System.Drawing.Point(813, 59);
             this.cboxWybierzTryb.Name = "cboxWybierzTryb";
             this.cboxWybierzTryb.Size = new System.Drawing.Size(255, 33);
             this.cboxWybierzTryb.TabIndex = 10;
@@ -83,7 +84,6 @@
             this.lblNazwaProduktu.Size = new System.Drawing.Size(258, 29);
             this.lblNazwaProduktu.TabIndex = 8;
             this.lblNazwaProduktu.Text = "Wpisz nazwę modelu";
-
             // 
             // GridWykorzystaneMaszyny
             // 
@@ -107,6 +107,7 @@
             this.btnExitWykorzystaneMaszyny.Size = new System.Drawing.Size(67, 52);
             this.btnExitWykorzystaneMaszyny.TabIndex = 6;
             this.btnExitWykorzystaneMaszyny.UseVisualStyleBackColor = false;
+            this.btnExitWykorzystaneMaszyny.Click += new System.EventHandler(this.btnExitWykorzystaneMaszyny_Click);
             // 
             // EwidencjaMaszynyNarzedzia
             // 
@@ -118,17 +119,19 @@
             // 
             // ZapiszEdytuj
             // 
-            this.ZapiszEdytuj.Location = new System.Drawing.Point(1141, 157);
+            this.ZapiszEdytuj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.ZapiszEdytuj.Location = new System.Drawing.Point(1141, 337);
             this.ZapiszEdytuj.Name = "ZapiszEdytuj";
             this.ZapiszEdytuj.Size = new System.Drawing.Size(134, 83);
             this.ZapiszEdytuj.TabIndex = 13;
-            this.ZapiszEdytuj.Text = "Zapisz/edytuj";
+            this.ZapiszEdytuj.Text = "Edytuj";
             this.ZapiszEdytuj.UseVisualStyleBackColor = true;
             this.ZapiszEdytuj.Click += new System.EventHandler(this.ZapiszEdytuj_Click);
             // 
             // Usun
             // 
-            this.Usun.Location = new System.Drawing.Point(1141, 284);
+            this.Usun.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.Usun.Location = new System.Drawing.Point(1141, 453);
             this.Usun.Name = "Usun";
             this.Usun.Size = new System.Drawing.Size(134, 83);
             this.Usun.TabIndex = 13;
@@ -136,11 +139,23 @@
             this.Usun.UseVisualStyleBackColor = true;
             this.Usun.Click += new System.EventHandler(this.Usun_Click);
             // 
+            // buttonUtworz
+            // 
+            this.buttonUtworz.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.buttonUtworz.Location = new System.Drawing.Point(1141, 223);
+            this.buttonUtworz.Name = "buttonUtworz";
+            this.buttonUtworz.Size = new System.Drawing.Size(134, 89);
+            this.buttonUtworz.TabIndex = 14;
+            this.buttonUtworz.Text = "Utwórz";
+            this.buttonUtworz.UseVisualStyleBackColor = true;
+            this.buttonUtworz.Click += new System.EventHandler(this.buttonUtworz_Click);
+            // 
             // FormSpis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 721);
+            this.Controls.Add(this.buttonUtworz);
             this.Controls.Add(this.Usun);
             this.Controls.Add(this.ZapiszEdytuj);
             this.Controls.Add(this.EwidencjaMaszynyNarzedzia);
@@ -171,5 +186,6 @@
         private System.Windows.Forms.DataGridView EwidencjaMaszynyNarzedzia;
         private System.Windows.Forms.Button ZapiszEdytuj;
         private System.Windows.Forms.Button Usun;
+        private System.Windows.Forms.Button buttonUtworz;
     }
 }

@@ -127,14 +127,18 @@ namespace PROJEKTapp
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
         {
-            SZKOLENIA szkolenie = new SZKOLENIA();
-            szkolenie.NAZWA_SZKOLENIA = this.txtboxNazwa.Text;
-            szkolenie.OPIS_SZKOLENIA = this.txtboxOpis.Text;
-            szkolenie.DATA_START = this.dtpStart.Value;
-            szkolenie.DATA_KONIEC = this.dtpKoniec.Value;
-            db.SZKOLENIA.Add(szkolenie);
-            db.SaveChanges();
-            pnlDodajSzkolenie.Hide();
+                SZKOLENIA szkolenie = new SZKOLENIA();
+                szkolenie.NAZWA_SZKOLENIA = this.txtboxNazwa.Text;
+                szkolenie.OPIS_SZKOLENIA = this.txtboxOpis.Text;
+                szkolenie.DATA_START = this.dtpStart.Value;
+                szkolenie.DATA_KONIEC = this.dtpKoniec.Value;
+                db.SZKOLENIA.Add(szkolenie);
+                db.SaveChanges();
+                pnlNoweSzkolenie.Hide();
+            cbSzkolenia.DataSource = db.SZKOLENIA.Where(szkolenia => ((szkolenia.DATA_START.Year).ToString()).Equals(cbRokSzkolenia.SelectedItem.ToString())).ToList();
+            cbSzkolenia.DisplayMember = "NAZWA_SZKOLENIA";
+            cbSzkolenia.SelectedItem = null;
+
         }
 
 
@@ -193,7 +197,7 @@ namespace PROJEKTapp
         {
             if (ZapiszUsun == true)
             {
-                if (cbSzkolenia.SelectedValue == null)
+                if (cbSzkolenia.SelectedItem == null)
                 {
                     MessageBox.Show("Najpierw wybierz szkolenie");
                 }
@@ -206,6 +210,13 @@ namespace PROJEKTapp
                     pracownik.SZKOLENIA.Add(szkolenie);
                     db.SaveChanges();
                     pnlDodajSzkolenie.Hide();
+                    dgvSzkoleniaPracownika.DataSource = db.SZKOLENIA_PRACOWNIKA.Where(prac => prac.ID_PRACOWNIK.Equals(ID)).ToList();
+                    ListaPracownikow.Refresh();
+                    this.dgvSzkoleniaPracownika.Columns[0].Visible = false;
+                    this.dgvSzkoleniaPracownika.Columns[1].Visible = false;
+                    pnlDodajSzkolenie.Hide();
+                    btnSprawdz.Show();
+                    cbSzkolenia.SelectedItem = null;
                 }
             }
             else
@@ -231,7 +242,11 @@ namespace PROJEKTapp
                         {
                             MessageBox.Show("Usunięcie pracownika nie powiodło się");
                         }
+
+                        dgvSzkoleniaPracownika.DataSource = db.SZKOLENIA_PRACOWNIKA.Where(prac => prac.ID_PRACOWNIK.Equals(ID)).ToList();
                         ListaPracownikow.Refresh();
+                        this.dgvSzkoleniaPracownika.Columns[0].Visible = false;
+                        this.dgvSzkoleniaPracownika.Columns[1].Visible = false;
                         pnlDodajSzkolenie.Hide();
                         btnSprawdz.Show();
                         cbSzkolenia.SelectedItem = null;
@@ -248,9 +263,15 @@ namespace PROJEKTapp
 
         private void btnSprawdz_Click(object sender, EventArgs e)
         {
-            KalendarzSzkolenia.SelectionStart = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_START;
-            KalendarzSzkolenia.SelectionEnd = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_KONIEC;
-
+            if (cbSzkolenia.SelectedItem == null)
+            {
+                MessageBox.Show("Najpierw wybierz szkolenie");
+            }
+            else
+            {
+                KalendarzSzkolenia.SelectionStart = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_START;
+                KalendarzSzkolenia.SelectionEnd = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_KONIEC;
+            }
         }
 
         private void btnUsun_Click(object sender, EventArgs e)

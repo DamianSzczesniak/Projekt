@@ -26,26 +26,24 @@ namespace PROJEKTapp.Forms_Produkcja
 
             MODELE_MASZYN maszyny = new MODELE_MASZYN();
             maszyny = (MODELE_MASZYN)send;
-            textBox1.Text = maszyny.MODEL;
-            textBox2.Text = maszyny.MARKA;
-            textBox3.Text = maszyny.PRĘDKOŚĆ.ToString();
-            textBox4.Text = maszyny.KOSZT_ZA_H.ToString();
-            textBox5.Text = maszyny.TYP_MASZYNY;
-            textBox6.Text = maszyny.POSUW.ToString();
-
-
+            textBoxModel.Text = maszyny.MODEL;
+            textBoxMarka.Text = maszyny.MARKA;
+            textBoxPredkosc.Text = maszyny.PRĘDKOŚĆ.ToString();
+            textBoxCenaZaH.Text = maszyny.KOSZT_ZA_H.ToString();
+            textBoxTypMaszyny.Text = maszyny.TYP_MASZYNY;
+            textBoxPosuw.Text = maszyny.POSUW.ToString();
 
         }
 
         private void Zapisz_Click(object sender, EventArgs e)
         {
             MODELE_MASZYN noweModele_Maszyn = new MODELE_MASZYN();
-            noweModele_Maszyn.MODEL = this.textBox1.Text;
-            noweModele_Maszyn.MARKA = this.textBox2.Text;
-            noweModele_Maszyn.TYP_MASZYNY = this.textBox5.Text;
-            noweModele_Maszyn.PRĘDKOŚĆ = int.Parse(this.textBox3.Text);
-            noweModele_Maszyn.POSUW = int.Parse(this.textBox6.Text);
-            noweModele_Maszyn.KOSZT_ZA_H = decimal.Parse(this.textBox4.Text);
+            noweModele_Maszyn.MODEL = this.textBoxModel.Text;
+            noweModele_Maszyn.MARKA = this.textBoxMarka.Text;
+            noweModele_Maszyn.TYP_MASZYNY = this.textBoxTypMaszyny.Text;
+            noweModele_Maszyn.PRĘDKOŚĆ = int.Parse(this.textBoxPredkosc.Text);
+            noweModele_Maszyn.POSUW = int.Parse(this.textBoxPosuw.Text);
+            noweModele_Maszyn.KOSZT_ZA_H = decimal.Parse(this.textBoxCenaZaH.Text);
 
             db.MODELE_MASZYN.Add(noweModele_Maszyn);
             db.SaveChanges();
@@ -57,12 +55,12 @@ namespace PROJEKTapp.Forms_Produkcja
         {
             {
                 //edycja
-                maszyny.MODEL = this.textBox1.Text;
-                maszyny.MARKA = this.textBox2.Text;
-                maszyny.TYP_MASZYNY = this.textBox5.Text;
-                maszyny.PRĘDKOŚĆ = int.Parse(this.textBox3.Text);
-                maszyny.POSUW = int.Parse(this.textBox6.Text);
-                maszyny.KOSZT_ZA_H = decimal.Parse(this.textBox4.Text);
+                maszyny.MODEL = this.textBoxModel.Text;
+                maszyny.MARKA = this.textBoxMarka.Text;
+                maszyny.TYP_MASZYNY = this.textBoxTypMaszyny.Text;
+                maszyny.PRĘDKOŚĆ = int.Parse(this.textBoxPredkosc.Text);
+                maszyny.POSUW = int.Parse(this.textBoxPosuw.Text);
+                maszyny.KOSZT_ZA_H = decimal.Parse(this.textBoxCenaZaH.Text);
 
                 foreach (Control control in this.panelMaszyny.Controls)
                 {
@@ -81,13 +79,31 @@ namespace PROJEKTapp.Forms_Produkcja
         private void WyczyscDane_Click(object sender, EventArgs e)
         {
             {
-                textBox1.Clear();
-                textBox2.Clear();
-                textBox3.Clear();
-                textBox4.Clear();
-                textBox5.Clear();
-                textBox6.Clear();
+                textBoxModel.Clear();
+                textBoxMarka.Clear();
+                textBoxPredkosc.Clear();
+                textBoxCenaZaH.Clear();
+                textBoxTypMaszyny.Clear();
+                textBoxPosuw.Clear();
             }
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBoxPredkosc.Text))
+            {
+                int parsedVal;
+                if (!int.TryParse(textBoxPredkosc.Text, out parsedVal))
+                {
+                    MessageBox.Show("To pole może zawierać tylko liczbę. ");
+                    textBoxPredkosc.Clear();
+                    return;
+                }
+            }
+        }
+
+  
+
+
     }
 }
