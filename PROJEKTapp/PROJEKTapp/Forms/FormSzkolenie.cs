@@ -127,14 +127,21 @@ namespace PROJEKTapp
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
         {
-            SZKOLENIA szkolenie = new SZKOLENIA();
-            szkolenie.NAZWA_SZKOLENIA = this.txtboxNazwa.Text;
-            szkolenie.OPIS_SZKOLENIA = this.txtboxOpis.Text;
-            szkolenie.DATA_START = this.dtpStart.Value;
-            szkolenie.DATA_KONIEC = this.dtpKoniec.Value;
-            db.SZKOLENIA.Add(szkolenie);
-            db.SaveChanges();
-            pnlDodajSzkolenie.Hide();
+            if (cbSzkolenia.SelectedValue == null)
+            {
+                MessageBox.Show("Najpierw wybierz szkolenie");
+            }
+            else
+            {
+                SZKOLENIA szkolenie = new SZKOLENIA();
+                szkolenie.NAZWA_SZKOLENIA = this.txtboxNazwa.Text;
+                szkolenie.OPIS_SZKOLENIA = this.txtboxOpis.Text;
+                szkolenie.DATA_START = this.dtpStart.Value;
+                szkolenie.DATA_KONIEC = this.dtpKoniec.Value;
+                db.SZKOLENIA.Add(szkolenie);
+                db.SaveChanges();
+                pnlDodajSzkolenie.Hide();
+            }
         }
 
 
