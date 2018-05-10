@@ -248,9 +248,15 @@ namespace PROJEKTapp
 
         private void btnSprawdz_Click(object sender, EventArgs e)
         {
-            KalendarzSzkolenia.SelectionStart = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_START;
-            KalendarzSzkolenia.SelectionEnd = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_KONIEC;
-
+            if (cbSzkolenia.SelectedItem == null)
+            {
+                MessageBox.Show("Najpierw wybierz szkolenie");
+            }
+            else
+            {
+                KalendarzSzkolenia.SelectionStart = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_START;
+                KalendarzSzkolenia.SelectionEnd = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_KONIEC;
+            }
         }
 
         private void btnUsun_Click(object sender, EventArgs e)
