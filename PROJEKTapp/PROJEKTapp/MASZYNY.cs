@@ -18,7 +18,7 @@ namespace PROJEKTapp
         public MASZYNY()
         {
             this.PROCES = new HashSet<PROCES>();
-            this.REALIZACJA_PRODUKCJA = new HashSet<REALIZACJA_PRODUKCJA>();
+            this.ZESPOL_MASZYN = new HashSet<ZESPOL_MASZYN>();
         }
     
         public int ID_MASZYNY { get; set; }
@@ -29,6 +29,6 @@ namespace PROJEKTapp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROCES> PROCES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<REALIZACJA_PRODUKCJA> REALIZACJA_PRODUKCJA { get; set; }
+        public virtual ICollection<ZESPOL_MASZYN> ZESPOL_MASZYN { get; set; }
     }
 }

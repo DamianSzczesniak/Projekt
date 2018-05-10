@@ -19,8 +19,8 @@ namespace PROJEKTapp
         {
             this.DOSTAWA = new HashSet<DOSTAWA>();
             this.POJAZDY = new HashSet<POJAZDY>();
-            this.ZAMOWIENIA = new HashSet<ZAMOWIENIA>();
             this.ZLECENIA = new HashSet<ZLECENIA>();
+            this.ZAMOWIENIA = new HashSet<ZAMOWIENIA>();
         }
     
         public int ID_FIRMY { get; set; }
@@ -34,8 +34,8 @@ namespace PROJEKTapp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<POJAZDY> POJAZDY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ZAMOWIENIA> ZAMOWIENIA { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ZLECENIA> ZLECENIA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ZAMOWIENIA> ZAMOWIENIA { get; set; }
     }
 }

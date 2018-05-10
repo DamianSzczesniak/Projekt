@@ -12,18 +12,15 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class STATUS_ZAMOWIENIA
+    public partial class ZAMOWIENIA_MATERIALU_NAZLECENIE
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public STATUS_ZAMOWIENIA()
-        {
-            this.ZAMOWIENIA = new HashSet<ZAMOWIENIA>();
-        }
-    
-        public int ID_STATUSU_ZAMOWIENIA { get; set; }
+        public int ID_ZLECENIA { get; set; }
+        public int ID_PRODUKTU { get; set; }
+        public Nullable<int> ILOSC { get; set; }
+        public int ID_POLPRODUKTU { get; set; }
+        public int ID_MATERIAL { get; set; }
         public string NAZWA { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ZAMOWIENIA> ZAMOWIENIA { get; set; }
+        public int LICZBA_SZTUK { get; set; }
+        public Nullable<int> SUMA_p { get; set; }
     }
 }

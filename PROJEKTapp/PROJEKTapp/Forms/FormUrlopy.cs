@@ -14,7 +14,8 @@ namespace PROJEKTapp
     {
         KWZP_PROJEKTEntities db;
         bool ladowanieformularzazokienkami;
-        int contzapis;
+        PRACOWNICY pracownik;
+
 
         public FormUrlopy(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
         {
@@ -39,6 +40,10 @@ namespace PROJEKTapp
                 ListaPracownikow.Columns[0].HeaderText = "NUMER";
                 ListaPracownikow.Columns[0].Width = 60;
                 ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
+                int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+                this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+                dgvUrlopyPraconik.Columns[0].Visible = false;
+                dgvUrlopyPraconik.ClearSelection();
             }
             else
             {
@@ -48,8 +53,8 @@ namespace PROJEKTapp
                 ladowanieformularzazokienkami = true;
             }
             
-            monthCalendar1.SelectionStart = DateTime.Now;
-            monthCalendar1.SelectionEnd = DateTime.Now.AddDays(3);
+            KalendarzUrlop.SelectionStart = DateTime.Now;
+            KalendarzUrlop.SelectionEnd = DateTime.Now.AddDays(3);
                 }
 
         private void btnUrlopy_Click(object sender, EventArgs e)
@@ -117,14 +122,49 @@ namespace PROJEKTapp
         {
             pnlWolne.Show();
             czyscform();
-            contzapis = 1;
+            txtBoxWnioskowany.Text = "------";
+
+            KalendarzUrlop.BoldedDates = new DateTime[] { };
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            this.pracownik = db.PRACOWNICY.Where(pracownik => pracownik.ID_PRACOWNIK == ID).First();
+            foreach (SZKOLENIA szkolenie in pracownik.SZKOLENIA)
+            {
+                int dlugoscSzkolenia = szkolenie.DATA_KONIEC.Subtract(szkolenie.DATA_START).Days + 1;
+                DateTime aktualnaData = szkolenie.DATA_START;
+                for (int i = 0; i < dlugoscSzkolenia; i++)
+                {
+                    KalendarzUrlop.BoldedDates = KalendarzUrlop.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
+
+                }
+            }
+            int suma = 0;
+            foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY)
+            {
+                int dlugoscwolne = wolne.DATA_KONIEC.Subtract(wolne.DATA_START).Days + 1;
+                DateTime aktualnaData = wolne.DATA_START;
+                for (int i = 0; i < dlugoscwolne; i++)
+                {
+                    KalendarzUrlop.BoldedDates = KalendarzUrlop.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
+
+                }
+            }
+
+            foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY.Where(data => data.DATA_START.Year.Equals(txtDataStart.Value.Year)))//TODO rok wybierany z datetimepicker reagowanie na zmianę
+            {
+                int dlugoscwolne = wolne.DATA_KONIEC.Subtract(wolne.DATA_START).Days + 1;
+                DateTime aktualnaData = wolne.DATA_START;
+                suma += dlugoscwolne;
+            }
+
+                txtBoxWykorzystany.Text = suma.ToString();
+            int pozostalo = 26-suma; 
+            txtBoxPozostalo.Text = pozostalo.ToString();
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)
         {
             pnlWolne.Show();
             czyscform();
-            contzapis = 0;
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
 
@@ -132,26 +172,45 @@ namespace PROJEKTapp
 
         private void btnUsun_Click(object sender, EventArgs e)
         {
-
+            if (dgvUrlopyPraconik.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Najpierw wybierz szkolenie do usunięcia");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Czy chcesz usunąć Urlop: "+ dgvUrlopyPraconik.CurrentRow.Cells[2].Value + ", pracownikowi: " + ListaPracownikow.CurrentRow.Cells[1].Value + " " + ListaPracownikow.CurrentRow.Cells[2].Value, "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    int ID = Convert.ToInt32(dgvUrlopyPraconik.CurrentRow.Cells[0].Value);
+                    DateTime DataStart= (DateTime)dgvUrlopyPraconik.CurrentRow.Cells[3].Value;
+                    
+                    WOLNE_PRACOWNICY wolneUsun = db.WOLNE_PRACOWNICY.Where(wolne => wolne.ID_PRACOWNIK.Equals(ID))
+                        .Where(wolnedata => wolnedata.DATA_START.Equals(DataStart)).First();
+                    
+                    db.WOLNE_PRACOWNICY.Remove(wolneUsun);
+                    db.SaveChanges();
+                    this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+                    dgvUrlopyPraconik.Columns[0].Visible = false;
+                    this.dgvUrlopyPraconik.Refresh();
+                }
+            }
         }
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
-        {
-            if (contzapis ==1)
-            {
+        {     
                 WOLNE_PRACOWNICY wolnepracownik = new WOLNE_PRACOWNICY();
                 wolnepracownik.DATA_KONIEC = txtDataKoniec.Value;
                 wolnepracownik.DATA_START = txtDataStart.Value;
                 wolnepracownik.ID_WOLNE = (int)cbTypUrlopu.SelectedValue;
                 wolnepracownik.ID_PRACOWNIK = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+                db.WOLNE_PRACOWNICY.Add(wolnepracownik);
                 db.SaveChanges();
                 ListaPracownikow.Refresh();
-                pnlUrlopyControl.Hide();
-            }
-            else
-            {
-                //zapis edycji
-            }
+                pnlWolne.Hide();
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+                dgvUrlopyPraconik.Columns[0].Visible = false;
+                this.dgvUrlopyPraconik.Refresh();
         }
 
         private void btnWyczysc_Click(object sender, EventArgs e)
@@ -187,6 +246,19 @@ namespace PROJEKTapp
             FormStatystyki statystyki = new FormStatystyki(db, ladowanieformularzazokienkami);
             statystyki.Show();
             this.Close();
+        }
+
+        private void ListaPracownikow_MouseClick(object sender, MouseEventArgs e)
+        {
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+            dgvUrlopyPraconik.Columns[0].Visible = false;
+        }
+
+        private void txtDataKoniec_ValueChanged(object sender, EventArgs e)
+        {
+            int Wnioskowany = (txtDataKoniec.Value - txtDataStart.Value).Days + 1;
+            txtBoxWnioskowany.Text = Wnioskowany.ToString();
         }
     }
 }

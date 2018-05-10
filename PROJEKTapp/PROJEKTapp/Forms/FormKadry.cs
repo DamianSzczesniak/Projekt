@@ -121,6 +121,7 @@ namespace PROJEKTapp
                 cbOkres.Enabled = true;
                 cbStawka.Enabled = true;
                 cbStanowisko.Enabled = true;
+                cbMiasto.Enabled = true;
                 txtDataKoniec.Show();
                 ListaAdresow.Hide();
                 chbNowyAdres.Hide();
@@ -134,15 +135,17 @@ namespace PROJEKTapp
             pnlUserField.Show();
             TrybPrzyciskuZapisEdycja = false;
             chbEdycjaStanoiwska.Show();
+            chbZmianaStawki.Show();
             cbOkres.Enabled = false;
             cbStawka.Enabled = false;
             cbStanowisko.Enabled = false;
+            cbMiasto.Enabled = true;
             this.ListaAdresow.Show();
             chbNowyAdres.Show();
             btnZapiszDodaj.Show();
 
-
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            db = new KWZP_PROJEKTEntities();
             this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();
             this.ListaAdresow.Columns[0].Visible = false;
             this.ListaAdresow.Columns[1].Visible = false;
@@ -406,13 +409,16 @@ namespace PROJEKTapp
         private void btnSzczegoly_Click(object sender, EventArgs e)
         {
             pnlUserField.Show();
-            chbEdycjaStanoiwska.Show();
+            chbEdycjaStanoiwska.Hide();
             cbOkres.Enabled = false;
             cbStawka.Enabled = false;
             cbStanowisko.Enabled = false;
             this.ListaAdresow.Show();
             chbNowyAdres.Hide();
             btnZapiszDodaj.Hide();
+            chbDataKoniec.Hide();
+            chbZmianaStawki.Hide();
+            cbMiasto.Enabled = false;
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();

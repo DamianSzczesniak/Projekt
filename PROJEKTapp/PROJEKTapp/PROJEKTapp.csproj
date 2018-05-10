@@ -43,6 +43,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +73,12 @@
     <Compile Include="AKTUALNY_STATUS_ZLECEN_NAZWY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="CZAS_PRACY_MASZYN.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CZAS_PRACY_NARZEDZI.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="DATA_STATUSU_ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -92,6 +99,12 @@
     </Compile>
     <Compile Include="FormLogowanie.Designer.cs">
       <DependentUpon>FormLogowanie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRozliczenieProjektu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRozliczenieProjektu.Designer.cs">
+      <DependentUpon>FormRozliczenieProjektu.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormStatystyki.cs">
       <SubType>Form</SubType>
@@ -123,17 +136,17 @@
     <Compile Include="Forms_NoweZlecenie\FormFirmyDoZlecenia.Designer.cs">
       <DependentUpon>FormFirmyDoZlecenia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms_NoweZlecenie\FormOferta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms_NoweZlecenie\FormOferta.Designer.cs">
-      <DependentUpon>FormOferta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms_NoweZlecenie\HistoriaStatusyZlecenia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms_NoweZlecenie\HistoriaStatusyZlecenia.Designer.cs">
       <DependentUpon>HistoriaStatusyZlecenia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormRezerwacjaMaszyn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_Produkcja\FormRezerwacjaMaszyn.Designer.cs">
+      <DependentUpon>FormRezerwacjaMaszyn.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms_Produkcja\FormNowaMaszyna.cs">
       <SubType>Form</SubType>
@@ -261,6 +274,9 @@
     <Compile Include="HISTORIA_STATUS_ZLECENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="KOSZTY_CZASY_PRODUKCJI.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="KREATOR_FAKTUR.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -342,6 +358,9 @@
     <Compile Include="OBCIAZENIE_NARZEDZI.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="OFERTA.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="OKRES.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -352,6 +371,9 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PARAMETRY_MATERIALU.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PENSJE.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PODATEK.cs">
@@ -370,6 +392,9 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PRACOWNICY_URLOP_STANOWISKO.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRACOWNICY_W_PRACY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="PRACOWNICY_ZATRUDNIENI.cs">
@@ -416,7 +441,7 @@
     <Compile Include="STAN_PRODUKTY_NAZWY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="STATUS_ZAMOWIENIA.cs">
+    <Compile Include="Status_detale_zlecenie.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="STATUS_ZLECENIA.cs">
@@ -431,6 +456,9 @@
     <Compile Include="STAWKA_PRACOWNICY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="SZKOLENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -438,6 +466,9 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="UPRAWNIENIA.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="URLOPY_PRACOWNIKA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="UZYTKOWNICY.cs">
@@ -464,7 +495,16 @@
     <Compile Include="ZAMOWIENIA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="ZAPOTRZEBOWANIE_MATERIAL.cs">
+    <Compile Include="ZAMOWIENIA_MATERIALU_NAZLECENIE.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZESPOL_MASZYN.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZESPOL_NARZEDZI.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="zestawienie.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="ZLECENIA.cs">
@@ -503,6 +543,9 @@
     <EmbeddedResource Include="FormLogowanie.resx">
       <DependentUpon>FormLogowanie.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRozliczenieProjektu.resx">
+      <DependentUpon>FormRozliczenieProjektu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormStatystyki.resx">
       <DependentUpon>FormStatystyki.cs</DependentUpon>
     </EmbeddedResource>
@@ -518,9 +561,6 @@
     <EmbeddedResource Include="Forms_NoweZlecenie\FormFirmyDoZlecenia.resx">
       <DependentUpon>FormFirmyDoZlecenia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms_NoweZlecenie\FormOferta.resx">
-      <DependentUpon>FormOferta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms_NoweZlecenie\HistoriaStatusyZlecenia.resx">
       <DependentUpon>HistoriaStatusyZlecenia.cs</DependentUpon>
     </EmbeddedResource>
@@ -529,6 +569,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\FormNoweNarzedzie.resx">
       <DependentUpon>FormNoweNarzedzie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_Produkcja\FormRezerwacjaMaszyn.resx">
+      <DependentUpon>FormRezerwacjaMaszyn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\FormSpis.resx">
       <DependentUpon>FormSpis.cs</DependentUpon>
@@ -629,6 +672,7 @@
     <None Include="KWZP_PROJEKT_MODEL.edmx.diagram">
       <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
     </None>
+    <None Include="OFERTA.datasource" />
     <None Include="packages.config" />
     <None Include="PRACOWNICY.datasource" />
     <None Include="Properties\Settings.settings">
@@ -642,7 +686,10 @@
     </Compile>
     <None Include="SPIS_UZYTKOWNIKOW.datasource" />
     <None Include="STAN_MATERIALY_NAZWY.datasource" />
+    <None Include="Status_detale_zlecenie.datasource" />
+    <None Include="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE.datasource" />
     <None Include="UPRAWNIENIA.datasource" />
+    <None Include="zestawienie.datasource" />
     <None Include="ZLECENIA_PRODUKTY_NAZWY.datasource" />
     <None Include="ZLECENIE_PRODUKT.datasource" />
   </ItemGroup>

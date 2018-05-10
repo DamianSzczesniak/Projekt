@@ -19,5 +19,6 @@ namespace PROJEKTapp
         public Nullable<int> ILOSC { get; set; }
         public string SEKTOR { get; set; }
         public string ALEJKA { get; set; }
+        public int ID_DOSTAWY { get; set; }
     }
 }

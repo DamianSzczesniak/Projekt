@@ -75,6 +75,7 @@
             this.btnZapiszDodaj = new System.Windows.Forms.Button();
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.pnlUserField = new System.Windows.Forms.Panel();
+            this.chbNowyAdres = new System.Windows.Forms.CheckBox();
             this.ListaAdresow = new System.Windows.Forms.DataGridView();
             this.chbZmianaStawki = new System.Windows.Forms.CheckBox();
             this.chbEdycjaStanoiwska = new System.Windows.Forms.CheckBox();
@@ -82,7 +83,6 @@
             this.cbOkres = new System.Windows.Forms.ComboBox();
             this.cbStawka = new System.Windows.Forms.ComboBox();
             this.txtDataKoniec = new System.Windows.Forms.DateTimePicker();
-            this.chbNowyAdres = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlUserControl.SuspendLayout();
@@ -156,6 +156,7 @@
             this.btnStatystyki.Text = "Statystyki";
             this.btnStatystyki.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnStatystyki.UseVisualStyleBackColor = false;
+            this.btnStatystyki.Click += new System.EventHandler(this.btnStatystyki_Click);
             // 
             // btnSzkolenia
             // 
@@ -607,6 +608,19 @@
             this.pnlUserField.Size = new System.Drawing.Size(639, 555);
             this.pnlUserField.TabIndex = 5;
             // 
+            // chbNowyAdres
+            // 
+            this.chbNowyAdres.AutoSize = true;
+            this.chbNowyAdres.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chbNowyAdres.Location = new System.Drawing.Point(25, 138);
+            this.chbNowyAdres.Name = "chbNowyAdres";
+            this.chbNowyAdres.Size = new System.Drawing.Size(169, 22);
+            this.chbNowyAdres.TabIndex = 75;
+            this.chbNowyAdres.Text = "Dodać nowy adres?";
+            this.chbNowyAdres.UseVisualStyleBackColor = true;
+            this.chbNowyAdres.Visible = false;
+            this.chbNowyAdres.CheckedChanged += new System.EventHandler(this.chbNowyAdres_CheckedChanged);
+            // 
             // ListaAdresow
             // 
             this.ListaAdresow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -680,19 +694,6 @@
             this.txtDataKoniec.Size = new System.Drawing.Size(290, 26);
             this.txtDataKoniec.TabIndex = 67;
             this.txtDataKoniec.Visible = false;
-            // 
-            // chbNowyAdres
-            // 
-            this.chbNowyAdres.AutoSize = true;
-            this.chbNowyAdres.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbNowyAdres.Location = new System.Drawing.Point(25, 138);
-            this.chbNowyAdres.Name = "chbNowyAdres";
-            this.chbNowyAdres.Size = new System.Drawing.Size(169, 22);
-            this.chbNowyAdres.TabIndex = 75;
-            this.chbNowyAdres.Text = "Dodać nowy adres?";
-            this.chbNowyAdres.UseVisualStyleBackColor = true;
-            this.chbNowyAdres.Visible = false;
-            this.chbNowyAdres.CheckedChanged += new System.EventHandler(this.chbNowyAdres_CheckedChanged);
             // 
             // FormKadry
             // 

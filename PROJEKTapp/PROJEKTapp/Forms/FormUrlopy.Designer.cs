@@ -45,24 +45,25 @@
             this.pnlUserSearch = new System.Windows.Forms.Panel();
             this.LWyszukaj = new System.Windows.Forms.Label();
             this.txtWyszukajNazwisko = new System.Windows.Forms.TextBox();
+            this.dgvUrlopyPraconik = new System.Windows.Forms.DataGridView();
             this.ListaPracownikow = new System.Windows.Forms.DataGridView();
             this.pnlWolne = new System.Windows.Forms.Panel();
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.btnZapiszDodaj = new System.Windows.Forms.Button();
             this.btnWyczysc = new System.Windows.Forms.Button();
             this.txtDataStart = new System.Windows.Forms.DateTimePicker();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.KalendarzUrlop = new System.Windows.Forms.MonthCalendar();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxWnioskowany = new System.Windows.Forms.TextBox();
+            this.txtBoxWnioskowany = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxPozostalo = new System.Windows.Forms.TextBox();
+            this.txtBoxPozostalo = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBoxWykorzystany = new System.Windows.Forms.TextBox();
+            this.txtBoxWykorzystany = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBoxPrzysluguje = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtDataKoniec = new System.Windows.Forms.DateTimePicker();
@@ -73,6 +74,7 @@
             this.panel2.SuspendLayout();
             this.pnlUrlopyControl.SuspendLayout();
             this.pnlUserSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUrlopyPraconik)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).BeginInit();
             this.pnlWolne.SuspendLayout();
             this.SuspendLayout();
@@ -238,6 +240,7 @@
             this.btnEdytuj.TabIndex = 0;
             this.btnEdytuj.Text = "Edytuj";
             this.btnEdytuj.UseVisualStyleBackColor = true;
+            this.btnEdytuj.Visible = false;
             this.btnEdytuj.Click += new System.EventHandler(this.btnEdytuj_Click);
             // 
             // btnDodaj
@@ -255,6 +258,7 @@
             // 
             this.pnlUserSearch.Controls.Add(this.LWyszukaj);
             this.pnlUserSearch.Controls.Add(this.txtWyszukajNazwisko);
+            this.pnlUserSearch.Controls.Add(this.dgvUrlopyPraconik);
             this.pnlUserSearch.Controls.Add(this.ListaPracownikow);
             this.pnlUserSearch.Location = new System.Drawing.Point(166, 62);
             this.pnlUserSearch.Name = "pnlUserSearch";
@@ -279,14 +283,24 @@
             this.txtWyszukajNazwisko.Size = new System.Drawing.Size(253, 26);
             this.txtWyszukajNazwisko.TabIndex = 20;
             // 
+            // dgvUrlopyPraconik
+            // 
+            this.dgvUrlopyPraconik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUrlopyPraconik.Location = new System.Drawing.Point(6, 345);
+            this.dgvUrlopyPraconik.Name = "dgvUrlopyPraconik";
+            this.dgvUrlopyPraconik.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUrlopyPraconik.Size = new System.Drawing.Size(531, 203);
+            this.dgvUrlopyPraconik.TabIndex = 19;
+            // 
             // ListaPracownikow
             // 
             this.ListaPracownikow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListaPracownikow.Location = new System.Drawing.Point(6, 43);
             this.ListaPracownikow.Name = "ListaPracownikow";
             this.ListaPracownikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ListaPracownikow.Size = new System.Drawing.Size(531, 505);
+            this.ListaPracownikow.Size = new System.Drawing.Size(531, 291);
             this.ListaPracownikow.TabIndex = 19;
+            this.ListaPracownikow.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ListaPracownikow_MouseClick);
             // 
             // pnlWolne
             // 
@@ -294,18 +308,18 @@
             this.pnlWolne.Controls.Add(this.btnZapiszDodaj);
             this.pnlWolne.Controls.Add(this.btnWyczysc);
             this.pnlWolne.Controls.Add(this.txtDataStart);
-            this.pnlWolne.Controls.Add(this.monthCalendar1);
+            this.pnlWolne.Controls.Add(this.KalendarzUrlop);
             this.pnlWolne.Controls.Add(this.label2);
             this.pnlWolne.Controls.Add(this.label12);
             this.pnlWolne.Controls.Add(this.label11);
             this.pnlWolne.Controls.Add(this.label6);
-            this.pnlWolne.Controls.Add(this.textBoxWnioskowany);
+            this.pnlWolne.Controls.Add(this.txtBoxWnioskowany);
             this.pnlWolne.Controls.Add(this.label3);
-            this.pnlWolne.Controls.Add(this.textBoxPozostalo);
+            this.pnlWolne.Controls.Add(this.txtBoxPozostalo);
+            this.pnlWolne.Controls.Add(this.label13);
             this.pnlWolne.Controls.Add(this.label7);
-            this.pnlWolne.Controls.Add(this.textBoxWykorzystany);
+            this.pnlWolne.Controls.Add(this.txtBoxWykorzystany);
             this.pnlWolne.Controls.Add(this.label8);
-            this.pnlWolne.Controls.Add(this.textBoxPrzysluguje);
             this.pnlWolne.Controls.Add(this.label9);
             this.pnlWolne.Controls.Add(this.label10);
             this.pnlWolne.Controls.Add(this.txtDataKoniec);
@@ -354,11 +368,11 @@
             this.txtDataStart.Size = new System.Drawing.Size(225, 20);
             this.txtDataStart.TabIndex = 3;
             // 
-            // monthCalendar1
+            // KalendarzUrlop
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(361, 6);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
+            this.KalendarzUrlop.Location = new System.Drawing.Point(361, 6);
+            this.KalendarzUrlop.Name = "KalendarzUrlop";
+            this.KalendarzUrlop.TabIndex = 0;
             // 
             // label2
             // 
@@ -400,12 +414,13 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Weryfikacja urlopu przysługującego:";
             // 
-            // textBoxWnioskowany
+            // txtBoxWnioskowany
             // 
-            this.textBoxWnioskowany.Location = new System.Drawing.Point(262, 365);
-            this.textBoxWnioskowany.Name = "textBoxWnioskowany";
-            this.textBoxWnioskowany.Size = new System.Drawing.Size(151, 20);
-            this.textBoxWnioskowany.TabIndex = 9;
+            this.txtBoxWnioskowany.Enabled = false;
+            this.txtBoxWnioskowany.Location = new System.Drawing.Point(262, 365);
+            this.txtBoxWnioskowany.Name = "txtBoxWnioskowany";
+            this.txtBoxWnioskowany.Size = new System.Drawing.Size(151, 20);
+            this.txtBoxWnioskowany.TabIndex = 9;
             // 
             // label3
             // 
@@ -417,12 +432,23 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Okres urlopu:";
             // 
-            // textBoxPozostalo
+            // txtBoxPozostalo
             // 
-            this.textBoxPozostalo.Location = new System.Drawing.Point(262, 340);
-            this.textBoxPozostalo.Name = "textBoxPozostalo";
-            this.textBoxPozostalo.Size = new System.Drawing.Size(151, 20);
-            this.textBoxPozostalo.TabIndex = 8;
+            this.txtBoxPozostalo.Enabled = false;
+            this.txtBoxPozostalo.Location = new System.Drawing.Point(262, 340);
+            this.txtBoxPozostalo.Name = "txtBoxPozostalo";
+            this.txtBoxPozostalo.Size = new System.Drawing.Size(151, 20);
+            this.txtBoxPozostalo.TabIndex = 8;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(261, 292);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(27, 20);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "26";
             // 
             // label7
             // 
@@ -434,12 +460,13 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "Przysługujący:";
             // 
-            // textBoxWykorzystany
+            // txtBoxWykorzystany
             // 
-            this.textBoxWykorzystany.Location = new System.Drawing.Point(262, 315);
-            this.textBoxWykorzystany.Name = "textBoxWykorzystany";
-            this.textBoxWykorzystany.Size = new System.Drawing.Size(151, 20);
-            this.textBoxWykorzystany.TabIndex = 7;
+            this.txtBoxWykorzystany.Enabled = false;
+            this.txtBoxWykorzystany.Location = new System.Drawing.Point(262, 315);
+            this.txtBoxWykorzystany.Name = "txtBoxWykorzystany";
+            this.txtBoxWykorzystany.Size = new System.Drawing.Size(151, 20);
+            this.txtBoxWykorzystany.TabIndex = 7;
             // 
             // label8
             // 
@@ -450,13 +477,6 @@
             this.label8.Size = new System.Drawing.Size(110, 20);
             this.label8.TabIndex = 1;
             this.label8.Text = "Wykorzystany:";
-            // 
-            // textBoxPrzysluguje
-            // 
-            this.textBoxPrzysluguje.Location = new System.Drawing.Point(262, 290);
-            this.textBoxPrzysluguje.Name = "textBoxPrzysluguje";
-            this.textBoxPrzysluguje.Size = new System.Drawing.Size(151, 20);
-            this.textBoxPrzysluguje.TabIndex = 6;
             // 
             // label9
             // 
@@ -484,6 +504,7 @@
             this.txtDataKoniec.Name = "txtDataKoniec";
             this.txtDataKoniec.Size = new System.Drawing.Size(225, 20);
             this.txtDataKoniec.TabIndex = 4;
+            this.txtDataKoniec.ValueChanged += new System.EventHandler(this.txtDataKoniec_ValueChanged);
             // 
             // label4
             // 
@@ -534,6 +555,7 @@
             this.pnlUrlopyControl.ResumeLayout(false);
             this.pnlUserSearch.ResumeLayout(false);
             this.pnlUserSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUrlopyPraconik)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaPracownikow)).EndInit();
             this.pnlWolne.ResumeLayout(false);
             this.pnlWolne.PerformLayout();
@@ -562,18 +584,17 @@
         private System.Windows.Forms.DataGridView ListaPracownikow;
         private System.Windows.Forms.Panel pnlWolne;
         private System.Windows.Forms.DateTimePicker txtDataStart;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar KalendarzUrlop;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxWnioskowany;
+        private System.Windows.Forms.TextBox txtBoxWnioskowany;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxPozostalo;
+        private System.Windows.Forms.TextBox txtBoxPozostalo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBoxWykorzystany;
+        private System.Windows.Forms.TextBox txtBoxWykorzystany;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBoxPrzysluguje;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker txtDataKoniec;
@@ -583,5 +604,7 @@
         private System.Windows.Forms.Button btnAnuluj;
         private System.Windows.Forms.Button btnZapiszDodaj;
         private System.Windows.Forms.Button btnWyczysc;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView dgvUrlopyPraconik;
     }
 }

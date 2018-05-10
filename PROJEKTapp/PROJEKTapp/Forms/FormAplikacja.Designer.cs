@@ -30,12 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.FormAplikacja = new System.Windows.Forms.Panel();
+            this.btnKontaUZ = new System.Windows.Forms.Button();
             this.Btn_Back = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnZlecenia = new System.Windows.Forms.Button();
             this.btnStatusyZlecen = new System.Windows.Forms.Button();
             this.btnProdukcja = new System.Windows.Forms.Button();
             this.btnKadry = new System.Windows.Forms.Button();
@@ -47,8 +49,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnZlecenia = new System.Windows.Forms.Button();
-            this.btnKontaUZ = new System.Windows.Forms.Button();
             this.FormAplikacja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -72,6 +72,19 @@
             this.FormAplikacja.Name = "FormAplikacja";
             this.FormAplikacja.Size = new System.Drawing.Size(872, 152);
             this.FormAplikacja.TabIndex = 0;
+            // 
+            // btnKontaUZ
+            // 
+            this.btnKontaUZ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnKontaUZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKontaUZ.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btnKontaUZ.Image = ((System.Drawing.Image)(resources.GetObject("btnKontaUZ.Image")));
+            this.btnKontaUZ.Location = new System.Drawing.Point(633, 0);
+            this.btnKontaUZ.Name = "btnKontaUZ";
+            this.btnKontaUZ.Size = new System.Drawing.Size(102, 64);
+            this.btnKontaUZ.TabIndex = 10;
+            this.btnKontaUZ.UseVisualStyleBackColor = true;
+            this.btnKontaUZ.Click += new System.EventHandler(this.btnUzytkownik_Click);
             // 
             // Btn_Back
             // 
@@ -146,6 +159,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(227, 298);
             this.panel2.TabIndex = 1;
+            // 
+            // btnZlecenia
+            // 
+            this.btnZlecenia.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnZlecenia.FlatAppearance.BorderSize = 0;
+            this.btnZlecenia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnZlecenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZlecenia.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnZlecenia.Image = ((System.Drawing.Image)(resources.GetObject("btnZlecenia.Image")));
+            this.btnZlecenia.Location = new System.Drawing.Point(0, 0);
+            this.btnZlecenia.Name = "btnZlecenia";
+            this.btnZlecenia.Size = new System.Drawing.Size(225, 69);
+            this.btnZlecenia.TabIndex = 6;
+            this.btnZlecenia.Text = "ZLECENIA";
+            this.btnZlecenia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnZlecenia.UseVisualStyleBackColor = true;
+            this.btnZlecenia.Click += new System.EventHandler(this.btnZlecenia_Click);
             // 
             // btnStatusyZlecen
             // 
@@ -238,6 +268,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox5
@@ -279,36 +310,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
-            // 
-            // btnZlecenia
-            // 
-            this.btnZlecenia.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnZlecenia.FlatAppearance.BorderSize = 0;
-            this.btnZlecenia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnZlecenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnZlecenia.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnZlecenia.Image = ((System.Drawing.Image)(resources.GetObject("btnZlecenia.Image")));
-            this.btnZlecenia.Location = new System.Drawing.Point(0, 0);
-            this.btnZlecenia.Name = "btnZlecenia";
-            this.btnZlecenia.Size = new System.Drawing.Size(225, 69);
-            this.btnZlecenia.TabIndex = 6;
-            this.btnZlecenia.Text = "ZLECENIA";
-            this.btnZlecenia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnZlecenia.UseVisualStyleBackColor = true;
-            this.btnZlecenia.Click += new System.EventHandler(this.btnZlecenia_Click);
-            // 
-            // btnKontaUZ
-            // 
-            this.btnKontaUZ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnKontaUZ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKontaUZ.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnKontaUZ.Image = ((System.Drawing.Image)(resources.GetObject("btnKontaUZ.Image")));
-            this.btnKontaUZ.Location = new System.Drawing.Point(633, 0);
-            this.btnKontaUZ.Name = "btnKontaUZ";
-            this.btnKontaUZ.Size = new System.Drawing.Size(102, 64);
-            this.btnKontaUZ.TabIndex = 10;
-            this.btnKontaUZ.UseVisualStyleBackColor = true;
-            this.btnKontaUZ.Click += new System.EventHandler(this.btnUzytkownik_Click);
             // 
             // Form1
             // 

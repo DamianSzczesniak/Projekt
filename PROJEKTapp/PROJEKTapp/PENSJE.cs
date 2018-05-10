@@ -12,13 +12,16 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class ZAMOWIENIA
+    public partial class PENSJE
     {
-        public int ID_ZAMOWIENIA { get; set; }
-        public Nullable<System.DateTime> DATA_ZAMOWIENIA { get; set; }
-        public Nullable<System.DateTime> DATA_REALIZACJI { get; set; }
-        public Nullable<int> ID_FIRMY { get; set; }
-    
-        public virtual FIRMY FIRMY { get; set; }
+        public int ID_PRACOWNIK { get; set; }
+        public string NAZWISKO { get; set; }
+        public string IMIE { get; set; }
+        public decimal WARTOSC { get; set; }
+        public int ID_OKRES { get; set; }
+        public string NAZWA { get; set; }
+        public Nullable<double> PENSJA_MSC { get; set; }
+        public System.DateTime DATA_START { get; set; }
+        public Nullable<System.DateTime> DATA_KONIEC { get; set; }
     }
 }

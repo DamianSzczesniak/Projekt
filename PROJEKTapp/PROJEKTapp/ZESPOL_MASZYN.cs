@@ -12,13 +12,13 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class ZAMOWIENIA
+    public partial class ZESPOL_MASZYN
     {
-        public int ID_ZAMOWIENIA { get; set; }
-        public Nullable<System.DateTime> DATA_ZAMOWIENIA { get; set; }
-        public Nullable<System.DateTime> DATA_REALIZACJI { get; set; }
-        public Nullable<int> ID_FIRMY { get; set; }
+        public int ID_ZESPOL_MASZYN { get; set; }
+        public int ID_REALIZACJA_PRODUKCJA { get; set; }
+        public int ID_MASZYNY { get; set; }
     
-        public virtual FIRMY FIRMY { get; set; }
+        public virtual MASZYNY MASZYNY { get; set; }
+        public virtual REALIZACJA_PRODUKCJA REALIZACJA_PRODUKCJA { get; set; }
     }
 }

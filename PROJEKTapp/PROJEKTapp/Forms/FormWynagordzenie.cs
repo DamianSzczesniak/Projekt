@@ -20,11 +20,39 @@ namespace PROJEKTapp
             this.db = db;
             this.ladowanieformularzazokienkami = ladowanieformularzazokienkami;
             InitializeComponent();
+            
         }
 
         private void FormWynagordzenie_Load(object sender, EventArgs e)
         {
-            //if (formload ==1)
+            if (ladowanieformularzazokienkami == true)
+            {
+                pnlWynagordzenia.Show();
+                dgvWyplaty.DataSource = db.PENSJE.Where(miesiac => miesiac.DATA_START < dtpMiesiac.Value).Where(datakoniec => datakoniec.DATA_KONIEC > dtpMiesiac.Value || datakoniec.DATA_KONIEC == null).ToList();
+                dgvWyplaty.Columns[0].Visible = false;
+                dgvWyplaty.Columns[3].Visible = false;
+                dgvWyplaty.Columns[4].Visible = false;
+                dgvWyplaty.Columns[5].Visible = false;
+                dgvWyplaty.Columns[7].Visible = false;
+                dgvWyplaty.Columns[8].Visible = false;
+
+            }
+            else
+            {
+                pnlWynagordzenia.Hide();
+            }
+        }
+
+        private void txtWyszukajNazwisko_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.txtWyszukajNazwisko.Text))
+            {
+                this.dgvWyplaty.DataSource = db.PENSJE.Where(miesiac => miesiac.DATA_START < dtpMiesiac.Value).Where(datakoniec => datakoniec.DATA_KONIEC > dtpMiesiac.Value || datakoniec.DATA_KONIEC == null).ToList();
+            }
+            else
+            {
+                this.dgvWyplaty.DataSource = db.PENSJE.Where(miesiac => miesiac.DATA_START < dtpMiesiac.Value).Where(datakoniec => datakoniec.DATA_KONIEC > dtpMiesiac.Value || datakoniec.DATA_KONIEC == null).Where(x => x.NAZWISKO.StartsWith(txtWyszukajNazwisko.Text)).ToList();
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -44,21 +72,13 @@ namespace PROJEKTapp
         {
             if (ladowanieformularzazokienkami == true)
             {
-                //formload = 0;
-                //pnlUserControl.Show();
-                //pnlUserSearch.Show();
-                //pnlUserField.Hide();
-                //this.ListaPracownikow.DataSource = db.PRACOWNICY_OSTATNIE_STANOWISKO.ToList();
-                //ListaPracownikow.Columns[0].HeaderText = "NUMER";
-                //ListaPracownikow.Columns[0].Width = 60;
-                //ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
+                ladowanieformularzazokienkami = false;
+                pnlWynagordzenia.Show();
             }
             else
             {
                 ladowanieformularzazokienkami = true;
-                //pnlUserControl.Hide();
-                //pnlUserSearch.Hide();
-                //pnlUserField.Hide();
+                pnlWynagordzenia.Hide();
             }
         }
             private void btnUrlopy_Click(object sender, EventArgs e)
@@ -83,6 +103,17 @@ namespace PROJEKTapp
             FormStatystyki statystyki = new FormStatystyki(db, ladowanieformularzazokienkami);
             statystyki.Show();
             this.Close();
+        }
+
+        private void dtpMiesiac_ValueChanged(object sender, EventArgs e)
+        {
+            dgvWyplaty.DataSource = db.PENSJE.Where(miesiac => miesiac.DATA_START < dtpMiesiac.Value).Where(datakoniec => datakoniec.DATA_KONIEC > dtpMiesiac.Value || datakoniec.DATA_KONIEC == null).ToList();
+            dgvWyplaty.Columns[0].Visible = false;
+            dgvWyplaty.Columns[3].Visible = false;
+            dgvWyplaty.Columns[4].Visible = false;
+            dgvWyplaty.Columns[5].Visible = false;
+            dgvWyplaty.Columns[7].Visible = false;
+            dgvWyplaty.Columns[8].Visible = false;
         }
     }
 }

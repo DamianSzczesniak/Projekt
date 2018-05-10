@@ -53,6 +53,12 @@ namespace PROJEKTapp
                 ListaPracownikow.Columns[0].HeaderText = "NUMER";
                 ListaPracownikow.Columns[0].Width = 60;
                 ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
+                int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+                this.dgvSzkoleniaPracownika.DataSource = db.SZKOLENIA_PRACOWNIKA.Where(pracownik => pracownik.ID_PRACOWNIK.Equals(ID)).ToList();
+                this.dgvSzkoleniaPracownika.Columns[0].Visible = false;
+                this.dgvSzkoleniaPracownika.Columns[1].Visible = false;
+                dgvSzkoleniaPracownika.Columns[2].HeaderText = "Szkolenie";
+                dgvSzkoleniaPracownika.Columns[3].HeaderText = "Opis";
             }
             else
             {
@@ -71,10 +77,6 @@ namespace PROJEKTapp
                 pnlSzkoleniaControl.Show();
                 pnlUserSearch.Show();
                 pnlNoweSzkolenie.Hide();
-                this.ListaPracownikow.DataSource = 
-                ListaPracownikow.Columns[0].HeaderText = "NUMER";
-                ListaPracownikow.Columns[0].Width = 60;
-                ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
             }
             else
             {
@@ -125,18 +127,16 @@ namespace PROJEKTapp
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
         {
-           
-               
-                    SZKOLENIA szkolenie = new SZKOLENIA();
-                    szkolenie.NAZWA_SZKOLENIA = this.txtboxNazwa.Text;
-                    szkolenie.OPIS_SZKOLENIA = this.txtboxOpis.Text;
-                    szkolenie.DATA_START = this.dtpStart.Value;
-                    szkolenie.DATA_KONIEC = this.dtpKoniec.Value;
-                    db.SZKOLENIA.Add(szkolenie);
-                    db.SaveChanges();
-                    pnlDodajSzkolenie.Hide();
+            SZKOLENIA szkolenie = new SZKOLENIA();
+            szkolenie.NAZWA_SZKOLENIA = this.txtboxNazwa.Text;
+            szkolenie.OPIS_SZKOLENIA = this.txtboxOpis.Text;
+            szkolenie.DATA_START = this.dtpStart.Value;
+            szkolenie.DATA_KONIEC = this.dtpKoniec.Value;
+            db.SZKOLENIA.Add(szkolenie);
+            db.SaveChanges();
+            pnlDodajSzkolenie.Hide();
         }
-            
+
 
         private void btnWyczysc_Click(object sender, EventArgs e)
         {
@@ -157,7 +157,31 @@ namespace PROJEKTapp
             btnSprawdz.Show();
             pnlDodajSzkolenie.Show();
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
-            lblPracownik.Text = "Szkolenie pracownika " + ListaPracownikow.CurrentRow.Cells[1].Value + " " + ListaPracownikow.CurrentRow.Cells[2].Value;
+            this.pracownik = db.PRACOWNICY.Where(pracownik => pracownik.ID_PRACOWNIK == ID).First();
+            lblPracownik.Text = "Szkolenie pracownika " + pracownik.IMIE + " " + pracownik.NAZWISKO;
+
+            KalendarzSzkolenia.BoldedDates = new DateTime[] {};
+
+            foreach (SZKOLENIA szkolenie in pracownik.SZKOLENIA)
+            {
+                int dlugoscSzkolenia = szkolenie.DATA_KONIEC.Subtract(szkolenie.DATA_START).Days + 1;
+                DateTime aktualnaData = szkolenie.DATA_START;
+                for (int i = 0; i < dlugoscSzkolenia; i++)
+                {
+                    KalendarzSzkolenia.BoldedDates = KalendarzSzkolenia.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
+
+                }
+            }
+            foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY)
+            {
+                int dlugoscwolne = wolne.DATA_KONIEC.Subtract(wolne.DATA_START).Days + 1;
+                DateTime aktualnaData = wolne.DATA_START;
+                for (int i = 0; i < dlugoscwolne; i++)
+                {
+                    KalendarzSzkolenia.BoldedDates = KalendarzSzkolenia.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
+
+                }
+            }
         }
 
         private void btnAnulujSzkolenie_Click(object sender, EventArgs e)
@@ -226,6 +250,7 @@ namespace PROJEKTapp
         {
             KalendarzSzkolenia.SelectionStart = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_START;
             KalendarzSzkolenia.SelectionEnd = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_KONIEC;
+
         }
 
         private void btnUsun_Click(object sender, EventArgs e)
@@ -246,7 +271,8 @@ namespace PROJEKTapp
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             dgvSzkoleniaPracownika.DataSource = db.SZKOLENIA_PRACOWNIKA.Where(pracownik => pracownik.ID_PRACOWNIK.Equals(ID)).ToList();
             ListaPracownikow.Refresh();
-            this.dgvSzkoleniaPracownika.Columns[5].Visible = false;
+            this.dgvSzkoleniaPracownika.Columns[0].Visible = false;
+            this.dgvSzkoleniaPracownika.Columns[1].Visible = false;
         }
     }
 }
