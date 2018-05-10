@@ -35,7 +35,6 @@
             this.Panel = new System.Windows.Forms.Label();
             this.lblDol = new System.Windows.Forms.Label();
             this.GridPracownicyWPracy = new System.Windows.Forms.DataGridView();
-            this.btnRezerwacjaMaszyn = new System.Windows.Forms.Button();
             this.btnEwidencjaMaszyn = new System.Windows.Forms.Button();
             this.btnGabaryty = new System.Windows.Forms.Button();
             this.btnEwidencja = new System.Windows.Forms.Button();
@@ -109,26 +108,8 @@
             this.GridPracownicyWPracy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridPracownicyWPracy.Location = new System.Drawing.Point(8, 65);
             this.GridPracownicyWPracy.Name = "GridPracownicyWPracy";
-            this.GridPracownicyWPracy.Size = new System.Drawing.Size(1020, 474);
+            this.GridPracownicyWPracy.Size = new System.Drawing.Size(1355, 598);
             this.GridPracownicyWPracy.TabIndex = 7;
-            // 
-            // btnRezerwacjaMaszyn
-            // 
-            this.btnRezerwacjaMaszyn.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnRezerwacjaMaszyn.FlatAppearance.BorderSize = 0;
-            this.btnRezerwacjaMaszyn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRezerwacjaMaszyn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRezerwacjaMaszyn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRezerwacjaMaszyn.Image = global::PROJEKTapp.Properties.Resources.beznazwy;
-            this.btnRezerwacjaMaszyn.Location = new System.Drawing.Point(1033, 439);
-            this.btnRezerwacjaMaszyn.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRezerwacjaMaszyn.Name = "btnRezerwacjaMaszyn";
-            this.btnRezerwacjaMaszyn.Size = new System.Drawing.Size(340, 100);
-            this.btnRezerwacjaMaszyn.TabIndex = 6;
-            this.btnRezerwacjaMaszyn.Text = "Rezerwacja Maszyn";
-            this.btnRezerwacjaMaszyn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRezerwacjaMaszyn.UseVisualStyleBackColor = true;
-            this.btnRezerwacjaMaszyn.Click += new System.EventHandler(this.btnRezerwacjaMaszyn_Click);
             // 
             // btnEwidencjaMaszyn
             // 
@@ -138,10 +119,10 @@
             this.btnEwidencjaMaszyn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnEwidencjaMaszyn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEwidencjaMaszyn.Image = global::PROJEKTapp.Properties.Resources.Book_designed_by_Benny_Forsberg_from_the_Noun_Project___with_lines2;
-            this.btnEwidencjaMaszyn.Location = new System.Drawing.Point(1032, 543);
+            this.btnEwidencjaMaszyn.Location = new System.Drawing.Point(1035, 668);
             this.btnEwidencjaMaszyn.Margin = new System.Windows.Forms.Padding(2);
             this.btnEwidencjaMaszyn.Name = "btnEwidencjaMaszyn";
-            this.btnEwidencjaMaszyn.Size = new System.Drawing.Size(340, 100);
+            this.btnEwidencjaMaszyn.Size = new System.Drawing.Size(331, 100);
             this.btnEwidencjaMaszyn.TabIndex = 5;
             this.btnEwidencjaMaszyn.Text = "Ewidencja";
             this.btnEwidencjaMaszyn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -156,7 +137,7 @@
             this.btnGabaryty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnGabaryty.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGabaryty.Image = global::PROJEKTapp.Properties.Resources._18073;
-            this.btnGabaryty.Location = new System.Drawing.Point(688, 544);
+            this.btnGabaryty.Location = new System.Drawing.Point(691, 668);
             this.btnGabaryty.Margin = new System.Windows.Forms.Padding(2);
             this.btnGabaryty.Name = "btnGabaryty";
             this.btnGabaryty.Size = new System.Drawing.Size(340, 100);
@@ -174,7 +155,7 @@
             this.btnEwidencja.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnEwidencja.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnEwidencja.Image = global::PROJEKTapp.Properties.Resources.Sports_Weightlift_icon;
-            this.btnEwidencja.Location = new System.Drawing.Point(344, 544);
+            this.btnEwidencja.Location = new System.Drawing.Point(347, 668);
             this.btnEwidencja.Margin = new System.Windows.Forms.Padding(2);
             this.btnEwidencja.Name = "btnEwidencja";
             this.btnEwidencja.Size = new System.Drawing.Size(340, 100);
@@ -192,10 +173,10 @@
             this.btnWykorzystaneMaszyny.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnWykorzystaneMaszyny.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnWykorzystaneMaszyny.Image = global::PROJEKTapp.Properties.Resources.btnMachine1;
-            this.btnWykorzystaneMaszyny.Location = new System.Drawing.Point(0, 544);
+            this.btnWykorzystaneMaszyny.Location = new System.Drawing.Point(0, 668);
             this.btnWykorzystaneMaszyny.Margin = new System.Windows.Forms.Padding(2);
             this.btnWykorzystaneMaszyny.Name = "btnWykorzystaneMaszyny";
-            this.btnWykorzystaneMaszyny.Size = new System.Drawing.Size(340, 100);
+            this.btnWykorzystaneMaszyny.Size = new System.Drawing.Size(332, 100);
             this.btnWykorzystaneMaszyny.TabIndex = 0;
             this.btnWykorzystaneMaszyny.Text = "Wykorzystane Zasoby";
             this.btnWykorzystaneMaszyny.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -207,7 +188,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.GridPracownicyWPracy);
-            this.Controls.Add(this.btnRezerwacjaMaszyn);
             this.Controls.Add(this.btnEwidencjaMaszyn);
             this.Controls.Add(this.btnGabaryty);
             this.Controls.Add(this.btnEwidencja);
@@ -237,7 +217,6 @@
         private System.Windows.Forms.Label lblDol;
         private System.Windows.Forms.Button btnGabaryty;
         private System.Windows.Forms.Button btnEwidencjaMaszyn;
-        private System.Windows.Forms.Button btnRezerwacjaMaszyn;
         private System.Windows.Forms.DataGridView GridPracownicyWPracy;
     }
 }

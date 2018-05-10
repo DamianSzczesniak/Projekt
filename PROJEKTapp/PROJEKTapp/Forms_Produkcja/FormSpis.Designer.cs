@@ -119,6 +119,7 @@
             // 
             // ZapiszEdytuj
             // 
+            this.ZapiszEdytuj.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.ZapiszEdytuj.Location = new System.Drawing.Point(1141, 337);
             this.ZapiszEdytuj.Name = "ZapiszEdytuj";
             this.ZapiszEdytuj.Size = new System.Drawing.Size(134, 83);
@@ -129,6 +130,7 @@
             // 
             // Usun
             // 
+            this.Usun.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.Usun.Location = new System.Drawing.Point(1141, 453);
             this.Usun.Name = "Usun";
             this.Usun.Size = new System.Drawing.Size(134, 83);
@@ -139,6 +141,7 @@
             // 
             // buttonUtworz
             // 
+            this.buttonUtworz.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.buttonUtworz.Location = new System.Drawing.Point(1141, 223);
             this.buttonUtworz.Name = "buttonUtworz";
             this.buttonUtworz.Size = new System.Drawing.Size(134, 89);
