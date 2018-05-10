@@ -127,12 +127,6 @@ namespace PROJEKTapp
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
         {
-            if (cbSzkolenia.SelectedValue == null)
-            {
-                MessageBox.Show("Najpierw wybierz szkolenie");
-            }
-            else
-            {
                 SZKOLENIA szkolenie = new SZKOLENIA();
                 szkolenie.NAZWA_SZKOLENIA = this.txtboxNazwa.Text;
                 szkolenie.OPIS_SZKOLENIA = this.txtboxOpis.Text;
@@ -140,8 +134,11 @@ namespace PROJEKTapp
                 szkolenie.DATA_KONIEC = this.dtpKoniec.Value;
                 db.SZKOLENIA.Add(szkolenie);
                 db.SaveChanges();
-                pnlDodajSzkolenie.Hide();
-            }
+                pnlNoweSzkolenie.Hide();
+            cbSzkolenia.DataSource = db.SZKOLENIA.Where(szkolenia => ((szkolenia.DATA_START.Year).ToString()).Equals(cbRokSzkolenia.SelectedItem.ToString())).ToList();
+            cbSzkolenia.DisplayMember = "NAZWA_SZKOLENIA";
+            cbSzkolenia.SelectedItem = null;
+
         }
 
 
@@ -200,7 +197,7 @@ namespace PROJEKTapp
         {
             if (ZapiszUsun == true)
             {
-                if (cbSzkolenia.SelectedValue == null)
+                if (cbSzkolenia.SelectedItem == null)
                 {
                     MessageBox.Show("Najpierw wybierz szkolenie");
                 }
@@ -213,6 +210,13 @@ namespace PROJEKTapp
                     pracownik.SZKOLENIA.Add(szkolenie);
                     db.SaveChanges();
                     pnlDodajSzkolenie.Hide();
+                    dgvSzkoleniaPracownika.DataSource = db.SZKOLENIA_PRACOWNIKA.Where(prac => prac.ID_PRACOWNIK.Equals(ID)).ToList();
+                    ListaPracownikow.Refresh();
+                    this.dgvSzkoleniaPracownika.Columns[0].Visible = false;
+                    this.dgvSzkoleniaPracownika.Columns[1].Visible = false;
+                    pnlDodajSzkolenie.Hide();
+                    btnSprawdz.Show();
+                    cbSzkolenia.SelectedItem = null;
                 }
             }
             else
