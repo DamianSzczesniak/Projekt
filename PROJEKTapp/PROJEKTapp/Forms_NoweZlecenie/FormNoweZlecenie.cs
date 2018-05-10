@@ -3,6 +3,7 @@ using PROJEKTapp.Forms_NoweZlecenie;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -35,16 +36,21 @@ namespace PROJEKTapp
     
         private void btn_Dodaj_Zlecenie_Click(object sender, EventArgs e)
         {
+          
             ZLECENIA noweZlecenie = new ZLECENIA();
             noweZlecenie.DATA_REALIZACJI = DateTime.Parse(txtBox_Data_Realizacji.Text);
             noweZlecenie.DATA_ZLECENIA = DateTime.Parse(txtBox_Data_Zlecenia.Text);
             noweZlecenie.ID_FIRMY = int.Parse(cbBoxFirmy.SelectedValue.ToString());
-
-            db.ZLECENIA.Add(noweZlecenie);
+            int  id = db.ZLECENIA.Max(a => a.ID_ZLECENIA);
+            noweZlecenie.ID_ZLECENIA = id;
+            db.Entry(noweZlecenie).State = EntityState.Modified; 
             db.SaveChanges();
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_ZLECENIA = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_ZLECENIA.ID_ZLECENIA = id;
+            dATA_STATUSU_ZLECENIA.ID_STATUSU_ZLECENIA = 1;
 
-            txtBox_Data_Realizacji.Clear();
-            txtBox_Data_Zlecenia.Clear();
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_ZLECENIA);
+            db.SaveChanges();
         }
 
 
@@ -60,9 +66,7 @@ namespace PROJEKTapp
                 var powtorki = lZP.Where(a => a.ID_PRODUKTU == int.Parse(cBox_Produkty_Oferta.SelectedValue.ToString()));
                 if (powtorki.Count() == 0)
                   {
-                    KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
-                    db.ZLECENIA = nDB.ZLECENIA;
-                    db.SaveChanges();
+                   
 
                     ZLECENIA_PRODUKTY_NAZWY zLECENIA_PRODUKTY_NAZWY = new ZLECENIA_PRODUKTY_NAZWY();
 
@@ -92,18 +96,34 @@ namespace PROJEKTapp
             this.Close();
         }
 
-        
+        private void ofertuj()
+        {
+            KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
+            db.KOSZTY_CZASY_PRODUKCJI = nDB.KOSZTY_CZASY_PRODUKCJI;
+            db.OFERTA = nDB.OFERTA;
+            db = nDB;
+            int c = db.ZLECENIA.Max(a => a.ID_ZLECENIA);
+            oFERTABindingSource.DataSource = db.OFERTA.Where(a => a.ID_ZLECENIA == c).ToList();
+            OFERTA oFERTA = oFERTABindingSource.Current as OFERTA;
+            decimal dcena = decimal.Parse(oFERTA.KOSZT_CALKOWITY_PRODUKCJI.ToString());
+            int cena = Decimal.ToInt32(dcena);
+            txtBoxCena.Text = cena.ToString();
+            DateTime date = db.ZLECENIA.Max(a => a.DATA_REALIZACJI);
+            DateTime czasrealizacji1 = date.AddDays(double.Parse(oFERTA.CZAS_PRODUKCJI.ToString()));
+            DateTime czasrealizacji2 = date.AddDays(6);
+            txtBox_Data_Realizacji.Text = czasrealizacji2.ToLongDateString();
+        }
 
         private void btnPrzedstaw_Oferte_Click(object sender, EventArgs e)
         {
-            KWZP_PROJEKTEntities nDB2 = new KWZP_PROJEKTEntities();
-            db = nDB2;
+            
 
-           
             noweZlecenie.DATA_REALIZACJI = DateTime.Parse(txtBox_Data_Zlecenia.Text);
             noweZlecenie.DATA_ZLECENIA = DateTime.Parse(txtBox_Data_Zlecenia.Text);
             noweZlecenie.ID_FIRMY = 1;
-
+            int id = db.ZLECENIA.Max(a => a.ID_ZLECENIA);
+            noweZlecenie.ID_ZLECENIA = id;
+            
             db.ZLECENIA.Add(noweZlecenie);
             db.SaveChanges();
 
@@ -117,41 +137,16 @@ namespace PROJEKTapp
                 db.SaveChanges();
             }
 
-            KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
-            db.KOSZTY_CZASY_PRODUKCJI = nDB.KOSZTY_CZASY_PRODUKCJI;
-            db.OFERTA = nDB.OFERTA;
-            db = nDB;
+            ofertuj();
 
-            int c = db.ZLECENIA.Max(a => a.ID_ZLECENIA);
-            oFERTABindingSource.DataSource = db.OFERTA.Where(a => a.ID_ZLECENIA == c).ToList();
-            OFERTA oFERTA = oFERTABindingSource.Current as OFERTA;
-            decimal dcena = decimal.Parse(oFERTA.KOSZT_CALKOWITY_PRODUKCJI.ToString());
-            int cena = Decimal.ToInt32(dcena);
-            txtBoxCena.Text = cena.ToString();
-            DateTime date = db.ZLECENIA.Max(a => a.DATA_REALIZACJI);
-            DateTime czasrealizacji1 = date.AddDays(double.Parse(oFERTA.CZAS_PRODUKCJI.ToString()));
-            DateTime czasrealizacji2 = date.AddDays(6);
-            txtBox_Data_Realizacji.Text = czasrealizacji2.ToLongDateString();
 
-            foreach (ZLECENIA_PRODUKTY_NAZWY element in lZP)
-            {
-                ZLECENIE_PRODUKT zLECENIE_PRODUKT = new ZLECENIE_PRODUKT();
-                zLECENIE_PRODUKT.ID_ZLECENIA = element.ID_ZLECENIA;
-                zLECENIE_PRODUKT.ID_PRODUKTU = element.ID_PRODUKTU;
-                zLECENIE_PRODUKT.ILOSC = element.ILOSC;
-                db.ZLECENIE_PRODUKT.Attach(zLECENIE_PRODUKT);
-                db.ZLECENIE_PRODUKT.Remove(zLECENIE_PRODUKT);
-                db.SaveChanges();
-            }
-            ZLECENIA zLECENIA = db.ZLECENIA.First( a=> a.ID_ZLECENIA == noweZlecenie.ID_ZLECENIA);
-            db.ZLECENIA.Remove(zLECENIA);
-            db.SaveChanges();
+            
 
 
         }
 
-        
-        private void btnWybierzFirme_Click(object sender, EventArgs e)
+
+            private void btnWybierzFirme_Click(object sender, EventArgs e)
         {
             using (FormFirmyDoZlecenia formFirmyDoZlecenia = new FormFirmyDoZlecenia(db))
             {
@@ -212,6 +207,24 @@ namespace PROJEKTapp
                 return;
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (ZLECENIA_PRODUKTY_NAZWY element in lZP)
+            {
+                ZLECENIE_PRODUKT zLECENIE_PRODUKT = new ZLECENIE_PRODUKT();
+                zLECENIE_PRODUKT.ID_ZLECENIA = element.ID_ZLECENIA;
+                zLECENIE_PRODUKT.ID_PRODUKTU = element.ID_PRODUKTU;
+                zLECENIE_PRODUKT.ILOSC = element.ILOSC;
+                db.ZLECENIE_PRODUKT.Attach(zLECENIE_PRODUKT);
+                db.ZLECENIE_PRODUKT.Remove(zLECENIE_PRODUKT);
+                db.SaveChanges();
+            }
+            ZLECENIA zLECENIA = db.ZLECENIA.First(a => a.ID_ZLECENIA == noweZlecenie.ID_ZLECENIA);
+         
+            db.ZLECENIA.Remove(zLECENIA);
+            db.SaveChanges();
         }
     }
 }

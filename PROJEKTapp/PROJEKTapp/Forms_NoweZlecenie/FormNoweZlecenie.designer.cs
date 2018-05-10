@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNoweZlecenie));
             this.groupBoxOferta = new System.Windows.Forms.GroupBox();
+            this.txtBoxCena = new System.Windows.Forms.TextBox();
+            this.lblKOSZT = new System.Windows.Forms.Label();
             this.dataGridViewOferta = new System.Windows.Forms.DataGridView();
             this.txtBox_Ilosc_Oferta = new System.Windows.Forms.TextBox();
             this.btn_Dodaj_Oferta = new System.Windows.Forms.Button();
@@ -38,7 +40,10 @@
             this.btnPrzedstaw_Oferte = new System.Windows.Forms.Button();
             this.lbl_Ilosc_Oferta = new System.Windows.Forms.Label();
             this.lblProdukt_Oferta = new System.Windows.Forms.Label();
+            this.txtBox_Data_Realizacji = new System.Windows.Forms.TextBox();
+            this.lbl_Data_Realizacji = new System.Windows.Forms.Label();
             this.groupBoxNowe_ZLecenie = new System.Windows.Forms.GroupBox();
+            this.dGVOFERTA = new System.Windows.Forms.DataGridView();
             this.btnWybierzFirme = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.lbl_Data_Zlecenia = new System.Windows.Forms.Label();
@@ -46,11 +51,7 @@
             this.txtBox_Data_Zlecenia = new System.Windows.Forms.TextBox();
             this.btn_Dodaj_Zlecenie = new System.Windows.Forms.Button();
             this.lblFirma = new System.Windows.Forms.Label();
-            this.lbl_Data_Realizacji = new System.Windows.Forms.Label();
-            this.txtBox_Data_Realizacji = new System.Windows.Forms.TextBox();
-            this.lblKOSZT = new System.Windows.Forms.Label();
-            this.txtBoxCena = new System.Windows.Forms.TextBox();
-            this.dGVOFERTA = new System.Windows.Forms.DataGridView();
+            this.btnOdrzuc = new System.Windows.Forms.Button();
             this.iDZLECENIADataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kOSZTCALKOWITYPRODUKCJIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cZASPRODUKCJIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,6 +92,23 @@
             this.groupBoxOferta.TabIndex = 9;
             this.groupBoxOferta.TabStop = false;
             this.groupBoxOferta.Text = "Oferta";
+            // 
+            // txtBoxCena
+            // 
+            this.txtBoxCena.Location = new System.Drawing.Point(47, 392);
+            this.txtBoxCena.Name = "txtBoxCena";
+            this.txtBoxCena.ReadOnly = true;
+            this.txtBoxCena.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxCena.TabIndex = 14;
+            // 
+            // lblKOSZT
+            // 
+            this.lblKOSZT.AutoSize = true;
+            this.lblKOSZT.Location = new System.Drawing.Point(79, 375);
+            this.lblKOSZT.Name = "lblKOSZT";
+            this.lblKOSZT.Size = new System.Drawing.Size(42, 13);
+            this.lblKOSZT.TabIndex = 13;
+            this.lblKOSZT.Text = "CENA :";
             // 
             // dataGridViewOferta
             // 
@@ -167,8 +185,26 @@
             this.lblProdukt_Oferta.TabIndex = 7;
             this.lblProdukt_Oferta.Text = "Produkt";
             // 
+            // txtBox_Data_Realizacji
+            // 
+            this.txtBox_Data_Realizacji.Location = new System.Drawing.Point(170, 392);
+            this.txtBox_Data_Realizacji.Name = "txtBox_Data_Realizacji";
+            this.txtBox_Data_Realizacji.ReadOnly = true;
+            this.txtBox_Data_Realizacji.Size = new System.Drawing.Size(142, 20);
+            this.txtBox_Data_Realizacji.TabIndex = 3;
+            // 
+            // lbl_Data_Realizacji
+            // 
+            this.lbl_Data_Realizacji.AutoSize = true;
+            this.lbl_Data_Realizacji.Location = new System.Drawing.Point(194, 376);
+            this.lbl_Data_Realizacji.Name = "lbl_Data_Realizacji";
+            this.lbl_Data_Realizacji.Size = new System.Drawing.Size(78, 13);
+            this.lbl_Data_Realizacji.TabIndex = 1;
+            this.lbl_Data_Realizacji.Text = "Data Realizacji";
+            // 
             // groupBoxNowe_ZLecenie
             // 
+            this.groupBoxNowe_ZLecenie.Controls.Add(this.btnOdrzuc);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.dGVOFERTA);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.btnWybierzFirme);
             this.groupBoxNowe_ZLecenie.Controls.Add(this.btnExit);
@@ -183,6 +219,21 @@
             this.groupBoxNowe_ZLecenie.TabIndex = 10;
             this.groupBoxNowe_ZLecenie.TabStop = false;
             this.groupBoxNowe_ZLecenie.Text = "Nowe Zlecenie";
+            // 
+            // dGVOFERTA
+            // 
+            this.dGVOFERTA.AutoGenerateColumns = false;
+            this.dGVOFERTA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVOFERTA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDZLECENIADataGridViewTextBoxColumn1,
+            this.kOSZTCALKOWITYPRODUKCJIDataGridViewTextBoxColumn,
+            this.cZASPRODUKCJIDataGridViewTextBoxColumn});
+            this.dGVOFERTA.DataSource = this.oFERTABindingSource;
+            this.dGVOFERTA.Location = new System.Drawing.Point(59, 392);
+            this.dGVOFERTA.Name = "dGVOFERTA";
+            this.dGVOFERTA.Size = new System.Drawing.Size(263, 20);
+            this.dGVOFERTA.TabIndex = 9;
+            this.dGVOFERTA.Visible = false;
             // 
             // btnWybierzFirme
             // 
@@ -251,54 +302,16 @@
             this.lblFirma.TabIndex = 7;
             this.lblFirma.Text = "Firma";
             // 
-            // lbl_Data_Realizacji
+            // btnOdrzuc
             // 
-            this.lbl_Data_Realizacji.AutoSize = true;
-            this.lbl_Data_Realizacji.Location = new System.Drawing.Point(194, 376);
-            this.lbl_Data_Realizacji.Name = "lbl_Data_Realizacji";
-            this.lbl_Data_Realizacji.Size = new System.Drawing.Size(78, 13);
-            this.lbl_Data_Realizacji.TabIndex = 1;
-            this.lbl_Data_Realizacji.Text = "Data Realizacji";
-            // 
-            // txtBox_Data_Realizacji
-            // 
-            this.txtBox_Data_Realizacji.Location = new System.Drawing.Point(181, 392);
-            this.txtBox_Data_Realizacji.Name = "txtBox_Data_Realizacji";
-            this.txtBox_Data_Realizacji.ReadOnly = true;
-            this.txtBox_Data_Realizacji.Size = new System.Drawing.Size(116, 20);
-            this.txtBox_Data_Realizacji.TabIndex = 3;
-            // 
-            // lblKOSZT
-            // 
-            this.lblKOSZT.AutoSize = true;
-            this.lblKOSZT.Location = new System.Drawing.Point(79, 375);
-            this.lblKOSZT.Name = "lblKOSZT";
-            this.lblKOSZT.Size = new System.Drawing.Size(42, 13);
-            this.lblKOSZT.TabIndex = 13;
-            this.lblKOSZT.Text = "CENA :";
-            // 
-            // txtBoxCena
-            // 
-            this.txtBoxCena.Location = new System.Drawing.Point(47, 392);
-            this.txtBoxCena.Name = "txtBoxCena";
-            this.txtBoxCena.ReadOnly = true;
-            this.txtBoxCena.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxCena.TabIndex = 14;
-            // 
-            // dGVOFERTA
-            // 
-            this.dGVOFERTA.AutoGenerateColumns = false;
-            this.dGVOFERTA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVOFERTA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDZLECENIADataGridViewTextBoxColumn1,
-            this.kOSZTCALKOWITYPRODUKCJIDataGridViewTextBoxColumn,
-            this.cZASPRODUKCJIDataGridViewTextBoxColumn});
-            this.dGVOFERTA.DataSource = this.oFERTABindingSource;
-            this.dGVOFERTA.Location = new System.Drawing.Point(59, 392);
-            this.dGVOFERTA.Name = "dGVOFERTA";
-            this.dGVOFERTA.Size = new System.Drawing.Size(263, 20);
-            this.dGVOFERTA.TabIndex = 9;
-            this.dGVOFERTA.Visible = false;
+            this.btnOdrzuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOdrzuc.Location = new System.Drawing.Point(121, 334);
+            this.btnOdrzuc.Name = "btnOdrzuc";
+            this.btnOdrzuc.Size = new System.Drawing.Size(134, 23);
+            this.btnOdrzuc.TabIndex = 10;
+            this.btnOdrzuc.Text = "Odrzucono";
+            this.btnOdrzuc.UseVisualStyleBackColor = true;
+            this.btnOdrzuc.Click += new System.EventHandler(this.button1_Click);
             // 
             // iDZLECENIADataGridViewTextBoxColumn1
             // 
@@ -425,5 +438,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kOSZTCALKOWITYPRODUKCJIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cZASPRODUKCJIDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource oFERTABindingSource;
+        private System.Windows.Forms.Button btnOdrzuc;
     }
 }
