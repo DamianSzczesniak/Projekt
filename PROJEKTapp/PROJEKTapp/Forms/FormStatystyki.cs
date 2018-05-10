@@ -29,7 +29,16 @@ namespace PROJEKTapp
 
         private void FormStatystyki_Load(object sender, EventArgs e)
         {
-
+            if (ladowanieformularzazokienkami == true)
+            {
+                ladowanieformularzazokienkami = false;
+                btnRozliczenieProjektow.Show();
+            }
+            else
+            {
+                ladowanieformularzazokienkami = true;
+                btnRozliczenieProjektow.Hide();
+            }
         }
 
         private void btnPracownicy_Click(object sender, EventArgs e)
@@ -66,7 +75,22 @@ namespace PROJEKTapp
 
         private void btnStatystyki_Click(object sender, EventArgs e)
         {
+            if (ladowanieformularzazokienkami == true)
+            {
+                ladowanieformularzazokienkami = false;
+                btnRozliczenieProjektow.Show();
+            }
+            else
+            {
+                ladowanieformularzazokienkami = true;
+                btnRozliczenieProjektow.Hide();
+            }
+        }
 
+        private void btnRozliczenieProjektow_Click(object sender, EventArgs e)
+        {
+            FormRozliczenieProjektu RozliczenieProjektow = new FormRozliczenieProjektu(db);
+            RozliczenieProjektow.Show();
         }
     }
 }

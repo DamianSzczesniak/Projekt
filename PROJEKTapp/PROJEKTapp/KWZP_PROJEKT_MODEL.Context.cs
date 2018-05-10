@@ -49,7 +49,6 @@ namespace PROJEKTapp
         public virtual DbSet<SLOWNIK_PROCES_TECHNOLOGICZNY> SLOWNIK_PROCES_TECHNOLOGICZNY { get; set; }
         public virtual DbSet<STANOWISKO> STANOWISKO { get; set; }
         public virtual DbSet<STANOWISKO_PRACOWNICY> STANOWISKO_PRACOWNICY { get; set; }
-        public virtual DbSet<STATUS_ZAMOWIENIA> STATUS_ZAMOWIENIA { get; set; }
         public virtual DbSet<STATUS_ZLECENIA> STATUS_ZLECENIA { get; set; }
         public virtual DbSet<STAWKA> STAWKA { get; set; }
         public virtual DbSet<STAWKA_PRACOWNICY> STAWKA_PRACOWNICY { get; set; }
@@ -57,7 +56,6 @@ namespace PROJEKTapp
         public virtual DbSet<WALUTY> WALUTY { get; set; }
         public virtual DbSet<WOLNE> WOLNE { get; set; }
         public virtual DbSet<WOLNE_PRACOWNICY> WOLNE_PRACOWNICY { get; set; }
-        public virtual DbSet<ZAMOWIENIA> ZAMOWIENIA { get; set; }
         public virtual DbSet<ZLECENIA> ZLECENIA { get; set; }
         public virtual DbSet<PARAMETRY_MASZYNY> PARAMETRY_MASZYNY { get; set; }
         public virtual DbSet<PARAMETRY_MATERIALU> PARAMETRY_MATERIALU { get; set; }
@@ -104,6 +102,12 @@ namespace PROJEKTapp
         public virtual DbSet<ZESPOL_MASZYN> ZESPOL_MASZYN { get; set; }
         public virtual DbSet<ZESPOL_NARZEDZI> ZESPOL_NARZEDZI { get; set; }
         public virtual DbSet<URLOPY_PRACOWNIKA> URLOPY_PRACOWNIKA { get; set; }
+        public virtual DbSet<KOSZTY_CZASY_PRODUKCJI> KOSZTY_CZASY_PRODUKCJI { get; set; }
+        public virtual DbSet<OFERTA> OFERTA { get; set; }
+        public virtual DbSet<PENSJE> PENSJE { get; set; }
+        public virtual DbSet<ZAMOWIENIA> ZAMOWIENIA { get; set; }
+        public virtual DbSet<Status_detale_zlecenie> Status_detale_zlecenie { get; set; }
+        public virtual DbSet<zestawienie> zestawienie { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {

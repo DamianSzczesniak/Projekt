@@ -14,6 +14,8 @@ namespace PROJEKTapp
     {
         KWZP_PROJEKTEntities db;
         bool ladowanieformularzazokienkami;
+        PRACOWNICY pracownik;
+
 
         public FormUrlopy(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
         {
@@ -41,6 +43,7 @@ namespace PROJEKTapp
                 int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
                 this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
                 dgvUrlopyPraconik.Columns[0].Visible = false;
+                dgvUrlopyPraconik.ClearSelection();
             }
             else
             {
@@ -50,8 +53,8 @@ namespace PROJEKTapp
                 ladowanieformularzazokienkami = true;
             }
             
-            monthCalendar1.SelectionStart = DateTime.Now;
-            monthCalendar1.SelectionEnd = DateTime.Now.AddDays(3);
+            KalendarzUrlop.SelectionStart = DateTime.Now;
+            KalendarzUrlop.SelectionEnd = DateTime.Now.AddDays(3);
                 }
 
         private void btnUrlopy_Click(object sender, EventArgs e)
@@ -119,6 +122,43 @@ namespace PROJEKTapp
         {
             pnlWolne.Show();
             czyscform();
+            txtBoxWnioskowany.Text = "------";
+
+            KalendarzUrlop.BoldedDates = new DateTime[] { };
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            this.pracownik = db.PRACOWNICY.Where(pracownik => pracownik.ID_PRACOWNIK == ID).First();
+            foreach (SZKOLENIA szkolenie in pracownik.SZKOLENIA)
+            {
+                int dlugoscSzkolenia = szkolenie.DATA_KONIEC.Subtract(szkolenie.DATA_START).Days + 1;
+                DateTime aktualnaData = szkolenie.DATA_START;
+                for (int i = 0; i < dlugoscSzkolenia; i++)
+                {
+                    KalendarzUrlop.BoldedDates = KalendarzUrlop.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
+
+                }
+            }
+            int suma = 0;
+            foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY)
+            {
+                int dlugoscwolne = wolne.DATA_KONIEC.Subtract(wolne.DATA_START).Days + 1;
+                DateTime aktualnaData = wolne.DATA_START;
+                for (int i = 0; i < dlugoscwolne; i++)
+                {
+                    KalendarzUrlop.BoldedDates = KalendarzUrlop.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
+
+                }
+            }
+
+            foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY.Where(data => data.DATA_START.Year.Equals(txtDataStart.Value.Year)))//TODO rok wybierany z datetimepicker reagowanie na zmianę
+            {
+                int dlugoscwolne = wolne.DATA_KONIEC.Subtract(wolne.DATA_START).Days + 1;
+                DateTime aktualnaData = wolne.DATA_START;
+                suma += dlugoscwolne;
+            }
+
+                txtBoxWykorzystany.Text = suma.ToString();
+            int pozostalo = 26-suma; 
+            txtBoxPozostalo.Text = pozostalo.ToString();
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)
@@ -132,7 +172,28 @@ namespace PROJEKTapp
 
         private void btnUsun_Click(object sender, EventArgs e)
         {
-
+            if (dgvUrlopyPraconik.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Najpierw wybierz szkolenie do usunięcia");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Czy chcesz usunąć Urlop: "+ dgvUrlopyPraconik.CurrentRow.Cells[2].Value + ", pracownikowi: " + ListaPracownikow.CurrentRow.Cells[1].Value + " " + ListaPracownikow.CurrentRow.Cells[2].Value, "Confirmation", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    int ID = Convert.ToInt32(dgvUrlopyPraconik.CurrentRow.Cells[0].Value);
+                    DateTime DataStart= (DateTime)dgvUrlopyPraconik.CurrentRow.Cells[3].Value;
+                    
+                    WOLNE_PRACOWNICY wolneUsun = db.WOLNE_PRACOWNICY.Where(wolne => wolne.ID_PRACOWNIK.Equals(ID))
+                        .Where(wolnedata => wolnedata.DATA_START.Equals(DataStart)).First();
+                    
+                    db.WOLNE_PRACOWNICY.Remove(wolneUsun);
+                    db.SaveChanges();
+                    this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+                    dgvUrlopyPraconik.Columns[0].Visible = false;
+                    this.dgvUrlopyPraconik.Refresh();
+                }
+            }
         }
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
@@ -142,9 +203,14 @@ namespace PROJEKTapp
                 wolnepracownik.DATA_START = txtDataStart.Value;
                 wolnepracownik.ID_WOLNE = (int)cbTypUrlopu.SelectedValue;
                 wolnepracownik.ID_PRACOWNIK = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+                db.WOLNE_PRACOWNICY.Add(wolnepracownik);
                 db.SaveChanges();
                 ListaPracownikow.Refresh();
-                pnlUrlopyControl.Hide();
+                pnlWolne.Hide();
+            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+            this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+                dgvUrlopyPraconik.Columns[0].Visible = false;
+                this.dgvUrlopyPraconik.Refresh();
         }
 
         private void btnWyczysc_Click(object sender, EventArgs e)
@@ -187,6 +253,12 @@ namespace PROJEKTapp
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
             dgvUrlopyPraconik.Columns[0].Visible = false;
+        }
+
+        private void txtDataKoniec_ValueChanged(object sender, EventArgs e)
+        {
+            int Wnioskowany = (txtDataKoniec.Value - txtDataStart.Value).Days + 1;
+            txtBoxWnioskowany.Text = Wnioskowany.ToString();
         }
     }
 }

@@ -8,18 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PROJEKTapp.Forms
+namespace PROJEKTapp
 {
-    public partial class FormOferta : Form
+    public partial class FormRozliczenieProjektu : Form
     {
         KWZP_PROJEKTEntities db;
-        List<ZLECENIA_PRODUKTY_NAZWY> zLECENIA_PRODUKTY_s;
-        public FormOferta(KWZP_PROJEKTEntities db, List<ZLECENIA_PRODUKTY_NAZWY> zLECENIA_PRODUKTY_s)
+        public FormRozliczenieProjektu(KWZP_PROJEKTEntities db)
         {
             this.db = db;
-            this.zLECENIA_PRODUKTY_s = zLECENIA_PRODUKTY_s;
-              
             InitializeComponent();
+            zestawienieBindingSource.DataSource = db.zestawienie.ToList();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
