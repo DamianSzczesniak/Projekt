@@ -566,14 +566,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_NoweZlecenie\SzczegolyZlecenia.resx">
       <DependentUpon>SzczegolyZlecenia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\FormNowaMaszyna.resx">
       <DependentUpon>FormNowaMaszyna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\FormNoweNarzedzie.resx">
       <DependentUpon>FormNoweNarzedzie.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms_Produkcja\FormRezerwacjaMaszyn.resx">
-      <DependentUpon>FormRezerwacjaMaszyn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_Produkcja\FormSpis.resx">
       <DependentUpon>FormSpis.cs</DependentUpon>
