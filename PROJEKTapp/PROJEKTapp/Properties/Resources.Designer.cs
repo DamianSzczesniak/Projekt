@@ -73,9 +73,29 @@ namespace PROJEKTapp.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _18073 {
+            get {
+                object obj = ResourceManager.GetObject("18073", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _return {
             get {
                 object obj = ResourceManager.GetObject("return", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap beznazwy {
+            get {
+                object obj = ResourceManager.GetObject("beznazwy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +116,16 @@ namespace PROJEKTapp.Properties {
         internal static System.Drawing.Bitmap Book_designed_by_Benny_Forsberg_from_the_Noun_Project___with_lines1 {
             get {
                 object obj = ResourceManager.GetObject("Book_designed_by_Benny_Forsberg_from_the_Noun_Project_-_with_lines1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Book_designed_by_Benny_Forsberg_from_the_Noun_Project___with_lines2 {
+            get {
+                object obj = ResourceManager.GetObject("Book_designed_by_Benny_Forsberg_from_the_Noun_Project_-_with_lines2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
