@@ -435,7 +435,7 @@
     <Compile Include="STAN_PRODUKTY_NAZWY.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
-    <Compile Include="STATUS_ZAMOWIENIA.cs">
+    <Compile Include="Status_detale_zlecenie.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="STATUS_ZLECENIA.cs">
