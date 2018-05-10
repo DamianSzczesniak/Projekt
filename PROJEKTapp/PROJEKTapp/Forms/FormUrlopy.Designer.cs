@@ -70,6 +70,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbTypUrlopu = new System.Windows.Forms.ComboBox();
+            this.btnSprawdz = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlUrlopyControl.SuspendLayout();
@@ -304,6 +305,7 @@
             // 
             // pnlWolne
             // 
+            this.pnlWolne.Controls.Add(this.btnSprawdz);
             this.pnlWolne.Controls.Add(this.btnAnuluj);
             this.pnlWolne.Controls.Add(this.btnZapiszDodaj);
             this.pnlWolne.Controls.Add(this.btnWyczysc);
@@ -534,6 +536,16 @@
             this.cbTypUrlopu.Size = new System.Drawing.Size(185, 21);
             this.cbTypUrlopu.TabIndex = 2;
             // 
+            // btnSprawdz
+            // 
+            this.btnSprawdz.Location = new System.Drawing.Point(430, 184);
+            this.btnSprawdz.Name = "btnSprawdz";
+            this.btnSprawdz.Size = new System.Drawing.Size(78, 36);
+            this.btnSprawdz.TabIndex = 73;
+            this.btnSprawdz.Text = "Sprawdź";
+            this.btnSprawdz.UseVisualStyleBackColor = true;
+            this.btnSprawdz.Click += new System.EventHandler(this.btnSprawdz_Click);
+            // 
             // FormUrlopy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,5 +618,6 @@
         private System.Windows.Forms.Button btnWyczysc;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dgvUrlopyPraconik;
+        private System.Windows.Forms.Button btnSprawdz;
     }
 }
