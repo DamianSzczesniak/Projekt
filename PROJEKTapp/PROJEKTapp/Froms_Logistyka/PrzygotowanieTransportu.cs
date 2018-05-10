@@ -13,18 +13,13 @@ namespace PROJEKTapp.Forms
     public partial class PrzygotowanieTransportu : Form
     {
         KWZP_PROJEKTEntities db;
-        string IdDostawy;
         public PrzygotowanieTransportu(KWZP_PROJEKTEntities db)
         {
             InitializeComponent();
             this.db = db;
-
-
-
             ComboNumerDostawy.DataSource = db.DOSTAWA.ToList();
             ComboNumerDostawy.DisplayMember = "ID_DOSTAWY";
-
-            this.dataGridTransport.DataSource = db.PRZYGOTOWANIE_TRANSPORTU.Where(x => x.ID_POJAZDU.ToString() == IdDostawy).ToList();
+            //string IdDostawy = (int.Parse(ComboNumerDostawy.SelectedValue.ToString())).ToString();
 
         }
         private void Btn_Back_Click(object sender, EventArgs e)
@@ -34,8 +29,7 @@ namespace PROJEKTapp.Forms
 
         private void ComboNumerDostawy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //IdDostawy = int.Parse(ComboNumerDostawy.SelectedValue)ToString();
-            textBox1.Text = IdDostawy.ToString();
+            this.dataGridTransport.DataSource = db.PRZYGOTOWANIE_TRANSPORTU.Where(x => x.ID_POJAZDU == ((DOSTAWA)ComboNumerDostawy.SelectedValue).ID_DOSTAWY).ToList();
         }
     }
 }
