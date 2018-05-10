@@ -34,11 +34,11 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvRozliczenie = new System.Windows.Forms.DataGridView();
-            this.zestawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wydatkiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obrotyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zarobekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zestawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRozliczenie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zestawienieBindingSource)).BeginInit();
@@ -52,7 +52,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1300, 59);
+            this.panel1.Size = new System.Drawing.Size(1366, 59);
             this.panel1.TabIndex = 9;
             // 
             // btnExit
@@ -60,7 +60,7 @@
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(1297, 0);
+            this.btnExit.Location = new System.Drawing.Point(1297, 3);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(57, 55);
             this.btnExit.TabIndex = 2;
@@ -96,10 +96,6 @@
             this.dgvRozliczenie.Size = new System.Drawing.Size(560, 468);
             this.dgvRozliczenie.TabIndex = 10;
             // 
-            // zestawienieBindingSource
-            // 
-            this.zestawienieBindingSource.DataSource = typeof(PROJEKTapp.zestawienie);
-            // 
             // iDZLECENIADataGridViewTextBoxColumn
             // 
             this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
@@ -128,11 +124,15 @@
             this.zarobekDataGridViewTextBoxColumn.Name = "zarobekDataGridViewTextBoxColumn";
             this.zarobekDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // zestawienieBindingSource
+            // 
+            this.zestawienieBindingSource.DataSource = typeof(PROJEKTapp.zestawienie);
+            // 
             // FormRozliczenieProjektu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 768);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.dgvRozliczenie);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
