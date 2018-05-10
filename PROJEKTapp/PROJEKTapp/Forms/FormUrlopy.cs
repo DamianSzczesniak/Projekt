@@ -52,9 +52,7 @@ namespace PROJEKTapp
                 pnlWolne.Hide();
                 ladowanieformularzazokienkami = true;
             }
-            
-            KalendarzUrlop.SelectionStart = DateTime.Now;
-            KalendarzUrlop.SelectionEnd = DateTime.Now.AddDays(3);
+           
                 }
 
         private void btnUrlopy_Click(object sender, EventArgs e)
