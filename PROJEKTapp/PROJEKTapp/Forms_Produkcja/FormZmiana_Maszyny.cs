@@ -33,8 +33,6 @@ namespace PROJEKTapp.Forms_Produkcja
             textBox5.Text = maszyny.TYP_MASZYNY;
             textBox6.Text = maszyny.POSUW.ToString();
 
-
-
         }
 
         private void Zapisz_Click(object sender, EventArgs e)
@@ -89,5 +87,23 @@ namespace PROJEKTapp.Forms_Produkcja
                 textBox6.Clear();
             }
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBox3.Text))
+            {
+                int parsedVal;
+                if (!int.TryParse(textBox3.Text, out parsedVal))
+                {
+                    MessageBox.Show("To pole może zawierać tylko liczbę. ");
+                    textBox3.Clear();
+                    return;
+                }
+            }
+        }
+
+  
+
+
     }
 }

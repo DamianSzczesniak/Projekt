@@ -46,20 +46,20 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(245, 453);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(213, 409);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 58);
+            this.button1.Size = new System.Drawing.Size(111, 87);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Aktualizuj";
+            this.button1.Text = "Zapisz";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // WyczyscDaneM
             // 
-            this.WyczyscDaneM.Location = new System.Drawing.Point(409, 451);
+            this.WyczyscDaneM.Location = new System.Drawing.Point(356, 409);
             this.WyczyscDaneM.Name = "WyczyscDaneM";
-            this.WyczyscDaneM.Size = new System.Drawing.Size(101, 58);
+            this.WyczyscDaneM.Size = new System.Drawing.Size(123, 87);
             this.WyczyscDaneM.TabIndex = 3;
             this.WyczyscDaneM.Text = "Wyczyść dane";
             this.WyczyscDaneM.UseVisualStyleBackColor = true;
@@ -67,11 +67,11 @@
             // 
             // ZapiszM
             // 
-            this.ZapiszM.Location = new System.Drawing.Point(65, 451);
+            this.ZapiszM.Location = new System.Drawing.Point(62, 409);
             this.ZapiszM.Name = "ZapiszM";
-            this.ZapiszM.Size = new System.Drawing.Size(110, 58);
+            this.ZapiszM.Size = new System.Drawing.Size(119, 87);
             this.ZapiszM.TabIndex = 2;
-            this.ZapiszM.Text = "Zapisz";
+            this.ZapiszM.Text = "Dodaj nowe na podstawie istniejącego narzędzia";
             this.ZapiszM.UseVisualStyleBackColor = true;
             this.ZapiszM.Click += new System.EventHandler(this.ZapiszM_Click);
             // 
@@ -103,7 +103,6 @@
             this.panelNarzedzia.Name = "panelNarzedzia";
             this.panelNarzedzia.Size = new System.Drawing.Size(600, 512);
             this.panelNarzedzia.TabIndex = 6;
-            this.panelNarzedzia.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNarzedzia_Paint);
             // 
             // label7
             // 

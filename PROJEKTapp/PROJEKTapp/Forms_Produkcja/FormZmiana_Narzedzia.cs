@@ -78,10 +78,7 @@ namespace PROJEKTapp.Forms_Produkcja
         
         }
 
-        private void panelNarzedzia_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+    
     }
     }
 
