@@ -26,10 +26,10 @@ namespace PROJEKTapp.Forms_Produkcja
 
             NARZEDZIA narzedzia = new NARZEDZIA();
             narzedzia = (NARZEDZIA)send;
-            textBox5.Text = narzedzia.NAZWA;
-            textBox6.Text = narzedzia.MODEL;
-            textBox7.Text = narzedzia.NR_EWIDENCYJNY.ToString();
-            textBox8.Text = narzedzia.KOSZT_ZA_H.ToString();
+            textBoxNazwa.Text = narzedzia.NAZWA;
+            textBoxModel.Text = narzedzia.MODEL;
+            textBoxNrEwidencyjny.Text = narzedzia.NR_EWIDENCYJNY.ToString();
+            textBoxKosztZaH.Text = narzedzia.KOSZT_ZA_H.ToString();
 
         }
 
@@ -37,10 +37,10 @@ namespace PROJEKTapp.Forms_Produkcja
         private void ZapiszM_Click(object sender, EventArgs e)
         {
             NARZEDZIA noweNarzedzie = new NARZEDZIA();
-            noweNarzedzie.NAZWA = this.textBox5.Text;
-            noweNarzedzie.MODEL = this.textBox6.Text;
-            noweNarzedzie.NR_EWIDENCYJNY = this.textBox7.Text;
-            noweNarzedzie.KOSZT_ZA_H = decimal.Parse(this.textBox8.Text);
+            noweNarzedzie.NAZWA = this.textBoxNazwa.Text;
+            noweNarzedzie.MODEL = this.textBoxModel.Text;
+            noweNarzedzie.NR_EWIDENCYJNY = this.textBoxNrEwidencyjny.Text;
+            noweNarzedzie.KOSZT_ZA_H = decimal.Parse(this.textBoxKosztZaH.Text);
          
 
             db.NARZEDZIA.Add(noweNarzedzie);
@@ -51,10 +51,10 @@ namespace PROJEKTapp.Forms_Produkcja
         {
             //edycja
          
-            narzedzie.NAZWA = this.textBox5.Text;
-            narzedzie.MODEL = this.textBox6.Text;
-            narzedzie.NR_EWIDENCYJNY = this.textBox7.Text;
-            narzedzie.KOSZT_ZA_H = decimal.Parse(this.textBox8.Text);
+            narzedzie.NAZWA = this.textBoxNazwa.Text;
+            narzedzie.MODEL = this.textBoxModel.Text;
+            narzedzie.NR_EWIDENCYJNY = this.textBoxNrEwidencyjny.Text;
+            narzedzie.KOSZT_ZA_H = decimal.Parse(this.textBoxKosztZaH.Text);
 
             foreach (Control control in this.panelNarzedzia.Controls)
             {
@@ -71,10 +71,10 @@ namespace PROJEKTapp.Forms_Produkcja
 
         private void WyczyscDaneM_Click(object sender, EventArgs e)
         {
-            textBox5.Clear();
-            textBox6.Clear();
-            textBox7.Clear();
-            textBox8.Clear();
+            textBoxNazwa.Clear();
+            textBoxModel.Clear();
+            textBoxNrEwidencyjny.Clear();
+            textBoxKosztZaH.Clear();
         
         }
 

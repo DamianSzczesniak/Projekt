@@ -30,19 +30,19 @@
         {
             this.WyczyscDane = new System.Windows.Forms.Button();
             this.Aktualizuj = new System.Windows.Forms.Button();
-            this.Zapisz = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Dodaj = new System.Windows.Forms.Button();
+            this.textBoxCenaZaH = new System.Windows.Forms.TextBox();
+            this.textBoxPredkosc = new System.Windows.Forms.TextBox();
+            this.textBoxMarka = new System.Windows.Forms.TextBox();
+            this.textBoxModel = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxTypMaszyny = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxPosuw = new System.Windows.Forms.TextBox();
             this.panelMaszyny = new System.Windows.Forms.Panel();
             this.panelMaszyny.SuspendLayout();
             this.SuspendLayout();
@@ -67,44 +67,44 @@
             this.Aktualizuj.UseVisualStyleBackColor = true;
             this.Aktualizuj.Click += new System.EventHandler(this.Aktualizuj_Click);
             // 
-            // Zapisz
+            // Dodaj
             // 
-            this.Zapisz.Location = new System.Drawing.Point(12, 306);
-            this.Zapisz.Name = "Zapisz";
-            this.Zapisz.Size = new System.Drawing.Size(134, 79);
-            this.Zapisz.TabIndex = 14;
-            this.Zapisz.Text = "Dodaj nową na podstawie istniejącej maszyny";
-            this.Zapisz.UseVisualStyleBackColor = true;
-            this.Zapisz.Click += new System.EventHandler(this.Zapisz_Click);
+            this.Dodaj.Location = new System.Drawing.Point(12, 306);
+            this.Dodaj.Name = "Dodaj";
+            this.Dodaj.Size = new System.Drawing.Size(134, 79);
+            this.Dodaj.TabIndex = 14;
+            this.Dodaj.Text = "Dodaj nową na podstawie istniejącej maszyny";
+            this.Dodaj.UseVisualStyleBackColor = true;
+            this.Dodaj.Click += new System.EventHandler(this.Zapisz_Click);
             // 
-            // textBox4
+            // textBoxCenaZaH
             // 
-            this.textBox4.Location = new System.Drawing.Point(101, 251);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(337, 20);
-            this.textBox4.TabIndex = 8;
+            this.textBoxCenaZaH.Location = new System.Drawing.Point(101, 251);
+            this.textBoxCenaZaH.Name = "textBoxCenaZaH";
+            this.textBoxCenaZaH.Size = new System.Drawing.Size(337, 20);
+            this.textBoxCenaZaH.TabIndex = 8;
             // 
-            // textBox3
+            // textBoxPredkosc
             // 
-            this.textBox3.Location = new System.Drawing.Point(101, 169);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(337, 20);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBoxPredkosc.Location = new System.Drawing.Point(101, 169);
+            this.textBoxPredkosc.Name = "textBoxPredkosc";
+            this.textBoxPredkosc.Size = new System.Drawing.Size(337, 20);
+            this.textBoxPredkosc.TabIndex = 9;
+            this.textBoxPredkosc.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox2
+            // textBoxMarka
             // 
-            this.textBox2.Location = new System.Drawing.Point(101, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(337, 20);
-            this.textBox2.TabIndex = 10;
+            this.textBoxMarka.Location = new System.Drawing.Point(101, 74);
+            this.textBoxMarka.Name = "textBoxMarka";
+            this.textBoxMarka.Size = new System.Drawing.Size(337, 20);
+            this.textBoxMarka.TabIndex = 10;
             // 
-            // textBox1
+            // textBoxModel
             // 
-            this.textBox1.Location = new System.Drawing.Point(101, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(337, 20);
-            this.textBox1.TabIndex = 11;
+            this.textBoxModel.Location = new System.Drawing.Point(101, 16);
+            this.textBoxModel.Name = "textBoxModel";
+            this.textBoxModel.Size = new System.Drawing.Size(337, 20);
+            this.textBoxModel.TabIndex = 11;
             // 
             // label4
             // 
@@ -151,12 +151,12 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Typ maszyny";
             // 
-            // textBox5
+            // textBoxTypMaszyny
             // 
-            this.textBox5.Location = new System.Drawing.Point(101, 128);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(337, 20);
-            this.textBox5.TabIndex = 9;
+            this.textBoxTypMaszyny.Location = new System.Drawing.Point(101, 128);
+            this.textBoxTypMaszyny.Name = "textBoxTypMaszyny";
+            this.textBoxTypMaszyny.Size = new System.Drawing.Size(337, 20);
+            this.textBoxTypMaszyny.TabIndex = 9;
             // 
             // label6
             // 
@@ -167,12 +167,12 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Posuw";
             // 
-            // textBox6
+            // textBoxPosuw
             // 
-            this.textBox6.Location = new System.Drawing.Point(101, 205);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(337, 20);
-            this.textBox6.TabIndex = 8;
+            this.textBoxPosuw.Location = new System.Drawing.Point(101, 205);
+            this.textBoxPosuw.Name = "textBoxPosuw";
+            this.textBoxPosuw.Size = new System.Drawing.Size(337, 20);
+            this.textBoxPosuw.TabIndex = 8;
             // 
             // panelMaszyny
             // 
@@ -183,15 +183,15 @@
             this.panelMaszyny.Controls.Add(this.label5);
             this.panelMaszyny.Controls.Add(this.Aktualizuj);
             this.panelMaszyny.Controls.Add(this.label2);
-            this.panelMaszyny.Controls.Add(this.Zapisz);
+            this.panelMaszyny.Controls.Add(this.Dodaj);
             this.panelMaszyny.Controls.Add(this.label3);
-            this.panelMaszyny.Controls.Add(this.textBox6);
+            this.panelMaszyny.Controls.Add(this.textBoxPosuw);
             this.panelMaszyny.Controls.Add(this.label6);
-            this.panelMaszyny.Controls.Add(this.textBox4);
-            this.panelMaszyny.Controls.Add(this.textBox5);
-            this.panelMaszyny.Controls.Add(this.textBox1);
-            this.panelMaszyny.Controls.Add(this.textBox3);
-            this.panelMaszyny.Controls.Add(this.textBox2);
+            this.panelMaszyny.Controls.Add(this.textBoxCenaZaH);
+            this.panelMaszyny.Controls.Add(this.textBoxTypMaszyny);
+            this.panelMaszyny.Controls.Add(this.textBoxModel);
+            this.panelMaszyny.Controls.Add(this.textBoxPredkosc);
+            this.panelMaszyny.Controls.Add(this.textBoxMarka);
             this.panelMaszyny.Location = new System.Drawing.Point(0, 24);
             this.panelMaszyny.Margin = new System.Windows.Forms.Padding(2);
             this.panelMaszyny.Name = "panelMaszyny";
@@ -216,19 +216,19 @@
         #endregion
         private System.Windows.Forms.Button WyczyscDane;
         private System.Windows.Forms.Button Aktualizuj;
-        private System.Windows.Forms.Button Zapisz;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button Dodaj;
+        private System.Windows.Forms.TextBox textBoxCenaZaH;
+        private System.Windows.Forms.TextBox textBoxPredkosc;
+        private System.Windows.Forms.TextBox textBoxMarka;
+        private System.Windows.Forms.TextBox textBoxModel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxTypMaszyny;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxPosuw;
         private System.Windows.Forms.Panel panelMaszyny;
     }
 }
