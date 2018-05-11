@@ -92,8 +92,6 @@ namespace PROJEKTapp
         public virtual DbSet<HISTORIA_STATUS_ZLECENIA> HISTORIA_STATUS_ZLECENIA { get; set; }
         public virtual DbSet<ZLECENIA_PRODUKTY_NAZWY> ZLECENIA_PRODUKTY_NAZWY { get; set; }
         public virtual DbSet<SZKOLENIA_PRACOWNIKA> SZKOLENIA_PRACOWNIKA { get; set; }
-        public virtual DbSet<SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE> SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE { get; set; }
-        public virtual DbSet<ZAMOWIENIA_MATERIALU_NAZLECENIE> ZAMOWIENIA_MATERIALU_NAZLECENIE { get; set; }
         public virtual DbSet<PRACOWNICY_W_PRACY> PRACOWNICY_W_PRACY { get; set; }
         public virtual DbSet<CZAS_PRACY_MASZYN> CZAS_PRACY_MASZYN { get; set; }
         public virtual DbSet<CZAS_PRACY_NARZEDZI> CZAS_PRACY_NARZEDZI { get; set; }
@@ -108,6 +106,8 @@ namespace PROJEKTapp
         public virtual DbSet<ZAMOWIENIA> ZAMOWIENIA { get; set; }
         public virtual DbSet<Status_detale_zlecenie> Status_detale_zlecenie { get; set; }
         public virtual DbSet<zestawienie> zestawienie { get; set; }
+        public virtual DbSet<SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE> SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE { get; set; }
+        public virtual DbSet<ZAMOWIENIA_MATERIALU_NAZLECENIE> ZAMOWIENIA_MATERIALU_NAZLECENIE { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {

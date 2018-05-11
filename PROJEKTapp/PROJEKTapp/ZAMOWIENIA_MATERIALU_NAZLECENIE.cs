@@ -17,9 +17,10 @@ namespace PROJEKTapp
         public int ID_ZLECENIA { get; set; }
         public int ID_PRODUKTU { get; set; }
         public Nullable<int> ILOSC { get; set; }
-        public int ID_POLPRODUKTU { get; set; }
-        public int ID_MATERIAL { get; set; }
+        public Nullable<int> ID_POLPRODUKTU { get; set; }
+        public Nullable<int> ID_MATERIAL { get; set; }
         public string NAZWA { get; set; }
+        public string PELNA_NAZWA_MATERIALU { get; set; }
         public int LICZBA_SZTUK { get; set; }
         public Nullable<int> SUMA_p { get; set; }
     }
