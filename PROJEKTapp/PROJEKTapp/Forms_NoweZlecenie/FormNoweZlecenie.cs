@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -13,11 +14,13 @@ namespace PROJEKTapp
     {
         KWZP_PROJEKTEntities db;
         List<ZLECENIA_PRODUKTY_NAZWY> lZP = new List<ZLECENIA_PRODUKTY_NAZWY>();
+        List<ZLECENIA_PRODUKTY_NAZWY> sZP = new List<ZLECENIA_PRODUKTY_NAZWY>();
         ZLECENIA zlecenie;
         bool ofertowano = false;
         public static int id_firmy;
         public FormNoweZlecenie(ZLECENIA zlecenie, KWZP_PROJEKTEntities db)
         {
+
             this.db = db;
             this.zlecenie = zlecenie;
             InitializeComponent();
@@ -111,23 +114,27 @@ namespace PROJEKTapp
             db.OFERTA = nDB.OFERTA;
             db = nDB;
             int c = db.ZLECENIA.Max(a => a.ID_ZLECENIA);
-            oFERTABindingSource.DataSource = db.OFERTA.Where(a => a.ID_ZLECENIA == c).ToList();
-            OFERTA oFERTA = oFERTABindingSource.Current as OFERTA;
+            oFERTABindingSource1.DataSource = db.OFERTA.Where(a => a.ID_ZLECENIA == c).ToList();
+            OFERTA oFERTA = oFERTABindingSource1.Current as OFERTA;
             decimal dcena = decimal.Parse(oFERTA.KOSZT_CALKOWITY_PRODUKCJI.ToString());
             int cena = Decimal.ToInt32(dcena);
-            txtBoxCena.Text = cena.ToString();
+            string  ocena = cena.ToString("## ## ## ###" + " zł", CultureInfo.InvariantCulture); ;
+            txtBoxCena.Text = ocena;
             DateTime date = db.ZLECENIA.Max(a => a.DATA_REALIZACJI);
             DateTime czasrealizacji1 = date.AddDays(double.Parse(oFERTA.CZAS_PRODUKCJI.ToString()));
-            DateTime czasrealizacji2 = date.AddDays(6);
+            DateTime czasrealizacji2 = czasrealizacji1.AddDays(6);
             txtBox_Data_Realizacji.Text = czasrealizacji2.ToLongDateString();
+            
         }
 
         private void btnPrzedstaw_Oferte_Click(object sender, EventArgs e)
         {
+            czyscOferteProdukt();
 
             ofertowano = true;
            
             db.SaveChanges();
+            sZP.Clear();
 
             foreach (ZLECENIA_PRODUKTY_NAZWY element in lZP)
             {
@@ -136,14 +143,11 @@ namespace PROJEKTapp
                 zLECENIE_PRODUKT.ID_PRODUKTU = element.ID_PRODUKTU;
                 zLECENIE_PRODUKT.ILOSC = element.ILOSC;
                 db.ZLECENIE_PRODUKT.Add(zLECENIE_PRODUKT);
+                sZP.Add(element);
                 db.SaveChanges();
             }
 
             ofertuj();
-
-
-            
-
 
         }
 
@@ -166,6 +170,7 @@ namespace PROJEKTapp
 
         private void FormNoweZlecenie_Load(object sender, EventArgs e)
         {
+            dGVOFERTA.Visible = false;
             KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
             db.ZLECENIA = ndb.ZLECENIA;
             db = ndb;
@@ -178,10 +183,7 @@ namespace PROJEKTapp
             db.SaveChanges();
         }
 
-        private void dataGridViewOferta_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+   
 
         private void txtBox_Ilosc_Oferta_TextChanged(object sender, EventArgs e)
         {
@@ -223,12 +225,12 @@ namespace PROJEKTapp
             
         }
 
-        private void btnOdrzuc_click(object sender, EventArgs e)
+        private void czyscOferteProdukt ()
         {
             if (ofertowano)
-            { 
+            {
 
-                foreach (ZLECENIA_PRODUKTY_NAZWY element in lZP)
+                foreach (ZLECENIA_PRODUKTY_NAZWY element in sZP)
                 {
                     ZLECENIE_PRODUKT zLECENIE_PRODUKT = new ZLECENIE_PRODUKT();
                     zLECENIE_PRODUKT.ID_ZLECENIA = element.ID_ZLECENIA;
@@ -239,6 +241,11 @@ namespace PROJEKTapp
                     db.SaveChanges();
                 }
             }
+        }
+
+        private void btnOdrzuc_click(object sender, EventArgs e)
+        {
+            czyscOferteProdukt();
 
             ZLECENIA zLECENIA = db.ZLECENIA.First(a => a.ID_ZLECENIA == zlecenie.ID_ZLECENIA);
          
