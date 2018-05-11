@@ -226,7 +226,7 @@
             this.btnOdrzuc.TabIndex = 10;
             this.btnOdrzuc.Text = "Odrzucono";
             this.btnOdrzuc.UseVisualStyleBackColor = true;
-            this.btnOdrzuc.Click += new System.EventHandler(this.button1_Click);
+            this.btnOdrzuc.Click += new System.EventHandler(this.btnOdrzuc_click);
             // 
             // dGVOFERTA
             // 

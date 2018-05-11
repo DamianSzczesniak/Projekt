@@ -14,6 +14,7 @@ namespace PROJEKTapp
         KWZP_PROJEKTEntities db;
         List<ZLECENIA_PRODUKTY_NAZWY> lZP = new List<ZLECENIA_PRODUKTY_NAZWY>();
         ZLECENIA zlecenie;
+        bool ofertowano = false;
         public static int id_firmy;
         public FormNoweZlecenie(ZLECENIA zlecenie, KWZP_PROJEKTEntities db)
         {
@@ -79,7 +80,7 @@ namespace PROJEKTapp
                     zLECENIA_PRODUKTY_NAZWY.ID_PRODUKTU = int.Parse(cBox_Produkty_Oferta.SelectedValue.ToString());
                     zLECENIA_PRODUKTY_NAZWY.ILOSC = int.Parse(txtBox_Ilosc_Oferta.Text);
                     zLECENIA_PRODUKTY_NAZWY.NAZWA_PRODUKTU = cBox_Produkty_Oferta.Text;
-                    zLECENIA_PRODUKTY_NAZWY.ID_ZLECENIA = db.ZLECENIA.Max(a => a.ID_ZLECENIA) + 1;
+                    zLECENIA_PRODUKTY_NAZWY.ID_ZLECENIA = db.ZLECENIA.Max(a => a.ID_ZLECENIA);
 
                     lZP.Add(zLECENIA_PRODUKTY_NAZWY);
 
@@ -104,6 +105,7 @@ namespace PROJEKTapp
 
         private void ofertuj()
         {
+            
             KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
             db.KOSZTY_CZASY_PRODUKCJI = nDB.KOSZTY_CZASY_PRODUKCJI;
             db.OFERTA = nDB.OFERTA;
@@ -122,14 +124,9 @@ namespace PROJEKTapp
 
         private void btnPrzedstaw_Oferte_Click(object sender, EventArgs e)
         {
-            
 
-            zlecenie.DATA_REALIZACJI = DateTime.Parse(txtBox_Data_Zlecenia.Text);
-            zlecenie.DATA_ZLECENIA = DateTime.Parse(txtBox_Data_Zlecenia.Text);
-            zlecenie.ID_FIRMY = 1;
-            int id = db.ZLECENIA.Max(a => a.ID_ZLECENIA);
-            zlecenie.ID_ZLECENIA = id;
-            db.ZLECENIA.Add(zlecenie);
+            ofertowano = true;
+           
             db.SaveChanges();
 
             foreach (ZLECENIA_PRODUKTY_NAZWY element in lZP)
@@ -169,7 +166,16 @@ namespace PROJEKTapp
 
         private void FormNoweZlecenie_Load(object sender, EventArgs e)
         {
+            KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
+            db.ZLECENIA = ndb.ZLECENIA;
+            db = ndb;
+            db.SaveChanges();
             cbBoxFirmy.DataSource = db.FIRMY.ToList();
+            zlecenie.DATA_REALIZACJI = DateTime.Parse(txtBox_Data_Zlecenia.Text);
+            zlecenie.DATA_ZLECENIA = DateTime.Parse(txtBox_Data_Zlecenia.Text);
+            zlecenie.ID_FIRMY = 1;
+            db.ZLECENIA.Add(zlecenie);
+            db.SaveChanges();
         }
 
         private void dataGridViewOferta_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -217,22 +223,29 @@ namespace PROJEKTapp
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnOdrzuc_click(object sender, EventArgs e)
         {
-            foreach (ZLECENIA_PRODUKTY_NAZWY element in lZP)
-            {
-                ZLECENIE_PRODUKT zLECENIE_PRODUKT = new ZLECENIE_PRODUKT();
-                zLECENIE_PRODUKT.ID_ZLECENIA = element.ID_ZLECENIA;
-                zLECENIE_PRODUKT.ID_PRODUKTU = element.ID_PRODUKTU;
-                zLECENIE_PRODUKT.ILOSC = element.ILOSC;
-                db.ZLECENIE_PRODUKT.Attach(zLECENIE_PRODUKT);
-                db.ZLECENIE_PRODUKT.Remove(zLECENIE_PRODUKT);
-                db.SaveChanges();
+            if (ofertowano)
+            { 
+
+                foreach (ZLECENIA_PRODUKTY_NAZWY element in lZP)
+                {
+                    ZLECENIE_PRODUKT zLECENIE_PRODUKT = new ZLECENIE_PRODUKT();
+                    zLECENIE_PRODUKT.ID_ZLECENIA = element.ID_ZLECENIA;
+                    zLECENIE_PRODUKT.ID_PRODUKTU = element.ID_PRODUKTU;
+                    zLECENIE_PRODUKT.ILOSC = element.ILOSC;
+                    db.ZLECENIE_PRODUKT.Attach(zLECENIE_PRODUKT);
+                    db.ZLECENIE_PRODUKT.Remove(zLECENIE_PRODUKT);
+                    db.SaveChanges();
+                }
             }
+
             ZLECENIA zLECENIA = db.ZLECENIA.First(a => a.ID_ZLECENIA == zlecenie.ID_ZLECENIA);
          
             db.ZLECENIA.Remove(zLECENIA);
             db.SaveChanges();
+            KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
+            db = nDB;
             this.Close();
         }
     }
