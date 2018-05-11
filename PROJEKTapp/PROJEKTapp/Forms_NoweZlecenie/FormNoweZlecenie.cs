@@ -14,6 +14,7 @@ namespace PROJEKTapp
         KWZP_PROJEKTEntities db;
         List<ZLECENIA_PRODUKTY_NAZWY> lZP = new List<ZLECENIA_PRODUKTY_NAZWY>();
         ZLECENIA zlecenie;
+        public static int id_firmy;
         public FormNoweZlecenie(ZLECENIA zlecenie, KWZP_PROJEKTEntities db)
         {
             this.db = db;
@@ -149,6 +150,7 @@ namespace PROJEKTapp
 
         }
 
+        
 
             private void btnWybierzFirme_Click(object sender, EventArgs e)
         {
@@ -160,6 +162,8 @@ namespace PROJEKTapp
                 {
                     cbBoxFirmy.DataSource = db.FIRMY.ToList();
                 }
+                cbBoxFirmy.SelectedValue = id_firmy;
+                
             }
         }
 

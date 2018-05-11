@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.FirmyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNazwaTabeliFirmy = new System.Windows.Forms.Label();
             this.btnUsun = new System.Windows.Forms.Button();
             this.btnEdytuj = new System.Windows.Forms.Button();
@@ -44,6 +43,7 @@
             this.pOJAZDYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zAMOWIENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirmyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FirmyBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,10 +70,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(265, 245);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // FirmyBindingSource
-            // 
-            this.FirmyBindingSource.DataSource = typeof(PROJEKTapp.FIRMY);
             // 
             // lblNazwaTabeliFirmy
             // 
@@ -188,6 +184,10 @@
             this.zLECENIADataGridViewTextBoxColumn.ReadOnly = true;
             this.zLECENIADataGridViewTextBoxColumn.Visible = false;
             // 
+            // FirmyBindingSource
+            // 
+            this.FirmyBindingSource.DataSource = typeof(PROJEKTapp.FIRMY);
+            // 
             // FormFirmyDoZlecenia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +202,7 @@
             this.Name = "FormFirmyDoZlecenia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ewidencja Firm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormFirmyDoZlecenia_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FirmyBindingSource)).EndInit();
             this.ResumeLayout(false);
