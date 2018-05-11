@@ -128,8 +128,7 @@ namespace PROJEKTapp
             OFERTA oFERTA = oFERTABindingSource1.Current as OFERTA;
             decimal dcena = decimal.Parse(oFERTA.KOSZT_CALKOWITY_PRODUKCJI.ToString());
             int cena = Decimal.ToInt32(dcena);
-            string  ocena = cena.ToString("## ## ## ###" + " zł", CultureInfo.InvariantCulture);
-            txtBoxCena.Text = ocena;
+            txtBoxCena.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", cena);
             DateTime date = db.ZLECENIA.Max(a => a.DATA_REALIZACJI);
             DateTime czasrealizacji1 = date.AddDays(double.Parse(oFERTA.CZAS_PRODUKCJI.ToString()));
             DateTime czasrealizacji2 = czasrealizacji1.AddDays(6);

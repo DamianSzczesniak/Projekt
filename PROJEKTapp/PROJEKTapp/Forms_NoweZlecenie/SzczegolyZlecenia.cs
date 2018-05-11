@@ -35,8 +35,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             OFERTA oferta = db.OFERTA.Where(a => a.ID_ZLECENIA == zlecenia.ID_ZLECENIA).First();
             decimal dcena = decimal.Parse(oferta.KOSZT_CALKOWITY_PRODUKCJI.ToString());
             int cena = Decimal.ToInt32(dcena);
-            string ocena = cena.ToString("## ## ## ###" + " zł", CultureInfo.InvariantCulture);
-            txtBoxCena.Text = ocena;
+            txtBoxCena.Text  = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", cena);
             dataGridViewOferta.DataSource = db.ZLECENIA_PRODUKTY_NAZWY.Where(a => a.ID_ZLECENIA == id).ToList();
 
             List<CZAS_PRACY_MASZYN> czasyPracy = this.db.CZAS_PRACY_MASZYN.Where(x => x.ID_ZLECENIA == id).ToList();
