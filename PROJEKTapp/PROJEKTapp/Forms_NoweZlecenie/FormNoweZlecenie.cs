@@ -16,6 +16,7 @@ namespace PROJEKTapp
         List<ZLECENIA_PRODUKTY_NAZWY> lZP = new List<ZLECENIA_PRODUKTY_NAZWY>();
         List<ZLECENIA_PRODUKTY_NAZWY> sZP = new List<ZLECENIA_PRODUKTY_NAZWY>();
         ZLECENIA zlecenie;
+        
         bool ofertowano = false;
         public static int id_firmy;
         public FormNoweZlecenie(ZLECENIA zlecenie, KWZP_PROJEKTEntities db)
@@ -60,6 +61,7 @@ namespace PROJEKTapp
             db.SaveChanges();
 
             MessageBox.Show("Akcje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             this.Close();
         }
 
@@ -103,6 +105,14 @@ namespace PROJEKTapp
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            czyscOferteProdukt();
+
+            ZLECENIA zLECENIA = db.ZLECENIA.First(a => a.ID_ZLECENIA == zlecenie.ID_ZLECENIA);
+
+            db.ZLECENIA.Remove(zLECENIA);
+            db.SaveChanges();
+            KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
+            db = nDB;
             this.Close();
         }
 

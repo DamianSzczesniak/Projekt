@@ -80,5 +80,33 @@ namespace PROJEKTapp.Forms_NoweZlecenie
         }
 
         
+
+        private void txtBoxNrTelefonu_TextChanged(object sender, System.EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtBoxNrTelefonu.Text))
+            {
+                int parsedVal;
+                if (!int.TryParse(txtBoxNrTelefonu.Text, out parsedVal))
+                {
+                    MessageBox.Show("To pole może zawierać tylko liczbę. ");
+                    txtBoxNrTelefonu.Clear();
+                    return;
+                }
+            }
+        }
+
+        private void txtBoxNIP_TextChanged(object sender, System.EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtBoxNrTelefonu.Text))
+            {
+                int parsedVal;
+                if (!int.TryParse(txtBoxNrTelefonu.Text, out parsedVal))
+                {
+                    MessageBox.Show("To pole może zawierać tylko liczbę. ");
+                    txtBoxNrTelefonu.Clear();
+                    return;
+                }
+            }
+        }
     }
 }

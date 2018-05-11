@@ -105,6 +105,7 @@
             this.txtBoxNrTelefonu.Name = "txtBoxNrTelefonu";
             this.txtBoxNrTelefonu.Size = new System.Drawing.Size(146, 20);
             this.txtBoxNrTelefonu.TabIndex = 2;
+            this.txtBoxNrTelefonu.TextChanged += new System.EventHandler(this.txtBoxNrTelefonu_TextChanged);
             // 
             // txtBoxNIP
             // 
@@ -113,6 +114,7 @@
             this.txtBoxNIP.Name = "txtBoxNIP";
             this.txtBoxNIP.Size = new System.Drawing.Size(146, 20);
             this.txtBoxNIP.TabIndex = 3;
+            this.txtBoxNIP.TextChanged += new System.EventHandler(this.txtBoxNIP_TextChanged);
             // 
             // btnZapisz
             // 
@@ -123,7 +125,6 @@
             this.btnZapisz.TabIndex = 4;
             this.btnZapisz.Text = "Zapisz";
             this.btnZapisz.UseVisualStyleBackColor = true;
-            
             // 
             // FormDodajEdytujFirme
             // 
