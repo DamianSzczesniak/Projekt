@@ -29,10 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridViewOferta = new System.Windows.Forms.DataGridView();
+            this.iDPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iLOSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zLECENIAPRODUKTYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_Data_Zlecenia = new System.Windows.Forms.Label();
             this.txtBox_Data_Zlecenia = new System.Windows.Forms.TextBox();
             this.txtBoxCena = new System.Windows.Forms.TextBox();
@@ -42,15 +47,10 @@
             this.lblFirma = new System.Windows.Forms.Label();
             this.txtFirma = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.iDPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iLOSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zLECENIAPRODUKTYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.RezerwujMaszyny = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zLECENIAPRODUKTYNAZWYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewOferta
@@ -70,90 +70,6 @@
             this.dataGridViewOferta.ReadOnly = true;
             this.dataGridViewOferta.Size = new System.Drawing.Size(324, 181);
             this.dataGridViewOferta.TabIndex = 13;
-            // 
-            // lbl_Data_Zlecenia
-            // 
-            this.lbl_Data_Zlecenia.AutoSize = true;
-            this.lbl_Data_Zlecenia.Location = new System.Drawing.Point(62, 236);
-            this.lbl_Data_Zlecenia.Name = "lbl_Data_Zlecenia";
-            this.lbl_Data_Zlecenia.Size = new System.Drawing.Size(74, 13);
-            this.lbl_Data_Zlecenia.TabIndex = 14;
-            this.lbl_Data_Zlecenia.Text = "Data Zlecenia";
-            // 
-            // txtBox_Data_Zlecenia
-            // 
-            this.txtBox_Data_Zlecenia.Location = new System.Drawing.Point(28, 252);
-            this.txtBox_Data_Zlecenia.Name = "txtBox_Data_Zlecenia";
-            this.txtBox_Data_Zlecenia.ReadOnly = true;
-            this.txtBox_Data_Zlecenia.Size = new System.Drawing.Size(140, 20);
-            this.txtBox_Data_Zlecenia.TabIndex = 15;
-            // 
-            // txtBoxCena
-            // 
-            this.txtBoxCena.Location = new System.Drawing.Point(28, 305);
-            this.txtBoxCena.Name = "txtBoxCena";
-            this.txtBoxCena.ReadOnly = true;
-            this.txtBoxCena.Size = new System.Drawing.Size(140, 20);
-            this.txtBoxCena.TabIndex = 19;
-            // 
-            // lblKOSZT
-            // 
-            this.lblKOSZT.AutoSize = true;
-            this.lblKOSZT.Location = new System.Drawing.Point(75, 288);
-            this.lblKOSZT.Name = "lblKOSZT";
-            this.lblKOSZT.Size = new System.Drawing.Size(42, 13);
-            this.lblKOSZT.TabIndex = 18;
-            this.lblKOSZT.Text = "CENA :";
-            // 
-            // txtBox_Data_Realizacji
-            // 
-            this.txtBox_Data_Realizacji.Location = new System.Drawing.Point(209, 252);
-            this.txtBox_Data_Realizacji.Name = "txtBox_Data_Realizacji";
-            this.txtBox_Data_Realizacji.ReadOnly = true;
-            this.txtBox_Data_Realizacji.Size = new System.Drawing.Size(142, 20);
-            this.txtBox_Data_Realizacji.TabIndex = 17;
-            // 
-            // lbl_Data_Realizacji
-            // 
-            this.lbl_Data_Realizacji.AutoSize = true;
-            this.lbl_Data_Realizacji.Location = new System.Drawing.Point(243, 236);
-            this.lbl_Data_Realizacji.Name = "lbl_Data_Realizacji";
-            this.lbl_Data_Realizacji.Size = new System.Drawing.Size(78, 13);
-            this.lbl_Data_Realizacji.TabIndex = 16;
-            this.lbl_Data_Realizacji.Text = "Data Realizacji";
-            // 
-            // lblFirma
-            // 
-            this.lblFirma.AutoSize = true;
-            this.lblFirma.Location = new System.Drawing.Point(266, 288);
-            this.lblFirma.Name = "lblFirma";
-            this.lblFirma.Size = new System.Drawing.Size(32, 13);
-            this.lblFirma.TabIndex = 20;
-            this.lblFirma.Text = "Firma";
-            // 
-            // txtFirma
-            // 
-            this.txtFirma.Location = new System.Drawing.Point(209, 304);
-            this.txtFirma.Name = "txtFirma";
-            this.txtFirma.ReadOnly = true;
-            this.txtFirma.Size = new System.Drawing.Size(142, 20);
-            this.txtFirma.TabIndex = 21;
-            // 
-            // chart1
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(374, 25);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(435, 299);
-            this.chart1.TabIndex = 22;
-            this.chart1.Text = "chart1";
             // 
             // iDPRODUKTUDataGridViewTextBoxColumn
             // 
@@ -192,6 +108,94 @@
             // 
             this.zLECENIAPRODUKTYNAZWYBindingSource.DataSource = typeof(PROJEKTapp.ZLECENIA_PRODUKTY_NAZWY);
             // 
+            // lbl_Data_Zlecenia
+            // 
+            this.lbl_Data_Zlecenia.AutoSize = true;
+            this.lbl_Data_Zlecenia.Location = new System.Drawing.Point(62, 236);
+            this.lbl_Data_Zlecenia.Name = "lbl_Data_Zlecenia";
+            this.lbl_Data_Zlecenia.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Data_Zlecenia.TabIndex = 14;
+            this.lbl_Data_Zlecenia.Text = "Data Zlecenia";
+            // 
+            // txtBox_Data_Zlecenia
+            // 
+            this.txtBox_Data_Zlecenia.Location = new System.Drawing.Point(28, 252);
+            this.txtBox_Data_Zlecenia.Name = "txtBox_Data_Zlecenia";
+            this.txtBox_Data_Zlecenia.ReadOnly = true;
+            this.txtBox_Data_Zlecenia.Size = new System.Drawing.Size(140, 20);
+            this.txtBox_Data_Zlecenia.TabIndex = 15;
+            this.txtBox_Data_Zlecenia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtBoxCena
+            // 
+            this.txtBoxCena.Location = new System.Drawing.Point(28, 305);
+            this.txtBoxCena.Name = "txtBoxCena";
+            this.txtBoxCena.ReadOnly = true;
+            this.txtBoxCena.Size = new System.Drawing.Size(140, 20);
+            this.txtBoxCena.TabIndex = 19;
+            this.txtBoxCena.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblKOSZT
+            // 
+            this.lblKOSZT.AutoSize = true;
+            this.lblKOSZT.Location = new System.Drawing.Point(75, 288);
+            this.lblKOSZT.Name = "lblKOSZT";
+            this.lblKOSZT.Size = new System.Drawing.Size(42, 13);
+            this.lblKOSZT.TabIndex = 18;
+            this.lblKOSZT.Text = "CENA :";
+            // 
+            // txtBox_Data_Realizacji
+            // 
+            this.txtBox_Data_Realizacji.Location = new System.Drawing.Point(209, 252);
+            this.txtBox_Data_Realizacji.Name = "txtBox_Data_Realizacji";
+            this.txtBox_Data_Realizacji.ReadOnly = true;
+            this.txtBox_Data_Realizacji.Size = new System.Drawing.Size(142, 20);
+            this.txtBox_Data_Realizacji.TabIndex = 17;
+            this.txtBox_Data_Realizacji.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbl_Data_Realizacji
+            // 
+            this.lbl_Data_Realizacji.AutoSize = true;
+            this.lbl_Data_Realizacji.Location = new System.Drawing.Point(243, 236);
+            this.lbl_Data_Realizacji.Name = "lbl_Data_Realizacji";
+            this.lbl_Data_Realizacji.Size = new System.Drawing.Size(78, 13);
+            this.lbl_Data_Realizacji.TabIndex = 16;
+            this.lbl_Data_Realizacji.Text = "Data Realizacji";
+            // 
+            // lblFirma
+            // 
+            this.lblFirma.AutoSize = true;
+            this.lblFirma.Location = new System.Drawing.Point(266, 288);
+            this.lblFirma.Name = "lblFirma";
+            this.lblFirma.Size = new System.Drawing.Size(32, 13);
+            this.lblFirma.TabIndex = 20;
+            this.lblFirma.Text = "Firma";
+            // 
+            // txtFirma
+            // 
+            this.txtFirma.Location = new System.Drawing.Point(209, 304);
+            this.txtFirma.Name = "txtFirma";
+            this.txtFirma.ReadOnly = true;
+            this.txtFirma.Size = new System.Drawing.Size(142, 20);
+            this.txtFirma.TabIndex = 21;
+            this.txtFirma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(374, 25);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(435, 299);
+            this.chart1.TabIndex = 22;
+            this.chart1.Text = "chart1";
+            // 
             // RezerwujMaszyny
             // 
             this.RezerwujMaszyny.Location = new System.Drawing.Point(102, 349);
@@ -222,8 +226,8 @@
             this.Text = "Szczegoly Zlecenia";
             this.Load += new System.EventHandler(this.SzczegolyZlecenia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zLECENIAPRODUKTYNAZWYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +33,10 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             txtBox_Data_Realizacji.Text = ((DateTime)zlecenia.DATA_REALIZACJI).ToShortDateString();
             txtBox_Data_Zlecenia.Text = ((DateTime)zlecenia.DATA_ZLECENIA).ToShortDateString();
             OFERTA oferta = db.OFERTA.Where(a => a.ID_ZLECENIA == zlecenia.ID_ZLECENIA).First();
-            txtBoxCena.Text = oferta.KOSZT_CALKOWITY_PRODUKCJI.ToString();
+            decimal dcena = decimal.Parse(oferta.KOSZT_CALKOWITY_PRODUKCJI.ToString());
+            int cena = Decimal.ToInt32(dcena);
+            string ocena = cena.ToString("## ## ## ###" + " zł", CultureInfo.InvariantCulture);
+            txtBoxCena.Text = ocena;
             dataGridViewOferta.DataSource = db.ZLECENIA_PRODUKTY_NAZWY.Where(a => a.ID_ZLECENIA == id).ToList();
 
             List<CZAS_PRACY_MASZYN> czasyPracy = this.db.CZAS_PRACY_MASZYN.Where(x => x.ID_ZLECENIA == id).ToList();
