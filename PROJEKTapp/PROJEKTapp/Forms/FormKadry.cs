@@ -45,8 +45,16 @@ namespace PROJEKTapp
             ListaPracownikow.Columns[0].HeaderText = "NUMER";
             ListaPracownikow.Columns[0].Width = 60;
             ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
-
         }
+
+        private void ladowanie_ListaAdresow(int ID)
+        {
+            db = new KWZP_PROJEKTEntities();
+            this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();
+            ListaAdresow.Columns[0].Visible = false;
+            ListaAdresow.Columns[1].Visible = false;
+        }
+
         private void FormKadry_Load(object sender, EventArgs e)
         {
             if (ladowanieformularzazokienkami == true)
@@ -146,10 +154,11 @@ namespace PROJEKTapp
             btnZapiszDodaj.Show();
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
-            db = new KWZP_PROJEKTEntities();
-            this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();
-            this.ListaAdresow.Columns[0].Visible = false;
-            this.ListaAdresow.Columns[1].Visible = false;
+            //db = new KWZP_PROJEKTEntities();
+            //this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();
+            //this.ListaAdresow.Columns[0].Visible = false;
+            //this.ListaAdresow.Columns[1].Visible = false;
+            ladowanie_ListaAdresow(ID);
             pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
             txtboxNazwisko.Text = pracownik.NAZWISKO;
             txtboxImie.Text = pracownik.IMIE;
@@ -419,9 +428,7 @@ namespace PROJEKTapp
             cbMiasto.Enabled = false;
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
-            this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();
-            this.ListaAdresow.Columns[0].Visible = false;
-            this.ListaAdresow.Columns[1].Visible = false;
+            ladowanie_ListaAdresow(ID);
             pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
             txtboxNazwisko.Text = pracownik.NAZWISKO;
             txtboxImie.Text = pracownik.IMIE;
