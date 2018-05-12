@@ -39,7 +39,14 @@ namespace PROJEKTapp
             cbStawka.DisplayMember = "Wartosc";
         }
 
+        private void ladowanie_ListaPracownikow()
+        {
+            this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
+            ListaPracownikow.Columns[0].HeaderText = "NUMER";
+            ListaPracownikow.Columns[0].Width = 60;
+            ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
 
+        }
         private void FormKadry_Load(object sender, EventArgs e)
         {
             if (ladowanieformularzazokienkami == true)
@@ -48,10 +55,7 @@ namespace PROJEKTapp
                 pnlUserSearch.Show();
                 pnlUserField.Hide();
                 ladowanieformularzazokienkami = false;
-                this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
-                ListaPracownikow.Columns[0].HeaderText = "NUMER";
-                ListaPracownikow.Columns[0].Width = 60;
-                ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
+                ladowanie_ListaPracownikow();
             }
             else
             {
@@ -70,10 +74,7 @@ namespace PROJEKTapp
                 pnlUserControl.Show();
                 pnlUserSearch.Show();
                 pnlUserField.Hide();
-                this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
-                ListaPracownikow.Columns[0].HeaderText = "NUMER";
-                ListaPracownikow.Columns[0].Width = 60;
-                ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
+                ladowanie_ListaPracownikow();
             }
             else
             {
@@ -198,8 +199,7 @@ namespace PROJEKTapp
                 {
                     MessageBox.Show("Usunięcie pracownika nie powiodło się");
                 }
-                ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
-                ListaPracownikow.Refresh();
+                ladowanie_ListaPracownikow();
                 pnlUserField.Hide();
             } 
         }
@@ -268,9 +268,8 @@ namespace PROJEKTapp
                     pracownik.ADRESY_PRACOWNICY.Add(adrespracownika);
                     db.PRACOWNICY.Add(pracownik);
                     db.SaveChanges();
-                    ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
-                    ListaPracownikow.Refresh();
-                }
+                    ladowanie_ListaPracownikow();
+            }
             else
             {//Edycja istniejącego pracownika
                 int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
@@ -287,11 +286,11 @@ namespace PROJEKTapp
                     pracownikstanowiskoN.DATA_START = txtDataRozpoczeciaPracy.Value;
                     if (chbDataKoniec.Checked == true)
                     {
-                        pracownikstanowisko.DATA_KONIEC = txtDataKoniec.Value;
+                        pracownikstanowiskoN.DATA_KONIEC = txtDataKoniec.Value;
                     }
                     else
                     {
-                        pracownikstanowisko.DATA_KONIEC = null;
+                        pracownikstanowiskoN.DATA_KONIEC = null;
                     }
                     pracownik.STANOWISKO_PRACOWNICY.Add(pracownikstanowiskoN);
                 }
@@ -329,8 +328,7 @@ namespace PROJEKTapp
                     adrespracownik.KRAJ = this.txtboxKraj.Text;
                 }
                 db.SaveChanges();
-                ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
-                ListaPracownikow.Refresh();
+                ladowanie_ListaPracownikow();
                 czyscform();
                 pnlUserField.Hide();
             }
