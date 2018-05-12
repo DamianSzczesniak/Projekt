@@ -680,6 +680,7 @@
             // cbStawka
             // 
             this.cbStawka.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbStawka.FormatString = "N2";
             this.cbStawka.FormattingEnabled = true;
             this.cbStawka.Location = new System.Drawing.Point(450, 253);
             this.cbStawka.Name = "cbStawka";

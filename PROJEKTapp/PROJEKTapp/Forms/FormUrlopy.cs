@@ -120,8 +120,8 @@ namespace PROJEKTapp
         {
             pnlWolne.Show();
             czyscform();
-            txtBoxWnioskowany.Text = "------";
-
+            txtBoxWnioskowany.ResetBackColor();
+            txtBoxWnioskowany.Text = " ";
             KalendarzUrlop.BoldedDates = new DateTime[] { };
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             this.pracownik = db.PRACOWNICY.Where(pracownik => pracownik.ID_PRACOWNIK == ID).First();
@@ -257,12 +257,32 @@ namespace PROJEKTapp
         {
             int Wnioskowany = (txtDataKoniec.Value - txtDataStart.Value).Days + 1;
             txtBoxWnioskowany.Text = Wnioskowany.ToString();
+            int pozostalo = Convert.ToInt32(txtBoxPozostalo.Text);
+            if (Wnioskowany > pozostalo)
+            {
+                txtBoxWnioskowany.BackColor = Color.Red;
+            }
+            else
+            {
+                txtBoxWnioskowany.BackColor = Color.LightGreen;
+            }
         }
 
         private void btnSprawdz_Click(object sender, EventArgs e)
         {
             KalendarzUrlop.SelectionStart = txtDataStart.Value;
             KalendarzUrlop.SelectionEnd = txtDataKoniec.Value;
+            int Wnioskowany = (txtDataKoniec.Value - txtDataStart.Value).Days + 1;
+            txtBoxWnioskowany.Text = Wnioskowany.ToString();
+            int pozostalo = Convert.ToInt32(txtBoxPozostalo.Text);
+            if (Wnioskowany > pozostalo)
+            {
+                txtBoxWnioskowany.BackColor = Color.Red;
+            }
+            else
+            {
+                txtBoxWnioskowany.BackColor = Color.LightGreen;
+            }
         }
     }
 }
