@@ -764,14 +764,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.SPIS_UZYTKOWNIKOW' does not have 
           <Property Name="PESEL" Type="nvarchar" MaxLength="11" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.STAN_MATERIALY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="STAN_MATERIALY">
-          <Property Name="ID_MATERIALU" Type="int" />
-          <Property Name="ID_ZLECENIA" Type="int" />
-          <Property Name="ID_LOKALIZACJI" Type="int" />
-          <Property Name="STAN" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAN_MATERIALY_NAZWY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="STAN_MATERIALY_NAZWY">
           <Key>
@@ -788,14 +780,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAN_MATERIALY_NAZWY' does not ha
           <Property Name="ALEJKA" Type="varchar" MaxLength="30" />
           <Property Name="PELNA_NAZWA_MATERIALU" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.STAN_PRODUKTY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="STAN_PRODUKTY">
-          <Property Name="ID_PRODUKTU" Type="int" />
-          <Property Name="ID_ZLECENIA" Type="int" />
-          <Property Name="ID_LOKALIZACJI" Type="int" />
-          <Property Name="STAN" Type="int" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAN_PRODUKTY_NAZWY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="STAN_PRODUKTY_NAZWY">
@@ -846,12 +830,11 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLE
         <EntityType Name="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
           <Key>
             <PropertyRef Name="ID_ZLECENIA" />
-            
-            <PropertyRef Name="ID_MATERIAL" />
+            <PropertyRef Name="PELNA_NAZWA_MATERIALU" />
           </Key>
           <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
-          <Property Name="ID_MATERIAL" Type="int" Nullable="false" />
-          <Property Name="NAZWA" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ID_MATERIAL" Type="int" />
+          <Property Name="PELNA_NAZWA_MATERIALU" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="SUMA_MATERIALU" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -923,17 +906,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZAMOWIENIA_MATERIALU_NAZLECENIE' 
           <Key>
             <PropertyRef Name="ID_ZLECENIA" />
             <PropertyRef Name="ID_PRODUKTU" />
-            
-            
-            <PropertyRef Name="ID_POLPRODUKTU" />
-            <PropertyRef Name="ID_MATERIAL" />
+            <PropertyRef Name="NAZWA" />
+            <PropertyRef Name="PELNA_NAZWA_MATERIALU" />
+            <PropertyRef Name="LICZBA_SZTUK" />
           </Key>
           <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
           <Property Name="ID_PRODUKTU" Type="int" Nullable="false" />
           <Property Name="ILOSC" Type="int" />
-          <Property Name="ID_POLPRODUKTU" Type="int" Nullable="false" />
-          <Property Name="ID_MATERIAL" Type="int" Nullable="false" />
+          <Property Name="ID_POLPRODUKTU" Type="int" />
+          <Property Name="ID_MATERIAL" Type="int" />
           <Property Name="NAZWA" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="PELNA_NAZWA_MATERIALU" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="LICZBA_SZTUK" Type="int" Nullable="false" />
           <Property Name="SUMA_p" Type="int" />
         </EntityType>
@@ -986,20 +969,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="ILOSC" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ZLECENIE_DLA_DOSTAWY">
-          <Property Name="ID_ZLECENIA" Type="int" />
-          <Property Name="NAZWA_FIRMY" Type="varchar" MaxLength="30" />
-          <Property Name="DLUGOSC_TRASY" Type="int" />
-          <Property Name="ULICA" Type="varchar" MaxLength="30" />
-          <Property Name="NR_BUDYNKU" Type="varchar" MaxLength="10" />
-          <Property Name="NR_LOKALU" Type="varchar" MaxLength="10" />
-          <Property Name="KOD_POCZTOWY" Type="varchar" MaxLength="5" />
-          <Property Name="KRAJ" Type="varchar" MaxLength="15" />
-          <Property Name="nazwa" Type="varchar" MaxLength="50" />
-          <Property Name="ID_POJAZDU" Type="int" />
-        </EntityType>-->
         <Association Name="FK__ADRESY__ID_MIAST__6754599E">
           <End Role="MIASTA" Type="Self.MIASTA" Multiplicity="0..1" />
           <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="*" />
@@ -1973,7 +1942,7 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
             <DefiningQuery>SELECT 
     [SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE].[ID_ZLECENIA] AS [ID_ZLECENIA], 
     [SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE].[ID_MATERIAL] AS [ID_MATERIAL], 
-    [SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE].[NAZWA] AS [NAZWA], 
+    [SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE].[PELNA_NAZWA_MATERIALU] AS [PELNA_NAZWA_MATERIALU], 
     [SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE].[SUMA_MATERIALU] AS [SUMA_MATERIALU]
     FROM [dbo].[SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE] AS [SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE]</DefiningQuery>
           </EntitySet>
@@ -2025,6 +1994,7 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
     [ZAMOWIENIA_MATERIALU_NAZLECENIE].[ID_POLPRODUKTU] AS [ID_POLPRODUKTU], 
     [ZAMOWIENIA_MATERIALU_NAZLECENIE].[ID_MATERIAL] AS [ID_MATERIAL], 
     [ZAMOWIENIA_MATERIALU_NAZLECENIE].[NAZWA] AS [NAZWA], 
+    [ZAMOWIENIA_MATERIALU_NAZLECENIE].[PELNA_NAZWA_MATERIALU] AS [PELNA_NAZWA_MATERIALU], 
     [ZAMOWIENIA_MATERIALU_NAZLECENIE].[LICZBA_SZTUK] AS [LICZBA_SZTUK], 
     [ZAMOWIENIA_MATERIALU_NAZLECENIE].[SUMA_p] AS [SUMA_p]
     FROM [dbo].[ZAMOWIENIA_MATERIALU_NAZLECENIE] AS [ZAMOWIENIA_MATERIALU_NAZLECENIE]</DefiningQuery>
@@ -3257,8 +3227,6 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
           <EntitySet Name="HISTORIA_STATUS_ZLECENIA" EntityType="KWZP_PROJEKTModel.HISTORIA_STATUS_ZLECENIA" />
           <EntitySet Name="ZLECENIA_PRODUKTY_NAZWY" EntityType="KWZP_PROJEKTModel.ZLECENIA_PRODUKTY_NAZWY" />
           <EntitySet Name="SZKOLENIA_PRACOWNIKA" EntityType="KWZP_PROJEKTModel.SZKOLENIA_PRACOWNIKA" />
-          <EntitySet Name="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" EntityType="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" />
-          <EntitySet Name="ZAMOWIENIA_MATERIALU_NAZLECENIE" EntityType="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE" />
           <EntitySet Name="PRACOWNICY_W_PRACY" EntityType="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY" />
           <EntitySet Name="CZAS_PRACY_MASZYN" EntityType="KWZP_PROJEKTModel.CZAS_PRACY_MASZYN" />
           <EntitySet Name="CZAS_PRACY_NARZEDZI" EntityType="KWZP_PROJEKTModel.CZAS_PRACY_NARZEDZI" />
@@ -3275,16 +3243,16 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
             <End Role="PROCES" EntitySet="PROCES" />
           </AssociationSet>
           <AssociationSet Name="FK__ZESPOL_MA__ID_MA__0A9D95DB" Association="KWZP_PROJEKTModel.FK__ZESPOL_MA__ID_MA__0A9D95DB">
-            <End Role="MASZYNY" EntitySet="MASZYNY" />
-            <End Role="ZESPOL_MASZYN" EntitySet="ZESPOL_MASZYN" />
+            <End EntitySet="MASZYNY" Role="MASZYNY" />
+            <End EntitySet="ZESPOL_MASZYN" Role="ZESPOL_MASZYN" />
           </AssociationSet>
           <AssociationSet Name="FK__ZESPOL_NA__ID_NA__114A936A" Association="KWZP_PROJEKTModel.FK__ZESPOL_NA__ID_NA__114A936A">
             <End Role="NARZEDZIA" EntitySet="NARZEDZIA" />
             <End Role="ZESPOL_NARZEDZI" EntitySet="ZESPOL_NARZEDZI" />
           </AssociationSet>
           <AssociationSet Name="FK__ZESPOL_MA__ID_RE__09A971A2" Association="KWZP_PROJEKTModel.FK__ZESPOL_MA__ID_RE__09A971A2">
-            <End Role="REALIZACJA_PRODUKCJA" EntitySet="REALIZACJA_PRODUKCJA" />
-            <End Role="ZESPOL_MASZYN" EntitySet="ZESPOL_MASZYN" />
+            <End EntitySet="REALIZACJA_PRODUKCJA" Role="REALIZACJA_PRODUKCJA" />
+            <End EntitySet="ZESPOL_MASZYN" Role="ZESPOL_MASZYN" />
           </AssociationSet>
           <AssociationSet Name="FK__ZESPOL_NA__ID_RE__10566F31" Association="KWZP_PROJEKTModel.FK__ZESPOL_NA__ID_RE__10566F31">
             <End Role="REALIZACJA_PRODUKCJA" EntitySet="REALIZACJA_PRODUKCJA" />
@@ -3301,6 +3269,8 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
           </AssociationSet>
           <EntitySet Name="Status_detale_zlecenie" EntityType="KWZP_PROJEKTModel.Status_detale_zlecenie" />
           <EntitySet Name="zestawienie" EntityType="KWZP_PROJEKTModel.zestawienie" />
+          <EntitySet Name="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" EntityType="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" />
+          <EntitySet Name="ZAMOWIENIA_MATERIALU_NAZLECENIE" EntityType="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -3836,32 +3806,6 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
           <Property Name="DATA_START" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DATA_KONIEC" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
-        <EntityType Name="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
-          <Key>
-            <PropertyRef Name="ID_ZLECENIA" />
-            <PropertyRef Name="ID_MATERIAL" />
-          </Key>
-          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
-          <Property Name="ID_MATERIAL" Type="Int32" Nullable="false" />
-          <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="SUMA_MATERIALU" Type="Int32" />
-        </EntityType>
-        <EntityType Name="ZAMOWIENIA_MATERIALU_NAZLECENIE">
-          <Key>
-            <PropertyRef Name="ID_ZLECENIA" />
-            <PropertyRef Name="ID_PRODUKTU" />
-            <PropertyRef Name="ID_MATERIAL" />
-            <PropertyRef Name="ID_POLPRODUKTU" />
-          </Key>
-          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
-          <Property Name="ID_PRODUKTU" Type="Int32" Nullable="false" />
-          <Property Name="ILOSC" Type="Int32" />
-          <Property Name="ID_POLPRODUKTU" Type="Int32" Nullable="false" />
-          <Property Name="ID_MATERIAL" Type="Int32" Nullable="false" />
-          <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="LICZBA_SZTUK" Type="Int32" Nullable="false" />
-          <Property Name="SUMA_p" Type="Int32" />
-        </EntityType>
         <EntityType Name="PRACOWNICY_W_PRACY">
           <Key>
             <PropertyRef Name="DATA_DZIEN" />
@@ -3888,9 +3832,9 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
             <PropertyRef Name="ID_NARZEDZIA" />
             <PropertyRef Name="NAZWA" />
           </Key>
-          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
-          <Property Name="ID_NARZEDZIA" Type="Int32" Nullable="false" />
-          <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_ZLECENIA" Nullable="false" Type="Int32" />
+          <Property Name="ID_NARZEDZIA" Nullable="false" Type="Int32" />
+          <Property Name="NAZWA" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" Type="String" />
           <Property Name="ILOSC_DNI_PRACY" Type="Int32" />
         </EntityType>
         <EntityType Name="MASZYNY">
@@ -3919,9 +3863,9 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
           <Key>
             <PropertyRef Name="ID_ZESPOL_MASZYN" />
           </Key>
-          <Property Name="ID_ZESPOL_MASZYN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_REALIZACJA_PRODUKCJA" Type="Int32" Nullable="false" />
-          <Property Name="ID_MASZYNY" Type="Int32" Nullable="false" />
+          <Property Name="ID_ZESPOL_MASZYN" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="ID_REALIZACJA_PRODUKCJA" Nullable="false" Type="Int32" />
+          <Property Name="ID_MASZYNY" Nullable="false" Type="Int32" />
           <NavigationProperty Name="MASZYNY" Relationship="KWZP_PROJEKTModel.FK__ZESPOL_MA__ID_MA__0A9D95DB" FromRole="ZESPOL_MASZYN" ToRole="MASZYNY" />
           <NavigationProperty Name="REALIZACJA_PRODUKCJA" Relationship="KWZP_PROJEKTModel.FK__ZESPOL_MA__ID_RE__09A971A2" FromRole="ZESPOL_MASZYN" ToRole="REALIZACJA_PRODUKCJA" />
         </EntityType>
@@ -3960,8 +3904,8 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__ZESPOL_MA__ID_MA__0A9D95DB">
-          <End Type="KWZP_PROJEKTModel.MASZYNY" Role="MASZYNY" Multiplicity="1" />
-          <End Type="KWZP_PROJEKTModel.ZESPOL_MASZYN" Role="ZESPOL_MASZYN" Multiplicity="*" />
+          <End Type="KWZP_PROJEKTModel.MASZYNY" Multiplicity="1" Role="MASZYNY" />
+          <End Type="KWZP_PROJEKTModel.ZESPOL_MASZYN" Multiplicity="*" Role="ZESPOL_MASZYN" />
           <ReferentialConstraint>
             <Principal Role="MASZYNY">
               <PropertyRef Name="ID_MASZYNY" />
@@ -3984,8 +3928,8 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__ZESPOL_MA__ID_RE__09A971A2">
-          <End Type="KWZP_PROJEKTModel.REALIZACJA_PRODUKCJA" Role="REALIZACJA_PRODUKCJA" Multiplicity="1" />
-          <End Type="KWZP_PROJEKTModel.ZESPOL_MASZYN" Role="ZESPOL_MASZYN" Multiplicity="*" />
+          <End Type="KWZP_PROJEKTModel.REALIZACJA_PRODUKCJA" Multiplicity="1" Role="REALIZACJA_PRODUKCJA" />
+          <End Type="KWZP_PROJEKTModel.ZESPOL_MASZYN" Multiplicity="*" Role="ZESPOL_MASZYN" />
           <ReferentialConstraint>
             <Principal Role="REALIZACJA_PRODUKCJA">
               <PropertyRef Name="ID_REALIZACJA_PRODUKCJA" />
@@ -4015,11 +3959,11 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
             <PropertyRef Name="DATA_START" />
             <PropertyRef Name="DATA_KONIEC" />
           </Key>
-          <Property Name="ID_PRACOWNIK" Type="Int32" Nullable="false" />
-          <Property Name="SYMBOL" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="DATA_START" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="DATA_KONIEC" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ID_PRACOWNIK" Nullable="false" Type="Int32" />
+          <Property Name="SYMBOL" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" Type="String" />
+          <Property Name="NAZWA" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="DATA_START" Nullable="false" Precision="0" Type="DateTime" />
+          <Property Name="DATA_KONIEC" Nullable="false" Precision="0" Type="DateTime" />
         </EntityType>
         <EntityType Name="KOSZTY_CZASY_PRODUKCJI">
           <Key>
@@ -4047,15 +3991,15 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
             <PropertyRef Name="NAZWA" />
             <PropertyRef Name="DATA_START" />
           </Key>
-          <Property Name="ID_PRACOWNIK" Type="Int32" Nullable="false" />
-          <Property Name="NAZWISKO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="IMIE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="WARTOSC" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="ID_OKRES" Type="Int32" Nullable="false" />
-          <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID_PRACOWNIK" Nullable="false" Type="Int32" />
+          <Property Name="NAZWISKO" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="IMIE" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="WARTOSC" Nullable="false" Precision="19" Scale="4" Type="Decimal" />
+          <Property Name="ID_OKRES" Nullable="false" Type="Int32" />
+          <Property Name="NAZWA" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
           <Property Name="PENSJA_MSC" Type="Double" />
-          <Property Name="DATA_START" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="DATA_KONIEC" Type="DateTime" Precision="0" />
+          <Property Name="DATA_START" Nullable="false" Precision="0" Type="DateTime" />
+          <Property Name="DATA_KONIEC" Precision="0" Type="DateTime" />
         </EntityType>
         <EntityType Name="ZAMOWIENIA">
           <Key>
@@ -4099,6 +4043,34 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
           <Property Name="wydatki" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="obroty" Type="Decimal" Precision="23" Scale="6" />
           <Property Name="zarobek" Type="Decimal" Precision="22" Scale="6" />
+        </EntityType>
+        <EntityType Name="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="PELNA_NAZWA_MATERIALU" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="ID_MATERIAL" Type="Int32" />
+          <Property Name="PELNA_NAZWA_MATERIALU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SUMA_MATERIALU" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ZAMOWIENIA_MATERIALU_NAZLECENIE">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="ID_PRODUKTU" />
+            <PropertyRef Name="NAZWA" />
+            <PropertyRef Name="PELNA_NAZWA_MATERIALU" />
+            <PropertyRef Name="LICZBA_SZTUK" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="ID_PRODUKTU" Type="Int32" Nullable="false" />
+          <Property Name="ILOSC" Type="Int32" />
+          <Property Name="ID_POLPRODUKTU" Type="Int32" />
+          <Property Name="ID_MATERIAL" Type="Int32" />
+          <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PELNA_NAZWA_MATERIALU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LICZBA_SZTUK" Type="Int32" Nullable="false" />
+          <Property Name="SUMA_p" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4825,30 +4797,6 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
-            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
-              <MappingFragment StoreEntitySet="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
-                <ScalarProperty Name="SUMA_MATERIALU" ColumnName="SUMA_MATERIALU" />
-                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
-                <ScalarProperty Name="ID_MATERIAL" ColumnName="ID_MATERIAL" />
-                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ZAMOWIENIA_MATERIALU_NAZLECENIE">
-            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE">
-              <MappingFragment StoreEntitySet="ZAMOWIENIA_MATERIALU_NAZLECENIE">
-                <ScalarProperty Name="SUMA_p" ColumnName="SUMA_p" />
-                <ScalarProperty Name="LICZBA_SZTUK" ColumnName="LICZBA_SZTUK" />
-                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
-                <ScalarProperty Name="ID_MATERIAL" ColumnName="ID_MATERIAL" />
-                <ScalarProperty Name="ID_POLPRODUKTU" ColumnName="ID_POLPRODUKTU" />
-                <ScalarProperty Name="ILOSC" ColumnName="ILOSC" />
-                <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
-                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PRACOWNICY_W_PRACY">
             <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY">
               <MappingFragment StoreEntitySet="PRACOWNICY_W_PRACY">
@@ -4990,6 +4938,31 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
                 <ScalarProperty Name="zarobek" ColumnName="zarobek" />
                 <ScalarProperty Name="obroty" ColumnName="obroty" />
                 <ScalarProperty Name="wydatki" ColumnName="wydatki" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
+              <MappingFragment StoreEntitySet="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
+                <ScalarProperty Name="SUMA_MATERIALU" ColumnName="SUMA_MATERIALU" />
+                <ScalarProperty Name="PELNA_NAZWA_MATERIALU" ColumnName="PELNA_NAZWA_MATERIALU" />
+                <ScalarProperty Name="ID_MATERIAL" ColumnName="ID_MATERIAL" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZAMOWIENIA_MATERIALU_NAZLECENIE">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE">
+              <MappingFragment StoreEntitySet="ZAMOWIENIA_MATERIALU_NAZLECENIE">
+                <ScalarProperty Name="SUMA_p" ColumnName="SUMA_p" />
+                <ScalarProperty Name="LICZBA_SZTUK" ColumnName="LICZBA_SZTUK" />
+                <ScalarProperty Name="PELNA_NAZWA_MATERIALU" ColumnName="PELNA_NAZWA_MATERIALU" />
+                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+                <ScalarProperty Name="ID_MATERIAL" ColumnName="ID_MATERIAL" />
+                <ScalarProperty Name="ID_POLPRODUKTU" ColumnName="ID_POLPRODUKTU" />
+                <ScalarProperty Name="ILOSC" ColumnName="ILOSC" />
+                <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
               </MappingFragment>
             </EntityTypeMapping>

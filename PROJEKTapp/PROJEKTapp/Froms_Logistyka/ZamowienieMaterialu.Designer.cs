@@ -48,11 +48,11 @@
             this.txtzlozenia = new System.Windows.Forms.TextBox();
             this.txtZamowienia = new System.Windows.Forms.TextBox();
             this.lvlFirmy = new System.Windows.Forms.Label();
-            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDMATERIALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAZWADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sUMAMATERIALUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PELNA_NAZWA_MATERIALU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDMATERIALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sUMAMATERIALUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TopBar_5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -159,8 +159,8 @@
             this.GridVwZapMat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridVwZapMat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDZLECENIADataGridViewTextBoxColumn,
+            this.PELNA_NAZWA_MATERIALU,
             this.iDMATERIALDataGridViewTextBoxColumn,
-            this.nAZWADataGridViewTextBoxColumn,
             this.sUMAMATERIALUDataGridViewTextBoxColumn});
             this.GridVwZapMat.DataSource = this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource;
             this.GridVwZapMat.Location = new System.Drawing.Point(79, 178);
@@ -249,6 +249,10 @@
             this.lvlFirmy.TabIndex = 36;
             this.lvlFirmy.Text = "Firmy :";
             // 
+            // sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource
+            // 
+            this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource.DataSource = typeof(PROJEKTapp.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE);
+            // 
             // iDZLECENIADataGridViewTextBoxColumn
             // 
             this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
@@ -256,6 +260,14 @@
             this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
             this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
             this.iDZLECENIADataGridViewTextBoxColumn.Visible = false;
+            // 
+            // PELNA_NAZWA_MATERIALU
+            // 
+            this.PELNA_NAZWA_MATERIALU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PELNA_NAZWA_MATERIALU.DataPropertyName = "PELNA_NAZWA_MATERIALU";
+            this.PELNA_NAZWA_MATERIALU.HeaderText = "NAZWA MATERIALU";
+            this.PELNA_NAZWA_MATERIALU.Name = "PELNA_NAZWA_MATERIALU";
+            this.PELNA_NAZWA_MATERIALU.ReadOnly = true;
             // 
             // iDMATERIALDataGridViewTextBoxColumn
             // 
@@ -265,26 +277,14 @@
             this.iDMATERIALDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDMATERIALDataGridViewTextBoxColumn.Visible = false;
             // 
-            // nAZWADataGridViewTextBoxColumn
-            // 
-            this.nAZWADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nAZWADataGridViewTextBoxColumn.DataPropertyName = "NAZWA";
-            this.nAZWADataGridViewTextBoxColumn.HeaderText = "NAZWA";
-            this.nAZWADataGridViewTextBoxColumn.Name = "nAZWADataGridViewTextBoxColumn";
-            this.nAZWADataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // sUMAMATERIALUDataGridViewTextBoxColumn
             // 
             this.sUMAMATERIALUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.sUMAMATERIALUDataGridViewTextBoxColumn.DataPropertyName = "SUMA_MATERIALU";
-            this.sUMAMATERIALUDataGridViewTextBoxColumn.HeaderText = "SUMA_MATERIALU";
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.HeaderText = "LICZBA SZTUK";
             this.sUMAMATERIALUDataGridViewTextBoxColumn.Name = "sUMAMATERIALUDataGridViewTextBoxColumn";
             this.sUMAMATERIALUDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sUMAMATERIALUDataGridViewTextBoxColumn.Width = 131;
-            // 
-            // sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource
-            // 
-            this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource.DataSource = typeof(PROJEKTapp.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE);
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.Width = 108;
             // 
             // ZamowienieMaterialu
             // 
@@ -340,10 +340,6 @@
         private System.Windows.Forms.DataGridView GridVwZapMat;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnShow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDZLECENIADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDMATERIALDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nAZWADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sUMAMATERIALUDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource;
         private System.Windows.Forms.Button btnZapisz;
         private System.Windows.Forms.ComboBox comboBoxFirmy;
@@ -352,5 +348,9 @@
         private System.Windows.Forms.TextBox txtzlozenia;
         private System.Windows.Forms.TextBox txtZamowienia;
         private System.Windows.Forms.Label lvlFirmy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDZLECENIADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PELNA_NAZWA_MATERIALU;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDMATERIALDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sUMAMATERIALUDataGridViewTextBoxColumn;
     }
 }

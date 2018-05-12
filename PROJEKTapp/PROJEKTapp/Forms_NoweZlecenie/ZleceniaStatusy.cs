@@ -96,6 +96,21 @@ namespace PROJEKTapp
                 }
             }
         }
+
+        private void btnszczegoly_Click(object sender, EventArgs e)
+        {
+            Status_detale_zlecenie s = statusdetalezlecenieBindingSource.Current as Status_detale_zlecenie;
+            int id = s.ID_ZLECENIA;
+           
+            using (SzczegolyZlecenia szczegoly = new SzczegolyZlecenia(id, db))
+            {
+                if (szczegoly.ShowDialog() == DialogResult.OK)
+                {
+
+
+                }
+            }
+        }
     }
 }
     

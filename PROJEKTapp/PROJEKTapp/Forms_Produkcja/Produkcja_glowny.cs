@@ -44,12 +44,6 @@ namespace PROJEKTapp
             gabaryty.Show();
         }
 
-        private void btnRezerwacjaMaszyn_Click(object sender, EventArgs e)
-        {
-            Forms_Produkcja.FormRezerwacjaMaszyn rezerwacja = new Forms_Produkcja.FormRezerwacjaMaszyn(db);
-            rezerwacja.Show();
-        }
-
         private void Produkcja_glowny_Load(object sender, EventArgs e)
         {
             GridPracownicyWPracy.DataSource = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();

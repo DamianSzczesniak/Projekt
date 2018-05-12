@@ -8,9 +8,11 @@ namespace PROJEKTapp.Forms_NoweZlecenie
     public partial class FormFirmyDoZlecenia : Form
     {
         KWZP_PROJEKTEntities db;
+        
         public FormFirmyDoZlecenia(KWZP_PROJEKTEntities db)
         {
             this.db = db;
+            
             InitializeComponent();
             FirmyBindingSource.DataSource = db.FIRMY.ToList();
         }
@@ -23,6 +25,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                 {
                     FirmyBindingSource.DataSource = db.FIRMY.ToList();
                     db.SaveChanges();
+                    FirmyBindingSource.MoveLast();
                 }
             }
         }
@@ -38,6 +41,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     FirmyBindingSource.DataSource = db.FIRMY.ToList();
                     db.Entry(FirmyBindingSource.Current as FIRMY).State = EntityState.Modified;
                     db.SaveChanges();
+                    
                 }
 
             }
@@ -67,6 +71,10 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             }
         }
 
-      
+        private void FormFirmyDoZlecenia_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FIRMY firma = FirmyBindingSource.Current as FIRMY;
+            FormNoweZlecenie.id_firmy = firma.ID_FIRMY;
+        }
     }
 }

@@ -43,6 +43,7 @@
             this.txtBox_Data_Realizacji = new System.Windows.Forms.TextBox();
             this.lbl_Data_Realizacji = new System.Windows.Forms.Label();
             this.groupBoxNowe_ZLecenie = new System.Windows.Forms.GroupBox();
+            this.btnOdrzuc = new System.Windows.Forms.Button();
             this.dGVOFERTA = new System.Windows.Forms.DataGridView();
             this.btnWybierzFirme = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -51,11 +52,10 @@
             this.txtBox_Data_Zlecenia = new System.Windows.Forms.TextBox();
             this.btn_Dodaj_Zlecenie = new System.Windows.Forms.Button();
             this.lblFirma = new System.Windows.Forms.Label();
-            this.btnOdrzuc = new System.Windows.Forms.Button();
-            this.iDZLECENIADataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kOSZTCALKOWITYPRODUKCJIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cZASPRODUKCJIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oFERTABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDZLECENIADataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oFERTABindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.iDPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAZWAPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).BeginInit();
             this.groupBoxNowe_ZLecenie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOFERTA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oFERTABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFERTABindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zLECENIAPRODUKTYNAZWYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fIRMYBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FirmyBindingSource)).BeginInit();
@@ -95,7 +95,7 @@
             // 
             // txtBoxCena
             // 
-            this.txtBoxCena.Location = new System.Drawing.Point(47, 392);
+            this.txtBoxCena.Location = new System.Drawing.Point(29, 392);
             this.txtBoxCena.Name = "txtBoxCena";
             this.txtBoxCena.ReadOnly = true;
             this.txtBoxCena.Size = new System.Drawing.Size(100, 20);
@@ -104,7 +104,7 @@
             // lblKOSZT
             // 
             this.lblKOSZT.AutoSize = true;
-            this.lblKOSZT.Location = new System.Drawing.Point(79, 375);
+            this.lblKOSZT.Location = new System.Drawing.Point(72, 375);
             this.lblKOSZT.Name = "lblKOSZT";
             this.lblKOSZT.Size = new System.Drawing.Size(42, 13);
             this.lblKOSZT.TabIndex = 13;
@@ -125,7 +125,6 @@
             this.dataGridViewOferta.Name = "dataGridViewOferta";
             this.dataGridViewOferta.Size = new System.Drawing.Size(324, 167);
             this.dataGridViewOferta.TabIndex = 12;
-            this.dataGridViewOferta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOferta_CellContentClick);
             this.dataGridViewOferta.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOferta_CellEndEdit);
             this.dataGridViewOferta.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView_DataError);
             // 
@@ -187,10 +186,10 @@
             // 
             // txtBox_Data_Realizacji
             // 
-            this.txtBox_Data_Realizacji.Location = new System.Drawing.Point(170, 392);
+            this.txtBox_Data_Realizacji.Location = new System.Drawing.Point(157, 392);
             this.txtBox_Data_Realizacji.Name = "txtBox_Data_Realizacji";
             this.txtBox_Data_Realizacji.ReadOnly = true;
-            this.txtBox_Data_Realizacji.Size = new System.Drawing.Size(142, 20);
+            this.txtBox_Data_Realizacji.Size = new System.Drawing.Size(155, 20);
             this.txtBox_Data_Realizacji.TabIndex = 3;
             // 
             // lbl_Data_Realizacji
@@ -220,20 +219,30 @@
             this.groupBoxNowe_ZLecenie.TabStop = false;
             this.groupBoxNowe_ZLecenie.Text = "Nowe Zlecenie";
             // 
+            // btnOdrzuc
+            // 
+            this.btnOdrzuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOdrzuc.Location = new System.Drawing.Point(121, 334);
+            this.btnOdrzuc.Name = "btnOdrzuc";
+            this.btnOdrzuc.Size = new System.Drawing.Size(134, 23);
+            this.btnOdrzuc.TabIndex = 10;
+            this.btnOdrzuc.Text = "Odrzucono";
+            this.btnOdrzuc.UseVisualStyleBackColor = true;
+            this.btnOdrzuc.Click += new System.EventHandler(this.btnOdrzuc_click);
+            // 
             // dGVOFERTA
             // 
             this.dGVOFERTA.AutoGenerateColumns = false;
             this.dGVOFERTA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGVOFERTA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDZLECENIADataGridViewTextBoxColumn1,
-            this.kOSZTCALKOWITYPRODUKCJIDataGridViewTextBoxColumn,
-            this.cZASPRODUKCJIDataGridViewTextBoxColumn});
-            this.dGVOFERTA.DataSource = this.oFERTABindingSource;
-            this.dGVOFERTA.Location = new System.Drawing.Point(59, 392);
+            this.iDZLECENIADataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dGVOFERTA.DataSource = this.oFERTABindingSource1;
+            this.dGVOFERTA.Location = new System.Drawing.Point(16, 363);
             this.dGVOFERTA.Name = "dGVOFERTA";
-            this.dGVOFERTA.Size = new System.Drawing.Size(263, 20);
+            this.dGVOFERTA.Size = new System.Drawing.Size(330, 65);
             this.dGVOFERTA.TabIndex = 9;
-            this.dGVOFERTA.Visible = false;
             // 
             // btnWybierzFirme
             // 
@@ -302,44 +311,34 @@
             this.lblFirma.TabIndex = 7;
             this.lblFirma.Text = "Firma";
             // 
-            // btnOdrzuc
+            // iDZLECENIADataGridViewTextBoxColumn2
             // 
-            this.btnOdrzuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnOdrzuc.Location = new System.Drawing.Point(121, 334);
-            this.btnOdrzuc.Name = "btnOdrzuc";
-            this.btnOdrzuc.Size = new System.Drawing.Size(134, 23);
-            this.btnOdrzuc.TabIndex = 10;
-            this.btnOdrzuc.Text = "Odrzucono";
-            this.btnOdrzuc.UseVisualStyleBackColor = true;
-            this.btnOdrzuc.Click += new System.EventHandler(this.button1_Click);
+            this.iDZLECENIADataGridViewTextBoxColumn2.DataPropertyName = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn2.HeaderText = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn2.Name = "iDZLECENIADataGridViewTextBoxColumn2";
             // 
-            // iDZLECENIADataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn1
             // 
-            this.iDZLECENIADataGridViewTextBoxColumn1.DataPropertyName = "ID_ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn1.HeaderText = "ID_ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn1.Name = "iDZLECENIADataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "KOSZT_CALKOWITY_PRODUKCJI";
+            this.dataGridViewTextBoxColumn1.HeaderText = "KOSZT_CALKOWITY_PRODUKCJI";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // kOSZTCALKOWITYPRODUKCJIDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.kOSZTCALKOWITYPRODUKCJIDataGridViewTextBoxColumn.DataPropertyName = "KOSZT_CALKOWITY_PRODUKCJI";
-            this.kOSZTCALKOWITYPRODUKCJIDataGridViewTextBoxColumn.HeaderText = "KOSZT_CALKOWITY_PRODUKCJI";
-            this.kOSZTCALKOWITYPRODUKCJIDataGridViewTextBoxColumn.Name = "kOSZTCALKOWITYPRODUKCJIDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CZAS_PRODUKCJI";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CZAS_PRODUKCJI";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // cZASPRODUKCJIDataGridViewTextBoxColumn
+            // oFERTABindingSource1
             // 
-            this.cZASPRODUKCJIDataGridViewTextBoxColumn.DataPropertyName = "CZAS_PRODUKCJI";
-            this.cZASPRODUKCJIDataGridViewTextBoxColumn.HeaderText = "CZAS_PRODUKCJI";
-            this.cZASPRODUKCJIDataGridViewTextBoxColumn.Name = "cZASPRODUKCJIDataGridViewTextBoxColumn";
-            // 
-            // oFERTABindingSource
-            // 
-            this.oFERTABindingSource.DataSource = typeof(PROJEKTapp.OFERTA);
+            this.oFERTABindingSource1.DataSource = typeof(PROJEKTapp.OFERTA);
             // 
             // iDPRODUKTUDataGridViewTextBoxColumn
             // 
             this.iDPRODUKTUDataGridViewTextBoxColumn.DataPropertyName = "ID_PRODUKTU";
             this.iDPRODUKTUDataGridViewTextBoxColumn.HeaderText = "ID_PRODUKTU";
             this.iDPRODUKTUDataGridViewTextBoxColumn.Name = "iDPRODUKTUDataGridViewTextBoxColumn";
+            this.iDPRODUKTUDataGridViewTextBoxColumn.ReadOnly = true;
             this.iDPRODUKTUDataGridViewTextBoxColumn.Visible = false;
             // 
             // iDZLECENIADataGridViewTextBoxColumn
@@ -347,6 +346,7 @@
             this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
             this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID_ZLECENIA";
             this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
+            this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
             this.iDZLECENIADataGridViewTextBoxColumn.Visible = false;
             // 
             // nAZWAPRODUKTUDataGridViewTextBoxColumn
@@ -396,7 +396,7 @@
             this.groupBoxNowe_ZLecenie.ResumeLayout(false);
             this.groupBoxNowe_ZLecenie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOFERTA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oFERTABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oFERTABindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zLECENIAPRODUKTYNAZWYBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fIRMYBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FirmyBindingSource)).EndInit();
@@ -425,10 +425,6 @@
         private System.Windows.Forms.Label lblFirma;
         private System.Windows.Forms.BindingSource fIRMYBindingSource1;
         private System.Windows.Forms.BindingSource zLECENIAPRODUKTYNAZWYBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDPRODUKTUDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDZLECENIADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nAZWAPRODUKTUDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iLOSCDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox txtBoxCena;
         private System.Windows.Forms.Label lblKOSZT;
         private System.Windows.Forms.TextBox txtBox_Data_Realizacji;
@@ -437,7 +433,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDZLECENIADataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn kOSZTCALKOWITYPRODUKCJIDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cZASPRODUKCJIDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource oFERTABindingSource;
         private System.Windows.Forms.Button btnOdrzuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDPRODUKTUDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDZLECENIADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nAZWAPRODUKTUDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iLOSCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDZLECENIADataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.BindingSource oFERTABindingSource1;
     }
 }

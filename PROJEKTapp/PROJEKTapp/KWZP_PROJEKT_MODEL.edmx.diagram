@@ -110,18 +110,16 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZLECENIE___ID_PR__503BEA1C" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZLECENIE___ID_ZL__4F47C5E3" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.SZKOLENIA_PRACOWNIKA" Width="1.5" PointX="21.375" PointY="18.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.URLOPY_PRACOWNIKA" Width="1.5" PointX="21.375" PointY="21.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.URLOPY_PRACOWNIKA" PointX="7.375" PointY="0.75" Width="1.5" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.HISTORIA_STATUS_ZLECENIA" Width="1.5" PointX="21.375" PointY="0.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_MATERIALY" Width="1.5" PointX="21.375" PointY="3.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_PRODUKTY_NAZWY" Width="1.5" PointX="21.375" PointY="6.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" Width="1.875" PointX="21.375" PointY="21.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE" Width="1.5" PointX="24" PointY="21.375" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY" Width="1.5" PointX="23.375" PointY="0.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.CZAS_PRACY_MASZYN" Width="1.5" PointX="0.75" PointY="23.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.CZAS_PRACY_NARZEDZI" Width="1.5" PointX="2.75" PointY="23.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.CZAS_PRACY_NARZEDZI" PointX="9.375" PointY="0.75" Width="1.5" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MASZYNY" Width="1.5" PointX="5.5" PointY="5.375" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.NARZEDZIA" Width="1.5" PointX="11.5" PointY="32.25" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZESPOL_MASZYN" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZESPOL_MASZYN" PointX="9.75" PointY="3.625" Width="1.5" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZESPOL_NARZEDZI" Width="1.5" PointX="13.75" PointY="27.375" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__MASZYNY__ID_MODE__66603565" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__PROCES__ID_MASZY__3B40CD36" />
@@ -131,11 +129,13 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZESPOL_NA__ID_RE__10566F31" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.KOSZTY_CZASY_PRODUKCJI" Width="1.5" PointX="23.375" PointY="3.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.OFERTA" Width="2.75" PointX="23.375" PointY="6.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PENSJE" Width="1.5" PointX="23.375" PointY="16.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PENSJE" PointX="21.375" PointY="21.75" Width="1.5" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZAMOWIENIA" Width="1.5" PointX="5.25" PointY="38.5" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZAMOWIENI__ID_FI__2EDAF651" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.Status_detale_zlecenie" Width="1.5" PointX="24.375" PointY="9.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.zestawienie" Width="1.5" PointX="24.375" PointY="13.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" Width="1.5" PointX="23.375" PointY="16.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE" Width="1.5" PointX="23.375" PointY="19.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

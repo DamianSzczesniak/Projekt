@@ -34,11 +34,11 @@
             this.lblNrTel = new System.Windows.Forms.Label();
             this.lblNip = new System.Windows.Forms.Label();
             this.txtBoxNazwa = new System.Windows.Forms.TextBox();
-            this.FirmyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtBoxAdresEmail = new System.Windows.Forms.TextBox();
             this.txtBoxNrTelefonu = new System.Windows.Forms.TextBox();
             this.txtBoxNIP = new System.Windows.Forms.TextBox();
             this.btnZapisz = new System.Windows.Forms.Button();
+            this.FirmyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.FirmyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,10 +86,6 @@
             this.txtBoxNazwa.Size = new System.Drawing.Size(146, 20);
             this.txtBoxNazwa.TabIndex = 0;
             // 
-            // FirmyBindingSource
-            // 
-            this.FirmyBindingSource.DataSource = typeof(PROJEKTapp.FIRMY);
-            // 
             // txtBoxAdresEmail
             // 
             this.txtBoxAdresEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.FirmyBindingSource, "ADRES_EMAIL", true));
@@ -97,6 +93,7 @@
             this.txtBoxAdresEmail.Name = "txtBoxAdresEmail";
             this.txtBoxAdresEmail.Size = new System.Drawing.Size(146, 20);
             this.txtBoxAdresEmail.TabIndex = 1;
+           
             // 
             // txtBoxNrTelefonu
             // 
@@ -105,6 +102,7 @@
             this.txtBoxNrTelefonu.Name = "txtBoxNrTelefonu";
             this.txtBoxNrTelefonu.Size = new System.Drawing.Size(146, 20);
             this.txtBoxNrTelefonu.TabIndex = 2;
+            this.txtBoxNrTelefonu.TextChanged += new System.EventHandler(this.txtBoxNrTelefonu_TextChanged);
             // 
             // txtBoxNIP
             // 
@@ -113,6 +111,7 @@
             this.txtBoxNIP.Name = "txtBoxNIP";
             this.txtBoxNIP.Size = new System.Drawing.Size(146, 20);
             this.txtBoxNIP.TabIndex = 3;
+            this.txtBoxNIP.TextChanged += new System.EventHandler(this.txtBoxNIP_TextChanged);
             // 
             // btnZapisz
             // 
@@ -123,7 +122,10 @@
             this.btnZapisz.TabIndex = 4;
             this.btnZapisz.Text = "Zapisz";
             this.btnZapisz.UseVisualStyleBackColor = true;
-            
+            // 
+            // FirmyBindingSource
+            // 
+            this.FirmyBindingSource.DataSource = typeof(PROJEKTapp.FIRMY);
             // 
             // FormDodajEdytujFirme
             // 

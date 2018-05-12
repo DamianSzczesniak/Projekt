@@ -91,10 +91,12 @@ namespace PROJEKTapp
 
         private void btnNoweZlecenie_Click(object sender, EventArgs e)
         {
-            FormNoweZlecenie NoweZlecenie = new FormNoweZlecenie(db);
+            FormNoweZlecenie NoweZlecenie = new FormNoweZlecenie(new ZLECENIA(), db);
             NoweZlecenie.Show();
 
         }
+
+        
 
         private void button2_Click(object sender, EventArgs e)
         {

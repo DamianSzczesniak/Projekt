@@ -15,8 +15,8 @@ namespace PROJEKTapp
     public partial class SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE
     {
         public int ID_ZLECENIA { get; set; }
-        public int ID_MATERIAL { get; set; }
-        public string NAZWA { get; set; }
+        public Nullable<int> ID_MATERIAL { get; set; }
+        public string PELNA_NAZWA_MATERIALU { get; set; }
         public Nullable<int> SUMA_MATERIALU { get; set; }
     }
 }
