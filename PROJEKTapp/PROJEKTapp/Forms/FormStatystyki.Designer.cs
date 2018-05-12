@@ -39,8 +39,12 @@
             this.btnWynagrodzenia = new System.Windows.Forms.Button();
             this.btnPracownicy = new System.Windows.Forms.Button();
             this.btnRozliczenieProjektow = new System.Windows.Forms.Button();
+            this.pnlRozliczenie = new System.Windows.Forms.Panel();
+            this.dgvRozliczenie = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnlRozliczenie.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRozliczenie)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -186,11 +190,32 @@
             this.btnRozliczenieProjektow.Visible = false;
             this.btnRozliczenieProjektow.Click += new System.EventHandler(this.btnRozliczenieProjektow_Click);
             // 
+            // pnlRozliczenie
+            // 
+            this.pnlRozliczenie.Controls.Add(this.dgvRozliczenie);
+            this.pnlRozliczenie.Location = new System.Drawing.Point(675, 65);
+            this.pnlRozliczenie.Name = "pnlRozliczenie";
+            this.pnlRozliczenie.Size = new System.Drawing.Size(679, 562);
+            this.pnlRozliczenie.TabIndex = 11;
+            this.pnlRozliczenie.Visible = false;
+            // 
+            // dgvRozliczenie
+            // 
+            this.dgvRozliczenie.AllowUserToAddRows = false;
+            this.dgvRozliczenie.AllowUserToDeleteRows = false;
+            this.dgvRozliczenie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRozliczenie.Location = new System.Drawing.Point(120, 3);
+            this.dgvRozliczenie.Name = "dgvRozliczenie";
+            this.dgvRozliczenie.ReadOnly = true;
+            this.dgvRozliczenie.Size = new System.Drawing.Size(556, 390);
+            this.dgvRozliczenie.TabIndex = 11;
+            // 
             // FormStatystyki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.pnlRozliczenie);
             this.Controls.Add(this.btnRozliczenieProjektow);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -202,6 +227,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.pnlRozliczenie.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRozliczenie)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -218,5 +245,7 @@
         private System.Windows.Forms.Button btnWynagrodzenia;
         private System.Windows.Forms.Button btnPracownicy;
         private System.Windows.Forms.Button btnRozliczenieProjektow;
+        private System.Windows.Forms.Panel pnlRozliczenie;
+        private System.Windows.Forms.DataGridView dgvRozliczenie;
     }
 }
