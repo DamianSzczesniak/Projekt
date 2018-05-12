@@ -33,10 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvRozliczenie = new System.Windows.Forms.DataGridView();
+            this.zestawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,7 +50,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.zestawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kwota_pobrana_za_zlecenie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kosz_wykonania_zlecenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,6 +113,10 @@
             this.dgvRozliczenie.Size = new System.Drawing.Size(612, 380);
             this.dgvRozliczenie.TabIndex = 10;
             // 
+            // zestawienieBindingSource
+            // 
+            this.zestawienieBindingSource.DataSource = typeof(PROJEKTapp.zestawienie);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -145,6 +150,7 @@
             this.txtBoxSDochod.Name = "txtBoxSDochod";
             this.txtBoxSDochod.Size = new System.Drawing.Size(161, 20);
             this.txtBoxSDochod.TabIndex = 14;
+            this.txtBoxSDochod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtBoxSPrzychod
             // 
@@ -152,6 +158,7 @@
             this.txtBoxSPrzychod.Name = "txtBoxSPrzychod";
             this.txtBoxSPrzychod.Size = new System.Drawing.Size(141, 20);
             this.txtBoxSPrzychod.TabIndex = 15;
+            this.txtBoxSPrzychod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtBoxSKoszty
             // 
@@ -159,6 +166,7 @@
             this.txtBoxSKoszty.Name = "txtBoxSKoszty";
             this.txtBoxSKoszty.Size = new System.Drawing.Size(157, 20);
             this.txtBoxSKoszty.TabIndex = 16;
+            this.txtBoxSKoszty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dateTimePickerPoczatek
             // 
@@ -204,14 +212,12 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "DO :";
             // 
-            // zestawienieBindingSource
-            // 
-            this.zestawienieBindingSource.DataSource = typeof(PROJEKTapp.zestawienie);
-            // 
             // iDZLECENIADataGridViewTextBoxColumn
             // 
             this.iDZLECENIADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.iDZLECENIADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID ZLECENIA";
             this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
             this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
@@ -220,9 +226,10 @@
             // 
             this.Kwota_pobrana_za_zlecenie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Kwota_pobrana_za_zlecenie.DataPropertyName = "Kwota_pobrana_za_zlecenie";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Kwota_pobrana_za_zlecenie.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Kwota_pobrana_za_zlecenie.DefaultCellStyle = dataGridViewCellStyle2;
             this.Kwota_pobrana_za_zlecenie.HeaderText = "PRZYCHÓD";
             this.Kwota_pobrana_za_zlecenie.Name = "Kwota_pobrana_za_zlecenie";
             this.Kwota_pobrana_za_zlecenie.ReadOnly = true;
@@ -231,9 +238,10 @@
             // Kosz_wykonania_zlecenia
             // 
             this.Kosz_wykonania_zlecenia.DataPropertyName = "Kosz_wykonania_zlecenia";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Kosz_wykonania_zlecenia.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Kosz_wykonania_zlecenia.DefaultCellStyle = dataGridViewCellStyle3;
             this.Kosz_wykonania_zlecenia.HeaderText = "KOSZT";
             this.Kosz_wykonania_zlecenia.Name = "Kosz_wykonania_zlecenia";
             this.Kosz_wykonania_zlecenia.ReadOnly = true;
@@ -243,9 +251,10 @@
             // 
             this.Saldo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Saldo.DataPropertyName = "Saldo";
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Saldo.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Saldo.DefaultCellStyle = dataGridViewCellStyle4;
             this.Saldo.HeaderText = "DOCHÓD";
             this.Saldo.Name = "Saldo";
             this.Saldo.ReadOnly = true;

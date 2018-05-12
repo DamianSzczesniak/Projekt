@@ -32,13 +32,24 @@ namespace PROJEKTapp
             dateTimePickerKoniec.Value = DateTime.Today;
             zrodloDanych();
             polaSum();
-
+           
 
         }
 
         private void zrodloDanych()
         {
             zestawienieBindingSource.DataSource = db.zestawienie.Where(a => a.DATA_REALIZACJI >= dateTimePickerPoczatek.Value && a.DATA_REALIZACJI <= dateTimePickerKoniec.Value).ToList();
+            foreach (DataGridViewRow Myrow in dgvRozliczenie.Rows)
+            {
+                if (Convert.ToInt32(Myrow.Cells[3].Value) < 0)
+                {
+                    Myrow.Cells[3].Style.BackColor = Color.Red;
+                }
+                else
+                {
+                    Myrow.Cells[3].Style.BackColor = Color.Green;
+                }
+            }
         }
 
         private void polaSum()
@@ -61,6 +72,18 @@ namespace PROJEKTapp
             txtBoxSPrzychod.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", sumPrzychod);
             txtBoxSKoszty.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", sumKoszt);
             txtBoxSDochod.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", sumDochod);
+            if (sumDochod > 0)
+            {
+                txtBoxSDochod.BackColor = Color.Green;
+            }
+            else if(sumDochod == 0)
+            {
+                txtBoxSDochod.BackColor = Color.Yellow;
+            }
+            else
+            {
+                txtBoxSDochod.BackColor = Color.Red;
+            }
         }
 
         private void dateTimePickerPoczatek_ValueChanged(object sender, EventArgs e)
