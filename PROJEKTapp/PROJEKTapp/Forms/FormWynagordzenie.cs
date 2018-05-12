@@ -20,7 +20,7 @@ namespace PROJEKTapp
             this.db = db;
             this.ladowanieformularzazokienkami = ladowanieformularzazokienkami;
             InitializeComponent();
-            
+
         }
 
         private void FormWynagordzenie_Load(object sender, EventArgs e)
@@ -35,7 +35,8 @@ namespace PROJEKTapp
                 dgvWyplaty.Columns[5].Visible = false;
                 dgvWyplaty.Columns[7].Visible = false;
                 dgvWyplaty.Columns[8].Visible = false;
-
+                dgvWyplaty.Columns[6].DefaultCellStyle.Format = "c2";
+                dgvWyplaty.Columns[6].DefaultCellStyle.Format = "c2";
             }
             else
             {
@@ -114,6 +115,7 @@ namespace PROJEKTapp
             dgvWyplaty.Columns[5].Visible = false;
             dgvWyplaty.Columns[7].Visible = false;
             dgvWyplaty.Columns[8].Visible = false;
+
         }
     }
 }
