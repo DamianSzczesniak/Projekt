@@ -39,6 +39,7 @@ namespace PROJEKTapp
             {
                 pnlWynagordzenia.Show();
                 Ladowanie_DgvWyplaty();
+                SumaPensji();
             }
             else
             {
@@ -111,6 +112,16 @@ namespace PROJEKTapp
         private void dtpMiesiac_ValueChanged(object sender, EventArgs e)
         {
             Ladowanie_DgvWyplaty();
+            SumaPensji();
+        }
+        private void SumaPensji()
+        {
+            int sumaPensji = 0;
+            for (int i = 0; i < dgvWyplaty.Rows.Count; ++i)
+            {
+                sumaPensji += Convert.ToInt32(dgvWyplaty.Rows[i].Cells[6].Value);
+            }
+            lblSumaPensji.Text = "Suma pensji w "+ dtpMiesiac.Value.Month + ". "+ dtpMiesiac.Value.Year + " wynosi: " + sumaPensji.ToString("C2");
         }
     }
 }

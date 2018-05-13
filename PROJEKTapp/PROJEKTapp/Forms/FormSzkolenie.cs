@@ -160,6 +160,7 @@ namespace PROJEKTapp
             ZapiszUsun = true;
             btnSprawdz.Show();
             pnlDodajSzkolenie.Show();
+            pnlNoweSzkolenie.Hide();
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             this.pracownik = db.PRACOWNICY.Where(pracownik => pracownik.ID_PRACOWNIK == ID).First();
             lblPracownik.Text = "Szkolenie pracownika " + pracownik.IMIE + " " + pracownik.NAZWISKO;
