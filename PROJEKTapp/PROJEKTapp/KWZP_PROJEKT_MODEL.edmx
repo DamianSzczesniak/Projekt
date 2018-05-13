@@ -941,9 +941,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.zestawienie' does not have a prim
         <EntityType Name="zestawienie">
           <Key>
             <PropertyRef Name="ID_ZLECENIA" />
-            
-            
-            <PropertyRef Name="ID_STATUSU_ZLECENIA" />
           </Key>
           <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
           <Property Name="DATA_ZLECENIA" Type="date" Nullable="false" />
@@ -4105,7 +4102,6 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
         <EntityType Name="zestawienie">
           <Key>
             <PropertyRef Name="ID_ZLECENIA" />
-            <PropertyRef Name="ID_STATUSU_ZLECENIA" />
           </Key>
           <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
           <Property Name="DATA_ZLECENIA" Type="DateTime" Nullable="false" Precision="0" />

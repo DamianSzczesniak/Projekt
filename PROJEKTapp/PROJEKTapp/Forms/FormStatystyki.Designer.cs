@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStatystyki));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,6 +45,13 @@
             this.btnPracownicy = new System.Windows.Forms.Button();
             this.btnRozliczenieProjektow = new System.Windows.Forms.Button();
             this.pnlRozliczenie = new System.Windows.Forms.Panel();
+            this.dgvRozliczenie = new System.Windows.Forms.DataGridView();
+            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kwota_pobrana_za_zlecenie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kosz_wykonania_zlecenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATA_REALIZACJI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zestawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,13 +63,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvRozliczenie = new System.Windows.Forms.DataGridView();
-            this.Kwota_pobrana_za_zlecenie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Kosz_wykonania_zlecenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATA_REALIZACJI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zestawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlRozliczenie.SuspendLayout();
@@ -78,7 +78,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1366, 59);
+            this.panel1.Size = new System.Drawing.Size(1300, 59);
             this.panel1.TabIndex = 8;
             // 
             // btnExit
@@ -115,7 +115,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 633);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1366, 135);
+            this.panel2.Size = new System.Drawing.Size(1300, 135);
             this.panel2.TabIndex = 9;
             // 
             // btnStatystyki
@@ -233,6 +233,84 @@
             this.pnlRozliczenie.TabIndex = 11;
             this.pnlRozliczenie.Visible = false;
             // 
+            // dgvRozliczenie
+            // 
+            this.dgvRozliczenie.AllowUserToAddRows = false;
+            this.dgvRozliczenie.AllowUserToDeleteRows = false;
+            this.dgvRozliczenie.AutoGenerateColumns = false;
+            this.dgvRozliczenie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRozliczenie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDZLECENIADataGridViewTextBoxColumn,
+            this.Kwota_pobrana_za_zlecenie,
+            this.Kosz_wykonania_zlecenia,
+            this.Saldo,
+            this.DATA_REALIZACJI});
+            this.dgvRozliczenie.DataSource = this.zestawienieBindingSource;
+            this.dgvRozliczenie.Location = new System.Drawing.Point(33, 112);
+            this.dgvRozliczenie.Name = "dgvRozliczenie";
+            this.dgvRozliczenie.ReadOnly = true;
+            this.dgvRozliczenie.Size = new System.Drawing.Size(612, 380);
+            this.dgvRozliczenie.TabIndex = 34;
+            // 
+            // iDZLECENIADataGridViewTextBoxColumn
+            // 
+            this.iDZLECENIADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.iDZLECENIADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
+            this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Kwota_pobrana_za_zlecenie
+            // 
+            this.Kwota_pobrana_za_zlecenie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Kwota_pobrana_za_zlecenie.DataPropertyName = "Kwota_pobrana_za_zlecenie";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Kwota_pobrana_za_zlecenie.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Kwota_pobrana_za_zlecenie.HeaderText = "PRZYCHÓD";
+            this.Kwota_pobrana_za_zlecenie.Name = "Kwota_pobrana_za_zlecenie";
+            this.Kwota_pobrana_za_zlecenie.ReadOnly = true;
+            this.Kwota_pobrana_za_zlecenie.Width = 150;
+            // 
+            // Kosz_wykonania_zlecenia
+            // 
+            this.Kosz_wykonania_zlecenia.DataPropertyName = "Kosz_wykonania_zlecenia";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Kosz_wykonania_zlecenia.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Kosz_wykonania_zlecenia.HeaderText = "KOSZT";
+            this.Kosz_wykonania_zlecenia.Name = "Kosz_wykonania_zlecenia";
+            this.Kosz_wykonania_zlecenia.ReadOnly = true;
+            this.Kosz_wykonania_zlecenia.Width = 150;
+            // 
+            // Saldo
+            // 
+            this.Saldo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Saldo.DataPropertyName = "Saldo";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.Saldo.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Saldo.HeaderText = "DOCHÓD";
+            this.Saldo.Name = "Saldo";
+            this.Saldo.ReadOnly = true;
+            // 
+            // DATA_REALIZACJI
+            // 
+            this.DATA_REALIZACJI.DataPropertyName = "DATA_REALIZACJI";
+            this.DATA_REALIZACJI.HeaderText = "DATA_REALIZACJI";
+            this.DATA_REALIZACJI.Name = "DATA_REALIZACJI";
+            this.DATA_REALIZACJI.ReadOnly = true;
+            this.DATA_REALIZACJI.Visible = false;
+            // 
+            // zestawienieBindingSource
+            // 
+            this.zestawienieBindingSource.DataSource = typeof(PROJEKTapp.zestawienie);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -267,6 +345,7 @@
             this.dateTimePickerKoniec.Name = "dateTimePickerKoniec";
             this.dateTimePickerKoniec.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerKoniec.TabIndex = 30;
+            this.dateTimePickerKoniec.ValueChanged += new System.EventHandler(this.dateTimePickerKoniec_ValueChanged);
             // 
             // dateTimePickerPoczatek
             // 
@@ -274,6 +353,7 @@
             this.dateTimePickerPoczatek.Name = "dateTimePickerPoczatek";
             this.dateTimePickerPoczatek.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerPoczatek.TabIndex = 29;
+            this.dateTimePickerPoczatek.ValueChanged += new System.EventHandler(this.dateTimePickerPoczatek_ValueChanged);
             // 
             // txtBoxSKoszty
             // 
@@ -326,89 +406,11 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "SUMA KOSZTOW";
             // 
-            // dgvRozliczenie
-            // 
-            this.dgvRozliczenie.AllowUserToAddRows = false;
-            this.dgvRozliczenie.AllowUserToDeleteRows = false;
-            this.dgvRozliczenie.AutoGenerateColumns = false;
-            this.dgvRozliczenie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRozliczenie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDZLECENIADataGridViewTextBoxColumn,
-            this.Kwota_pobrana_za_zlecenie,
-            this.Kosz_wykonania_zlecenia,
-            this.Saldo,
-            this.DATA_REALIZACJI});
-            this.dgvRozliczenie.DataSource = this.zestawienieBindingSource;
-            this.dgvRozliczenie.Location = new System.Drawing.Point(33, 112);
-            this.dgvRozliczenie.Name = "dgvRozliczenie";
-            this.dgvRozliczenie.ReadOnly = true;
-            this.dgvRozliczenie.Size = new System.Drawing.Size(612, 380);
-            this.dgvRozliczenie.TabIndex = 34;
-            // 
-            // Kwota_pobrana_za_zlecenie
-            // 
-            this.Kwota_pobrana_za_zlecenie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Kwota_pobrana_za_zlecenie.DataPropertyName = "Kwota_pobrana_za_zlecenie";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.Kwota_pobrana_za_zlecenie.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Kwota_pobrana_za_zlecenie.HeaderText = "PRZYCHÓD";
-            this.Kwota_pobrana_za_zlecenie.Name = "Kwota_pobrana_za_zlecenie";
-            this.Kwota_pobrana_za_zlecenie.ReadOnly = true;
-            this.Kwota_pobrana_za_zlecenie.Width = 150;
-            // 
-            // Kosz_wykonania_zlecenia
-            // 
-            this.Kosz_wykonania_zlecenia.DataPropertyName = "Kosz_wykonania_zlecenia";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Kosz_wykonania_zlecenia.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Kosz_wykonania_zlecenia.HeaderText = "KOSZT";
-            this.Kosz_wykonania_zlecenia.Name = "Kosz_wykonania_zlecenia";
-            this.Kosz_wykonania_zlecenia.ReadOnly = true;
-            this.Kosz_wykonania_zlecenia.Width = 150;
-            // 
-            // Saldo
-            // 
-            this.Saldo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Saldo.DataPropertyName = "Saldo";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.Saldo.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Saldo.HeaderText = "DOCHÓD";
-            this.Saldo.Name = "Saldo";
-            this.Saldo.ReadOnly = true;
-            // 
-            // DATA_REALIZACJI
-            // 
-            this.DATA_REALIZACJI.DataPropertyName = "DATA_REALIZACJI";
-            this.DATA_REALIZACJI.HeaderText = "DATA_REALIZACJI";
-            this.DATA_REALIZACJI.Name = "DATA_REALIZACJI";
-            this.DATA_REALIZACJI.ReadOnly = true;
-            this.DATA_REALIZACJI.Visible = false;
-            // 
-            // iDZLECENIADataGridViewTextBoxColumn
-            // 
-            this.iDZLECENIADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.iDZLECENIADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
-            this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // zestawienieBindingSource
-            // 
-            this.zestawienieBindingSource.DataSource = typeof(PROJEKTapp.zestawienie);
-            // 
             // FormStatystyki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(1300, 768);
             this.Controls.Add(this.pnlRozliczenie);
             this.Controls.Add(this.btnRozliczenieProjektow);
             this.Controls.Add(this.panel1);
