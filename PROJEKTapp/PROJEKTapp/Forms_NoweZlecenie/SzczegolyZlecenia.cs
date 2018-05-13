@@ -17,27 +17,24 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 {
     public partial class SzczegolyZlecenia : Form
     {
-        int id ;
+        int id;
         KWZP_PROJEKTEntities db;
         int maxDlugosc = 0;
-        
+
         public SzczegolyZlecenia(int id, KWZP_PROJEKTEntities db)
         {
             this.db = db;
-            this.id = id; ;
+            this.id = id;
             InitializeComponent();
         }
 
         private void SzczegolyZlecenia_Load(object sender, EventArgs e)
         {
-            
 
+          
             ZLECENIA zlecenia = db.ZLECENIA.Where(a => a.ID_ZLECENIA == id).First();
-            AKTUALNY_STATUS_ZLECEN azlecenie = db.AKTUALNY_STATUS_ZLECEN.Where(a => a.ID_ZLECENIA == id).First();
-            if (azlecenie.Status != 1)
-            {
-                btnZam.Hide();
-            }
+            statusButtony();
+
             FIRMY firma = db.FIRMY.Where(a => a.ID_FIRMY == zlecenia.ID_FIRMY).First();
             txtFirma.Text = firma.NAZWA_FIRMY;
             txtBox_Data_Realizacji.Text = ((DateTime)zlecenia.DATA_REALIZACJI).ToShortDateString();
@@ -45,11 +42,11 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             OFERTA oferta = db.OFERTA.Where(a => a.ID_ZLECENIA == zlecenia.ID_ZLECENIA).First();
             decimal dcena = decimal.Parse(oferta.KOSZT_CALKOWITY_PRODUKCJI.ToString());
             int cena = Decimal.ToInt32(dcena);
-            txtBoxCena.Text  = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", cena);
+            txtBoxCena.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", cena);
             dataGridViewOferta.DataSource = db.ZLECENIA_PRODUKTY_NAZWY.Where(a => a.ID_ZLECENIA == id).ToList();
 
             List<CZAS_PRACY_MASZYN> czasyPracy = this.db.CZAS_PRACY_MASZYN.Where(x => x.ID_ZLECENIA == id).ToList();
-            List<CZAS_PRACY_NARZEDZI> czasyPracyNarzedzi = this.db.CZAS_PRACY_NARZEDZI.Where(x => x.ID_ZLECENIA ==id).ToList();
+            List<CZAS_PRACY_NARZEDZI> czasyPracyNarzedzi = this.db.CZAS_PRACY_NARZEDZI.Where(x => x.ID_ZLECENIA == id).ToList();
             DateTime aktualnaData = DateTime.Now;
             Random random = new Random();
             int doWyprodukowania = 0;
@@ -66,12 +63,12 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     }
                 }
             }
-            
+
             foreach (ZLECENIE_PRODUKT zlecenieProduktu in zlecenia.ZLECENIE_PRODUKT)
             {
                 doWyprodukowania = (int)zlecenieProduktu.ILOSC;
                 srednia = 1 + ((int)doWyprodukowania / 10);
-                    //maxDlugosc);
+                //maxDlugosc);
                 Series seria = new Series();
                 seria.XValueType = ChartValueType.DateTime;
                 for (int i = 0; i < 10; i++)
@@ -85,7 +82,16 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             }
         }
 
-        private void RezerwujMaszyny_Click(object sender, EventArgs e)
+        private void statusButtony()
+        {
+            AKTUALNY_STATUS_ZLECEN azlecenie = db.AKTUALNY_STATUS_ZLECEN.Where(a => a.ID_ZLECENIA == id).First();
+            if (azlecenie.Status != 1)
+            {
+                btnZam.Hide();
+            }
+        }
+
+    private void RezerwujMaszyny_Click(object sender, EventArgs e)
         {
             ZLECENIA zlecenia = db.ZLECENIA.Where(a => a.ID_ZLECENIA == id).First();
             List<CZAS_PRACY_MASZYN> czasyPracy = this.db.CZAS_PRACY_MASZYN.Where(x => x.ID_ZLECENIA == id).ToList();
@@ -129,6 +135,14 @@ namespace PROJEKTapp.Forms_NoweZlecenie
         {
             ZamowienieMaterialu zamowienieMaterialu = new ZamowienieMaterialu(db, id);
             zamowienieMaterialu.Show();
+        }
+
+        private void SzczegolyZlecenia_Enter(object sender, EventArgs e)
+        {
+            KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
+            db = ndb;
+            db.SaveChanges();
+            statusButtony();
         }
     }
 }

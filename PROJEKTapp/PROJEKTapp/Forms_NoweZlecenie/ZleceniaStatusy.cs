@@ -117,6 +117,7 @@ namespace PROJEKTapp
         {
             KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
             db.Status_detale_zlecenie = nDB.Status_detale_zlecenie;
+            db.SaveChanges();
             SprawdzanieUprawnien(uprawnienia);
         }
     }
