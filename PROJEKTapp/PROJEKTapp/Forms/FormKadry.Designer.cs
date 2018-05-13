@@ -504,7 +504,7 @@
             // 
             this.lblDataStart.AutoSize = true;
             this.lblDataStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDataStart.Location = new System.Drawing.Point(320, 165);
+            this.lblDataStart.Location = new System.Drawing.Point(320, 79);
             this.lblDataStart.Name = "lblDataStart";
             this.lblDataStart.Size = new System.Drawing.Size(169, 18);
             this.lblDataStart.TabIndex = 46;
@@ -522,7 +522,7 @@
             // txtDataRozpoczeciaPracy
             // 
             this.txtDataRozpoczeciaPracy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDataRozpoczeciaPracy.Location = new System.Drawing.Point(323, 192);
+            this.txtDataRozpoczeciaPracy.Location = new System.Drawing.Point(323, 106);
             this.txtDataRozpoczeciaPracy.Name = "txtDataRozpoczeciaPracy";
             this.txtDataRozpoczeciaPracy.Size = new System.Drawing.Size(290, 26);
             this.txtDataRozpoczeciaPracy.TabIndex = 67;
@@ -635,7 +635,7 @@
             // 
             this.chbZmianaStawki.AutoSize = true;
             this.chbZmianaStawki.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbZmianaStawki.Location = new System.Drawing.Point(319, 76);
+            this.chbZmianaStawki.Location = new System.Drawing.Point(323, 223);
             this.chbZmianaStawki.Name = "chbZmianaStawki";
             this.chbZmianaStawki.Size = new System.Drawing.Size(179, 22);
             this.chbZmianaStawki.TabIndex = 73;
@@ -659,7 +659,7 @@
             // 
             this.chbDataKoniec.AutoSize = true;
             this.chbDataKoniec.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chbDataKoniec.Location = new System.Drawing.Point(323, 225);
+            this.chbDataKoniec.Location = new System.Drawing.Point(323, 139);
             this.chbDataKoniec.Name = "chbDataKoniec";
             this.chbDataKoniec.Size = new System.Drawing.Size(201, 22);
             this.chbDataKoniec.TabIndex = 71;
@@ -671,7 +671,7 @@
             // 
             this.cbOkres.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cbOkres.FormattingEnabled = true;
-            this.cbOkres.Location = new System.Drawing.Point(319, 105);
+            this.cbOkres.Location = new System.Drawing.Point(323, 252);
             this.cbOkres.Name = "cbOkres";
             this.cbOkres.Size = new System.Drawing.Size(121, 28);
             this.cbOkres.TabIndex = 70;
@@ -680,8 +680,9 @@
             // cbStawka
             // 
             this.cbStawka.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.cbStawka.FormatString = "N2";
             this.cbStawka.FormattingEnabled = true;
-            this.cbStawka.Location = new System.Drawing.Point(446, 106);
+            this.cbStawka.Location = new System.Drawing.Point(450, 253);
             this.cbStawka.Name = "cbStawka";
             this.cbStawka.Size = new System.Drawing.Size(121, 28);
             this.cbStawka.TabIndex = 70;
@@ -689,7 +690,7 @@
             // txtDataKoniec
             // 
             this.txtDataKoniec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtDataKoniec.Location = new System.Drawing.Point(323, 256);
+            this.txtDataKoniec.Location = new System.Drawing.Point(323, 170);
             this.txtDataKoniec.Name = "txtDataKoniec";
             this.txtDataKoniec.Size = new System.Drawing.Size(290, 26);
             this.txtDataKoniec.TabIndex = 67;

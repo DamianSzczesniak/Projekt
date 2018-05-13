@@ -37,8 +37,24 @@ namespace PROJEKTapp
 
             cbStawka.DataSource = db.STAWKA.Where(stawka => stawka.ID_OKRES.Equals(((OKRES)this.cbOkres.SelectedValue).ID_OKRES)).ToList();
             cbStawka.DisplayMember = "Wartosc";
+            cbStawka.FormatString = "C2";
         }
 
+        private void ladowanie_ListaPracownikow()
+        {
+            this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
+            ListaPracownikow.Columns[0].HeaderText = "NUMER";
+            ListaPracownikow.Columns[0].Width = 60;
+            ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
+        }
+
+        private void ladowanie_ListaAdresow(int ID)
+        {
+            db = new KWZP_PROJEKTEntities();
+            this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();
+            ListaAdresow.Columns[0].Visible = false;
+            ListaAdresow.Columns[1].Visible = false;
+        }
 
         private void FormKadry_Load(object sender, EventArgs e)
         {
@@ -48,10 +64,7 @@ namespace PROJEKTapp
                 pnlUserSearch.Show();
                 pnlUserField.Hide();
                 ladowanieformularzazokienkami = false;
-                this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
-                ListaPracownikow.Columns[0].HeaderText = "NUMER";
-                ListaPracownikow.Columns[0].Width = 60;
-                ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
+                ladowanie_ListaPracownikow();
             }
             else
             {
@@ -70,10 +83,7 @@ namespace PROJEKTapp
                 pnlUserControl.Show();
                 pnlUserSearch.Show();
                 pnlUserField.Hide();
-                this.ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
-                ListaPracownikow.Columns[0].HeaderText = "NUMER";
-                ListaPracownikow.Columns[0].Width = 60;
-                ListaPracownikow.Columns[4].HeaderText = "STANOWISKO";
+                ladowanie_ListaPracownikow();
             }
             else
             {
@@ -145,10 +155,7 @@ namespace PROJEKTapp
             btnZapiszDodaj.Show();
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
-            db = new KWZP_PROJEKTEntities();
-            this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();
-            this.ListaAdresow.Columns[0].Visible = false;
-            this.ListaAdresow.Columns[1].Visible = false;
+            ladowanie_ListaAdresow(ID);
             pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
             txtboxNazwisko.Text = pracownik.NAZWISKO;
             txtboxImie.Text = pracownik.IMIE;
@@ -163,7 +170,7 @@ namespace PROJEKTapp
             txtboxKraj.Text = adrespracownik.KRAJ;
             pracownikstawka = pracownik.STAWKA_PRACOWNICY.Last();
             cbOkres.SelectedIndex = (int)(pracownikstawka.STAWKA.ID_OKRES - 1);
-            cbStawka.Text = pracownikstawka.STAWKA.WARTOSC.ToString();
+            cbStawka.Text = (string.Format("{0:C2}", pracownikstawka.STAWKA.WARTOSC)).ToString();
             pracownikstanowisko = pracownik.STANOWISKO_PRACOWNICY.Last();
             cbStanowisko.SelectedIndex = (pracownikstanowisko.ID_STANOWISKO - 1);
             txtDataRozpoczeciaPracy.Value = pracownikstanowisko.DATA_START;
@@ -198,8 +205,7 @@ namespace PROJEKTapp
                 {
                     MessageBox.Show("Usunięcie pracownika nie powiodło się");
                 }
-                ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
-                ListaPracownikow.Refresh();
+                ladowanie_ListaPracownikow();
                 pnlUserField.Hide();
             } 
         }
@@ -268,9 +274,8 @@ namespace PROJEKTapp
                     pracownik.ADRESY_PRACOWNICY.Add(adrespracownika);
                     db.PRACOWNICY.Add(pracownik);
                     db.SaveChanges();
-                    ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
-                    ListaPracownikow.Refresh();
-                }
+                    ladowanie_ListaPracownikow();
+            }
             else
             {//Edycja istniejącego pracownika
                 int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
@@ -287,11 +292,11 @@ namespace PROJEKTapp
                     pracownikstanowiskoN.DATA_START = txtDataRozpoczeciaPracy.Value;
                     if (chbDataKoniec.Checked == true)
                     {
-                        pracownikstanowisko.DATA_KONIEC = txtDataKoniec.Value;
+                        pracownikstanowiskoN.DATA_KONIEC = txtDataKoniec.Value;
                     }
                     else
                     {
-                        pracownikstanowisko.DATA_KONIEC = null;
+                        pracownikstanowiskoN.DATA_KONIEC = null;
                     }
                     pracownik.STANOWISKO_PRACOWNICY.Add(pracownikstanowiskoN);
                 }
@@ -329,8 +334,7 @@ namespace PROJEKTapp
                     adrespracownik.KRAJ = this.txtboxKraj.Text;
                 }
                 db.SaveChanges();
-                ListaPracownikow.DataSource = db.PRACOWNICY_ZATRUDNIENI.ToList();
-                ListaPracownikow.Refresh();
+                ladowanie_ListaPracownikow();
                 czyscform();
                 pnlUserField.Hide();
             }
@@ -421,9 +425,7 @@ namespace PROJEKTapp
             cbMiasto.Enabled = false;
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
-            this.ListaAdresow.DataSource = db.ADRESY_PRACOWNIKA.Where(pracownik => pracownik.IDP.Equals(ID)).ToList();
-            this.ListaAdresow.Columns[0].Visible = false;
-            this.ListaAdresow.Columns[1].Visible = false;
+            ladowanie_ListaAdresow(ID);
             pracownik = db.PRACOWNICY.Where(x => x.ID_PRACOWNIK == ID).First();
             txtboxNazwisko.Text = pracownik.NAZWISKO;
             txtboxImie.Text = pracownik.IMIE;
@@ -439,7 +441,7 @@ namespace PROJEKTapp
             pracownikstawka = pracownik.STAWKA_PRACOWNICY.Last();
             pracownikstawka = pracownik.STAWKA_PRACOWNICY.Last();
             cbOkres.SelectedIndex = (int)(pracownikstawka.STAWKA.ID_OKRES - 1);
-            cbStawka.Text = pracownikstawka.STAWKA.WARTOSC.ToString();
+            cbStawka.Text = (string.Format("{0:C2}", pracownikstawka.STAWKA.WARTOSC)).ToString();
             pracownikstanowisko = pracownik.STANOWISKO_PRACOWNICY.Last();
             cbStanowisko.SelectedIndex = (pracownikstanowisko.ID_STANOWISKO - 1);
             txtDataRozpoczeciaPracy.Value = pracownikstanowisko.DATA_START;

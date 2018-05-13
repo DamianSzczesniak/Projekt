@@ -20,22 +20,25 @@ namespace PROJEKTapp
             this.db = db;
             this.ladowanieformularzazokienkami = ladowanieformularzazokienkami;
             InitializeComponent();
-            
-        }
 
+        }
+        private void Ladowanie_DgvWyplaty()
+        {
+            dgvWyplaty.DataSource = db.PENSJE.Where(miesiac => miesiac.DATA_START < dtpMiesiac.Value).Where(datakoniec => datakoniec.DATA_KONIEC > dtpMiesiac.Value || datakoniec.DATA_KONIEC == null).ToList();
+            dgvWyplaty.Columns[0].Visible = false;
+            dgvWyplaty.Columns[3].Visible = false;
+            dgvWyplaty.Columns[4].Visible = false;
+            dgvWyplaty.Columns[5].Visible = false;
+            dgvWyplaty.Columns[7].Visible = false;
+            dgvWyplaty.Columns[8].Visible = false;
+            dgvWyplaty.Columns[6].DefaultCellStyle.Format = "c2";
+        }
         private void FormWynagordzenie_Load(object sender, EventArgs e)
         {
             if (ladowanieformularzazokienkami == true)
             {
                 pnlWynagordzenia.Show();
-                dgvWyplaty.DataSource = db.PENSJE.Where(miesiac => miesiac.DATA_START < dtpMiesiac.Value).Where(datakoniec => datakoniec.DATA_KONIEC > dtpMiesiac.Value || datakoniec.DATA_KONIEC == null).ToList();
-                dgvWyplaty.Columns[0].Visible = false;
-                dgvWyplaty.Columns[3].Visible = false;
-                dgvWyplaty.Columns[4].Visible = false;
-                dgvWyplaty.Columns[5].Visible = false;
-                dgvWyplaty.Columns[7].Visible = false;
-                dgvWyplaty.Columns[8].Visible = false;
-
+                Ladowanie_DgvWyplaty();
             }
             else
             {
@@ -107,13 +110,7 @@ namespace PROJEKTapp
 
         private void dtpMiesiac_ValueChanged(object sender, EventArgs e)
         {
-            dgvWyplaty.DataSource = db.PENSJE.Where(miesiac => miesiac.DATA_START < dtpMiesiac.Value).Where(datakoniec => datakoniec.DATA_KONIEC > dtpMiesiac.Value || datakoniec.DATA_KONIEC == null).ToList();
-            dgvWyplaty.Columns[0].Visible = false;
-            dgvWyplaty.Columns[3].Visible = false;
-            dgvWyplaty.Columns[4].Visible = false;
-            dgvWyplaty.Columns[5].Visible = false;
-            dgvWyplaty.Columns[7].Visible = false;
-            dgvWyplaty.Columns[8].Visible = false;
+            Ladowanie_DgvWyplaty();
         }
     }
 }

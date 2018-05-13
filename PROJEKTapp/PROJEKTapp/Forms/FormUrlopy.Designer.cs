@@ -48,6 +48,7 @@
             this.dgvUrlopyPraconik = new System.Windows.Forms.DataGridView();
             this.ListaPracownikow = new System.Windows.Forms.DataGridView();
             this.pnlWolne = new System.Windows.Forms.Panel();
+            this.btnSprawdz = new System.Windows.Forms.Button();
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.btnZapiszDodaj = new System.Windows.Forms.Button();
             this.btnWyczysc = new System.Windows.Forms.Button();
@@ -70,7 +71,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbTypUrlopu = new System.Windows.Forms.ComboBox();
-            this.btnSprawdz = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlUrlopyControl.SuspendLayout();
@@ -333,6 +333,16 @@
             this.pnlWolne.Size = new System.Drawing.Size(636, 563);
             this.pnlWolne.TabIndex = 15;
             // 
+            // btnSprawdz
+            // 
+            this.btnSprawdz.Location = new System.Drawing.Point(430, 184);
+            this.btnSprawdz.Name = "btnSprawdz";
+            this.btnSprawdz.Size = new System.Drawing.Size(78, 36);
+            this.btnSprawdz.TabIndex = 73;
+            this.btnSprawdz.Text = "Sprawdź";
+            this.btnSprawdz.UseVisualStyleBackColor = true;
+            this.btnSprawdz.Click += new System.EventHandler(this.btnSprawdz_Click);
+            // 
             // btnAnuluj
             // 
             this.btnAnuluj.Location = new System.Drawing.Point(211, 500);
@@ -419,9 +429,10 @@
             // txtBoxWnioskowany
             // 
             this.txtBoxWnioskowany.Enabled = false;
-            this.txtBoxWnioskowany.Location = new System.Drawing.Point(262, 365);
+            this.txtBoxWnioskowany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtBoxWnioskowany.Location = new System.Drawing.Point(262, 379);
             this.txtBoxWnioskowany.Name = "txtBoxWnioskowany";
-            this.txtBoxWnioskowany.Size = new System.Drawing.Size(151, 20);
+            this.txtBoxWnioskowany.Size = new System.Drawing.Size(151, 26);
             this.txtBoxWnioskowany.TabIndex = 9;
             // 
             // label3
@@ -437,9 +448,10 @@
             // txtBoxPozostalo
             // 
             this.txtBoxPozostalo.Enabled = false;
-            this.txtBoxPozostalo.Location = new System.Drawing.Point(262, 340);
+            this.txtBoxPozostalo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtBoxPozostalo.Location = new System.Drawing.Point(262, 347);
             this.txtBoxPozostalo.Name = "txtBoxPozostalo";
-            this.txtBoxPozostalo.Size = new System.Drawing.Size(151, 20);
+            this.txtBoxPozostalo.Size = new System.Drawing.Size(151, 26);
             this.txtBoxPozostalo.TabIndex = 8;
             // 
             // label13
@@ -465,16 +477,17 @@
             // txtBoxWykorzystany
             // 
             this.txtBoxWykorzystany.Enabled = false;
+            this.txtBoxWykorzystany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtBoxWykorzystany.Location = new System.Drawing.Point(262, 315);
             this.txtBoxWykorzystany.Name = "txtBoxWykorzystany";
-            this.txtBoxWykorzystany.Size = new System.Drawing.Size(151, 20);
+            this.txtBoxWykorzystany.Size = new System.Drawing.Size(151, 26);
             this.txtBoxWykorzystany.TabIndex = 7;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(146, 316);
+            this.label8.Location = new System.Drawing.Point(145, 321);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 20);
             this.label8.TabIndex = 1;
@@ -484,7 +497,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(146, 340);
+            this.label9.Location = new System.Drawing.Point(145, 350);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 20);
             this.label9.TabIndex = 1;
@@ -494,7 +507,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(146, 364);
+            this.label10.Location = new System.Drawing.Point(146, 382);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(110, 20);
             this.label10.TabIndex = 1;
@@ -535,16 +548,6 @@
             this.cbTypUrlopu.Name = "cbTypUrlopu";
             this.cbTypUrlopu.Size = new System.Drawing.Size(185, 21);
             this.cbTypUrlopu.TabIndex = 2;
-            // 
-            // btnSprawdz
-            // 
-            this.btnSprawdz.Location = new System.Drawing.Point(430, 184);
-            this.btnSprawdz.Name = "btnSprawdz";
-            this.btnSprawdz.Size = new System.Drawing.Size(78, 36);
-            this.btnSprawdz.TabIndex = 73;
-            this.btnSprawdz.Text = "Sprawdź";
-            this.btnSprawdz.UseVisualStyleBackColor = true;
-            this.btnSprawdz.Click += new System.EventHandler(this.btnSprawdz_Click);
             // 
             // FormUrlopy
             // 
