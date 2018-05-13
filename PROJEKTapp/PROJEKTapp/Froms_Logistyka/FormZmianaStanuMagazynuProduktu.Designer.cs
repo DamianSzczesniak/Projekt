@@ -56,11 +56,13 @@
             this.sTANPRODUKTYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_ID_ZLECENIA = new System.Windows.Forms.Label();
             this.btnZdejmij = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_MATERIALY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTANMATERIALYNAZWYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopBar_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_PRODUKTY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTANPRODUKTYNAZWYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Back
@@ -94,10 +96,10 @@
             this.iDMATERIALUDataGridViewTextBoxColumn,
             this.iDLOKALIZACJIDataGridViewTextBoxColumn1});
             this.DGV_MATERIALY.DataSource = this.sTANMATERIALYNAZWYBindingSource;
-            this.DGV_MATERIALY.Location = new System.Drawing.Point(16, 154);
+            this.DGV_MATERIALY.Location = new System.Drawing.Point(379, 172);
             this.DGV_MATERIALY.Name = "DGV_MATERIALY";
             this.DGV_MATERIALY.ReadOnly = true;
-            this.DGV_MATERIALY.Size = new System.Drawing.Size(706, 318);
+            this.DGV_MATERIALY.Size = new System.Drawing.Size(562, 300);
             this.DGV_MATERIALY.TabIndex = 19;
             // 
             // PELNA_NAZWA_MATERIALU
@@ -170,7 +172,7 @@
             this.ButtonDodajRekord.FlatAppearance.BorderSize = 0;
             this.ButtonDodajRekord.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonDodajRekord.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ButtonDodajRekord.Location = new System.Drawing.Point(137, 478);
+            this.ButtonDodajRekord.Location = new System.Drawing.Point(356, 478);
             this.ButtonDodajRekord.Name = "ButtonDodajRekord";
             this.ButtonDodajRekord.Size = new System.Drawing.Size(164, 54);
             this.ButtonDodajRekord.TabIndex = 22;
@@ -181,17 +183,17 @@
             // TopBar_2
             // 
             this.TopBar_2.Image = global::PROJEKTapp.Properties.Resources.top_bar1;
-            this.TopBar_2.Location = new System.Drawing.Point(-135, 0);
+            this.TopBar_2.Location = new System.Drawing.Point(0, 0);
             this.TopBar_2.Name = "TopBar_2";
             this.TopBar_2.Size = new System.Drawing.Size(1070, 83);
             this.TopBar_2.TabIndex = 7;
             this.TopBar_2.TabStop = false;
             // 
-            // checkBSurowce
+            // checkBProdukty
             // 
             this.checkBProdukty.AutoSize = true;
-            this.checkBProdukty.Location = new System.Drawing.Point(209, 94);
-            this.checkBProdukty.Name = "checkBSurowce";
+            this.checkBProdukty.Location = new System.Drawing.Point(407, 94);
+            this.checkBProdukty.Name = "checkBProdukty";
             this.checkBProdukty.Size = new System.Drawing.Size(68, 17);
             this.checkBProdukty.TabIndex = 23;
             this.checkBProdukty.Text = "Produkty";
@@ -201,7 +203,7 @@
             // checkBMaterialy
             // 
             this.checkBMaterialy.AutoSize = true;
-            this.checkBMaterialy.Location = new System.Drawing.Point(209, 118);
+            this.checkBMaterialy.Location = new System.Drawing.Point(407, 118);
             this.checkBMaterialy.Name = "checkBMaterialy";
             this.checkBMaterialy.Size = new System.Drawing.Size(70, 17);
             this.checkBMaterialy.TabIndex = 24;
@@ -212,7 +214,7 @@
             // checkBWszystkie
             // 
             this.checkBWszystkie.AutoSize = true;
-            this.checkBWszystkie.Location = new System.Drawing.Point(419, 94);
+            this.checkBWszystkie.Location = new System.Drawing.Point(617, 94);
             this.checkBWszystkie.Name = "checkBWszystkie";
             this.checkBWszystkie.Size = new System.Drawing.Size(74, 17);
             this.checkBWszystkie.TabIndex = 25;
@@ -223,7 +225,7 @@
             // cBoxFlitracja
             // 
             this.cBoxFlitracja.FormattingEnabled = true;
-            this.cBoxFlitracja.Location = new System.Drawing.Point(419, 116);
+            this.cBoxFlitracja.Location = new System.Drawing.Point(617, 116);
             this.cBoxFlitracja.Name = "cBoxFlitracja";
             this.cBoxFlitracja.Size = new System.Drawing.Size(121, 21);
             this.cBoxFlitracja.TabIndex = 27;
@@ -244,10 +246,10 @@
             this.iDPRODUKTUDataGridViewTextBoxColumn,
             this.iDLOKALIZACJIDataGridViewTextBoxColumn});
             this.DGV_PRODUKTY.DataSource = this.sTANPRODUKTYNAZWYBindingSource;
-            this.DGV_PRODUKTY.Location = new System.Drawing.Point(16, 154);
+            this.DGV_PRODUKTY.Location = new System.Drawing.Point(379, 172);
             this.DGV_PRODUKTY.Name = "DGV_PRODUKTY";
             this.DGV_PRODUKTY.ReadOnly = true;
-            this.DGV_PRODUKTY.Size = new System.Drawing.Size(706, 318);
+            this.DGV_PRODUKTY.Size = new System.Drawing.Size(562, 300);
             this.DGV_PRODUKTY.TabIndex = 28;
             // 
             // nAZWAPRODUKTUDataGridViewTextBoxColumn
@@ -317,7 +319,7 @@
             // lbl_ID_ZLECENIA
             // 
             this.lbl_ID_ZLECENIA.AutoSize = true;
-            this.lbl_ID_ZLECENIA.Location = new System.Drawing.Point(337, 119);
+            this.lbl_ID_ZLECENIA.Location = new System.Drawing.Point(535, 119);
             this.lbl_ID_ZLECENIA.Name = "lbl_ID_ZLECENIA";
             this.lbl_ID_ZLECENIA.Size = new System.Drawing.Size(76, 13);
             this.lbl_ID_ZLECENIA.TabIndex = 29;
@@ -327,7 +329,7 @@
             // 
             this.btnZdejmij.BackColor = System.Drawing.Color.Red;
             this.btnZdejmij.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnZdejmij.Location = new System.Drawing.Point(402, 478);
+            this.btnZdejmij.Location = new System.Drawing.Point(356, 477);
             this.btnZdejmij.Name = "btnZdejmij";
             this.btnZdejmij.Size = new System.Drawing.Size(164, 55);
             this.btnZdejmij.TabIndex = 30;
@@ -335,12 +337,21 @@
             this.btnZdejmij.UseVisualStyleBackColor = false;
             this.btnZdejmij.Click += new System.EventHandler(this.btnZdejmij_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 172);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(322, 300);
+            this.dataGridView1.TabIndex = 31;
+            // 
             // FormZmianaStanuMagazynu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(734, 544);
+            this.ClientSize = new System.Drawing.Size(957, 544);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnZdejmij);
             this.Controls.Add(this.lbl_ID_ZLECENIA);
             this.Controls.Add(this.DGV_PRODUKTY);
@@ -362,6 +373,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TopBar_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_PRODUKTY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTANPRODUKTYNAZWYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -395,5 +407,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDPRODUKTUDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDLOKALIZACJIDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnZdejmij;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

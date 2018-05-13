@@ -45,6 +45,9 @@
             this.RezerwujMaszyny = new System.Windows.Forms.Button();
             this.btnZam = new System.Windows.Forms.Button();
             this.btnDostarczonoMaterialy = new System.Windows.Forms.Button();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.txtBAktualnyStatus = new System.Windows.Forms.TextBox();
+            this.btnMagazynuj = new System.Windows.Forms.Button();
             this.iDPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAZWAPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +70,7 @@
             this.nAZWAPRODUKTUDataGridViewTextBoxColumn,
             this.iLOSCDataGridViewTextBoxColumn});
             this.dataGridViewOferta.DataSource = this.zLECENIAPRODUKTYNAZWYBindingSource;
-            this.dataGridViewOferta.Location = new System.Drawing.Point(27, 25);
+            this.dataGridViewOferta.Location = new System.Drawing.Point(21, 16);
             this.dataGridViewOferta.Name = "dataGridViewOferta";
             this.dataGridViewOferta.ReadOnly = true;
             this.dataGridViewOferta.Size = new System.Drawing.Size(324, 181);
@@ -76,15 +79,15 @@
             // lbl_Data_Zlecenia
             // 
             this.lbl_Data_Zlecenia.AutoSize = true;
-            this.lbl_Data_Zlecenia.Location = new System.Drawing.Point(62, 236);
+            this.lbl_Data_Zlecenia.Location = new System.Drawing.Point(57, 245);
             this.lbl_Data_Zlecenia.Name = "lbl_Data_Zlecenia";
-            this.lbl_Data_Zlecenia.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Data_Zlecenia.Size = new System.Drawing.Size(80, 13);
             this.lbl_Data_Zlecenia.TabIndex = 14;
-            this.lbl_Data_Zlecenia.Text = "Data Zlecenia";
+            this.lbl_Data_Zlecenia.Text = "Data Zlecenia :";
             // 
             // txtBox_Data_Zlecenia
             // 
-            this.txtBox_Data_Zlecenia.Location = new System.Drawing.Point(28, 252);
+            this.txtBox_Data_Zlecenia.Location = new System.Drawing.Point(23, 262);
             this.txtBox_Data_Zlecenia.Name = "txtBox_Data_Zlecenia";
             this.txtBox_Data_Zlecenia.ReadOnly = true;
             this.txtBox_Data_Zlecenia.Size = new System.Drawing.Size(140, 20);
@@ -93,7 +96,7 @@
             // 
             // txtBoxCena
             // 
-            this.txtBoxCena.Location = new System.Drawing.Point(28, 305);
+            this.txtBoxCena.Location = new System.Drawing.Point(23, 311);
             this.txtBoxCena.Name = "txtBoxCena";
             this.txtBoxCena.ReadOnly = true;
             this.txtBoxCena.Size = new System.Drawing.Size(140, 20);
@@ -103,15 +106,15 @@
             // lblKOSZT
             // 
             this.lblKOSZT.AutoSize = true;
-            this.lblKOSZT.Location = new System.Drawing.Point(75, 288);
+            this.lblKOSZT.Location = new System.Drawing.Point(70, 294);
             this.lblKOSZT.Name = "lblKOSZT";
-            this.lblKOSZT.Size = new System.Drawing.Size(42, 13);
+            this.lblKOSZT.Size = new System.Drawing.Size(38, 13);
             this.lblKOSZT.TabIndex = 18;
-            this.lblKOSZT.Text = "CENA :";
+            this.lblKOSZT.Text = "Cena :";
             // 
             // txtBox_Data_Realizacji
             // 
-            this.txtBox_Data_Realizacji.Location = new System.Drawing.Point(209, 252);
+            this.txtBox_Data_Realizacji.Location = new System.Drawing.Point(204, 262);
             this.txtBox_Data_Realizacji.Name = "txtBox_Data_Realizacji";
             this.txtBox_Data_Realizacji.ReadOnly = true;
             this.txtBox_Data_Realizacji.Size = new System.Drawing.Size(142, 20);
@@ -121,24 +124,24 @@
             // lbl_Data_Realizacji
             // 
             this.lbl_Data_Realizacji.AutoSize = true;
-            this.lbl_Data_Realizacji.Location = new System.Drawing.Point(243, 236);
+            this.lbl_Data_Realizacji.Location = new System.Drawing.Point(238, 245);
             this.lbl_Data_Realizacji.Name = "lbl_Data_Realizacji";
-            this.lbl_Data_Realizacji.Size = new System.Drawing.Size(78, 13);
+            this.lbl_Data_Realizacji.Size = new System.Drawing.Size(84, 13);
             this.lbl_Data_Realizacji.TabIndex = 16;
-            this.lbl_Data_Realizacji.Text = "Data Realizacji";
+            this.lbl_Data_Realizacji.Text = "Data Realizacji :";
             // 
             // lblFirma
             // 
             this.lblFirma.AutoSize = true;
-            this.lblFirma.Location = new System.Drawing.Point(266, 288);
+            this.lblFirma.Location = new System.Drawing.Point(261, 294);
             this.lblFirma.Name = "lblFirma";
-            this.lblFirma.Size = new System.Drawing.Size(32, 13);
+            this.lblFirma.Size = new System.Drawing.Size(38, 13);
             this.lblFirma.TabIndex = 20;
-            this.lblFirma.Text = "Firma";
+            this.lblFirma.Text = "Firma :";
             // 
             // txtFirma
             // 
-            this.txtFirma.Location = new System.Drawing.Point(209, 304);
+            this.txtFirma.Location = new System.Drawing.Point(204, 310);
             this.txtFirma.Name = "txtFirma";
             this.txtFirma.ReadOnly = true;
             this.txtFirma.Size = new System.Drawing.Size(142, 20);
@@ -151,7 +154,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(374, 25);
+            this.chart1.Location = new System.Drawing.Point(374, 33);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -163,7 +166,7 @@
             // 
             // RezerwujMaszyny
             // 
-            this.RezerwujMaszyny.Location = new System.Drawing.Point(209, 344);
+            this.RezerwujMaszyny.Location = new System.Drawing.Point(204, 350);
             this.RezerwujMaszyny.Name = "RezerwujMaszyny";
             this.RezerwujMaszyny.Size = new System.Drawing.Size(142, 35);
             this.RezerwujMaszyny.TabIndex = 1;
@@ -174,7 +177,7 @@
             // 
             // btnZam
             // 
-            this.btnZam.Location = new System.Drawing.Point(28, 344);
+            this.btnZam.Location = new System.Drawing.Point(23, 350);
             this.btnZam.Name = "btnZam";
             this.btnZam.Size = new System.Drawing.Size(140, 35);
             this.btnZam.TabIndex = 0;
@@ -185,14 +188,44 @@
             // 
             // btnDostarczonoMaterialy
             // 
-            this.btnDostarczonoMaterialy.Location = new System.Drawing.Point(28, 344);
+            this.btnDostarczonoMaterialy.Location = new System.Drawing.Point(23, 350);
             this.btnDostarczonoMaterialy.Name = "btnDostarczonoMaterialy";
             this.btnDostarczonoMaterialy.Size = new System.Drawing.Size(140, 35);
             this.btnDostarczonoMaterialy.TabIndex = 23;
-            this.btnDostarczonoMaterialy.Text = "Dostarczono materiały";
+            this.btnDostarczonoMaterialy.Text = "Odnotuj dostarczenie materiałów";
             this.btnDostarczonoMaterialy.UseVisualStyleBackColor = true;
             this.btnDostarczonoMaterialy.Visible = false;
             this.btnDostarczonoMaterialy.Click += new System.EventHandler(this.btnDostarczonoMaterialy_Click);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(120, 200);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(131, 13);
+            this.lblStatus.TabIndex = 24;
+            this.lblStatus.Text = "Aktualny Status Zlecenia :";
+            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtBAktualnyStatus
+            // 
+            this.txtBAktualnyStatus.Location = new System.Drawing.Point(95, 216);
+            this.txtBAktualnyStatus.Name = "txtBAktualnyStatus";
+            this.txtBAktualnyStatus.ReadOnly = true;
+            this.txtBAktualnyStatus.Size = new System.Drawing.Size(186, 20);
+            this.txtBAktualnyStatus.TabIndex = 25;
+            this.txtBAktualnyStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnMagazynuj
+            // 
+            this.btnMagazynuj.Location = new System.Drawing.Point(23, 350);
+            this.btnMagazynuj.Name = "btnMagazynuj";
+            this.btnMagazynuj.Size = new System.Drawing.Size(140, 35);
+            this.btnMagazynuj.TabIndex = 26;
+            this.btnMagazynuj.Text = "Zmagazynuj dostarczone materiały";
+            this.btnMagazynuj.UseVisualStyleBackColor = true;
+            this.btnMagazynuj.Visible = false;
+            this.btnMagazynuj.Click += new System.EventHandler(this.btnMagazynuj_Click);
             // 
             // iDPRODUKTUDataGridViewTextBoxColumn
             // 
@@ -236,6 +269,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 402);
+            this.Controls.Add(this.btnMagazynuj);
+            this.Controls.Add(this.txtBAktualnyStatus);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnDostarczonoMaterialy);
             this.Controls.Add(this.btnZam);
             this.Controls.Add(this.RezerwujMaszyny);
@@ -282,5 +318,8 @@
         private System.Windows.Forms.Button RezerwujMaszyny;
         private System.Windows.Forms.Button btnZam;
         private System.Windows.Forms.Button btnDostarczonoMaterialy;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.TextBox txtBAktualnyStatus;
+        private System.Windows.Forms.Button btnMagazynuj;
     }
 }

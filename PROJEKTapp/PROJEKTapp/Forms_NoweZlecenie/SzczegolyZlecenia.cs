@@ -91,8 +91,9 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             db.AKTUALNY_STATUS_ZLECEN = kWZP_.AKTUALNY_STATUS_ZLECEN;
             db.SaveChanges();
             
-            AKTUALNY_STATUS_ZLECEN azlecenie = db.AKTUALNY_STATUS_ZLECEN.Where(a => a.ID_ZLECENIA == id).First();
+            AKTUALNY_STATUS_ZLECEN_NAZWY azlecenie = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.ID_ZLECENIA == id).First();
 
+            txtBAktualnyStatus.Text = azlecenie.ETAP;
 
             switch (azlecenie.Status)
             {
@@ -102,10 +103,9 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     break;
                 case 2:
                     btnDostarczonoMaterialy.Show();
-                   
                     break;
                 case 3:
-
+                    btnMagazynuj.Show();
                     break;
             }
             this.Refresh();
@@ -187,6 +187,22 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnDostarczonoMaterialy.Hide();
             statusButtony();
+        }
+
+        private void btnMagazynuj_Click(object sender, EventArgs e)
+        {
+          //  using (FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db, id))
+            //{
+            //    if (ZmianaStanuMagazynu.ShowDialog() == DialogResult.OK)
+            //    {
+            //        statusButtony();
+            //        btnMagazynuj.Hide();
+            //    }
+            //}
+
+            
+            
+
         }
     }
 }
