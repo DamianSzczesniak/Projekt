@@ -55,8 +55,6 @@
             this.txtDataStart = new System.Windows.Forms.DateTimePicker();
             this.KalendarzUrlop = new System.Windows.Forms.MonthCalendar();
             this.label2 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBoxWnioskowany = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -312,8 +310,6 @@
             this.pnlWolne.Controls.Add(this.txtDataStart);
             this.pnlWolne.Controls.Add(this.KalendarzUrlop);
             this.pnlWolne.Controls.Add(this.label2);
-            this.pnlWolne.Controls.Add(this.label12);
-            this.pnlWolne.Controls.Add(this.label11);
             this.pnlWolne.Controls.Add(this.label6);
             this.pnlWolne.Controls.Add(this.txtBoxWnioskowany);
             this.pnlWolne.Controls.Add(this.label3);
@@ -375,6 +371,7 @@
             // 
             // txtDataStart
             // 
+            this.txtDataStart.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtDataStart.Location = new System.Drawing.Point(188, 183);
             this.txtDataStart.Name = "txtDataStart";
             this.txtDataStart.Size = new System.Drawing.Size(225, 20);
@@ -395,26 +392,6 @@
             this.label2.Size = new System.Drawing.Size(97, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Typ urlopu:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(181, 30);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(128, 20);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "-planowany urlop";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(181, 10);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(178, 20);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "-zaplanowane szkolenie";
             // 
             // label6
             // 
@@ -470,9 +447,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.Location = new System.Drawing.Point(146, 292);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 20);
+            this.label7.Size = new System.Drawing.Size(85, 20);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Przysługujący:";
+            this.label7.Text = "Ustawowy:";
             // 
             // txtBoxWykorzystany
             // 
@@ -515,6 +492,7 @@
             // 
             // txtDataKoniec
             // 
+            this.txtDataKoniec.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtDataKoniec.Location = new System.Drawing.Point(188, 213);
             this.txtDataKoniec.Name = "txtDataKoniec";
             this.txtDataKoniec.Size = new System.Drawing.Size(225, 20);
@@ -601,8 +579,6 @@
         private System.Windows.Forms.DateTimePicker txtDataStart;
         private System.Windows.Forms.MonthCalendar KalendarzUrlop;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBoxWnioskowany;
         private System.Windows.Forms.Label label3;

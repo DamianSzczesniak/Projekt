@@ -15,7 +15,7 @@ namespace PROJEKTapp
         KWZP_PROJEKTEntities db;
         bool ladowanieformularzazokienkami;
         PRACOWNICY pracownik;
-
+        int suma = 0;
 
         public FormUrlopy(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
         {
@@ -135,7 +135,6 @@ namespace PROJEKTapp
 
                 }
             }
-            int suma = 0;
             foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY)
             {
                 int dlugoscwolne = wolne.DATA_KONIEC.Subtract(wolne.DATA_START).Days + 1;
@@ -190,25 +189,40 @@ namespace PROJEKTapp
                     this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
                     dgvUrlopyPraconik.Columns[0].Visible = false;
                     this.dgvUrlopyPraconik.Refresh();
+                    obliczanieUrlopu();
                 }
             }
         }
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
-        {     
+        {
+            if (int.Parse(txtBoxWnioskowany.Text) <= int.Parse(txtBoxPozostalo.Text) | cbTypUrlopu.SelectedIndex == 2 &&  int.Parse(txtBoxWnioskowany.Text) > int.Parse(txtBoxPozostalo.Text))
+            {
                 WOLNE_PRACOWNICY wolnepracownik = new WOLNE_PRACOWNICY();
                 wolnepracownik.DATA_KONIEC = txtDataKoniec.Value;
                 wolnepracownik.DATA_START = txtDataStart.Value;
                 wolnepracownik.ID_WOLNE = (int)cbTypUrlopu.SelectedValue;
                 wolnepracownik.ID_PRACOWNIK = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
-                db.WOLNE_PRACOWNICY.Add(wolnepracownik);
-                db.SaveChanges();
+                try
+                {
+                    db.WOLNE_PRACOWNICY.Add(wolnepracownik);
+                    db.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Pracownik ma już urlop zacyznający sie: " + txtDataKoniec.Value);
+                }
                 ListaPracownikow.Refresh();
                 pnlWolne.Hide();
-            int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
-            this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
+                int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
+                this.dgvUrlopyPraconik.DataSource = db.URLOPY_PRACOWNIKA.Where(urlop => urlop.ID_PRACOWNIK.Equals(ID)).ToList();
                 dgvUrlopyPraconik.Columns[0].Visible = false;
                 this.dgvUrlopyPraconik.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Dostęny tylko urlop \"Na Żądanie\"");
+            }
         }
 
         private void btnWyczysc_Click(object sender, EventArgs e)
@@ -255,26 +269,39 @@ namespace PROJEKTapp
 
         private void txtDataKoniec_ValueChanged(object sender, EventArgs e)
         {
-            int Wnioskowany = (txtDataKoniec.Value - txtDataStart.Value).Days + 1;
-            txtBoxWnioskowany.Text = Wnioskowany.ToString();
-            int pozostalo = Convert.ToInt32(txtBoxPozostalo.Text);
-            if (Wnioskowany > pozostalo)
+            if (txtDataKoniec.Value >= txtDataStart.Value)
             {
-                txtBoxWnioskowany.BackColor = Color.Red;
+                obliczanieUrlopu();
             }
             else
             {
-                txtBoxWnioskowany.BackColor = Color.LightGreen;
-            }
+                txtDataKoniec.Value = txtDataStart.Value;
+                MessageBox.Show("Data Końca nie może być wczesniejsza niż data początku");
+            } 
         }
 
         private void btnSprawdz_Click(object sender, EventArgs e)
         {
-            KalendarzUrlop.SelectionStart = txtDataStart.Value;
-            KalendarzUrlop.SelectionEnd = txtDataKoniec.Value;
+            if (txtDataKoniec.Value >= txtDataStart.Value)
+            {
+                KalendarzUrlop.SelectionStart = txtDataStart.Value;
+                KalendarzUrlop.SelectionEnd = txtDataKoniec.Value;
+                obliczanieUrlopu();
+            }
+            else
+            {
+                MessageBox.Show("Data Końca nie może być wczesniejsza niż data początku");
+                txtDataKoniec.Value = txtDataStart.Value;
+            }
+        }
+        private void obliczanieUrlopu()
+        {
+            suma = 0;
             int Wnioskowany = (txtDataKoniec.Value - txtDataStart.Value).Days + 1;
             txtBoxWnioskowany.Text = Wnioskowany.ToString();
-            int pozostalo = Convert.ToInt32(txtBoxPozostalo.Text);
+            txtBoxWykorzystany.Text = suma.ToString();
+            int pozostalo = 26 - suma;
+            txtBoxPozostalo.Text = pozostalo.ToString();
             if (Wnioskowany > pozostalo)
             {
                 txtBoxWnioskowany.BackColor = Color.Red;
