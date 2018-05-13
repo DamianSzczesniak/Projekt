@@ -15,6 +15,7 @@ namespace PROJEKTapp.Forms
         KWZP_PROJEKTEntities db;
         ZLECENIA NRZlecenia;
         ZAMOWIENIA NoweZamowienie;
+        int id;
 
         public ZamowienieMaterialu(KWZP_PROJEKTEntities db)
         {
@@ -34,6 +35,20 @@ namespace PROJEKTapp.Forms
 
         }
 
+        public ZamowienieMaterialu(KWZP_PROJEKTEntities db, int id)
+        {
+            this.id = id;
+            this.db = db;
+            InitializeComponent();
+            comboBoxNrZlecenia.DataSource = db.AKTUALNY_STATUS_ZLECEN.Where(a => a.ID_ZLECENIA == id).ToList();
+            comboBoxNrZlecenia.ValueMember = "ID_ZLECENIA";
+            BtnShow.Hide();
+            uzupelnijListe();
+            BtnNoweZam.Hide();
+            uzupelnijNoweZamowienie();
+
+        }
+
 
 
 
@@ -44,19 +59,19 @@ namespace PROJEKTapp.Forms
             this.Close();
         }
 
-        private void BtnShow_Click(object sender, EventArgs e)
+        private void uzupelnijListe()
         {
             int id = int.Parse(comboBoxNrZlecenia.SelectedValue.ToString());
             sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource.DataSource = db.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE.Where(a => a.ID_ZLECENIA == id).ToList();
         }
 
-        private void BtnNoweZam_Click(object sender, EventArgs e)
+        private void BtnShow_Click(object sender, EventArgs e)
         {
-            lvlFirmy.Show();
-            btnZapisz.Show();
-            lblDZ.Show();
-            lblReal.Show();
-            comboBoxFirmy.Show();
+            uzupelnijListe();
+        }
+
+        private void uzupelnijNoweZamowienie()
+        {
             comboBoxFirmy.DataSource = db.FIRMY.ToList();
             comboBoxFirmy.DisplayMember = "NAZWA_FIRMY";
             comboBoxFirmy.ValueMember = "ID_FIRMY";
@@ -66,6 +81,16 @@ namespace PROJEKTapp.Forms
             DateTime data = DateTime.Now;
             DateTime dateTime = data.AddDays(3);
             txtZamowienia.Text = dateTime.ToString("dd/MM/yyyy");
+        }
+
+        private void BtnNoweZam_Click(object sender, EventArgs e)
+        {
+            lvlFirmy.Show();
+            btnZapisz.Show();
+            lblDZ.Show();
+            lblReal.Show();
+            comboBoxFirmy.Show();
+            uzupelnijNoweZamowienie();
         }
 
         private void btnZapisz_Click(object sender, EventArgs e)
@@ -81,6 +106,7 @@ namespace PROJEKTapp.Forms
             dATA_STATUSU_.ID_ZLECENIA = int.Parse(comboBoxNrZlecenia.SelectedValue.ToString());
             dATA_STATUSU_.ID_STATUSU_ZLECENIA = 2;
             db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_);
+            db.SaveChanges();
             // foreach(SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE element on sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource.DataSource as SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE);
             KWZP_PROJEKTEntities kWZP_ = new KWZP_PROJEKTEntities();
             db = kWZP_;

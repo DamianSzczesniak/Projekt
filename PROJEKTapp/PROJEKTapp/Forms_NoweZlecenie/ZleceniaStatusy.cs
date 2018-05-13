@@ -28,7 +28,8 @@ namespace PROJEKTapp
         private void ZleceniaStatusy_Load(object sender, EventArgs e)
         {
             // StatusZleceniaDGV.DataSource = db.AKTUALNY_STATUS_ZLECEN_NAZWY.ToList();
-
+            KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
+            db = ndb;
             SprawdzanieUprawnien(uprawnienia);
 
         }
@@ -110,6 +111,13 @@ namespace PROJEKTapp
 
                 }
             }
+        }
+
+        private void ZleceniaStatusy_Activated(object sender, EventArgs e)
+        {
+            KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
+            db.Status_detale_zlecenie = nDB.Status_detale_zlecenie;
+            SprawdzanieUprawnien(uprawnienia);
         }
     }
 }
