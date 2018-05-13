@@ -29,10 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridViewOferta = new System.Windows.Forms.DataGridView();
+            this.iDPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iLOSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zLECENIAPRODUKTYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_Data_Zlecenia = new System.Windows.Forms.Label();
             this.txtBox_Data_Zlecenia = new System.Windows.Forms.TextBox();
             this.txtBoxCena = new System.Windows.Forms.TextBox();
@@ -48,14 +53,11 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.txtBAktualnyStatus = new System.Windows.Forms.TextBox();
             this.btnMagazynuj = new System.Windows.Forms.Button();
-            this.iDPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iLOSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zLECENIAPRODUKTYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_Pobierz_Materialy_produkcja = new System.Windows.Forms.Button();
+            this.btn_składuj_produkty_w_Magazynie = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zLECENIAPRODUKTYNAZWYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewOferta
@@ -75,6 +77,43 @@
             this.dataGridViewOferta.ReadOnly = true;
             this.dataGridViewOferta.Size = new System.Drawing.Size(324, 181);
             this.dataGridViewOferta.TabIndex = 13;
+            // 
+            // iDPRODUKTUDataGridViewTextBoxColumn
+            // 
+            this.iDPRODUKTUDataGridViewTextBoxColumn.DataPropertyName = "ID_PRODUKTU";
+            this.iDPRODUKTUDataGridViewTextBoxColumn.HeaderText = "ID_PRODUKTU";
+            this.iDPRODUKTUDataGridViewTextBoxColumn.Name = "iDPRODUKTUDataGridViewTextBoxColumn";
+            this.iDPRODUKTUDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDPRODUKTUDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iDZLECENIADataGridViewTextBoxColumn
+            // 
+            this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
+            this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDZLECENIADataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nAZWAPRODUKTUDataGridViewTextBoxColumn
+            // 
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.DataPropertyName = "NAZWA_PRODUKTU";
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.HeaderText = "NAZWA_PRODUKTU";
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.Name = "nAZWAPRODUKTUDataGridViewTextBoxColumn";
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iLOSCDataGridViewTextBoxColumn
+            // 
+            this.iLOSCDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.iLOSCDataGridViewTextBoxColumn.DataPropertyName = "ILOSC";
+            this.iLOSCDataGridViewTextBoxColumn.HeaderText = "ILOSC";
+            this.iLOSCDataGridViewTextBoxColumn.Name = "iLOSCDataGridViewTextBoxColumn";
+            this.iLOSCDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iLOSCDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // zLECENIAPRODUKTYNAZWYBindingSource
+            // 
+            this.zLECENIAPRODUKTYNAZWYBindingSource.DataSource = typeof(PROJEKTapp.ZLECENIA_PRODUKTY_NAZWY);
             // 
             // lbl_Data_Zlecenia
             // 
@@ -150,16 +189,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(374, 33);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(435, 299);
             this.chart1.TabIndex = 22;
             this.chart1.Text = "chart1";
@@ -227,48 +266,33 @@
             this.btnMagazynuj.Visible = false;
             this.btnMagazynuj.Click += new System.EventHandler(this.btnMagazynuj_Click);
             // 
-            // iDPRODUKTUDataGridViewTextBoxColumn
+            // btn_Pobierz_Materialy_produkcja
             // 
-            this.iDPRODUKTUDataGridViewTextBoxColumn.DataPropertyName = "ID_PRODUKTU";
-            this.iDPRODUKTUDataGridViewTextBoxColumn.HeaderText = "ID_PRODUKTU";
-            this.iDPRODUKTUDataGridViewTextBoxColumn.Name = "iDPRODUKTUDataGridViewTextBoxColumn";
-            this.iDPRODUKTUDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDPRODUKTUDataGridViewTextBoxColumn.Visible = false;
+            this.btn_Pobierz_Materialy_produkcja.Location = new System.Drawing.Point(23, 350);
+            this.btn_Pobierz_Materialy_produkcja.Name = "btn_Pobierz_Materialy_produkcja";
+            this.btn_Pobierz_Materialy_produkcja.Size = new System.Drawing.Size(140, 35);
+            this.btn_Pobierz_Materialy_produkcja.TabIndex = 27;
+            this.btn_Pobierz_Materialy_produkcja.Text = "Pobierz materiały z magazynu";
+            this.btn_Pobierz_Materialy_produkcja.UseVisualStyleBackColor = true;
+            this.btn_Pobierz_Materialy_produkcja.Visible = false;
             // 
-            // iDZLECENIADataGridViewTextBoxColumn
+            // btn_składuj_produkty_w_Magazynie
             // 
-            this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID_ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
-            this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDZLECENIADataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nAZWAPRODUKTUDataGridViewTextBoxColumn
-            // 
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.DataPropertyName = "NAZWA_PRODUKTU";
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.HeaderText = "NAZWA_PRODUKTU";
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.Name = "nAZWAPRODUKTUDataGridViewTextBoxColumn";
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iLOSCDataGridViewTextBoxColumn
-            // 
-            this.iLOSCDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.iLOSCDataGridViewTextBoxColumn.DataPropertyName = "ILOSC";
-            this.iLOSCDataGridViewTextBoxColumn.HeaderText = "ILOSC";
-            this.iLOSCDataGridViewTextBoxColumn.Name = "iLOSCDataGridViewTextBoxColumn";
-            this.iLOSCDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iLOSCDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // zLECENIAPRODUKTYNAZWYBindingSource
-            // 
-            this.zLECENIAPRODUKTYNAZWYBindingSource.DataSource = typeof(PROJEKTapp.ZLECENIA_PRODUKTY_NAZWY);
+            this.btn_składuj_produkty_w_Magazynie.Location = new System.Drawing.Point(204, 350);
+            this.btn_składuj_produkty_w_Magazynie.Name = "btn_składuj_produkty_w_Magazynie";
+            this.btn_składuj_produkty_w_Magazynie.Size = new System.Drawing.Size(142, 35);
+            this.btn_składuj_produkty_w_Magazynie.TabIndex = 28;
+            this.btn_składuj_produkty_w_Magazynie.Text = "Składuj produkty w magazynie";
+            this.btn_składuj_produkty_w_Magazynie.UseVisualStyleBackColor = true;
+            this.btn_składuj_produkty_w_Magazynie.Visible = false;
             // 
             // SzczegolyZlecenia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 402);
+            this.Controls.Add(this.btn_składuj_produkty_w_Magazynie);
+            this.Controls.Add(this.btn_Pobierz_Materialy_produkcja);
             this.Controls.Add(this.btnMagazynuj);
             this.Controls.Add(this.txtBAktualnyStatus);
             this.Controls.Add(this.lblStatus);
@@ -291,8 +315,8 @@
             this.Load += new System.EventHandler(this.SzczegolyZlecenia_Load);
             this.Enter += new System.EventHandler(this.SzczegolyZlecenia_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zLECENIAPRODUKTYNAZWYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,5 +345,7 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.TextBox txtBAktualnyStatus;
         private System.Windows.Forms.Button btnMagazynuj;
+        private System.Windows.Forms.Button btn_Pobierz_Materialy_produkcja;
+        private System.Windows.Forms.Button btn_składuj_produkty_w_Magazynie;
     }
 }

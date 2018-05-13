@@ -69,6 +69,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             {
                 doWyprodukowania = (int)zlecenieProduktu.ILOSC;
                 srednia = 1 + ((int)doWyprodukowania / 10);
+
                 //maxDlugosc);
                 Series seria = new Series();
                 seria.XValueType = ChartValueType.DateTime;
@@ -80,6 +81,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     doWyprodukowania = doWyprodukowania - produkcja;
                 }
                 chart1.Series[zlecenieProduktu.PRODUKT.NAZWA_PRODUKTU] = seria;
+                seria.LegendText = zlecenieProduktu.PRODUKT.NAZWA_PRODUKTU;
             }
         }
 
@@ -94,7 +96,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             AKTUALNY_STATUS_ZLECEN_NAZWY azlecenie = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.ID_ZLECENIA == id).First();
 
             txtBAktualnyStatus.Text = azlecenie.ETAP;
-
+            btnMagazynuj.Hide();
             switch (azlecenie.Status)
             {
                 case 1:
@@ -107,6 +109,14 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                 case 3:
                     btnMagazynuj.Show();
                     break;
+                case 4:
+                    RezerwujMaszyny.Show();
+                    break;
+                case 5:
+                    btn_Pobierz_Materialy_produkcja.Show();
+                    btn_składuj_produkty_w_Magazynie.Show();
+                    break;
+
             }
             this.Refresh();
 
@@ -150,7 +160,17 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     db.REALIZACJA_PRODUKCJA.Add(realizacjaProdukcjiN);
                 }
             }
-            MessageBox.Show("Akcje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DateTime data = DateTime.Now;
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_ = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_.DATA_ZMIANY = data;
+            dATA_STATUSU_.ID_ZLECENIA = id;
+            dATA_STATUSU_.ID_STATUSU_ZLECENIA = 5;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_);
+            db.SaveChanges();
+            MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnDostarczonoMaterialy.Hide();
+            statusButtony();
+            RezerwujMaszyny.Hide();
             statusButtony();
         }
 
@@ -197,7 +217,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                 if (ZmianaStanuMagazynu.ShowDialog() == DialogResult.OK)
                 {
                     statusButtony();
-                    btnMagazynuj.Hide();
+                    
                 }
             }
 

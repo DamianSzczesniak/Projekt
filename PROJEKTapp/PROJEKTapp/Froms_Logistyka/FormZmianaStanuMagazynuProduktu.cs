@@ -59,7 +59,8 @@ namespace PROJEKTapp.Forms
                         checkBMaterialy.Hide();
                         btnZdejmij.Hide();
                         dgvLokalizacje.Show();
-                        dgvLokalizacje.DataSource = db.LOKALIZACJA.Where(a => a.CzyPelne == false);
+
+                        dgvLokalizacje.DataSource = db.LOKALIZACJA.Where(a => a.CzyPelne == false).ToList();
 
 
                         sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == id).ToList();
