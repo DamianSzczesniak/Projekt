@@ -191,14 +191,15 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 
         private void btnMagazynuj_Click(object sender, EventArgs e)
         {
-          //  using (FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db, id))
-            //{
-            //    if (ZmianaStanuMagazynu.ShowDialog() == DialogResult.OK)
-            //    {
-            //        statusButtony();
-            //        btnMagazynuj.Hide();
-            //    }
-            //}
+            int Akcja = 1;
+            using (FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db, id, Akcja))
+            {
+                if (ZmianaStanuMagazynu.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+                    btnMagazynuj.Hide();
+                }
+            }
 
             
             

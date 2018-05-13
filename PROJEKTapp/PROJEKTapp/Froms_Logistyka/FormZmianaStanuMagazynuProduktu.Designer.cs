@@ -32,13 +32,6 @@
             this.Btn_Back = new System.Windows.Forms.Button();
             this.DGV_MATERIALY = new System.Windows.Forms.DataGridView();
             this.PELNA_NAZWA_MATERIALU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDZLECENIADataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sEKTORDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aLEJKADataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTANDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDMATERIALUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDLOKALIZACJIDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sTANMATERIALYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ButtonDodajRekord = new System.Windows.Forms.Button();
             this.TopBar_2 = new System.Windows.Forms.PictureBox();
             this.checkBProdukty = new System.Windows.Forms.CheckBox();
@@ -46,6 +39,18 @@
             this.checkBWszystkie = new System.Windows.Forms.CheckBox();
             this.cBoxFlitracja = new System.Windows.Forms.ComboBox();
             this.DGV_PRODUKTY = new System.Windows.Forms.DataGridView();
+            this.lbl_ID_ZLECENIA = new System.Windows.Forms.Label();
+            this.btnZdejmij = new System.Windows.Forms.Button();
+            this.dgvListaMaterialow = new System.Windows.Forms.DataGridView();
+            this.dgvLokalizacje = new System.Windows.Forms.DataGridView();
+            this.lbl_Lista_Materialow = new System.Windows.Forms.Label();
+            this.lbl_Stan_Magazynu = new System.Windows.Forms.Label();
+            this.lbl_Lokalizacje_Nie_Pelne = new System.Windows.Forms.Label();
+            this.iDZLECENIADataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDMATERIALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pELNANAZWAMATERIALUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wYNIKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mATERIALYPODODANIUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nAZWAPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sEKTORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,15 +59,21 @@
             this.iDPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDLOKALIZACJIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sTANPRODUKTYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lbl_ID_ZLECENIA = new System.Windows.Forms.Label();
-            this.btnZdejmij = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDZLECENIADataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sEKTORDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aLEJKADataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTANDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDMATERIALUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTANMATERIALYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_MATERIALY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTANMATERIALYNAZWYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopBar_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_PRODUKTY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaMaterialow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLokalizacje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mATERIALYPODODANIUBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTANPRODUKTYNAZWYBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTANMATERIALYNAZWYBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Back
@@ -96,10 +107,10 @@
             this.iDMATERIALUDataGridViewTextBoxColumn,
             this.iDLOKALIZACJIDataGridViewTextBoxColumn1});
             this.DGV_MATERIALY.DataSource = this.sTANMATERIALYNAZWYBindingSource;
-            this.DGV_MATERIALY.Location = new System.Drawing.Point(379, 172);
+            this.DGV_MATERIALY.Location = new System.Drawing.Point(399, 172);
             this.DGV_MATERIALY.Name = "DGV_MATERIALY";
             this.DGV_MATERIALY.ReadOnly = true;
-            this.DGV_MATERIALY.Size = new System.Drawing.Size(562, 300);
+            this.DGV_MATERIALY.Size = new System.Drawing.Size(542, 300);
             this.DGV_MATERIALY.TabIndex = 19;
             // 
             // PELNA_NAZWA_MATERIALU
@@ -110,69 +121,13 @@
             this.PELNA_NAZWA_MATERIALU.Name = "PELNA_NAZWA_MATERIALU";
             this.PELNA_NAZWA_MATERIALU.ReadOnly = true;
             // 
-            // iDZLECENIADataGridViewTextBoxColumn1
-            // 
-            this.iDZLECENIADataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.iDZLECENIADataGridViewTextBoxColumn1.DataPropertyName = "ID_ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn1.HeaderText = "ID_ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn1.Name = "iDZLECENIADataGridViewTextBoxColumn1";
-            this.iDZLECENIADataGridViewTextBoxColumn1.ReadOnly = true;
-            this.iDZLECENIADataGridViewTextBoxColumn1.Width = 101;
-            // 
-            // sEKTORDataGridViewTextBoxColumn1
-            // 
-            this.sEKTORDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.sEKTORDataGridViewTextBoxColumn1.DataPropertyName = "SEKTOR";
-            this.sEKTORDataGridViewTextBoxColumn1.HeaderText = "SEKTOR";
-            this.sEKTORDataGridViewTextBoxColumn1.Name = "sEKTORDataGridViewTextBoxColumn1";
-            this.sEKTORDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.sEKTORDataGridViewTextBoxColumn1.Width = 76;
-            // 
-            // aLEJKADataGridViewTextBoxColumn1
-            // 
-            this.aLEJKADataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.aLEJKADataGridViewTextBoxColumn1.DataPropertyName = "ALEJKA";
-            this.aLEJKADataGridViewTextBoxColumn1.HeaderText = "ALEJKA";
-            this.aLEJKADataGridViewTextBoxColumn1.Name = "aLEJKADataGridViewTextBoxColumn1";
-            this.aLEJKADataGridViewTextBoxColumn1.ReadOnly = true;
-            this.aLEJKADataGridViewTextBoxColumn1.Width = 71;
-            // 
-            // sTANDataGridViewTextBoxColumn1
-            // 
-            this.sTANDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.sTANDataGridViewTextBoxColumn1.DataPropertyName = "STAN";
-            this.sTANDataGridViewTextBoxColumn1.HeaderText = "STAN";
-            this.sTANDataGridViewTextBoxColumn1.Name = "sTANDataGridViewTextBoxColumn1";
-            this.sTANDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.sTANDataGridViewTextBoxColumn1.Width = 61;
-            // 
-            // iDMATERIALUDataGridViewTextBoxColumn
-            // 
-            this.iDMATERIALUDataGridViewTextBoxColumn.DataPropertyName = "ID_MATERIALU";
-            this.iDMATERIALUDataGridViewTextBoxColumn.HeaderText = "ID_MATERIALU";
-            this.iDMATERIALUDataGridViewTextBoxColumn.Name = "iDMATERIALUDataGridViewTextBoxColumn";
-            this.iDMATERIALUDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDMATERIALUDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iDLOKALIZACJIDataGridViewTextBoxColumn1
-            // 
-            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.DataPropertyName = "ID_LOKALIZACJI";
-            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.HeaderText = "ID_LOKALIZACJI";
-            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.Name = "iDLOKALIZACJIDataGridViewTextBoxColumn1";
-            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // sTANMATERIALYNAZWYBindingSource
-            // 
-            this.sTANMATERIALYNAZWYBindingSource.DataSource = typeof(PROJEKTapp.STAN_MATERIALY_NAZWY);
-            // 
             // ButtonDodajRekord
             // 
             this.ButtonDodajRekord.BackColor = System.Drawing.Color.Lime;
             this.ButtonDodajRekord.FlatAppearance.BorderSize = 0;
             this.ButtonDodajRekord.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonDodajRekord.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ButtonDodajRekord.Location = new System.Drawing.Point(356, 478);
+            this.ButtonDodajRekord.Location = new System.Drawing.Point(399, 478);
             this.ButtonDodajRekord.Name = "ButtonDodajRekord";
             this.ButtonDodajRekord.Size = new System.Drawing.Size(164, 54);
             this.ButtonDodajRekord.TabIndex = 22;
@@ -192,44 +147,40 @@
             // checkBProdukty
             // 
             this.checkBProdukty.AutoSize = true;
-            this.checkBProdukty.Location = new System.Drawing.Point(407, 94);
+            this.checkBProdukty.Location = new System.Drawing.Point(267, 89);
             this.checkBProdukty.Name = "checkBProdukty";
             this.checkBProdukty.Size = new System.Drawing.Size(68, 17);
             this.checkBProdukty.TabIndex = 23;
             this.checkBProdukty.Text = "Produkty";
             this.checkBProdukty.UseVisualStyleBackColor = true;
-            this.checkBProdukty.CheckedChanged += new System.EventHandler(this.checkBSurowce_CheckedChanged);
             // 
             // checkBMaterialy
             // 
             this.checkBMaterialy.AutoSize = true;
-            this.checkBMaterialy.Location = new System.Drawing.Point(407, 118);
+            this.checkBMaterialy.Location = new System.Drawing.Point(356, 89);
             this.checkBMaterialy.Name = "checkBMaterialy";
             this.checkBMaterialy.Size = new System.Drawing.Size(70, 17);
             this.checkBMaterialy.TabIndex = 24;
             this.checkBMaterialy.Text = "Materiały";
             this.checkBMaterialy.UseVisualStyleBackColor = true;
-            this.checkBMaterialy.CheckedChanged += new System.EventHandler(this.checkBMaterialy_CheckedChanged);
             // 
             // checkBWszystkie
             // 
             this.checkBWszystkie.AutoSize = true;
-            this.checkBWszystkie.Location = new System.Drawing.Point(617, 94);
+            this.checkBWszystkie.Location = new System.Drawing.Point(469, 89);
             this.checkBWszystkie.Name = "checkBWszystkie";
             this.checkBWszystkie.Size = new System.Drawing.Size(74, 17);
             this.checkBWszystkie.TabIndex = 25;
             this.checkBWszystkie.Text = "Wszystkie";
             this.checkBWszystkie.UseVisualStyleBackColor = true;
-            this.checkBWszystkie.CheckedChanged += new System.EventHandler(this.checkBWszystkie_CheckedChanged);
             // 
             // cBoxFlitracja
             // 
             this.cBoxFlitracja.FormattingEnabled = true;
-            this.cBoxFlitracja.Location = new System.Drawing.Point(617, 116);
+            this.cBoxFlitracja.Location = new System.Drawing.Point(267, 117);
             this.cBoxFlitracja.Name = "cBoxFlitracja";
-            this.cBoxFlitracja.Size = new System.Drawing.Size(121, 21);
+            this.cBoxFlitracja.Size = new System.Drawing.Size(465, 21);
             this.cBoxFlitracja.TabIndex = 27;
-            this.cBoxFlitracja.SelectedIndexChanged += new System.EventHandler(this.cBoxFlitracja_SelectedIndexChanged);
             // 
             // DGV_PRODUKTY
             // 
@@ -246,11 +197,127 @@
             this.iDPRODUKTUDataGridViewTextBoxColumn,
             this.iDLOKALIZACJIDataGridViewTextBoxColumn});
             this.DGV_PRODUKTY.DataSource = this.sTANPRODUKTYNAZWYBindingSource;
-            this.DGV_PRODUKTY.Location = new System.Drawing.Point(379, 172);
+            this.DGV_PRODUKTY.Location = new System.Drawing.Point(399, 172);
             this.DGV_PRODUKTY.Name = "DGV_PRODUKTY";
             this.DGV_PRODUKTY.ReadOnly = true;
-            this.DGV_PRODUKTY.Size = new System.Drawing.Size(562, 300);
+            this.DGV_PRODUKTY.Size = new System.Drawing.Size(542, 300);
             this.DGV_PRODUKTY.TabIndex = 28;
+            // 
+            // lbl_ID_ZLECENIA
+            // 
+            this.lbl_ID_ZLECENIA.AutoSize = true;
+            this.lbl_ID_ZLECENIA.Location = new System.Drawing.Point(159, 125);
+            this.lbl_ID_ZLECENIA.Name = "lbl_ID_ZLECENIA";
+            this.lbl_ID_ZLECENIA.Size = new System.Drawing.Size(76, 13);
+            this.lbl_ID_ZLECENIA.TabIndex = 29;
+            this.lbl_ID_ZLECENIA.Text = "ID ZLECENIA:";
+            this.lbl_ID_ZLECENIA.Visible = false;
+            // 
+            // btnZdejmij
+            // 
+            this.btnZdejmij.BackColor = System.Drawing.Color.Red;
+            this.btnZdejmij.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnZdejmij.Location = new System.Drawing.Point(399, 478);
+            this.btnZdejmij.Name = "btnZdejmij";
+            this.btnZdejmij.Size = new System.Drawing.Size(164, 55);
+            this.btnZdejmij.TabIndex = 30;
+            this.btnZdejmij.Text = "Zdejmij z magazynu";
+            this.btnZdejmij.UseVisualStyleBackColor = false;
+            this.btnZdejmij.Click += new System.EventHandler(this.btnZdejmij_Click);
+            // 
+            // dgvListaMaterialow
+            // 
+            this.dgvListaMaterialow.AllowUserToAddRows = false;
+            this.dgvListaMaterialow.AllowUserToDeleteRows = false;
+            this.dgvListaMaterialow.AutoGenerateColumns = false;
+            this.dgvListaMaterialow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaMaterialow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDZLECENIADataGridViewTextBoxColumn2,
+            this.iDMATERIALDataGridViewTextBoxColumn,
+            this.pELNANAZWAMATERIALUDataGridViewTextBoxColumn,
+            this.wYNIKDataGridViewTextBoxColumn});
+            this.dgvListaMaterialow.DataSource = this.mATERIALYPODODANIUBindingSource;
+            this.dgvListaMaterialow.Location = new System.Drawing.Point(13, 172);
+            this.dgvListaMaterialow.Name = "dgvListaMaterialow";
+            this.dgvListaMaterialow.ReadOnly = true;
+            this.dgvListaMaterialow.Size = new System.Drawing.Size(368, 164);
+            this.dgvListaMaterialow.TabIndex = 31;
+            // 
+            // dgvLokalizacje
+            // 
+            this.dgvLokalizacje.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLokalizacje.Location = new System.Drawing.Point(13, 367);
+            this.dgvLokalizacje.Name = "dgvLokalizacje";
+            this.dgvLokalizacje.Size = new System.Drawing.Size(368, 105);
+            this.dgvLokalizacje.TabIndex = 32;
+            // 
+            // lbl_Lista_Materialow
+            // 
+            this.lbl_Lista_Materialow.AutoSize = true;
+            this.lbl_Lista_Materialow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbl_Lista_Materialow.Location = new System.Drawing.Point(83, 153);
+            this.lbl_Lista_Materialow.Name = "lbl_Lista_Materialow";
+            this.lbl_Lista_Materialow.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_Lista_Materialow.Size = new System.Drawing.Size(239, 16);
+            this.lbl_Lista_Materialow.TabIndex = 33;
+            this.lbl_Lista_Materialow.Text = "Lista materiałów do zmagazynowania :";
+            // 
+            // lbl_Stan_Magazynu
+            // 
+            this.lbl_Stan_Magazynu.AutoSize = true;
+            this.lbl_Stan_Magazynu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbl_Stan_Magazynu.Location = new System.Drawing.Point(550, 153);
+            this.lbl_Stan_Magazynu.Name = "lbl_Stan_Magazynu";
+            this.lbl_Stan_Magazynu.Size = new System.Drawing.Size(290, 16);
+            this.lbl_Stan_Magazynu.TabIndex = 34;
+            this.lbl_Stan_Magazynu.Text = "Zmagazynowane materiały z danego zlecenia :";
+            // 
+            // lbl_Lokalizacje_Nie_Pelne
+            // 
+            this.lbl_Lokalizacje_Nie_Pelne.AutoSize = true;
+            this.lbl_Lokalizacje_Nie_Pelne.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbl_Lokalizacje_Nie_Pelne.Location = new System.Drawing.Point(103, 348);
+            this.lbl_Lokalizacje_Nie_Pelne.Name = "lbl_Lokalizacje_Nie_Pelne";
+            this.lbl_Lokalizacje_Nie_Pelne.Size = new System.Drawing.Size(171, 16);
+            this.lbl_Lokalizacje_Nie_Pelne.TabIndex = 35;
+            this.lbl_Lokalizacje_Nie_Pelne.Text = "Niezapełnione lokalizacje :";
+            // 
+            // iDZLECENIADataGridViewTextBoxColumn2
+            // 
+            this.iDZLECENIADataGridViewTextBoxColumn2.DataPropertyName = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn2.HeaderText = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn2.Name = "iDZLECENIADataGridViewTextBoxColumn2";
+            this.iDZLECENIADataGridViewTextBoxColumn2.ReadOnly = true;
+            this.iDZLECENIADataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // iDMATERIALDataGridViewTextBoxColumn
+            // 
+            this.iDMATERIALDataGridViewTextBoxColumn.DataPropertyName = "ID_MATERIAL";
+            this.iDMATERIALDataGridViewTextBoxColumn.HeaderText = "ID_MATERIAL";
+            this.iDMATERIALDataGridViewTextBoxColumn.Name = "iDMATERIALDataGridViewTextBoxColumn";
+            this.iDMATERIALDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDMATERIALDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // pELNANAZWAMATERIALUDataGridViewTextBoxColumn
+            // 
+            this.pELNANAZWAMATERIALUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pELNANAZWAMATERIALUDataGridViewTextBoxColumn.DataPropertyName = "PELNA_NAZWA_MATERIALU";
+            this.pELNANAZWAMATERIALUDataGridViewTextBoxColumn.HeaderText = "NAZWA";
+            this.pELNANAZWAMATERIALUDataGridViewTextBoxColumn.Name = "pELNANAZWAMATERIALUDataGridViewTextBoxColumn";
+            this.pELNANAZWAMATERIALUDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // wYNIKDataGridViewTextBoxColumn
+            // 
+            this.wYNIKDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.wYNIKDataGridViewTextBoxColumn.DataPropertyName = "WYNIK";
+            this.wYNIKDataGridViewTextBoxColumn.HeaderText = " ILOSC";
+            this.wYNIKDataGridViewTextBoxColumn.Name = "wYNIKDataGridViewTextBoxColumn";
+            this.wYNIKDataGridViewTextBoxColumn.ReadOnly = true;
+            this.wYNIKDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // mATERIALYPODODANIUBindingSource
+            // 
+            this.mATERIALYPODODANIUBindingSource.DataSource = typeof(PROJEKTapp.MATERIALY_PO_DODANIU);
             // 
             // nAZWAPRODUKTUDataGridViewTextBoxColumn
             // 
@@ -316,34 +383,61 @@
             // 
             this.sTANPRODUKTYNAZWYBindingSource.DataSource = typeof(PROJEKTapp.STAN_PRODUKTY_NAZWY);
             // 
-            // lbl_ID_ZLECENIA
+            // iDZLECENIADataGridViewTextBoxColumn1
             // 
-            this.lbl_ID_ZLECENIA.AutoSize = true;
-            this.lbl_ID_ZLECENIA.Location = new System.Drawing.Point(535, 119);
-            this.lbl_ID_ZLECENIA.Name = "lbl_ID_ZLECENIA";
-            this.lbl_ID_ZLECENIA.Size = new System.Drawing.Size(76, 13);
-            this.lbl_ID_ZLECENIA.TabIndex = 29;
-            this.lbl_ID_ZLECENIA.Text = "ID ZLECENIA:";
+            this.iDZLECENIADataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.iDZLECENIADataGridViewTextBoxColumn1.DataPropertyName = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn1.HeaderText = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn1.Name = "iDZLECENIADataGridViewTextBoxColumn1";
+            this.iDZLECENIADataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iDZLECENIADataGridViewTextBoxColumn1.Width = 101;
             // 
-            // btnZdejmij
+            // sEKTORDataGridViewTextBoxColumn1
             // 
-            this.btnZdejmij.BackColor = System.Drawing.Color.Red;
-            this.btnZdejmij.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnZdejmij.Location = new System.Drawing.Point(356, 477);
-            this.btnZdejmij.Name = "btnZdejmij";
-            this.btnZdejmij.Size = new System.Drawing.Size(164, 55);
-            this.btnZdejmij.TabIndex = 30;
-            this.btnZdejmij.Text = "Zdejmij z magazynu";
-            this.btnZdejmij.UseVisualStyleBackColor = false;
-            this.btnZdejmij.Click += new System.EventHandler(this.btnZdejmij_Click);
+            this.sEKTORDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sEKTORDataGridViewTextBoxColumn1.DataPropertyName = "SEKTOR";
+            this.sEKTORDataGridViewTextBoxColumn1.HeaderText = "SEKTOR";
+            this.sEKTORDataGridViewTextBoxColumn1.Name = "sEKTORDataGridViewTextBoxColumn1";
+            this.sEKTORDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.sEKTORDataGridViewTextBoxColumn1.Width = 76;
             // 
-            // dataGridView1
+            // aLEJKADataGridViewTextBoxColumn1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 172);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(322, 300);
-            this.dataGridView1.TabIndex = 31;
+            this.aLEJKADataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.aLEJKADataGridViewTextBoxColumn1.DataPropertyName = "ALEJKA";
+            this.aLEJKADataGridViewTextBoxColumn1.HeaderText = "ALEJKA";
+            this.aLEJKADataGridViewTextBoxColumn1.Name = "aLEJKADataGridViewTextBoxColumn1";
+            this.aLEJKADataGridViewTextBoxColumn1.ReadOnly = true;
+            this.aLEJKADataGridViewTextBoxColumn1.Width = 71;
+            // 
+            // sTANDataGridViewTextBoxColumn1
+            // 
+            this.sTANDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sTANDataGridViewTextBoxColumn1.DataPropertyName = "STAN";
+            this.sTANDataGridViewTextBoxColumn1.HeaderText = "STAN";
+            this.sTANDataGridViewTextBoxColumn1.Name = "sTANDataGridViewTextBoxColumn1";
+            this.sTANDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.sTANDataGridViewTextBoxColumn1.Width = 61;
+            // 
+            // iDMATERIALUDataGridViewTextBoxColumn
+            // 
+            this.iDMATERIALUDataGridViewTextBoxColumn.DataPropertyName = "ID_MATERIALU";
+            this.iDMATERIALUDataGridViewTextBoxColumn.HeaderText = "ID_MATERIALU";
+            this.iDMATERIALUDataGridViewTextBoxColumn.Name = "iDMATERIALUDataGridViewTextBoxColumn";
+            this.iDMATERIALUDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDMATERIALUDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iDLOKALIZACJIDataGridViewTextBoxColumn1
+            // 
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.DataPropertyName = "ID_LOKALIZACJI";
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.HeaderText = "ID_LOKALIZACJI";
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.Name = "iDLOKALIZACJIDataGridViewTextBoxColumn1";
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.iDLOKALIZACJIDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // sTANMATERIALYNAZWYBindingSource
+            // 
+            this.sTANMATERIALYNAZWYBindingSource.DataSource = typeof(PROJEKTapp.STAN_MATERIALY_NAZWY);
             // 
             // FormZmianaStanuMagazynu
             // 
@@ -351,7 +445,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(957, 544);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lbl_Lokalizacje_Nie_Pelne);
+            this.Controls.Add(this.lbl_Stan_Magazynu);
+            this.Controls.Add(this.lbl_Lista_Materialow);
+            this.Controls.Add(this.dgvLokalizacje);
+            this.Controls.Add(this.dgvListaMaterialow);
             this.Controls.Add(this.btnZdejmij);
             this.Controls.Add(this.lbl_ID_ZLECENIA);
             this.Controls.Add(this.DGV_PRODUKTY);
@@ -369,11 +467,13 @@
             this.Text = "FormZmianaStanuMagazynu";
             this.Load += new System.EventHandler(this.FormZmianaStanuMagazynu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_MATERIALY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTANMATERIALYNAZWYBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TopBar_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_PRODUKTY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaMaterialow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLokalizacje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mATERIALYPODODANIUBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTANPRODUKTYNAZWYBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTANMATERIALYNAZWYBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,6 +507,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDPRODUKTUDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDLOKALIZACJIDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnZdejmij;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListaMaterialow;
+        private System.Windows.Forms.BindingSource mATERIALYPODODANIUBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDZLECENIADataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDMATERIALDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pELNANAZWAMATERIALUDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wYNIKDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dgvLokalizacje;
+        private System.Windows.Forms.Label lbl_Lista_Materialow;
+        private System.Windows.Forms.Label lbl_Stan_Magazynu;
+        private System.Windows.Forms.Label lbl_Lokalizacje_Nie_Pelne;
     }
 }

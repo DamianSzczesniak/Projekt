@@ -14,116 +14,121 @@ namespace PROJEKTapp.Forms
     public partial class FormZmianaStanuMagazynu : Form
     {
         KWZP_PROJEKTEntities db;
+        int id;
+        int jakaAkcja;
         public FormZmianaStanuMagazynu(KWZP_PROJEKTEntities db)
         {
             this.db = db;
             InitializeComponent();
         }
 
+        public FormZmianaStanuMagazynu(KWZP_PROJEKTEntities db, int id, int jakaAkcja)
+        {
+            this.jakaAkcja = jakaAkcja;
+            this.id = id;
+            this.db = db;
+            InitializeComponent();
+            
+        }
+
+        private void akcjaSwitch()
+        {
+            switch(jakaAkcja)
+            {
+                case 1:
+                    {
+                        checkBWszystkie.Checked = false;
+                        checkBProdukty.Checked = false;
+                        checkBMaterialy.Checked = true;
+
+                        var dict = new Dictionary<int, string>();
+                        foreach (ZLECENIA row in db.ZLECENIA.Where(a => a.ID_ZLECENIA == id).ToList())
+                        {
+                            dict.Add(row.ID_ZLECENIA, "  ID_ZLECENIA : " + row.ID_ZLECENIA + " FIRMA : " + row.FIRMY.NAZWA_FIRMY + "  DATA REALIZACJI : " + row.DATA_REALIZACJI.ToShortDateString());
+                        }
+
+                        cBoxFlitracja.DataSource = dict.ToList();
+                        cBoxFlitracja.ValueMember = "Key";
+                        cBoxFlitracja.DisplayMember = "Value";
+                        cBoxFlitracja.SelectedIndex = 0;
+
+                        DGV_PRODUKTY.Hide();
+                        DGV_MATERIALY.Show();
+                        checkBProdukty.Hide();
+                        checkBWszystkie.Hide();
+                        checkBMaterialy.Hide();
+                        btnZdejmij.Hide();
+                        dgvLokalizacje.Show();
+                        dgvLokalizacje.DataSource = db.LOKALIZACJA.Where(a => a.CzyPelne == false);
+
+
+                        sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == id).ToList();
+                        mATERIALYPODODANIUBindingSource.DataSource = db.MATERIALY_PO_DODANIU.Where(i => i.ID_ZLECENIA == id).ToList();
+
+                        if(db.MATERIALY_PO_DODANIU.Where(i => i.ID_ZLECENIA == id).ToList().Count == 0)
+                        {
+                            DateTime data = DateTime.Now;
+                            DATA_STATUSU_ZLECENIA dATA_STATUSU_ = new DATA_STATUSU_ZLECENIA();
+                            dATA_STATUSU_.DATA_ZMIANY = data;
+                            dATA_STATUSU_.ID_ZLECENIA = id;
+                            dATA_STATUSU_.ID_STATUSU_ZLECENIA = 4;
+                            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_);
+                            db.SaveChanges();
+                            KWZP_PROJEKTEntities kWZP_ = new KWZP_PROJEKTEntities();
+                            db = kWZP_;
+                            db.SaveChanges();
+                            MessageBox.Show("Zrealizowano magazynowanie wszystkich materiałów." + Environment.NewLine + "  Nastąpi zamknięcie formularza . ", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        return;
+                    }
+
+
+
+            }
+
+        }
+
+
+
+
         private void Btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void checkBSurowce_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBProdukty.Checked )
-            {
-                checkBMaterialy.Checked = false;
-                DGV_PRODUKTY.Show();
-                DGV_MATERIALY.Hide();
-            }
-            else
-            {
-                checkBMaterialy.Checked = true;
-            }
-        }
-
-        private void checkBMaterialy_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBMaterialy.Checked)
-            {
-                checkBProdukty.Checked = false;
-                DGV_MATERIALY.Show();
-                DGV_PRODUKTY.Hide();
-            }
-            else
-            {
-                checkBProdukty.Checked = true;
-            }
-        }
+       
 
         private void FormZmianaStanuMagazynu_Load(object sender, EventArgs e)
         {
-            
-            sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.ToList();
-            sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
-            checkBMaterialy.Checked = true;
-            checkBWszystkie.Checked = true;
-            cBoxFlitracja.DataSource = db.ZLECENIA.ToList();
-            cBoxFlitracja.ValueMember = "ID_ZLECENIA";
-            cBoxFlitracja.SelectedValue = "ID_ZLECENIA";
-            
-
-
-
-
-
+            akcjaSwitch();
         }
 
-        private void checkBWszystkie_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBWszystkie.Checked)
-            {
-               sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.ToList();
-                sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
-            }
-            else
-            {
-                int g = int.Parse(cBoxFlitracja.SelectedValue.ToString());
-                sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
-                sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
-            }
-        }
-
-        private void cBoxFlitracja_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-             if   (checkBWszystkie.Checked == false)
-            {
-                int g = int.Parse(cBoxFlitracja.SelectedValue.ToString());
-                sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
-                sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
-            }
-            
-
-
-
-        }
+        
 
         private void btnZdejmij_Click(object sender, EventArgs e)
         {
             if (checkBMaterialy.Checked)
             {
-                using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANMATERIALYNAZWYBindingSource.Current as STAN_MATERIALY_NAZWY))
-                {
-                    if (AMP.ShowDialog() == DialogResult.OK)
-                    {
-                        zapisZmianWidok();
-                    }
+                //using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANMATERIALYNAZWYBindingSource.Current as STAN_MATERIALY_NAZWY))
+                //{
+                //    if (AMP.ShowDialog() == DialogResult.OK)
+                //    {
+                //     //   zapisZmianWidok();
+                //    }
 
-                }
+                //}
             }
             else
             {
-                using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANPRODUKTYNAZWYBindingSource.Current as STAN_PRODUKTY_NAZWY))
-                {
-                    if (AMP.ShowDialog() == DialogResult.OK)
-                    {
-                        zapisZmianWidok();
-                    }
+            //    using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANPRODUKTYNAZWYBindingSource.Current as STAN_PRODUKTY_NAZWY))
+            //    {
+            //        if (AMP.ShowDialog() == DialogResult.OK)
+            //        {
+            //           // zapisZmianWidok();
+            //        }
                     
-                }
+            //    }
             }
         }
 
@@ -133,24 +138,27 @@ namespace PROJEKTapp.Forms
             KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
             db.STAN_MATERIALY_NAZWY = ndb.STAN_MATERIALY_NAZWY;
             db.STAN_PRODUKTY_NAZWY = ndb.STAN_PRODUKTY_NAZWY;
+            db.MATERIALY_PO_DODANIU = ndb.MATERIALY_PO_DODANIU;
             db.SaveChanges();
+            akcjaSwitch();
 
-            if (checkBWszystkie.Checked)
-            {
-                sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.ToList();
-                sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
-            }
-            else
-            {
-                int g = int.Parse(cBoxFlitracja.SelectedValue.ToString());
-                sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
-                sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
-            }
+        //    if (checkBWszystkie.Checked)
+        //    {
+        //        sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.ToList();
+        //        sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
+        //    }
+        //    else
+        //    {
+        //        int g = int.Parse(cBoxFlitracja.SelectedValue.ToString());
+        //        sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
+        //        sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.Where(i => i.ID_ZLECENIA == g).ToList();
+        //    }
         }
 
         private void ButtonDodajRekord_Click(object sender, EventArgs e)
         {
-            using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, null) )
+            int operacja = 1;
+            using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, mATERIALYPODODANIUBindingSource.Current, operacja) )
             {
                 if (AMP.ShowDialog() == DialogResult.OK)
                 {

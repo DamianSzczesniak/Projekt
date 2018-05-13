@@ -337,6 +337,9 @@
     <Compile Include="MATERIAL.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="MATERIALY_PO_DODANIU.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="MIASTA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -672,6 +675,7 @@
     <None Include="KWZP_PROJEKT_MODEL.edmx.diagram">
       <DependentUpon>KWZP_PROJEKT_MODEL.edmx</DependentUpon>
     </None>
+    <None Include="MATERIALY_PO_DODANIU.datasource" />
     <None Include="OFERTA.datasource" />
     <None Include="packages.config" />
     <None Include="PRACOWNICY.datasource" />

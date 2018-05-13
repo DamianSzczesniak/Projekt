@@ -13,11 +13,13 @@ namespace PROJEKTapp.Froms_Logistyka
         KWZP_PROJEKTEntities db;
         bool materialy;
         object dane;
-        public AkcjaMagazynProduktów(KWZP_PROJEKTEntities db, bool materialy,object dane)
+        int operacja;
+        public AkcjaMagazynProduktów(KWZP_PROJEKTEntities db, bool materialy, object dane, int operacja)
         {
             this.db = db;
             this.materialy = materialy;
             this.dane = dane;
+            this.operacja = operacja;
             InitializeComponent();
         }
 
@@ -27,17 +29,18 @@ namespace PROJEKTapp.Froms_Logistyka
 
             if (materialy)
             {
-                if (dane == null)
+                if (operacja == 1)
                 {
+                    MATERIALY_PO_DODANIU mATERIALY_PO_DODANIU = dane as MATERIALY_PO_DODANIU;
                     lblItem.Text = "Materiał :";
-                    cBoxSurPro.DataSource = db.MATERIAL.ToList();
+                    cBoxSurPro.DataSource = db.MATERIAL.Where(a => a.ID_MATERIALU == mATERIALY_PO_DODANIU.ID_MATERIAL).ToList();
                     cBoxSurPro.DisplayMember = "PELNA_NAZWA_MATERIALU";
                     cBoxSurPro.ValueMember = "ID_MATERIALU";
                     txtBoxRAkcji.Text = "DODAWANIE";
                     cBoxLokalizacja.DataSource = db.LOKALIZACJA.Where(a => a.CzyPelne == false).ToList();
                     cBoxLokalizacja.DisplayMember = "ID_LOKALIZACJI";
                     cBoxLokalizacja.ValueMember = "ID_LOKALIZACJI";
-                    cBoxPrzypisaneZlecenie.DataSource = db.ZLECENIA.ToList();
+                    cBoxPrzypisaneZlecenie.DataSource = db.ZLECENIA.Where(a => a.ID_ZLECENIA == mATERIALY_PO_DODANIU.ID_ZLECENIA).ToList();
                     cBoxPrzypisaneZlecenie.DisplayMember = "ID_ZLECENIA";
                     cBoxPrzypisaneZlecenie.ValueMember = "ID_ZLECENIA";
                 }
@@ -60,7 +63,7 @@ namespace PROJEKTapp.Froms_Logistyka
             }
             else
             {
-                if (dane == null)
+                if (operacja == 1)
                 {
                     lblItem.Text = "Produkt :";
                     cBoxSurPro.DataSource = db.PRODUKT.ToList();
@@ -104,27 +107,37 @@ namespace PROJEKTapp.Froms_Logistyka
                 {
                     if (materialy)
                     {
-                        if (dane == null)
+                        if (operacja == 1)
                         {
-                            ZMIANA_STANU_MAGAZYNU_MATERIALOW zMIANA_STANU_MAGAZYNU_MATERIALOW = new ZMIANA_STANU_MAGAZYNU_MATERIALOW();
-                            zMIANA_STANU_MAGAZYNU_MATERIALOW.ID_LOKALIZACJI = int.Parse(cBoxLokalizacja.SelectedValue.ToString());
-                            zMIANA_STANU_MAGAZYNU_MATERIALOW.ID_MATERIALU = int.Parse(cBoxSurPro.SelectedValue.ToString());
-                            zMIANA_STANU_MAGAZYNU_MATERIALOW.ID_ZLECENIA = int.Parse(cBoxPrzypisaneZlecenie.SelectedValue.ToString());
-                            int s = int.Parse(txtBoxIlosc.Text);
-                            zMIANA_STANU_MAGAZYNU_MATERIALOW.ILOSC = s;
-                            zMIANA_STANU_MAGAZYNU_MATERIALOW.DATA_WPISU = DateTime.Parse(txtBoxData.Text);
-                            db.ZMIANA_STANU_MAGAZYNU_MATERIALOW.Add(zMIANA_STANU_MAGAZYNU_MATERIALOW);
-                            if (checkBoxPelne.Checked)
+                            MATERIALY_PO_DODANIU mATERIALY_PO_DODANIU = dane as MATERIALY_PO_DODANIU;
+                            if (int.Parse(txtBoxIlosc.Text) > 0 && int.Parse(txtBoxIlosc.Text) <= int.Parse(mATERIALY_PO_DODANIU.WYNIK.ToString()))
                             {
-                                LOKALIZACJA lOKALIZACJA = new LOKALIZACJA();
-                                lOKALIZACJA = db.LOKALIZACJA.FirstOrDefault(l => l.ID_LOKALIZACJI == zMIANA_STANU_MAGAZYNU_MATERIALOW.ID_LOKALIZACJI);
-                                lOKALIZACJA.CzyPelne = true;
-                                db.Entry(lOKALIZACJA).State = EntityState.Modified;
+                                ZMIANA_STANU_MAGAZYNU_MATERIALOW zMIANA_STANU_MAGAZYNU_MATERIALOW = new ZMIANA_STANU_MAGAZYNU_MATERIALOW();
+                                zMIANA_STANU_MAGAZYNU_MATERIALOW.ID_LOKALIZACJI = int.Parse(cBoxLokalizacja.SelectedValue.ToString());
+                                zMIANA_STANU_MAGAZYNU_MATERIALOW.ID_MATERIALU = int.Parse(cBoxSurPro.SelectedValue.ToString());
+                                zMIANA_STANU_MAGAZYNU_MATERIALOW.ID_ZLECENIA = int.Parse(cBoxPrzypisaneZlecenie.SelectedValue.ToString());
+                                int s = int.Parse(txtBoxIlosc.Text);
+                                zMIANA_STANU_MAGAZYNU_MATERIALOW.ILOSC = s;
+                                zMIANA_STANU_MAGAZYNU_MATERIALOW.DATA_WPISU = DateTime.Parse(txtBoxData.Text);
+                                db.ZMIANA_STANU_MAGAZYNU_MATERIALOW.Add(zMIANA_STANU_MAGAZYNU_MATERIALOW);
+                                if (checkBoxPelne.Checked)
+                                {
+                                    LOKALIZACJA lOKALIZACJA = new LOKALIZACJA();
+                                    lOKALIZACJA = db.LOKALIZACJA.FirstOrDefault(l => l.ID_LOKALIZACJI == zMIANA_STANU_MAGAZYNU_MATERIALOW.ID_LOKALIZACJI);
+                                    lOKALIZACJA.CzyPelne = true;
+                                    db.Entry(lOKALIZACJA).State = EntityState.Modified;
 
+                                }
+                                db.SaveChanges();
+                                MessageBox.Show("Akcje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                e.Cancel = false;
                             }
-                            db.SaveChanges();
-                            MessageBox.Show("Akcje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            e.Cancel = false;
+                            else
+                            {
+                                MessageBox.Show("Nie można dodać większej liczby materiałów, przypisanych danemu zleceniu, niż pozostało nie zmagazynowanych .", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                e.Cancel = true;
+                                return;
+                            }
                         }
                         else
                         {
@@ -162,7 +175,7 @@ namespace PROJEKTapp.Froms_Logistyka
                     }
                     else
                     {
-                        if (dane == null)
+                        if (operacja == 1)
                         {
                             ZMIANA_STANU_MAGAZYNU_PRODUKTOW zMIANA_STANU_MAGAZYNU_PRODUKTOW = new ZMIANA_STANU_MAGAZYNU_PRODUKTOW();
                             zMIANA_STANU_MAGAZYNU_PRODUKTOW.ID_LOKALIZACJI = int.Parse(cBoxLokalizacja.SelectedValue.ToString());
