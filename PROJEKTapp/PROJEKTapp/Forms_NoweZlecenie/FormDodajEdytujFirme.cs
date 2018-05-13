@@ -95,6 +95,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                 }
                 e.Cancel = false;
                 db.SaveChanges();
+                MessageBox.Show("Akcje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             e.Cancel = false;
             

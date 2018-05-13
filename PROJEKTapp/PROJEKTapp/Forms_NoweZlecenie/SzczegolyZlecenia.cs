@@ -26,6 +26,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             this.db = db;
             this.id = id;
             InitializeComponent();
+            
         }
 
         private void SzczegolyZlecenia_Load(object sender, EventArgs e)
@@ -84,11 +85,31 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 
         private void statusButtony()
         {
+            
+            KWZP_PROJEKTEntities kWZP_ = new KWZP_PROJEKTEntities();
+            db = kWZP_;
+            db.AKTUALNY_STATUS_ZLECEN = kWZP_.AKTUALNY_STATUS_ZLECEN;
+            db.SaveChanges();
+            
             AKTUALNY_STATUS_ZLECEN azlecenie = db.AKTUALNY_STATUS_ZLECEN.Where(a => a.ID_ZLECENIA == id).First();
-            if (azlecenie.Status != 1)
+
+
+            switch (azlecenie.Status)
             {
-                btnZam.Hide();
+                case 1:
+                    btnZam.Show();
+
+                    break;
+                case 2:
+                    btnDostarczonoMaterialy.Show();
+                   
+                    break;
+                case 3:
+
+                    break;
             }
+            this.Refresh();
+
         }
 
     private void RezerwujMaszyny_Click(object sender, EventArgs e)
@@ -129,19 +150,42 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     db.REALIZACJA_PRODUKCJA.Add(realizacjaProdukcjiN);
                 }
             }
+            MessageBox.Show("Akcje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            statusButtony();
         }
 
         private void btnZam_Click(object sender, EventArgs e)
         {
-            ZamowienieMaterialu zamowienieMaterialu = new ZamowienieMaterialu(db, id);
-            zamowienieMaterialu.Show();
+            using (ZamowienieMaterialu zamowienieMaterialu = new ZamowienieMaterialu(db, id))
+            {
+                if (zamowienieMaterialu.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+                    btnZam.Hide();
+                }
+            }
+         
+           
+           
         }
 
         private void SzczegolyZlecenia_Enter(object sender, EventArgs e)
         {
-            KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
-            db = ndb;
+           
+            statusButtony();
+        }
+
+        private void btnDostarczonoMaterialy_Click(object sender, EventArgs e)
+        {
+            DateTime data = DateTime.Now;
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_ = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_.DATA_ZMIANY = data;
+            dATA_STATUSU_.ID_ZLECENIA = id;
+            dATA_STATUSU_.ID_STATUSU_ZLECENIA = 3;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_);
             db.SaveChanges();
+            MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnDostarczonoMaterialy.Hide();
             statusButtony();
         }
     }

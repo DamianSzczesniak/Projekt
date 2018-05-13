@@ -39,6 +39,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.GridVwZapMat = new System.Windows.Forms.DataGridView();
+            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PELNA_NAZWA_MATERIALU = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDMATERIALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sUMAMATERIALUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.BtnShow = new System.Windows.Forms.Button();
             this.btnZapisz = new System.Windows.Forms.Button();
@@ -48,11 +53,6 @@
             this.txtzlozenia = new System.Windows.Forms.TextBox();
             this.txtZamowienia = new System.Windows.Forms.TextBox();
             this.lvlFirmy = new System.Windows.Forms.Label();
-            this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PELNA_NAZWA_MATERIALU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDMATERIALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sUMAMATERIALUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.TopBar_5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -169,6 +169,43 @@
             this.GridVwZapMat.Size = new System.Drawing.Size(446, 161);
             this.GridVwZapMat.TabIndex = 26;
             // 
+            // iDZLECENIADataGridViewTextBoxColumn
+            // 
+            this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
+            this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDZLECENIADataGridViewTextBoxColumn.Visible = false;
+            // 
+            // PELNA_NAZWA_MATERIALU
+            // 
+            this.PELNA_NAZWA_MATERIALU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PELNA_NAZWA_MATERIALU.DataPropertyName = "PELNA_NAZWA_MATERIALU";
+            this.PELNA_NAZWA_MATERIALU.HeaderText = "NAZWA MATERIALU";
+            this.PELNA_NAZWA_MATERIALU.Name = "PELNA_NAZWA_MATERIALU";
+            this.PELNA_NAZWA_MATERIALU.ReadOnly = true;
+            // 
+            // iDMATERIALDataGridViewTextBoxColumn
+            // 
+            this.iDMATERIALDataGridViewTextBoxColumn.DataPropertyName = "ID_MATERIAL";
+            this.iDMATERIALDataGridViewTextBoxColumn.HeaderText = "ID_MATERIAL";
+            this.iDMATERIALDataGridViewTextBoxColumn.Name = "iDMATERIALDataGridViewTextBoxColumn";
+            this.iDMATERIALDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDMATERIALDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // sUMAMATERIALUDataGridViewTextBoxColumn
+            // 
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.DataPropertyName = "SUMA_MATERIALU";
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.HeaderText = "LICZBA SZTUK";
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.Name = "sUMAMATERIALUDataGridViewTextBoxColumn";
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sUMAMATERIALUDataGridViewTextBoxColumn.Width = 99;
+            // 
+            // sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource
+            // 
+            this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource.DataSource = typeof(PROJEKTapp.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -190,6 +227,7 @@
             // 
             // btnZapisz
             // 
+            this.btnZapisz.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnZapisz.Location = new System.Drawing.Point(417, 435);
             this.btnZapisz.Name = "btnZapisz";
             this.btnZapisz.Size = new System.Drawing.Size(75, 23);
@@ -248,43 +286,6 @@
             this.lvlFirmy.Size = new System.Drawing.Size(37, 13);
             this.lvlFirmy.TabIndex = 36;
             this.lvlFirmy.Text = "Firmy :";
-            // 
-            // sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource
-            // 
-            this.sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource.DataSource = typeof(PROJEKTapp.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE);
-            // 
-            // iDZLECENIADataGridViewTextBoxColumn
-            // 
-            this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID_ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
-            this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDZLECENIADataGridViewTextBoxColumn.Visible = false;
-            // 
-            // PELNA_NAZWA_MATERIALU
-            // 
-            this.PELNA_NAZWA_MATERIALU.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PELNA_NAZWA_MATERIALU.DataPropertyName = "PELNA_NAZWA_MATERIALU";
-            this.PELNA_NAZWA_MATERIALU.HeaderText = "NAZWA MATERIALU";
-            this.PELNA_NAZWA_MATERIALU.Name = "PELNA_NAZWA_MATERIALU";
-            this.PELNA_NAZWA_MATERIALU.ReadOnly = true;
-            // 
-            // iDMATERIALDataGridViewTextBoxColumn
-            // 
-            this.iDMATERIALDataGridViewTextBoxColumn.DataPropertyName = "ID_MATERIAL";
-            this.iDMATERIALDataGridViewTextBoxColumn.HeaderText = "ID_MATERIAL";
-            this.iDMATERIALDataGridViewTextBoxColumn.Name = "iDMATERIALDataGridViewTextBoxColumn";
-            this.iDMATERIALDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDMATERIALDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // sUMAMATERIALUDataGridViewTextBoxColumn
-            // 
-            this.sUMAMATERIALUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.sUMAMATERIALUDataGridViewTextBoxColumn.DataPropertyName = "SUMA_MATERIALU";
-            this.sUMAMATERIALUDataGridViewTextBoxColumn.HeaderText = "LICZBA SZTUK";
-            this.sUMAMATERIALUDataGridViewTextBoxColumn.Name = "sUMAMATERIALUDataGridViewTextBoxColumn";
-            this.sUMAMATERIALUDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sUMAMATERIALUDataGridViewTextBoxColumn.Width = 108;
             // 
             // ZamowienieMaterialu
             // 
