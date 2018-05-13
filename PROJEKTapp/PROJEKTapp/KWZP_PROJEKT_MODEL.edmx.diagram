@@ -133,9 +133,9 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZAMOWIENIA" Width="1.5" PointX="5.25" PointY="38.5" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZAMOWIENI__ID_FI__2EDAF651" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.Status_detale_zlecenie" Width="1.5" PointX="24.375" PointY="9.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.zestawienie" Width="1.5" PointX="24.375" PointY="13.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" Width="1.5" PointX="23.375" PointY="16.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE" Width="1.5" PointX="23.375" PointY="19.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.zestawienie" Width="1.5" PointX="23.375" PointY="23.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

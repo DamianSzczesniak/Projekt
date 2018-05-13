@@ -48,6 +48,7 @@
             this.txtFirma = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.RezerwujMaszyny = new System.Windows.Forms.Button();
+            this.btnZam = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zLECENIAPRODUKTYNAZWYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -198,19 +199,30 @@
             // 
             // RezerwujMaszyny
             // 
-            this.RezerwujMaszyny.Location = new System.Drawing.Point(102, 349);
+            this.RezerwujMaszyny.Location = new System.Drawing.Point(209, 344);
             this.RezerwujMaszyny.Name = "RezerwujMaszyny";
-            this.RezerwujMaszyny.Size = new System.Drawing.Size(179, 35);
+            this.RezerwujMaszyny.Size = new System.Drawing.Size(142, 35);
             this.RezerwujMaszyny.TabIndex = 23;
             this.RezerwujMaszyny.Text = "Rezerwuj maszyny";
             this.RezerwujMaszyny.UseVisualStyleBackColor = true;
             this.RezerwujMaszyny.Click += new System.EventHandler(this.RezerwujMaszyny_Click);
+            // 
+            // btnZam
+            // 
+            this.btnZam.Location = new System.Drawing.Point(28, 344);
+            this.btnZam.Name = "btnZam";
+            this.btnZam.Size = new System.Drawing.Size(140, 35);
+            this.btnZam.TabIndex = 24;
+            this.btnZam.Text = "Złóż zamówienia na materiały";
+            this.btnZam.UseVisualStyleBackColor = true;
+            this.btnZam.Click += new System.EventHandler(this.btnZam_Click);
             // 
             // SzczegolyZlecenia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 402);
+            this.Controls.Add(this.btnZam);
             this.Controls.Add(this.RezerwujMaszyny);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.txtFirma);
@@ -251,5 +263,6 @@
         private System.Windows.Forms.BindingSource zLECENIAPRODUKTYNAZWYBindingSource;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button RezerwujMaszyny;
+        private System.Windows.Forms.Button btnZam;
     }
 }

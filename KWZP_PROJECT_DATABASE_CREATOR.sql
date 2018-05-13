@@ -1464,11 +1464,12 @@ go
 create view zestawienie as 
 select 
 o.ID_ZLECENIA,
-o.KOSZT_CALKOWITY_PRODUKCJI as wydatki,
-o.KOSZT_CALKOWITY_PRODUKCJI * 1.33 as obroty,
-o.KOSZT_CALKOWITY_PRODUKCJI * 0.33 as zarobek
+b.DATA_ZLECENIA,
+b.DATA_REALIZACJI,
+o.KOSZT_CALKOWITY_PRODUKCJI  as Kwota_pobrana_za_zlecenie,
+o.KOSZT_CALKOWITY_PRODUKCJI * 0.75 as Kosz_wykonania_zlecenia,
+o.KOSZT_CALKOWITY_PRODUKCJI * 0.25 as Saldo
 
-
-
-from OFERTA o;
+from OFERTA o
+Inner join zlecenia b on o.ID_ZLECENIA = b.ID_ZLECENIA
 go

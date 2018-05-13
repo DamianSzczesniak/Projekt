@@ -927,9 +927,11 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.zestawienie' does not have a prim
             <PropertyRef Name="ID_ZLECENIA" />
           </Key>
           <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
-          <Property Name="wydatki" Type="money" />
-          <Property Name="obroty" Type="numeric" Precision="23" Scale="6" />
-          <Property Name="zarobek" Type="numeric" Precision="22" Scale="6" />
+          <Property Name="DATA_ZLECENIA" Type="date" Nullable="false" />
+          <Property Name="DATA_REALIZACJI" Type="date" Nullable="false" />
+          <Property Name="Kwota_pobrana_za_zlecenie" Type="money" />
+          <Property Name="Kosz_wykonania_zlecenia" Type="numeric" Precision="22" Scale="6" />
+          <Property Name="Saldo" Type="numeric" Precision="22" Scale="6" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_LOKALIZACJA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2002,9 +2004,11 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <EntitySet Name="zestawienie" EntityType="Self.zestawienie" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [zestawienie].[ID_ZLECENIA] AS [ID_ZLECENIA], 
-    [zestawienie].[wydatki] AS [wydatki], 
-    [zestawienie].[obroty] AS [obroty], 
-    [zestawienie].[zarobek] AS [zarobek]
+    [zestawienie].[DATA_ZLECENIA] AS [DATA_ZLECENIA], 
+    [zestawienie].[DATA_REALIZACJI] AS [DATA_REALIZACJI], 
+    [zestawienie].[Kwota_pobrana_za_zlecenie] AS [Kwota_pobrana_za_zlecenie], 
+    [zestawienie].[Kosz_wykonania_zlecenia] AS [Kosz_wykonania_zlecenia], 
+    [zestawienie].[Saldo] AS [Saldo]
     FROM [dbo].[zestawienie] AS [zestawienie]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ZLECENIA_LOKALIZACJA" EntityType="Self.ZLECENIA_LOKALIZACJA" store:Type="Views" store:Schema="dbo">
@@ -3268,9 +3272,9 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
             <End Role="ZAMOWIENIA" EntitySet="ZAMOWIENIA" />
           </AssociationSet>
           <EntitySet Name="Status_detale_zlecenie" EntityType="KWZP_PROJEKTModel.Status_detale_zlecenie" />
-          <EntitySet Name="zestawienie" EntityType="KWZP_PROJEKTModel.zestawienie" />
           <EntitySet Name="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" EntityType="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" />
           <EntitySet Name="ZAMOWIENIA_MATERIALU_NAZLECENIE" EntityType="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE" />
+          <EntitySet Name="zestawienie" EntityType="KWZP_PROJEKTModel.zestawienie" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -4035,15 +4039,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="DATA_ZLECENIA" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="NAZWA_FIRMY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="zestawienie">
-          <Key>
-            <PropertyRef Name="ID_ZLECENIA" />
-          </Key>
-          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
-          <Property Name="wydatki" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="obroty" Type="Decimal" Precision="23" Scale="6" />
-          <Property Name="zarobek" Type="Decimal" Precision="22" Scale="6" />
-        </EntityType>
         <EntityType Name="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
           <Key>
             <PropertyRef Name="ID_ZLECENIA" />
@@ -4071,6 +4066,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="PELNA_NAZWA_MATERIALU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="LICZBA_SZTUK" Type="Int32" Nullable="false" />
           <Property Name="SUMA_p" Type="Int32" />
+        </EntityType>
+        <EntityType Name="zestawienie">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="DATA_ZLECENIA" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DATA_REALIZACJI" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Kwota_pobrana_za_zlecenie" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Kosz_wykonania_zlecenia" Type="Decimal" Precision="22" Scale="6" />
+          <Property Name="Saldo" Type="Decimal" Precision="22" Scale="6" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4932,16 +4938,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="zestawienie">
-            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.zestawienie">
-              <MappingFragment StoreEntitySet="zestawienie">
-                <ScalarProperty Name="zarobek" ColumnName="zarobek" />
-                <ScalarProperty Name="obroty" ColumnName="obroty" />
-                <ScalarProperty Name="wydatki" ColumnName="wydatki" />
-                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
             <EntityTypeMapping TypeName="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
               <MappingFragment StoreEntitySet="SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE">
@@ -4963,6 +4959,18 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
                 <ScalarProperty Name="ID_POLPRODUKTU" ColumnName="ID_POLPRODUKTU" />
                 <ScalarProperty Name="ILOSC" ColumnName="ILOSC" />
                 <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zestawienie">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.zestawienie">
+              <MappingFragment StoreEntitySet="zestawienie">
+                <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+                <ScalarProperty Name="Kosz_wykonania_zlecenia" ColumnName="Kosz_wykonania_zlecenia" />
+                <ScalarProperty Name="Kwota_pobrana_za_zlecenie" ColumnName="Kwota_pobrana_za_zlecenie" />
+                <ScalarProperty Name="DATA_REALIZACJI" ColumnName="DATA_REALIZACJI" />
+                <ScalarProperty Name="DATA_ZLECENIA" ColumnName="DATA_ZLECENIA" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
               </MappingFragment>
             </EntityTypeMapping>
