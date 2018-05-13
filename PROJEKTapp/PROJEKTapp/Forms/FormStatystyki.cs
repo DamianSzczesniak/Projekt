@@ -108,8 +108,7 @@ namespace PROJEKTapp
         }
         private void zrodloDanych()
         {
-            zestawienieBindingSource.DataSource = db.zestawienie.Where(a => a.DATA_REALIZACJI >= dateTimePickerPoczatek.Value && a.DATA_REALIZACJI <= dateTimePickerKoniec.Value)
-                .Where(status => status. ).ToList();
+            zestawienieBindingSource.DataSource = db.zestawienie.Where(a => a.DATA_REALIZACJI >= dateTimePickerPoczatek.Value && a.DATA_REALIZACJI <= dateTimePickerKoniec.Value && a.ID_STATUSU_ZLECENIA > 8).ToList();
             foreach (DataGridViewRow Myrow in dgvRozliczenie.Rows)
             {
                 if (Convert.ToInt32(Myrow.Cells[3].Value) < 0)
@@ -128,7 +127,7 @@ namespace PROJEKTapp
             int sumPrzychod = 0;
             int sumKoszt = 0;
             int sumDochod = 0;
-            foreach (zestawienie element in db.zestawienie.Where(a => a.DATA_REALIZACJI >= dateTimePickerPoczatek.Value && a.DATA_REALIZACJI <= dateTimePickerKoniec.Value).ToList())
+            foreach (zestawienie element in db.zestawienie.Where(a => a.DATA_REALIZACJI >= dateTimePickerPoczatek.Value && a.DATA_REALIZACJI <= dateTimePickerKoniec.Value && a.ID_STATUSU_ZLECENIA > 8).ToList())
             {
                 decimal przychod = decimal.Parse(element.Kwota_pobrana_za_zlecenie.ToString());
                 int intprzychod = Decimal.ToInt32(przychod);

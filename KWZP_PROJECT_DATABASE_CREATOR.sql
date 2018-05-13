@@ -1461,15 +1461,17 @@ inner join ZLECENIA b on a.ID_ZLECENIA = b.ID_ZLECENIA
 inner join FIRMY c on b.ID_FIRMY = c.ID_FIRMY
 go
 
-create view zestawienie as 
+CREATE VIEW zestawienie as 
 select 
 o.ID_ZLECENIA,
 b.DATA_ZLECENIA,
 b.DATA_REALIZACJI,
+dsz.ID_STATUSU_ZLECENIA,
 o.KOSZT_CALKOWITY_PRODUKCJI  as Kwota_pobrana_za_zlecenie,
 o.KOSZT_CALKOWITY_PRODUKCJI * 0.75 as Kosz_wykonania_zlecenia,
 o.KOSZT_CALKOWITY_PRODUKCJI * 0.25 as Saldo
 
 from OFERTA o
 Inner join zlecenia b on o.ID_ZLECENIA = b.ID_ZLECENIA
+inner join DATA_STATUSU_ZLECENIA dsz on dsz.ID_ZLECENIA = b.ID_ZLECENIA
 go
