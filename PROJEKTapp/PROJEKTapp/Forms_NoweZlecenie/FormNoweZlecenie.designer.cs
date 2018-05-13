@@ -89,7 +89,7 @@
             this.groupBoxOferta.Location = new System.Drawing.Point(12, 2);
             this.groupBoxOferta.Name = "groupBoxOferta";
             this.groupBoxOferta.Size = new System.Drawing.Size(337, 431);
-            this.groupBoxOferta.TabIndex = 9;
+            this.groupBoxOferta.TabIndex = 1;
             this.groupBoxOferta.TabStop = false;
             this.groupBoxOferta.Text = "Oferta";
             // 
@@ -170,7 +170,7 @@
             this.txtBox_Ilosc_Oferta.Location = new System.Drawing.Point(107, 72);
             this.txtBox_Ilosc_Oferta.Name = "txtBox_Ilosc_Oferta";
             this.txtBox_Ilosc_Oferta.Size = new System.Drawing.Size(100, 20);
-            this.txtBox_Ilosc_Oferta.TabIndex = 10;
+            this.txtBox_Ilosc_Oferta.TabIndex = 1;
             this.txtBox_Ilosc_Oferta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBox_Ilosc_Oferta.TextChanged += new System.EventHandler(this.txtBox_Ilosc_Oferta_TextChanged);
             // 
@@ -179,7 +179,7 @@
             this.btn_Dodaj_Oferta.Location = new System.Drawing.Point(107, 109);
             this.btn_Dodaj_Oferta.Name = "btn_Dodaj_Oferta";
             this.btn_Dodaj_Oferta.Size = new System.Drawing.Size(105, 23);
-            this.btn_Dodaj_Oferta.TabIndex = 9;
+            this.btn_Dodaj_Oferta.TabIndex = 2;
             this.btn_Dodaj_Oferta.Text = "Dodaj do listy";
             this.btn_Dodaj_Oferta.UseVisualStyleBackColor = true;
             this.btn_Dodaj_Oferta.Click += new System.EventHandler(this.btn_Dodaj_Oferta_Click);
@@ -191,7 +191,7 @@
             this.cBox_Produkty_Oferta.Location = new System.Drawing.Point(107, 31);
             this.cBox_Produkty_Oferta.Name = "cBox_Produkty_Oferta";
             this.cBox_Produkty_Oferta.Size = new System.Drawing.Size(205, 21);
-            this.cBox_Produkty_Oferta.TabIndex = 8;
+            this.cBox_Produkty_Oferta.TabIndex = 0;
             // 
             // btnPrzedstaw_Oferte
             // 
@@ -199,7 +199,7 @@
             this.btnPrzedstaw_Oferte.Location = new System.Drawing.Point(97, 328);
             this.btnPrzedstaw_Oferte.Name = "btnPrzedstaw_Oferte";
             this.btnPrzedstaw_Oferte.Size = new System.Drawing.Size(135, 30);
-            this.btnPrzedstaw_Oferte.TabIndex = 6;
+            this.btnPrzedstaw_Oferte.TabIndex = 3;
             this.btnPrzedstaw_Oferte.Text = "Przedstaw Oferte";
             this.btnPrzedstaw_Oferte.UseVisualStyleBackColor = true;
             this.btnPrzedstaw_Oferte.Click += new System.EventHandler(this.btnPrzedstaw_Oferte_Click);
@@ -254,7 +254,7 @@
             this.groupBoxNowe_ZLecenie.Location = new System.Drawing.Point(355, 2);
             this.groupBoxNowe_ZLecenie.Name = "groupBoxNowe_ZLecenie";
             this.groupBoxNowe_ZLecenie.Size = new System.Drawing.Size(352, 431);
-            this.groupBoxNowe_ZLecenie.TabIndex = 10;
+            this.groupBoxNowe_ZLecenie.TabIndex = 0;
             this.groupBoxNowe_ZLecenie.TabStop = false;
             this.groupBoxNowe_ZLecenie.Text = "Nowe Zlecenie";
             // 
@@ -264,7 +264,7 @@
             this.btnOdrzuc.Location = new System.Drawing.Point(121, 334);
             this.btnOdrzuc.Name = "btnOdrzuc";
             this.btnOdrzuc.Size = new System.Drawing.Size(134, 23);
-            this.btnOdrzuc.TabIndex = 10;
+            this.btnOdrzuc.TabIndex = 3;
             this.btnOdrzuc.Text = "Odrzucono";
             this.btnOdrzuc.UseVisualStyleBackColor = true;
             this.btnOdrzuc.Click += new System.EventHandler(this.btnOdrzuc_click);
@@ -310,7 +310,7 @@
             this.btnWybierzFirme.Location = new System.Drawing.Point(130, 218);
             this.btnWybierzFirme.Name = "btnWybierzFirme";
             this.btnWybierzFirme.Size = new System.Drawing.Size(116, 23);
-            this.btnWybierzFirme.TabIndex = 6;
+            this.btnWybierzFirme.TabIndex = 1;
             this.btnWybierzFirme.Text = "Ewidencja Firm";
             this.btnWybierzFirme.UseVisualStyleBackColor = true;
             this.btnWybierzFirme.Click += new System.EventHandler(this.btnWybierzFirme_Click);
@@ -322,7 +322,7 @@
             this.btnExit.Location = new System.Drawing.Point(314, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 36);
-            this.btnExit.TabIndex = 5;
+            this.btnExit.TabIndex = 4;
             this.btnExit.Text = "X";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -342,7 +342,7 @@
             this.cbBoxFirmy.Location = new System.Drawing.Point(106, 191);
             this.cbBoxFirmy.Name = "cbBoxFirmy";
             this.cbBoxFirmy.Size = new System.Drawing.Size(166, 21);
-            this.cbBoxFirmy.TabIndex = 8;
+            this.cbBoxFirmy.TabIndex = 0;
             // 
             // txtBox_Data_Zlecenia
             // 
@@ -359,7 +359,7 @@
             this.btn_Dodaj_Zlecenie.Location = new System.Drawing.Point(121, 292);
             this.btn_Dodaj_Zlecenie.Name = "btn_Dodaj_Zlecenie";
             this.btn_Dodaj_Zlecenie.Size = new System.Drawing.Size(134, 30);
-            this.btn_Dodaj_Zlecenie.TabIndex = 4;
+            this.btn_Dodaj_Zlecenie.TabIndex = 2;
             this.btn_Dodaj_Zlecenie.Text = "Dodaj Zlecenie";
             this.btn_Dodaj_Zlecenie.UseVisualStyleBackColor = true;
             this.btn_Dodaj_Zlecenie.Click += new System.EventHandler(this.btn_Dodaj_Zlecenie_Click);

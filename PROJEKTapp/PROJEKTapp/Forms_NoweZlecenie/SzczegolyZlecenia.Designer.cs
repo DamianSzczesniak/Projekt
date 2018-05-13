@@ -33,6 +33,11 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridViewOferta = new System.Windows.Forms.DataGridView();
+            this.iDPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iLOSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zLECENIAPRODUKTYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_Data_Zlecenia = new System.Windows.Forms.Label();
             this.txtBox_Data_Zlecenia = new System.Windows.Forms.TextBox();
             this.txtBoxCena = new System.Windows.Forms.TextBox();
@@ -44,14 +49,9 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.RezerwujMaszyny = new System.Windows.Forms.Button();
             this.btnZam = new System.Windows.Forms.Button();
-            this.iDPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iLOSCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zLECENIAPRODUKTYNAZWYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zLECENIAPRODUKTYNAZWYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewOferta
@@ -71,6 +71,43 @@
             this.dataGridViewOferta.ReadOnly = true;
             this.dataGridViewOferta.Size = new System.Drawing.Size(324, 181);
             this.dataGridViewOferta.TabIndex = 13;
+            // 
+            // iDPRODUKTUDataGridViewTextBoxColumn
+            // 
+            this.iDPRODUKTUDataGridViewTextBoxColumn.DataPropertyName = "ID_PRODUKTU";
+            this.iDPRODUKTUDataGridViewTextBoxColumn.HeaderText = "ID_PRODUKTU";
+            this.iDPRODUKTUDataGridViewTextBoxColumn.Name = "iDPRODUKTUDataGridViewTextBoxColumn";
+            this.iDPRODUKTUDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDPRODUKTUDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // iDZLECENIADataGridViewTextBoxColumn
+            // 
+            this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID_ZLECENIA";
+            this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
+            this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDZLECENIADataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nAZWAPRODUKTUDataGridViewTextBoxColumn
+            // 
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.DataPropertyName = "NAZWA_PRODUKTU";
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.HeaderText = "NAZWA_PRODUKTU";
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.Name = "nAZWAPRODUKTUDataGridViewTextBoxColumn";
+            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iLOSCDataGridViewTextBoxColumn
+            // 
+            this.iLOSCDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.iLOSCDataGridViewTextBoxColumn.DataPropertyName = "ILOSC";
+            this.iLOSCDataGridViewTextBoxColumn.HeaderText = "ILOSC";
+            this.iLOSCDataGridViewTextBoxColumn.Name = "iLOSCDataGridViewTextBoxColumn";
+            this.iLOSCDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iLOSCDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // zLECENIAPRODUKTYNAZWYBindingSource
+            // 
+            this.zLECENIAPRODUKTYNAZWYBindingSource.DataSource = typeof(PROJEKTapp.ZLECENIA_PRODUKTY_NAZWY);
             // 
             // lbl_Data_Zlecenia
             // 
@@ -165,7 +202,7 @@
             this.RezerwujMaszyny.Location = new System.Drawing.Point(209, 344);
             this.RezerwujMaszyny.Name = "RezerwujMaszyny";
             this.RezerwujMaszyny.Size = new System.Drawing.Size(142, 35);
-            this.RezerwujMaszyny.TabIndex = 23;
+            this.RezerwujMaszyny.TabIndex = 1;
             this.RezerwujMaszyny.Text = "Rezerwuj maszyny";
             this.RezerwujMaszyny.UseVisualStyleBackColor = true;
             this.RezerwujMaszyny.Click += new System.EventHandler(this.RezerwujMaszyny_Click);
@@ -175,47 +212,10 @@
             this.btnZam.Location = new System.Drawing.Point(28, 344);
             this.btnZam.Name = "btnZam";
             this.btnZam.Size = new System.Drawing.Size(140, 35);
-            this.btnZam.TabIndex = 24;
+            this.btnZam.TabIndex = 0;
             this.btnZam.Text = "Złóż zamówienia na materiały";
             this.btnZam.UseVisualStyleBackColor = true;
             this.btnZam.Click += new System.EventHandler(this.btnZam_Click);
-            // 
-            // iDPRODUKTUDataGridViewTextBoxColumn
-            // 
-            this.iDPRODUKTUDataGridViewTextBoxColumn.DataPropertyName = "ID_PRODUKTU";
-            this.iDPRODUKTUDataGridViewTextBoxColumn.HeaderText = "ID_PRODUKTU";
-            this.iDPRODUKTUDataGridViewTextBoxColumn.Name = "iDPRODUKTUDataGridViewTextBoxColumn";
-            this.iDPRODUKTUDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDPRODUKTUDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iDZLECENIADataGridViewTextBoxColumn
-            // 
-            this.iDZLECENIADataGridViewTextBoxColumn.DataPropertyName = "ID_ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn.HeaderText = "ID_ZLECENIA";
-            this.iDZLECENIADataGridViewTextBoxColumn.Name = "iDZLECENIADataGridViewTextBoxColumn";
-            this.iDZLECENIADataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDZLECENIADataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nAZWAPRODUKTUDataGridViewTextBoxColumn
-            // 
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.DataPropertyName = "NAZWA_PRODUKTU";
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.HeaderText = "NAZWA_PRODUKTU";
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.Name = "nAZWAPRODUKTUDataGridViewTextBoxColumn";
-            this.nAZWAPRODUKTUDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iLOSCDataGridViewTextBoxColumn
-            // 
-            this.iLOSCDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.iLOSCDataGridViewTextBoxColumn.DataPropertyName = "ILOSC";
-            this.iLOSCDataGridViewTextBoxColumn.HeaderText = "ILOSC";
-            this.iLOSCDataGridViewTextBoxColumn.Name = "iLOSCDataGridViewTextBoxColumn";
-            this.iLOSCDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iLOSCDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // zLECENIAPRODUKTYNAZWYBindingSource
-            // 
-            this.zLECENIAPRODUKTYNAZWYBindingSource.DataSource = typeof(PROJEKTapp.ZLECENIA_PRODUKTY_NAZWY);
             // 
             // SzczegolyZlecenia
             // 
@@ -240,8 +240,8 @@
             this.Load += new System.EventHandler(this.SzczegolyZlecenia_Load);
             this.Enter += new System.EventHandler(this.SzczegolyZlecenia_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zLECENIAPRODUKTYNAZWYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

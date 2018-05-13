@@ -27,20 +27,32 @@ namespace PROJEKTapp.Logowanie
             if (dane != null)
             {
                 cBPracownik.Hide();
-                txtBoxPESEL.Text = dane.PESEL;
+                txtBoxPESEL.Text = dane.IMIE + " " + dane.NAZWISKO + "  PESEL : " + dane.PESEL;
                 cBPoziom.DataSource = db.UPRAWNIENIA.ToList();
                 cBPoziom.ValueMember = "ID_UPRAWNIENIA";
                 cBPoziom.DisplayMember = "NAZWA";
                 cBPoziom.SelectedIndex = dane.UPRAWNIENIA - 1;
+                
                 txtBLogin.Text = dane.NAZWA_LOGOWANIE;
                 txtBHaslo.Text = dane.HASLO;
             }
             else
             {
                 txtBoxPESEL.Hide();
-                cBPracownik.DataSource = db.PRACOWNICY.ToList();
-                cBPracownik.ValueMember = "ID_PRACOWNIK";
-                cBPracownik.DisplayMember = "PESEL";
+
+                var dict = new Dictionary<int, string>();
+                foreach (PRACOWNICY row in db.PRACOWNICY.ToList())
+                {
+                    dict.Add(row.ID_PRACOWNIK, row.IMIE + " " + row.NAZWISKO + "  PESEL : " + row.PESEL);
+                }
+                cBPracownik.DataSource = dict.ToList();
+                cBPracownik.ValueMember = "Key";
+                cBPracownik.DisplayMember = "Value";
+                
+
+                //cBPracownik.DataSource = db.PRACOWNICY.ToList();
+                //cBPracownik.ValueMember = "ID_PRACOWNIK";
+                //cBPracownik.DisplayMember = "PESEL";
                 cBPoziom.DataSource = db.UPRAWNIENIA.ToList();
                 cBPoziom.ValueMember = "ID_UPRAWNIENIA";
                 cBPoziom.DisplayMember = "NAZWA";
@@ -86,6 +98,11 @@ namespace PROJEKTapp.Logowanie
                 db.SaveChanges();
                 this.Close();
             }
+        }
+
+        private void txtBoxPESEL_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
