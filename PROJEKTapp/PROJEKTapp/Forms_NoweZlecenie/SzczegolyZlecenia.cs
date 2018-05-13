@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using PROJEKTapp.Forms;
+using PROJEKTapp.Froms_Logistyka;
+
 
 namespace PROJEKTapp.Forms_NoweZlecenie
 {
@@ -27,7 +30,14 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 
         private void SzczegolyZlecenia_Load(object sender, EventArgs e)
         {
+            
+
             ZLECENIA zlecenia = db.ZLECENIA.Where(a => a.ID_ZLECENIA == id).First();
+            AKTUALNY_STATUS_ZLECEN azlecenie = db.AKTUALNY_STATUS_ZLECEN.Where(a => a.ID_ZLECENIA == id).First();
+            if (azlecenie.Status != 1)
+            {
+                btnZam.Hide();
+            }
             FIRMY firma = db.FIRMY.Where(a => a.ID_FIRMY == zlecenia.ID_FIRMY).First();
             txtFirma.Text = firma.NAZWA_FIRMY;
             txtBox_Data_Realizacji.Text = ((DateTime)zlecenia.DATA_REALIZACJI).ToShortDateString();
@@ -113,6 +123,12 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     db.REALIZACJA_PRODUKCJA.Add(realizacjaProdukcjiN);
                 }
             }
+        }
+
+        private void btnZam_Click(object sender, EventArgs e)
+        {
+            ZamowienieMaterialu zamowienieMaterialu = new ZamowienieMaterialu(db, id);
+            zamowienieMaterialu.Show();
         }
     }
 }

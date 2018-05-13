@@ -100,6 +100,12 @@
     <Compile Include="FormLogowanie.Designer.cs">
       <DependentUpon>FormLogowanie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormRozliczenieProjektu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRozliczenieProjektu.Designer.cs">
+      <DependentUpon>FormRozliczenieProjektu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormStatystyki.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -536,6 +542,9 @@
     </Compile>
     <EmbeddedResource Include="FormLogowanie.resx">
       <DependentUpon>FormLogowanie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRozliczenieProjektu.resx">
+      <DependentUpon>FormRozliczenieProjektu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormStatystyki.resx">
       <DependentUpon>FormStatystyki.cs</DependentUpon>

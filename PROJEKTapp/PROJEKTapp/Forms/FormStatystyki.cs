@@ -20,7 +20,7 @@ namespace PROJEKTapp
             this.db = db;
             this.ladowanieformularzazokienkami = ladowanieformularzazokienkami;
             InitializeComponent();
-            dgvRozliczenie.DataSource = db.zestawienie.ToList();
+            //dgvRozliczenie.DataSource = db.zestawienie.ToList();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
