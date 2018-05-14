@@ -14,6 +14,7 @@ namespace PROJEKTapp
     {
         KWZP_PROJEKTEntities db;
         bool ladowanieformularzazokienkami;
+        int uprawnienia;
         List<zestawienie> list = new List<zestawienie>();
 
         public FormStatystyki(KWZP_PROJEKTEntities db, bool ladowanieformularzazokienkami)
@@ -187,7 +188,7 @@ namespace PROJEKTapp
         private void btnSzczegoly_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(dgvRozliczenie.CurrentRow.Cells[0].Value);
-            Forms_NoweZlecenie.SzczegolyZlecenia szczegoly = new Forms_NoweZlecenie.SzczegolyZlecenia(id, db);
+            Forms_NoweZlecenie.SzczegolyZlecenia szczegoly = new Forms_NoweZlecenie.SzczegolyZlecenia(id, db, uprawnienia);
             szczegoly.Show();
         }
     }
