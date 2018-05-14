@@ -12,20 +12,11 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class WALUTY
+    public partial class AKTUALNY_KURS
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public WALUTY()
-        {
-            this.FAKTURY = new HashSet<FAKTURY>();
-        }
-    
         public int ID_WALUTY { get; set; }
         public string NAZWA { get; set; }
         public float KURS_DO_PLN { get; set; }
-        public System.DateTime DATA_KURS { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FAKTURY> FAKTURY { get; set; }
+        public Nullable<System.DateTime> DATA_AKTUALIZACJI { get; set; }
     }
 }

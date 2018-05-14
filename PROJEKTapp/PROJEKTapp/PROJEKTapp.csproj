@@ -67,6 +67,9 @@
     <Compile Include="ADRESY_PRACOWNIKA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="AKTUALNY_KURS.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="AKTUALNY_STATUS_ZLECEN.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -275,9 +278,6 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="KOSZTY_CZASY_PRODUKCJI.cs">
-      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KREATOR_FAKTUR.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="KWZP_PROJEKT_MODEL.Context.cs">
@@ -677,6 +677,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>KWZP_PROJEKT_MODEL.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="AKTUALNY_KURS.datasource" />
     <None Include="AKTUALNY_STATUS_ZLECEN.datasource" />
     <None Include="AKTUALNY_STATUS_ZLECEN_NAZWY.datasource" />
     <None Include="DATA_STATUSU_ZLECENIA.datasource" />

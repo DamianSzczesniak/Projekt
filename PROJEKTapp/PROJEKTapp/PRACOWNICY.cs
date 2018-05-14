@@ -18,7 +18,6 @@ namespace PROJEKTapp
         public PRACOWNICY()
         {
             this.DOKUMENTACJA = new HashSet<DOKUMENTACJA>();
-            this.FAKTURY = new HashSet<FAKTURY>();
             this.STANOWISKO_PRACOWNICY = new HashSet<STANOWISKO_PRACOWNICY>();
             this.STAWKA_PRACOWNICY = new HashSet<STAWKA_PRACOWNICY>();
             this.WOLNE_PRACOWNICY = new HashSet<WOLNE_PRACOWNICY>();
@@ -26,6 +25,7 @@ namespace PROJEKTapp
             this.SZKOLENIA = new HashSet<SZKOLENIA>();
             this.REALIZACJA_PRODUKCJA = new HashSet<REALIZACJA_PRODUKCJA>();
             this.UZYTKOWNICY = new HashSet<UZYTKOWNICY>();
+            this.FAKTURY = new HashSet<FAKTURY>();
         }
     
         public int ID_PRACOWNIK { get; set; }
@@ -36,8 +36,6 @@ namespace PROJEKTapp
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DOKUMENTACJA> DOKUMENTACJA { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FAKTURY> FAKTURY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<STANOWISKO_PRACOWNICY> STANOWISKO_PRACOWNICY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -52,5 +50,7 @@ namespace PROJEKTapp
         public virtual ICollection<REALIZACJA_PRODUKCJA> REALIZACJA_PRODUKCJA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UZYTKOWNICY> UZYTKOWNICY { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FAKTURY> FAKTURY { get; set; }
     }
 }
