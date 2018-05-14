@@ -44,7 +44,6 @@
             this.groupBoxDodaj = new System.Windows.Forms.Panel();
             this.dataGridViewAdresy = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBoxAdres = new System.Windows.Forms.ComboBox();
             this.buttonZapisz = new System.Windows.Forms.Button();
             this.dataGridViewDostepnePojazdy = new System.Windows.Forms.DataGridView();
             this.comboBoxZlecenie = new System.Windows.Forms.ComboBox();
@@ -104,7 +103,7 @@
             this.dataGridTransport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridTransport.Location = new System.Drawing.Point(16, 145);
             this.dataGridTransport.Name = "dataGridTransport";
-            this.dataGridTransport.Size = new System.Drawing.Size(671, 611);
+            this.dataGridTransport.Size = new System.Drawing.Size(641, 611);
             this.dataGridTransport.TabIndex = 15;
             // 
             // label2
@@ -209,7 +208,6 @@
             // 
             this.groupBoxDodaj.Controls.Add(this.dataGridViewAdresy);
             this.groupBoxDodaj.Controls.Add(this.button1);
-            this.groupBoxDodaj.Controls.Add(this.comboBoxAdres);
             this.groupBoxDodaj.Controls.Add(this.buttonZapisz);
             this.groupBoxDodaj.Controls.Add(this.dataGridViewDostepnePojazdy);
             this.groupBoxDodaj.Controls.Add(this.comboBoxZlecenie);
@@ -218,9 +216,9 @@
             this.groupBoxDodaj.Controls.Add(this.lblAdres);
             this.groupBoxDodaj.Controls.Add(this.lblIdPojazdu);
             this.groupBoxDodaj.Controls.Add(this.lblIdZlecenia);
-            this.groupBoxDodaj.Location = new System.Drawing.Point(693, 145);
+            this.groupBoxDodaj.Location = new System.Drawing.Point(663, 145);
             this.groupBoxDodaj.Name = "groupBoxDodaj";
-            this.groupBoxDodaj.Size = new System.Drawing.Size(659, 611);
+            this.groupBoxDodaj.Size = new System.Drawing.Size(689, 611);
             this.groupBoxDodaj.TabIndex = 27;
             this.groupBoxDodaj.Visible = false;
             // 
@@ -229,7 +227,7 @@
             this.dataGridViewAdresy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAdresy.Location = new System.Drawing.Point(20, 273);
             this.dataGridViewAdresy.Name = "dataGridViewAdresy";
-            this.dataGridViewAdresy.Size = new System.Drawing.Size(636, 123);
+            this.dataGridViewAdresy.Size = new System.Drawing.Size(666, 123);
             this.dataGridViewAdresy.TabIndex = 69;
             // 
             // button1
@@ -244,15 +242,6 @@
             this.button1.TabIndex = 68;
             this.button1.Text = "Dodaj";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // comboBoxAdres
-            // 
-            this.comboBoxAdres.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAdres.FormattingEnabled = true;
-            this.comboBoxAdres.Location = new System.Drawing.Point(427, 26);
-            this.comboBoxAdres.Name = "comboBoxAdres";
-            this.comboBoxAdres.Size = new System.Drawing.Size(183, 26);
-            this.comboBoxAdres.TabIndex = 67;
             // 
             // buttonZapisz
             // 
@@ -272,7 +261,7 @@
             this.dataGridViewDostepnePojazdy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDostepnePojazdy.Location = new System.Drawing.Point(20, 103);
             this.dataGridViewDostepnePojazdy.Name = "dataGridViewDostepnePojazdy";
-            this.dataGridViewDostepnePojazdy.Size = new System.Drawing.Size(636, 118);
+            this.dataGridViewDostepnePojazdy.Size = new System.Drawing.Size(666, 118);
             this.dataGridViewDostepnePojazdy.TabIndex = 65;
             // 
             // comboBoxZlecenie
@@ -289,7 +278,7 @@
             // 
             this.lblDlTrasy.AutoSize = true;
             this.lblDlTrasy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDlTrasy.Location = new System.Drawing.Point(32, 492);
+            this.lblDlTrasy.Location = new System.Drawing.Point(21, 416);
             this.lblDlTrasy.Name = "lblDlTrasy";
             this.lblDlTrasy.Size = new System.Drawing.Size(110, 20);
             this.lblDlTrasy.TabIndex = 62;
@@ -298,7 +287,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(148, 486);
+            this.textBox4.Location = new System.Drawing.Point(141, 413);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(183, 26);
             this.textBox4.TabIndex = 63;
@@ -398,7 +387,6 @@
         private System.Windows.Forms.Button buttonZapisz;
         private System.Windows.Forms.DataGridView dataGridViewDostepnePojazdy;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBoxAdres;
         private System.Windows.Forms.DataGridView dataGridViewAdresy;
     }
 }

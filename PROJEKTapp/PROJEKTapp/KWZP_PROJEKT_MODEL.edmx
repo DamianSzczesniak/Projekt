@@ -563,6 +563,14 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.HISTORIA_STATUS_ZLECENIA' does no
           <Property Name="DATA_ZMIANY" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.ID_ZLECEN_BEZ_TRANSPORTU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ID_ZLECEN_BEZ_TRANSPORTU">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.KOSZTY_CZASY_PRODUKCJI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="KOSZTY_CZASY_PRODUKCJI">
           <Key>
@@ -983,20 +991,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="ILOSC" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ZLECENIE_DLA_DOSTAWY">
-          <Property Name="ID_ZLECENIA" Type="int" />
-          <Property Name="NAZWA_FIRMY" Type="varchar" MaxLength="30" />
-          <Property Name="DLUGOSC_TRASY" Type="int" />
-          <Property Name="ULICA" Type="varchar" MaxLength="30" />
-          <Property Name="NR_BUDYNKU" Type="varchar" MaxLength="10" />
-          <Property Name="NR_LOKALU" Type="varchar" MaxLength="10" />
-          <Property Name="KOD_POCZTOWY" Type="varchar" MaxLength="5" />
-          <Property Name="KRAJ" Type="varchar" MaxLength="15" />
-          <Property Name="nazwa" Type="varchar" MaxLength="50" />
-          <Property Name="ID_POJAZDU" Type="int" />
-        </EntityType>-->
         <Association Name="FK__ADRESY__ID_MIAST__6754599E">
           <End Role="MIASTA" Type="Self.MIASTA" Multiplicity="0..1" />
           <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="*" />
@@ -1793,6 +1787,11 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
     [HISTORIA_STATUS_ZLECENIA].[ETAP] AS [ETAP], 
     [HISTORIA_STATUS_ZLECENIA].[DATA_ZMIANY] AS [DATA_ZMIANY]
     FROM [dbo].[HISTORIA_STATUS_ZLECENIA] AS [HISTORIA_STATUS_ZLECENIA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ID_ZLECEN_BEZ_TRANSPORTU" EntityType="Self.ID_ZLECEN_BEZ_TRANSPORTU" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ID_ZLECEN_BEZ_TRANSPORTU].[ID_ZLECENIA] AS [ID_ZLECENIA]
+    FROM [dbo].[ID_ZLECEN_BEZ_TRANSPORTU] AS [ID_ZLECEN_BEZ_TRANSPORTU]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="KOSZTY_CZASY_PRODUKCJI" EntityType="Self.KOSZTY_CZASY_PRODUKCJI" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3309,6 +3308,7 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
           <EntitySet Name="Status_detale_zlecenie" EntityType="KWZP_PROJEKTModel.Status_detale_zlecenie" />
           <EntitySet Name="zestawienie" EntityType="KWZP_PROJEKTModel.zestawienie" />
           <EntitySet Name="ADRESY_DOSTAWA" EntityType="KWZP_PROJEKTModel.ADRESY_DOSTAWA" />
+          <EntitySet Name="ID_ZLECEN_BEZ_TRANSPORTU" EntityType="KWZP_PROJEKTModel.ID_ZLECEN_BEZ_TRANSPORTU" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -4118,6 +4118,12 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
           <Property Name="KOD_POCZTOWY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="KRAJ" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ID_ZLECEN_BEZ_TRANSPORTU">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -5022,6 +5028,13 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
                 <ScalarProperty Name="NR_LOKALU" ColumnName="NR_LOKALU" />
                 <ScalarProperty Name="NR_BUDYNKU" ColumnName="NR_BUDYNKU" />
                 <ScalarProperty Name="ULICA" ColumnName="ULICA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ID_ZLECEN_BEZ_TRANSPORTU">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ID_ZLECEN_BEZ_TRANSPORTU">
+              <MappingFragment StoreEntitySet="ID_ZLECEN_BEZ_TRANSPORTU">
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

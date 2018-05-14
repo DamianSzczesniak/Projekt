@@ -19,14 +19,8 @@ namespace PROJEKTapp.Forms
             this.db = db;
             ComboNumerDostawy.DataSource = db.DOSTAWA.ToList();
             ComboNumerDostawy.DisplayMember = "ID_DOSTAWY";
-
-            /*var ZleceniaBezDostawy = from z in db.ZLECENIA
-                                     join d in db.ZLECENIE_DOTAWA on z.ID_ZLECENIA equals d.ID_ZLECNIA into prodGroup
-                                     from item in prodGroup.DefaultIfEmpty(new Product { Name = String.Empty, CategoryID = 0 })
-                                     select new { CatName = z.ID_ZLECENIA, ProdName = d.ID_ZLECENIA };
-            */
-
-            //comboBoxZlecenie.DataSource = ZleceniaBezDostawy;
+            
+            //comboBoxZlecenie.DataSource = db.ID_ZLECEN_BEZ_TRANSPORTU;
             comboBoxZlecenie.DisplayMember = "ID_ZLECENIA";
 
             dataGridViewAdresy.DataSource = db.ADRESY_DOSTAWA.ToList();
