@@ -489,6 +489,7 @@
             // KalendarzSzkolenia
             // 
             this.KalendarzSzkolenia.Location = new System.Drawing.Point(340, 5);
+            this.KalendarzSzkolenia.MaxSelectionCount = 14;
             this.KalendarzSzkolenia.Name = "KalendarzSzkolenia";
             this.KalendarzSzkolenia.TabIndex = 1;
             // 

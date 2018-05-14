@@ -270,8 +270,9 @@ namespace PROJEKTapp
             }
             else
             {
-                KalendarzSzkolenia.SelectionStart = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_START;
-                KalendarzSzkolenia.SelectionEnd = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_KONIEC;
+                DateTime Start = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_START;
+                DateTime Koniec = ((SZKOLENIA)this.cbSzkolenia.SelectedValue).DATA_KONIEC;
+                KalendarzSzkolenia.SelectionRange = new SelectionRange(Start, Koniec);
             }
         }
 

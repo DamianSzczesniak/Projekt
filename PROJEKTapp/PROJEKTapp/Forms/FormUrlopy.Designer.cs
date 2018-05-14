@@ -380,6 +380,7 @@
             // KalendarzUrlop
             // 
             this.KalendarzUrlop.Location = new System.Drawing.Point(361, 6);
+            this.KalendarzUrlop.MaxSelectionCount = 31;
             this.KalendarzUrlop.Name = "KalendarzUrlop";
             this.KalendarzUrlop.TabIndex = 0;
             // 
