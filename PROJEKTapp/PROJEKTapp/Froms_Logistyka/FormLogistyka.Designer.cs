@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            
             this.Btn_kreat_fak = new System.Windows.Forms.Button();
             this.Btn_zam_mat = new System.Windows.Forms.Button();
-            this.Btn_przyg_trans = new System.Windows.Forms.Button();
-            this.Btn_zmiana_stat = new System.Windows.Forms.Button();
             this.TopBar = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Btn_Back = new System.Windows.Forms.Button();
@@ -46,7 +43,7 @@
             this.Btn_kreat_fak.FlatAppearance.BorderSize = 0;
             this.Btn_kreat_fak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_kreat_fak.Image = global::PROJEKTapp.Properties.Resources.Kreator_faktur;
-            this.Btn_kreat_fak.Location = new System.Drawing.Point(204, 466);
+            this.Btn_kreat_fak.Location = new System.Drawing.Point(195, 362);
             this.Btn_kreat_fak.Name = "Btn_kreat_fak";
             this.Btn_kreat_fak.Size = new System.Drawing.Size(437, 63);
             this.Btn_kreat_fak.TabIndex = 6;
@@ -59,38 +56,12 @@
             this.Btn_zam_mat.FlatAppearance.BorderSize = 0;
             this.Btn_zam_mat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_zam_mat.Image = global::PROJEKTapp.Properties.Resources.zamowienie_materialu;
-            this.Btn_zam_mat.Location = new System.Drawing.Point(204, 387);
+            this.Btn_zam_mat.Location = new System.Drawing.Point(195, 270);
             this.Btn_zam_mat.Name = "Btn_zam_mat";
             this.Btn_zam_mat.Size = new System.Drawing.Size(437, 63);
             this.Btn_zam_mat.TabIndex = 5;
             this.Btn_zam_mat.UseVisualStyleBackColor = true;
             this.Btn_zam_mat.Click += new System.EventHandler(this.Btn_zam_mat_Click);
-            // 
-            // Btn_przyg_trans
-            // 
-            this.Btn_przyg_trans.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Btn_przyg_trans.FlatAppearance.BorderSize = 0;
-            this.Btn_przyg_trans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_przyg_trans.Image = global::PROJEKTapp.Properties.Resources.Przygotowanie_transportu;
-            this.Btn_przyg_trans.Location = new System.Drawing.Point(204, 302);
-            this.Btn_przyg_trans.Name = "Btn_przyg_trans";
-            this.Btn_przyg_trans.Size = new System.Drawing.Size(437, 63);
-            this.Btn_przyg_trans.TabIndex = 4;
-            this.Btn_przyg_trans.UseVisualStyleBackColor = true;
-            this.Btn_przyg_trans.Click += new System.EventHandler(this.Btn_przyg_trans_Click);
-            // 
-            // Btn_zmiana_stat
-            // 
-            this.Btn_zmiana_stat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Btn_zmiana_stat.FlatAppearance.BorderSize = 0;
-            this.Btn_zmiana_stat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_zmiana_stat.Image = global::PROJEKTapp.Properties.Resources.Zmiana_stanu_magazynu;
-            this.Btn_zmiana_stat.Location = new System.Drawing.Point(204, 224);
-            this.Btn_zmiana_stat.Name = "Btn_zmiana_stat";
-            this.Btn_zmiana_stat.Size = new System.Drawing.Size(437, 63);
-            this.Btn_zmiana_stat.TabIndex = 3;
-            this.Btn_zmiana_stat.UseVisualStyleBackColor = true;
-            this.Btn_zmiana_stat.Click += new System.EventHandler(this.Btn_zmiana_stat_Click);
             // 
             // TopBar
             // 
@@ -132,12 +103,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(801, 768);
-            this.Controls.Add(this.Btn_Back); 
+            this.Controls.Add(this.Btn_Back);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Btn_kreat_fak);
             this.Controls.Add(this.Btn_zam_mat);
-            this.Controls.Add(this.Btn_przyg_trans);
-            this.Controls.Add(this.Btn_zmiana_stat);
             this.Controls.Add(this.TopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogistyka";
@@ -151,8 +120,6 @@
 
         #endregion
         private System.Windows.Forms.PictureBox TopBar;
-        private System.Windows.Forms.Button Btn_zmiana_stat;
-        private System.Windows.Forms.Button Btn_przyg_trans;
         private System.Windows.Forms.Button Btn_zam_mat;
         private System.Windows.Forms.Button Btn_kreat_fak;
         private System.Windows.Forms.Button button1;

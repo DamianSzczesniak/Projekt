@@ -110,6 +110,7 @@ namespace PROJEKTapp.Forms
             // foreach(SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE element on sUMAZAPOTRZEBOWANIAMATERIALZLECENIEBindingSource.DataSource as SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE);
             KWZP_PROJEKTEntities kWZP_ = new KWZP_PROJEKTEntities();
             db = kWZP_;
+            db.SaveChanges();
 
             MessageBox.Show("Akcje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();

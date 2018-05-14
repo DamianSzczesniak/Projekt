@@ -17,27 +17,27 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 {
     public partial class SzczegolyZlecenia : Form
     {
-        int id ;
+        int id;
         KWZP_PROJEKTEntities db;
         int maxDlugosc = 0;
-        
-        public SzczegolyZlecenia(int id, KWZP_PROJEKTEntities db)
+        int uprawnienia;
+
+        public SzczegolyZlecenia(int id, KWZP_PROJEKTEntities db, int uprawnienia)
         {
+            this.uprawnienia = uprawnienia;
             this.db = db;
-            this.id = id; ;
+            this.id = id;
             InitializeComponent();
+            
         }
 
         private void SzczegolyZlecenia_Load(object sender, EventArgs e)
         {
-            
 
+          
             ZLECENIA zlecenia = db.ZLECENIA.Where(a => a.ID_ZLECENIA == id).First();
-            AKTUALNY_STATUS_ZLECEN azlecenie = db.AKTUALNY_STATUS_ZLECEN.Where(a => a.ID_ZLECENIA == id).First();
-            if (azlecenie.Status != 1)
-            {
-                btnZam.Hide();
-            }
+            statusButtony();
+
             FIRMY firma = db.FIRMY.Where(a => a.ID_FIRMY == zlecenia.ID_FIRMY).First();
             txtFirma.Text = firma.NAZWA_FIRMY;
             txtBox_Data_Realizacji.Text = ((DateTime)zlecenia.DATA_REALIZACJI).ToShortDateString();
@@ -45,15 +45,17 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             OFERTA oferta = db.OFERTA.Where(a => a.ID_ZLECENIA == zlecenia.ID_ZLECENIA).First();
             decimal dcena = decimal.Parse(oferta.KOSZT_CALKOWITY_PRODUKCJI.ToString());
             int cena = Decimal.ToInt32(dcena);
-            txtBoxCena.Text  = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", cena);
+            txtBoxCena.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", cena);
             dataGridViewOferta.DataSource = db.ZLECENIA_PRODUKTY_NAZWY.Where(a => a.ID_ZLECENIA == id).ToList();
 
+
             List<CZAS_PRACY_MASZYN> czasyPracy = this.db.CZAS_PRACY_MASZYN.Where(x => x.ID_ZLECENIA == id).ToList();
-            List<CZAS_PRACY_NARZEDZI> czasyPracyNarzedzi = this.db.CZAS_PRACY_NARZEDZI.Where(x => x.ID_ZLECENIA ==id).ToList();
+            List<CZAS_PRACY_NARZEDZI> czasyPracyNarzedzi = this.db.CZAS_PRACY_NARZEDZI.Where(x => x.ID_ZLECENIA == id).ToList();
             DateTime aktualnaData = DateTime.Now;
             Random random = new Random();
             int doWyprodukowania = 0;
-            int srednia;
+            int doWyprodukowania2 = 0;
+            double srednia;
             chart1.Series.Clear();
 
             foreach (CZAS_PRACY_MASZYN czasPracy in czasyPracy)
@@ -66,23 +68,132 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     }
                 }
             }
-            
+
             foreach (ZLECENIE_PRODUKT zlecenieProduktu in zlecenia.ZLECENIE_PRODUKT)
             {
                 doWyprodukowania = (int)zlecenieProduktu.ILOSC;
-                srednia = 1 + ((int)doWyprodukowania / 10);
-                    //maxDlugosc);
+                srednia = (doWyprodukowania / //10);
+                    maxDlugosc);
+                double mnoznik = srednia * 10;
                 Series seria = new Series();
                 seria.XValueType = ChartValueType.DateTime;
-                for (int i = 0; i < 10; i++)
-                //maxDlugosc; i++)
+                seria.LegendText = zlecenieProduktu.PRODUKT.NAZWA_PRODUKTU;
+                for (int i = 0; i < //10; i++)
+                maxDlugosc; i++)
                 {
-                    int produkcja = random.Next(0, srednia);
-                    seria.Points.AddXY(DateTime.Now.AddDays(i), produkcja);
-                    doWyprodukowania = doWyprodukowania - produkcja;
+                    if (doWyprodukowania > 0)
+                    {
+                        if ((int)srednia == 0)
+                        {
+                            srednia = 1;
+                            double sprawdznie = random.NextDouble() * 10;
+                            if (mnoznik * sprawdznie > 50)
+                            {
+                                int produkcja = random.Next((int)(srednia * (1 / 2)), (int)srednia);
+                                seria.Points.AddXY((DateTime)zlecenia.DATA_ZLECENIA.AddDays(i), produkcja);
+                                doWyprodukowania = doWyprodukowania - produkcja;
+                            }
+                            else
+                            {
+                                seria.Points.AddXY((DateTime)zlecenia.DATA_ZLECENIA.AddDays(i), 0);
+                            }
+
+
+                        }
+                        else
+                        {
+                            int produkcja = random.Next((int)(srednia * (1 / 2)), (int)(2 * srednia));
+                            seria.Points.AddXY((DateTime)zlecenia.DATA_ZLECENIA.AddDays(i), produkcja);
+                            doWyprodukowania = doWyprodukowania - produkcja;
+                        }
+                    }
+                    else
+                    {
+                        seria.Points.AddXY(DateTime.Now.AddDays(i), doWyprodukowania2);
+                    }
                 }
                 chart1.Series[zlecenieProduktu.PRODUKT.NAZWA_PRODUKTU] = seria;
             }
+        }
+
+        private void statusButtony()
+        {
+            
+            KWZP_PROJEKTEntities kWZP_ = new KWZP_PROJEKTEntities();
+            db = kWZP_;
+            db.AKTUALNY_STATUS_ZLECEN = kWZP_.AKTUALNY_STATUS_ZLECEN;
+            db.SaveChanges();
+            
+            AKTUALNY_STATUS_ZLECEN_NAZWY azlecenie = db.AKTUALNY_STATUS_ZLECEN_NAZWY.Where(a => a.ID_ZLECENIA == id).First();
+
+            txtBAktualnyStatus.Text = azlecenie.ETAP;
+            btnMagazynuj.Hide();
+            btn_Pobierz_Materialy_produkcja.Hide();
+            btn_składuj_produkty_w_Magazynie.Hide();
+            btnPobierzTransport.Hide();
+            btnRobimyTransport.Hide();
+            btnKlientOdebral.Hide();
+            btnWystawFakture.Hide();
+            btnWystawFaktureKopia.Hide();
+            btnDoFinanasow.Hide();
+            btnPotwierdzDostarczenieZlec.Hide();
+            RezerwujMaszyny.Hide();
+
+
+
+            switch (azlecenie.Status)
+            {
+                case 1:
+                    btnZam.Show();
+
+                    break;
+                case 2:
+                    btnDostarczonoMaterialy.Show();
+                    break;
+                case 3:
+                    btnMagazynuj.Show();
+                    break;
+                case 4:
+                    if (uprawnienia != 2)
+                    {
+                        RezerwujMaszyny.Show();
+                    }
+                    break;
+                case 5:
+                    btn_Pobierz_Materialy_produkcja.Show();
+                    btn_składuj_produkty_w_Magazynie.Show();
+                    break;
+                case 6:
+                    if (uprawnienia != 3)
+                    {
+                        btnPobierzTransport.Show();
+
+                    }
+                    break;
+                case 7:
+                    btnRobimyTransport.Show();
+                    btnKlientOdebral.Show();
+                    break;
+                case 8:
+                    btnPotwierdzDostarczenieZlec.Show();
+                    break;
+                case 9:
+                    btnDoFinanasow.Show();
+                    break;
+                case 10:
+                    if (uprawnienia != 2)
+                    {
+                        btnWystawFakture.Show();
+                    }
+                    break;
+                case 11:
+                    btnWystawFaktureKopia.Show();
+                    
+                    break;
+
+            }
+            this.Refresh();
+
         }
 
         private void RezerwujMaszyny_Click(object sender, EventArgs e)
@@ -123,12 +234,201 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     db.REALIZACJA_PRODUKCJA.Add(realizacjaProdukcjiN);
                 }
             }
+            DateTime data = DateTime.Now;
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_ = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_.DATA_ZMIANY = data;
+            dATA_STATUSU_.ID_ZLECENIA = id;
+            dATA_STATUSU_.ID_STATUSU_ZLECENIA = 5;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_);
+            db.SaveChanges();
+            MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            statusButtony();
         }
 
         private void btnZam_Click(object sender, EventArgs e)
         {
-            ZamowienieMaterialu zamowienieMaterialu = new ZamowienieMaterialu(db, id);
-            zamowienieMaterialu.Show();
+            using (ZamowienieMaterialu zamowienieMaterialu = new ZamowienieMaterialu(db, id))
+            {
+                if (zamowienieMaterialu.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+                    btnZam.Hide();
+                }
+            }
+         
+           
+           
+        }
+
+        private void SzczegolyZlecenia_Enter(object sender, EventArgs e)
+        {
+           
+            statusButtony();
+        }
+
+        private void btnDostarczonoMaterialy_Click(object sender, EventArgs e)
+        {
+            DateTime data = DateTime.Now;
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_ = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_.DATA_ZMIANY = data;
+            dATA_STATUSU_.ID_ZLECENIA = id;
+            dATA_STATUSU_.ID_STATUSU_ZLECENIA = 3;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_);
+            db.SaveChanges();
+            MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnDostarczonoMaterialy.Hide();
+            statusButtony();
+        }
+
+        private void btnMagazynuj_Click(object sender, EventArgs e)
+        {
+            int akcja = 1;
+            using (FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db, id, akcja))
+            {
+                if (ZmianaStanuMagazynu.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+                    
+                }
+            }
+
+            
+            
+
+        }
+
+        private void btn_Pobierz_Materialy_produkcja_Click(object sender, EventArgs e)
+        {
+            int akcja = 2;
+            using (FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db, id, akcja))
+            {
+                if (ZmianaStanuMagazynu.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+
+                }
+            }
+        }
+
+        private void btn_składuj_produkty_w_Magazynie_Click(object sender, EventArgs e)
+        {
+            int akcja = 3;
+            using (FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db, id, akcja))
+            {
+                if (ZmianaStanuMagazynu.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+
+                }
+            }
+        }
+
+        private void btnPobierzTransport_Click(object sender, EventArgs e)
+        {
+            int akcja = 4;
+            using (FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db, id, akcja))
+            {
+                if (ZmianaStanuMagazynu.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+
+                }
+            }
+        }
+
+        private void btnKlientOdebral_Click(object sender, EventArgs e)
+        {
+            DateTime data = DateTime.Now;
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_ = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_.DATA_ZMIANY = data;
+            dATA_STATUSU_.ID_ZLECENIA = id;
+            dATA_STATUSU_.ID_STATUSU_ZLECENIA = 8;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_);
+            db.SaveChanges();
+         
+
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_2 = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_2.DATA_ZMIANY = data;
+            dATA_STATUSU_2.ID_ZLECENIA = id;
+            dATA_STATUSU_2.ID_STATUSU_ZLECENIA = 9;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_2);
+            db.SaveChanges();
+
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_3 = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_3.DATA_ZMIANY = data;
+            dATA_STATUSU_3.ID_ZLECENIA = id;
+            dATA_STATUSU_3.ID_STATUSU_ZLECENIA = 10;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_3);
+            db.SaveChanges();
+
+            MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnDostarczonoMaterialy.Hide();
+            statusButtony();
+        }
+
+        private void btnRobimyTransport_Click(object sender, EventArgs e)
+        {
+            using (PrzygotowanieTransportu przygTransportu = new PrzygotowanieTransportu(db, id))
+            {
+                if (przygTransportu.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+
+                }
+            }
+        }
+
+        private void btnWystawFakture_Click(object sender, EventArgs e)
+        {
+            
+            using (KreatorFaktur kReator = new KreatorFaktur(db, id, false))
+            {
+                if (kReator.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+
+                }
+            }
+        }
+
+        private void btnWystawFaktureKopia_Click(object sender, EventArgs e)
+        {
+            using (KreatorFaktur kReator = new KreatorFaktur(db, id, true))
+            {
+                if (kReator.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+
+                }
+            }
+        }
+
+        private void btnDoFinanasow_Click(object sender, EventArgs e)
+        {
+            DateTime data = DateTime.Now;
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_3 = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_3.DATA_ZMIANY = data;
+            dATA_STATUSU_3.ID_ZLECENIA = id;
+            dATA_STATUSU_3.ID_STATUSU_ZLECENIA = 10;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_3);
+            db.SaveChanges();
+            MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnDostarczonoMaterialy.Hide();
+            statusButtony();
+        }
+
+        private void btnPotwierdzDostarczenieZlec_Click(object sender, EventArgs e)
+        {
+            DateTime data = DateTime.Now;
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_2 = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_2.DATA_ZMIANY = data;
+            dATA_STATUSU_2.ID_ZLECENIA = id;
+            dATA_STATUSU_2.ID_STATUSU_ZLECENIA = 9;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_2);
+            db.SaveChanges();
+            MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnDostarczonoMaterialy.Hide();
+            statusButtony();
         }
     }
 }

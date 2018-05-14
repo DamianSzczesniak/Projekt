@@ -31,7 +31,6 @@ namespace PROJEKTapp
         public virtual DbSet<ADRESY_PRACOWNICY> ADRESY_PRACOWNICY { get; set; }
         public virtual DbSet<DOKUMENTACJA> DOKUMENTACJA { get; set; }
         public virtual DbSet<DOSTAWA> DOSTAWA { get; set; }
-        public virtual DbSet<FAKTURY> FAKTURY { get; set; }
         public virtual DbSet<FIRMY> FIRMY { get; set; }
         public virtual DbSet<MATERIAL> MATERIAL { get; set; }
         public virtual DbSet<MIASTA> MIASTA { get; set; }
@@ -84,7 +83,6 @@ namespace PROJEKTapp
         public virtual DbSet<ZMIANA_STANU_MAGAZYNU_PRODUKTOW> ZMIANA_STANU_MAGAZYNU_PRODUKTOW { get; set; }
         public virtual DbSet<STAN_MATERIALY_NAZWY> STAN_MATERIALY_NAZWY { get; set; }
         public virtual DbSet<STAN_PRODUKTY_NAZWY> STAN_PRODUKTY_NAZWY { get; set; }
-        public virtual DbSet<KREATOR_FAKTUR> KREATOR_FAKTUR { get; set; }
         public virtual DbSet<PRZYGOTOWANIE_TRANSPORTU> PRZYGOTOWANIE_TRANSPORTU { get; set; }
         public virtual DbSet<ZLECENIA_LOKALIZACJA> ZLECENIA_LOKALIZACJA { get; set; }
         public virtual DbSet<ZLECENIE_PRODUKT> ZLECENIE_PRODUKT { get; set; }
@@ -108,6 +106,12 @@ namespace PROJEKTapp
         public virtual DbSet<SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE> SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE { get; set; }
         public virtual DbSet<ZAMOWIENIA_MATERIALU_NAZLECENIE> ZAMOWIENIA_MATERIALU_NAZLECENIE { get; set; }
         public virtual DbSet<zestawienie> zestawienie { get; set; }
+        public virtual DbSet<MATERIALY_PO_DODANIU> MATERIALY_PO_DODANIU { get; set; }
+        public virtual DbSet<MATERIAL_ZDJETY> MATERIAL_ZDJETY { get; set; }
+        public virtual DbSet<PRODUKTY_DO_ZMAGAZYNOWANIA> PRODUKTY_DO_ZMAGAZYNOWANIA { get; set; }
+        public virtual DbSet<PRODUKTY_POZOSTALE_DO_TRANSPORTU> PRODUKTY_POZOSTALE_DO_TRANSPORTU { get; set; }
+        public virtual DbSet<AKTUALNY_KURS> AKTUALNY_KURS { get; set; }
+        public virtual DbSet<FAKTURY> FAKTURY { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {

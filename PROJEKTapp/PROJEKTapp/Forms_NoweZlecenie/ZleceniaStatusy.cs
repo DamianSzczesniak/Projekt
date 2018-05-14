@@ -103,7 +103,7 @@ namespace PROJEKTapp
             Status_detale_zlecenie s = statusdetalezlecenieBindingSource.Current as Status_detale_zlecenie;
             int id = s.ID_ZLECENIA;
            
-            using (SzczegolyZlecenia szczegoly = new SzczegolyZlecenia(id, db))
+            using (SzczegolyZlecenia szczegoly = new SzczegolyZlecenia(id, db, uprawnienia))
             {
                 if (szczegoly.ShowDialog() == DialogResult.OK)
                 {
@@ -117,6 +117,7 @@ namespace PROJEKTapp
         {
             KWZP_PROJEKTEntities nDB = new KWZP_PROJEKTEntities();
             db.Status_detale_zlecenie = nDB.Status_detale_zlecenie;
+            db.SaveChanges();
             SprawdzanieUprawnien(uprawnienia);
         }
     }

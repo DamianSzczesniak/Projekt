@@ -47,7 +47,7 @@
             // lblItem
             // 
             this.lblItem.AutoSize = true;
-            this.lblItem.Location = new System.Drawing.Point(27, 27);
+            this.lblItem.Location = new System.Drawing.Point(27, 80);
             this.lblItem.Name = "lblItem";
             this.lblItem.Size = new System.Drawing.Size(86, 13);
             this.lblItem.TabIndex = 0;
@@ -56,7 +56,7 @@
             // lblLokalizacja
             // 
             this.lblLokalizacja.AutoSize = true;
-            this.lblLokalizacja.Location = new System.Drawing.Point(27, 195);
+            this.lblLokalizacja.Location = new System.Drawing.Point(27, 242);
             this.lblLokalizacja.Name = "lblLokalizacja";
             this.lblLokalizacja.Size = new System.Drawing.Size(66, 13);
             this.lblLokalizacja.TabIndex = 1;
@@ -65,7 +65,7 @@
             // lblIlosc
             // 
             this.lblIlosc.AutoSize = true;
-            this.lblIlosc.Location = new System.Drawing.Point(27, 139);
+            this.lblIlosc.Location = new System.Drawing.Point(27, 188);
             this.lblIlosc.Name = "lblIlosc";
             this.lblIlosc.Size = new System.Drawing.Size(35, 13);
             this.lblIlosc.TabIndex = 2;
@@ -74,7 +74,7 @@
             // lblRodzajAkcji
             // 
             this.lblRodzajAkcji.AutoSize = true;
-            this.lblRodzajAkcji.Location = new System.Drawing.Point(28, 83);
+            this.lblRodzajAkcji.Location = new System.Drawing.Point(28, 134);
             this.lblRodzajAkcji.Name = "lblRodzajAkcji";
             this.lblRodzajAkcji.Size = new System.Drawing.Size(72, 13);
             this.lblRodzajAkcji.TabIndex = 3;
@@ -83,7 +83,7 @@
             // lblPrzypisaneZlecenie
             // 
             this.lblPrzypisaneZlecenie.AutoSize = true;
-            this.lblPrzypisaneZlecenie.Location = new System.Drawing.Point(27, 251);
+            this.lblPrzypisaneZlecenie.Location = new System.Drawing.Point(28, 26);
             this.lblPrzypisaneZlecenie.Name = "lblPrzypisaneZlecenie";
             this.lblPrzypisaneZlecenie.Size = new System.Drawing.Size(108, 13);
             this.lblPrzypisaneZlecenie.TabIndex = 4;
@@ -104,7 +104,7 @@
             this.cBoxSurPro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxSurPro.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cBoxSurPro.FormattingEnabled = true;
-            this.cBoxSurPro.Location = new System.Drawing.Point(146, 24);
+            this.cBoxSurPro.Location = new System.Drawing.Point(147, 77);
             this.cBoxSurPro.Name = "cBoxSurPro";
             this.cBoxSurPro.Size = new System.Drawing.Size(152, 21);
             this.cBoxSurPro.TabIndex = 8;
@@ -114,14 +114,14 @@
             // 
             this.cBoxLokalizacja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxLokalizacja.FormattingEnabled = true;
-            this.cBoxLokalizacja.Location = new System.Drawing.Point(147, 191);
+            this.cBoxLokalizacja.Location = new System.Drawing.Point(147, 239);
             this.cBoxLokalizacja.Name = "cBoxLokalizacja";
             this.cBoxLokalizacja.Size = new System.Drawing.Size(152, 21);
             this.cBoxLokalizacja.TabIndex = 9;
             // 
             // txtBoxIlosc
             // 
-            this.txtBoxIlosc.Location = new System.Drawing.Point(146, 136);
+            this.txtBoxIlosc.Location = new System.Drawing.Point(147, 185);
             this.txtBoxIlosc.Name = "txtBoxIlosc";
             this.txtBoxIlosc.Size = new System.Drawing.Size(152, 20);
             this.txtBoxIlosc.TabIndex = 11;
@@ -131,7 +131,7 @@
             // 
             this.cBoxPrzypisaneZlecenie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxPrzypisaneZlecenie.FormattingEnabled = true;
-            this.cBoxPrzypisaneZlecenie.Location = new System.Drawing.Point(146, 247);
+            this.cBoxPrzypisaneZlecenie.Location = new System.Drawing.Point(147, 22);
             this.cBoxPrzypisaneZlecenie.Name = "cBoxPrzypisaneZlecenie";
             this.cBoxPrzypisaneZlecenie.Size = new System.Drawing.Size(152, 21);
             this.cBoxPrzypisaneZlecenie.TabIndex = 12;
@@ -139,7 +139,7 @@
             // 
             // txtBoxRAkcji
             // 
-            this.txtBoxRAkcji.Location = new System.Drawing.Point(147, 80);
+            this.txtBoxRAkcji.Location = new System.Drawing.Point(147, 131);
             this.txtBoxRAkcji.Name = "txtBoxRAkcji";
             this.txtBoxRAkcji.ReadOnly = true;
             this.txtBoxRAkcji.Size = new System.Drawing.Size(151, 20);
@@ -147,7 +147,7 @@
             // 
             // txtBoxData
             // 
-            this.txtBoxData.Location = new System.Drawing.Point(147, 296);
+            this.txtBoxData.Location = new System.Drawing.Point(147, 293);
             this.txtBoxData.Name = "txtBoxData";
             this.txtBoxData.ReadOnly = true;
             this.txtBoxData.Size = new System.Drawing.Size(152, 20);
