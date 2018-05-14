@@ -20,7 +20,7 @@ namespace PROJEKTapp.Forms
             ComboNumerDostawy.DataSource = db.DOSTAWA.ToList();
             ComboNumerDostawy.DisplayMember = "ID_DOSTAWY";
             
-            //comboBoxZlecenie.DataSource = db.ID_ZLECEN_BEZ_TRANSPORTU;
+            comboBoxZlecenie.DataSource = db.ID_ZLECEN_BEZ_TRANSPORTU;
             comboBoxZlecenie.DisplayMember = "ID_ZLECENIA";
 
             dataGridViewAdresy.DataSource = db.ADRESY_DOSTAWA.ToList();
