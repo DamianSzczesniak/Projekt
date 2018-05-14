@@ -114,8 +114,83 @@ namespace PROJEKTapp.Forms
                 comboBox_kwotaWal.DisplayMember = "NAZWA";
                 comboBox_kwotaWal.ValueMember = "KURS_DO_PLN";
             }
+            else
+            {
+                btnSave.Hide();
+
+                FAKTURY fAKTURY = db.FAKTURY.Where(a => a.ID_ZLECENIA == id).First();
+                txtbox_nr_faktury.Text = fAKTURY.ID_FAKTURY.ToString();
+                txtbox_data_wyst.Text = DateTime.Parse(fAKTURY.DATA_WYSTAWIENIA.ToString()).ToShortDateString();
+                txtbox_data_plat.Text = DateTime.Parse(fAKTURY.DATA_PLATNOSCI.ToString()).ToShortDateString();
+
+                txtbox_data_plat.ReadOnly = true;
+                textBoxMW.ReadOnly = true;
 
 
+                txtbox_nr_zlec.Text = fAKTURY.ID_ZLECENIA.ToString();
+
+                ZLECENIA zlecenie = db.ZLECENIA.Where(a => a.ID_ZLECENIA == id).First();
+                textBox_nazwa_firmy.Text = zlecenie.FIRMY.NAZWA_FIRMY.ToString();
+                textBox_adres_email.Text = zlecenie.FIRMY.ADRES_EMAIL.ToString();
+                textBox_nip.Text = zlecenie.FIRMY.NIP.ToString();
+                textBox_nr_telefonu.Text = zlecenie.FIRMY.NR_TELEFONU.ToString();
+
+                var dict = new Dictionary<int, string>();
+                foreach (PRACOWNICY row in db.PRACOWNICY.Where(a => a.ID_PRACOWNIK == fAKTURY.ID_PRACOWNIKA).ToList())
+                {
+                    dict.Add(row.ID_PRACOWNIK, row.IMIE + " " + row.NAZWISKO + "  PESEL : " + row.PESEL);
+                }
+                comboBoxPracownik.DataSource = dict.ToList();
+                comboBoxPracownik.ValueMember = "Key";
+                comboBoxPracownik.DisplayMember = "Value";
+
+                comboBox_kwotaWal.DataSource = db.AKTUALNY_KURS.Where(a => a.ID_WALUTY == fAKTURY.ID_WALUTA).ToList();
+                comboBox_kwotaWal.DisplayMember = "NAZWA";
+                comboBox_kwotaWal.ValueMember = "KURS_DO_PLN";
+                comboBox_kwotaWal.DropDownStyle = ComboBoxStyle.Simple;
+
+
+                switch (comboBox_kwotaWal.SelectedIndex)
+                {
+                    case 0:
+                        {
+                            decimal cena1 = decimal.Parse(fAKTURY.KWOTA.ToString());
+                            int cena = decimal.ToInt32(cena1);
+                            txtbox_kwota.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C}", cena);
+                            break;
+                        }
+                    case 1:
+                        {
+                            decimal cena1 = decimal.Parse(fAKTURY.KWOTA.ToString());
+                            int cena = decimal.ToInt32(cena1);
+                            txtbox_kwota.Text = String.Format(System.Globalization.CultureInfo.GetCultureInfo("fr-FR"), "{0:C}", cena);
+                            break;
+                        }
+                    case 2:
+                        {
+                            decimal cena1 = decimal.Parse(fAKTURY.KWOTA.ToString());
+                            int cena = decimal.ToInt32(cena1);
+                            txtbox_kwota.Text = String.Format(System.Globalization.CultureInfo.GetCultureInfo("en-GB"), "{0:C}", cena);
+                            break;
+                        }
+                    case 3:
+                        {
+                            decimal cena1 = decimal.Parse(fAKTURY.KWOTA.ToString());
+                            int cena = decimal.ToInt32(cena1);
+                            txtbox_kwota.Text = String.Format(System.Globalization.CultureInfo.GetCultureInfo("en-US"), "{0:C}", cena);
+                            break;
+                        }
+                    case 4:
+                        {
+                            decimal cena1 = decimal.Parse(fAKTURY.KWOTA.ToString());
+                            int cena = decimal.ToInt32(cena1);
+                            txtbox_kwota.Text = String.Format(System.Globalization.CultureInfo.GetCultureInfo("it-CH"), "{0:C}", cena);
+                            break;
+                        }
+
+                }
+
+            }
         }
 
         private void comboBox_kwotaWal_DropDownClosed(object sender, EventArgs e)

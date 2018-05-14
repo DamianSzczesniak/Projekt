@@ -41,7 +41,7 @@
             this.txtbox_kwota = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxMW = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -189,15 +189,15 @@
             this.label9.TabIndex = 44;
             this.label9.Text = "Miejsce wystawienia:";
             // 
-            // textBox1
+            // textBoxMW
             // 
-            this.textBox1.Location = new System.Drawing.Point(496, 216);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(66, 20);
-            this.textBox1.TabIndex = 45;
-            this.textBox1.Text = "Warszawa";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxMW.Location = new System.Drawing.Point(496, 216);
+            this.textBoxMW.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxMW.Name = "textBoxMW";
+            this.textBoxMW.Size = new System.Drawing.Size(66, 20);
+            this.textBoxMW.TabIndex = 45;
+            this.textBoxMW.Text = "Warszawa";
+            this.textBoxMW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -410,7 +410,7 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxMW);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -451,7 +451,7 @@
         private System.Windows.Forms.TextBox txtbox_kwota;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxMW;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;

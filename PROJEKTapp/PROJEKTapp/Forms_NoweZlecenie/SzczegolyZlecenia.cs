@@ -104,6 +104,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             btnKlientOdebral.Hide();
             btnWystawFakture.Hide();
             btnWystawFaktureKopia.Hide();
+
             switch (azlecenie.Status)
             {
                 case 1:
@@ -141,7 +142,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     break;
                 case 11:
                     btnWystawFaktureKopia.Show();
-                    btnWystawFaktureKopia.Text = "Obejrzyj wystawioną fakture ";
+                    
                     break;
 
             }
