@@ -463,6 +463,19 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZESPOL_MATERIAL' does not have a 
           <Property Name="DATA_WPISU" Type="date" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.ADRESY_DOSTAWA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ADRESY_DOSTAWA">
+          <Key>
+            <PropertyRef Name="NAZWA" />
+          </Key>
+          <Property Name="ULICA" Type="varchar" MaxLength="30" />
+          <Property Name="NR_BUDYNKU" Type="varchar" MaxLength="10" />
+          <Property Name="NR_LOKALU" Type="varchar" MaxLength="10" />
+          <Property Name="KOD_POCZTOWY" Type="varchar" MaxLength="5" />
+          <Property Name="NAZWA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="KRAJ" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.ADRESY_PRACOWNIKA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ADRESY_PRACOWNIKA">
           <Key>
@@ -764,14 +777,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.SPIS_UZYTKOWNIKOW' does not have 
           <Property Name="PESEL" Type="nvarchar" MaxLength="11" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.STAN_MATERIALY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="STAN_MATERIALY">
-          <Property Name="ID_MATERIALU" Type="int" />
-          <Property Name="ID_ZLECENIA" Type="int" />
-          <Property Name="ID_LOKALIZACJI" Type="int" />
-          <Property Name="STAN" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAN_MATERIALY_NAZWY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="STAN_MATERIALY_NAZWY">
           <Key>
@@ -788,14 +793,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAN_MATERIALY_NAZWY' does not ha
           <Property Name="ALEJKA" Type="varchar" MaxLength="30" />
           <Property Name="PELNA_NAZWA_MATERIALU" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'KWZP_PROJEKT.dbo.STAN_PRODUKTY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="STAN_PRODUKTY">
-          <Property Name="ID_PRODUKTU" Type="int" />
-          <Property Name="ID_ZLECENIA" Type="int" />
-          <Property Name="ID_LOKALIZACJI" Type="int" />
-          <Property Name="STAN" Type="int" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.STAN_PRODUKTY_NAZWY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="STAN_PRODUKTY_NAZWY">
@@ -1729,6 +1726,16 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
     [ZESPOL_MATERIAL].[ID_REALIZACJA_PRODUKCJA] AS [ID_REALIZACJA_PRODUKCJA], 
     [ZESPOL_MATERIAL].[ID_MATERIALU] AS [ID_MATERIALU]
     FROM [dbo].[ZESPOL_MATERIAL] AS [ZESPOL_MATERIAL]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ADRESY_DOSTAWA" EntityType="Self.ADRESY_DOSTAWA" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ADRESY_DOSTAWA].[ULICA] AS [ULICA], 
+    [ADRESY_DOSTAWA].[NR_BUDYNKU] AS [NR_BUDYNKU], 
+    [ADRESY_DOSTAWA].[NR_LOKALU] AS [NR_LOKALU], 
+    [ADRESY_DOSTAWA].[KOD_POCZTOWY] AS [KOD_POCZTOWY], 
+    [ADRESY_DOSTAWA].[NAZWA] AS [NAZWA], 
+    [ADRESY_DOSTAWA].[KRAJ] AS [KRAJ]
+    FROM [dbo].[ADRESY_DOSTAWA] AS [ADRESY_DOSTAWA]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ADRESY_PRACOWNIKA" EntityType="Self.ADRESY_PRACOWNIKA" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3301,6 +3308,7 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
           </AssociationSet>
           <EntitySet Name="Status_detale_zlecenie" EntityType="KWZP_PROJEKTModel.Status_detale_zlecenie" />
           <EntitySet Name="zestawienie" EntityType="KWZP_PROJEKTModel.zestawienie" />
+          <EntitySet Name="ADRESY_DOSTAWA" EntityType="KWZP_PROJEKTModel.ADRESY_DOSTAWA" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -4099,6 +4107,17 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
           <Property Name="wydatki" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="obroty" Type="Decimal" Precision="23" Scale="6" />
           <Property Name="zarobek" Type="Decimal" Precision="22" Scale="6" />
+        </EntityType>
+        <EntityType Name="ADRESY_DOSTAWA">
+          <Key>
+            <PropertyRef Name="NAZWA" />
+          </Key>
+          <Property Name="ULICA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NR_BUDYNKU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NR_LOKALU" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="KOD_POCZTOWY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KRAJ" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4991,6 +5010,18 @@ warning 6013: The table/view 'KWZP_PROJEKT.dbo.ZLECENIE_DLA_DOSTAWY' does not ha
                 <ScalarProperty Name="obroty" ColumnName="obroty" />
                 <ScalarProperty Name="wydatki" ColumnName="wydatki" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ADRESY_DOSTAWA">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.ADRESY_DOSTAWA">
+              <MappingFragment StoreEntitySet="ADRESY_DOSTAWA">
+                <ScalarProperty Name="KRAJ" ColumnName="KRAJ" />
+                <ScalarProperty Name="NAZWA" ColumnName="NAZWA" />
+                <ScalarProperty Name="KOD_POCZTOWY" ColumnName="KOD_POCZTOWY" />
+                <ScalarProperty Name="NR_LOKALU" ColumnName="NR_LOKALU" />
+                <ScalarProperty Name="NR_BUDYNKU" ColumnName="NR_BUDYNKU" />
+                <ScalarProperty Name="ULICA" ColumnName="ULICA" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
