@@ -183,5 +183,12 @@ namespace PROJEKTapp
                 polaSum();
             }
         }
+
+        private void btnSzczegoly_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvRozliczenie.CurrentRow.Cells[0].Value);
+            Forms_NoweZlecenie.SzczegolyZlecenia szczegoly = new Forms_NoweZlecenie.SzczegolyZlecenia(id, db);
+            szczegoly.Show();
+        }
     }
 }
