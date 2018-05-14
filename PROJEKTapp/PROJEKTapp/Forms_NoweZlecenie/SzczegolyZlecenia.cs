@@ -104,6 +104,8 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             btnKlientOdebral.Hide();
             btnWystawFakture.Hide();
             btnWystawFaktureKopia.Hide();
+            btnDoFinanasow.Hide();
+            btnPotwierdzDostarczenieZlec.Hide();
 
             switch (azlecenie.Status)
             {
@@ -132,10 +134,10 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     btnKlientOdebral.Show();
                     break;
                 case 8:
-
+                    btnPotwierdzDostarczenieZlec.Show();
                     break;
                 case 9:
-
+                    btnDoFinanasow.Show();
                     break;
                 case 10:
                     btnWystawFakture.Show();
@@ -351,6 +353,34 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 
                 }
             }
+        }
+
+        private void btnDoFinanasow_Click(object sender, EventArgs e)
+        {
+            DateTime data = DateTime.Now;
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_3 = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_3.DATA_ZMIANY = data;
+            dATA_STATUSU_3.ID_ZLECENIA = id;
+            dATA_STATUSU_3.ID_STATUSU_ZLECENIA = 10;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_3);
+            db.SaveChanges();
+            MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnDostarczonoMaterialy.Hide();
+            statusButtony();
+        }
+
+        private void btnPotwierdzDostarczenieZlec_Click(object sender, EventArgs e)
+        {
+            DateTime data = DateTime.Now;
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_2 = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_2.DATA_ZMIANY = data;
+            dATA_STATUSU_2.ID_ZLECENIA = id;
+            dATA_STATUSU_2.ID_STATUSU_ZLECENIA = 9;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_2);
+            db.SaveChanges();
+            MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnDostarczonoMaterialy.Hide();
+            statusButtony();
         }
     }
 }
