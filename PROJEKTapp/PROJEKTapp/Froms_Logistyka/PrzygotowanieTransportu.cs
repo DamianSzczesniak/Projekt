@@ -20,7 +20,7 @@ namespace PROJEKTapp.Forms
             ComboNumerDostawy.DataSource = db.DOSTAWA.ToList();
             ComboNumerDostawy.DisplayMember = "ID_DOSTAWY";
             
-            comboBoxZlecenie.DataSource = db.ID_ZLECEN_BEZ_TRANSPORTU;
+            comboBoxZlecenie.DataSource = db.ID_ZLECEN_BEZ_TRANSPORTU.ToList();
             comboBoxZlecenie.DisplayMember = "ID_ZLECENIA";
 
             dataGridViewAdresy.DataSource = db.ADRESY_DOSTAWA.ToList();
@@ -39,7 +39,7 @@ namespace PROJEKTapp.Forms
         private void ButtonDodajDostawe_Click(object sender, EventArgs e)
         {
             groupBoxDodaj.Show();
-            dataGridViewDostepnePojazdy.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
+            //dataGridViewDostepnePojazdy.DataSource = db.STAN_PRODUKTY_NAZWY.ToList();
         }
 
         private void checkBoxWszytkie_CheckedChanged(object sender, EventArgs e)
@@ -57,6 +57,19 @@ namespace PROJEKTapp.Forms
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void ButtonUsunDostawy_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Czy napewno chcesz usunąć tą dostawę?", "OSTRZEŻENIE", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                //delete record
+            }
+            else if (dr == DialogResult.Cancel)
+            {
+                //
+            }
         }
     }
 }

@@ -180,6 +180,7 @@
             this.ButtonUsunDostawy.TabIndex = 24;
             this.ButtonUsunDostawy.Text = "Usuń";
             this.ButtonUsunDostawy.UseVisualStyleBackColor = false;
+            this.ButtonUsunDostawy.Click += new System.EventHandler(this.ButtonUsunDostawy_Click);
             // 
             // ButtonEdytujDostawe
             // 
