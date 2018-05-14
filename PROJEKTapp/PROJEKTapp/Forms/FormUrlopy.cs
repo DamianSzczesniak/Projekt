@@ -196,7 +196,7 @@ namespace PROJEKTapp
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
         {
-            if (int.Parse(txtBoxWnioskowany.Text) <= int.Parse(txtBoxPozostalo.Text) | cbTypUrlopu.SelectedIndex == 2 &&  int.Parse(txtBoxWnioskowany.Text) > int.Parse(txtBoxPozostalo.Text))
+            if (int.Parse(txtBoxWnioskowany.Text) <= int.Parse(txtBoxPozostalo.Text) | (cbTypUrlopu.SelectedIndex == 2 &&  int.Parse(txtBoxWnioskowany.Text) > int.Parse(txtBoxPozostalo.Text)))
             {
                 WOLNE_PRACOWNICY wolnepracownik = new WOLNE_PRACOWNICY();
                 wolnepracownik.DATA_KONIEC = txtDataKoniec.Value;
@@ -284,8 +284,9 @@ namespace PROJEKTapp
         {
             if (txtDataKoniec.Value >= txtDataStart.Value)
             {
-                KalendarzUrlop.SelectionStart = txtDataStart.Value;
-                KalendarzUrlop.SelectionEnd = txtDataKoniec.Value;
+                DateTime Start = txtDataStart.Value;
+                DateTime Koniec= txtDataKoniec.Value;
+                KalendarzUrlop.SelectionRange = new SelectionRange(Start, Koniec);
                 obliczanieUrlopu();
             }
             else
