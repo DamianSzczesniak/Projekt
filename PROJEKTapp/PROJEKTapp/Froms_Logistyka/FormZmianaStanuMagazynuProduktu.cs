@@ -58,6 +58,9 @@ namespace PROJEKTapp.Forms
                         checkBWszystkie.Hide();
                         checkBMaterialy.Hide();
                         btnZdejmij.Hide();
+                        dGV_Lista_pobranych_materialow.Hide();
+                        dGV_Produkty_Do_Dodania.Hide();
+                        dgvListaMaterialowDoZmagazynowania.Show();
                         dgvLokalizacje.Show();
 
                         dgvLokalizacje.DataSource = db.LOKALIZACJA.Where(a => a.CzyPelne == false).ToList();
@@ -81,6 +84,103 @@ namespace PROJEKTapp.Forms
                             MessageBox.Show("Zrealizowano magazynowanie wszystkich materiałów." + Environment.NewLine + "  Nastąpi zamknięcie formularza . ", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
+                        return;
+                    }
+                case 2:
+                    {
+                        checkBWszystkie.Checked = false;
+                        checkBProdukty.Checked = false;
+                        checkBMaterialy.Checked = true;
+
+                        var dict = new Dictionary<int, string>();
+                        foreach (ZLECENIA row in db.ZLECENIA.Where(a => a.ID_ZLECENIA == id).ToList())
+                        {
+                            dict.Add(row.ID_ZLECENIA, "  ID_ZLECENIA : " + row.ID_ZLECENIA + " FIRMA : " + row.FIRMY.NAZWA_FIRMY + "  DATA REALIZACJI : " + row.DATA_REALIZACJI.ToShortDateString());
+                        }
+
+                        cBoxFlitracja.DataSource = dict.ToList();
+                        cBoxFlitracja.ValueMember = "Key";
+                        cBoxFlitracja.DisplayMember = "Value";
+                        cBoxFlitracja.SelectedIndex = 0;
+
+                        DGV_PRODUKTY.Hide();
+                        DGV_MATERIALY.Show();
+                        checkBProdukty.Hide();
+                        checkBWszystkie.Hide();
+                        checkBMaterialy.Hide();
+                        ButtonDodajRekord.Hide();
+                        btnZdejmij.Show();
+                        dgvLokalizacje.Hide();
+                        lbl_Lokalizacje_Nie_Pelne.Hide();
+                        dgvListaMaterialowDoZmagazynowania.Hide();
+                        dGV_Produkty_Do_Dodania.Hide();
+                        dGV_Lista_pobranych_materialow.Show();
+
+
+                        dgvLokalizacje.DataSource = db.LOKALIZACJA.Where(a => a.CzyPelne == false).ToList();
+                        lbl_Lista_Materialow.Text = "Materiały pobrane przez produkcje do tej pory :";
+
+                       
+                        sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == id).ToList();
+                        mATERIALZDJETYBindingSource.DataSource = db.MATERIAL_ZDJETY.Where(i => i.ID_ZLECENIA == id).ToList();
+
+                        if (db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == id).ToList().Count == 0)
+                        {
+                           
+                            MessageBox.Show("W magazynie brak materiałów do pobrania." , "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        return;
+                    }
+                case 3:
+                    {
+                        checkBWszystkie.Checked = false;
+                        checkBProdukty.Checked = true;
+                        checkBMaterialy.Checked = false;
+
+                        var dict = new Dictionary<int, string>();
+                        foreach (ZLECENIA row in db.ZLECENIA.Where(a => a.ID_ZLECENIA == id).ToList())
+                        {
+                            dict.Add(row.ID_ZLECENIA, "  ID_ZLECENIA : " + row.ID_ZLECENIA + " FIRMA : " + row.FIRMY.NAZWA_FIRMY + "  DATA REALIZACJI : " + row.DATA_REALIZACJI.ToShortDateString());
+                        }
+
+                        cBoxFlitracja.DataSource = dict.ToList();
+                        cBoxFlitracja.ValueMember = "Key";
+                        cBoxFlitracja.DisplayMember = "Value";
+                        cBoxFlitracja.SelectedIndex = 0;
+
+                        DGV_PRODUKTY.Show();
+                        DGV_MATERIALY.Hide();
+                        checkBProdukty.Hide();
+                        checkBWszystkie.Hide();
+                        checkBMaterialy.Hide();
+                        ButtonDodajRekord.Show();
+                        btnZdejmij.Hide();
+                        dgvLokalizacje.Hide();
+                        lbl_Lokalizacje_Nie_Pelne.Show();
+                        dgvLokalizacje.Show();
+                        dgvLokalizacje.DataSource = db.LOKALIZACJA.Where(a => a.CzyPelne == false).ToList();
+                        dgvListaMaterialowDoZmagazynowania.Hide();
+                        dGV_Lista_pobranych_materialow.Hide();
+                        dGV_Produkty_Do_Dodania.Show();
+
+
+                        
+                        lbl_Lista_Materialow.Text = "Produkty do wyprodukowania i dostarczenia :";
+                        lbl_Lista_Materialow.Text = "Zmagazynowane produkty z danego zlecenia :";
+
+                        //
+
+
+                        //sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == id).ToList();
+                        //mATERIALZDJETYBindingSource.DataSource = db.MATERIAL_ZDJETY.Where(i => i.ID_ZLECENIA == id).ToList();
+
+                        //if (db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == id).ToList().Count == 0)
+                        //{
+
+                        //    MessageBox.Show("W magazynie brak materiałów do pobrania.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //    this.Close();
+                        //}
                         return;
                     }
 
@@ -109,28 +209,29 @@ namespace PROJEKTapp.Forms
 
         private void btnZdejmij_Click(object sender, EventArgs e)
         {
+            int operacja = 2;
             if (checkBMaterialy.Checked)
             {
-                //using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANMATERIALYNAZWYBindingSource.Current as STAN_MATERIALY_NAZWY))
-                //{
-                //    if (AMP.ShowDialog() == DialogResult.OK)
-                //    {
-                //     //   zapisZmianWidok();
-                //    }
+                using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANMATERIALYNAZWYBindingSource.Current as STAN_MATERIALY_NAZWY, operacja))
+                {
+                    if (AMP.ShowDialog() == DialogResult.OK)
+                    {
+                        zapisZmianWidok();
+                    }
 
-                //}
+                }
             }
-            else
-            {
+            //else
+            //{
             //    using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANPRODUKTYNAZWYBindingSource.Current as STAN_PRODUKTY_NAZWY))
             //    {
             //        if (AMP.ShowDialog() == DialogResult.OK)
             //        {
-            //           // zapisZmianWidok();
+            //            zapisZmianWidok();
             //        }
                     
             //    }
-            }
+            //}
         }
 
         public void zapisZmianWidok()
@@ -140,6 +241,8 @@ namespace PROJEKTapp.Forms
             db.STAN_MATERIALY_NAZWY = ndb.STAN_MATERIALY_NAZWY;
             db.STAN_PRODUKTY_NAZWY = ndb.STAN_PRODUKTY_NAZWY;
             db.MATERIALY_PO_DODANIU = ndb.MATERIALY_PO_DODANIU;
+            db.MATERIAL_ZDJETY = ndb.MATERIAL_ZDJETY;
+            db = ndb;
             db.SaveChanges();
             akcjaSwitch();
 

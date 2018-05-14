@@ -211,8 +211,8 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 
         private void btnMagazynuj_Click(object sender, EventArgs e)
         {
-            int Akcja = 1;
-            using (FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db, id, Akcja))
+            int akcja = 1;
+            using (FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db, id, akcja))
             {
                 if (ZmianaStanuMagazynu.ShowDialog() == DialogResult.OK)
                 {
@@ -224,6 +224,32 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             
             
 
+        }
+
+        private void btn_Pobierz_Materialy_produkcja_Click(object sender, EventArgs e)
+        {
+            int akcja = 2;
+            using (FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db, id, akcja))
+            {
+                if (ZmianaStanuMagazynu.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+
+                }
+            }
+        }
+
+        private void btn_składuj_produkty_w_Magazynie_Click(object sender, EventArgs e)
+        {
+            int akcja = 3;
+            using (FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db, id, akcja))
+            {
+                if (ZmianaStanuMagazynu.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+
+                }
+            }
         }
     }
 }

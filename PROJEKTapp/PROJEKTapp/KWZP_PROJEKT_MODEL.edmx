@@ -588,6 +588,19 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.MASA_PRODUKTU' does not have a pr
           <Property Name="MASA_PRODUKTU" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.MATERIAL_ZDJETY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MATERIAL_ZDJETY">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="PELNA_NAZWA_MATERIALU" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+          <Property Name="ID_MATERIAL" Type="int" />
+          <Property Name="PELNA_NAZWA_MATERIALU" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SUMA_MATERIALU" Type="int" />
+          <Property Name="MATERIAL_ODJETY" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.MATERIALY_PO_DODANIU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="MATERIALY_PO_DODANIU">
           <Key>
@@ -1801,6 +1814,15 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
     [MASA_PRODUKTU].[NAZWA_PRODUKTU] AS [NAZWA_PRODUKTU], 
     [MASA_PRODUKTU].[MASA_PRODUKTU] AS [MASA_PRODUKTU]
     FROM [dbo].[MASA_PRODUKTU] AS [MASA_PRODUKTU]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MATERIAL_ZDJETY" EntityType="Self.MATERIAL_ZDJETY" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MATERIAL_ZDJETY].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [MATERIAL_ZDJETY].[ID_MATERIAL] AS [ID_MATERIAL], 
+    [MATERIAL_ZDJETY].[PELNA_NAZWA_MATERIALU] AS [PELNA_NAZWA_MATERIALU], 
+    [MATERIAL_ZDJETY].[SUMA_MATERIALU] AS [SUMA_MATERIALU], 
+    [MATERIAL_ZDJETY].[MATERIAL_ODJETY] AS [MATERIAL_ODJETY]
+    FROM [dbo].[MATERIAL_ZDJETY] AS [MATERIAL_ZDJETY]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="MATERIALY_PO_DODANIU" EntityType="Self.MATERIALY_PO_DODANIU" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3300,6 +3322,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <EntitySet Name="ZAMOWIENIA_MATERIALU_NAZLECENIE" EntityType="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE" />
           <EntitySet Name="zestawienie" EntityType="KWZP_PROJEKTModel.zestawienie" />
           <EntitySet Name="MATERIALY_PO_DODANIU" EntityType="KWZP_PROJEKTModel.MATERIALY_PO_DODANIU" />
+          <EntitySet Name="MATERIAL_ZDJETY" EntityType="KWZP_PROJEKTModel.MATERIAL_ZDJETY" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -4113,6 +4136,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="ID_MATERIAL" Type="Int32" />
           <Property Name="PELNA_NAZWA_MATERIALU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="WYNIK" Type="Int32" />
+        </EntityType>
+        <EntityType Name="MATERIAL_ZDJETY">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="PELNA_NAZWA_MATERIALU" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="ID_MATERIAL" Type="Int32" />
+          <Property Name="PELNA_NAZWA_MATERIALU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SUMA_MATERIALU" Type="Int32" />
+          <Property Name="MATERIAL_ODJETY" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -5016,6 +5050,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
             <EntityTypeMapping TypeName="KWZP_PROJEKTModel.MATERIALY_PO_DODANIU">
               <MappingFragment StoreEntitySet="MATERIALY_PO_DODANIU">
                 <ScalarProperty Name="WYNIK" ColumnName="WYNIK" />
+                <ScalarProperty Name="PELNA_NAZWA_MATERIALU" ColumnName="PELNA_NAZWA_MATERIALU" />
+                <ScalarProperty Name="ID_MATERIAL" ColumnName="ID_MATERIAL" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MATERIAL_ZDJETY">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.MATERIAL_ZDJETY">
+              <MappingFragment StoreEntitySet="MATERIAL_ZDJETY">
+                <ScalarProperty Name="MATERIAL_ODJETY" ColumnName="MATERIAL_ODJETY" />
+                <ScalarProperty Name="SUMA_MATERIALU" ColumnName="SUMA_MATERIALU" />
                 <ScalarProperty Name="PELNA_NAZWA_MATERIALU" ColumnName="PELNA_NAZWA_MATERIALU" />
                 <ScalarProperty Name="ID_MATERIAL" ColumnName="ID_MATERIAL" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />

@@ -109,6 +109,7 @@ namespace PROJEKTapp
         public virtual DbSet<ZAMOWIENIA_MATERIALU_NAZLECENIE> ZAMOWIENIA_MATERIALU_NAZLECENIE { get; set; }
         public virtual DbSet<zestawienie> zestawienie { get; set; }
         public virtual DbSet<MATERIALY_PO_DODANIU> MATERIALY_PO_DODANIU { get; set; }
+        public virtual DbSet<MATERIAL_ZDJETY> MATERIAL_ZDJETY { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {
