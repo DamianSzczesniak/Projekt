@@ -28,8 +28,7 @@ namespace PROJEKTapp.Forms.Forms_Logistyka
                             select new { fa.ID_FAKTURY, f.NAZWA_FIRMY, f.ADRES_EMAIL, f.NR_TELEFONU, f.NIP, fa.ID_ZLECENIA, fa.DATA_WYSTAWIENIA, fa.DATA_PLATNOSCI, fa.KWOTA, fa.ID_WALUTA, p.IMIE, p.NAZWISKO };
             this.dataGridView_lista_faktur.DataSource = idfaktura.ToList();
             
-            Combo_wyb_zlecenia.DataSource = db.ZLECENIA.ToList();
-            Combo_wyb_zlecenia.DisplayMember = "ID_ZLECENIA";
+            
         }
 
         private void ButtonNowaFaktura_Click(object sender, EventArgs e)
@@ -47,10 +46,7 @@ namespace PROJEKTapp.Forms.Forms_Logistyka
         }
             
 
-        private void Combo_wyb_zlecenia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            wybraneZlecenie = (ZLECENIA)Combo_wyb_zlecenia.SelectedValue;
-        }
+        
 
         private void Btn_Back_5_Click(object sender, EventArgs e)
         {

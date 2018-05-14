@@ -34,9 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TopBar_4 = new System.Windows.Forms.PictureBox();
             this.dataGridView_lista_faktur = new System.Windows.Forms.DataGridView();
-            this.ButtonNowaFaktura = new System.Windows.Forms.Button();
-            this.Combo_wyb_zlecenia = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.Btn_Back_5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -100,41 +97,6 @@
             this.dataGridView_lista_faktur.Size = new System.Drawing.Size(1338, 573);
             this.dataGridView_lista_faktur.TabIndex = 59;
             // 
-            // ButtonNowaFaktura
-            // 
-            this.ButtonNowaFaktura.BackColor = System.Drawing.Color.LimeGreen;
-            this.ButtonNowaFaktura.FlatAppearance.BorderSize = 0;
-            this.ButtonNowaFaktura.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonNowaFaktura.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ButtonNowaFaktura.Location = new System.Drawing.Point(1186, 710);
-            this.ButtonNowaFaktura.Name = "ButtonNowaFaktura";
-            this.ButtonNowaFaktura.Size = new System.Drawing.Size(166, 33);
-            this.ButtonNowaFaktura.TabIndex = 60;
-            this.ButtonNowaFaktura.Text = "Utwórz nową fakturę";
-            this.ButtonNowaFaktura.UseVisualStyleBackColor = false;
-            this.ButtonNowaFaktura.Click += new System.EventHandler(this.ButtonNowaFaktura_Click);
-            // 
-            // Combo_wyb_zlecenia
-            // 
-            this.Combo_wyb_zlecenia.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Combo_wyb_zlecenia.FormattingEnabled = true;
-            this.Combo_wyb_zlecenia.Location = new System.Drawing.Point(1105, 712);
-            this.Combo_wyb_zlecenia.Name = "Combo_wyb_zlecenia";
-            this.Combo_wyb_zlecenia.Size = new System.Drawing.Size(60, 32);
-            this.Combo_wyb_zlecenia.TabIndex = 61;
-            this.Combo_wyb_zlecenia.SelectedIndexChanged += new System.EventHandler(this.Combo_wyb_zlecenia_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(848, 714);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 24);
-            this.label2.TabIndex = 62;
-            this.label2.Text = "Wybierz numer zlecenia:";
-            // 
             // Btn_Back_5
             // 
             this.Btn_Back_5.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -156,11 +118,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(1300, 768);
             this.Controls.Add(this.Btn_Back_5);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.Combo_wyb_zlecenia);
-            this.Controls.Add(this.ButtonNowaFaktura);
             this.Controls.Add(this.dataGridView_lista_faktur);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
@@ -189,9 +148,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox TopBar_4;
         private System.Windows.Forms.DataGridView dataGridView_lista_faktur;
-        private System.Windows.Forms.Button ButtonNowaFaktura;
-        private System.Windows.Forms.ComboBox Combo_wyb_zlecenia;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Btn_Back_5;
     }
 }

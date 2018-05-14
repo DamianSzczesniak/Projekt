@@ -20,9 +20,11 @@ namespace PROJEKTapp.Forms_NoweZlecenie
         int id;
         KWZP_PROJEKTEntities db;
         int maxDlugosc = 0;
+        int uprawnienia;
 
-        public SzczegolyZlecenia(int id, KWZP_PROJEKTEntities db)
+        public SzczegolyZlecenia(int id, KWZP_PROJEKTEntities db, int uprawnienia)
         {
+            this.uprawnienia = uprawnienia;
             this.db = db;
             this.id = id;
             InitializeComponent();
@@ -46,12 +48,14 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             txtBoxCena.Text = String.Format(System.Globalization.CultureInfo.CurrentCulture, "{0:C2}", cena);
             dataGridViewOferta.DataSource = db.ZLECENIA_PRODUKTY_NAZWY.Where(a => a.ID_ZLECENIA == id).ToList();
 
+
             List<CZAS_PRACY_MASZYN> czasyPracy = this.db.CZAS_PRACY_MASZYN.Where(x => x.ID_ZLECENIA == id).ToList();
             List<CZAS_PRACY_NARZEDZI> czasyPracyNarzedzi = this.db.CZAS_PRACY_NARZEDZI.Where(x => x.ID_ZLECENIA == id).ToList();
             DateTime aktualnaData = DateTime.Now;
             Random random = new Random();
             int doWyprodukowania = 0;
-            int srednia;
+            int doWyprodukowania2 = 0;
+            double srednia;
             chart1.Series.Clear();
 
             foreach (CZAS_PRACY_MASZYN czasPracy in czasyPracy)
@@ -68,20 +72,47 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             foreach (ZLECENIE_PRODUKT zlecenieProduktu in zlecenia.ZLECENIE_PRODUKT)
             {
                 doWyprodukowania = (int)zlecenieProduktu.ILOSC;
-                srednia = 1 + ((int)doWyprodukowania / 10);
-
-                //maxDlugosc);
+                srednia = (doWyprodukowania / //10);
+                    maxDlugosc);
+                double mnoznik = srednia * 10;
                 Series seria = new Series();
                 seria.XValueType = ChartValueType.DateTime;
-                for (int i = 0; i < 10; i++)
-                //maxDlugosc; i++)
+                seria.LegendText = zlecenieProduktu.PRODUKT.NAZWA_PRODUKTU;
+                for (int i = 0; i < //10; i++)
+                maxDlugosc; i++)
                 {
-                    int produkcja = random.Next(0, srednia);
-                    seria.Points.AddXY(DateTime.Now.AddDays(i), produkcja);
-                    doWyprodukowania = doWyprodukowania - produkcja;
+                    if (doWyprodukowania > 0)
+                    {
+                        if ((int)srednia == 0)
+                        {
+                            srednia = 1;
+                            double sprawdznie = random.NextDouble() * 10;
+                            if (mnoznik * sprawdznie > 50)
+                            {
+                                int produkcja = random.Next((int)(srednia * (1 / 2)), (int)srednia);
+                                seria.Points.AddXY((DateTime)zlecenia.DATA_ZLECENIA.AddDays(i), produkcja);
+                                doWyprodukowania = doWyprodukowania - produkcja;
+                            }
+                            else
+                            {
+                                seria.Points.AddXY((DateTime)zlecenia.DATA_ZLECENIA.AddDays(i), 0);
+                            }
+
+
+                        }
+                        else
+                        {
+                            int produkcja = random.Next((int)(srednia * (1 / 2)), (int)(2 * srednia));
+                            seria.Points.AddXY((DateTime)zlecenia.DATA_ZLECENIA.AddDays(i), produkcja);
+                            doWyprodukowania = doWyprodukowania - produkcja;
+                        }
+                    }
+                    else
+                    {
+                        seria.Points.AddXY(DateTime.Now.AddDays(i), doWyprodukowania2);
+                    }
                 }
                 chart1.Series[zlecenieProduktu.PRODUKT.NAZWA_PRODUKTU] = seria;
-                seria.LegendText = zlecenieProduktu.PRODUKT.NAZWA_PRODUKTU;
             }
         }
 
@@ -106,6 +137,9 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             btnWystawFaktureKopia.Hide();
             btnDoFinanasow.Hide();
             btnPotwierdzDostarczenieZlec.Hide();
+            RezerwujMaszyny.Hide();
+
+
 
             switch (azlecenie.Status)
             {
@@ -120,14 +154,21 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     btnMagazynuj.Show();
                     break;
                 case 4:
-                    RezerwujMaszyny.Show();
+                    if (uprawnienia != 2)
+                    {
+                        RezerwujMaszyny.Show();
+                    }
                     break;
                 case 5:
                     btn_Pobierz_Materialy_produkcja.Show();
                     btn_składuj_produkty_w_Magazynie.Show();
                     break;
                 case 6:
-                    btnPobierzTransport.Show();
+                    if (uprawnienia != 3)
+                    {
+                        btnPobierzTransport.Show();
+
+                    }
                     break;
                 case 7:
                     btnRobimyTransport.Show();
@@ -140,7 +181,10 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     btnDoFinanasow.Show();
                     break;
                 case 10:
-                    btnWystawFakture.Show();
+                    if (uprawnienia != 2)
+                    {
+                        btnWystawFakture.Show();
+                    }
                     break;
                 case 11:
                     btnWystawFaktureKopia.Show();
@@ -152,7 +196,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 
         }
 
-    private void RezerwujMaszyny_Click(object sender, EventArgs e)
+        private void RezerwujMaszyny_Click(object sender, EventArgs e)
         {
             ZLECENIA zlecenia = db.ZLECENIA.Where(a => a.ID_ZLECENIA == id).First();
             List<CZAS_PRACY_MASZYN> czasyPracy = this.db.CZAS_PRACY_MASZYN.Where(x => x.ID_ZLECENIA == id).ToList();
@@ -198,9 +242,6 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_);
             db.SaveChanges();
             MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            btnDostarczonoMaterialy.Hide();
-            statusButtony();
-            RezerwujMaszyny.Hide();
             statusButtony();
         }
 
@@ -327,7 +368,14 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 
         private void btnRobimyTransport_Click(object sender, EventArgs e)
         {
+            using (PrzygotowanieTransportu przygTransportu = new PrzygotowanieTransportu(db, id))
+            {
+                if (przygTransportu.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
 
+                }
+            }
         }
 
         private void btnWystawFakture_Click(object sender, EventArgs e)

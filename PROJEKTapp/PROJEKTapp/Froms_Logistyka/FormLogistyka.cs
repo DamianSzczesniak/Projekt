@@ -43,8 +43,7 @@ namespace PROJEKTapp
 
         private void Btn_przyg_trans_Click(object sender, EventArgs e)
         {
-            PrzygotowanieTransportu PrzygotwanieTransportu = new PrzygotowanieTransportu(db);
-            PrzygotwanieTransportu.Show();
+           
         }
 
         private void Btn_zam_mat_Click(object sender, EventArgs e)
