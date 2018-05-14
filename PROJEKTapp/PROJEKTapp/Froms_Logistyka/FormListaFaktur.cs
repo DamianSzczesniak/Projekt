@@ -35,15 +35,15 @@ namespace PROJEKTapp.Forms.Forms_Logistyka
         private void ButtonNowaFaktura_Click(object sender, EventArgs e)
         {
           
-            if ((ZLECENIA)Combo_wyb_zlecenia.SelectedValue == wybraneZlecenie )
-            {
-                KreatorFaktur KreatorFaktur = new KreatorFaktur(db, wybraneZlecenie);
-                KreatorFaktur.Show();
-            }
-            else
-            {
-                MessageBox.Show("Podano nieprawidłowy numer zlecenia");
-            }
+            //if ((ZLECENIA)Combo_wyb_zlecenia.SelectedValue == wybraneZlecenie )
+            //{
+            //    KreatorFaktur KreatorFaktur = new KreatorFaktur(db, wybraneZlecenie);
+            //    KreatorFaktur.Show();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Podano nieprawidłowy numer zlecenia");
+            //}
         }
             
 

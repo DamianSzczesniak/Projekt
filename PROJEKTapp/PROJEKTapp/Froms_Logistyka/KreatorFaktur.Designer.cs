@@ -55,6 +55,10 @@
             this.txtbox_data_wyst = new System.Windows.Forms.TextBox();
             this.comboBox_kwotaWal = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblNazwa = new System.Windows.Forms.Label();
+            this.lblNip = new System.Windows.Forms.Label();
+            this.lbl_telefon = new System.Windows.Forms.Label();
+            this.lbl_Mail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_faktura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -77,8 +81,10 @@
             this.txtbox_nr_faktury.Location = new System.Drawing.Point(323, 78);
             this.txtbox_nr_faktury.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_nr_faktury.Name = "txtbox_nr_faktury";
+            this.txtbox_nr_faktury.ReadOnly = true;
             this.txtbox_nr_faktury.Size = new System.Drawing.Size(66, 20);
             this.txtbox_nr_faktury.TabIndex = 23;
+            this.txtbox_nr_faktury.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -94,7 +100,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(46, 208);
+            this.label3.Location = new System.Drawing.Point(46, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 17);
             this.label3.TabIndex = 32;
@@ -102,17 +108,19 @@
             // 
             // txtbox_nr_zlec
             // 
-            this.txtbox_nr_zlec.Location = new System.Drawing.Point(176, 208);
+            this.txtbox_nr_zlec.Location = new System.Drawing.Point(176, 166);
             this.txtbox_nr_zlec.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_nr_zlec.Name = "txtbox_nr_zlec";
+            this.txtbox_nr_zlec.ReadOnly = true;
             this.txtbox_nr_zlec.Size = new System.Drawing.Size(111, 20);
             this.txtbox_nr_zlec.TabIndex = 31;
+            this.txtbox_nr_zlec.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(341, 209);
+            this.label4.Location = new System.Drawing.Point(320, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 17);
             this.label4.TabIndex = 34;
@@ -122,7 +130,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(310, 315);
+            this.label6.Location = new System.Drawing.Point(320, 329);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 17);
             this.label6.TabIndex = 36;
@@ -130,17 +138,18 @@
             // 
             // txtbox_data_plat
             // 
-            this.txtbox_data_plat.Location = new System.Drawing.Point(444, 315);
+            this.txtbox_data_plat.Location = new System.Drawing.Point(447, 329);
             this.txtbox_data_plat.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_data_plat.Name = "txtbox_data_plat";
-            this.txtbox_data_plat.Size = new System.Drawing.Size(105, 20);
+            this.txtbox_data_plat.Size = new System.Drawing.Size(116, 20);
             this.txtbox_data_plat.TabIndex = 35;
+            this.txtbox_data_plat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(323, 406);
+            this.label7.Location = new System.Drawing.Point(320, 382);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 17);
             this.label7.TabIndex = 38;
@@ -148,17 +157,19 @@
             // 
             // txtbox_kwota
             // 
-            this.txtbox_kwota.Location = new System.Drawing.Point(444, 407);
+            this.txtbox_kwota.Location = new System.Drawing.Point(394, 382);
             this.txtbox_kwota.Margin = new System.Windows.Forms.Padding(2);
             this.txtbox_kwota.Name = "txtbox_kwota";
-            this.txtbox_kwota.Size = new System.Drawing.Size(66, 20);
+            this.txtbox_kwota.ReadOnly = true;
+            this.txtbox_kwota.Size = new System.Drawing.Size(107, 20);
             this.txtbox_kwota.TabIndex = 37;
+            this.txtbox_kwota.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(46, 235);
+            this.label8.Location = new System.Drawing.Point(46, 219);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(86, 17);
             this.label8.TabIndex = 43;
@@ -168,7 +179,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(338, 235);
+            this.label9.Location = new System.Drawing.Point(320, 219);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(157, 17);
             this.label9.TabIndex = 44;
@@ -176,18 +187,19 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(497, 232);
+            this.textBox1.Location = new System.Drawing.Point(496, 216);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(66, 20);
             this.textBox1.TabIndex = 45;
             this.textBox1.Text = "Warszawa";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(46, 293);
+            this.label10.Location = new System.Drawing.Point(46, 329);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 17);
             this.label10.TabIndex = 30;
@@ -242,56 +254,68 @@
             // 
             // textBox_nazwa_firmy
             // 
-            this.textBox_nazwa_firmy.Location = new System.Drawing.Point(155, 290);
+            this.textBox_nazwa_firmy.Location = new System.Drawing.Point(101, 382);
             this.textBox_nazwa_firmy.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_nazwa_firmy.Name = "textBox_nazwa_firmy";
-            this.textBox_nazwa_firmy.Size = new System.Drawing.Size(96, 20);
+            this.textBox_nazwa_firmy.ReadOnly = true;
+            this.textBox_nazwa_firmy.Size = new System.Drawing.Size(132, 20);
             this.textBox_nazwa_firmy.TabIndex = 52;
+            this.textBox_nazwa_firmy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_adres_email
             // 
-            this.textBox_adres_email.Location = new System.Drawing.Point(155, 314);
+            this.textBox_adres_email.Location = new System.Drawing.Point(79, 550);
             this.textBox_adres_email.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_adres_email.Name = "textBox_adres_email";
-            this.textBox_adres_email.Size = new System.Drawing.Size(96, 20);
+            this.textBox_adres_email.ReadOnly = true;
+            this.textBox_adres_email.Size = new System.Drawing.Size(184, 20);
             this.textBox_adres_email.TabIndex = 53;
+            this.textBox_adres_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_nr_telefonu
             // 
-            this.textBox_nr_telefonu.Location = new System.Drawing.Point(155, 335);
+            this.textBox_nr_telefonu.Location = new System.Drawing.Point(101, 492);
             this.textBox_nr_telefonu.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_nr_telefonu.Name = "textBox_nr_telefonu";
-            this.textBox_nr_telefonu.Size = new System.Drawing.Size(96, 20);
+            this.textBox_nr_telefonu.ReadOnly = true;
+            this.textBox_nr_telefonu.Size = new System.Drawing.Size(132, 20);
             this.textBox_nr_telefonu.TabIndex = 54;
+            this.textBox_nr_telefonu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox_nip
             // 
-            this.textBox_nip.Location = new System.Drawing.Point(155, 356);
+            this.textBox_nip.Location = new System.Drawing.Point(101, 434);
             this.textBox_nip.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_nip.Name = "textBox_nip";
-            this.textBox_nip.Size = new System.Drawing.Size(96, 20);
+            this.textBox_nip.ReadOnly = true;
+            this.textBox_nip.Size = new System.Drawing.Size(132, 20);
             this.textBox_nip.TabIndex = 55;
+            this.textBox_nip.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBoxPracownik
             // 
+            this.comboBoxPracownik.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPracownik.FormattingEnabled = true;
-            this.comboBoxPracownik.Location = new System.Drawing.Point(155, 235);
+            this.comboBoxPracownik.Location = new System.Drawing.Point(49, 272);
             this.comboBoxPracownik.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxPracownik.Name = "comboBoxPracownik";
-            this.comboBoxPracownik.Size = new System.Drawing.Size(96, 21);
+            this.comboBoxPracownik.Size = new System.Drawing.Size(278, 21);
             this.comboBoxPracownik.TabIndex = 56;
             // 
             // txtbox_data_wyst
             // 
-            this.txtbox_data_wyst.Location = new System.Drawing.Point(497, 208);
+            this.txtbox_data_wyst.Location = new System.Drawing.Point(488, 166);
             this.txtbox_data_wyst.Name = "txtbox_data_wyst";
+            this.txtbox_data_wyst.ReadOnly = true;
             this.txtbox_data_wyst.Size = new System.Drawing.Size(75, 20);
             this.txtbox_data_wyst.TabIndex = 57;
+            this.txtbox_data_wyst.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBox_kwotaWal
             // 
+            this.comboBox_kwotaWal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_kwotaWal.FormattingEnabled = true;
-            this.comboBox_kwotaWal.Location = new System.Drawing.Point(515, 406);
+            this.comboBox_kwotaWal.Location = new System.Drawing.Point(506, 382);
             this.comboBox_kwotaWal.Name = "comboBox_kwotaWal";
             this.comboBox_kwotaWal.Size = new System.Drawing.Size(57, 21);
             this.comboBox_kwotaWal.TabIndex = 58;
@@ -306,12 +330,52 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // lblNazwa
+            // 
+            this.lblNazwa.AutoSize = true;
+            this.lblNazwa.Location = new System.Drawing.Point(125, 367);
+            this.lblNazwa.Name = "lblNazwa";
+            this.lblNazwa.Size = new System.Drawing.Size(73, 13);
+            this.lblNazwa.TabIndex = 60;
+            this.lblNazwa.Text = "Nazwa Firmy :";
+            // 
+            // lblNip
+            // 
+            this.lblNip.AutoSize = true;
+            this.lblNip.Location = new System.Drawing.Point(149, 419);
+            this.lblNip.Name = "lblNip";
+            this.lblNip.Size = new System.Drawing.Size(31, 13);
+            this.lblNip.TabIndex = 61;
+            this.lblNip.Text = "NIP :";
+            // 
+            // lbl_telefon
+            // 
+            this.lbl_telefon.AutoSize = true;
+            this.lbl_telefon.Location = new System.Drawing.Point(129, 474);
+            this.lbl_telefon.Name = "lbl_telefon";
+            this.lbl_telefon.Size = new System.Drawing.Size(69, 13);
+            this.lbl_telefon.TabIndex = 62;
+            this.lbl_telefon.Text = "Nr Telefonu :";
+            // 
+            // lbl_Mail
+            // 
+            this.lbl_Mail.AutoSize = true;
+            this.lbl_Mail.Location = new System.Drawing.Point(128, 532);
+            this.lbl_Mail.Name = "lbl_Mail";
+            this.lbl_Mail.Size = new System.Drawing.Size(74, 13);
+            this.lbl_Mail.TabIndex = 63;
+            this.lbl_Mail.Text = "Adres E-mail : ";
+            // 
             // KreatorFaktur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(584, 761);
+            this.ClientSize = new System.Drawing.Size(605, 761);
+            this.Controls.Add(this.lbl_Mail);
+            this.Controls.Add(this.lbl_telefon);
+            this.Controls.Add(this.lblNip);
+            this.Controls.Add(this.lblNazwa);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.comboBox_kwotaWal);
             this.Controls.Add(this.txtbox_data_wyst);
@@ -342,6 +406,7 @@
             this.Name = "KreatorFaktur";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kreator_Faktur";
+            this.Load += new System.EventHandler(this.KreatorFaktur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_faktura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -379,5 +444,9 @@
         private System.Windows.Forms.TextBox txtbox_data_wyst;
         private System.Windows.Forms.ComboBox comboBox_kwotaWal;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblNazwa;
+        private System.Windows.Forms.Label lblNip;
+        private System.Windows.Forms.Label lbl_telefon;
+        private System.Windows.Forms.Label lbl_Mail;
     }
 }

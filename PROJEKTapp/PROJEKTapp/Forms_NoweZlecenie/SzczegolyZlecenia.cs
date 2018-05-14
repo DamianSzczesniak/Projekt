@@ -102,7 +102,8 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             btnPobierzTransport.Hide();
             btnRobimyTransport.Hide();
             btnKlientOdebral.Hide();
-
+            btnWystawFakture.Hide();
+            btnWystawFaktureKopia.Hide();
             switch (azlecenie.Status)
             {
                 case 1:
@@ -136,10 +137,11 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 
                     break;
                 case 10:
-
+                    btnWystawFakture.Show();
                     break;
                 case 11:
-
+                    btnWystawFaktureKopia.Show();
+                    btnWystawFaktureKopia.Text = "Obejrzyj wystawioną fakture ";
                     break;
 
             }
@@ -323,6 +325,31 @@ namespace PROJEKTapp.Forms_NoweZlecenie
         private void btnRobimyTransport_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnWystawFakture_Click(object sender, EventArgs e)
+        {
+            
+            using (KreatorFaktur kReator = new KreatorFaktur(db, id, false))
+            {
+                if (kReator.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+
+                }
+            }
+        }
+
+        private void btnWystawFaktureKopia_Click(object sender, EventArgs e)
+        {
+            using (KreatorFaktur kReator = new KreatorFaktur(db, id, true))
+            {
+                if (kReator.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+
+                }
+            }
         }
     }
 }

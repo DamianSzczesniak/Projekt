@@ -14,6 +14,17 @@ namespace PROJEKTapp
     
     public partial class KREATOR_FAKTUR
     {
+        private KWZP_PROJEKTEntities db;
+        private int id;
+        private bool v;
+
+        public KREATOR_FAKTUR(KWZP_PROJEKTEntities db, int id, bool v)
+        {
+            this.db = db;
+            this.id = id;
+            this.v = v;
+        }
+
         public int ID_FAKTURY { get; set; }
         public string NAZWA_FIRMY { get; set; }
         public string ADRES_EMAIL { get; set; }
