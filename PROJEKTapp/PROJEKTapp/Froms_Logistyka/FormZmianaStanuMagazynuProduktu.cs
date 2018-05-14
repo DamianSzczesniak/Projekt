@@ -62,6 +62,7 @@ namespace PROJEKTapp.Forms
                         dGV_Produkty_Do_Dodania.Hide();
                         dgvListaMaterialowDoZmagazynowania.Show();
                         dgvLokalizacje.Show();
+                        dGV_Produkty_Do_Transportu.Hide();
 
                         dgvLokalizacje.DataSource = db.LOKALIZACJA.Where(a => a.CzyPelne == false).ToList();
 
@@ -115,6 +116,7 @@ namespace PROJEKTapp.Forms
                         dgvListaMaterialowDoZmagazynowania.Hide();
                         dGV_Produkty_Do_Dodania.Hide();
                         dGV_Lista_pobranych_materialow.Show();
+                        dGV_Produkty_Do_Transportu.Hide();
 
 
                         dgvLokalizacje.DataSource = db.LOKALIZACJA.Where(a => a.CzyPelne == false).ToList();
@@ -162,10 +164,11 @@ namespace PROJEKTapp.Forms
                         dgvLokalizacje.DataSource = db.LOKALIZACJA.Where(a => a.CzyPelne == false).ToList();
                         dgvListaMaterialowDoZmagazynowania.Hide();
                         dGV_Lista_pobranych_materialow.Hide();
+                        dGV_Produkty_Do_Transportu.Hide();
                         dGV_Produkty_Do_Dodania.Show();
 
 
-                        
+
                         lbl_Lista_Materialow.Text = "Produkty do wyprodukowania i dostarczenia :";
                         lbl_Stan_Magazynu.Text = "Zmagazynowane produkty z danego zlecenia :";
 
@@ -184,24 +187,70 @@ namespace PROJEKTapp.Forms
                             KWZP_PROJEKTEntities kWZP_ = new KWZP_PROJEKTEntities();
                             db = kWZP_;
                             db.SaveChanges();
-                            MessageBox.Show("Zakończono produkcje i magazynowanie materiałów.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Zakończono produkcje i magazynowanie produktów.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        return;
+                    }
+
+                 case 4:
+                    {
+                        checkBWszystkie.Checked = false;
+                        checkBProdukty.Checked = true;
+                        checkBMaterialy.Checked = false;
+
+                        var dict = new Dictionary<int, string>();
+                        foreach (ZLECENIA row in db.ZLECENIA.Where(a => a.ID_ZLECENIA == id).ToList())
+                        {
+                            dict.Add(row.ID_ZLECENIA, "  ID_ZLECENIA : " + row.ID_ZLECENIA + " FIRMA : " + row.FIRMY.NAZWA_FIRMY + "  DATA REALIZACJI : " + row.DATA_REALIZACJI.ToShortDateString());
+                        }
+
+                        cBoxFlitracja.DataSource = dict.ToList();
+                        cBoxFlitracja.ValueMember = "Key";
+                        cBoxFlitracja.DisplayMember = "Value";
+                        cBoxFlitracja.SelectedIndex = 0;
+
+                        DGV_PRODUKTY.Show();
+                        DGV_MATERIALY.Hide();
+                        checkBProdukty.Hide();
+                        checkBWszystkie.Hide();
+                        checkBMaterialy.Hide();
+                        ButtonDodajRekord.Hide();
+                        btnZdejmij.Show();
+                        dgvLokalizacje.Hide();
+                        lbl_Lokalizacje_Nie_Pelne.Hide();
+
+                        dGV_Produkty_Do_Transportu.Show();
+                        dgvListaMaterialowDoZmagazynowania.Hide();
+                        dGV_Lista_pobranych_materialow.Hide();
+                        dGV_Produkty_Do_Dodania.Hide();
+
+
+
+                        lbl_Lista_Materialow.Text = "Produkty do odebrania z magazynu :";
+                        lbl_Stan_Magazynu.Text = "Zmagazynowane produkty z danego zlecenia :";
+
+                        
+                        sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.Where(i => i.ID_ZLECENIA == id).ToList();
+                        pRODUKTYPOZOSTALEDOTRANSPORTUBindingSource.DataSource = db.PRODUKTY_POZOSTALE_DO_TRANSPORTU.Where(i => i.ID_ZLECENIA == id).ToList();
+                        if (db.STAN_PRODUKTY_NAZWY.Where(i => i.ID_ZLECENIA == id).ToList().Count == 0)
+                        {
+                            DateTime data = DateTime.Now;
+                            DATA_STATUSU_ZLECENIA dATA_STATUSU_ = new DATA_STATUSU_ZLECENIA();
+                            dATA_STATUSU_.DATA_ZMIANY = data;
+                            dATA_STATUSU_.ID_ZLECENIA = id;
+                            dATA_STATUSU_.ID_STATUSU_ZLECENIA = 7;
+                            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_);
+                            db.SaveChanges();
+                            KWZP_PROJEKTEntities kWZP_ = new KWZP_PROJEKTEntities();
+                            db = kWZP_;
+                            db.SaveChanges();
+                            MessageBox.Show("Zakończono pobieranie produktów do transportu.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
                         return;
 
-                        //
-
-
-                        //sTANMATERIALYNAZWYBindingSource.DataSource = db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == id).ToList();
-                        //mATERIALZDJETYBindingSource.DataSource = db.MATERIAL_ZDJETY.Where(i => i.ID_ZLECENIA == id).ToList();
-
-                        //if (db.STAN_MATERIALY_NAZWY.Where(i => i.ID_ZLECENIA == id).ToList().Count == 0)
-                        //{
-
-                        //    MessageBox.Show("W magazynie brak materiałów do pobrania.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //    this.Close();
-                        //}
-                        return;
+                      
                     }
 
 
@@ -241,17 +290,17 @@ namespace PROJEKTapp.Forms
 
                 }
             }
-            //else
-            //{
-            //    using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANPRODUKTYNAZWYBindingSource.Current as STAN_PRODUKTY_NAZWY))
-            //    {
-            //        if (AMP.ShowDialog() == DialogResult.OK)
-            //        {
-            //            zapisZmianWidok();
-            //        }
-                    
-            //    }
-            //}
+            else
+            {
+                using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, sTANPRODUKTYNAZWYBindingSource.Current as STAN_PRODUKTY_NAZWY, operacja))
+                {
+                    if (AMP.ShowDialog() == DialogResult.OK)
+                    {
+                        zapisZmianWidok();
+                    }
+
+                }
+            }
         }
 
         public void zapisZmianWidok()

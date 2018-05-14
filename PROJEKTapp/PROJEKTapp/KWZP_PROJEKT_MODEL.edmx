@@ -765,6 +765,19 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRODUKTY_DO_ZMAGAZYNOWANIA' does 
           <Property Name="PRODUKTY_DO_ZMAGAZYNOWANIA" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRODUKTY_POZOSTALE_DO_TRANSPORTU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PRODUKTY_POZOSTALE_DO_TRANSPORTU">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="ID_PRODUKTU" />
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+          <Property Name="ID_PRODUKTU" Type="int" Nullable="false" />
+          <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="PRODUKTY_GOTOWE_DO_TRANSPORTU" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRZYGOTOWANIE_TRANSPORTU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRZYGOTOWANIE_TRANSPORTU">
           <Key>
@@ -1942,6 +1955,14 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
     [PRODUKTY_DO_ZMAGAZYNOWANIA].[NAZWA_PRODUKTU] AS [NAZWA_PRODUKTU], 
     [PRODUKTY_DO_ZMAGAZYNOWANIA].[PRODUKTY_DO_ZMAGAZYNOWANIA] AS [PRODUKTY_DO_ZMAGAZYNOWANIA]
     FROM [dbo].[PRODUKTY_DO_ZMAGAZYNOWANIA] AS [PRODUKTY_DO_ZMAGAZYNOWANIA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUKTY_POZOSTALE_DO_TRANSPORTU" EntityType="Self.PRODUKTY_POZOSTALE_DO_TRANSPORTU" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRODUKTY_POZOSTALE_DO_TRANSPORTU].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [PRODUKTY_POZOSTALE_DO_TRANSPORTU].[ID_PRODUKTU] AS [ID_PRODUKTU], 
+    [PRODUKTY_POZOSTALE_DO_TRANSPORTU].[NAZWA_PRODUKTU] AS [NAZWA_PRODUKTU], 
+    [PRODUKTY_POZOSTALE_DO_TRANSPORTU].[PRODUKTY_GOTOWE_DO_TRANSPORTU] AS [PRODUKTY_GOTOWE_DO_TRANSPORTU]
+    FROM [dbo].[PRODUKTY_POZOSTALE_DO_TRANSPORTU] AS [PRODUKTY_POZOSTALE_DO_TRANSPORTU]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="PRZYGOTOWANIE_TRANSPORTU" EntityType="Self.PRZYGOTOWANIE_TRANSPORTU" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3345,6 +3366,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <EntitySet Name="MATERIALY_PO_DODANIU" EntityType="KWZP_PROJEKTModel.MATERIALY_PO_DODANIU" />
           <EntitySet Name="MATERIAL_ZDJETY" EntityType="KWZP_PROJEKTModel.MATERIAL_ZDJETY" />
           <EntitySet Name="PRODUKTY_DO_ZMAGAZYNOWANIA" EntityType="KWZP_PROJEKTModel.PRODUKTY_DO_ZMAGAZYNOWANIA" />
+          <EntitySet Name="PRODUKTY_POZOSTALE_DO_TRANSPORTU" EntityType="KWZP_PROJEKTModel.PRODUKTY_POZOSTALE_DO_TRANSPORTU" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -4180,6 +4202,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="ID_PRODUKTU" Type="Int32" Nullable="false" />
           <Property Name="NAZWA_PRODUKTU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="PRODUKTY_DO_ZMAGAZYNOWANIA1" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PRODUKTY_POZOSTALE_DO_TRANSPORTU">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="ID_PRODUKTU" />
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="ID_PRODUKTU" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA_PRODUKTU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PRODUKTY_GOTOWE_DO_TRANSPORTU" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -5104,6 +5137,16 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
             <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRODUKTY_DO_ZMAGAZYNOWANIA">
               <MappingFragment StoreEntitySet="PRODUKTY_DO_ZMAGAZYNOWANIA">
                 <ScalarProperty Name="PRODUKTY_DO_ZMAGAZYNOWANIA1" ColumnName="PRODUKTY_DO_ZMAGAZYNOWANIA" />
+                <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
+                <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUKTY_POZOSTALE_DO_TRANSPORTU">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRODUKTY_POZOSTALE_DO_TRANSPORTU">
+              <MappingFragment StoreEntitySet="PRODUKTY_POZOSTALE_DO_TRANSPORTU">
+                <ScalarProperty Name="PRODUKTY_GOTOWE_DO_TRANSPORTU" ColumnName="PRODUKTY_GOTOWE_DO_TRANSPORTU" />
                 <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
                 <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />

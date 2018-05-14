@@ -99,6 +99,10 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             btnMagazynuj.Hide();
             btn_Pobierz_Materialy_produkcja.Hide();
             btn_składuj_produkty_w_Magazynie.Hide();
+            btnPobierzTransport.Hide();
+            btnRobimyTransport.Hide();
+            btnKlientOdebral.Hide();
+
             switch (azlecenie.Status)
             {
                 case 1:
@@ -119,6 +123,22 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     btn_składuj_produkty_w_Magazynie.Show();
                     break;
                 case 6:
+                    btnPobierzTransport.Show();
+                    break;
+                case 7:
+                    btnRobimyTransport.Show();
+                    btnKlientOdebral.Show();
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
+                case 10:
+
+                    break;
+                case 11:
 
                     break;
 
@@ -255,6 +275,54 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 
                 }
             }
+        }
+
+        private void btnPobierzTransport_Click(object sender, EventArgs e)
+        {
+            int akcja = 4;
+            using (FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db, id, akcja))
+            {
+                if (ZmianaStanuMagazynu.ShowDialog() == DialogResult.OK)
+                {
+                    statusButtony();
+
+                }
+            }
+        }
+
+        private void btnKlientOdebral_Click(object sender, EventArgs e)
+        {
+            DateTime data = DateTime.Now;
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_ = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_.DATA_ZMIANY = data;
+            dATA_STATUSU_.ID_ZLECENIA = id;
+            dATA_STATUSU_.ID_STATUSU_ZLECENIA = 8;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_);
+            db.SaveChanges();
+         
+
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_2 = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_2.DATA_ZMIANY = data;
+            dATA_STATUSU_2.ID_ZLECENIA = id;
+            dATA_STATUSU_2.ID_STATUSU_ZLECENIA = 9;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_2);
+            db.SaveChanges();
+
+            DATA_STATUSU_ZLECENIA dATA_STATUSU_3 = new DATA_STATUSU_ZLECENIA();
+            dATA_STATUSU_3.DATA_ZMIANY = data;
+            dATA_STATUSU_3.ID_ZLECENIA = id;
+            dATA_STATUSU_3.ID_STATUSU_ZLECENIA = 10;
+            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_3);
+            db.SaveChanges();
+
+            MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnDostarczonoMaterialy.Hide();
+            statusButtony();
+        }
+
+        private void btnRobimyTransport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

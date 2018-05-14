@@ -81,16 +81,16 @@ namespace PROJEKTapp.Froms_Logistyka
                 }
                 else
                 {
-                    STAN_PRODUKTY_NAZWY sTAN_PRODUKTY_NAZWY = dane as STAN_PRODUKTY_NAZWY;
+                    STAN_PRODUKTY_NAZWY pRODUKTY_POZOSTALE_DO_TRANSPORTU = dane as STAN_PRODUKTY_NAZWY;
                     txtBoxRAkcji.Text = "ODBIÓR";
                     lblItem.Text = "Produkt :";
-                    cBoxSurPro.DataSource = db.PRODUKT.Where(a => a.ID_PRODUKTU == sTAN_PRODUKTY_NAZWY.ID_PRODUKTU).ToList();
+                    cBoxSurPro.DataSource = db.PRODUKT.Where(a => a.ID_PRODUKTU == pRODUKTY_POZOSTALE_DO_TRANSPORTU.ID_PRODUKTU).ToList();
                     cBoxSurPro.DisplayMember = "NAZWA_PRODUKTU";
                     cBoxSurPro.ValueMember = "ID_PRODUKTU";
-                    cBoxLokalizacja.DataSource = db.LOKALIZACJA.Where(a => a.ID_LOKALIZACJI == sTAN_PRODUKTY_NAZWY.ID_LOKALIZACJI).ToList();
+                    cBoxLokalizacja.DataSource = db.LOKALIZACJA.Where(a => a.ID_LOKALIZACJI == pRODUKTY_POZOSTALE_DO_TRANSPORTU.ID_LOKALIZACJI).ToList();
                     cBoxLokalizacja.DisplayMember = "ID_LOKALIZACJI";
                     cBoxLokalizacja.ValueMember = "ID_LOKALIZACJI";
-                    cBoxPrzypisaneZlecenie.DataSource = db.ZLECENIA.Where(a => a.ID_ZLECENIA == sTAN_PRODUKTY_NAZWY.ID_ZLECENIA).ToList();
+                    cBoxPrzypisaneZlecenie.DataSource = db.ZLECENIA.Where(a => a.ID_ZLECENIA == pRODUKTY_POZOSTALE_DO_TRANSPORTU.ID_ZLECENIA).ToList();
                     cBoxPrzypisaneZlecenie.DisplayMember = "ID_ZLECENIA";
                     cBoxPrzypisaneZlecenie.ValueMember = "ID_ZLECENIA";
                     checkBoxPelne.Hide();

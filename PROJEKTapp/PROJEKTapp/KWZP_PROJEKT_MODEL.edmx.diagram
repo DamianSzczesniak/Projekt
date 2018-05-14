@@ -139,6 +139,7 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MATERIALY_PO_DODANIU" Width="1.5" PointX="24.375" PointY="13.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MATERIAL_ZDJETY" Width="1.5" PointX="25.375" PointY="0.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKTY_DO_ZMAGAZYNOWANIA" Width="1.5" PointX="13.375" PointY="24.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKTY_POZOSTALE_DO_TRANSPORTU" Width="1.5" PointX="15.375" PointY="24.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

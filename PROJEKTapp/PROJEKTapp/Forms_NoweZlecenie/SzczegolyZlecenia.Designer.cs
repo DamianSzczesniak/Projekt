@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridViewOferta = new System.Windows.Forms.DataGridView();
             this.iDPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +55,9 @@
             this.btnMagazynuj = new System.Windows.Forms.Button();
             this.btn_Pobierz_Materialy_produkcja = new System.Windows.Forms.Button();
             this.btn_składuj_produkty_w_Magazynie = new System.Windows.Forms.Button();
+            this.btnPobierzTransport = new System.Windows.Forms.Button();
+            this.btnRobimyTransport = new System.Windows.Forms.Button();
+            this.btnKlientOdebral = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zLECENIAPRODUKTYNAZWYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -189,16 +192,16 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(374, 33);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(435, 299);
             this.chart1.TabIndex = 22;
             this.chart1.Text = "chart1";
@@ -288,11 +291,44 @@
             this.btn_składuj_produkty_w_Magazynie.Visible = false;
             this.btn_składuj_produkty_w_Magazynie.Click += new System.EventHandler(this.btn_składuj_produkty_w_Magazynie_Click);
             // 
+            // btnPobierzTransport
+            // 
+            this.btnPobierzTransport.Location = new System.Drawing.Point(95, 350);
+            this.btnPobierzTransport.Name = "btnPobierzTransport";
+            this.btnPobierzTransport.Size = new System.Drawing.Size(171, 35);
+            this.btnPobierzTransport.TabIndex = 29;
+            this.btnPobierzTransport.Text = "Pobierz produkty na potrzeby transportu";
+            this.btnPobierzTransport.UseVisualStyleBackColor = true;
+            this.btnPobierzTransport.Click += new System.EventHandler(this.btnPobierzTransport_Click);
+            // 
+            // btnRobimyTransport
+            // 
+            this.btnRobimyTransport.Location = new System.Drawing.Point(23, 351);
+            this.btnRobimyTransport.Name = "btnRobimyTransport";
+            this.btnRobimyTransport.Size = new System.Drawing.Size(140, 34);
+            this.btnRobimyTransport.TabIndex = 30;
+            this.btnRobimyTransport.Text = "Przygotuj transport";
+            this.btnRobimyTransport.UseVisualStyleBackColor = true;
+            this.btnRobimyTransport.Click += new System.EventHandler(this.btnRobimyTransport_Click);
+            // 
+            // btnKlientOdebral
+            // 
+            this.btnKlientOdebral.Location = new System.Drawing.Point(204, 350);
+            this.btnKlientOdebral.Name = "btnKlientOdebral";
+            this.btnKlientOdebral.Size = new System.Drawing.Size(142, 34);
+            this.btnKlientOdebral.TabIndex = 31;
+            this.btnKlientOdebral.Text = "Zanotuj odebranie zlecenia przez klienta";
+            this.btnKlientOdebral.UseVisualStyleBackColor = true;
+            this.btnKlientOdebral.Click += new System.EventHandler(this.btnKlientOdebral_Click);
+            // 
             // SzczegolyZlecenia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 402);
+            this.Controls.Add(this.btnKlientOdebral);
+            this.Controls.Add(this.btnRobimyTransport);
+            this.Controls.Add(this.btnPobierzTransport);
             this.Controls.Add(this.btn_składuj_produkty_w_Magazynie);
             this.Controls.Add(this.btn_Pobierz_Materialy_produkcja);
             this.Controls.Add(this.btnMagazynuj);
@@ -349,5 +385,8 @@
         private System.Windows.Forms.Button btnMagazynuj;
         private System.Windows.Forms.Button btn_Pobierz_Materialy_produkcja;
         private System.Windows.Forms.Button btn_składuj_produkty_w_Magazynie;
+        private System.Windows.Forms.Button btnPobierzTransport;
+        private System.Windows.Forms.Button btnRobimyTransport;
+        private System.Windows.Forms.Button btnKlientOdebral;
     }
 }
