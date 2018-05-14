@@ -9,7 +9,6 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ADRESY_PRACOWNICY" Width="1.5" PointX="2.375" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.DOKUMENTACJA" Width="1.5" PointX="7.5" PointY="15.125" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.DOSTAWA" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.FAKTURY" Width="1.5" PointX="10.5" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.FIRMY" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MATERIAL" Width="1.5" PointX="5.25" PointY="19" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MIASTA" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
@@ -45,8 +44,6 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DOKUMENTA__ID_PR__3F115E1A" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__POLPRODUK__ID_DO__489AC854" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DOSTAWA__ID_FIRM__1332DBDC" ManuallyRouted="false" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_PRAC__1CBC4616" ManuallyRouted="false" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_ZLEC__1BC821DD" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__POJAZDY__ID_FIRM__4D94879B" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZLECENIA__ID_FIR__5DCAEF64" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__PARAMETRY__ID_MA__43D61337" ManuallyRouted="false" />
@@ -83,7 +80,6 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.UZYTKOWNICY" Width="1.5" PointX="13.5" PointY="21.25" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__UZYTKOWNI__ID_PR__531856C7" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__UZYTKOWNI__UPRAW__540C7B00" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.KREATOR_FAKTUR" Width="1.5" PointX="17.75" PointY="11.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_URLOP_STANOWISKO" Width="1.5" PointX="17.75" PointY="16.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNIK_DANE" Width="1.5" PointX="0.75" PointY="18.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.DATA_STATUSU_ZLECENIA" Width="1.5" PointX="16" PointY="18.25" />
@@ -135,7 +131,16 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.Status_detale_zlecenie" Width="1.5" PointX="24.375" PointY="9.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" Width="1.5" PointX="23.375" PointY="16.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE" Width="1.5" PointX="23.375" PointY="19.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.zestawienie" Width="1.5" PointX="23.375" PointY="23.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.zestawienie" Width="3.125" PointX="23.375" PointY="23.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.MATERIALY_PO_DODANIU" Width="1.5" PointX="24.375" PointY="13.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.MATERIAL_ZDJETY" Width="1.5" PointX="25.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKTY_DO_ZMAGAZYNOWANIA" Width="1.5" PointX="13.375" PointY="24.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKTY_POZOSTALE_DO_TRANSPORTU" Width="1.5" PointX="15.375" PointY="24.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_KURS" Width="1.5" PointX="25.375" PointY="3.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.FAKTURY" Width="1.5" PointX="26" PointY="16.625" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_PRAC__1F98B2C1" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_WALU__208CD6FA" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_ZLEC__1EA48E88" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

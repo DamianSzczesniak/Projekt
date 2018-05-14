@@ -44,7 +44,7 @@
             this.btnStatusyZlecen.Location = new System.Drawing.Point(1, 75);
             this.btnStatusyZlecen.Name = "btnStatusyZlecen";
             this.btnStatusyZlecen.Size = new System.Drawing.Size(225, 69);
-            this.btnStatusyZlecen.TabIndex = 6;
+            this.btnStatusyZlecen.TabIndex = 1;
             this.btnStatusyZlecen.Text = "STATUSY ZLECEN";
             this.btnStatusyZlecen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStatusyZlecen.UseVisualStyleBackColor = true;
@@ -61,7 +61,7 @@
             this.btnNoweZlecenie.Location = new System.Drawing.Point(1, 0);
             this.btnNoweZlecenie.Name = "btnNoweZlecenie";
             this.btnNoweZlecenie.Size = new System.Drawing.Size(225, 69);
-            this.btnNoweZlecenie.TabIndex = 7;
+            this.btnNoweZlecenie.TabIndex = 0;
             this.btnNoweZlecenie.Text = "NOWE ZLECENIE";
             this.btnNoweZlecenie.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNoweZlecenie.UseVisualStyleBackColor = false;

@@ -43,6 +43,7 @@
             this.LWyszukaj = new System.Windows.Forms.Label();
             this.txtWyszukajNazwisko = new System.Windows.Forms.TextBox();
             this.dtpMiesiac = new System.Windows.Forms.DateTimePicker();
+            this.lblSumaPensji = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWyplaty)).BeginInit();
@@ -190,6 +191,7 @@
             // 
             // pnlWynagordzenia
             // 
+            this.pnlWynagordzenia.Controls.Add(this.lblSumaPensji);
             this.pnlWynagordzenia.Controls.Add(this.LWyszukaj);
             this.pnlWynagordzenia.Controls.Add(this.txtWyszukajNazwisko);
             this.pnlWynagordzenia.Controls.Add(this.dtpMiesiac);
@@ -227,6 +229,16 @@
             this.dtpMiesiac.Size = new System.Drawing.Size(127, 26);
             this.dtpMiesiac.TabIndex = 9;
             this.dtpMiesiac.ValueChanged += new System.EventHandler(this.dtpMiesiac_ValueChanged);
+            // 
+            // lblSumaPensji
+            // 
+            this.lblSumaPensji.AutoSize = true;
+            this.lblSumaPensji.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSumaPensji.Location = new System.Drawing.Point(456, 69);
+            this.lblSumaPensji.Name = "lblSumaPensji";
+            this.lblSumaPensji.Size = new System.Drawing.Size(48, 20);
+            this.lblSumaPensji.TabIndex = 24;
+            this.lblSumaPensji.Text = "suma";
             // 
             // FormWynagordzenie
             // 
@@ -267,5 +279,6 @@
         private System.Windows.Forms.DateTimePicker dtpMiesiac;
         private System.Windows.Forms.Label LWyszukaj;
         private System.Windows.Forms.TextBox txtWyszukajNazwisko;
+        private System.Windows.Forms.Label lblSumaPensji;
     }
 }

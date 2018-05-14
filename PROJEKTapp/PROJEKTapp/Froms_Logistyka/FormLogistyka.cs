@@ -30,8 +30,8 @@ namespace PROJEKTapp
        
         private void Btn_zmiana_stat_Click(object sender, EventArgs e)
         {
-            FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db);
-            ZmianaStanuMagazynu.Show();
+          //  FormZmianaStanuMagazynu ZmianaStanuMagazynu = new FormZmianaStanuMagazynu(db);
+          //  ZmianaStanuMagazynu.Show();
         }
 
         private void Btn_kreat_fak_Click(object sender, EventArgs e)
@@ -43,8 +43,7 @@ namespace PROJEKTapp
 
         private void Btn_przyg_trans_Click(object sender, EventArgs e)
         {
-            PrzygotowanieTransportu PrzygotwanieTransportu = new PrzygotowanieTransportu(db);
-            PrzygotwanieTransportu.Show();
+           
         }
 
         private void Btn_zam_mat_Click(object sender, EventArgs e)

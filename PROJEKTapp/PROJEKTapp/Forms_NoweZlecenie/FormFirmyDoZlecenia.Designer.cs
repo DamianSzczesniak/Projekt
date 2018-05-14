@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblNazwaTabeliFirmy = new System.Windows.Forms.Label();
-            this.btnUsun = new System.Windows.Forms.Button();
-            this.btnEdytuj = new System.Windows.Forms.Button();
-            this.btnDodaj = new System.Windows.Forms.Button();
             this.iDFIRMYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nAZWAFIRMYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aDRESEMAILDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +40,10 @@
             this.zAMOWIENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirmyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblNazwaTabeliFirmy = new System.Windows.Forms.Label();
+            this.btnUsun = new System.Windows.Forms.Button();
+            this.btnEdytuj = new System.Windows.Forms.Button();
+            this.btnDodaj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FirmyBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,46 +70,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(265, 245);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // lblNazwaTabeliFirmy
-            // 
-            this.lblNazwaTabeliFirmy.AutoSize = true;
-            this.lblNazwaTabeliFirmy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblNazwaTabeliFirmy.Location = new System.Drawing.Point(103, 9);
-            this.lblNazwaTabeliFirmy.Name = "lblNazwaTabeliFirmy";
-            this.lblNazwaTabeliFirmy.Size = new System.Drawing.Size(100, 24);
-            this.lblNazwaTabeliFirmy.TabIndex = 1;
-            this.lblNazwaTabeliFirmy.Text = "Lista Firm";
-            // 
-            // btnUsun
-            // 
-            this.btnUsun.Location = new System.Drawing.Point(202, 306);
-            this.btnUsun.Name = "btnUsun";
-            this.btnUsun.Size = new System.Drawing.Size(75, 23);
-            this.btnUsun.TabIndex = 2;
-            this.btnUsun.Text = "Usuń";
-            this.btnUsun.UseVisualStyleBackColor = true;
-            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
-            // 
-            // btnEdytuj
-            // 
-            this.btnEdytuj.Location = new System.Drawing.Point(107, 306);
-            this.btnEdytuj.Name = "btnEdytuj";
-            this.btnEdytuj.Size = new System.Drawing.Size(75, 23);
-            this.btnEdytuj.TabIndex = 2;
-            this.btnEdytuj.Text = "Edytuj";
-            this.btnEdytuj.UseVisualStyleBackColor = true;
-            this.btnEdytuj.Click += new System.EventHandler(this.btnEdytuj_Click);
-            // 
-            // btnDodaj
-            // 
-            this.btnDodaj.Location = new System.Drawing.Point(12, 306);
-            this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(75, 23);
-            this.btnDodaj.TabIndex = 2;
-            this.btnDodaj.Text = "Dodaj";
-            this.btnDodaj.UseVisualStyleBackColor = true;
-            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // iDFIRMYDataGridViewTextBoxColumn
             // 
@@ -187,6 +147,46 @@
             // FirmyBindingSource
             // 
             this.FirmyBindingSource.DataSource = typeof(PROJEKTapp.FIRMY);
+            // 
+            // lblNazwaTabeliFirmy
+            // 
+            this.lblNazwaTabeliFirmy.AutoSize = true;
+            this.lblNazwaTabeliFirmy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNazwaTabeliFirmy.Location = new System.Drawing.Point(103, 9);
+            this.lblNazwaTabeliFirmy.Name = "lblNazwaTabeliFirmy";
+            this.lblNazwaTabeliFirmy.Size = new System.Drawing.Size(100, 24);
+            this.lblNazwaTabeliFirmy.TabIndex = 1;
+            this.lblNazwaTabeliFirmy.Text = "Lista Firm";
+            // 
+            // btnUsun
+            // 
+            this.btnUsun.Location = new System.Drawing.Point(202, 306);
+            this.btnUsun.Name = "btnUsun";
+            this.btnUsun.Size = new System.Drawing.Size(75, 23);
+            this.btnUsun.TabIndex = 3;
+            this.btnUsun.Text = "Usuń";
+            this.btnUsun.UseVisualStyleBackColor = true;
+            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
+            // 
+            // btnEdytuj
+            // 
+            this.btnEdytuj.Location = new System.Drawing.Point(107, 306);
+            this.btnEdytuj.Name = "btnEdytuj";
+            this.btnEdytuj.Size = new System.Drawing.Size(75, 23);
+            this.btnEdytuj.TabIndex = 2;
+            this.btnEdytuj.Text = "Edytuj";
+            this.btnEdytuj.UseVisualStyleBackColor = true;
+            this.btnEdytuj.Click += new System.EventHandler(this.btnEdytuj_Click);
+            // 
+            // btnDodaj
+            // 
+            this.btnDodaj.Location = new System.Drawing.Point(12, 306);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(75, 23);
+            this.btnDodaj.TabIndex = 1;
+            this.btnDodaj.Text = "Dodaj";
+            this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // FormFirmyDoZlecenia
             // 

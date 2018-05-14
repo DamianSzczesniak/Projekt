@@ -17,12 +17,12 @@ namespace PROJEKTapp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ZLECENIA()
         {
-            this.FAKTURY = new HashSet<FAKTURY>();
             this.REALIZACJA_PRODUKCJA = new HashSet<REALIZACJA_PRODUKCJA>();
             this.DATA_STATUSU_ZLECENIA = new HashSet<DATA_STATUSU_ZLECENIA>();
             this.ZMIANA_STANU_MAGAZYNU_MATERIALOW = new HashSet<ZMIANA_STANU_MAGAZYNU_MATERIALOW>();
             this.ZMIANA_STANU_MAGAZYNU_PRODUKTOW = new HashSet<ZMIANA_STANU_MAGAZYNU_PRODUKTOW>();
             this.ZLECENIE_PRODUKT = new HashSet<ZLECENIE_PRODUKT>();
+            this.FAKTURY = new HashSet<FAKTURY>();
         }
     
         public int ID_ZLECENIA { get; set; }
@@ -30,8 +30,6 @@ namespace PROJEKTapp
         public System.DateTime DATA_REALIZACJI { get; set; }
         public Nullable<int> ID_FIRMY { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FAKTURY> FAKTURY { get; set; }
         public virtual FIRMY FIRMY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<REALIZACJA_PRODUKCJA> REALIZACJA_PRODUKCJA { get; set; }
@@ -43,5 +41,7 @@ namespace PROJEKTapp
         public virtual ICollection<ZMIANA_STANU_MAGAZYNU_PRODUKTOW> ZMIANA_STANU_MAGAZYNU_PRODUKTOW { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ZLECENIE_PRODUKT> ZLECENIE_PRODUKT { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FAKTURY> FAKTURY { get; set; }
     }
 }
