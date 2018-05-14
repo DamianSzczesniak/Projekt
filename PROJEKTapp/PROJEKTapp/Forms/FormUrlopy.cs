@@ -118,10 +118,9 @@ namespace PROJEKTapp
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+            suma = 0;
             pnlWolne.Show();
             czyscform();
-            txtBoxWnioskowany.ResetBackColor();
-            txtBoxWnioskowany.Text = " ";
             KalendarzUrlop.BoldedDates = new DateTime[] { };
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
             this.pracownik = db.PRACOWNICY.Where(pracownik => pracownik.ID_PRACOWNIK == ID).First();
@@ -132,7 +131,6 @@ namespace PROJEKTapp
                 for (int i = 0; i < dlugoscSzkolenia; i++)
                 {
                     KalendarzUrlop.BoldedDates = KalendarzUrlop.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
-
                 }
             }
             foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY)
@@ -142,20 +140,18 @@ namespace PROJEKTapp
                 for (int i = 0; i < dlugoscwolne; i++)
                 {
                     KalendarzUrlop.BoldedDates = KalendarzUrlop.BoldedDates.Concat(new DateTime[] { aktualnaData.AddDays(i) }).ToArray();
-
                 }
             }
 
-            foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY.Where(data => data.DATA_START.Year.Equals(txtDataStart.Value.Year)))//TODO rok wybierany z datetimepicker reagowanie na zmianę
+            foreach (WOLNE_PRACOWNICY wolne in pracownik.WOLNE_PRACOWNICY.Where(data => data.DATA_START.Year.Equals(txtDataStart.Value.Year) && data.ID_WOLNE!=7))//TODO rok wybierany z datetimepicker reagowanie na zmianę
             {
                 int dlugoscwolne = wolne.DATA_KONIEC.Subtract(wolne.DATA_START).Days + 1;
                 DateTime aktualnaData = wolne.DATA_START;
-                suma += dlugoscwolne;
+                this.suma += dlugoscwolne;
             }
-
-                txtBoxWykorzystany.Text = suma.ToString();
-            int pozostalo = 26-suma; 
-            txtBoxPozostalo.Text = pozostalo.ToString();
+            obliczanieUrlopu();
+            txtBoxWnioskowany.Text = " ";
+            txtBoxWnioskowany.ResetBackColor();
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)
@@ -164,7 +160,6 @@ namespace PROJEKTapp
             czyscform();
 
             int ID = Convert.ToInt32(ListaPracownikow.CurrentRow.Cells[0].Value);
-
         }
 
         private void btnUsun_Click(object sender, EventArgs e)
@@ -196,7 +191,7 @@ namespace PROJEKTapp
 
         private void btnZapiszDodaj_Click(object sender, EventArgs e)
         {
-            if (int.Parse(txtBoxWnioskowany.Text) <= int.Parse(txtBoxPozostalo.Text) | (cbTypUrlopu.SelectedIndex == 2 &&  int.Parse(txtBoxWnioskowany.Text) > int.Parse(txtBoxPozostalo.Text)))
+            if (int.Parse(txtBoxWnioskowany.Text) <= int.Parse(txtBoxPozostalo.Text) | (cbTypUrlopu.SelectedIndex == 6 &&  int.Parse(txtBoxWnioskowany.Text) > int.Parse(txtBoxPozostalo.Text)))
             {
                 WOLNE_PRACOWNICY wolnepracownik = new WOLNE_PRACOWNICY();
                 wolnepracownik.DATA_KONIEC = txtDataKoniec.Value;
@@ -221,7 +216,7 @@ namespace PROJEKTapp
             }
             else
             {
-                MessageBox.Show("Dostęny tylko urlop \"Na Żądanie\"");
+                MessageBox.Show("Dostęny tylko urlop bezpłatny");
             }
         }
 
@@ -297,7 +292,6 @@ namespace PROJEKTapp
         }
         private void obliczanieUrlopu()
         {
-            suma = 0;
             int Wnioskowany = (txtDataKoniec.Value - txtDataStart.Value).Days + 1;
             txtBoxWnioskowany.Text = Wnioskowany.ToString();
             txtBoxWykorzystany.Text = suma.ToString();
