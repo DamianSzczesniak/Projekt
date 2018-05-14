@@ -167,7 +167,27 @@ namespace PROJEKTapp.Forms
 
                         
                         lbl_Lista_Materialow.Text = "Produkty do wyprodukowania i dostarczenia :";
-                        lbl_Lista_Materialow.Text = "Zmagazynowane produkty z danego zlecenia :";
+                        lbl_Stan_Magazynu.Text = "Zmagazynowane produkty z danego zlecenia :";
+
+                        pRODUKTYDOZMAGAZYNOWANIABindingSource.DataSource = db.PRODUKTY_DO_ZMAGAZYNOWANIA.Where(a => a.ID_ZLECENIA == id).ToList();
+                        sTANPRODUKTYNAZWYBindingSource.DataSource = db.STAN_PRODUKTY_NAZWY.Where(i => i.ID_ZLECENIA == id).ToList();
+
+                        if (db.PRODUKTY_DO_ZMAGAZYNOWANIA.Where(a => a.ID_ZLECENIA == id).ToList().Count == 0)
+                        {
+                            DateTime data = DateTime.Now;
+                            DATA_STATUSU_ZLECENIA dATA_STATUSU_ = new DATA_STATUSU_ZLECENIA();
+                            dATA_STATUSU_.DATA_ZMIANY = data;
+                            dATA_STATUSU_.ID_ZLECENIA = id;
+                            dATA_STATUSU_.ID_STATUSU_ZLECENIA = 6;
+                            db.DATA_STATUSU_ZLECENIA.Add(dATA_STATUSU_);
+                            db.SaveChanges();
+                            KWZP_PROJEKTEntities kWZP_ = new KWZP_PROJEKTEntities();
+                            db = kWZP_;
+                            db.SaveChanges();
+                            MessageBox.Show("Zakończono produkcje i magazynowanie materiałów.", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Close();
+                        }
+                        return;
 
                         //
 
@@ -262,11 +282,24 @@ namespace PROJEKTapp.Forms
         private void ButtonDodajRekord_Click(object sender, EventArgs e)
         {
             int operacja = 1;
-            using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, mATERIALYPODODANIUBindingSource.Current, operacja) )
+            if (checkBMaterialy.Checked)
             {
-                if (AMP.ShowDialog() == DialogResult.OK)
+                using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, mATERIALYPODODANIUBindingSource.Current, operacja))
                 {
-                    zapisZmianWidok();
+                    if (AMP.ShowDialog() == DialogResult.OK)
+                    {
+                        zapisZmianWidok();
+                    }
+                }
+            }
+            else
+            {
+                using (AkcjaMagazynProduktów AMP = new AkcjaMagazynProduktów(db, checkBMaterialy.Checked, pRODUKTYDOZMAGAZYNOWANIABindingSource.Current, operacja))
+                {
+                    if (AMP.ShowDialog() == DialogResult.OK)
+                    {
+                        zapisZmianWidok();
+                    }
                 }
             }
         }

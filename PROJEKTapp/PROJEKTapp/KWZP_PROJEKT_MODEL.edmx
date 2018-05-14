@@ -752,6 +752,19 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRACOWNIK_DANE' does not have a p
           <Property Name="MIASTO" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRODUKTY_DO_ZMAGAZYNOWANIA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PRODUKTY_DO_ZMAGAZYNOWANIA">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="ID_PRODUKTU" />
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="int" Nullable="false" />
+          <Property Name="ID_PRODUKTU" Type="int" Nullable="false" />
+          <Property Name="NAZWA_PRODUKTU" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="PRODUKTY_DO_ZMAGAZYNOWANIA" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRZYGOTOWANIE_TRANSPORTU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRZYGOTOWANIE_TRANSPORTU">
           <Key>
@@ -1921,6 +1934,14 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
     [PRACOWNIK_DANE].[KRAJ] AS [KRAJ], 
     [PRACOWNIK_DANE].[MIASTO] AS [MIASTO]
     FROM [dbo].[PRACOWNIK_DANE] AS [PRACOWNIK_DANE]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUKTY_DO_ZMAGAZYNOWANIA" EntityType="Self.PRODUKTY_DO_ZMAGAZYNOWANIA" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRODUKTY_DO_ZMAGAZYNOWANIA].[ID_ZLECENIA] AS [ID_ZLECENIA], 
+    [PRODUKTY_DO_ZMAGAZYNOWANIA].[ID_PRODUKTU] AS [ID_PRODUKTU], 
+    [PRODUKTY_DO_ZMAGAZYNOWANIA].[NAZWA_PRODUKTU] AS [NAZWA_PRODUKTU], 
+    [PRODUKTY_DO_ZMAGAZYNOWANIA].[PRODUKTY_DO_ZMAGAZYNOWANIA] AS [PRODUKTY_DO_ZMAGAZYNOWANIA]
+    FROM [dbo].[PRODUKTY_DO_ZMAGAZYNOWANIA] AS [PRODUKTY_DO_ZMAGAZYNOWANIA]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="PRZYGOTOWANIE_TRANSPORTU" EntityType="Self.PRZYGOTOWANIE_TRANSPORTU" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3323,6 +3344,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <EntitySet Name="zestawienie" EntityType="KWZP_PROJEKTModel.zestawienie" />
           <EntitySet Name="MATERIALY_PO_DODANIU" EntityType="KWZP_PROJEKTModel.MATERIALY_PO_DODANIU" />
           <EntitySet Name="MATERIAL_ZDJETY" EntityType="KWZP_PROJEKTModel.MATERIAL_ZDJETY" />
+          <EntitySet Name="PRODUKTY_DO_ZMAGAZYNOWANIA" EntityType="KWZP_PROJEKTModel.PRODUKTY_DO_ZMAGAZYNOWANIA" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -4147,6 +4169,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="PELNA_NAZWA_MATERIALU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="SUMA_MATERIALU" Type="Int32" />
           <Property Name="MATERIAL_ODJETY" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PRODUKTY_DO_ZMAGAZYNOWANIA">
+          <Key>
+            <PropertyRef Name="ID_ZLECENIA" />
+            <PropertyRef Name="ID_PRODUKTU" />
+            <PropertyRef Name="NAZWA_PRODUKTU" />
+          </Key>
+          <Property Name="ID_ZLECENIA" Type="Int32" Nullable="false" />
+          <Property Name="ID_PRODUKTU" Type="Int32" Nullable="false" />
+          <Property Name="NAZWA_PRODUKTU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PRODUKTY_DO_ZMAGAZYNOWANIA1" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -5063,6 +5096,16 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
                 <ScalarProperty Name="SUMA_MATERIALU" ColumnName="SUMA_MATERIALU" />
                 <ScalarProperty Name="PELNA_NAZWA_MATERIALU" ColumnName="PELNA_NAZWA_MATERIALU" />
                 <ScalarProperty Name="ID_MATERIAL" ColumnName="ID_MATERIAL" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUKTY_DO_ZMAGAZYNOWANIA">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRODUKTY_DO_ZMAGAZYNOWANIA">
+              <MappingFragment StoreEntitySet="PRODUKTY_DO_ZMAGAZYNOWANIA">
+                <ScalarProperty Name="PRODUKTY_DO_ZMAGAZYNOWANIA1" ColumnName="PRODUKTY_DO_ZMAGAZYNOWANIA" />
+                <ScalarProperty Name="NAZWA_PRODUKTU" ColumnName="NAZWA_PRODUKTU" />
+                <ScalarProperty Name="ID_PRODUKTU" ColumnName="ID_PRODUKTU" />
                 <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
               </MappingFragment>
             </EntityTypeMapping>

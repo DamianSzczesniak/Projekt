@@ -97,6 +97,8 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 
             txtBAktualnyStatus.Text = azlecenie.ETAP;
             btnMagazynuj.Hide();
+            btn_Pobierz_Materialy_produkcja.Hide();
+            btn_składuj_produkty_w_Magazynie.Hide();
             switch (azlecenie.Status)
             {
                 case 1:
@@ -115,6 +117,9 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                 case 5:
                     btn_Pobierz_Materialy_produkcja.Show();
                     btn_składuj_produkty_w_Magazynie.Show();
+                    break;
+                case 6:
+
                     break;
 
             }

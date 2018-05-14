@@ -418,6 +418,9 @@
     <Compile Include="PRODUKT.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="PRODUKTY_DO_ZMAGAZYNOWANIA.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="PROJEKT.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
@@ -684,6 +687,7 @@
     <None Include="OFERTA.datasource" />
     <None Include="packages.config" />
     <None Include="PRACOWNICY.datasource" />
+    <None Include="PRODUKTY_DO_ZMAGAZYNOWANIA.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
