@@ -47,7 +47,7 @@ namespace PROJEKTapp
         private void Produkcja_glowny_Load(object sender, EventArgs e)
         {
             pRACOWNICYSTANOWISKABindingSource.DataSource = db.PRACOWNICY_STANOWISKA.Where(x => x.ID_PRACOWNIK <= 10).ToList();
-            GridPracownicyWPracy.DataSource = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();
+            pRACOWNICYWPRACYBindingSource.DataSource = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();
         }
 
         private void btnEwidencjaMaszyn_Click(object sender, EventArgs e)
@@ -66,14 +66,20 @@ namespace PROJEKTapp
             pracownikDoWpisania.ID_PRACOWNIK = wybranyPracownik.ID_PRACOWNIK;
             db.ZESPOL_LUDZI.Add(pracownikDoWpisania);
             db.SaveChanges();
-            
+            KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
+            db = ndb;
+            db.PRACOWNICY_W_PRACY = ndb.PRACOWNICY_W_PRACY;
+            db.SaveChanges();
+
         }
 
         private void btnOdswiez_Click(object sender, EventArgs e)
         {
-            KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
-            db = ndb;
-            db.PRACOWNICY_W_PRACY = ndb.PRACOWNICY_W_PRACY;
+            PRACOWNICY_W_PRACY wybranyPracownik;
+            wybranyPracownik = pRACOWNICYWPRACYBindingSource.Current as PRACOWNICY_W_PRACY;
+            REALIZACJA_PRODUKCJA realizacja = db.REALIZACJA_PRODUKCJA.Where(x => x.DATA_DZIEN == data).First();
+            ZESPOL_LUDZI usun = db.ZESPOL_LUDZI.Where(x=> x.ID_PRACOWNIK == wybranyPracownik.ID_PRACOWNIK && x.ID_REALIZACJA_PRODUKCJA == realizacja.ID_REALIZACJA_PRODUKCJA).First();
+            db.ZESPOL_LUDZI.Remove(usun);
             db.SaveChanges();
         }
     }

@@ -98,7 +98,6 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.HISTORIA_STATUS_ZLECENIA" Width="1.5" PointX="21.375" PointY="0.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_MATERIALY" Width="1.5" PointX="21.375" PointY="3.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_PRODUKTY_NAZWY" Width="1.5" PointX="21.375" PointY="6.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY" Width="1.875" PointX="23.375" PointY="0.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.CZAS_PRACY_MASZYN" Width="1.5" PointX="0.75" PointY="23.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.CZAS_PRACY_NARZEDZI" PointX="9.375" PointY="0.75" Width="1.5" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MASZYNY" Width="1.5" PointX="5.5" PointY="5.375" />
@@ -144,6 +143,7 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZESPOL_LU__ID_RE__0B91BA14" />
         <AssociationConnector Association="KWZP_PROJEKTModel.PRACOWNICY_ADRESY_PRACOWNICY" />
         <AssociationConnector Association="KWZP_PROJEKTModel.SZKOLENIE_PRACOWNICY" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY" Width="2.25" PointX="4.375" PointY="14.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

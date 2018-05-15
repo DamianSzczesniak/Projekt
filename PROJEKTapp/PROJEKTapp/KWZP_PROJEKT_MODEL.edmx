@@ -706,8 +706,9 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRACOWNICY_URLOP_STANOWISKO' does
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRACOWNICY_W_PRACY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRACOWNICY_W_PRACY">
           <Key>
-            <PropertyRef Name="DATA_DZIEN" />
+            <PropertyRef Name="ID_PRACOWNIK" />
           </Key>
+          <Property Name="ID_PRACOWNIK" Type="int" Nullable="false" />
           <Property Name="IMIE" Type="varchar" MaxLength="30" />
           <Property Name="NAZWISKO" Type="varchar" MaxLength="30" />
           <Property Name="STANOWISKO" Type="char" MaxLength="30" />
@@ -1926,6 +1927,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           </EntitySet>
           <EntitySet Name="PRACOWNICY_W_PRACY" EntityType="Self.PRACOWNICY_W_PRACY" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [PRACOWNICY_W_PRACY].[ID_PRACOWNIK] AS [ID_PRACOWNIK], 
     [PRACOWNICY_W_PRACY].[IMIE] AS [IMIE], 
     [PRACOWNICY_W_PRACY].[NAZWISKO] AS [NAZWISKO], 
     [PRACOWNICY_W_PRACY].[STANOWISKO] AS [STANOWISKO], 
@@ -3146,7 +3148,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <EntitySet Name="HISTORIA_STATUS_ZLECENIA" EntityType="KWZP_PROJEKTModel.HISTORIA_STATUS_ZLECENIA" />
           <EntitySet Name="ZLECENIA_PRODUKTY_NAZWY" EntityType="KWZP_PROJEKTModel.ZLECENIA_PRODUKTY_NAZWY" />
           <EntitySet Name="SZKOLENIA_PRACOWNIKA" EntityType="KWZP_PROJEKTModel.SZKOLENIA_PRACOWNIKA" />
-          <EntitySet Name="PRACOWNICY_W_PRACY" EntityType="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY" />
           <EntitySet Name="CZAS_PRACY_MASZYN" EntityType="KWZP_PROJEKTModel.CZAS_PRACY_MASZYN" />
           <EntitySet Name="CZAS_PRACY_NARZEDZI" EntityType="KWZP_PROJEKTModel.CZAS_PRACY_NARZEDZI" />
           <EntitySet Name="MASZYNY" EntityType="KWZP_PROJEKTModel.MASZYNY" />
@@ -3253,6 +3254,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="SZKOLENIA" EntitySet="SZKOLENIA" />
           </AssociationSet>
+          <EntitySet Name="PRACOWNICY_W_PRACY" EntityType="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY" />
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -3745,15 +3747,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="OPIS_SZKOLENIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DATA_START" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="DATA_KONIEC" Type="DateTime" Nullable="false" Precision="0" />
-        </EntityType>
-        <EntityType Name="PRACOWNICY_W_PRACY">
-          <Key>
-            <PropertyRef Name="DATA_DZIEN" />
-          </Key>
-          <Property Name="IMIE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="NAZWISKO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="STANOWISKO" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
-          <Property Name="DATA_DZIEN" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="CZAS_PRACY_MASZYN">
           <Key>
@@ -4289,6 +4282,16 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <End Type="KWZP_PROJEKTModel.PRACOWNICY" Role="PRACOWNICY" Multiplicity="*" />
           <End Type="KWZP_PROJEKTModel.SZKOLENIA" Role="SZKOLENIA" Multiplicity="*" />
         </Association>
+        <EntityType Name="PRACOWNICY_W_PRACY">
+          <Key>
+            <PropertyRef Name="ID_PRACOWNIK" />
+          </Key>
+          <Property Name="ID_PRACOWNIK" Type="Int32" Nullable="false" />
+          <Property Name="IMIE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWISKO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="STANOWISKO" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="DATA_DZIEN" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -4927,16 +4930,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PRACOWNICY_W_PRACY">
-            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY">
-              <MappingFragment StoreEntitySet="PRACOWNICY_W_PRACY">
-                <ScalarProperty Name="DATA_DZIEN" ColumnName="DATA_DZIEN" />
-                <ScalarProperty Name="STANOWISKO" ColumnName="STANOWISKO" />
-                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
-                <ScalarProperty Name="IMIE" ColumnName="IMIE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CZAS_PRACY_MASZYN">
             <EntityTypeMapping TypeName="KWZP_PROJEKTModel.CZAS_PRACY_MASZYN">
               <MappingFragment StoreEntitySet="CZAS_PRACY_MASZYN">
@@ -5231,6 +5224,17 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
               <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="PRACOWNICY_W_PRACY">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY">
+              <MappingFragment StoreEntitySet="PRACOWNICY_W_PRACY">
+                <ScalarProperty Name="DATA_DZIEN" ColumnName="DATA_DZIEN" />
+                <ScalarProperty Name="STANOWISKO" ColumnName="STANOWISKO" />
+                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+                <ScalarProperty Name="IMIE" ColumnName="IMIE" />
+                <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

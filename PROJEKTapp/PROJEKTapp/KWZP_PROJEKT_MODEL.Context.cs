@@ -87,7 +87,6 @@ namespace PROJEKTapp
         public virtual DbSet<HISTORIA_STATUS_ZLECENIA> HISTORIA_STATUS_ZLECENIA { get; set; }
         public virtual DbSet<ZLECENIA_PRODUKTY_NAZWY> ZLECENIA_PRODUKTY_NAZWY { get; set; }
         public virtual DbSet<SZKOLENIA_PRACOWNIKA> SZKOLENIA_PRACOWNIKA { get; set; }
-        public virtual DbSet<PRACOWNICY_W_PRACY> PRACOWNICY_W_PRACY { get; set; }
         public virtual DbSet<CZAS_PRACY_MASZYN> CZAS_PRACY_MASZYN { get; set; }
         public virtual DbSet<CZAS_PRACY_NARZEDZI> CZAS_PRACY_NARZEDZI { get; set; }
         public virtual DbSet<MASZYNY> MASZYNY { get; set; }
@@ -114,6 +113,7 @@ namespace PROJEKTapp
         public virtual DbSet<PRACOWNICY_STANOWISKA> PRACOWNICY_STANOWISKA { get; set; }
         public virtual DbSet<PRACOWNICY> PRACOWNICY { get; set; }
         public virtual DbSet<ZESPOL_LUDZI> ZESPOL_LUDZI { get; set; }
+        public virtual DbSet<PRACOWNICY_W_PRACY> PRACOWNICY_W_PRACY { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {
