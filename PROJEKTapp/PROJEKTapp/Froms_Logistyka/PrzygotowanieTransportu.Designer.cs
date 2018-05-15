@@ -42,13 +42,19 @@
             this.ButtonEdytujDostawe = new System.Windows.Forms.Button();
             this.lblIdZlecenia = new System.Windows.Forms.Label();
             this.groupBoxDodaj = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonOszacujTrase = new System.Windows.Forms.Button();
+            this.comboBoxFirmy = new System.Windows.Forms.ComboBox();
+            this.lblFirmy = new System.Windows.Forms.Label();
             this.dataGridViewAdresy = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonDodajAdres = new System.Windows.Forms.Button();
             this.buttonZapisz = new System.Windows.Forms.Button();
             this.dataGridViewDostepnePojazdy = new System.Windows.Forms.DataGridView();
             this.comboBoxZlecenie = new System.Windows.Forms.ComboBox();
             this.lblDlTrasy = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxdlugoscTrasy = new System.Windows.Forms.TextBox();
             this.lblAdres = new System.Windows.Forms.Label();
             this.lblIdPojazdu = new System.Windows.Forms.Label();
             this.checkBoxWszytkie = new System.Windows.Forms.CheckBox();
@@ -207,13 +213,19 @@
             // 
             // groupBoxDodaj
             // 
+            this.groupBoxDodaj.Controls.Add(this.textBox3);
+            this.groupBoxDodaj.Controls.Add(this.textBox2);
+            this.groupBoxDodaj.Controls.Add(this.textBox1);
+            this.groupBoxDodaj.Controls.Add(this.buttonOszacujTrase);
+            this.groupBoxDodaj.Controls.Add(this.comboBoxFirmy);
+            this.groupBoxDodaj.Controls.Add(this.lblFirmy);
             this.groupBoxDodaj.Controls.Add(this.dataGridViewAdresy);
-            this.groupBoxDodaj.Controls.Add(this.button1);
+            this.groupBoxDodaj.Controls.Add(this.buttonDodajAdres);
             this.groupBoxDodaj.Controls.Add(this.buttonZapisz);
             this.groupBoxDodaj.Controls.Add(this.dataGridViewDostepnePojazdy);
             this.groupBoxDodaj.Controls.Add(this.comboBoxZlecenie);
             this.groupBoxDodaj.Controls.Add(this.lblDlTrasy);
-            this.groupBoxDodaj.Controls.Add(this.textBox4);
+            this.groupBoxDodaj.Controls.Add(this.textBoxdlugoscTrasy);
             this.groupBoxDodaj.Controls.Add(this.lblAdres);
             this.groupBoxDodaj.Controls.Add(this.lblIdPojazdu);
             this.groupBoxDodaj.Controls.Add(this.lblIdZlecenia);
@@ -223,26 +235,84 @@
             this.groupBoxDodaj.TabIndex = 27;
             this.groupBoxDodaj.Visible = false;
             // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox3.Location = new System.Drawing.Point(410, 60);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(183, 26);
+            this.textBox3.TabIndex = 74;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox2.Location = new System.Drawing.Point(410, 20);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(183, 26);
+            this.textBox2.TabIndex = 73;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.Location = new System.Drawing.Point(410, 89);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(183, 26);
+            this.textBox1.TabIndex = 73;
+            // 
+            // buttonOszacujTrase
+            // 
+            this.buttonOszacujTrase.BackColor = System.Drawing.Color.Lime;
+            this.buttonOszacujTrase.FlatAppearance.BorderSize = 0;
+            this.buttonOszacujTrase.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOszacujTrase.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonOszacujTrase.Location = new System.Drawing.Point(339, 425);
+            this.buttonOszacujTrase.Name = "buttonOszacujTrase";
+            this.buttonOszacujTrase.Size = new System.Drawing.Size(124, 31);
+            this.buttonOszacujTrase.TabIndex = 72;
+            this.buttonOszacujTrase.Text = "Oszacuj trasę";
+            this.buttonOszacujTrase.UseVisualStyleBackColor = false;
+            this.buttonOszacujTrase.Click += new System.EventHandler(this.buttonOszacujTrase_Click);
+            // 
+            // comboBoxFirmy
+            // 
+            this.comboBoxFirmy.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxFirmy.FormattingEnabled = true;
+            this.comboBoxFirmy.Location = new System.Drawing.Point(121, 57);
+            this.comboBoxFirmy.Name = "comboBoxFirmy";
+            this.comboBoxFirmy.Size = new System.Drawing.Size(183, 26);
+            this.comboBoxFirmy.TabIndex = 71;
+            // 
+            // lblFirmy
+            // 
+            this.lblFirmy.AutoSize = true;
+            this.lblFirmy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblFirmy.Location = new System.Drawing.Point(16, 60);
+            this.lblFirmy.Name = "lblFirmy";
+            this.lblFirmy.Size = new System.Drawing.Size(53, 20);
+            this.lblFirmy.TabIndex = 70;
+            this.lblFirmy.Text = "Firma:";
+            // 
             // dataGridViewAdresy
             // 
             this.dataGridViewAdresy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAdresy.Location = new System.Drawing.Point(20, 273);
+            this.dataGridViewAdresy.Location = new System.Drawing.Point(20, 288);
             this.dataGridViewAdresy.Name = "dataGridViewAdresy";
             this.dataGridViewAdresy.Size = new System.Drawing.Size(666, 123);
             this.dataGridViewAdresy.TabIndex = 69;
+            this.dataGridViewAdresy.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAdresy_CellClick);
             // 
-            // button1
+            // buttonDodajAdres
             // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(77, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 31);
-            this.button1.TabIndex = 68;
-            this.button1.Text = "Dodaj";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonDodajAdres.BackColor = System.Drawing.Color.Lime;
+            this.buttonDodajAdres.FlatAppearance.BorderSize = 0;
+            this.buttonDodajAdres.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodajAdres.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonDodajAdres.Location = new System.Drawing.Point(77, 246);
+            this.buttonDodajAdres.Name = "buttonDodajAdres";
+            this.buttonDodajAdres.Size = new System.Drawing.Size(65, 31);
+            this.buttonDodajAdres.TabIndex = 68;
+            this.buttonDodajAdres.Text = "Dodaj";
+            this.buttonDodajAdres.UseVisualStyleBackColor = false;
             // 
             // buttonZapisz
             // 
@@ -256,11 +326,12 @@
             this.buttonZapisz.TabIndex = 66;
             this.buttonZapisz.Text = "Zapisz";
             this.buttonZapisz.UseVisualStyleBackColor = false;
+            this.buttonZapisz.Click += new System.EventHandler(this.buttonZapisz_Click);
             // 
             // dataGridViewDostepnePojazdy
             // 
             this.dataGridViewDostepnePojazdy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDostepnePojazdy.Location = new System.Drawing.Point(20, 103);
+            this.dataGridViewDostepnePojazdy.Location = new System.Drawing.Point(20, 118);
             this.dataGridViewDostepnePojazdy.Name = "dataGridViewDostepnePojazdy";
             this.dataGridViewDostepnePojazdy.Size = new System.Drawing.Size(666, 118);
             this.dataGridViewDostepnePojazdy.TabIndex = 65;
@@ -279,25 +350,25 @@
             // 
             this.lblDlTrasy.AutoSize = true;
             this.lblDlTrasy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblDlTrasy.Location = new System.Drawing.Point(21, 416);
+            this.lblDlTrasy.Location = new System.Drawing.Point(21, 431);
             this.lblDlTrasy.Name = "lblDlTrasy";
             this.lblDlTrasy.Size = new System.Drawing.Size(110, 20);
             this.lblDlTrasy.TabIndex = 62;
             this.lblDlTrasy.Text = "Długość trasy:";
             // 
-            // textBox4
+            // textBoxdlugoscTrasy
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(141, 413);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(183, 26);
-            this.textBox4.TabIndex = 63;
+            this.textBoxdlugoscTrasy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxdlugoscTrasy.Location = new System.Drawing.Point(141, 428);
+            this.textBoxdlugoscTrasy.Name = "textBoxdlugoscTrasy";
+            this.textBoxdlugoscTrasy.Size = new System.Drawing.Size(183, 26);
+            this.textBoxdlugoscTrasy.TabIndex = 63;
             // 
             // lblAdres
             // 
             this.lblAdres.AutoSize = true;
             this.lblAdres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblAdres.Location = new System.Drawing.Point(16, 236);
+            this.lblAdres.Location = new System.Drawing.Point(16, 251);
             this.lblAdres.Name = "lblAdres";
             this.lblAdres.Size = new System.Drawing.Size(55, 20);
             this.lblAdres.TabIndex = 60;
@@ -307,7 +378,7 @@
             // 
             this.lblIdPojazdu.AutoSize = true;
             this.lblIdPojazdu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblIdPojazdu.Location = new System.Drawing.Point(16, 80);
+            this.lblIdPojazdu.Location = new System.Drawing.Point(16, 95);
             this.lblIdPojazdu.Name = "lblIdPojazdu";
             this.lblIdPojazdu.Size = new System.Drawing.Size(141, 20);
             this.lblIdPojazdu.TabIndex = 58;
@@ -382,12 +453,18 @@
         private System.Windows.Forms.CheckBox checkBoxWszytkie;
         private System.Windows.Forms.ComboBox comboBoxZlecenie;
         private System.Windows.Forms.Label lblDlTrasy;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxdlugoscTrasy;
         private System.Windows.Forms.Label lblAdres;
         private System.Windows.Forms.Label lblIdPojazdu;
         private System.Windows.Forms.Button buttonZapisz;
         private System.Windows.Forms.DataGridView dataGridViewDostepnePojazdy;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonDodajAdres;
         private System.Windows.Forms.DataGridView dataGridViewAdresy;
+        private System.Windows.Forms.ComboBox comboBoxFirmy;
+        private System.Windows.Forms.Label lblFirmy;
+        private System.Windows.Forms.Button buttonOszacujTrase;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
