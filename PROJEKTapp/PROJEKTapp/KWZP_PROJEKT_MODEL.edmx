@@ -68,6 +68,7 @@
           <Property Name="DATA_PLATNOSCI" Type="date" />
           <Property Name="KWOTA" Type="money" />
           <Property Name="ID_WALUTA" Type="int" />
+          <Property Name="CZY_OPLACONA" Type="bit" />
         </EntityType>
         <EntityType Name="FIRMY">
           <Key>
@@ -608,11 +609,11 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.MATERIALY_PO_DODANIU' does not ha
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.OBCIAZENIE_MASZYN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="OBCIAZENIE_MASZYN">
           <Key>
-            <PropertyRef Name="DATA_DZIEN" />
+            <PropertyRef Name="MODEL" />
           </Key>
           <Property Name="DATA_DZIEN" Type="date" Nullable="false" />
           <Property Name="MARKA" Type="nvarchar" MaxLength="50" />
-          <Property Name="MODEL" Type="nvarchar" MaxLength="50" />
+          <Property Name="MODEL" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TYP_MASZYNY" Type="nvarchar" MaxLength="50" />
           <Property Name="NR_EWIDENCYJNY" Type="nvarchar" MaxLength="20" />
         </EntityType>
@@ -620,11 +621,11 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.OBCIAZENIE_MASZYN' does not have 
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.OBCIAZENIE_NARZEDZI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="OBCIAZENIE_NARZEDZI">
           <Key>
-            <PropertyRef Name="DATA_DZIEN" />
+            <PropertyRef Name="MODEL" />
           </Key>
           <Property Name="DATA_DZIEN" Type="date" Nullable="false" />
           <Property Name="NAZWA" Type="nvarchar" MaxLength="50" />
-          <Property Name="MODEL" Type="nvarchar" MaxLength="50" />
+          <Property Name="MODEL" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="NR_EWIDENCYJNY" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -706,6 +707,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRACOWNICY_URLOP_STANOWISKO' does
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.PRACOWNICY_W_PRACY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRACOWNICY_W_PRACY">
           <Key>
+            
             <PropertyRef Name="ID_PRACOWNIK" />
           </Key>
           <Property Name="ID_PRACOWNIK" Type="int" Nullable="false" />
@@ -2629,7 +2631,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="NAZWA" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="KURS_DO_PLN" Type="Single" Nullable="false" />
           <Property Name="DATA_KURS" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="FAKTURY" Relationship="KWZP_PROJEKTModel.FK__FAKTURY__ID_WALU__208CD6FA" FromRole="WALUTY" ToRole="FAKTURY" />
+          <NavigationProperty Name="FAKTURY" Relationship="KWZP_PROJEKTModel.FK__FAKTURY__ID_WALU__2180FB33" FromRole="WALUTY" ToRole="FAKTURY" />
         </EntityType>
         <EntityType Name="WOLNE">
           <Key>
@@ -2667,7 +2669,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <NavigationProperty Name="ZMIANA_STANU_MAGAZYNU_MATERIALOW" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_ZL__2739D489" FromRole="ZLECENIA" ToRole="ZMIANA_STANU_MAGAZYNU_MATERIALOW" />
           <NavigationProperty Name="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" Relationship="KWZP_PROJEKTModel.FK__ZMIANA_ST__ID_ZL__2BFE89A6" FromRole="ZLECENIA" ToRole="ZMIANA_STANU_MAGAZYNU_PRODUKTOW" />
           <NavigationProperty Name="ZLECENIE_PRODUKT" Relationship="KWZP_PROJEKTModel.FK__ZLECENIE___ID_ZL__4F47C5E3" FromRole="ZLECENIA" ToRole="ZLECENIE_PRODUKT" />
-          <NavigationProperty Name="FAKTURY" Relationship="KWZP_PROJEKTModel.FK__FAKTURY__ID_ZLEC__1EA48E88" FromRole="ZLECENIA" ToRole="FAKTURY" />
+          <NavigationProperty Name="FAKTURY" Relationship="KWZP_PROJEKTModel.FK__FAKTURY__ID_ZLEC__1F98B2C1" FromRole="ZLECENIA" ToRole="FAKTURY" />
         </EntityType>
         <EntityType Name="PARAMETRY_MASZYNY">
           <Key>
@@ -3189,15 +3191,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <EntitySet Name="PRODUKTY_DO_ZMAGAZYNOWANIA" EntityType="KWZP_PROJEKTModel.PRODUKTY_DO_ZMAGAZYNOWANIA" />
           <EntitySet Name="PRODUKTY_POZOSTALE_DO_TRANSPORTU" EntityType="KWZP_PROJEKTModel.PRODUKTY_POZOSTALE_DO_TRANSPORTU" />
           <EntitySet Name="AKTUALNY_KURS" EntityType="KWZP_PROJEKTModel.AKTUALNY_KURS" />
-          <EntitySet Name="FAKTURY" EntityType="KWZP_PROJEKTModel.FAKTURY" />
-          <AssociationSet Name="FK__FAKTURY__ID_WALU__208CD6FA" Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_WALU__208CD6FA">
-            <End Role="WALUTY" EntitySet="WALUTY" />
-            <End Role="FAKTURY" EntitySet="FAKTURY" />
-          </AssociationSet>
-          <AssociationSet Name="FK__FAKTURY__ID_ZLEC__1EA48E88" Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_ZLEC__1EA48E88">
-            <End Role="ZLECENIA" EntitySet="ZLECENIA" />
-            <End Role="FAKTURY" EntitySet="FAKTURY" />
-          </AssociationSet>
           <EntitySet Name="PROCES" EntityType="KWZP_PROJEKTModel.PROCES" />
           <EntitySet Name="KOSZTY_CZASY_PRODUKCJI" EntityType="KWZP_PROJEKTModel.KOSZTY_CZASY_PRODUKCJI" />
           <EntitySet Name="OFERTA" EntityType="KWZP_PROJEKTModel.OFERTA" />
@@ -3217,10 +3210,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <AssociationSet Name="FK__DOKUMENTA__ID_PR__40058253" Association="KWZP_PROJEKTModel.FK__DOKUMENTA__ID_PR__40058253">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
             <End Role="DOKUMENTACJA" EntitySet="DOKUMENTACJA" />
-          </AssociationSet>
-          <AssociationSet Name="FK__FAKTURY__ID_PRAC__208CD6FA" Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_PRAC__208CD6FA">
-            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
-            <End Role="FAKTURY" EntitySet="FAKTURY" />
           </AssociationSet>
           <AssociationSet Name="FK__STANOWISK__ID_PR__72C60C4A" Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_PR__72C60C4A">
             <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
@@ -3255,6 +3244,19 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
             <End Role="SZKOLENIA" EntitySet="SZKOLENIA" />
           </AssociationSet>
           <EntitySet Name="PRACOWNICY_W_PRACY" EntityType="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY" />
+          <EntitySet Name="FAKTURY" EntityType="KWZP_PROJEKTModel.FAKTURY" />
+          <AssociationSet Name="FK__FAKTURY__ID_PRAC__208CD6FA" Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_PRAC__208CD6FA">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="FAKTURY" EntitySet="FAKTURY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FAKTURY__ID_WALU__2180FB33" Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_WALU__2180FB33">
+            <End Role="WALUTY" EntitySet="WALUTY" />
+            <End Role="FAKTURY" EntitySet="FAKTURY" />
+          </AssociationSet>
+          <AssociationSet Name="FK__FAKTURY__ID_ZLEC__1F98B2C1" Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_ZLEC__1F98B2C1">
+            <End Role="ZLECENIA" EntitySet="ZLECENIA" />
+            <End Role="FAKTURY" EntitySet="FAKTURY" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="WYKORZYSTANE_MASZYNY">
           <Key>
@@ -3282,21 +3284,21 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
         </EntityType>
         <EntityType Name="OBCIAZENIE_MASZYN">
           <Key>
-            <PropertyRef Name="DATA_DZIEN" />
+            <PropertyRef Name="MODEL" />
           </Key>
           <Property Name="DATA_DZIEN" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="MARKA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TYP_MASZYNY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NR_EWIDENCYJNY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OBCIAZENIE_NARZEDZI">
           <Key>
-            <PropertyRef Name="DATA_DZIEN" />
+            <PropertyRef Name="MODEL" />
           </Key>
           <Property Name="DATA_DZIEN" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="NAZWA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NR_EWIDENCYJNY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <ComplexType Name="AddPracownik_Result">
@@ -4022,45 +4024,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="KURS_DO_PLN" Type="Single" Nullable="false" />
           <Property Name="DATA_AKTUALIZACJI" Type="DateTime" Precision="0" />
         </EntityType>
-        <EntityType Name="FAKTURY">
-          <Key>
-            <PropertyRef Name="ID_FAKTURY" />
-          </Key>
-          <Property Name="ID_FAKTURY" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_ZLECENIA" Type="Int32" />
-          <Property Name="ID_PRACOWNIKA" Type="Int32" />
-          <Property Name="DATA_WYSTAWIENIA" Type="DateTime" Precision="0" />
-          <Property Name="DATA_PLATNOSCI" Type="DateTime" Precision="0" />
-          <Property Name="KWOTA" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="ID_WALUTA" Type="Int32" />
-          <NavigationProperty Name="WALUTY" Relationship="KWZP_PROJEKTModel.FK__FAKTURY__ID_WALU__208CD6FA" FromRole="FAKTURY" ToRole="WALUTY" />
-          <NavigationProperty Name="ZLECENIA" Relationship="KWZP_PROJEKTModel.FK__FAKTURY__ID_ZLEC__1EA48E88" FromRole="FAKTURY" ToRole="ZLECENIA" />
-          <NavigationProperty Name="PRACOWNICY" Relationship="KWZP_PROJEKTModel.FK__FAKTURY__ID_PRAC__208CD6FA" FromRole="FAKTURY" ToRole="PRACOWNICY" />
-        </EntityType>
-        <Association Name="FK__FAKTURY__ID_WALU__208CD6FA">
-          <End Type="KWZP_PROJEKTModel.WALUTY" Role="WALUTY" Multiplicity="0..1" />
-          <End Type="KWZP_PROJEKTModel.FAKTURY" Role="FAKTURY" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="WALUTY">
-              <PropertyRef Name="ID_WALUTY" />
-            </Principal>
-            <Dependent Role="FAKTURY">
-              <PropertyRef Name="ID_WALUTA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__FAKTURY__ID_ZLEC__1EA48E88">
-          <End Type="KWZP_PROJEKTModel.ZLECENIA" Role="ZLECENIA" Multiplicity="0..1" />
-          <End Type="KWZP_PROJEKTModel.FAKTURY" Role="FAKTURY" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ZLECENIA">
-              <PropertyRef Name="ID_ZLECENIA" />
-            </Principal>
-            <Dependent Role="FAKTURY">
-              <PropertyRef Name="ID_ZLECENIA" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="PROCES">
           <Key>
             <PropertyRef Name="ID_PROCESU" />
@@ -4159,7 +4122,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="TELEFON" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="PESEL" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DOKUMENTACJA" Relationship="KWZP_PROJEKTModel.FK__DOKUMENTA__ID_PR__40058253" FromRole="PRACOWNICY" ToRole="DOKUMENTACJA" />
-          <NavigationProperty Name="FAKTURY" Relationship="KWZP_PROJEKTModel.FK__FAKTURY__ID_PRAC__208CD6FA" FromRole="PRACOWNICY" ToRole="FAKTURY" />
           <NavigationProperty Name="STANOWISKO_PRACOWNICY" Relationship="KWZP_PROJEKTModel.FK__STANOWISK__ID_PR__72C60C4A" FromRole="PRACOWNICY" ToRole="STANOWISKO_PRACOWNICY" />
           <NavigationProperty Name="STAWKA_PRACOWNICY" Relationship="KWZP_PROJEKTModel.FK__STAWKA_PR__ID_PR__7D439ABD" FromRole="PRACOWNICY" ToRole="STAWKA_PRACOWNICY" />
           <NavigationProperty Name="UZYTKOWNICY" Relationship="KWZP_PROJEKTModel.FK__UZYTKOWNI__ID_PR__540C7B00" FromRole="PRACOWNICY" ToRole="UZYTKOWNICY" />
@@ -4167,6 +4129,7 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <NavigationProperty Name="ZESPOL_LUDZI" Relationship="KWZP_PROJEKTModel.FK__ZESPOL_LU__ID_PR__0C85DE4D" FromRole="PRACOWNICY" ToRole="ZESPOL_LUDZI" />
           <NavigationProperty Name="ADRESY_PRACOWNICY" Relationship="KWZP_PROJEKTModel.PRACOWNICY_ADRESY_PRACOWNICY" FromRole="PRACOWNICY" ToRole="ADRESY_PRACOWNICY" />
           <NavigationProperty Name="SZKOLENIA" Relationship="KWZP_PROJEKTModel.SZKOLENIE_PRACOWNICY" FromRole="PRACOWNICY" ToRole="SZKOLENIA" />
+          <NavigationProperty Name="FAKTURY" Relationship="KWZP_PROJEKTModel.FK__FAKTURY__ID_PRAC__208CD6FA" FromRole="PRACOWNICY" ToRole="FAKTURY" />
         </EntityType>
         <EntityType Name="ZESPOL_LUDZI">
           <Key>
@@ -4187,18 +4150,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
             </Principal>
             <Dependent Role="DOKUMENTACJA">
               <PropertyRef Name="ID_PRACOWNIK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__FAKTURY__ID_PRAC__208CD6FA">
-          <End Type="KWZP_PROJEKTModel.PRACOWNICY" Role="PRACOWNICY" Multiplicity="0..1" />
-          <End Type="KWZP_PROJEKTModel.FAKTURY" Role="FAKTURY" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PRACOWNICY">
-              <PropertyRef Name="ID_PRACOWNIK" />
-            </Principal>
-            <Dependent Role="FAKTURY">
-              <PropertyRef Name="ID_PRACOWNIKA" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -4292,6 +4243,58 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
           <Property Name="STANOWISKO" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
           <Property Name="DATA_DZIEN" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
+        <EntityType Name="FAKTURY">
+          <Key>
+            <PropertyRef Name="ID_FAKTURY" />
+          </Key>
+          <Property Name="ID_FAKTURY" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_ZLECENIA" Type="Int32" />
+          <Property Name="ID_PRACOWNIKA" Type="Int32" />
+          <Property Name="DATA_WYSTAWIENIA" Type="DateTime" Precision="0" />
+          <Property Name="DATA_PLATNOSCI" Type="DateTime" Precision="0" />
+          <Property Name="KWOTA" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ID_WALUTA" Type="Int32" />
+          <Property Name="CZY_OPLACONA" Type="Boolean" />
+          <NavigationProperty Name="PRACOWNICY" Relationship="KWZP_PROJEKTModel.FK__FAKTURY__ID_PRAC__208CD6FA" FromRole="FAKTURY" ToRole="PRACOWNICY" />
+          <NavigationProperty Name="WALUTY" Relationship="KWZP_PROJEKTModel.FK__FAKTURY__ID_WALU__2180FB33" FromRole="FAKTURY" ToRole="WALUTY" />
+          <NavigationProperty Name="ZLECENIA" Relationship="KWZP_PROJEKTModel.FK__FAKTURY__ID_ZLEC__1F98B2C1" FromRole="FAKTURY" ToRole="ZLECENIA" />
+        </EntityType>
+        <Association Name="FK__FAKTURY__ID_PRAC__208CD6FA">
+          <End Type="KWZP_PROJEKTModel.PRACOWNICY" Role="PRACOWNICY" Multiplicity="0..1" />
+          <End Type="KWZP_PROJEKTModel.FAKTURY" Role="FAKTURY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="ID_PRACOWNIK" />
+            </Principal>
+            <Dependent Role="FAKTURY">
+              <PropertyRef Name="ID_PRACOWNIKA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FAKTURY__ID_WALU__2180FB33">
+          <End Type="KWZP_PROJEKTModel.WALUTY" Role="WALUTY" Multiplicity="0..1" />
+          <End Type="KWZP_PROJEKTModel.FAKTURY" Role="FAKTURY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WALUTY">
+              <PropertyRef Name="ID_WALUTY" />
+            </Principal>
+            <Dependent Role="FAKTURY">
+              <PropertyRef Name="ID_WALUTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__FAKTURY__ID_ZLEC__1F98B2C1">
+          <End Type="KWZP_PROJEKTModel.ZLECENIA" Role="ZLECENIA" Multiplicity="0..1" />
+          <End Type="KWZP_PROJEKTModel.FAKTURY" Role="FAKTURY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZLECENIA">
+              <PropertyRef Name="ID_ZLECENIA" />
+            </Principal>
+            <Dependent Role="FAKTURY">
+              <PropertyRef Name="ID_ZLECENIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -5113,19 +5116,6 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="FAKTURY">
-            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.FAKTURY">
-              <MappingFragment StoreEntitySet="FAKTURY">
-                <ScalarProperty Name="ID_WALUTA" ColumnName="ID_WALUTA" />
-                <ScalarProperty Name="KWOTA" ColumnName="KWOTA" />
-                <ScalarProperty Name="DATA_PLATNOSCI" ColumnName="DATA_PLATNOSCI" />
-                <ScalarProperty Name="DATA_WYSTAWIENIA" ColumnName="DATA_WYSTAWIENIA" />
-                <ScalarProperty Name="ID_PRACOWNIKA" ColumnName="ID_PRACOWNIKA" />
-                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
-                <ScalarProperty Name="ID_FAKTURY" ColumnName="ID_FAKTURY" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PROCES">
             <EntityTypeMapping TypeName="KWZP_PROJEKTModel.PROCES">
               <MappingFragment StoreEntitySet="PROCES">
@@ -5232,6 +5222,20 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
                 <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
                 <ScalarProperty Name="IMIE" ColumnName="IMIE" />
                 <ScalarProperty Name="ID_PRACOWNIK" ColumnName="ID_PRACOWNIK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FAKTURY">
+            <EntityTypeMapping TypeName="KWZP_PROJEKTModel.FAKTURY">
+              <MappingFragment StoreEntitySet="FAKTURY">
+                <ScalarProperty Name="CZY_OPLACONA" ColumnName="CZY_OPLACONA" />
+                <ScalarProperty Name="ID_WALUTA" ColumnName="ID_WALUTA" />
+                <ScalarProperty Name="KWOTA" ColumnName="KWOTA" />
+                <ScalarProperty Name="DATA_PLATNOSCI" ColumnName="DATA_PLATNOSCI" />
+                <ScalarProperty Name="DATA_WYSTAWIENIA" ColumnName="DATA_WYSTAWIENIA" />
+                <ScalarProperty Name="ID_PRACOWNIKA" ColumnName="ID_PRACOWNIKA" />
+                <ScalarProperty Name="ID_ZLECENIA" ColumnName="ID_ZLECENIA" />
+                <ScalarProperty Name="ID_FAKTURY" ColumnName="ID_FAKTURY" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

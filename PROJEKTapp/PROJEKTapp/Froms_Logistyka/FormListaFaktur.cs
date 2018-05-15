@@ -52,5 +52,28 @@ namespace PROJEKTapp.Forms.Forms_Logistyka
         {
             this.Close();
         }
+
+        private void ckcBZaplacono_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckcBZaplacono.Checked)
+            {
+
+                var idfaktura = from fa in db.FAKTURY.Where(a => a.CZY_OPLACONA == false)
+                                join z in db.ZLECENIA on fa.ID_ZLECENIA equals z.ID_ZLECENIA
+                                join f in db.FIRMY on z.ID_FIRMY equals f.ID_FIRMY
+                                join p in db.PRACOWNICY on fa.ID_PRACOWNIKA equals p.ID_PRACOWNIK
+                                select new { fa.ID_FAKTURY, f.NAZWA_FIRMY, f.ADRES_EMAIL, f.NR_TELEFONU, f.NIP, fa.ID_ZLECENIA, fa.DATA_WYSTAWIENIA, fa.DATA_PLATNOSCI, fa.KWOTA, fa.ID_WALUTA, p.IMIE, p.NAZWISKO };
+                this.dataGridView_lista_faktur.DataSource = idfaktura.ToList();
+            }
+            else
+            {
+                var idfaktura = from fa in db.FAKTURY
+                                join z in db.ZLECENIA on fa.ID_ZLECENIA equals z.ID_ZLECENIA
+                                join f in db.FIRMY on z.ID_FIRMY equals f.ID_FIRMY
+                                join p in db.PRACOWNICY on fa.ID_PRACOWNIKA equals p.ID_PRACOWNIK
+                                select new { fa.ID_FAKTURY, f.NAZWA_FIRMY, f.ADRES_EMAIL, f.NR_TELEFONU, f.NIP, fa.ID_ZLECENIA, fa.DATA_WYSTAWIENIA, fa.DATA_PLATNOSCI, fa.KWOTA, fa.ID_WALUTA, p.IMIE, p.NAZWISKO };
+                this.dataGridView_lista_faktur.DataSource = idfaktura.ToList();
+            }
+        }
     }
 }

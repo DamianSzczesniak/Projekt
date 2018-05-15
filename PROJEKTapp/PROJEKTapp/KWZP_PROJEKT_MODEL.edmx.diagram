@@ -120,9 +120,6 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKTY_DO_ZMAGAZYNOWANIA" Width="1.5" PointX="13.375" PointY="24.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKTY_POZOSTALE_DO_TRANSPORTU" Width="1.5" PointX="15.375" PointY="24.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_KURS" Width="1.5" PointX="25.375" PointY="3.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.FAKTURY" Width="1.5" PointX="26" PointY="16.625" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_WALU__208CD6FA" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_ZLEC__1EA48E88" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PROCES" Width="1.5" PointX="3.375" PointY="1" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.KOSZTY_CZASY_PRODUKCJI" Width="1.5" PointX="23.75" PointY="7" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.OFERTA" Width="1.5" PointX="23.375" PointY="27.375" />
@@ -134,7 +131,6 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY" Width="1.5" PointX="9" PointY="43" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZESPOL_LUDZI" Width="1.5" PointX="15" PointY="34.5" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DOKUMENTA__ID_PR__40058253" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_PRAC__208CD6FA" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_PR__72C60C4A" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__STAWKA_PR__ID_PR__7D439ABD" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__UZYTKOWNI__ID_PR__540C7B00" />
@@ -144,6 +140,10 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.PRACOWNICY_ADRESY_PRACOWNICY" />
         <AssociationConnector Association="KWZP_PROJEKTModel.SZKOLENIE_PRACOWNICY" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY" Width="2.25" PointX="4.375" PointY="14.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.FAKTURY" Width="1.5" PointX="16" PointY="27.75" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_PRAC__208CD6FA" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_WALU__2180FB33" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_ZLEC__1F98B2C1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

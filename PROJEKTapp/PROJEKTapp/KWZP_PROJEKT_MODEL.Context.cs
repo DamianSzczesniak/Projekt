@@ -104,7 +104,6 @@ namespace PROJEKTapp
         public virtual DbSet<PRODUKTY_DO_ZMAGAZYNOWANIA> PRODUKTY_DO_ZMAGAZYNOWANIA { get; set; }
         public virtual DbSet<PRODUKTY_POZOSTALE_DO_TRANSPORTU> PRODUKTY_POZOSTALE_DO_TRANSPORTU { get; set; }
         public virtual DbSet<AKTUALNY_KURS> AKTUALNY_KURS { get; set; }
-        public virtual DbSet<FAKTURY> FAKTURY { get; set; }
         public virtual DbSet<PROCES> PROCES { get; set; }
         public virtual DbSet<KOSZTY_CZASY_PRODUKCJI> KOSZTY_CZASY_PRODUKCJI { get; set; }
         public virtual DbSet<OFERTA> OFERTA { get; set; }
@@ -114,6 +113,7 @@ namespace PROJEKTapp
         public virtual DbSet<PRACOWNICY> PRACOWNICY { get; set; }
         public virtual DbSet<ZESPOL_LUDZI> ZESPOL_LUDZI { get; set; }
         public virtual DbSet<PRACOWNICY_W_PRACY> PRACOWNICY_W_PRACY { get; set; }
+        public virtual DbSet<FAKTURY> FAKTURY { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)
         {

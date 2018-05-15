@@ -18,7 +18,6 @@ namespace PROJEKTapp
         public PRACOWNICY()
         {
             this.DOKUMENTACJA = new HashSet<DOKUMENTACJA>();
-            this.FAKTURY = new HashSet<FAKTURY>();
             this.STANOWISKO_PRACOWNICY = new HashSet<STANOWISKO_PRACOWNICY>();
             this.STAWKA_PRACOWNICY = new HashSet<STAWKA_PRACOWNICY>();
             this.UZYTKOWNICY = new HashSet<UZYTKOWNICY>();
@@ -26,6 +25,7 @@ namespace PROJEKTapp
             this.ZESPOL_LUDZI = new HashSet<ZESPOL_LUDZI>();
             this.ADRESY_PRACOWNICY = new HashSet<ADRESY_PRACOWNICY>();
             this.SZKOLENIA = new HashSet<SZKOLENIA>();
+            this.FAKTURY = new HashSet<FAKTURY>();
         }
     
         public int ID_PRACOWNIK { get; set; }
@@ -36,8 +36,6 @@ namespace PROJEKTapp
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DOKUMENTACJA> DOKUMENTACJA { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FAKTURY> FAKTURY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<STANOWISKO_PRACOWNICY> STANOWISKO_PRACOWNICY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -52,5 +50,7 @@ namespace PROJEKTapp
         public virtual ICollection<ADRESY_PRACOWNICY> ADRESY_PRACOWNICY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SZKOLENIA> SZKOLENIA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FAKTURY> FAKTURY { get; set; }
     }
 }
