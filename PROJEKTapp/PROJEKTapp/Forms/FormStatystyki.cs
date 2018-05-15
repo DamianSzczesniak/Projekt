@@ -248,5 +248,15 @@ namespace PROJEKTapp
             Forms_NoweZlecenie.SzczegolyZlecenia szczegoly = new Forms_NoweZlecenie.SzczegolyZlecenia(id, db, uprawnienia);
             szczegoly.Show();
         }
+
+        private void label5_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            pictureBox1.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Hide();
+        }
     }
 }
