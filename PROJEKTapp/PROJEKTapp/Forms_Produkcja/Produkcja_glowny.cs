@@ -70,6 +70,7 @@ namespace PROJEKTapp
             db = ndb;
             db.PRACOWNICY_W_PRACY = ndb.PRACOWNICY_W_PRACY;
             db.SaveChanges();
+            pRACOWNICYWPRACYBindingSource.DataSource = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();
 
         }
 
@@ -81,6 +82,11 @@ namespace PROJEKTapp
             ZESPOL_LUDZI usun = db.ZESPOL_LUDZI.Where(x=> x.ID_PRACOWNIK == wybranyPracownik.ID_PRACOWNIK && x.ID_REALIZACJA_PRODUKCJA == realizacja.ID_REALIZACJA_PRODUKCJA).First();
             db.ZESPOL_LUDZI.Remove(usun);
             db.SaveChanges();
+            KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
+            db = ndb;
+            db.PRACOWNICY_W_PRACY = ndb.PRACOWNICY_W_PRACY;
+            db.SaveChanges();
+            pRACOWNICYWPRACYBindingSource.DataSource = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();
         }
     }
 }

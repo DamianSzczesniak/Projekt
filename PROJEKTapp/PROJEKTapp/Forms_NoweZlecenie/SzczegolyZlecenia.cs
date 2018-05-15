@@ -60,7 +60,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 
             foreach (CZAS_PRACY_MASZYN czasPracy in czasyPracy)
             {
-                for (int i = 0; i < czasPracy.ILOSC_DNI_PRACY; i++)
+                for (int i = 0; i <= czasPracy.ILOSC_DNI_PRACY; i++)
                 {
                     if (maxDlugosc < i)
                     {
