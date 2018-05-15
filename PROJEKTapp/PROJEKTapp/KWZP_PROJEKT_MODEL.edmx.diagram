@@ -18,8 +18,6 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PODATEK" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.POJAZDY" Width="1.5" PointX="5.25" PointY="34.125" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.POLPRODUKTY" Width="1.5" PointX="12.75" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PROCES" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKT" Width="1.5" PointX="12.75" PointY="12.5" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PROJEKT" Width="1.5" PointX="5.25" PointY="28.5" IsExpanded="true" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.REALIZACJA_PRODUKCJA" Width="1.5" PointX="7.5" PointY="11" IsExpanded="true" />
@@ -40,7 +38,6 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ADRESY__ID_MIAST__66603565" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DOSTAWA__ID_ADRE__123EB7A3" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ADRESY_PR__ID_MI__693CA210" ManuallyRouted="false" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__DOKUMENTA__ID_PR__3E1D39E1" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DOKUMENTA__ID_PR__3F115E1A" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__POLPRODUK__ID_DO__489AC854" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__DOSTAWA__ID_FIRM__1332DBDC" ManuallyRouted="false" />
@@ -53,18 +50,11 @@
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__PARAMETRY__ID_PA__339FAB6E" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__PARAMETRY__ID_PA__44CA3770" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__PRODUKCJA__ID_PO__4A8310C6" ManuallyRouted="false" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_PR__71D1E811" ManuallyRouted="false" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__STAWKA_PR__ID_PR__7C4F7684" ManuallyRouted="false" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__WOLNE_PRA__ID_PR__76969D2E" ManuallyRouted="false" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__PROCES__ID_SLOWN__37703C52" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__PRODUKCJA__ID_PR__4B7734FF" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__REALIZACJ__ID_ZL__03F0984C" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_ST__72C60C4A" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__STAWKA_PR__ID_ST__7D439ABD" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__WOLNE_PRA__ID_WO__75A278F5" ManuallyRouted="false" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.PRACOWNICY_ADRESY_PRACOWNICY" ManuallyRouted="false" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.SZKOLENIE_PRACOWNICY" ManuallyRouted="false" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.ZESPOL_LUDZI" ManuallyRouted="false" />
         <AssociationConnector Association="KWZP_PROJEKTModel.ZESPOL_MATERIAL" ManuallyRouted="false" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.WYKORZYSTANE_MASZYNY" Width="1.5" PointX="13.375" PointY="6.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.WYKORZYSTANE_NARZEDZIA" Width="1.5" PointX="13.375" PointY="9.75" />
@@ -73,12 +63,10 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.OBCIAZENIE_NARZEDZI" Width="1.5" PointX="15.375" PointY="6.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.GABARYT_PRODUTKU" Width="1.5" PointX="15.375" PointY="9.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MASA_PRODUKTU" Width="1.5" PointX="15.375" PointY="12.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_STANOWISKA" Width="1.5" PointX="17.375" PointY="5.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.STAWKA_OKRES" Width="1.5" PointX="17.375" PointY="8.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_ZATRUDNIENI" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_ZATRUDNIENI" Width="1.75" PointX="17.375" PointY="0.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.UPRAWNIENIA" Width="1.5" PointX="11.25" PointY="26.625" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.UZYTKOWNICY" Width="1.5" PointX="13.5" PointY="21.25" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__UZYTKOWNI__ID_PR__531856C7" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__UZYTKOWNI__UPRAW__540C7B00" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_URLOP_STANOWISKO" Width="1.5" PointX="17.75" PointY="16.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNIK_DANE" Width="1.5" PointX="0.75" PointY="18.75" />
@@ -110,7 +98,7 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.HISTORIA_STATUS_ZLECENIA" Width="1.5" PointX="21.375" PointY="0.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_MATERIALY" Width="1.5" PointX="21.375" PointY="3.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZLECENIA_PRODUKTY_NAZWY" Width="1.5" PointX="21.375" PointY="6.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY" Width="1.5" PointX="23.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_W_PRACY" Width="1.875" PointX="23.375" PointY="0.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.CZAS_PRACY_MASZYN" Width="1.5" PointX="0.75" PointY="23.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.CZAS_PRACY_NARZEDZI" PointX="9.375" PointY="0.75" Width="1.5" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MASZYNY" Width="1.5" PointX="5.5" PointY="5.375" />
@@ -118,29 +106,44 @@
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZESPOL_MASZYN" PointX="9.75" PointY="3.625" Width="1.5" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZESPOL_NARZEDZI" Width="1.5" PointX="13.75" PointY="27.375" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__MASZYNY__ID_MODE__66603565" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__PROCES__ID_MASZY__3B40CD36" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZESPOL_MA__ID_MA__0A9D95DB" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZESPOL_NA__ID_NA__114A936A" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZESPOL_MA__ID_RE__09A971A2" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZESPOL_NA__ID_RE__10566F31" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.KOSZTY_CZASY_PRODUKCJI" Width="1.5" PointX="23.375" PointY="3.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.OFERTA" Width="2.75" PointX="23.375" PointY="6.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PENSJE" PointX="21.375" PointY="21.75" Width="1.5" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZAMOWIENIA" Width="1.5" PointX="5.25" PointY="38.5" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZAMOWIENI__ID_FI__2EDAF651" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.Status_detale_zlecenie" Width="1.5" PointX="24.375" PointY="9.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE" Width="1.5" PointX="23.375" PointY="16.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZAMOWIENIA_MATERIALU_NAZLECENIE" Width="1.5" PointX="23.375" PointY="19.75" />
-        <EntityTypeShape EntityType="KWZP_PROJEKTModel.zestawienie" Width="3.125" PointX="23.375" PointY="23.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MATERIALY_PO_DODANIU" Width="1.5" PointX="24.375" PointY="13.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.MATERIAL_ZDJETY" Width="1.5" PointX="25.375" PointY="0.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKTY_DO_ZMAGAZYNOWANIA" Width="1.5" PointX="13.375" PointY="24.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRODUKTY_POZOSTALE_DO_TRANSPORTU" Width="1.5" PointX="15.375" PointY="24.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.AKTUALNY_KURS" Width="1.5" PointX="25.375" PointY="3.75" />
         <EntityTypeShape EntityType="KWZP_PROJEKTModel.FAKTURY" Width="1.5" PointX="26" PointY="16.625" />
-        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_PRAC__1F98B2C1" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_WALU__208CD6FA" />
         <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_ZLEC__1EA48E88" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PROCES" Width="1.5" PointX="3.375" PointY="1" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.KOSZTY_CZASY_PRODUKCJI" Width="1.5" PointX="23.75" PointY="7" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.OFERTA" Width="1.5" PointX="23.375" PointY="27.375" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.OFERTY" Width="1.5" PointX="25.75" PointY="7" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.zestawienie" Width="1.5" PointX="25.375" PointY="24.375" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__PROCES__ID_MASZY__395884C4" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__PROCES__ID_SLOWN__3864608B" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY_STANOWISKA" Width="1.5" PointX="25.375" PointY="20.75" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.PRACOWNICY" Width="1.5" PointX="9" PointY="43" />
+        <EntityTypeShape EntityType="KWZP_PROJEKTModel.ZESPOL_LUDZI" Width="1.5" PointX="15" PointY="34.5" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__DOKUMENTA__ID_PR__40058253" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__FAKTURY__ID_PRAC__208CD6FA" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__STANOWISK__ID_PR__72C60C4A" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__STAWKA_PR__ID_PR__7D439ABD" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__UZYTKOWNI__ID_PR__540C7B00" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__WOLNE_PRA__ID_PR__778AC167" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZESPOL_LU__ID_PR__0C85DE4D" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.FK__ZESPOL_LU__ID_RE__0B91BA14" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.PRACOWNICY_ADRESY_PRACOWNICY" />
+        <AssociationConnector Association="KWZP_PROJEKTModel.SZKOLENIE_PRACOWNICY" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

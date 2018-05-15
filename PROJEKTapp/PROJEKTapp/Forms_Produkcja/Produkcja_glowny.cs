@@ -14,7 +14,7 @@ namespace PROJEKTapp
     public partial class Produkcja_glowny : Form
     {
         KWZP_PROJEKTEntities db;
-        DateTime data = new DateTime();
+        DateTime data = DateTime.Today;
         public Produkcja_glowny(KWZP_PROJEKTEntities db)
         {
             this.db = db;
@@ -46,6 +46,7 @@ namespace PROJEKTapp
 
         private void Produkcja_glowny_Load(object sender, EventArgs e)
         {
+            pRACOWNICYSTANOWISKABindingSource.DataSource = db.PRACOWNICY_STANOWISKA.Where(x => x.ID_PRACOWNIK <= 10).ToList();
             GridPracownicyWPracy.DataSource = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();
         }
 
@@ -53,6 +54,27 @@ namespace PROJEKTapp
         {
             Forms_Produkcja.FormSpis spis = new Forms_Produkcja.FormSpis(db);
             spis.Show();
+        }
+
+        private void btnDodajPracownika_Click(object sender, EventArgs e)
+        {
+            PRACOWNICY_STANOWISKA wybranyPracownik;
+            wybranyPracownik = pRACOWNICYSTANOWISKABindingSource.Current as PRACOWNICY_STANOWISKA;
+            REALIZACJA_PRODUKCJA realizacja = db.REALIZACJA_PRODUKCJA.Where(x => x.DATA_DZIEN == data).First();
+            ZESPOL_LUDZI pracownikDoWpisania = new ZESPOL_LUDZI();
+            pracownikDoWpisania.ID_REALIZACJA_PRODUKCJA = realizacja.ID_REALIZACJA_PRODUKCJA;
+            pracownikDoWpisania.ID_PRACOWNIK = wybranyPracownik.ID_PRACOWNIK;
+            db.ZESPOL_LUDZI.Add(pracownikDoWpisania);
+            db.SaveChanges();
+            
+        }
+
+        private void btnOdswiez_Click(object sender, EventArgs e)
+        {
+            KWZP_PROJEKTEntities ndb = new KWZP_PROJEKTEntities();
+            db = ndb;
+            db.PRACOWNICY_W_PRACY = ndb.PRACOWNICY_W_PRACY;
+            db.SaveChanges();
         }
     }
 }

@@ -12,10 +12,10 @@ namespace PROJEKTapp
     using System;
     using System.Collections.Generic;
     
-    public partial class KOSZTY_CZASY_PRODUKCJI
+    public partial class OFERTY
     {
         public int ID_ZLECENIA { get; set; }
-        public Nullable<double> KOSZT_PRODUKCJI { get; set; }
-        public Nullable<double> ILOSC_DNI_PRACY { get; set; }
+        public Nullable<double> KOSZT { get; set; }
+        public Nullable<double> CZAS { get; set; }
     }
 }
