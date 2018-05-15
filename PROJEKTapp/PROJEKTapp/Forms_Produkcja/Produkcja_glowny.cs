@@ -46,8 +46,32 @@ namespace PROJEKTapp
 
         private void Produkcja_glowny_Load(object sender, EventArgs e)
         {
-            pRACOWNICYSTANOWISKABindingSource.DataSource = db.PRACOWNICY_STANOWISKA.Where(x => x.ID_PRACOWNIK <= 10).ToList();
+            ladowanieDanych();
+        }
+        
+        private void ladowanieDanych()
+        {
+            List<int> listID = new List<int>();
+            List<PRACOWNICY_STANOWISKA> pracownicyNaStanowiska = new List<PRACOWNICY_STANOWISKA>();
             pRACOWNICYWPRACYBindingSource.DataSource = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();
+            List<PRACOWNICY_W_PRACY> pracownicWPracy = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();
+            foreach (PRACOWNICY_W_PRACY element in pracownicWPracy)
+            {
+                int id = element.ID_PRACOWNIK;
+                listID.Add(id);
+            }
+            List<PRACOWNICY_STANOWISKA> pRACOWNICY_STANOWISKAs = db.PRACOWNICY_STANOWISKA.Where(x => x.ID_PRACOWNIK <= 10).ToList();
+            foreach (PRACOWNICY_STANOWISKA element in pRACOWNICY_STANOWISKAs)
+            {
+               if(!listID.Contains(element.ID_PRACOWNIK))
+                {
+                    pracownicyNaStanowiska.Add(element);
+                }
+            }
+
+            pRACOWNICYSTANOWISKABindingSource.DataSource = pracownicyNaStanowiska;
+
+
         }
 
         private void btnEwidencjaMaszyn_Click(object sender, EventArgs e)
@@ -70,7 +94,7 @@ namespace PROJEKTapp
             db = ndb;
             db.PRACOWNICY_W_PRACY = ndb.PRACOWNICY_W_PRACY;
             db.SaveChanges();
-            pRACOWNICYWPRACYBindingSource.DataSource = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();
+            ladowanieDanych();
 
         }
 
@@ -86,7 +110,7 @@ namespace PROJEKTapp
             db = ndb;
             db.PRACOWNICY_W_PRACY = ndb.PRACOWNICY_W_PRACY;
             db.SaveChanges();
-            pRACOWNICYWPRACYBindingSource.DataSource = db.PRACOWNICY_W_PRACY.Where(x => x.DATA_DZIEN == data).ToList();
+            ladowanieDanych();
         }
     }
 }
