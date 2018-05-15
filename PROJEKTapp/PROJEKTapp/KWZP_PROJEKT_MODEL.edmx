@@ -608,11 +608,11 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.MATERIALY_PO_DODANIU' does not ha
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.OBCIAZENIE_MASZYN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="OBCIAZENIE_MASZYN">
           <Key>
-            <PropertyRef Name="DATA_DZIEN" />
+            <PropertyRef Name="MODEL" />
           </Key>
           <Property Name="DATA_DZIEN" Type="date" Nullable="false" />
           <Property Name="MARKA" Type="nvarchar" MaxLength="50" />
-          <Property Name="MODEL" Type="nvarchar" MaxLength="50" />
+          <Property Name="MODEL" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TYP_MASZYNY" Type="nvarchar" MaxLength="50" />
           <Property Name="NR_EWIDENCYJNY" Type="nvarchar" MaxLength="20" />
         </EntityType>
@@ -620,11 +620,11 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.OBCIAZENIE_MASZYN' does not have 
 warning 6002: The table/view 'KWZP_PROJEKT.dbo.OBCIAZENIE_NARZEDZI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="OBCIAZENIE_NARZEDZI">
           <Key>
-            <PropertyRef Name="DATA_DZIEN" />
+            <PropertyRef Name="MODEL" />
           </Key>
           <Property Name="DATA_DZIEN" Type="date" Nullable="false" />
-          <Property Name="NAZWA" Type="nvarchar" MaxLength="50" />
-          <Property Name="MODEL" Type="nvarchar" MaxLength="50" />
+          <Property Name="NAZWA" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MODEL" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="NR_EWIDENCYJNY" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -3282,21 +3282,21 @@ warning 6002: The table/view 'KWZP_PROJEKT.dbo.ZLECENIA_PRODUKTY_NAZWY' does not
         </EntityType>
         <EntityType Name="OBCIAZENIE_MASZYN">
           <Key>
-            <PropertyRef Name="DATA_DZIEN" />
+            <PropertyRef Name="MODEL" />
           </Key>
           <Property Name="DATA_DZIEN" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="MARKA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TYP_MASZYNY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NR_EWIDENCYJNY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OBCIAZENIE_NARZEDZI">
           <Key>
-            <PropertyRef Name="DATA_DZIEN" />
+            <PropertyRef Name="MODEL" />
           </Key>
           <Property Name="DATA_DZIEN" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="NAZWA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NAZWA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NR_EWIDENCYJNY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <ComplexType Name="AddPracownik_Result">
