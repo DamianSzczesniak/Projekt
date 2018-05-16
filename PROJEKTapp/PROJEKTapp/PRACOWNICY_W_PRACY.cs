@@ -14,6 +14,7 @@ namespace PROJEKTapp
     
     public partial class PRACOWNICY_W_PRACY
     {
+        public int ID_PRACOWNIK { get; set; }
         public string IMIE { get; set; }
         public string NAZWISKO { get; set; }
         public string STANOWISKO { get; set; }

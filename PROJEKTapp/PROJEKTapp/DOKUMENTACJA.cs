@@ -26,9 +26,9 @@ namespace PROJEKTapp
         public Nullable<int> ID_PRACOWNIK { get; set; }
         public Nullable<int> ID_PROJEKTU { get; set; }
     
-        public virtual PRACOWNICY PRACOWNICY { get; set; }
         public virtual PROJEKT PROJEKT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<POLPRODUKTY> POLPRODUKTY { get; set; }
+        public virtual PRACOWNICY PRACOWNICY { get; set; }
     }
 }

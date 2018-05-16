@@ -45,6 +45,7 @@
             this.btnPracownicy = new System.Windows.Forms.Button();
             this.btnRozliczenieProjektow = new System.Windows.Forms.Button();
             this.pnlRozliczenie = new System.Windows.Forms.Panel();
+            this.btnSzczegoly = new System.Windows.Forms.Button();
             this.dgvRozliczenie = new System.Windows.Forms.DataGridView();
             this.Kwota_pobrana_za_zlecenie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kosz_wykonania_zlecenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,13 +62,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnSzczegoly = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zestawienieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlRozliczenie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRozliczenie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zestawienieBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -216,6 +218,7 @@
             // 
             // pnlRozliczenie
             // 
+            this.pnlRozliczenie.Controls.Add(this.pictureBox1);
             this.pnlRozliczenie.Controls.Add(this.btnSzczegoly);
             this.pnlRozliczenie.Controls.Add(this.dgvRozliczenie);
             this.pnlRozliczenie.Controls.Add(this.label7);
@@ -234,6 +237,16 @@
             this.pnlRozliczenie.Size = new System.Drawing.Size(980, 562);
             this.pnlRozliczenie.TabIndex = 11;
             this.pnlRozliczenie.Visible = false;
+            // 
+            // btnSzczegoly
+            // 
+            this.btnSzczegoly.Location = new System.Drawing.Point(180, 501);
+            this.btnSzczegoly.Name = "btnSzczegoly";
+            this.btnSzczegoly.Size = new System.Drawing.Size(105, 41);
+            this.btnSzczegoly.TabIndex = 35;
+            this.btnSzczegoly.Text = "Pokaż szczegóły";
+            this.btnSzczegoly.UseVisualStyleBackColor = true;
+            this.btnSzczegoly.Click += new System.EventHandler(this.btnSzczegoly_Click);
             // 
             // dgvRozliczenie
             // 
@@ -327,6 +340,7 @@
             this.label5.Size = new System.Drawing.Size(370, 20);
             this.label5.TabIndex = 31;
             this.label5.Text = "ZESTAWIENIE FINANSOWE DLA OKRESU :";
+            this.label5.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.label5_MouseDoubleClick);
             // 
             // dateTimePickerKoniec
             // 
@@ -395,15 +409,17 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "SUMA KOSZTOW";
             // 
-            // btnSzczegoly
+            // pictureBox1
             // 
-            this.btnSzczegoly.Location = new System.Drawing.Point(180, 501);
-            this.btnSzczegoly.Name = "btnSzczegoly";
-            this.btnSzczegoly.Size = new System.Drawing.Size(105, 41);
-            this.btnSzczegoly.TabIndex = 35;
-            this.btnSzczegoly.Text = "Pokaż szczegóły";
-            this.btnSzczegoly.UseVisualStyleBackColor = true;
-            this.btnSzczegoly.Click += new System.EventHandler(this.btnSzczegoly_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(309, 66);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(357, 489);
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // iDZLECENIADataGridViewTextBoxColumn
             // 
@@ -439,6 +455,7 @@
             this.pnlRozliczenie.ResumeLayout(false);
             this.pnlRozliczenie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRozliczenie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zestawienieBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -476,5 +493,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn DATA_REALIZACJI;
         private System.Windows.Forms.Button btnSzczegoly;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

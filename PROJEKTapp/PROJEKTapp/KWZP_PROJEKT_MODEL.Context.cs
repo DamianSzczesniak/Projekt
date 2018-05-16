@@ -40,8 +40,6 @@ namespace PROJEKTapp
         public virtual DbSet<PODATEK> PODATEK { get; set; }
         public virtual DbSet<POJAZDY> POJAZDY { get; set; }
         public virtual DbSet<POLPRODUKTY> POLPRODUKTY { get; set; }
-        public virtual DbSet<PRACOWNICY> PRACOWNICY { get; set; }
-        public virtual DbSet<PROCES> PROCES { get; set; }
         public virtual DbSet<PRODUKT> PRODUKT { get; set; }
         public virtual DbSet<PROJEKT> PROJEKT { get; set; }
         public virtual DbSet<REALIZACJA_PRODUKCJA> REALIZACJA_PRODUKCJA { get; set; }
@@ -66,7 +64,6 @@ namespace PROJEKTapp
         public virtual DbSet<OBCIAZENIE_NARZEDZI> OBCIAZENIE_NARZEDZI { get; set; }
         public virtual DbSet<GABARYT_PRODUTKU> GABARYT_PRODUTKU { get; set; }
         public virtual DbSet<MASA_PRODUKTU> MASA_PRODUKTU { get; set; }
-        public virtual DbSet<PRACOWNICY_STANOWISKA> PRACOWNICY_STANOWISKA { get; set; }
         public virtual DbSet<STAWKA_OKRES> STAWKA_OKRES { get; set; }
         public virtual DbSet<PRACOWNICY_ZATRUDNIENI> PRACOWNICY_ZATRUDNIENI { get; set; }
         public virtual DbSet<UPRAWNIENIA> UPRAWNIENIA { get; set; }
@@ -90,7 +87,6 @@ namespace PROJEKTapp
         public virtual DbSet<HISTORIA_STATUS_ZLECENIA> HISTORIA_STATUS_ZLECENIA { get; set; }
         public virtual DbSet<ZLECENIA_PRODUKTY_NAZWY> ZLECENIA_PRODUKTY_NAZWY { get; set; }
         public virtual DbSet<SZKOLENIA_PRACOWNIKA> SZKOLENIA_PRACOWNIKA { get; set; }
-        public virtual DbSet<PRACOWNICY_W_PRACY> PRACOWNICY_W_PRACY { get; set; }
         public virtual DbSet<CZAS_PRACY_MASZYN> CZAS_PRACY_MASZYN { get; set; }
         public virtual DbSet<CZAS_PRACY_NARZEDZI> CZAS_PRACY_NARZEDZI { get; set; }
         public virtual DbSet<MASZYNY> MASZYNY { get; set; }
@@ -98,19 +94,25 @@ namespace PROJEKTapp
         public virtual DbSet<ZESPOL_MASZYN> ZESPOL_MASZYN { get; set; }
         public virtual DbSet<ZESPOL_NARZEDZI> ZESPOL_NARZEDZI { get; set; }
         public virtual DbSet<URLOPY_PRACOWNIKA> URLOPY_PRACOWNIKA { get; set; }
-        public virtual DbSet<KOSZTY_CZASY_PRODUKCJI> KOSZTY_CZASY_PRODUKCJI { get; set; }
-        public virtual DbSet<OFERTA> OFERTA { get; set; }
         public virtual DbSet<PENSJE> PENSJE { get; set; }
         public virtual DbSet<ZAMOWIENIA> ZAMOWIENIA { get; set; }
         public virtual DbSet<Status_detale_zlecenie> Status_detale_zlecenie { get; set; }
         public virtual DbSet<SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE> SUMA_ZAPOTRZEBOWANIA_MATERIAL_ZLECENIE { get; set; }
         public virtual DbSet<ZAMOWIENIA_MATERIALU_NAZLECENIE> ZAMOWIENIA_MATERIALU_NAZLECENIE { get; set; }
-        public virtual DbSet<zestawienie> zestawienie { get; set; }
         public virtual DbSet<MATERIALY_PO_DODANIU> MATERIALY_PO_DODANIU { get; set; }
         public virtual DbSet<MATERIAL_ZDJETY> MATERIAL_ZDJETY { get; set; }
         public virtual DbSet<PRODUKTY_DO_ZMAGAZYNOWANIA> PRODUKTY_DO_ZMAGAZYNOWANIA { get; set; }
         public virtual DbSet<PRODUKTY_POZOSTALE_DO_TRANSPORTU> PRODUKTY_POZOSTALE_DO_TRANSPORTU { get; set; }
         public virtual DbSet<AKTUALNY_KURS> AKTUALNY_KURS { get; set; }
+        public virtual DbSet<PROCES> PROCES { get; set; }
+        public virtual DbSet<KOSZTY_CZASY_PRODUKCJI> KOSZTY_CZASY_PRODUKCJI { get; set; }
+        public virtual DbSet<OFERTA> OFERTA { get; set; }
+        public virtual DbSet<OFERTY> OFERTY { get; set; }
+        public virtual DbSet<zestawienie> zestawienie { get; set; }
+        public virtual DbSet<PRACOWNICY_STANOWISKA> PRACOWNICY_STANOWISKA { get; set; }
+        public virtual DbSet<PRACOWNICY> PRACOWNICY { get; set; }
+        public virtual DbSet<ZESPOL_LUDZI> ZESPOL_LUDZI { get; set; }
+        public virtual DbSet<PRACOWNICY_W_PRACY> PRACOWNICY_W_PRACY { get; set; }
         public virtual DbSet<FAKTURY> FAKTURY { get; set; }
     
         public virtual ObjectResult<AddPracownik_Result> AddPracownik(string imie, string nazwisko, string tel, string pESEL, string stanowisko, string ulica, string nrbudynku, string nrlokalu, string kodpocztowy, string kraj, string miasto, Nullable<System.DateTime> dataRozpoczeciaPracy)

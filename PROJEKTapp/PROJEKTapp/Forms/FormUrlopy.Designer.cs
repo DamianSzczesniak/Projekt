@@ -86,7 +86,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1366, 59);
+            this.panel1.Size = new System.Drawing.Size(1300, 59);
             this.panel1.TabIndex = 2;
             // 
             // btnExit
@@ -123,7 +123,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 633);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1366, 135);
+            this.panel2.Size = new System.Drawing.Size(1300, 135);
             this.panel2.TabIndex = 3;
             // 
             // btnStatystyki
@@ -532,7 +532,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(1300, 768);
             this.Controls.Add(this.pnlWolne);
             this.Controls.Add(this.pnlUserSearch);
             this.Controls.Add(this.pnlUrlopyControl);

@@ -21,6 +21,7 @@ namespace PROJEKTapp
         public Nullable<System.DateTime> DATA_PLATNOSCI { get; set; }
         public Nullable<decimal> KWOTA { get; set; }
         public Nullable<int> ID_WALUTA { get; set; }
+        public Nullable<bool> CZY_OPLACONA { get; set; }
     
         public virtual PRACOWNICY PRACOWNICY { get; set; }
         public virtual WALUTY WALUTY { get; set; }

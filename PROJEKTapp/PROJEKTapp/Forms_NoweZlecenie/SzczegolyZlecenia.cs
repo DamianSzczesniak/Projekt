@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -60,7 +61,7 @@ namespace PROJEKTapp.Forms_NoweZlecenie
 
             foreach (CZAS_PRACY_MASZYN czasPracy in czasyPracy)
             {
-                for (int i = 0; i < czasPracy.ILOSC_DNI_PRACY; i++)
+                for (int i = 0; i <= czasPracy.ILOSC_DNI_PRACY; i++)
                 {
                     if (maxDlugosc < i)
                     {
@@ -138,14 +139,12 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             btnDoFinanasow.Hide();
             btnPotwierdzDostarczenieZlec.Hide();
             RezerwujMaszyny.Hide();
-
-
+            btnPlatnosc.Hide();
 
             switch (azlecenie.Status)
             {
                 case 1:
                     btnZam.Show();
-
                     break;
                 case 2:
                     btnDostarczonoMaterialy.Show();
@@ -160,26 +159,25 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     }
                     break;
                 case 5:
-                    btn_Pobierz_Materialy_produkcja.Show();
-                    btn_składuj_produkty_w_Magazynie.Show();
-                    break;
+                        btn_Pobierz_Materialy_produkcja.Show();
+                        btn_składuj_produkty_w_Magazynie.Show();
+                        break;
                 case 6:
                     if (uprawnienia != 3)
                     {
                         btnPobierzTransport.Show();
-
                     }
                     break;
                 case 7:
-                    btnRobimyTransport.Show();
-                    btnKlientOdebral.Show();
-                    break;
+                        btnRobimyTransport.Show();
+                        btnKlientOdebral.Show();
+                        break;
                 case 8:
                     btnPotwierdzDostarczenieZlec.Show();
                     break;
                 case 9:
-                    btnDoFinanasow.Show();
-                    break;
+                        btnDoFinanasow.Show();
+                        break;
                 case 10:
                     if (uprawnienia != 2)
                     {
@@ -187,10 +185,14 @@ namespace PROJEKTapp.Forms_NoweZlecenie
                     }
                     break;
                 case 11:
-                    btnWystawFaktureKopia.Show();
-                    
-                    break;
-
+                        btnWystawFaktureKopia.Show();
+                        FAKTURY fAKTURY = db.FAKTURY.Where(a => a.ID_ZLECENIA == id).First();
+                        
+                        if (fAKTURY.CZY_OPLACONA == false)
+                        {
+                            btnPlatnosc.Show();
+                        }
+                        break;
             }
             this.Refresh();
 
@@ -429,6 +431,16 @@ namespace PROJEKTapp.Forms_NoweZlecenie
             MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnDostarczonoMaterialy.Hide();
             statusButtony();
+        }
+
+        private void btnPlatnosc_Click(object sender, EventArgs e)
+        {
+            FAKTURY fAKTURY = db.FAKTURY.Where(a => a.ID_ZLECENIA == id).First();
+            fAKTURY.CZY_OPLACONA = true;
+            db.Entry(fAKTURY).State = EntityState.Modified;
+            db.SaveChanges();
+            statusButtony();
+            MessageBox.Show("Informacje zapisano pomyślne .", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

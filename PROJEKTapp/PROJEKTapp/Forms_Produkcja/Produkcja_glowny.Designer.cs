@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produkcja_glowny));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExitProd = new System.Windows.Forms.Button();
@@ -39,8 +40,25 @@
             this.btnGabaryty = new System.Windows.Forms.Button();
             this.btnEwidencja = new System.Windows.Forms.Button();
             this.btnWykorzystaneMaszyny = new System.Windows.Forms.Button();
+            this.GridPracownicyWybor = new System.Windows.Forms.DataGridView();
+            this.btnDodajPracownika = new System.Windows.Forms.Button();
+            this.btnOdswiez = new System.Windows.Forms.Button();
+            this.iDPRACOWNIKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAZWISKODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iMIEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTANOWISKODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRACOWNICYSTANOWISKABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pRACOWNICYWPRACYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ID_PRACOWNIK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iMIEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nAZWISKODataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTANOWISKODataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATADZIENDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPracownicyWPracy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPracownicyWybor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRACOWNICYSTANOWISKABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRACOWNICYWPRACYBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -105,10 +123,20 @@
             // 
             // GridPracownicyWPracy
             // 
+            this.GridPracownicyWPracy.AllowUserToAddRows = false;
+            this.GridPracownicyWPracy.AutoGenerateColumns = false;
             this.GridPracownicyWPracy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridPracownicyWPracy.Location = new System.Drawing.Point(8, 65);
+            this.GridPracownicyWPracy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_PRACOWNIK,
+            this.iMIEDataGridViewTextBoxColumn1,
+            this.nAZWISKODataGridViewTextBoxColumn1,
+            this.sTANOWISKODataGridViewTextBoxColumn1,
+            this.dATADZIENDataGridViewTextBoxColumn});
+            this.GridPracownicyWPracy.DataSource = this.pRACOWNICYWPRACYBindingSource;
+            this.GridPracownicyWPracy.Location = new System.Drawing.Point(691, 65);
             this.GridPracownicyWPracy.Name = "GridPracownicyWPracy";
-            this.GridPracownicyWPracy.Size = new System.Drawing.Size(1355, 598);
+            this.GridPracownicyWPracy.ReadOnly = true;
+            this.GridPracownicyWPracy.Size = new System.Drawing.Size(663, 482);
             this.GridPracownicyWPracy.TabIndex = 7;
             // 
             // btnEwidencjaMaszyn
@@ -183,10 +211,126 @@
             this.btnWykorzystaneMaszyny.UseVisualStyleBackColor = true;
             this.btnWykorzystaneMaszyny.Click += new System.EventHandler(this.btnWykorzystaneMaszyny_Click);
             // 
+            // GridPracownicyWybor
+            // 
+            this.GridPracownicyWybor.AllowUserToAddRows = false;
+            this.GridPracownicyWybor.AllowUserToDeleteRows = false;
+            this.GridPracownicyWybor.AutoGenerateColumns = false;
+            this.GridPracownicyWybor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridPracownicyWybor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDPRACOWNIKDataGridViewTextBoxColumn,
+            this.nAZWISKODataGridViewTextBoxColumn,
+            this.iMIEDataGridViewTextBoxColumn,
+            this.sTANOWISKODataGridViewTextBoxColumn});
+            this.GridPracownicyWybor.DataSource = this.pRACOWNICYSTANOWISKABindingSource;
+            this.GridPracownicyWybor.Location = new System.Drawing.Point(12, 65);
+            this.GridPracownicyWybor.Name = "GridPracownicyWybor";
+            this.GridPracownicyWybor.ReadOnly = true;
+            this.GridPracownicyWybor.Size = new System.Drawing.Size(661, 482);
+            this.GridPracownicyWybor.TabIndex = 8;
+            // 
+            // btnDodajPracownika
+            // 
+            this.btnDodajPracownika.Location = new System.Drawing.Point(265, 581);
+            this.btnDodajPracownika.Name = "btnDodajPracownika";
+            this.btnDodajPracownika.Size = new System.Drawing.Size(167, 49);
+            this.btnDodajPracownika.TabIndex = 9;
+            this.btnDodajPracownika.Text = "Dodaj Wybranego Pracownika";
+            this.btnDodajPracownika.UseVisualStyleBackColor = true;
+            this.btnDodajPracownika.Click += new System.EventHandler(this.btnDodajPracownika_Click);
+            // 
+            // btnOdswiez
+            // 
+            this.btnOdswiez.Location = new System.Drawing.Point(952, 581);
+            this.btnOdswiez.Name = "btnOdswiez";
+            this.btnOdswiez.Size = new System.Drawing.Size(160, 50);
+            this.btnOdswiez.TabIndex = 10;
+            this.btnOdswiez.Text = "Usuń Pracownika";
+            this.btnOdswiez.UseVisualStyleBackColor = true;
+            this.btnOdswiez.Click += new System.EventHandler(this.btnOdswiez_Click);
+            // 
+            // iDPRACOWNIKDataGridViewTextBoxColumn
+            // 
+            this.iDPRACOWNIKDataGridViewTextBoxColumn.DataPropertyName = "ID_PRACOWNIK";
+            this.iDPRACOWNIKDataGridViewTextBoxColumn.HeaderText = "ID_PRACOWNIK";
+            this.iDPRACOWNIKDataGridViewTextBoxColumn.Name = "iDPRACOWNIKDataGridViewTextBoxColumn";
+            this.iDPRACOWNIKDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nAZWISKODataGridViewTextBoxColumn
+            // 
+            this.nAZWISKODataGridViewTextBoxColumn.DataPropertyName = "NAZWISKO";
+            this.nAZWISKODataGridViewTextBoxColumn.HeaderText = "NAZWISKO";
+            this.nAZWISKODataGridViewTextBoxColumn.Name = "nAZWISKODataGridViewTextBoxColumn";
+            this.nAZWISKODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iMIEDataGridViewTextBoxColumn
+            // 
+            this.iMIEDataGridViewTextBoxColumn.DataPropertyName = "IMIE";
+            this.iMIEDataGridViewTextBoxColumn.HeaderText = "IMIE";
+            this.iMIEDataGridViewTextBoxColumn.Name = "iMIEDataGridViewTextBoxColumn";
+            this.iMIEDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sTANOWISKODataGridViewTextBoxColumn
+            // 
+            this.sTANOWISKODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sTANOWISKODataGridViewTextBoxColumn.DataPropertyName = "STANOWISKO";
+            this.sTANOWISKODataGridViewTextBoxColumn.HeaderText = "STANOWISKO";
+            this.sTANOWISKODataGridViewTextBoxColumn.Name = "sTANOWISKODataGridViewTextBoxColumn";
+            this.sTANOWISKODataGridViewTextBoxColumn.ReadOnly = true;
+            this.sTANOWISKODataGridViewTextBoxColumn.Width = 105;
+            // 
+            // pRACOWNICYSTANOWISKABindingSource
+            // 
+            this.pRACOWNICYSTANOWISKABindingSource.DataSource = typeof(PROJEKTapp.PRACOWNICY_STANOWISKA);
+            // 
+            // pRACOWNICYWPRACYBindingSource
+            // 
+            this.pRACOWNICYWPRACYBindingSource.DataSource = typeof(PROJEKTapp.PRACOWNICY_W_PRACY);
+            // 
+            // ID_PRACOWNIK
+            // 
+            this.ID_PRACOWNIK.DataPropertyName = "ID_PRACOWNIK";
+            this.ID_PRACOWNIK.HeaderText = "ID_PRACOWNIK";
+            this.ID_PRACOWNIK.Name = "ID_PRACOWNIK";
+            this.ID_PRACOWNIK.ReadOnly = true;
+            // 
+            // iMIEDataGridViewTextBoxColumn1
+            // 
+            this.iMIEDataGridViewTextBoxColumn1.DataPropertyName = "IMIE";
+            this.iMIEDataGridViewTextBoxColumn1.HeaderText = "IMIE";
+            this.iMIEDataGridViewTextBoxColumn1.Name = "iMIEDataGridViewTextBoxColumn1";
+            this.iMIEDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nAZWISKODataGridViewTextBoxColumn1
+            // 
+            this.nAZWISKODataGridViewTextBoxColumn1.DataPropertyName = "NAZWISKO";
+            this.nAZWISKODataGridViewTextBoxColumn1.HeaderText = "NAZWISKO";
+            this.nAZWISKODataGridViewTextBoxColumn1.Name = "nAZWISKODataGridViewTextBoxColumn1";
+            this.nAZWISKODataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // sTANOWISKODataGridViewTextBoxColumn1
+            // 
+            this.sTANOWISKODataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sTANOWISKODataGridViewTextBoxColumn1.DataPropertyName = "STANOWISKO";
+            this.sTANOWISKODataGridViewTextBoxColumn1.HeaderText = "STANOWISKO";
+            this.sTANOWISKODataGridViewTextBoxColumn1.Name = "sTANOWISKODataGridViewTextBoxColumn1";
+            this.sTANOWISKODataGridViewTextBoxColumn1.ReadOnly = true;
+            this.sTANOWISKODataGridViewTextBoxColumn1.Width = 105;
+            // 
+            // dATADZIENDataGridViewTextBoxColumn
+            // 
+            this.dATADZIENDataGridViewTextBoxColumn.DataPropertyName = "DATA_DZIEN";
+            this.dATADZIENDataGridViewTextBoxColumn.HeaderText = "DATA_DZIEN";
+            this.dATADZIENDataGridViewTextBoxColumn.Name = "dATADZIENDataGridViewTextBoxColumn";
+            this.dATADZIENDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Produkcja_glowny
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.btnOdswiez);
+            this.Controls.Add(this.btnDodajPracownika);
+            this.Controls.Add(this.GridPracownicyWybor);
             this.Controls.Add(this.GridPracownicyWPracy);
             this.Controls.Add(this.btnEwidencjaMaszyn);
             this.Controls.Add(this.btnGabaryty);
@@ -203,6 +347,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPracownicyWPracy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridPracownicyWybor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRACOWNICYSTANOWISKABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRACOWNICYWPRACYBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -218,5 +365,20 @@
         private System.Windows.Forms.Button btnGabaryty;
         private System.Windows.Forms.Button btnEwidencjaMaszyn;
         private System.Windows.Forms.DataGridView GridPracownicyWPracy;
+        private System.Windows.Forms.DataGridView GridPracownicyWybor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTANOWISKOPRACOWNICYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnDodajPracownika;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDPRACOWNIKDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nAZWISKODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iMIEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTANOWISKODataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource pRACOWNICYSTANOWISKABindingSource;
+        private System.Windows.Forms.BindingSource pRACOWNICYWPRACYBindingSource;
+        private System.Windows.Forms.Button btnOdswiez;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRACOWNIK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iMIEDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nAZWISKODataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTANOWISKODataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATADZIENDataGridViewTextBoxColumn;
     }
 }

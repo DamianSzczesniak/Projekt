@@ -367,6 +367,9 @@
     <Compile Include="OFERTA.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
+    <Compile Include="OFERTY.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
     <Compile Include="OKRES.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
@@ -508,6 +511,9 @@
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="ZAMOWIENIA_MATERIALU_NAZLECENIE.cs">
+      <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ZESPOL_LUDZI.cs">
       <DependentUpon>KWZP_PROJEKT_MODEL.tt</DependentUpon>
     </Compile>
     <Compile Include="ZESPOL_MASZYN.cs">
@@ -691,6 +697,8 @@
     <None Include="OFERTA.datasource" />
     <None Include="packages.config" />
     <None Include="PRACOWNICY.datasource" />
+    <None Include="PRACOWNICY_STANOWISKA.datasource" />
+    <None Include="PRACOWNICY_W_PRACY.datasource" />
     <None Include="PRODUKTY_DO_ZMAGAZYNOWANIA.datasource" />
     <None Include="PRODUKTY_POZOSTALE_DO_TRANSPORTU.datasource" />
     <None Include="Properties\Settings.settings">

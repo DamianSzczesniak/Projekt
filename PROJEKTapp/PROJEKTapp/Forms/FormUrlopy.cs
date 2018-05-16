@@ -166,7 +166,7 @@ namespace PROJEKTapp
         {
             if (dgvUrlopyPraconik.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Najpierw wybierz szkolenie do usunięcia");
+                MessageBox.Show("Najpierw wybierz urlop do usunięcia");
             }
             else
             {

@@ -35,6 +35,7 @@
             this.TopBar_4 = new System.Windows.Forms.PictureBox();
             this.dataGridView_lista_faktur = new System.Windows.Forms.DataGridView();
             this.Btn_Back_5 = new System.Windows.Forms.Button();
+            this.ckcBZaplacono = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -113,12 +114,24 @@
             this.Btn_Back_5.UseVisualStyleBackColor = false;
             this.Btn_Back_5.Click += new System.EventHandler(this.Btn_Back_5_Click);
             // 
+            // ckcBZaplacono
+            // 
+            this.ckcBZaplacono.AutoSize = true;
+            this.ckcBZaplacono.Location = new System.Drawing.Point(600, 79);
+            this.ckcBZaplacono.Name = "ckcBZaplacono";
+            this.ckcBZaplacono.Size = new System.Drawing.Size(123, 17);
+            this.ckcBZaplacono.TabIndex = 64;
+            this.ckcBZaplacono.Text = "Tylko nie zapłacone";
+            this.ckcBZaplacono.UseVisualStyleBackColor = true;
+            this.ckcBZaplacono.CheckedChanged += new System.EventHandler(this.ckcBZaplacono_CheckedChanged);
+            // 
             // FormListaFaktur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1300, 768);
+            this.Controls.Add(this.ckcBZaplacono);
             this.Controls.Add(this.Btn_Back_5);
             this.Controls.Add(this.dataGridView_lista_faktur);
             this.Controls.Add(this.pictureBox6);
@@ -149,5 +162,6 @@
         private System.Windows.Forms.PictureBox TopBar_4;
         private System.Windows.Forms.DataGridView dataGridView_lista_faktur;
         private System.Windows.Forms.Button Btn_Back_5;
+        private System.Windows.Forms.CheckBox ckcBZaplacono;
     }
 }

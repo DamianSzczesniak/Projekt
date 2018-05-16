@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridViewOferta = new System.Windows.Forms.DataGridView();
             this.iDPRODUKTUDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDZLECENIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +62,7 @@
             this.btnWystawFaktureKopia = new System.Windows.Forms.Button();
             this.btnDoFinanasow = new System.Windows.Forms.Button();
             this.btnPotwierdzDostarczenieZlec = new System.Windows.Forms.Button();
+            this.btnPlatnosc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOferta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zLECENIAPRODUKTYNAZWYBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -196,16 +197,16 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(374, 33);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(435, 299);
             this.chart1.TabIndex = 22;
             this.chart1.Text = "chart1";
@@ -337,9 +338,9 @@
             // 
             // btnWystawFaktureKopia
             // 
-            this.btnWystawFaktureKopia.Location = new System.Drawing.Point(123, 351);
+            this.btnWystawFaktureKopia.Location = new System.Drawing.Point(23, 350);
             this.btnWystawFaktureKopia.Name = "btnWystawFaktureKopia";
-            this.btnWystawFaktureKopia.Size = new System.Drawing.Size(128, 33);
+            this.btnWystawFaktureKopia.Size = new System.Drawing.Size(140, 33);
             this.btnWystawFaktureKopia.TabIndex = 33;
             this.btnWystawFaktureKopia.Text = " Pokaż kopie faktury";
             this.btnWystawFaktureKopia.UseVisualStyleBackColor = true;
@@ -347,7 +348,7 @@
             // 
             // btnDoFinanasow
             // 
-            this.btnDoFinanasow.Location = new System.Drawing.Point(123, 350);
+            this.btnDoFinanasow.Location = new System.Drawing.Point(125, 351);
             this.btnDoFinanasow.Name = "btnDoFinanasow";
             this.btnDoFinanasow.Size = new System.Drawing.Size(128, 35);
             this.btnDoFinanasow.TabIndex = 34;
@@ -357,7 +358,7 @@
             // 
             // btnPotwierdzDostarczenieZlec
             // 
-            this.btnPotwierdzDostarczenieZlec.Location = new System.Drawing.Point(121, 350);
+            this.btnPotwierdzDostarczenieZlec.Location = new System.Drawing.Point(123, 351);
             this.btnPotwierdzDostarczenieZlec.Name = "btnPotwierdzDostarczenieZlec";
             this.btnPotwierdzDostarczenieZlec.Size = new System.Drawing.Size(130, 35);
             this.btnPotwierdzDostarczenieZlec.TabIndex = 35;
@@ -365,11 +366,22 @@
             this.btnPotwierdzDostarczenieZlec.UseVisualStyleBackColor = true;
             this.btnPotwierdzDostarczenieZlec.Click += new System.EventHandler(this.btnPotwierdzDostarczenieZlec_Click);
             // 
+            // btnPlatnosc
+            // 
+            this.btnPlatnosc.Location = new System.Drawing.Point(204, 350);
+            this.btnPlatnosc.Name = "btnPlatnosc";
+            this.btnPlatnosc.Size = new System.Drawing.Size(141, 33);
+            this.btnPlatnosc.TabIndex = 36;
+            this.btnPlatnosc.Text = "Odnotuj płatność faktury.";
+            this.btnPlatnosc.UseVisualStyleBackColor = true;
+            this.btnPlatnosc.Click += new System.EventHandler(this.btnPlatnosc_Click);
+            // 
             // SzczegolyZlecenia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 402);
+            this.Controls.Add(this.btnPlatnosc);
             this.Controls.Add(this.btnPotwierdzDostarczenieZlec);
             this.Controls.Add(this.btnDoFinanasow);
             this.Controls.Add(this.btnWystawFaktureKopia);
@@ -440,5 +452,6 @@
         private System.Windows.Forms.Button btnWystawFaktureKopia;
         private System.Windows.Forms.Button btnDoFinanasow;
         private System.Windows.Forms.Button btnPotwierdzDostarczenieZlec;
+        private System.Windows.Forms.Button btnPlatnosc;
     }
 }

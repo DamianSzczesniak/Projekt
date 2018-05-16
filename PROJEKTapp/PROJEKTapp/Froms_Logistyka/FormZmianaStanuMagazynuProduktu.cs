@@ -227,7 +227,7 @@ namespace PROJEKTapp.Forms
 
 
 
-                        lbl_Lista_Materialow.Text = "Produkty do odebrania z magazynu :";
+                        lbl_Lista_Materialow.Text = "Produkty przygotowane do transportu :";
                         lbl_Stan_Magazynu.Text = "Zmagazynowane produkty z danego zlecenia :";
 
                         

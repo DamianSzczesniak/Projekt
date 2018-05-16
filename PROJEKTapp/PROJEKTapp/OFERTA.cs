@@ -15,7 +15,7 @@ namespace PROJEKTapp
     public partial class OFERTA
     {
         public int ID_ZLECENIA { get; set; }
-        public Nullable<decimal> KOSZT_CALKOWITY_PRODUKCJI { get; set; }
-        public Nullable<int> CZAS_PRODUKCJI { get; set; }
+        public Nullable<double> KOSZT_CALKOWITY_PRODUKCJI { get; set; }
+        public Nullable<double> CZAS_PRODUKCJI { get; set; }
     }
 }
